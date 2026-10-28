@@ -1,0 +1,6 @@
+{
+  "game_title": "Pygame Breakout",
+  "objective": "Breakout game with paddle, ball, bricks, wall/paddle collisions, score and a win state after all bricks are cleared.",
+  "controls": "Use left/right arrows; Enter or Space launches the ball if required. Clear all bricks. Collision details may require game-state or screenshot observations.",
+  "notes": "Generate test cases using documented controls only; do not invent test hooks."
+}

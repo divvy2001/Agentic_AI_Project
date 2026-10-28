@@ -1,0 +1,7 @@
+{
+  "game_id": "G09",
+  "game_title": "Pygame Lane Racer",
+  "complexity": "medium",
+  "renderer": "pygame",
+  "description": "Three-lane racing game with traffic, acceleration, collision penalties, distance progression and finish line."
+}

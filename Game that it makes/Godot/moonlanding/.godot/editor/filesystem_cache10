@@ -1,0 +1,6 @@
+78098b89c88a74ebe8c20117b8754620
+::res://::1793105066
+game_manager.gd::GDScript::9017825090503341114::1793104876::0::1::::<>Node2D<><>0<>0<><>::
+lander.gd::GDScript::4954882708860449134::1793104843::0::1::::Lander<>Node2D<><>0<>0<><>::
+landing_pad.gd::GDScript::8026250803057387995::1793104666::0::1::::LandingPad<>Node2D<><>0<>0<><>::
+main.tscn::PackedScene::-1::1793104714::0::1::::<><><>0<>0<><>::res://game_manager.gd

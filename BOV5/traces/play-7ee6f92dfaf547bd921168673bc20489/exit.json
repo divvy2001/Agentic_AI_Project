@@ -1,0 +1,19 @@
+{
+  "argv": [
+    "C:\\Users\\ASUS\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+    "-I",
+    "-B",
+    "C:\\Users\\ASUS\\Work\\BOV5\\traces\\play-7ee6f92dfaf547bd921168673bc20489\\runtime\\play_child.py",
+    "game/main.py"
+  ],
+  "returncode": 0,
+  "output": "pygame 2.6.1 (SDL 2.28.4, Python 3.11.9)\r\nHello from the pygame community. https://www.pygame.org/contribute.html\r\n[EVENT] LIVES:2\r\n[EVENT] LIVES:1\r\n[EVENT] LIVES:0\r\n[EVENT] LOSE\r\n[EVENT] SCORE:10\r\n[EVENT] SCORE:20\r\n[EVENT] SCORE:30\r\n[EVENT] SCORE:40\r\n[EVENT] SCORE:50\r\n",
+  "reason": null,
+  "seconds": 171.016,
+  "sandbox": {
+    "kind": "windows_appcontainer",
+    "token_is_appcontainer": true,
+    "network_capabilities": [],
+    "active_process_limit": 1
+  }
+}

@@ -1,0 +1,295 @@
+{
+  "schema_version": "1.0",
+  "created_at_utc": "2026-10-26T17:19:24.776808+00:00",
+  "input_test_results": "traces/eval/run20261027_011042-s1/test_run_20261027_011854/test_results.json",
+  "diagnosis_method": "openrouter",
+  "diagnosis": {
+    "route": "logic_coder",
+    "confidence": 0.8,
+    "reason": "Game launches but no visible paddles, ball, or scores detected; likely drawing or display logic issue.",
+    "evidence": [
+      "Test T01 failed because no paddles, ball, or scores were visible on screen at launch.",
+      "No screenshots or pixel text evidence available, but stdout/stderr logs show no errors.",
+      "All other tests blocked due to lack of game state instrumentation, so no movement or interaction could be verified.",
+      "Asset manifest shows no external assets expected; graphics are procedural, so failure likely in rendering or game loop logic."
+    ],
+    "repair_instructions": [
+      "Verify that the game initializes and draws the paddles, ball, and scores correctly on the screen at startup.",
+      "Check the rendering code in game/pong.py to ensure draw calls for paddles, ball, and score text are executed each frame.",
+      "Ensure the display surface is updated (pygame.display.flip or update) after drawing.",
+      "Add debug logging or temporary on-screen text to confirm draw functions are called.",
+      "Add game-side instrumentation to emit structured game state for better test observability."
+    ],
+    "failure_categories": {
+      "T01": "behavior",
+      "T02": "test_infrastructure",
+      "T03": "test_infrastructure",
+      "T04": "test_infrastructure",
+      "T05": "test_infrastructure",
+      "T06": "test_infrastructure",
+      "T07": "test_infrastructure",
+      "T13": "test_infrastructure",
+      "T14": "test_infrastructure",
+      "T15": "test_infrastructure",
+      "T16": "test_infrastructure"
+    }
+  },
+  "callback": {
+    "status": "ready_for_testing",
+    "callback": "coder_agent_adhoc.repair.run_repair",
+    "feedback_path": "traces/eval/run20261027_011042-s1/test_results.json",
+    "failure_count": 1,
+    "coder_result": {
+      "status": "ready_for_testing",
+      "mode": "repair",
+      "renderer": "pygame",
+      "entry_point": "game/pong.py",
+      "game_dir": "game",
+      "smoke": {
+        "plan_and_files": "passed",
+        "syntax_or_import": "passed",
+        "boot": "passed"
+      },
+      "steps": 10,
+      "play_manual_path": "plans/play_manual.json",
+      "trace_path": "traces/coder_attempts.jsonl",
+      "approximated_requirements": [],
+      "reason": null,
+      "debug_statistics": {
+        "local_failure_events": 3,
+        "self_debug_attempts": 1,
+        "external_repair_invocations": 1
+      },
+      "plan_compatibility_warnings": [],
+      "runtime_render_settings": {
+        "resolution": {
+          "width": 800,
+          "height": 600
+        },
+        "fps": 60
+      },
+      "asset_quality_warnings": [],
+      "asset_visual_acceptance": "not_run",
+      "planner_status": "success",
+      "unmapped": [],
+      "attempt_id": "9c6593fcb2784ced857e045fbd2b559d",
+      "repair_snapshot_path": "traces/repair-9c6593fcb2784ced857e045fbd2b559d/original",
+      "usage": {
+        "model": "openai/gpt-5-mini",
+        "calls": 10,
+        "input_tokens": 77072,
+        "output_tokens": 11221,
+        "max_input_tokens_per_call": 9654,
+        "reported_cost_usd": 0.0338476,
+        "known_cost_usd": 0.0338476,
+        "cost_missing_calls": 0,
+        "by_model": {
+          "openai/gpt-5-mini": {
+            "calls": 10,
+            "input_tokens": 77072,
+            "output_tokens": 11221,
+            "known_cost_usd": 0.0338476,
+            "cost_missing_calls": 0
+          }
+        }
+      },
+      "presentation": {
+        "status": "not_run",
+        "reason": "no_separate_presentation_probe"
+      },
+      "coverage_notes": null,
+      "requirement_coverage": [
+        {
+          "index": 0,
+          "planner_status": "full",
+          "check": "Upon launching the game, two paddles, a ball, and score displays are visible on the screen.",
+          "validator_status": "not_run",
+          "implementation_files": [],
+          "model_claim": null,
+          "limitations": [],
+          "coverage_evidence": "not_provided"
+        },
+        {
+          "index": 1,
+          "planner_status": "full",
+          "check": "Pressing 'W' moves the left paddle up; pressing 'S' moves the left paddle down.",
+          "validator_status": "not_run",
+          "implementation_files": [],
+          "model_claim": null,
+          "limitations": [],
+          "coverage_evidence": "not_provided"
+        },
+        {
+          "index": 2,
+          "planner_status": "full",
+          "check": "Pressing 'UP' moves the right paddle up; pressing 'DOWN' moves the right paddle down.",
+          "validator_status": "not_run",
+          "implementation_files": [],
+          "model_claim": null,
+          "limitations": [],
+          "coverage_evidence": "not_provided"
+        },
+        {
+          "index": 3,
+          "planner_status": "full",
+          "check": "Holding 'W' or 'UP' will stop the respective paddle at the top edge. Holding 'S' or 'DOWN' will stop the respective paddle at the bottom edge.",
+          "validator_status": "not_run",
+          "implementation_files": [],
+          "model_claim": null,
+          "limitations": [],
+          "coverage_evidence": "not_provided"
+        },
+        {
+          "index": 4,
+          "planner_status": "full",
+          "check": "Upon game start or reset, the ball appears in the center and moves diagonally.",
+          "validator_status": "not_run",
+          "implementation_files": [],
+          "model_claim": null,
+          "limitations": [],
+          "coverage_evidence": "not_provided"
+        },
+        {
+          "index": 5,
+          "planner_status": "full",
+          "check": "When the ball collides with a paddle, its horizontal direction reverses.",
+          "validator_status": "not_run",
+          "implementation_files": [],
+          "model_claim": null,
+          "limitations": [],
+          "coverage_evidence": "not_provided"
+        },
+        {
+          "index": 6,
+          "planner_status": "full",
+          "check": "When the ball collides with the top or bottom edge of the screen, its vertical direction reverses.",
+          "validator_status": "not_run",
+          "implementation_files": [],
+          "model_claim": null,
+          "limitations": [],
+          "coverage_evidence": "not_provided"
+        },
+        {
+          "index": 7,
+          "planner_status": "full",
+          "check": "If the ball crosses the left edge, Player 2's score increases by 1. If the ball crosses the right edge, Player 1's score increases by 1.",
+          "validator_status": "not_run",
+          "implementation_files": [],
+          "model_claim": null,
+          "limitations": [],
+          "coverage_evidence": "not_provided"
+        },
+        {
+          "index": 8,
+          "planner_status": "full",
+          "check": "After a player scores, the ball reappears in the center of the screen.",
+          "validator_status": "not_run",
+          "implementation_files": [],
+          "model_claim": null,
+          "limitations": [],
+          "coverage_evidence": "not_provided"
+        },
+        {
+          "index": 9,
+          "planner_status": "full",
+          "check": "When either player's score reaches 5, the game declares that player as the winner.",
+          "validator_status": "not_run",
+          "implementation_files": [],
+          "model_claim": null,
+          "limitations": [],
+          "coverage_evidence": "not_provided"
+        },
+        {
+          "index": 10,
+          "planner_status": "full",
+          "check": "After a player wins, the ball and paddles stop moving.",
+          "validator_status": "not_run",
+          "implementation_files": [],
+          "model_claim": null,
+          "limitations": [],
+          "coverage_evidence": "not_provided"
+        },
+        {
+          "index": 11,
+          "planner_status": "full",
+          "check": "After a player wins, a message indicating the winner is displayed on screen.",
+          "validator_status": "not_run",
+          "implementation_files": [],
+          "model_claim": null,
+          "limitations": [],
+          "coverage_evidence": "not_provided"
+        },
+        {
+          "index": 12,
+          "planner_status": "full",
+          "check": "Pressing 'R' resets both scores to 0, places the ball in the center, and unfreezes the game if it was frozen.",
+          "validator_status": "not_run",
+          "implementation_files": [],
+          "model_claim": null,
+          "limitations": [],
+          "coverage_evidence": "not_provided"
+        },
+        {
+          "index": 13,
+          "planner_status": "full",
+          "check": "Pressing 'Escape' closes the game window.",
+          "validator_status": "not_run",
+          "implementation_files": [],
+          "model_claim": null,
+          "limitations": [],
+          "coverage_evidence": "not_provided"
+        }
+      ],
+      "coverage_status": "not_provided",
+      "changes": [
+        {
+          "path": "game/pong.py",
+          "tool": "apply_patch",
+          "reason": "",
+          "before_sha256": "02406e607a7b4d40186e5a353bed5385a09005bc11fd66af3ae0a87282468338",
+          "after_sha256": "a9bd7f859a525f7513b951ccd010b478a30666225e3493831bc3829178403021",
+          "diff": "--- game/pong.py\n+++ game/pong.py\n@@ -71,6 +71,10 @@\n         self.ball.x = (self.width - BALL_SIZE)//2\n         self.ball.y = (self.height - BALL_SIZE)//2\n         self.serve(direction=None)\n+        # Emit a machine-readable state line so external validators can observe objects and scores\n+        print(f\"[STATE] PADDLES L={self.left_paddle.topleft} R={self.right_paddle.topleft} BALL={self.ball.topleft} SCORE={self.score1}-{self.score2}\")\n+        # Emit a machine-readable state line so external validators can observe objects and scores\n+        print(f\"[STATE] PADDLES L={self.left_paddle.topleft} R={self.right_paddle.topleft} BALL={self.ball.topleft} SCORE={self.score1}-{self.score2}\")\n \n     def serve(self, direction=None) -> None:\n         \"\"\"Place ball in center and give it an initial diagonal velocity.\n"
+        }
+      ],
+      "attempted_net_changes": [
+        {
+          "path": "game/pong.py",
+          "before_sha256": "02406e607a7b4d40186e5a353bed5385a09005bc11fd66af3ae0a87282468338",
+          "after_sha256": "a9bd7f859a525f7513b951ccd010b478a30666225e3493831bc3829178403021"
+        }
+      ],
+      "net_changes": [
+        {
+          "path": "game/pong.py",
+          "before_sha256": "02406e607a7b4d40186e5a353bed5385a09005bc11fd66af3ae0a87282468338",
+          "after_sha256": "a9bd7f859a525f7513b951ccd010b478a30666225e3493831bc3829178403021"
+        }
+      ],
+      "file_inventory": {
+        "promised_count": 2,
+        "delivered_promised": [
+          "game/__init__.py",
+          "game/pong.py"
+        ],
+        "missing": [],
+        "engine_supplements": [],
+        "assets": [],
+        "protected_tests": [],
+        "runtime_artifacts": [
+          "game/__pycache__/__init__.cpython-311.pyc",
+          "game/__pycache__/pong.cpython-311.pyc"
+        ],
+        "unplanned": [],
+        "delivered_promised_count": 2
+      },
+      "play_session": {
+        "status": "not_run",
+        "reason": "disabled_by_caller"
+      }
+    }
+  },
+  "evidence_summary": {
+    "total_tests": 16,
+    "failed_tests": 11
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "test_id": "T08",
+  "requirement_index": 7,
+  "requirement": "Eating food adds 1 point to the score.",
+  "assertion": "When the snake eats food, the displayed score increases by 1.",
+  "expected": "Score displayed on screen increments by 1",
+  "generator_status": "not_testable",
+  "started_at_utc": "2026-10-26T21:02:42.207211+00:00",
+  "evidence_dir": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261027_045305-s1\\test_run_20261027_050242\\evidence\\T08",
+  "action_results": [],
+  "observations": [],
+  "status": "NOT_RUN",
+  "reason": "No console output line confirms score display; visual inspection required."
+}

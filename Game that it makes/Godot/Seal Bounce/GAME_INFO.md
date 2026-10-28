@@ -1,0 +1,11 @@
+# Seal Bounce
+
+- Engine: godot
+- Built: run 20261028_091204
+- Result: GAME READY
+- Spec file: seal_bounce.md
+- Play: double-click `play.bat`
+
+## Spec
+
+Create a tiny one-screen game called "Seal Bounce". A cartoon seal at the bottom of the window slides left and right with the arrow keys and stops at the screen edges. A beach ball bounces around the screen with realistic physics: it keeps its momentum, spins when it hits the moving seal, and rebounds naturally off the seal's nose and the left, right and top walls. Generate exactly two small image assets: the cartoon seal and the beach ball. Use a plain light-blue background colour instead of a background image. Each time the ball bounces off the seal the score goes up by 1. If the ball falls past the seal, the game is over. Show the score in the top-left corner. When the game is over, show GAME OVER and the final score and stop the ball. Press R to restart with score 0 and Escape to quit. Print a line to the console every time a control takes effect: MOVE LEFT, MOVE RIGHT, RESTART and QUIT, and print GAME OVER when the game ends. No sounds. Keep it to one scene and as few scripts as possible.

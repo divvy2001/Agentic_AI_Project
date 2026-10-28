@@ -1,0 +1,410 @@
+{
+  "status": "ready_for_testing",
+  "mode": "initial_build",
+  "renderer": "pygame",
+  "entry_point": "game/main.py",
+  "game_dir": "game",
+  "smoke": {
+    "plan_and_files": "passed",
+    "syntax_or_import": "passed",
+    "boot": "passed"
+  },
+  "steps": 6,
+  "play_manual_path": "plans/play_manual.json",
+  "trace_path": "traces/coder_attempts.jsonl",
+  "approximated_requirements": [],
+  "reason": null,
+  "debug_statistics": {
+    "local_failure_events": 0,
+    "self_debug_attempts": 0,
+    "external_repair_invocations": 0
+  },
+  "plan_compatibility_warnings": [],
+  "runtime_render_settings": {
+    "resolution": {
+      "width": 800,
+      "height": 600
+    },
+    "fps": 60
+  },
+  "asset_quality_warnings": [],
+  "asset_visual_acceptance": "not_run",
+  "planner_status": "success",
+  "unmapped": [
+    {
+      "quote": "No sounds.",
+      "handling": "Ensure no sound effects or background music are implemented in the game."
+    },
+    {
+      "quote": "Keep the code simple and in as few files as possible.",
+      "handling": "The Coder should prioritize a clear, concise structure with minimal file separation, adhering to the provided file list."
+    }
+  ],
+  "attempt_id": "12a8bdcd140840989f17360e42bfb29f",
+  "workspace_preparation": {
+    "action": "backed_up_and_reset",
+    "backup_path": "backups/game-20261027T143115Z-52dba1f708",
+    "preserved_directories": [
+      "assets"
+    ],
+    "preserved_files": 2,
+    "stale_files_backed_up": [
+      "assets/blue_belt_fighter.png.import",
+      "assets/red_belt_fighter.png.import"
+    ],
+    "previous_file_count": 140
+  },
+  "usage": {
+    "model": "openai/gpt-5-mini",
+    "calls": 6,
+    "input_tokens": 50396,
+    "output_tokens": 16144,
+    "max_input_tokens_per_call": 11763,
+    "reported_cost_usd": 0.040048600000000004,
+    "known_cost_usd": 0.040048600000000004,
+    "cost_missing_calls": 0,
+    "by_model": {
+      "openai/gpt-5-mini": {
+        "calls": 6,
+        "input_tokens": 50396,
+        "output_tokens": 16144,
+        "known_cost_usd": 0.040048600000000004,
+        "cost_missing_calls": 0
+      }
+    }
+  },
+  "initial_build_notes": {
+    "source": "first assistant implementation notes; unverified; immutable Planner takes precedence",
+    "text": "Implementation contract (short):\n\n- Requirement -> owning files:\n  - Window title, main loop, input, health bars, floor, game state, restart/quit: game/main.py\n  - Fighter behavior (movement, gravity, jump, punch, health, flash, knockback): game/fighter.py\n  - Constants (sizes, colors, physics, timings): game/constants.py\n  - Package init: game/__init__.py\n\n- State ownership:\n  - game/main.py owns global game state (state = 'playing'/'ended'), player and rival references, input flags, and lifecycle (init/restart/quit).\n  - Fighter instances own position (x, y), velocities (vx, vy), health, attack timers, cooldowns, flash timers.\n  - main.py calls Fighter methods: update(dt, floor_y), punch(), check_punch_hit(other), draw(surface).\n\n- Interfaces (signatures):\n  - Fighter.__init__(x: float, image_path: str, facing: str='right', is_ai: bool=False)\n  - Fighter.update(dt: float, floor_y: int)\n  - Fighter.draw(surface: pygame.Surface)\n  - Fighter.punch() -> bool (True if punch started)\n  - Fighter.check_punch_hit(other: Fighter) -> bool (True if hit this frame)\n  - Fighter.take_damage(amount: int)\n  - Fighter.apply_knockback(amount: float)\n\n- Coordinate convention:\n  - World uses pixels. Fighter.rect.midbottom is anchored to floor_y. Positive x to right, y increases downward.\n\n- Lifecycle:\n  - init_game() in main.py constructs fighters and resets health and timers.\n  - Play: handle events -> update fighters (when state=='playing') -> check hits -> render -> flip.\n  - Win/lose: when health <= 0, set state='ended', print \"WIN\" or \"GAME OVER\", freeze updates. R restarts (calls init_game), ESC quits.\n\nNow I will write the promised files.",
+    "truncated": false
+  },
+  "integration_check": {
+    "fingerprint": "a8011371a2d655d4dfead1fb65bcdafd94f012dbb02bffde678d6c43775428a1",
+    "step": 4,
+    "gates": {
+      "plan_and_files": "passed",
+      "syntax_or_import": "passed",
+      "boot": "passed"
+    },
+    "reason": null,
+    "diagnostics": {
+      "gates": {
+        "plan_and_files": "passed",
+        "syntax_or_import": "passed",
+        "boot": "passed"
+      },
+      "reason": null,
+      "commands": [
+        {
+          "returncode": 0,
+          "reason": null,
+          "seconds": 18.906,
+          "diagnostics": [
+            "CODER_SYNTAX_OK"
+          ],
+          "nonfatal_engine_diagnostics": 0,
+          "sandbox": {
+            "kind": "windows_appcontainer",
+            "token_is_appcontainer": true,
+            "network_capabilities": [],
+            "active_process_limit": 1
+          }
+        },
+        {
+          "returncode": 0,
+          "reason": null,
+          "seconds": 18.453,
+          "diagnostics": [
+            "pygame 2.6.1 (SDL 2.28.4, Python 3.11.9)",
+            "Hello from the pygame community. https://www.pygame.org/contribute.html",
+            "CODER_OBSERVED:{\"frames\": 38, \"inputs\": 0, \"game_lines\": 2928, \"loop_cycles\": 40, \"waiting_for_input\": false, \"pixel_colors\": 45}"
+          ],
+          "nonfatal_engine_diagnostics": 0,
+          "sandbox": {
+            "kind": "windows_appcontainer",
+            "token_is_appcontainer": true,
+            "network_capabilities": [],
+            "active_process_limit": 1
+          }
+        }
+      ]
+    },
+    "scope": "Integration only; full requirement gameplay not established"
+  },
+  "presentation": {
+    "status": "not_run",
+    "reason": "no_separate_presentation_probe"
+  },
+  "coverage_notes": null,
+  "requirement_coverage": [
+    {
+      "index": 0,
+      "planner_status": "full",
+      "check": "The game window title displays 'Dojo Duel'.",
+      "validator_status": "not_run",
+      "implementation_files": [],
+      "model_claim": null,
+      "limitations": [],
+      "coverage_evidence": "not_provided"
+    },
+    {
+      "index": 1,
+      "planner_status": "full",
+      "check": "A red-belt fighter sprite is visible on the left side of the screen at game start.",
+      "validator_status": "not_run",
+      "implementation_files": [],
+      "model_claim": null,
+      "limitations": [],
+      "coverage_evidence": "not_provided"
+    },
+    {
+      "index": 2,
+      "planner_status": "full",
+      "check": "A blue-belt fighter sprite is visible on the right side of the screen at game start.",
+      "validator_status": "not_run",
+      "implementation_files": [],
+      "model_claim": null,
+      "limitations": [],
+      "coverage_evidence": "not_provided"
+    },
+    {
+      "index": 3,
+      "planner_status": "full",
+      "check": "A wooden-brown rectangular area is drawn at the bottom of the screen, and both fighters are positioned on top of it.",
+      "validator_status": "not_run",
+      "implementation_files": [],
+      "model_claim": null,
+      "limitations": [],
+      "coverage_evidence": "not_provided"
+    },
+    {
+      "index": 4,
+      "planner_status": "full",
+      "check": "The background of the game window is filled with a light, solid color.",
+      "validator_status": "not_run",
+      "implementation_files": [],
+      "model_claim": null,
+      "limitations": [],
+      "coverage_evidence": "not_provided"
+    },
+    {
+      "index": 5,
+      "planner_status": "full",
+      "check": "When a fighter jumps, they fall back to the floor after reaching the apex of their jump.",
+      "validator_status": "not_run",
+      "implementation_files": [],
+      "model_claim": null,
+      "limitations": [],
+      "coverage_evidence": "not_provided"
+    },
+    {
+      "index": 6,
+      "planner_status": "full",
+      "check": "Pressing and holding LEFT arrow key moves the player's fighter to the left.",
+      "validator_status": "not_run",
+      "implementation_files": [],
+      "model_claim": null,
+      "limitations": [],
+      "coverage_evidence": "not_provided"
+    },
+    {
+      "index": 7,
+      "planner_status": "full",
+      "check": "Pressing and holding RIGHT arrow key moves the player's fighter to the right.",
+      "validator_status": "not_run",
+      "implementation_files": [],
+      "model_claim": null,
+      "limitations": [],
+      "coverage_evidence": "not_provided"
+    },
+    {
+      "index": 8,
+      "planner_status": "full",
+      "check": "Pressing UP arrow key makes the player's fighter move upwards and then fall back down.",
+      "validator_status": "not_run",
+      "implementation_files": [],
+      "model_claim": null,
+      "limitations": [],
+      "coverage_evidence": "not_provided"
+    },
+    {
+      "index": 9,
+      "planner_status": "full",
+      "check": "Pressing SPACE makes the player's fighter perform a punching animation/action.",
+      "validator_status": "not_run",
+      "implementation_files": [],
+      "model_claim": null,
+      "limitations": [],
+      "coverage_evidence": "not_provided"
+    },
+    {
+      "index": 10,
+      "planner_status": "full",
+      "check": "When a player's punch connects with the opponent, the opponent's x-position decreases (if facing right) or increases (if facing left) by a small amount.",
+      "validator_status": "not_run",
+      "implementation_files": [],
+      "model_claim": null,
+      "limitations": [],
+      "coverage_evidence": "not_provided"
+    },
+    {
+      "index": 11,
+      "planner_status": "full",
+      "check": "When a player's punch connects with the opponent, the opponent's sprite briefly changes to a white tint.",
+      "validator_status": "not_run",
+      "implementation_files": [],
+      "model_claim": null,
+      "limitations": [],
+      "coverage_evidence": "not_provided"
+    },
+    {
+      "index": 12,
+      "planner_status": "full",
+      "check": "When a player's punch connects with the opponent, the opponent's health bar decreases by 10 units.",
+      "validator_status": "not_run",
+      "implementation_files": [],
+      "model_claim": null,
+      "limitations": [],
+      "coverage_evidence": "not_provided"
+    },
+    {
+      "index": 13,
+      "planner_status": "full",
+      "check": "The rival fighter moves horizontally in the direction of the player fighter.",
+      "validator_status": "not_run",
+      "implementation_files": [],
+      "model_claim": null,
+      "limitations": [],
+      "coverage_evidence": "not_provided"
+    },
+    {
+      "index": 14,
+      "planner_status": "full",
+      "check": "When the rival fighter is within a certain distance of the player, it performs a punching action.",
+      "validator_status": "not_run",
+      "implementation_files": [],
+      "model_claim": null,
+      "limitations": [],
+      "coverage_evidence": "not_provided"
+    },
+    {
+      "index": 15,
+      "planner_status": "full",
+      "check": "After the rival punches, there is a delay of approximately one second before it can punch again.",
+      "validator_status": "not_run",
+      "implementation_files": [],
+      "model_claim": null,
+      "limitations": [],
+      "coverage_evidence": "not_provided"
+    },
+    {
+      "index": 16,
+      "planner_status": "full",
+      "check": "Both player and rival health bars start at full (representing 100 health).",
+      "validator_status": "not_run",
+      "implementation_files": [],
+      "model_claim": null,
+      "limitations": [],
+      "coverage_evidence": "not_provided"
+    },
+    {
+      "index": 17,
+      "planner_status": "full",
+      "check": "Two health bars, one for the player and one for the rival, are displayed at the top of the game screen.",
+      "validator_status": "not_run",
+      "implementation_files": [],
+      "model_claim": null,
+      "limitations": [],
+      "coverage_evidence": "not_provided"
+    },
+    {
+      "index": 18,
+      "planner_status": "full",
+      "check": "If the rival's health reaches 0, 'WIN' is displayed on screen. If the player's health reaches 0, 'GAME OVER' is displayed.",
+      "validator_status": "not_run",
+      "implementation_files": [],
+      "model_claim": null,
+      "limitations": [],
+      "coverage_evidence": "not_provided"
+    },
+    {
+      "index": 19,
+      "planner_status": "full",
+      "check": "After 'WIN' or 'GAME OVER' is displayed, no fighters move or react to input (except restart/quit).",
+      "validator_status": "not_run",
+      "implementation_files": [],
+      "model_claim": null,
+      "limitations": [],
+      "coverage_evidence": "not_provided"
+    },
+    {
+      "index": 20,
+      "planner_status": "full",
+      "check": "After a game ends, pressing 'R' resets the game state, including fighter positions and health, to the beginning.",
+      "validator_status": "not_run",
+      "implementation_files": [],
+      "model_claim": null,
+      "limitations": [],
+      "coverage_evidence": "not_provided"
+    },
+    {
+      "index": 21,
+      "planner_status": "full",
+      "check": "Pressing 'Escape' closes the game window.",
+      "validator_status": "not_run",
+      "implementation_files": [],
+      "model_claim": null,
+      "limitations": [],
+      "coverage_evidence": "not_provided"
+    },
+    {
+      "index": 22,
+      "planner_status": "full",
+      "check": "When the player presses LEFT, RIGHT, UP, SPACE, R, or ESCAPE, the corresponding action text is printed to the console.",
+      "validator_status": "not_run",
+      "implementation_files": [],
+      "model_claim": null,
+      "limitations": [],
+      "coverage_evidence": "not_provided"
+    },
+    {
+      "index": 23,
+      "planner_status": "full",
+      "check": "When the game ends, either 'WIN' or 'GAME OVER' is printed to the console.",
+      "validator_status": "not_run",
+      "implementation_files": [],
+      "model_claim": null,
+      "limitations": [],
+      "coverage_evidence": "not_provided"
+    }
+  ],
+  "coverage_status": "not_provided",
+  "file_inventory": {
+    "promised_count": 4,
+    "delivered_promised": [
+      "game/__init__.py",
+      "game/constants.py",
+      "game/fighter.py",
+      "game/main.py"
+    ],
+    "missing": [],
+    "engine_supplements": [],
+    "assets": [
+      "game/assets/blue_belt_fighter.png",
+      "game/assets/red_belt_fighter.png"
+    ],
+    "protected_tests": [],
+    "runtime_artifacts": [],
+    "unplanned": [],
+    "delivered_promised_count": 4
+  },
+  "plan_sha256": "45429275e95057419161b8f1eaef73a9151fa38f6a1e84c3e0a4c9e1cc4c6a94",
+  "game_sha256": {
+    "game/constants.py": "c07e87f4d11d829319a0d57a1f2e203d4006fec427ff726cdcc814ddd5cba565",
+    "game/fighter.py": "f31354e4c834a4351816d23d3a9b8778c8a5781dd0def386affb5c2f501abf9b",
+    "game/main.py": "dae9b618519f531475128367f5ba72eb157d63bf7b6407d363594f1cd157d7eb",
+    "game/__init__.py": "f46277dd24349e4f3083bb596c7d23153c0904dd4223a35546d646f6110ac5a9",
+    "game/assets/blue_belt_fighter.png": "899a24bd95fc0bf091145b9951361abab9dba2581e64dc1913bb24ecdd3c52f4",
+    "game/assets/red_belt_fighter.png": "1eed6f8bb14e27226351f48e2cec5434d5f9dc0b10dbc0b9f79999e453cc1cba"
+  }
+}

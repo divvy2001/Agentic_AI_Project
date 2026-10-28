@@ -1,0 +1,24 @@
+{
+  "renderer": "pygame",
+  "binary": "C:\\Users\\ASUS\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+  "args": [
+    "-I",
+    "-B",
+    "C:\\Users\\ASUS\\Work\\BOV5\\traces\\play-8b8605ec7bc64b5eb0850753be519884\\runtime\\play_child.py",
+    "game/main.py"
+  ],
+  "read_dirs": [
+    "C:\\Users\\ASUS\\AppData\\Local\\Programs\\Python\\Python311"
+  ],
+  "env": {
+    "SYSTEMROOT": "C:\\Windows",
+    "WINDIR": "C:\\Windows",
+    "COMSPEC": "C:\\Windows\\system32\\cmd.exe",
+    "PATHEXT": ".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.CPL",
+    "PYTHONIOENCODING": "utf-8",
+    "PYTHONUNBUFFERED": "1",
+    "PYTHONDONTWRITEBYTECODE": "1"
+  },
+  "timeout": 7200,
+  "backend": "C:\\Users\\ASUS\\Work\\BOV5\\coder_agent_adhoc\\windows_sandbox.py"
+}

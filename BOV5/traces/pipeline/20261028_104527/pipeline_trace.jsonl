@@ -1,0 +1,14 @@
+{"turn": 1, "t": 0.6, "stage": "start", "status": "ok", "detail": "spec=lantern_cave.md (1163 chars)"}
+{"turn": 2, "t": 46.4, "stage": "planner+assets", "status": "success", "detail": "renderer=terminal assets=none", "renderer": "terminal", "entry_point": "game/lantern_cave.py"}
+{"turn": 3, "t": 483.2, "stage": "logic_coder", "status": "ready_for_testing", "reason": null, "steps": 6, "cost": "$0.0260", "attempt_id": "2f80a462c8c040c1b3767af6ce4deb90"}
+{"turn": 4, "t": 510.8, "stage": "eval_generator", "status": "ok", "detail": "suite=run20261028_104527-s1 tests=10", "exit_code": 0}
+{"turn": 5, "t": 535.5, "stage": "runtime_tester", "status": "done", "round": 1, "counts": {"PASS": 4, "FAIL": 1, "NOT_RUN": 5}, "results": "traces/eval/run20261028_104527-s1/test_run_20261028_105358/test_results.json"}
+{"turn": 6, "t": 535.5, "stage": "decision", "status": "errors found", "round": 1, "detail": "1 failing test(s)"}
+{"turn": 7, "t": 870.7, "stage": "triage", "status": "ready_for_testing", "round": 1, "route": "logic_coder", "confidence": 0.8, "reason": ""}
+{"turn": 8, "t": 870.7, "stage": "coder_repair", "status": "ready_for_testing", "round": 1, "reason": null, "cost": "$0.0302"}
+{"turn": 9, "t": 894.1, "stage": "runtime_tester", "status": "done", "round": 2, "counts": {"PASS": 4, "FAIL": 1, "NOT_RUN": 5}, "results": "traces/eval/run20261028_104527-s1/test_run_20261028_105958/test_results.json"}
+{"turn": 10, "t": 894.1, "stage": "decision", "status": "errors found", "round": 2, "detail": "1 failing test(s)"}
+{"turn": 11, "t": 1111.9, "stage": "triage", "status": "ready_for_testing", "round": 2, "route": "logic_coder", "confidence": 0.8, "reason": ""}
+{"turn": 12, "t": 1111.9, "stage": "coder_repair", "status": "ready_for_testing", "round": 2, "reason": null, "cost": "$0.0051"}
+{"turn": 13, "t": 1133.1, "stage": "runtime_tester", "status": "done", "round": 3, "counts": {"PASS": 5, "NOT_RUN": 5}, "results": "traces/eval/run20261028_104527-s1/test_run_20261028_110359/test_results.json"}
+{"turn": 14, "t": 1133.1, "stage": "decision", "status": "no errors", "round": 3, "detail": "needs_review=0"}

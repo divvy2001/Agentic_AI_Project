@@ -1,0 +1,270 @@
+{
+  "schema_version": "1.0",
+  "suite_version": "run20261027_155310-s1",
+  "generated_at_utc": "2026-10-27T08:59:35.243160+00:00",
+  "renderer": "pygame",
+  "game_title": "Crumb Chase",
+  "generator": {
+    "backend": "openrouter",
+    "model": "openai/gpt-4.1-mini",
+    "scope": "controls"
+  },
+  "generation_notes": [
+    "Controls found and tested: arrow keys (up, down, left, right), R key for restart, ESC key for quit.",
+    "All controls have exact console output lines as per the play manual and are testable immediately after game start.",
+    "No controls were excluded as all required controls are named with exact console output lines.",
+    "Tests do not require special game states to validate controls, so all tests are marked ready_for_validator."
+  ],
+  "controls": [
+    {
+      "key": "up",
+      "does": "turn the mouse up",
+      "prints": "TURN UP",
+      "manual_quote": "Arrow Up: prints \"TURN UP\" and sets the mouse direction upward (KEYDOWN). Implemented in game/crumb_chase.py -> CrumbChaseGame.handle_events."
+    },
+    {
+      "key": "down",
+      "does": "turn the mouse down",
+      "prints": "TURN DOWN",
+      "manual_quote": "Arrow Down: prints \"TURN DOWN\". Implemented in game/crumb_chase.py."
+    },
+    {
+      "key": "left",
+      "does": "turn the mouse left",
+      "prints": "TURN LEFT",
+      "manual_quote": "Arrow Left: prints \"TURN LEFT\". Implemented in game/crumb_chase.py."
+    },
+    {
+      "key": "right",
+      "does": "turn the mouse right",
+      "prints": "TURN RIGHT",
+      "manual_quote": "Arrow Right: prints \"TURN RIGHT\". Implemented in game/crumb_chase.py."
+    },
+    {
+      "key": "r",
+      "does": "restart the game with 3 lives and score 0",
+      "prints": "RESTART",
+      "manual_quote": "R key: prints \"RESTART\" and resets the maze, mouse, cats, crumbs, score and lives to initial state (3 lives, score 0). Implemented in game/crumb_chase.py.reset_game."
+    },
+    {
+      "key": "esc",
+      "does": "quit the game",
+      "prints": "QUIT",
+      "manual_quote": "Escape or window close: prints \"QUIT\" and exits. Implemented in game/crumb_chase.py.handle_events."
+    }
+  ],
+  "source_hashes": {
+    "plans/coder_plan.json": "c0179e1dae6edfc927d714b0280cc9f6c7f512a495c41e6eb7e3602a130f1a50",
+    "plans/play_manual.json": "7d3267acdd8a7657fb391e24442a92f1fa0806494b2583e3fe6c51b9b21befcc",
+    "plans/asset_manifest.json": "2eaf7451d3097f92e2d714e9dfee6611dbd7dcc091320b9139667b8af44e6551"
+  },
+  "tests": [
+    {
+      "test_id": "C01",
+      "requirement_index": 3,
+      "requirement": "Arrow keys turn the mouse up, down, left, or right.",
+      "assertion": "Pressing the UP arrow key prints 'TURN UP' to stdout.",
+      "actions": [
+        {
+          "type": "wait",
+          "seconds": 1
+        },
+        {
+          "type": "press",
+          "key": "up"
+        },
+        {
+          "type": "wait",
+          "seconds": 1
+        }
+      ],
+      "observation": {
+        "method": "stdout",
+        "target": "TURN UP"
+      },
+      "expected": "TURN UP",
+      "status": "ready_for_validator",
+      "not_testable_reason": null,
+      "renderer": "pygame",
+      "timeout_seconds": 30,
+      "script_path": null
+    },
+    {
+      "test_id": "C02",
+      "requirement_index": 3,
+      "requirement": "Arrow keys turn the mouse up, down, left, or right.",
+      "assertion": "Pressing the DOWN arrow key prints 'TURN DOWN' to stdout.",
+      "actions": [
+        {
+          "type": "wait",
+          "seconds": 1
+        },
+        {
+          "type": "press",
+          "key": "down"
+        },
+        {
+          "type": "wait",
+          "seconds": 1
+        }
+      ],
+      "observation": {
+        "method": "stdout",
+        "target": "TURN DOWN"
+      },
+      "expected": "TURN DOWN",
+      "status": "ready_for_validator",
+      "not_testable_reason": null,
+      "renderer": "pygame",
+      "timeout_seconds": 30,
+      "script_path": null
+    },
+    {
+      "test_id": "C03",
+      "requirement_index": 3,
+      "requirement": "Arrow keys turn the mouse up, down, left, or right.",
+      "assertion": "Pressing the LEFT arrow key prints 'TURN LEFT' to stdout.",
+      "actions": [
+        {
+          "type": "wait",
+          "seconds": 1
+        },
+        {
+          "type": "press",
+          "key": "left"
+        },
+        {
+          "type": "wait",
+          "seconds": 1
+        }
+      ],
+      "observation": {
+        "method": "stdout",
+        "target": "TURN LEFT"
+      },
+      "expected": "TURN LEFT",
+      "status": "ready_for_validator",
+      "not_testable_reason": null,
+      "renderer": "pygame",
+      "timeout_seconds": 30,
+      "script_path": null
+    },
+    {
+      "test_id": "C04",
+      "requirement_index": 3,
+      "requirement": "Arrow keys turn the mouse up, down, left, or right.",
+      "assertion": "Pressing the RIGHT arrow key prints 'TURN RIGHT' to stdout.",
+      "actions": [
+        {
+          "type": "wait",
+          "seconds": 1
+        },
+        {
+          "type": "press",
+          "key": "right"
+        },
+        {
+          "type": "wait",
+          "seconds": 1
+        }
+      ],
+      "observation": {
+        "method": "stdout",
+        "target": "TURN RIGHT"
+      },
+      "expected": "TURN RIGHT",
+      "status": "ready_for_validator",
+      "not_testable_reason": null,
+      "renderer": "pygame",
+      "timeout_seconds": 30,
+      "script_path": null
+    },
+    {
+      "test_id": "C05",
+      "requirement_index": 20,
+      "requirement": "Print WIN or GAME OVER when the game ends.",
+      "assertion": "Pressing the 'r' key prints 'RESTART' to stdout and resets the game state.",
+      "actions": [
+        {
+          "type": "wait",
+          "seconds": 1
+        },
+        {
+          "type": "press",
+          "key": "r"
+        },
+        {
+          "type": "wait",
+          "seconds": 1
+        }
+      ],
+      "observation": {
+        "method": "stdout",
+        "target": "RESTART"
+      },
+      "expected": "RESTART",
+      "status": "ready_for_validator",
+      "not_testable_reason": null,
+      "renderer": "pygame",
+      "timeout_seconds": 30,
+      "script_path": null
+    },
+    {
+      "test_id": "C06",
+      "requirement_index": 21,
+      "requirement": "Use plain coloured shapes only; no images or sounds.",
+      "assertion": "Pressing the ESC key prints 'QUIT' to stdout and exits the game.",
+      "actions": [
+        {
+          "type": "wait",
+          "seconds": 1
+        },
+        {
+          "type": "press",
+          "key": "esc"
+        },
+        {
+          "type": "wait",
+          "seconds": 1
+        }
+      ],
+      "observation": {
+        "method": "stdout",
+        "target": "QUIT"
+      },
+      "expected": "QUIT",
+      "status": "ready_for_validator",
+      "not_testable_reason": null,
+      "renderer": "pygame",
+      "timeout_seconds": 30,
+      "script_path": null
+    }
+  ],
+  "summary": {
+    "total": 6,
+    "ready_for_validator": 6,
+    "not_testable": 0
+  },
+  "warnings": [
+    "Requirement 0 had no valid executable test and was marked not_testable",
+    "Requirement 1 had no valid executable test and was marked not_testable",
+    "Requirement 2 had no valid executable test and was marked not_testable",
+    "Requirement 4 had no valid executable test and was marked not_testable",
+    "Requirement 5 had no valid executable test and was marked not_testable",
+    "Requirement 6 had no valid executable test and was marked not_testable",
+    "Requirement 7 had no valid executable test and was marked not_testable",
+    "Requirement 8 had no valid executable test and was marked not_testable",
+    "Requirement 9 had no valid executable test and was marked not_testable",
+    "Requirement 10 had no valid executable test and was marked not_testable",
+    "Requirement 11 had no valid executable test and was marked not_testable",
+    "Requirement 12 had no valid executable test and was marked not_testable",
+    "Requirement 13 had no valid executable test and was marked not_testable",
+    "Requirement 14 had no valid executable test and was marked not_testable",
+    "Requirement 15 had no valid executable test and was marked not_testable",
+    "Requirement 16 had no valid executable test and was marked not_testable",
+    "Requirement 17 had no valid executable test and was marked not_testable",
+    "Requirement 18 had no valid executable test and was marked not_testable",
+    "Requirement 19 had no valid executable test and was marked not_testable"
+  ],
+  "important": "Generation is not execution. This file does not claim PASS and must not be used as test_results.json."
+}

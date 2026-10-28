@@ -1,0 +1,6 @@
+{
+  "game_title": "Godot Inventory Puzzle",
+  "objective": "Puzzle adventure with grid inventory, stackable keys, weight capacity, switches, linked doors and escape-room exit.",
+  "controls": "Click items and use displayed interaction controls. Include capacity boundary, wrong-key and partial-puzzle tests.",
+  "notes": "Generate test cases using documented controls only; do not invent test hooks."
+}

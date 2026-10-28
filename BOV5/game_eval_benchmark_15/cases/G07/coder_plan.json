@@ -1,0 +1,29 @@
+{
+  "game_title": "Pygame Platformer",
+  "description": "Side-scrolling platformer with running, jumping, gravity, platforms, coins, enemies, checkpoints and goal flag.",
+  "profile": {
+    "renderer": "pygame"
+  },
+  "requirements": [
+    {
+      "text": "Player runs and jumps only when grounded.",
+      "check": "Player runs and jumps only when grounded."
+    },
+    {
+      "text": "Player lands on platforms instead of falling through.",
+      "check": "Player lands on platforms instead of falling through."
+    },
+    {
+      "text": "Each coin increments the counter once.",
+      "check": "Each coin increments the counter once."
+    },
+    {
+      "text": "Enemy contact reduces one life and respawns at latest checkpoint.",
+      "check": "Enemy contact reduces one life and respawns at latest checkpoint."
+    },
+    {
+      "text": "Reaching goal completes the level.",
+      "check": "Reaching goal completes the level."
+    }
+  ]
+}

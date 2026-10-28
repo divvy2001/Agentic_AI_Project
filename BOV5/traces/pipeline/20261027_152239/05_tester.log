@@ -1,0 +1,19 @@
+Bo V4 Tester | Kitty Catch | pygame | 4 tests
+Suite script_path values are not executed; launch command is explicit.
+[1/4] C01 ...
+  PASS: Expected literal text was found in process output.
+[2/4] C02 ...
+  PASS: Expected literal text was found in process output.
+[3/4] C03 ...
+  FAIL: Expected literal text was not found. This does not by itself prove a game defect.
+[4/4] C04 ...
+  FAIL: Expected literal text was not found. This does not by itself prove a game defect.
+\nSUMMARY\n{
+  "total": 4,
+  "counts": {
+    "PASS": 2,
+    "FAIL": 2
+  }
+}
+Results: C:\Users\ASUS\Work\BOV5\traces\eval\run20261027_152239-s1\test_run_20261027_152823\test_results.json
+Evidence: C:\Users\ASUS\Work\BOV5\traces\eval\run20261027_152239-s1\test_run_20261027_152823\evidence

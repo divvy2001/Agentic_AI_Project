@@ -1,0 +1,23 @@
+{
+  "test_id": "T02",
+  "requirement_index": 1,
+  "requirement": "The left paddle moves up and down with W and S keys.",
+  "assertion": "Pressing 'W' moves the left paddle up; pressing 'S' moves the left paddle down.",
+  "expected": "Left paddle moves upward when 'W' is held and downward when 'S' is held",
+  "generator_status": "ready_for_validator",
+  "started_at_utc": "2026-10-26T15:25:49.817051+00:00",
+  "evidence_dir": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261026_231835-s1\\test_run_20261026_232549\\evidence\\T02",
+  "action_results": [],
+  "observations": [],
+  "status": "ERROR",
+  "reason": "FileNotFoundError: [WinError 2] The system cannot find the file specified",
+  "triage_hints": [
+    {
+      "category": "test_harness_or_integration",
+      "confidence": "high",
+      "reason": "Runner error; diagnose harness before game."
+    }
+  ],
+  "duration_seconds": 0.0,
+  "finished_at_utc": "2026-10-26T15:25:49.818052+00:00"
+}

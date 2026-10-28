@@ -1,0 +1,410 @@
+{
+  "schema_version": "1.0",
+  "run_id": "test-run-20261027_211812",
+  "created_at_utc": "2026-10-27T14:18:50.433414+00:00",
+  "suite_path": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261027_210628-s1\\suite.json",
+  "suite_version": "run20261027_210628-s1",
+  "game_title": "Dojo Duel",
+  "renderer": "godot",
+  "project_root": "C:\\Users\\ASUS\\Work\\BOV5",
+  "launch_command": "C:\\Users\\ASUS\\OneDrive\\Desktop\\Godot_v4.7.2-stable_win64.exe --path game",
+  "summary": {
+    "total": 4,
+    "counts": {
+      "FAIL": 3,
+      "PASS": 1
+    }
+  },
+  "results": [
+    {
+      "test_id": "C01",
+      "requirement_index": 7,
+      "requirement": "The Right arrow key walks the player right.",
+      "assertion": "Pressing LEFT arrow key prints 'MOVE LEFT' to the console.",
+      "expected": "MOVE LEFT",
+      "generator_status": "ready_for_validator",
+      "started_at_utc": "2026-10-27T14:18:12.836226+00:00",
+      "evidence_dir": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261027_210628-s1\\test_run_20261027_211812\\evidence\\C01",
+      "action_results": [
+        {
+          "type": "wait",
+          "at_utc": "2026-10-27T14:18:15.710511+00:00",
+          "status": "executed",
+          "seconds": 1.0,
+          "index": 0
+        },
+        {
+          "type": "press",
+          "at_utc": "2026-10-27T14:18:16.861070+00:00",
+          "status": "executed",
+          "window_focused": true,
+          "key": "left",
+          "index": 1
+        },
+        {
+          "type": "wait",
+          "at_utc": "2026-10-27T14:18:17.166150+00:00",
+          "status": "executed",
+          "seconds": 1.0,
+          "index": 2
+        },
+        {
+          "type": "wait",
+          "at_utc": "2026-10-27T14:18:18.320032+00:00",
+          "status": "executed",
+          "seconds": 1.0,
+          "retry": 1
+        },
+        {
+          "type": "press",
+          "at_utc": "2026-10-27T14:18:19.320877+00:00",
+          "status": "executed",
+          "window_focused": true,
+          "key": "left",
+          "retry": 1
+        },
+        {
+          "type": "wait",
+          "at_utc": "2026-10-27T14:18:19.625124+00:00",
+          "status": "executed",
+          "seconds": 1.0,
+          "retry": 1
+        },
+        {
+          "type": "wait",
+          "at_utc": "2026-10-27T14:18:20.776060+00:00",
+          "status": "executed",
+          "seconds": 1.0,
+          "retry": 2
+        },
+        {
+          "type": "press",
+          "at_utc": "2026-10-27T14:18:21.776554+00:00",
+          "status": "executed",
+          "window_focused": true,
+          "key": "left",
+          "retry": 2
+        },
+        {
+          "type": "wait",
+          "at_utc": "2026-10-27T14:18:22.080743+00:00",
+          "status": "executed",
+          "seconds": 1.0,
+          "retry": 2
+        }
+      ],
+      "observations": [
+        {
+          "method": "stdout",
+          "captured_at_utc": "2026-10-27T14:18:18.317817+00:00",
+          "text": "Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org\nVulkan 1.4.348 - Forward+ - Using Device #0: Intel - Intel(R) Graphics\n\nRIVAL PUNCH\nRIVAL PUNCH\n",
+          "stderr_tail": "ERROR: No loader found for resource: res://assets/red_belt_fighter.png (expected type: unknown)\n   at: _load (core/io/resource_loader.cpp:332)\n   GDScript backtrace (most recent call first):\n       [0] _ready (res://player.gd:22)\n       [1] spawn_fighters (res://ui.gd:56)\n       [2] _ready (res://ui.gd:47)\nERROR: No loader found for resource: res://assets/blue_belt_fighter.png (expected type: unknown)\n   at: _load (core/io/resource_loader.cpp:332)\n   GDScript backtrace (most recent call first):\n       [0] _ready (res://rival.gd:19)\n       [1] spawn_fighters (res://ui.gd:63)\n       [2] _ready (res://ui.gd:47)\n"
+        }
+      ],
+      "checked_output": "after first input action only",
+      "input_retries": 2,
+      "status": "FAIL",
+      "reason": "Expected literal text was not found. This does not by itself prove a game defect.",
+      "process": {
+        "pid": 25568,
+        "returncode": null
+      },
+      "runtime_evidence": {
+        "stdout_file": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261027_210628-s1\\test_run_20261027_211812\\evidence\\C01\\stdout.log",
+        "stderr_file": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261027_210628-s1\\test_run_20261027_211812\\evidence\\C01\\stderr.log",
+        "screenshot_file": null
+      },
+      "triage_hints": [
+        {
+          "category": "undetermined",
+          "confidence": "low",
+          "reason": "Insufficient diagnostic signals; compare brief, plan, code, assets and runtime evidence."
+        }
+      ],
+      "duration_seconds": 10.156,
+      "finished_at_utc": "2026-10-27T14:18:23.337185+00:00"
+    },
+    {
+      "test_id": "C02",
+      "requirement_index": 8,
+      "requirement": "The Up arrow key makes the player jump.",
+      "assertion": "Pressing RIGHT arrow key prints 'MOVE RIGHT' to the console.",
+      "expected": "MOVE RIGHT",
+      "generator_status": "ready_for_validator",
+      "started_at_utc": "2026-10-27T14:18:23.337185+00:00",
+      "evidence_dir": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261027_210628-s1\\test_run_20261027_211812\\evidence\\C02",
+      "action_results": [
+        {
+          "type": "wait",
+          "at_utc": "2026-10-27T14:18:25.856201+00:00",
+          "status": "executed",
+          "seconds": 1.0,
+          "index": 0
+        },
+        {
+          "type": "press",
+          "at_utc": "2026-10-27T14:18:27.007076+00:00",
+          "status": "executed",
+          "window_focused": true,
+          "key": "right",
+          "index": 1
+        },
+        {
+          "type": "wait",
+          "at_utc": "2026-10-27T14:18:27.313477+00:00",
+          "status": "executed",
+          "seconds": 1.0,
+          "index": 2
+        },
+        {
+          "type": "wait",
+          "at_utc": "2026-10-27T14:18:28.469747+00:00",
+          "status": "executed",
+          "seconds": 1.0,
+          "retry": 1
+        },
+        {
+          "type": "press",
+          "at_utc": "2026-10-27T14:18:29.470275+00:00",
+          "status": "executed",
+          "window_focused": true,
+          "key": "right",
+          "retry": 1
+        },
+        {
+          "type": "wait",
+          "at_utc": "2026-10-27T14:18:29.787861+00:00",
+          "status": "executed",
+          "seconds": 1.0,
+          "retry": 1
+        },
+        {
+          "type": "wait",
+          "at_utc": "2026-10-27T14:18:30.939560+00:00",
+          "status": "executed",
+          "seconds": 1.0,
+          "retry": 2
+        },
+        {
+          "type": "press",
+          "at_utc": "2026-10-27T14:18:31.939954+00:00",
+          "status": "executed",
+          "window_focused": true,
+          "key": "right",
+          "retry": 2
+        },
+        {
+          "type": "wait",
+          "at_utc": "2026-10-27T14:18:32.244706+00:00",
+          "status": "executed",
+          "seconds": 1.0,
+          "retry": 2
+        }
+      ],
+      "observations": [
+        {
+          "method": "stdout",
+          "captured_at_utc": "2026-10-27T14:18:28.464114+00:00",
+          "text": "Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org\nVulkan 1.4.348 - Forward+ - Using Device #0: Intel - Intel(R) Graphics\n\nRIVAL PUNCH\nRIVAL PUNCH\n",
+          "stderr_tail": "ERROR: No loader found for resource: res://assets/red_belt_fighter.png (expected type: unknown)\n   at: _load (core/io/resource_loader.cpp:332)\n   GDScript backtrace (most recent call first):\n       [0] _ready (res://player.gd:22)\n       [1] spawn_fighters (res://ui.gd:56)\n       [2] _ready (res://ui.gd:47)\nERROR: No loader found for resource: res://assets/blue_belt_fighter.png (expected type: unknown)\n   at: _load (core/io/resource_loader.cpp:332)\n   GDScript backtrace (most recent call first):\n       [0] _ready (res://rival.gd:19)\n       [1] spawn_fighters (res://ui.gd:63)\n       [2] _ready (res://ui.gd:47)\n"
+        }
+      ],
+      "checked_output": "after first input action only",
+      "input_retries": 2,
+      "status": "FAIL",
+      "reason": "Expected literal text was not found. This does not by itself prove a game defect.",
+      "process": {
+        "pid": 27044,
+        "returncode": null
+      },
+      "runtime_evidence": {
+        "stdout_file": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261027_210628-s1\\test_run_20261027_211812\\evidence\\C02\\stdout.log",
+        "stderr_file": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261027_210628-s1\\test_run_20261027_211812\\evidence\\C02\\stderr.log",
+        "screenshot_file": null
+      },
+      "triage_hints": [
+        {
+          "category": "undetermined",
+          "confidence": "low",
+          "reason": "Insufficient diagnostic signals; compare brief, plan, code, assets and runtime evidence."
+        }
+      ],
+      "duration_seconds": 10.188,
+      "finished_at_utc": "2026-10-27T14:18:33.532713+00:00"
+    },
+    {
+      "test_id": "C03",
+      "requirement_index": 9,
+      "requirement": "The Space key makes the player throw a punch.",
+      "assertion": "Pressing UP arrow key prints 'JUMP' to the console.",
+      "expected": "JUMP",
+      "generator_status": "ready_for_validator",
+      "started_at_utc": "2026-10-27T14:18:33.534725+00:00",
+      "evidence_dir": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261027_210628-s1\\test_run_20261027_211812\\evidence\\C03",
+      "action_results": [
+        {
+          "type": "wait",
+          "at_utc": "2026-10-27T14:18:36.044095+00:00",
+          "status": "executed",
+          "seconds": 1.0,
+          "index": 0
+        },
+        {
+          "type": "press",
+          "at_utc": "2026-10-27T14:18:37.195009+00:00",
+          "status": "executed",
+          "window_focused": true,
+          "key": "up",
+          "index": 1
+        },
+        {
+          "type": "wait",
+          "at_utc": "2026-10-27T14:18:37.498886+00:00",
+          "status": "executed",
+          "seconds": 1.0,
+          "index": 2
+        },
+        {
+          "type": "wait",
+          "at_utc": "2026-10-27T14:18:38.654344+00:00",
+          "status": "executed",
+          "seconds": 1.0,
+          "retry": 1
+        },
+        {
+          "type": "press",
+          "at_utc": "2026-10-27T14:18:39.654926+00:00",
+          "status": "executed",
+          "window_focused": true,
+          "key": "up",
+          "retry": 1
+        },
+        {
+          "type": "wait",
+          "at_utc": "2026-10-27T14:18:39.958831+00:00",
+          "status": "executed",
+          "seconds": 1.0,
+          "retry": 1
+        },
+        {
+          "type": "wait",
+          "at_utc": "2026-10-27T14:18:41.109460+00:00",
+          "status": "executed",
+          "seconds": 1.0,
+          "retry": 2
+        },
+        {
+          "type": "press",
+          "at_utc": "2026-10-27T14:18:42.109668+00:00",
+          "status": "executed",
+          "window_focused": true,
+          "key": "up",
+          "retry": 2
+        },
+        {
+          "type": "wait",
+          "at_utc": "2026-10-27T14:18:42.412952+00:00",
+          "status": "executed",
+          "seconds": 1.0,
+          "retry": 2
+        }
+      ],
+      "observations": [
+        {
+          "method": "stdout",
+          "captured_at_utc": "2026-10-27T14:18:38.649825+00:00",
+          "text": "Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org\nVulkan 1.4.348 - Forward+ - Using Device #0: Intel - Intel(R) Graphics\n\nRIVAL PUNCH\nRIVAL PUNCH\n",
+          "stderr_tail": "ERROR: No loader found for resource: res://assets/red_belt_fighter.png (expected type: unknown)\n   at: _load (core/io/resource_loader.cpp:332)\n   GDScript backtrace (most recent call first):\n       [0] _ready (res://player.gd:22)\n       [1] spawn_fighters (res://ui.gd:56)\n       [2] _ready (res://ui.gd:47)\nERROR: No loader found for resource: res://assets/blue_belt_fighter.png (expected type: unknown)\n   at: _load (core/io/resource_loader.cpp:332)\n   GDScript backtrace (most recent call first):\n       [0] _ready (res://rival.gd:19)\n       [1] spawn_fighters (res://ui.gd:63)\n       [2] _ready (res://ui.gd:47)\n"
+        }
+      ],
+      "checked_output": "after first input action only",
+      "input_retries": 2,
+      "status": "FAIL",
+      "reason": "Expected literal text was not found. This does not by itself prove a game defect.",
+      "process": {
+        "pid": 16428,
+        "returncode": null
+      },
+      "runtime_evidence": {
+        "stdout_file": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261027_210628-s1\\test_run_20261027_211812\\evidence\\C03\\stdout.log",
+        "stderr_file": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261027_210628-s1\\test_run_20261027_211812\\evidence\\C03\\stderr.log",
+        "screenshot_file": null
+      },
+      "triage_hints": [
+        {
+          "category": "undetermined",
+          "confidence": "low",
+          "reason": "Insufficient diagnostic signals; compare brief, plan, code, assets and runtime evidence."
+        }
+      ],
+      "duration_seconds": 10.14,
+      "finished_at_utc": "2026-10-27T14:18:43.674830+00:00"
+    },
+    {
+      "test_id": "C04",
+      "requirement_index": 10,
+      "requirement": "Punches knock the opponent back with realistic physics.",
+      "assertion": "Pressing SPACE key prints 'PUNCH' to the console.",
+      "expected": "PUNCH",
+      "generator_status": "ready_for_validator",
+      "started_at_utc": "2026-10-27T14:18:43.677183+00:00",
+      "evidence_dir": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261027_210628-s1\\test_run_20261027_211812\\evidence\\C04",
+      "action_results": [
+        {
+          "type": "wait",
+          "at_utc": "2026-10-27T14:18:46.185081+00:00",
+          "status": "executed",
+          "seconds": 1.0,
+          "index": 0
+        },
+        {
+          "type": "press",
+          "at_utc": "2026-10-27T14:18:47.335686+00:00",
+          "status": "executed",
+          "window_focused": true,
+          "key": "space",
+          "index": 1
+        },
+        {
+          "type": "wait",
+          "at_utc": "2026-10-27T14:18:47.639502+00:00",
+          "status": "executed",
+          "seconds": 1.0,
+          "index": 2
+        }
+      ],
+      "observations": [
+        {
+          "method": "stdout",
+          "captured_at_utc": "2026-10-27T14:18:48.789976+00:00",
+          "text": "Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org\nVulkan 1.4.348 - Forward+ - Using Device #0: Intel - Intel(R) Graphics\n\nRIVAL PUNCH\nPUNCH\nRIVAL PUNCH\n",
+          "stderr_tail": "ERROR: No loader found for resource: res://assets/red_belt_fighter.png (expected type: unknown)\n   at: _load (core/io/resource_loader.cpp:332)\n   GDScript backtrace (most recent call first):\n       [0] _ready (res://player.gd:22)\n       [1] spawn_fighters (res://ui.gd:56)\n       [2] _ready (res://ui.gd:47)\nERROR: No loader found for resource: res://assets/blue_belt_fighter.png (expected type: unknown)\n   at: _load (core/io/resource_loader.cpp:332)\n   GDScript backtrace (most recent call first):\n       [0] _ready (res://rival.gd:19)\n       [1] spawn_fighters (res://ui.gd:63)\n       [2] _ready (res://ui.gd:47)\n"
+        }
+      ],
+      "checked_output": "after first input action only",
+      "input_retries": 0,
+      "status": "PASS",
+      "reason": "Expected literal text was found in process output.",
+      "process": {
+        "pid": 13068,
+        "returncode": null
+      },
+      "runtime_evidence": {
+        "stdout_file": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261027_210628-s1\\test_run_20261027_211812\\evidence\\C04\\stdout.log",
+        "stderr_file": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261027_210628-s1\\test_run_20261027_211812\\evidence\\C04\\stderr.log",
+        "screenshot_file": null
+      },
+      "triage_hints": [
+        {
+          "category": "undetermined",
+          "confidence": "low",
+          "reason": "Insufficient diagnostic signals; compare brief, plan, code, assets and runtime evidence."
+        }
+      ],
+      "duration_seconds": 5.219,
+      "finished_at_utc": "2026-10-27T14:18:48.902762+00:00"
+    }
+  ],
+  "project_inventory": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261027_210628-s1\\test_run_20261027_211812\\project_inventory.json",
+  "triage_note": "Hints are heuristics, not definitive root-cause labels. Correlate brief, plan, code, asset manifest and runtime evidence."
+}

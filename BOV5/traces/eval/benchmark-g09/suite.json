@@ -1,0 +1,269 @@
+{
+  "schema_version": "1.0",
+  "suite_version": "benchmark-g09",
+  "generated_at_utc": "2026-10-26T04:12:19.624896+00:00",
+  "renderer": "pygame",
+  "game_title": "Pygame Lane Racer",
+  "generator": {
+    "backend": "openrouter",
+    "model": "openai/gpt-4.1-mini"
+  },
+  "generation_notes": [
+    "Tests cover lane boundary enforcement by repeated lane change inputs to left and right edges.",
+    "Traffic obstacle presence and movement verified by observing positions after wait period.",
+    "Collision penalty tested by observing penalty count before and after sustained collision frames.",
+    "Distance progression tested during active play and after game over to confirm pause.",
+    "Race completion tested by waiting sufficient time to reach finish distance and observing race status."
+  ],
+  "generation_usage": {
+    "prompt_tokens": 607,
+    "completion_tokens": 1317,
+    "total_tokens": 1924,
+    "provider_reported_cost_usd": 0.00235,
+    "estimated_cost_usd": 0.00235,
+    "cost_source": "OpenRouter usage.cost"
+  },
+  "source_hashes": {
+    "game_eval_benchmark_15/cases/G09/coder_plan.json": "ff39caf451194e9087a7419b14d282b8ce61df6a4bbc8e6759dd45a06d8a2f97",
+    "game_eval_benchmark_15/cases/G09/play_manual.json": "5324e381e4fbba95b8a56f6f40b23f737d6fa25a80a68f9894e96bff277bbe3d"
+  },
+  "tests": [
+    {
+      "test_id": "T01",
+      "requirement_index": 0,
+      "requirement": "Lane changes stay within three valid lanes.",
+      "assertion": "Player lane position remains within lanes 1 to 3 after multiple left/right inputs",
+      "actions": [
+        {
+          "type": "press",
+          "value": "left",
+          "duration_frames": 5
+        },
+        {
+          "type": "press",
+          "value": "left",
+          "duration_frames": 5
+        },
+        {
+          "type": "press",
+          "value": "left",
+          "duration_frames": 5
+        },
+        {
+          "type": "observe",
+          "value": "player_lane",
+          "duration_frames": 1
+        }
+      ],
+      "observation": {
+        "method": "game_state",
+        "target": "player_lane"
+      },
+      "expected": "player_lane is 1 (minimum lane) and does not go below 1",
+      "status": "ready_for_validator",
+      "not_testable_reason": null,
+      "renderer": "pygame",
+      "timeout_seconds": 30,
+      "script_path": null
+    },
+    {
+      "test_id": "T02",
+      "requirement_index": 0,
+      "requirement": "Lane changes stay within three valid lanes.",
+      "assertion": "Player lane position remains within lanes 1 to 3 after multiple right inputs",
+      "actions": [
+        {
+          "type": "press",
+          "value": "right",
+          "duration_frames": 5
+        },
+        {
+          "type": "press",
+          "value": "right",
+          "duration_frames": 5
+        },
+        {
+          "type": "press",
+          "value": "right",
+          "duration_frames": 5
+        },
+        {
+          "type": "observe",
+          "value": "player_lane",
+          "duration_frames": 1
+        }
+      ],
+      "observation": {
+        "method": "game_state",
+        "target": "player_lane"
+      },
+      "expected": "player_lane is 3 (maximum lane) and does not exceed 3",
+      "status": "ready_for_validator",
+      "not_testable_reason": null,
+      "renderer": "pygame",
+      "timeout_seconds": 30,
+      "script_path": null
+    },
+    {
+      "test_id": "T03",
+      "requirement_index": 1,
+      "requirement": "Traffic obstacles approach during active play.",
+      "assertion": "Traffic obstacles appear and move towards player during active play",
+      "actions": [
+        {
+          "type": "wait",
+          "duration_frames": 60
+        },
+        {
+          "type": "observe",
+          "value": "traffic_positions",
+          "duration_frames": 1
+        }
+      ],
+      "observation": {
+        "method": "game_state",
+        "target": "traffic_positions"
+      },
+      "expected": "Traffic obstacles are present and their positions move closer to the player over time",
+      "status": "ready_for_validator",
+      "not_testable_reason": null,
+      "renderer": "pygame",
+      "timeout_seconds": 30,
+      "script_path": null
+    },
+    {
+      "test_id": "T04",
+      "requirement_index": 2,
+      "requirement": "A collision applies one penalty rather than repeated penalties for persistent contact.",
+      "assertion": "A single collision applies one penalty even if contact persists over multiple frames",
+      "actions": [
+        {
+          "type": "wait",
+          "duration_frames": 30
+        },
+        {
+          "type": "press",
+          "value": "right",
+          "duration_frames": 5
+        },
+        {
+          "type": "wait",
+          "duration_frames": 1
+        },
+        {
+          "type": "observe",
+          "value": "penalty_count",
+          "duration_frames": 1
+        },
+        {
+          "type": "wait",
+          "duration_frames": 10
+        },
+        {
+          "type": "observe",
+          "value": "penalty_count",
+          "duration_frames": 1
+        }
+      ],
+      "observation": {
+        "method": "game_state",
+        "target": "penalty_count"
+      },
+      "expected": "Penalty count increases by 1 upon collision and does not increase further while contact persists",
+      "status": "ready_for_validator",
+      "not_testable_reason": null,
+      "renderer": "pygame",
+      "timeout_seconds": 30,
+      "script_path": null
+    },
+    {
+      "test_id": "T05",
+      "requirement_index": 3,
+      "requirement": "Distance increases during active play and pauses after game over.",
+      "assertion": "Distance increases during active play and stops increasing after game over",
+      "actions": [
+        {
+          "type": "wait",
+          "duration_frames": 60
+        },
+        {
+          "type": "observe",
+          "value": "distance",
+          "duration_frames": 1
+        },
+        {
+          "type": "press",
+          "value": "right",
+          "duration_frames": 5
+        },
+        {
+          "type": "wait",
+          "duration_frames": 30
+        },
+        {
+          "type": "observe",
+          "value": "distance",
+          "duration_frames": 1
+        },
+        {
+          "type": "wait",
+          "duration_frames": 10
+        },
+        {
+          "type": "observe",
+          "value": "distance",
+          "duration_frames": 1
+        }
+      ],
+      "observation": {
+        "method": "game_state",
+        "target": "distance"
+      },
+      "expected": "Distance increases during active play; after game over distance value remains constant",
+      "status": "ready_for_validator",
+      "not_testable_reason": null,
+      "renderer": "pygame",
+      "timeout_seconds": 30,
+      "script_path": null
+    },
+    {
+      "test_id": "T06",
+      "requirement_index": 4,
+      "requirement": "Reaching finish distance completes the race.",
+      "assertion": "Reaching finish distance triggers race completion",
+      "actions": [
+        {
+          "type": "wait",
+          "duration_frames": 300
+        },
+        {
+          "type": "observe",
+          "value": "distance",
+          "duration_frames": 1
+        },
+        {
+          "type": "observe",
+          "value": "race_status",
+          "duration_frames": 1
+        }
+      ],
+      "observation": {
+        "method": "game_state",
+        "target": "race_status"
+      },
+      "expected": "When distance reaches or exceeds finish distance, race_status indicates completion",
+      "status": "ready_for_validator",
+      "not_testable_reason": null,
+      "renderer": "pygame",
+      "timeout_seconds": 30,
+      "script_path": null
+    }
+  ],
+  "summary": {
+    "total": 6,
+    "ready_for_validator": 6,
+    "not_testable": 0
+  },
+  "warnings": [],
+  "important": "Generation is not execution. This file does not claim PASS and must not be used as test_results.json."
+}\n

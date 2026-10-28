@@ -1,0 +1,7 @@
+{
+  "game_id": "G14",
+  "game_title": "Godot Stealth Infiltration",
+  "complexity": "complex",
+  "renderer": "godot",
+  "description": "Stealth game with patrols, vision cones, occlusion, noise propagation, suspicion, hiding spots, keycard doors, alarms and extraction."
+}

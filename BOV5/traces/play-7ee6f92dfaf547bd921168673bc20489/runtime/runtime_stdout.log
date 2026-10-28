@@ -1,0 +1,11 @@
+pygame 2.6.1 (SDL 2.28.4, Python 3.11.9)
+Hello from the pygame community. https://www.pygame.org/contribute.html
+[EVENT] LIVES:2
+[EVENT] LIVES:1
+[EVENT] LIVES:0
+[EVENT] LOSE
+[EVENT] SCORE:10
+[EVENT] SCORE:20
+[EVENT] SCORE:30
+[EVENT] SCORE:40
+[EVENT] SCORE:50

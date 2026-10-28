@@ -1,0 +1,26 @@
+{
+  "schema_version": "1.0",
+  "suite_version": "tester-demo",
+  "renderer": "terminal",
+  "game_title": "Tester Demo",
+  "tests": [
+    {
+      "test_id": "T01",
+      "requirement_index": 0,
+      "requirement": "Print READY",
+      "assertion": "READY",
+      "actions": [
+        {
+          "type": "wait",
+          "seconds": 0.2
+        }
+      ],
+      "observation": {
+        "method": "stdout"
+      },
+      "expected": "READY",
+      "status": "ready_for_validator",
+      "timeout_seconds": 5
+    }
+  ]
+}

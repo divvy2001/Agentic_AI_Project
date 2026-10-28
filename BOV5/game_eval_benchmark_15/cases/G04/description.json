@@ -1,0 +1,7 @@
+{
+  "game_id": "G04",
+  "game_title": "Pygame Breakout",
+  "complexity": "simple",
+  "renderer": "pygame",
+  "description": "Breakout game with paddle, ball, bricks, wall/paddle collisions, score and a win state after all bricks are cleared."
+}

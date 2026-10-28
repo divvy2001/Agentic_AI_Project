@@ -1,0 +1,14 @@
+{
+  "state": "committed",
+  "backup": "backups/game-20261026T142930Z-c5ba112daf",
+  "staging": ".coder-game-c5ba112daf",
+  "original_files": {
+    "assets/.gitkeep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "preserved_files": [],
+  "stale_files": [
+    "assets/.gitkeep"
+  ],
+  "plan_sha256": "16dd4ed701a75eafa7bb674bb432c4067c257cb81ea4a060cb1d262188f03a6d",
+  "attempt_id": "18ddabe1ebce449dbbdf67f41f81cc12"
+}

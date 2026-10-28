@@ -1,0 +1,25 @@
+{
+  "game_title": "Terminal Snake",
+  "description": "Grid-based Snake; continuous movement, food collection and growth, no direct reversal, and game over on wall/self collision.",
+  "profile": {
+    "renderer": "terminal"
+  },
+  "requirements": [
+    {
+      "text": "Snake advances one cell per tick.",
+      "check": "Snake advances one cell per tick."
+    },
+    {
+      "text": "Eating food grows the snake by one and relocates food.",
+      "check": "Eating food grows the snake by one and relocates food."
+    },
+    {
+      "text": "Opposite-direction input is ignored if it would cause immediate self-collision.",
+      "check": "Opposite-direction input is ignored if it would cause immediate self-collision."
+    },
+    {
+      "text": "Wall or self collision ends the game.",
+      "check": "Wall or self collision ends the game."
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+[application]
+config/name="Neon Serpent"
+run/main_scene="res://main.tscn"
+
+[rendering]
+quality/driver/driver_name="GLES3"

@@ -1,0 +1,28 @@
+{
+  "state": "committed",
+  "backup": "backups/game-20261026T211623Z-52c5445d5b",
+  "staging": ".coder-game-52c5445d5b",
+  "original_files": {
+    "food.py": "4f1b45a5890de784db693e3d568f2babe9f289e870d432860a44c4fca52d6a9e",
+    "snake.py": "1e19f3ea48713bf092a03a894f075dd880e0d7df87c846b73de78ca1e3bac9ed",
+    "snake_game.py": "066e1a8d819b15a9556fc6e60ece6245cb1ee96ed8c16105bf29b7f2d60c95e8",
+    "__init__.py": "4609881f60e51a8283561e1b62de75942e4e9d0dba6aa286721132280e2fe53d",
+    "__pycache__/food.cpython-311.pyc": "dada05260b731ad5ca59b632ed368a775a116620569817bc631572e9865f3c53",
+    "__pycache__/snake.cpython-311.pyc": "3a95c192fbf6e619603ee19aefcfddf436e96308ad6c2470e07359f8c4d4e8ff",
+    "__pycache__/snake_game.cpython-311.pyc": "d282bc1259d621d5844a8336e2ac441fd036b7b755d380316a7a5d59c5dabf45",
+    "__pycache__/__init__.cpython-311.pyc": "bdebef80486f2e4fad2c6cba6cc6c0a90d734a4e57c6983dd9f231f35c277024"
+  },
+  "preserved_files": [],
+  "stale_files": [
+    "__init__.py",
+    "__pycache__/__init__.cpython-311.pyc",
+    "__pycache__/food.cpython-311.pyc",
+    "__pycache__/snake.cpython-311.pyc",
+    "__pycache__/snake_game.cpython-311.pyc",
+    "food.py",
+    "snake.py",
+    "snake_game.py"
+  ],
+  "plan_sha256": "3ee4c4e312eacf84962a59df8c37a99683609aeb3e0b8e12f7bea7b90d2eb2fa",
+  "attempt_id": "4c86d4050d5d42a2b9cc1651b3b2b8a5"
+}

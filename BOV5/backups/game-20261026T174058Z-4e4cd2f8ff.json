@@ -1,0 +1,20 @@
+{
+  "state": "committed",
+  "backup": "backups/game-20261026T174058Z-4e4cd2f8ff",
+  "staging": ".coder-game-4e4cd2f8ff",
+  "original_files": {
+    "pong.py": "a9bd7f859a525f7513b951ccd010b478a30666225e3493831bc3829178403021",
+    "__init__.py": "23fba0edbacb03777da3c5b7061cad26c2012be3b20814ce5fd62a39c01cbd71",
+    "__pycache__/pong.cpython-311.pyc": "e01d23d5a0fef99bbb01718d991600db51fae3a16a40552ff654b52920649cbd",
+    "__pycache__/__init__.cpython-311.pyc": "d097766eec13016771ac5eac9f0200855331db437e5fd2511d5d642f1ca36ccd"
+  },
+  "preserved_files": [],
+  "stale_files": [
+    "__init__.py",
+    "__pycache__/__init__.cpython-311.pyc",
+    "__pycache__/pong.cpython-311.pyc",
+    "pong.py"
+  ],
+  "plan_sha256": "3ee4c4e312eacf84962a59df8c37a99683609aeb3e0b8e12f7bea7b90d2eb2fa",
+  "attempt_id": "f4c275626ded420d8d4b032fd0c06361"
+}

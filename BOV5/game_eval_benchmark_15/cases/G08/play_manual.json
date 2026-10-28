@@ -1,0 +1,6 @@
+{
+  "game_title": "Pygame Top-Down Dungeon",
+  "objective": "Dungeon crawler with four-way movement, walls, keys, locked doors, health, melee attacks, enemies and exit.",
+  "controls": "Use arrows/WASD and displayed attack/interact controls. Observe health, inventory, door state and scene state.",
+  "notes": "Generate test cases using documented controls only; do not invent test hooks."
+}

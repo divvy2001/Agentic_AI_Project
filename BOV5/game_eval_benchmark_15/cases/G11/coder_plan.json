@@ -1,0 +1,29 @@
+{
+  "game_title": "Godot Inventory Puzzle",
+  "description": "Puzzle adventure with grid inventory, stackable keys, weight capacity, switches, linked doors and escape-room exit.",
+  "profile": {
+    "renderer": "godot"
+  },
+  "requirements": [
+    {
+      "text": "Pickup updates inventory only when capacity allows.",
+      "check": "Pickup updates inventory only when capacity allows."
+    },
+    {
+      "text": "Only stackable item types stack.",
+      "check": "Only stackable item types stack."
+    },
+    {
+      "text": "Correct key opens matching door; wrong key does not.",
+      "check": "Correct key opens matching door; wrong key does not."
+    },
+    {
+      "text": "Switch activation changes linked door/platform state.",
+      "check": "Switch activation changes linked door/platform state."
+    },
+    {
+      "text": "Exit remains locked until all three required mechanisms are activated.",
+      "check": "Exit remains locked until all three required mechanisms are activated."
+    }
+  ]
+}

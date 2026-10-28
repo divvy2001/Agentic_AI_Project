@@ -1,0 +1,7 @@
+{
+  "game_id": "G10",
+  "game_title": "Godot Tower Defense",
+  "complexity": "medium",
+  "renderer": "godot",
+  "description": "Tower-defense game with enemy waves, path-following enemies, currency, tower placement/upgrades and base health."
+}

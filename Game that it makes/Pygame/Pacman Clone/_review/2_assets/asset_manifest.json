@@ -1,0 +1,12 @@
+{
+  "task_id": "Crumb Chase",
+  "framework": "pygame",
+  "game_style": "maze game",
+  "output_dir": "game/assets",
+  "assets": [],
+  "validation": {
+    "passed": false,
+    "status": "failed",
+    "errors": []
+  }
+}

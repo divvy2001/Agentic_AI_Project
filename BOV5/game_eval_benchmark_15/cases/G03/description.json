@@ -1,0 +1,7 @@
+{
+  "game_id": "G03",
+  "game_title": "Pygame Dodger",
+  "complexity": "simple",
+  "renderer": "pygame",
+  "description": "Move horizontally to dodge falling blocks; survival time increases score, collision ends the round, and restart begins a new round."
+}

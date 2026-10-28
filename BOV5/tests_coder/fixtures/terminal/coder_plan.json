@@ -1,0 +1,55 @@
+{
+  "status": "success",
+  "game_title": "Repair fixture terminal — Score reaches three",
+  "profile": {
+    "genre": "Score counter",
+    "renderer": "terminal",
+    "dimensions": "text",
+    "pace": "turn-based",
+    "players": 1
+  },
+  "requirements": [
+    {
+      "text": "At exactly 3 points the game reaches WIN state.",
+      "priority": "core",
+      "status": "full",
+      "check": "After three valid score actions, the game is in WIN state.",
+      "milestone": 1,
+      "quote": "At exactly 3 points the game reaches WIN state."
+    },
+    {
+      "text": "Before 3 points the game remains PLAYING or ONGOING.",
+      "priority": "core",
+      "status": "full",
+      "check": "After only two valid score actions, the game has not won.",
+      "milestone": 1,
+      "quote": "Before 3 points the game remains in play."
+    }
+  ],
+  "architecture": {
+    "entry_point": "game/main.py",
+    "files": [
+      {
+        "path": "game/__init__.py",
+        "purpose": "package marker"
+      },
+      {
+        "path": "game/main.py",
+        "purpose": "Runnable game or score state for repair fixture"
+      }
+    ],
+    "dependencies": [],
+    "assets": {
+      "strategy": "none",
+      "strategy_rationale": "No art needed for this score logic test",
+      "sprites": []
+    },
+    "extensions": {},
+    "resolution": null,
+    "fps": null,
+    "requires_input": true,
+    "test_input_example": "1\\n1\\n1\\n",
+    "complexity_warning": null
+  },
+  "unmapped": []
+}

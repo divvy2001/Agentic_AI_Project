@@ -1,0 +1,453 @@
+{
+  "schema_version": "1.0",
+  "run_id": "test-run-20261027_192355",
+  "created_at_utc": "2026-10-27T12:24:48.830883+00:00",
+  "suite_path": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261027_191556-s1\\suite.json",
+  "suite_version": "run20261027_191556-s1",
+  "game_title": "Bounce Keeper",
+  "renderer": "godot",
+  "project_root": "C:\\Users\\ASUS\\Work\\BOV5",
+  "launch_command": "C:\\Users\\ASUS\\OneDrive\\Desktop\\Godot_v4.7.2-stable_win64.exe --path game",
+  "summary": {
+    "total": 4,
+    "counts": {
+      "FAIL": 4
+    }
+  },
+  "results": [
+    {
+      "test_id": "C01",
+      "requirement_index": 1,
+      "requirement": "A paddle near the bottom of the window slides left and right with the arrow keys.",
+      "assertion": "Pressing LEFT arrow key prints 'MOVE LEFT' to the console.",
+      "expected": "MOVE LEFT",
+      "generator_status": "ready_for_validator",
+      "started_at_utc": "2026-10-27T12:23:55.667148+00:00",
+      "evidence_dir": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261027_191556-s1\\test_run_20261027_192355\\evidence\\C01",
+      "action_results": [
+        {
+          "type": "wait",
+          "at_utc": "2026-10-27T12:23:58.533160+00:00",
+          "status": "executed",
+          "seconds": 1.0,
+          "index": 0
+        },
+        {
+          "type": "press",
+          "at_utc": "2026-10-27T12:23:59.683545+00:00",
+          "status": "executed",
+          "window_focused": true,
+          "key": "left",
+          "index": 1
+        },
+        {
+          "type": "wait",
+          "at_utc": "2026-10-27T12:23:59.989831+00:00",
+          "status": "executed",
+          "seconds": 1.0,
+          "index": 2
+        },
+        {
+          "type": "wait",
+          "at_utc": "2026-10-27T12:24:01.142271+00:00",
+          "status": "executed",
+          "seconds": 1.0,
+          "retry": 1
+        },
+        {
+          "type": "press",
+          "at_utc": "2026-10-27T12:24:02.143557+00:00",
+          "status": "executed",
+          "window_focused": true,
+          "key": "left",
+          "retry": 1
+        },
+        {
+          "type": "wait",
+          "at_utc": "2026-10-27T12:24:02.446588+00:00",
+          "status": "executed",
+          "seconds": 1.0,
+          "retry": 1
+        },
+        {
+          "type": "wait",
+          "at_utc": "2026-10-27T12:24:03.596898+00:00",
+          "status": "executed",
+          "seconds": 1.0,
+          "retry": 2
+        },
+        {
+          "type": "press",
+          "at_utc": "2026-10-27T12:24:04.597269+00:00",
+          "status": "executed",
+          "window_focused": true,
+          "key": "left",
+          "retry": 2
+        },
+        {
+          "type": "wait",
+          "at_utc": "2026-10-27T12:24:04.901482+00:00",
+          "status": "executed",
+          "seconds": 1.0,
+          "retry": 2
+        }
+      ],
+      "observations": [
+        {
+          "method": "stdout",
+          "captured_at_utc": "2026-10-27T12:24:01.140751+00:00",
+          "text": "Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org\nVulkan 1.4.348 - Forward+ - Using Device #0: Intel - Intel(R) Graphics\n\n",
+          "stderr_tail": ""
+        }
+      ],
+      "checked_output": "after first input action only",
+      "input_retries": 2,
+      "status": "FAIL",
+      "reason": "Expected literal text was not found. This does not by itself prove a game defect.",
+      "process": {
+        "pid": 27024,
+        "returncode": null
+      },
+      "runtime_evidence": {
+        "stdout_file": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261027_191556-s1\\test_run_20261027_192355\\evidence\\C01\\stdout.log",
+        "stderr_file": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261027_191556-s1\\test_run_20261027_192355\\evidence\\C01\\stderr.log",
+        "screenshot_file": null
+      },
+      "triage_hints": [
+        {
+          "category": "undetermined",
+          "confidence": "low",
+          "reason": "Insufficient diagnostic signals; compare brief, plan, code, assets and runtime evidence."
+        }
+      ],
+      "duration_seconds": 10.157,
+      "finished_at_utc": "2026-10-27T12:24:06.161339+00:00"
+    },
+    {
+      "test_id": "C02",
+      "requirement_index": 1,
+      "requirement": "A paddle near the bottom of the window slides left and right with the arrow keys.",
+      "assertion": "Pressing RIGHT arrow key prints 'MOVE RIGHT' to the console.",
+      "expected": "MOVE RIGHT",
+      "generator_status": "ready_for_validator",
+      "started_at_utc": "2026-10-27T12:24:06.161339+00:00",
+      "evidence_dir": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261027_191556-s1\\test_run_20261027_192355\\evidence\\C02",
+      "action_results": [
+        {
+          "type": "wait",
+          "at_utc": "2026-10-27T12:24:08.675643+00:00",
+          "status": "executed",
+          "seconds": 1.0,
+          "index": 0
+        },
+        {
+          "type": "press",
+          "at_utc": "2026-10-27T12:24:09.826904+00:00",
+          "status": "executed",
+          "window_focused": true,
+          "key": "right",
+          "index": 1
+        },
+        {
+          "type": "wait",
+          "at_utc": "2026-10-27T12:24:10.129835+00:00",
+          "status": "executed",
+          "seconds": 1.0,
+          "index": 2
+        },
+        {
+          "type": "wait",
+          "at_utc": "2026-10-27T12:24:11.282886+00:00",
+          "status": "executed",
+          "seconds": 1.0,
+          "retry": 1
+        },
+        {
+          "type": "press",
+          "at_utc": "2026-10-27T12:24:12.283221+00:00",
+          "status": "executed",
+          "window_focused": true,
+          "key": "right",
+          "retry": 1
+        },
+        {
+          "type": "wait",
+          "at_utc": "2026-10-27T12:24:12.589950+00:00",
+          "status": "executed",
+          "seconds": 1.0,
+          "retry": 1
+        },
+        {
+          "type": "wait",
+          "at_utc": "2026-10-27T12:24:13.740727+00:00",
+          "status": "executed",
+          "seconds": 1.0,
+          "retry": 2
+        },
+        {
+          "type": "press",
+          "at_utc": "2026-10-27T12:24:14.741201+00:00",
+          "status": "executed",
+          "window_focused": true,
+          "key": "right",
+          "retry": 2
+        },
+        {
+          "type": "wait",
+          "at_utc": "2026-10-27T12:24:15.044559+00:00",
+          "status": "executed",
+          "seconds": 1.0,
+          "retry": 2
+        }
+      ],
+      "observations": [
+        {
+          "method": "stdout",
+          "captured_at_utc": "2026-10-27T12:24:11.280874+00:00",
+          "text": "Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org\nVulkan 1.4.348 - Forward+ - Using Device #0: Intel - Intel(R) Graphics\n\n",
+          "stderr_tail": ""
+        }
+      ],
+      "checked_output": "after first input action only",
+      "input_retries": 2,
+      "status": "FAIL",
+      "reason": "Expected literal text was not found. This does not by itself prove a game defect.",
+      "process": {
+        "pid": 34100,
+        "returncode": null
+      },
+      "runtime_evidence": {
+        "stdout_file": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261027_191556-s1\\test_run_20261027_192355\\evidence\\C02\\stdout.log",
+        "stderr_file": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261027_191556-s1\\test_run_20261027_192355\\evidence\\C02\\stderr.log",
+        "screenshot_file": null
+      },
+      "triage_hints": [
+        {
+          "category": "undetermined",
+          "confidence": "low",
+          "reason": "Insufficient diagnostic signals; compare brief, plan, code, assets and runtime evidence."
+        }
+      ],
+      "duration_seconds": 10.156,
+      "finished_at_utc": "2026-10-27T12:24:16.325538+00:00"
+    },
+    {
+      "test_id": "C03",
+      "requirement_index": 13,
+      "requirement": "Press Escape to quit.",
+      "assertion": "After game over, pressing 'R' prints 'RESTART' to the console.",
+      "expected": "RESTART",
+      "generator_status": "ready_for_validator",
+      "started_at_utc": "2026-10-27T12:24:16.327550+00:00",
+      "evidence_dir": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261027_191556-s1\\test_run_20261027_192355\\evidence\\C03",
+      "action_results": [
+        {
+          "type": "wait",
+          "at_utc": "2026-10-27T12:24:18.833769+00:00",
+          "status": "executed",
+          "seconds": 3.0,
+          "index": 0
+        },
+        {
+          "type": "press",
+          "at_utc": "2026-10-27T12:24:21.984859+00:00",
+          "status": "executed",
+          "window_focused": true,
+          "key": "r",
+          "index": 1
+        },
+        {
+          "type": "wait",
+          "at_utc": "2026-10-27T12:24:22.289737+00:00",
+          "status": "executed",
+          "seconds": 1.0,
+          "index": 2
+        },
+        {
+          "type": "wait",
+          "at_utc": "2026-10-27T12:24:23.443225+00:00",
+          "status": "executed",
+          "seconds": 3.0,
+          "retry": 1
+        },
+        {
+          "type": "press",
+          "at_utc": "2026-10-27T12:24:26.443840+00:00",
+          "status": "executed",
+          "window_focused": true,
+          "key": "r",
+          "retry": 1
+        },
+        {
+          "type": "wait",
+          "at_utc": "2026-10-27T12:24:26.747266+00:00",
+          "status": "executed",
+          "seconds": 1.0,
+          "retry": 1
+        },
+        {
+          "type": "wait",
+          "at_utc": "2026-10-27T12:24:27.899567+00:00",
+          "status": "executed",
+          "seconds": 3.0,
+          "retry": 2
+        },
+        {
+          "type": "press",
+          "at_utc": "2026-10-27T12:24:30.900567+00:00",
+          "status": "executed",
+          "window_focused": true,
+          "key": "r",
+          "retry": 2
+        },
+        {
+          "type": "wait",
+          "at_utc": "2026-10-27T12:24:31.204076+00:00",
+          "status": "executed",
+          "seconds": 1.0,
+          "retry": 2
+        }
+      ],
+      "observations": [
+        {
+          "method": "stdout",
+          "captured_at_utc": "2026-10-27T12:24:23.440210+00:00",
+          "text": "Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org\nVulkan 1.4.348 - Forward+ - Using Device #0: Intel - Intel(R) Graphics\n\nGAME OVER\n",
+          "stderr_tail": ""
+        }
+      ],
+      "checked_output": "after first input action only",
+      "input_retries": 2,
+      "status": "FAIL",
+      "reason": "Expected literal text was not found. This does not by itself prove a game defect.",
+      "process": {
+        "pid": 2052,
+        "returncode": null
+      },
+      "runtime_evidence": {
+        "stdout_file": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261027_191556-s1\\test_run_20261027_192355\\evidence\\C03\\stdout.log",
+        "stderr_file": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261027_191556-s1\\test_run_20261027_192355\\evidence\\C03\\stderr.log",
+        "screenshot_file": null
+      },
+      "triage_hints": [
+        {
+          "category": "undetermined",
+          "confidence": "low",
+          "reason": "Insufficient diagnostic signals; compare brief, plan, code, assets and runtime evidence."
+        }
+      ],
+      "duration_seconds": 16.172,
+      "finished_at_utc": "2026-10-27T12:24:32.492183+00:00"
+    },
+    {
+      "test_id": "C04",
+      "requirement_index": 14,
+      "requirement": "Print 'MOVE LEFT' to the console when the left arrow key is pressed.",
+      "assertion": "Pressing 'Escape' key prints 'QUIT' to the console.",
+      "expected": "QUIT",
+      "generator_status": "ready_for_validator",
+      "started_at_utc": "2026-10-27T12:24:32.494194+00:00",
+      "evidence_dir": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261027_191556-s1\\test_run_20261027_192355\\evidence\\C04",
+      "action_results": [
+        {
+          "type": "wait",
+          "at_utc": "2026-10-27T12:24:35.001585+00:00",
+          "status": "executed",
+          "seconds": 1.0,
+          "index": 0
+        },
+        {
+          "type": "press",
+          "at_utc": "2026-10-27T12:24:36.152090+00:00",
+          "status": "executed",
+          "window_focused": true,
+          "key": "esc",
+          "index": 1
+        },
+        {
+          "type": "wait",
+          "at_utc": "2026-10-27T12:24:36.457998+00:00",
+          "status": "executed",
+          "seconds": 1.0,
+          "index": 2
+        },
+        {
+          "type": "wait",
+          "at_utc": "2026-10-27T12:24:37.611658+00:00",
+          "status": "executed",
+          "seconds": 1.0,
+          "retry": 1
+        },
+        {
+          "type": "press",
+          "at_utc": "2026-10-27T12:24:38.612313+00:00",
+          "status": "executed",
+          "window_focused": true,
+          "key": "esc",
+          "retry": 1
+        },
+        {
+          "type": "wait",
+          "at_utc": "2026-10-27T12:24:38.915281+00:00",
+          "status": "executed",
+          "seconds": 1.0,
+          "retry": 1
+        },
+        {
+          "type": "wait",
+          "at_utc": "2026-10-27T12:24:40.066125+00:00",
+          "status": "executed",
+          "seconds": 1.0,
+          "retry": 2
+        },
+        {
+          "type": "press",
+          "at_utc": "2026-10-27T12:24:41.066538+00:00",
+          "status": "executed",
+          "window_focused": true,
+          "key": "esc",
+          "retry": 2
+        },
+        {
+          "type": "wait",
+          "at_utc": "2026-10-27T12:24:41.371998+00:00",
+          "status": "executed",
+          "seconds": 1.0,
+          "retry": 2
+        }
+      ],
+      "observations": [
+        {
+          "method": "stdout",
+          "captured_at_utc": "2026-10-27T12:24:37.609077+00:00",
+          "text": "Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org\nVulkan 1.4.348 - Forward+ - Using Device #0: Intel - Intel(R) Graphics\n\nGAME OVER\n",
+          "stderr_tail": ""
+        }
+      ],
+      "checked_output": "after first input action only",
+      "input_retries": 2,
+      "status": "FAIL",
+      "reason": "Expected literal text was not found. This does not by itself prove a game defect.",
+      "process": {
+        "pid": 19100,
+        "returncode": null
+      },
+      "runtime_evidence": {
+        "stdout_file": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261027_191556-s1\\test_run_20261027_192355\\evidence\\C04\\stdout.log",
+        "stderr_file": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261027_191556-s1\\test_run_20261027_192355\\evidence\\C04\\stderr.log",
+        "screenshot_file": null
+      },
+      "triage_hints": [
+        {
+          "category": "undetermined",
+          "confidence": "low",
+          "reason": "Insufficient diagnostic signals; compare brief, plan, code, assets and runtime evidence."
+        }
+      ],
+      "duration_seconds": 10.156,
+      "finished_at_utc": "2026-10-27T12:24:42.653876+00:00"
+    }
+  ],
+  "project_inventory": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261027_191556-s1\\test_run_20261027_192355\\project_inventory.json",
+  "triage_note": "Hints are heuristics, not definitive root-cause labels. Correlate brief, plan, code, asset manifest and runtime evidence."
+}

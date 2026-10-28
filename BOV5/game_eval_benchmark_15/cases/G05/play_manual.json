@@ -1,0 +1,6 @@
+{
+  "game_title": "Terminal Snake",
+  "objective": "Grid-based Snake; continuous movement, food collection and growth, no direct reversal, and game over on wall/self collision.",
+  "controls": "Use the displayed arrow-key controls. Eat food and avoid walls/body. Use a deterministic seed if the game supports one.",
+  "notes": "Generate test cases using documented controls only; do not invent test hooks."
+}

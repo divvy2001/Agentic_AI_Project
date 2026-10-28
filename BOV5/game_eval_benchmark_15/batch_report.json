@@ -1,0 +1,301 @@
+{
+  "dataset": "Bo Project V4 Eval Generator Benchmark 15",
+  "model": "openai/gpt-4.1-mini",
+  "budget_usd": 1.0,
+  "requested": 15,
+  "processed": 15,
+  "generated": 15,
+  "errors": 0,
+  "total_tests": 101,
+  "ready_for_validator": 86,
+  "not_testable": 15,
+  "estimated_total_cost_usd": 0.043266,
+  "cost_note": "Uses token usage returned by OpenRouter when available; estimate is $0.40/M input and $1.60/M output tokens. Check current rates.",
+  "results": [
+    {
+      "game_id": "G01",
+      "title": "Terminal Number Guess",
+      "complexity": "simple",
+      "status": "generated",
+      "suite_version": "benchmark-g01",
+      "tests": 6,
+      "ready_for_validator": 5,
+      "not_testable": 1,
+      "usage": {
+        "prompt_tokens": 595,
+        "completion_tokens": 1335,
+        "total_tokens": 1930,
+        "provider_reported_cost_usd": 0.002374,
+        "estimated_cost_usd": 0.002374,
+        "cost_source": "OpenRouter usage.cost"
+      },
+      "output": "traces/eval/benchmark-g01/suite.json"
+    },
+    {
+      "game_id": "G02",
+      "title": "Terminal Tic-Tac-Toe",
+      "complexity": "simple",
+      "status": "generated",
+      "suite_version": "benchmark-g02",
+      "tests": 5,
+      "ready_for_validator": 5,
+      "not_testable": 0,
+      "usage": {
+        "prompt_tokens": 622,
+        "completion_tokens": 1405,
+        "total_tokens": 2027,
+        "provider_reported_cost_usd": 0.0024968,
+        "estimated_cost_usd": 0.0024968,
+        "cost_source": "OpenRouter usage.cost"
+      },
+      "output": "traces/eval/benchmark-g02/suite.json"
+    },
+    {
+      "game_id": "G03",
+      "title": "Pygame Dodger",
+      "complexity": "simple",
+      "status": "generated",
+      "suite_version": "benchmark-g03",
+      "tests": 7,
+      "ready_for_validator": 5,
+      "not_testable": 2,
+      "usage": {
+        "prompt_tokens": 607,
+        "completion_tokens": 1503,
+        "total_tokens": 2110,
+        "provider_reported_cost_usd": 0.0026476,
+        "estimated_cost_usd": 0.0026476,
+        "cost_source": "OpenRouter usage.cost"
+      },
+      "output": "traces/eval/benchmark-g03/suite.json"
+    },
+    {
+      "game_id": "G04",
+      "title": "Pygame Breakout",
+      "complexity": "simple",
+      "status": "generated",
+      "suite_version": "benchmark-g04",
+      "tests": 5,
+      "ready_for_validator": 5,
+      "not_testable": 0,
+      "usage": {
+        "prompt_tokens": 626,
+        "completion_tokens": 1235,
+        "total_tokens": 1861,
+        "provider_reported_cost_usd": 0.0022264,
+        "estimated_cost_usd": 0.0022264,
+        "cost_source": "OpenRouter usage.cost"
+      },
+      "output": "traces/eval/benchmark-g04/suite.json"
+    },
+    {
+      "game_id": "G05",
+      "title": "Terminal Snake",
+      "complexity": "simple",
+      "status": "generated",
+      "suite_version": "benchmark-g05",
+      "tests": 5,
+      "ready_for_validator": 4,
+      "not_testable": 1,
+      "usage": {
+        "prompt_tokens": 590,
+        "completion_tokens": 1275,
+        "total_tokens": 1865,
+        "provider_reported_cost_usd": 0.002276,
+        "estimated_cost_usd": 0.002276,
+        "cost_source": "OpenRouter usage.cost"
+      },
+      "output": "traces/eval/benchmark-g05/suite.json"
+    },
+    {
+      "game_id": "G06",
+      "title": "Pygame Gem Collector",
+      "complexity": "simple",
+      "status": "generated",
+      "suite_version": "benchmark-g06",
+      "tests": 5,
+      "ready_for_validator": 3,
+      "not_testable": 2,
+      "usage": {
+        "prompt_tokens": 595,
+        "completion_tokens": 1429,
+        "total_tokens": 2024,
+        "provider_reported_cost_usd": 0.0025244,
+        "estimated_cost_usd": 0.0025244,
+        "cost_source": "OpenRouter usage.cost"
+      },
+      "output": "traces/eval/benchmark-g06/suite.json"
+    },
+    {
+      "game_id": "G07",
+      "title": "Pygame Platformer",
+      "complexity": "medium",
+      "status": "generated",
+      "suite_version": "benchmark-g07",
+      "tests": 6,
+      "ready_for_validator": 6,
+      "not_testable": 0,
+      "usage": {
+        "prompt_tokens": 614,
+        "completion_tokens": 1502,
+        "total_tokens": 2116,
+        "provider_reported_cost_usd": 0.0026488,
+        "estimated_cost_usd": 0.0026488,
+        "cost_source": "OpenRouter usage.cost"
+      },
+      "output": "traces/eval/benchmark-g07/suite.json"
+    },
+    {
+      "game_id": "G08",
+      "title": "Pygame Top-Down Dungeon",
+      "complexity": "medium",
+      "status": "generated",
+      "suite_version": "benchmark-g08",
+      "tests": 9,
+      "ready_for_validator": 6,
+      "not_testable": 3,
+      "usage": {
+        "prompt_tokens": 629,
+        "completion_tokens": 1902,
+        "total_tokens": 2531,
+        "provider_reported_cost_usd": 0.0032948,
+        "estimated_cost_usd": 0.0032948,
+        "cost_source": "OpenRouter usage.cost"
+      },
+      "output": "traces/eval/benchmark-g08/suite.json"
+    },
+    {
+      "game_id": "G09",
+      "title": "Pygame Lane Racer",
+      "complexity": "medium",
+      "status": "generated",
+      "suite_version": "benchmark-g09",
+      "tests": 6,
+      "ready_for_validator": 6,
+      "not_testable": 0,
+      "usage": {
+        "prompt_tokens": 607,
+        "completion_tokens": 1317,
+        "total_tokens": 1924,
+        "provider_reported_cost_usd": 0.00235,
+        "estimated_cost_usd": 0.00235,
+        "cost_source": "OpenRouter usage.cost"
+      },
+      "output": "traces/eval/benchmark-g09/suite.json"
+    },
+    {
+      "game_id": "G10",
+      "title": "Godot Tower Defense",
+      "complexity": "medium",
+      "status": "generated",
+      "suite_version": "benchmark-g10",
+      "tests": 6,
+      "ready_for_validator": 6,
+      "not_testable": 0,
+      "usage": {
+        "prompt_tokens": 642,
+        "completion_tokens": 1578,
+        "total_tokens": 2220,
+        "provider_reported_cost_usd": 0.0027816,
+        "estimated_cost_usd": 0.0027816,
+        "cost_source": "OpenRouter usage.cost"
+      },
+      "output": "traces/eval/benchmark-g10/suite.json"
+    },
+    {
+      "game_id": "G11",
+      "title": "Godot Inventory Puzzle",
+      "complexity": "medium",
+      "status": "generated",
+      "suite_version": "benchmark-g11",
+      "tests": 7,
+      "ready_for_validator": 7,
+      "not_testable": 0,
+      "usage": {
+        "prompt_tokens": 605,
+        "completion_tokens": 1728,
+        "total_tokens": 2333,
+        "provider_reported_cost_usd": 0.0030068,
+        "estimated_cost_usd": 0.0030068,
+        "cost_source": "OpenRouter usage.cost"
+      },
+      "output": "traces/eval/benchmark-g11/suite.json"
+    },
+    {
+      "game_id": "G12",
+      "title": "Pygame Wave Survival",
+      "complexity": "medium",
+      "status": "generated",
+      "suite_version": "benchmark-g12",
+      "tests": 10,
+      "ready_for_validator": 8,
+      "not_testable": 2,
+      "usage": {
+        "prompt_tokens": 643,
+        "completion_tokens": 2099,
+        "total_tokens": 2742,
+        "provider_reported_cost_usd": 0.0036156,
+        "estimated_cost_usd": 0.0036156,
+        "cost_source": "OpenRouter usage.cost"
+      },
+      "output": "traces/eval/benchmark-g12/suite.json"
+    },
+    {
+      "game_id": "G13",
+      "title": "Godot Boss Arena",
+      "complexity": "complex",
+      "status": "generated",
+      "suite_version": "benchmark-g13",
+      "tests": 8,
+      "ready_for_validator": 5,
+      "not_testable": 3,
+      "usage": {
+        "prompt_tokens": 681,
+        "completion_tokens": 2206,
+        "total_tokens": 2887,
+        "provider_reported_cost_usd": 0.003802,
+        "estimated_cost_usd": 0.003802,
+        "cost_source": "OpenRouter usage.cost"
+      },
+      "output": "traces/eval/benchmark-g13/suite.json"
+    },
+    {
+      "game_id": "G14",
+      "title": "Godot Stealth Infiltration",
+      "complexity": "complex",
+      "status": "generated",
+      "suite_version": "benchmark-g14",
+      "tests": 8,
+      "ready_for_validator": 8,
+      "not_testable": 0,
+      "usage": {
+        "prompt_tokens": 697,
+        "completion_tokens": 1979,
+        "total_tokens": 2676,
+        "provider_reported_cost_usd": 0.0034452,
+        "estimated_cost_usd": 0.0034452,
+        "cost_source": "OpenRouter usage.cost"
+      },
+      "output": "traces/eval/benchmark-g14/suite.json"
+    },
+    {
+      "game_id": "G15",
+      "title": "Godot Tactical Roguelite",
+      "complexity": "complex",
+      "status": "generated",
+      "suite_version": "benchmark-g15",
+      "tests": 8,
+      "ready_for_validator": 7,
+      "not_testable": 1,
+      "usage": {
+        "prompt_tokens": 756,
+        "completion_tokens": 2171,
+        "total_tokens": 2927,
+        "provider_reported_cost_usd": 0.003776,
+        "estimated_cost_usd": 0.003776,
+        "cost_source": "OpenRouter usage.cost"
+      },
+      "output": "traces/eval/benchmark-g15/suite.json"
+    }
+  ]
+}

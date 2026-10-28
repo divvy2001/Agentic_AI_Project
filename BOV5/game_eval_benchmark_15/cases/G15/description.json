@@ -1,0 +1,7 @@
+{
+  "game_id": "G15",
+  "game_title": "Godot Tactical Roguelite",
+  "complexity": "complex",
+  "renderer": "godot",
+  "description": "Turn-based tactical roguelite with squad action points, cover, line of sight, status effects, enemy turns, loot, permadeath and multi-room progression."
+}

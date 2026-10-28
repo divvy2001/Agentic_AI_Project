@@ -1,0 +1,133 @@
+{
+  "schema_version": "1.0",
+  "created_at_utc": "2026-10-26T17:48:43.722815+00:00",
+  "input_test_results": "traces/eval/run20261027_014003-s1/test_run_20261027_014638/test_results.json",
+  "diagnosis_method": "openrouter",
+  "diagnosis": {
+    "route": "logic_coder",
+    "confidence": 0.85,
+    "reason": "Game prints 'GAME OVER' to stdout but fails to print score updates and restart events; likely missing or incorrect console print calls for score and restart events and possibly game over in some cases.",
+    "evidence": [
+      "Test T10 shows 'GAME OVER' printed to stdout, so game over console print is implemented but T16 fails to detect it, indicating inconsistent or conditional printing.",
+      "Tests T08 and T14 fail to find score update prints in stdout despite snake eating food and growing, indicating missing or incorrect print statements for score changes.",
+      "Test T18 fails to find restart event print '[EVENT] RESTART' in stdout after pressing 'R', indicating missing console output on restart.",
+      "Tests T11 and T16 fail to find expected console outputs though game behavior (game over) occurs, suggesting partial or inconsistent event logging.",
+      "No evidence of asset or planner issues; core gameplay and rendering appear functional but console event prints are missing or incomplete."
+    ],
+    "repair_instructions": [
+      "Add or fix console print statements to output '[EVENT] SCORE:<score>' immediately after the score increments when food is eaten.",
+      "Ensure 'GAME OVER' is printed to the console consistently whenever the game ends, including all relevant game over scenarios.",
+      "Add console print '[EVENT] RESTART' when the player presses 'R' to restart the game after game over.",
+      "Verify that all event-related console outputs match the expected format exactly to pass automated tests.",
+      "Test the game manually to confirm that score updates, game over, and restart events print correctly to stdout."
+    ],
+    "failure_categories": {
+      "T08": "behavior",
+      "T10": "behavior",
+      "T11": "behavior",
+      "T14": "behavior",
+      "T16": "behavior",
+      "T18": "behavior"
+    }
+  },
+  "callback": {
+    "status": "blocked",
+    "callback": "coder_agent_adhoc.repair.run_repair",
+    "feedback_path": "traces/eval/run20261027_014003-s1/test_results.json",
+    "failure_count": 6,
+    "coder_result": {
+      "status": "blocked",
+      "mode": "repair",
+      "renderer": "pygame",
+      "entry_point": "game/snake_game.py",
+      "game_dir": "game",
+      "smoke": {
+        "plan_and_files": "not_run",
+        "syntax_or_import": "not_run",
+        "boot": "not_run"
+      },
+      "steps": 8,
+      "play_manual_path": "plans/play_manual.json",
+      "trace_path": "traces/coder_attempts.jsonl",
+      "approximated_requirements": [],
+      "reason": "model_error: Error code: 400 - {'error': {'message': 'Provider returned error', 'code': 400, 'metadata': {'raw': '{\\n  \"error\": {\\n    \"message\": \"No tool output found for function call call_0ej7weveie1saWnJul9FcVTX.\",\\n    \"type\": \"invalid_request_error\",\\n    \"param\": \"input\",\\n    \"code\": null\\n  }\\n}', 'provider_name': 'Azure', 'is_byok': False, 'previous_errors': [{'code': 400, 'message': 'Provider returned error', 'provider_name': 'OpenAI', 'raw': '{\\n  \"error\": {\\n    \"message\": \"No tool output found for function call call_0ej7weveie1saWnJul9FcVTX.\",\\n    \"type\": \"invalid_request_error\",\\n    \"param\": \"input\",\\n    \"code\": null\\n  }\\n}'}]}}, 'user_id': 'user_3Ht3sV7jK9Tq1qMjB6BqSe76ZYF'}",
+      "debug_statistics": {
+        "local_failure_events": 1,
+        "self_debug_attempts": 0,
+        "external_repair_invocations": 1
+      },
+      "plan_compatibility_warnings": [],
+      "runtime_render_settings": {
+        "resolution": {
+          "width": 600,
+          "height": 680
+        },
+        "fps": 10
+      },
+      "asset_quality_warnings": [],
+      "asset_visual_acceptance": "not_run",
+      "planner_status": "success",
+      "unmapped": [],
+      "attempt_id": "00bdda542975448786002096bae7c1bc",
+      "repair_snapshot_path": "traces/repair-00bdda542975448786002096bae7c1bc/original",
+      "usage": {
+        "model": "openai/gpt-5-mini",
+        "calls": 7,
+        "input_tokens": 87527,
+        "output_tokens": 16688,
+        "max_input_tokens_per_call": 13299,
+        "reported_cost_usd": 0.04175055,
+        "known_cost_usd": 0.04175055,
+        "cost_missing_calls": 0,
+        "by_model": {
+          "openai/gpt-5-mini": {
+            "calls": 7,
+            "input_tokens": 87527,
+            "output_tokens": 16688,
+            "known_cost_usd": 0.04175055,
+            "cost_missing_calls": 0
+          }
+        }
+      },
+      "billing_audit_required": true,
+      "changes": [],
+      "attempted_net_changes": [],
+      "rollback": {
+        "restored_files": [],
+        "conflicts": []
+      },
+      "net_changes": [],
+      "file_inventory": {
+        "promised_count": 5,
+        "delivered_promised": [
+          "game/__init__.py",
+          "game/constants.py",
+          "game/food.py",
+          "game/snake.py",
+          "game/snake_game.py"
+        ],
+        "missing": [],
+        "engine_supplements": [],
+        "assets": [],
+        "protected_tests": [],
+        "runtime_artifacts": [
+          "game/__pycache__/__init__.cpython-311.pyc",
+          "game/__pycache__/constants.cpython-311.pyc",
+          "game/__pycache__/food.cpython-311.pyc",
+          "game/__pycache__/snake.cpython-311.pyc",
+          "game/__pycache__/snake_game.cpython-311.pyc"
+        ],
+        "unplanned": [],
+        "delivered_promised_count": 5
+      },
+      "play_session": {
+        "status": "not_run",
+        "reason": "coder_not_ready"
+      }
+    }
+  },
+  "evidence_summary": {
+    "total_tests": 20,
+    "failed_tests": 6
+  }
+}

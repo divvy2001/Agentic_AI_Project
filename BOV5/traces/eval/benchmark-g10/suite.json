@@ -1,0 +1,274 @@
+{
+  "schema_version": "1.0",
+  "suite_version": "benchmark-g10",
+  "generated_at_utc": "2026-10-26T04:12:31.861060+00:00",
+  "renderer": "godot",
+  "game_title": "Godot Tower Defense",
+  "generator": {
+    "backend": "openrouter",
+    "model": "openai/gpt-4.1-mini"
+  },
+  "generation_notes": [
+    "Tests cover all six requirements with 1-2 tests each including positive, negative, and boundary cases.",
+    "All tests use only documented controls: clicking build tiles, tower UI, observing currency and health displays, and waiting for enemy progression.",
+    "Manual inspection is required for visual confirmation of path following, attack timing, and UI updates.",
+    "Currency manipulation and forcing base health to zero are done by gameplay progression and not by hidden commands."
+  ],
+  "generation_usage": {
+    "prompt_tokens": 642,
+    "completion_tokens": 1578,
+    "total_tokens": 2220,
+    "provider_reported_cost_usd": 0.0027816,
+    "estimated_cost_usd": 0.0027816,
+    "cost_source": "OpenRouter usage.cost"
+  },
+  "source_hashes": {
+    "game_eval_benchmark_15/cases/G10/coder_plan.json": "5b39dde0e1e319f583d9feac2a2342adae30b886cf13f8477b84de26ccc20f66",
+    "game_eval_benchmark_15/cases/G10/play_manual.json": "c4e13beafd13e0ac910f8562395671ca30a9fb1a74c10ffbe5e675c1a1c4513e"
+  },
+  "tests": [
+    {
+      "test_id": "T01",
+      "requirement_index": 0,
+      "requirement": "Enemies progress along the configured path.",
+      "assertion": "Enemies visibly move along the predefined path from spawn to base without deviation.",
+      "actions": [
+        {
+          "type": "wait",
+          "duration_frames": 300
+        },
+        {
+          "type": "observe",
+          "value": "enemy_positions_along_path",
+          "duration_frames": 1
+        }
+      ],
+      "observation": {
+        "method": "manual_inspection",
+        "target": "Enemies visibly follow the configured path on screen."
+      },
+      "expected": "Enemy units progress continuously along the path towards the base without leaving it.",
+      "status": "ready_for_validator",
+      "not_testable_reason": null,
+      "renderer": "godot",
+      "timeout_seconds": 30,
+      "script_path": null
+    },
+    {
+      "test_id": "T02",
+      "requirement_index": 1,
+      "requirement": "Each defeated enemy awards currency exactly once.",
+      "assertion": "Currency increases exactly once per enemy defeated, no duplicates or misses.",
+      "actions": [
+        {
+          "type": "wait",
+          "duration_frames": 60
+        },
+        {
+          "type": "observe",
+          "value": "currency_before",
+          "duration_frames": 1
+        },
+        {
+          "type": "wait",
+          "duration_frames": 300
+        },
+        {
+          "type": "observe",
+          "value": "currency_after",
+          "duration_frames": 1
+        }
+      ],
+      "observation": {
+        "method": "manual_inspection",
+        "target": "Currency display before and after enemy defeats."
+      },
+      "expected": "Currency increases by the sum of defeated enemies' rewards, each counted once.",
+      "status": "ready_for_validator",
+      "not_testable_reason": null,
+      "renderer": "godot",
+      "timeout_seconds": 30,
+      "script_path": null
+    },
+    {
+      "test_id": "T03",
+      "requirement_index": 2,
+      "requirement": "Towers can be placed only on valid build tiles when affordable.",
+      "assertion": "Tower placement only succeeds on valid build tiles and when player has sufficient currency.",
+      "actions": [
+        {
+          "type": "observe",
+          "value": "currency",
+          "duration_frames": 1
+        },
+        {
+          "type": "click",
+          "value": "valid_build_tile"
+        },
+        {
+          "type": "click",
+          "value": "tower_ui_button"
+        },
+        {
+          "type": "observe",
+          "value": "tower_placed",
+          "duration_frames": 1
+        },
+        {
+          "type": "click",
+          "value": "invalid_tile"
+        },
+        {
+          "type": "click",
+          "value": "tower_ui_button"
+        },
+        {
+          "type": "observe",
+          "value": "tower_not_placed",
+          "duration_frames": 1
+        },
+        {
+          "type": "input",
+          "value": "reduce_currency_to_below_tower_cost"
+        },
+        {
+          "type": "click",
+          "value": "valid_build_tile"
+        },
+        {
+          "type": "click",
+          "value": "tower_ui_button"
+        },
+        {
+          "type": "observe",
+          "value": "tower_not_placed_due_to_funds",
+          "duration_frames": 1
+        }
+      ],
+      "observation": {
+        "method": "manual_inspection",
+        "target": "Tower placement success or failure messages and tower presence on tiles."
+      },
+      "expected": "Towers are placed only on valid build tiles and only if player currency is sufficient; placement fails otherwise.",
+      "status": "ready_for_validator",
+      "not_testable_reason": null,
+      "renderer": "godot",
+      "timeout_seconds": 60,
+      "script_path": null
+    },
+    {
+      "test_id": "T04",
+      "requirement_index": 3,
+      "requirement": "Towers attack in-range enemies within cooldown limits.",
+      "assertion": "Towers attack enemies within range respecting cooldown intervals, no attacks outside range or before cooldown.",
+      "actions": [
+        {
+          "type": "click",
+          "value": "valid_build_tile"
+        },
+        {
+          "type": "click",
+          "value": "tower_ui_button"
+        },
+        {
+          "type": "wait",
+          "duration_frames": 10
+        },
+        {
+          "type": "observe",
+          "value": "tower_attack_animation_and_enemy_health",
+          "duration_frames": 300
+        }
+      ],
+      "observation": {
+        "method": "manual_inspection",
+        "target": "Tower attack animations and enemy health reduction timing."
+      },
+      "expected": "Tower attacks only occur when enemies enter range and respect cooldown timing between attacks.",
+      "status": "ready_for_validator",
+      "not_testable_reason": null,
+      "renderer": "godot",
+      "timeout_seconds": 60,
+      "script_path": null
+    },
+    {
+      "test_id": "T05",
+      "requirement_index": 4,
+      "requirement": "Each enemy reaching base reduces base health once.",
+      "assertion": "Each enemy reaching the base reduces base health exactly once.",
+      "actions": [
+        {
+          "type": "observe",
+          "value": "base_health_before",
+          "duration_frames": 1
+        },
+        {
+          "type": "wait",
+          "duration_frames": 600
+        },
+        {
+          "type": "observe",
+          "value": "base_health_after",
+          "duration_frames": 1
+        }
+      ],
+      "observation": {
+        "method": "manual_inspection",
+        "target": "Base health display before and after enemies reach base."
+      },
+      "expected": "Base health decreases by one unit per enemy that reaches the base, no multiple deductions per enemy.",
+      "status": "ready_for_validator",
+      "not_testable_reason": null,
+      "renderer": "godot",
+      "timeout_seconds": 60,
+      "script_path": null
+    },
+    {
+      "test_id": "T06",
+      "requirement_index": 5,
+      "requirement": "Zero base health triggers defeat and disables normal placement.",
+      "assertion": "When base health reaches zero, defeat state triggers and normal tower placement is disabled.",
+      "actions": [
+        {
+          "type": "input",
+          "value": "allow_enemies_to_reach_base_until_health_zero"
+        },
+        {
+          "type": "observe",
+          "value": "base_health_zero",
+          "duration_frames": 1
+        },
+        {
+          "type": "click",
+          "value": "valid_build_tile"
+        },
+        {
+          "type": "click",
+          "value": "tower_ui_button"
+        },
+        {
+          "type": "observe",
+          "value": "tower_not_placed_post_defeat",
+          "duration_frames": 1
+        }
+      ],
+      "observation": {
+        "method": "manual_inspection",
+        "target": "Defeat screen or message and inability to place towers normally."
+      },
+      "expected": "Game shows defeat state when base health is zero and prevents normal tower placement thereafter.",
+      "status": "ready_for_validator",
+      "not_testable_reason": null,
+      "renderer": "godot",
+      "timeout_seconds": 60,
+      "script_path": null
+    }
+  ],
+  "summary": {
+    "total": 6,
+    "ready_for_validator": 6,
+    "not_testable": 0
+  },
+  "warnings": [],
+  "important": "Generation is not execution. This file does not claim PASS and must not be used as test_results.json."
+}\n

@@ -1,0 +1,295 @@
+{
+  "schema_version": "1.0",
+  "suite_version": "benchmark-g07",
+  "generated_at_utc": "2026-10-26T04:12:00.136092+00:00",
+  "renderer": "pygame",
+  "game_title": "Pygame Platformer",
+  "generator": {
+    "backend": "openrouter",
+    "model": "openai/gpt-4.1-mini"
+  },
+  "generation_notes": [
+    "Tests cover running and jumping only when grounded, landing on platforms, coin collection increments, enemy contact life reduction and respawn, and goal completion.",
+    "Edge cases include attempting to jump mid-air to verify jump restriction.",
+    "All tests use documented controls and observable game state properties."
+  ],
+  "generation_usage": {
+    "prompt_tokens": 614,
+    "completion_tokens": 1502,
+    "total_tokens": 2116,
+    "provider_reported_cost_usd": 0.0026488,
+    "estimated_cost_usd": 0.0026488,
+    "cost_source": "OpenRouter usage.cost"
+  },
+  "source_hashes": {
+    "game_eval_benchmark_15/cases/G07/coder_plan.json": "5ccf3ec884be74667df344ca79b4f879bba420e7c78a0e515285bd00e2a6b99c",
+    "game_eval_benchmark_15/cases/G07/play_manual.json": "8392dc63627f747dd45af844b406d35dc4df4027d18b3e16bb2af85269e10051"
+  },
+  "tests": [
+    {
+      "test_id": "T01",
+      "requirement_index": 0,
+      "requirement": "Player runs and jumps only when grounded.",
+      "assertion": "Player can run left and right only when grounded; jump input only causes jump when grounded; jump input ignored when airborne.",
+      "actions": [
+        {
+          "type": "wait",
+          "duration_frames": 10
+        },
+        {
+          "type": "press",
+          "value": "right",
+          "duration_frames": 30
+        },
+        {
+          "type": "observe",
+          "value": "player_horizontal_position",
+          "duration_frames": 1
+        },
+        {
+          "type": "press",
+          "value": "space",
+          "duration_frames": 1
+        },
+        {
+          "type": "observe",
+          "value": "player_vertical_velocity",
+          "duration_frames": 1
+        },
+        {
+          "type": "wait",
+          "duration_frames": 20
+        },
+        {
+          "type": "press",
+          "value": "space",
+          "duration_frames": 1
+        },
+        {
+          "type": "observe",
+          "value": "player_vertical_velocity",
+          "duration_frames": 1
+        }
+      ],
+      "observation": {
+        "method": "game_state",
+        "target": "player position and velocity"
+      },
+      "expected": "Player horizontal position changes when running input given and player is grounded; vertical velocity changes (positive jump impulse) only on first jump input when grounded; second jump input while airborne does not change vertical velocity.",
+      "status": "ready_for_validator",
+      "not_testable_reason": null,
+      "renderer": "pygame",
+      "timeout_seconds": 30,
+      "script_path": null
+    },
+    {
+      "test_id": "T02",
+      "requirement_index": 1,
+      "requirement": "Player lands on platforms instead of falling through.",
+      "assertion": "Player lands on platforms and does not fall through; vertical position stabilizes on platform surface after falling.",
+      "actions": [
+        {
+          "type": "wait",
+          "duration_frames": 10
+        },
+        {
+          "type": "press",
+          "value": "right",
+          "duration_frames": 60
+        },
+        {
+          "type": "observe",
+          "value": "player_vertical_position",
+          "duration_frames": 1
+        },
+        {
+          "type": "wait",
+          "duration_frames": 30
+        },
+        {
+          "type": "observe",
+          "value": "player_vertical_position",
+          "duration_frames": 1
+        }
+      ],
+      "observation": {
+        "method": "game_state",
+        "target": "player vertical position relative to platform"
+      },
+      "expected": "Player vertical position stops decreasing and remains stable on platform surface after falling onto it, indicating landing instead of falling through.",
+      "status": "ready_for_validator",
+      "not_testable_reason": null,
+      "renderer": "pygame",
+      "timeout_seconds": 30,
+      "script_path": null
+    },
+    {
+      "test_id": "T03",
+      "requirement_index": 2,
+      "requirement": "Each coin increments the counter once.",
+      "assertion": "Each collected coin increments the coin counter exactly once; collecting the same coin multiple times is not possible.",
+      "actions": [
+        {
+          "type": "wait",
+          "duration_frames": 10
+        },
+        {
+          "type": "press",
+          "value": "right",
+          "duration_frames": 100
+        },
+        {
+          "type": "observe",
+          "value": "coin_counter",
+          "duration_frames": 1
+        },
+        {
+          "type": "wait",
+          "duration_frames": 10
+        },
+        {
+          "type": "observe",
+          "value": "coin_counter",
+          "duration_frames": 1
+        }
+      ],
+      "observation": {
+        "method": "game_state",
+        "target": "coin counter value"
+      },
+      "expected": "Coin counter increments by one for each unique coin collected; coin counter does not increment multiple times for the same coin.",
+      "status": "ready_for_validator",
+      "not_testable_reason": null,
+      "renderer": "pygame",
+      "timeout_seconds": 30,
+      "script_path": null
+    },
+    {
+      "test_id": "T04",
+      "requirement_index": 3,
+      "requirement": "Enemy contact reduces one life and respawns at latest checkpoint.",
+      "assertion": "Contact with enemy reduces player life count by one and respawns player at latest checkpoint.",
+      "actions": [
+        {
+          "type": "wait",
+          "duration_frames": 10
+        },
+        {
+          "type": "press",
+          "value": "right",
+          "duration_frames": 50
+        },
+        {
+          "type": "observe",
+          "value": "player_lives",
+          "duration_frames": 1
+        },
+        {
+          "type": "press",
+          "value": "right",
+          "duration_frames": 50
+        },
+        {
+          "type": "observe",
+          "value": "player_lives",
+          "duration_frames": 1
+        },
+        {
+          "type": "observe",
+          "value": "player_position",
+          "duration_frames": 1
+        }
+      ],
+      "observation": {
+        "method": "game_state",
+        "target": "player lives and position"
+      },
+      "expected": "Player lives decrease by one upon enemy contact; player position resets to latest checkpoint position after life loss.",
+      "status": "ready_for_validator",
+      "not_testable_reason": null,
+      "renderer": "pygame",
+      "timeout_seconds": 30,
+      "script_path": null
+    },
+    {
+      "test_id": "T05",
+      "requirement_index": 4,
+      "requirement": "Reaching goal completes the level.",
+      "assertion": "Reaching the goal flag completes the level and triggers level completion state.",
+      "actions": [
+        {
+          "type": "wait",
+          "duration_frames": 10
+        },
+        {
+          "type": "press",
+          "value": "right",
+          "duration_frames": 150
+        },
+        {
+          "type": "observe",
+          "value": "level_complete_flag",
+          "duration_frames": 1
+        }
+      ],
+      "observation": {
+        "method": "game_state",
+        "target": "level completion status"
+      },
+      "expected": "Level completion status changes to true upon player reaching goal flag.",
+      "status": "ready_for_validator",
+      "not_testable_reason": null,
+      "renderer": "pygame",
+      "timeout_seconds": 30,
+      "script_path": null
+    },
+    {
+      "test_id": "T06",
+      "requirement_index": 0,
+      "requirement": "Player runs and jumps only when grounded.",
+      "assertion": "Player cannot jump when airborne; jump input ignored mid-air.",
+      "actions": [
+        {
+          "type": "wait",
+          "duration_frames": 10
+        },
+        {
+          "type": "press",
+          "value": "space",
+          "duration_frames": 1
+        },
+        {
+          "type": "wait",
+          "duration_frames": 5
+        },
+        {
+          "type": "press",
+          "value": "space",
+          "duration_frames": 1
+        },
+        {
+          "type": "observe",
+          "value": "player_vertical_velocity",
+          "duration_frames": 1
+        }
+      ],
+      "observation": {
+        "method": "game_state",
+        "target": "player vertical velocity"
+      },
+      "expected": "Second jump input while airborne does not increase vertical velocity or cause additional jump impulse.",
+      "status": "ready_for_validator",
+      "not_testable_reason": null,
+      "renderer": "pygame",
+      "timeout_seconds": 30,
+      "script_path": null
+    }
+  ],
+  "summary": {
+    "total": 6,
+    "ready_for_validator": 6,
+    "not_testable": 0
+  },
+  "warnings": [],
+  "important": "Generation is not execution. This file does not claim PASS and must not be used as test_results.json."
+}\n

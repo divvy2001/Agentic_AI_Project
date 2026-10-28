@@ -1,0 +1,401 @@
+{
+  "schema_version": "1.0",
+  "run_id": "test-run-20261028_105358",
+  "created_at_utc": "2026-10-28T03:54:23.073305+00:00",
+  "suite_path": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261028_104527-s1\\suite.json",
+  "suite_version": "run20261028_104527-s1",
+  "game_title": "Lantern Cave",
+  "renderer": "terminal",
+  "project_root": "C:\\Users\\ASUS\\Work\\BOV5",
+  "launch_command": "C:\\Users\\ASUS\\AppData\\Local\\Programs\\Python\\Python311\\python.exe -u -m game.lantern_cave",
+  "summary": {
+    "total": 10,
+    "counts": {
+      "PASS": 4,
+      "FAIL": 1,
+      "NOT_RUN": 5
+    }
+  },
+  "results": [
+    {
+      "test_id": "C01",
+      "requirement_index": 2,
+      "requirement": "The player can type 'look' to get a description of the current location.",
+      "assertion": "Typing 'look' prints 'LOOK' as the first line of output.",
+      "expected": "LOOK",
+      "generator_status": "ready_for_validator",
+      "started_at_utc": "2026-10-28T03:53:58.592315+00:00",
+      "evidence_dir": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261028_104527-s1\\test_run_20261028_105358\\evidence\\C01",
+      "action_results": [
+        {
+          "type": "input",
+          "at_utc": "2026-10-28T03:54:01.266184+00:00",
+          "status": "executed",
+          "text_length": 4,
+          "index": 0
+        },
+        {
+          "type": "wait",
+          "at_utc": "2026-10-28T03:54:01.266184+00:00",
+          "status": "executed",
+          "seconds": 1.0,
+          "index": 1
+        }
+      ],
+      "observations": [
+        {
+          "method": "stdout",
+          "captured_at_utc": "2026-10-28T03:54:02.417776+00:00",
+          "text": "Lantern Cave\nYou are in a forest clearing. Paths lead east and south.\nclearing\nLOOK\nYou are in a forest clearing. Paths lead east and south.\nclearing\n",
+          "stderr_tail": ""
+        }
+      ],
+      "checked_output": "after first input action only",
+      "input_retries": 0,
+      "status": "PASS",
+      "reason": "Expected literal text was found in process output.",
+      "process": {
+        "pid": 25572,
+        "returncode": null
+      },
+      "runtime_evidence": {
+        "stdout_file": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261028_104527-s1\\test_run_20261028_105358\\evidence\\C01\\stdout.log",
+        "stderr_file": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261028_104527-s1\\test_run_20261028_105358\\evidence\\C01\\stderr.log",
+        "screenshot_file": null
+      },
+      "triage_hints": [
+        {
+          "category": "undetermined",
+          "confidence": "low",
+          "reason": "Insufficient diagnostic signals; compare brief, plan, code, assets and runtime evidence."
+        }
+      ],
+      "duration_seconds": 3.843,
+      "finished_at_utc": "2026-10-28T03:54:02.437108+00:00"
+    },
+    {
+      "test_id": "C02",
+      "requirement_index": 3,
+      "requirement": "The player can type 'go north', 'go south', 'go east', 'go west' to move between locations.",
+      "assertion": "Typing 'go north' prints 'MOVED NORTH' as the first line of output if move is valid.",
+      "expected": "MOVED NORTH",
+      "generator_status": "ready_for_validator",
+      "started_at_utc": "2026-10-28T03:54:02.440129+00:00",
+      "evidence_dir": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261028_104527-s1\\test_run_20261028_105358\\evidence\\C02",
+      "action_results": [
+        {
+          "type": "input",
+          "at_utc": "2026-10-28T03:54:05.104600+00:00",
+          "status": "executed",
+          "text_length": 8,
+          "index": 0
+        },
+        {
+          "type": "wait",
+          "at_utc": "2026-10-28T03:54:05.104600+00:00",
+          "status": "executed",
+          "seconds": 1.0,
+          "index": 1
+        },
+        {
+          "type": "input",
+          "at_utc": "2026-10-28T03:54:06.259086+00:00",
+          "status": "executed",
+          "text_length": 8,
+          "retry": 1
+        },
+        {
+          "type": "wait",
+          "at_utc": "2026-10-28T03:54:06.259086+00:00",
+          "status": "executed",
+          "seconds": 1.0,
+          "retry": 1
+        },
+        {
+          "type": "input",
+          "at_utc": "2026-10-28T03:54:07.410726+00:00",
+          "status": "executed",
+          "text_length": 8,
+          "retry": 2
+        },
+        {
+          "type": "wait",
+          "at_utc": "2026-10-28T03:54:07.410726+00:00",
+          "status": "executed",
+          "seconds": 1.0,
+          "retry": 2
+        }
+      ],
+      "observations": [
+        {
+          "method": "stdout",
+          "captured_at_utc": "2026-10-28T03:54:06.255483+00:00",
+          "text": "Lantern Cave\nYou are in a forest clearing. Paths lead east and south.\nclearing\nBLOCKED\nYou can't go that way.\nclearing\n",
+          "stderr_tail": ""
+        }
+      ],
+      "checked_output": "after first input action only",
+      "input_retries": 2,
+      "status": "FAIL",
+      "reason": "Expected literal text was not found. This does not by itself prove a game defect.",
+      "process": {
+        "pid": 22908,
+        "returncode": null
+      },
+      "runtime_evidence": {
+        "stdout_file": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261028_104527-s1\\test_run_20261028_105358\\evidence\\C02\\stdout.log",
+        "stderr_file": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261028_104527-s1\\test_run_20261028_105358\\evidence\\C02\\stderr.log",
+        "screenshot_file": null
+      },
+      "triage_hints": [
+        {
+          "category": "undetermined",
+          "confidence": "low",
+          "reason": "Insufficient diagnostic signals; compare brief, plan, code, assets and runtime evidence."
+        }
+      ],
+      "duration_seconds": 6.125,
+      "finished_at_utc": "2026-10-28T03:54:08.571804+00:00"
+    },
+    {
+      "test_id": "C03",
+      "requirement_index": 3,
+      "requirement": "The player can type 'go north', 'go south', 'go east', 'go west' to move between locations.",
+      "assertion": "Typing 'go south' prints 'MOVED SOUTH' as the first line of output if move is valid.",
+      "expected": "MOVED SOUTH",
+      "generator_status": "not_testable",
+      "started_at_utc": "2026-10-28T03:54:08.574675+00:00",
+      "evidence_dir": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261028_104527-s1\\test_run_20261028_105358\\evidence\\C03",
+      "action_results": [],
+      "observations": [],
+      "status": "NOT_RUN",
+      "reason": "Expected line 'MOVED SOUTH' is not stated in the play manual."
+    },
+    {
+      "test_id": "C04",
+      "requirement_index": 3,
+      "requirement": "The player can type 'go north', 'go south', 'go east', 'go west' to move between locations.",
+      "assertion": "Typing 'go east' prints 'MOVED EAST' as the first line of output if move is valid.",
+      "expected": "MOVED EAST",
+      "generator_status": "not_testable",
+      "started_at_utc": "2026-10-28T03:54:08.577203+00:00",
+      "evidence_dir": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261028_104527-s1\\test_run_20261028_105358\\evidence\\C04",
+      "action_results": [],
+      "observations": [],
+      "status": "NOT_RUN",
+      "reason": "Expected line 'MOVED EAST' is not stated in the play manual."
+    },
+    {
+      "test_id": "C05",
+      "requirement_index": 3,
+      "requirement": "The player can type 'go north', 'go south', 'go east', 'go west' to move between locations.",
+      "assertion": "Typing 'go west' prints 'MOVED WEST' as the first line of output if move is valid.",
+      "expected": "MOVED WEST",
+      "generator_status": "not_testable",
+      "started_at_utc": "2026-10-28T03:54:08.579230+00:00",
+      "evidence_dir": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261028_104527-s1\\test_run_20261028_105358\\evidence\\C05",
+      "action_results": [],
+      "observations": [],
+      "status": "NOT_RUN",
+      "reason": "Expected line 'MOVED WEST' is not stated in the play manual."
+    },
+    {
+      "test_id": "C06",
+      "requirement_index": 6,
+      "requirement": "The player can type 'inventory' to view items they are carrying.",
+      "assertion": "Typing 'take lantern' in the cave entrance prints 'TOOK lantern' as the first line of output.",
+      "expected": "TOOK lantern",
+      "generator_status": "not_testable",
+      "started_at_utc": "2026-10-28T03:54:08.582232+00:00",
+      "evidence_dir": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261028_104527-s1\\test_run_20261028_105358\\evidence\\C06",
+      "action_results": [],
+      "observations": [],
+      "status": "NOT_RUN",
+      "reason": "Expected line 'TOOK lantern' is not stated in the play manual."
+    },
+    {
+      "test_id": "C07",
+      "requirement_index": 11,
+      "requirement": "The dark tunnel cannot be crossed without the lantern.",
+      "assertion": "Typing 'take rusty key' in the underground lake prints 'TOOK rusty key' as the first line of output.",
+      "expected": "TOOK rusty key",
+      "generator_status": "not_testable",
+      "started_at_utc": "2026-10-28T03:54:08.585226+00:00",
+      "evidence_dir": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261028_104527-s1\\test_run_20261028_105358\\evidence\\C07",
+      "action_results": [],
+      "observations": [],
+      "status": "NOT_RUN",
+      "reason": "Expected line 'TOOK rusty key' is not stated in the play manual."
+    },
+    {
+      "test_id": "C08",
+      "requirement_index": 7,
+      "requirement": "The player can type 'help' to see available commands.",
+      "assertion": "Typing 'inventory' prints 'INVENTORY' as the first line of output.",
+      "expected": "INVENTORY",
+      "generator_status": "ready_for_validator",
+      "started_at_utc": "2026-10-28T03:54:08.588251+00:00",
+      "evidence_dir": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261028_104527-s1\\test_run_20261028_105358\\evidence\\C08",
+      "action_results": [
+        {
+          "type": "input",
+          "at_utc": "2026-10-28T03:54:11.252428+00:00",
+          "status": "executed",
+          "text_length": 9,
+          "index": 0
+        },
+        {
+          "type": "wait",
+          "at_utc": "2026-10-28T03:54:11.252428+00:00",
+          "status": "executed",
+          "seconds": 1.0,
+          "index": 1
+        }
+      ],
+      "observations": [
+        {
+          "method": "stdout",
+          "captured_at_utc": "2026-10-28T03:54:12.403592+00:00",
+          "text": "Lantern Cave\nYou are in a forest clearing. Paths lead east and south.\nclearing\nINVENTORY\n(empty)\nclearing\n",
+          "stderr_tail": ""
+        }
+      ],
+      "checked_output": "after first input action only",
+      "input_retries": 0,
+      "status": "PASS",
+      "reason": "Expected literal text was found in process output.",
+      "process": {
+        "pid": 22404,
+        "returncode": null
+      },
+      "runtime_evidence": {
+        "stdout_file": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261028_104527-s1\\test_run_20261028_105358\\evidence\\C08\\stdout.log",
+        "stderr_file": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261028_104527-s1\\test_run_20261028_105358\\evidence\\C08\\stderr.log",
+        "screenshot_file": null
+      },
+      "triage_hints": [
+        {
+          "category": "undetermined",
+          "confidence": "low",
+          "reason": "Insufficient diagnostic signals; compare brief, plan, code, assets and runtime evidence."
+        }
+      ],
+      "duration_seconds": 3.828,
+      "finished_at_utc": "2026-10-28T03:54:12.414174+00:00"
+    },
+    {
+      "test_id": "C09",
+      "requirement_index": 8,
+      "requirement": "The player can type 'quit' to exit the game.",
+      "assertion": "Typing 'help' prints 'HELP' as the first line of output.",
+      "expected": "HELP",
+      "generator_status": "ready_for_validator",
+      "started_at_utc": "2026-10-28T03:54:12.416174+00:00",
+      "evidence_dir": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261028_104527-s1\\test_run_20261028_105358\\evidence\\C09",
+      "action_results": [
+        {
+          "type": "input",
+          "at_utc": "2026-10-28T03:54:15.078060+00:00",
+          "status": "executed",
+          "text_length": 4,
+          "index": 0
+        },
+        {
+          "type": "wait",
+          "at_utc": "2026-10-28T03:54:15.078060+00:00",
+          "status": "executed",
+          "seconds": 1.0,
+          "index": 1
+        }
+      ],
+      "observations": [
+        {
+          "method": "stdout",
+          "captured_at_utc": "2026-10-28T03:54:16.228951+00:00",
+          "text": "Lantern Cave\nYou are in a forest clearing. Paths lead east and south.\nclearing\nHELP\nAvailable commands:\n  look\n  go north\n  go south\n  go east\n  go west\n  take <item>\n  inventory\n  help\n  quit\nclearing\n",
+          "stderr_tail": ""
+        }
+      ],
+      "checked_output": "after first input action only",
+      "input_retries": 0,
+      "status": "PASS",
+      "reason": "Expected literal text was found in process output.",
+      "process": {
+        "pid": 14932,
+        "returncode": null
+      },
+      "runtime_evidence": {
+        "stdout_file": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261028_104527-s1\\test_run_20261028_105358\\evidence\\C09\\stdout.log",
+        "stderr_file": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261028_104527-s1\\test_run_20261028_105358\\evidence\\C09\\stderr.log",
+        "screenshot_file": null
+      },
+      "triage_hints": [
+        {
+          "category": "undetermined",
+          "confidence": "low",
+          "reason": "Insufficient diagnostic signals; compare brief, plan, code, assets and runtime evidence."
+        }
+      ],
+      "duration_seconds": 3.828,
+      "finished_at_utc": "2026-10-28T03:54:16.240504+00:00"
+    },
+    {
+      "test_id": "C10",
+      "requirement_index": 9,
+      "requirement": "The cave entrance holds a lantern.",
+      "assertion": "Typing 'quit' prints 'QUIT' as the first line of output and exits the game.",
+      "expected": "QUIT",
+      "generator_status": "ready_for_validator",
+      "started_at_utc": "2026-10-28T03:54:16.242820+00:00",
+      "evidence_dir": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261028_104527-s1\\test_run_20261028_105358\\evidence\\C10",
+      "action_results": [
+        {
+          "type": "input",
+          "at_utc": "2026-10-28T03:54:18.906359+00:00",
+          "status": "executed",
+          "text_length": 4,
+          "index": 0
+        },
+        {
+          "type": "wait",
+          "at_utc": "2026-10-28T03:54:18.906359+00:00",
+          "status": "executed",
+          "seconds": 1.0,
+          "index": 1
+        }
+      ],
+      "observations": [
+        {
+          "method": "stdout",
+          "captured_at_utc": "2026-10-28T03:54:20.057057+00:00",
+          "text": "Lantern Cave\nYou are in a forest clearing. Paths lead east and south.\nclearing\nQUIT\nclearing\n",
+          "stderr_tail": ""
+        }
+      ],
+      "checked_output": "after first input action only",
+      "input_retries": 0,
+      "status": "PASS",
+      "reason": "Expected literal text was found in process output.",
+      "process": {
+        "pid": 20916,
+        "returncode": 0
+      },
+      "runtime_evidence": {
+        "stdout_file": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261028_104527-s1\\test_run_20261028_105358\\evidence\\C10\\stdout.log",
+        "stderr_file": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261028_104527-s1\\test_run_20261028_105358\\evidence\\C10\\stderr.log",
+        "screenshot_file": null
+      },
+      "triage_hints": [
+        {
+          "category": "undetermined",
+          "confidence": "low",
+          "reason": "Insufficient diagnostic signals; compare brief, plan, code, assets and runtime evidence."
+        }
+      ],
+      "duration_seconds": 3.812,
+      "finished_at_utc": "2026-10-28T03:54:20.064575+00:00"
+    }
+  ],
+  "project_inventory": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261028_104527-s1\\test_run_20261028_105358\\project_inventory.json",
+  "triage_note": "Hints are heuristics, not definitive root-cause labels. Correlate brief, plan, code, asset manifest and runtime evidence."
+}

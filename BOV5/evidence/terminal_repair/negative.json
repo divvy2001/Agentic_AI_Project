@@ -1,0 +1,188 @@
+{
+  "results": [
+    {
+      "case": "planner",
+      "status": "PASS",
+      "result": {
+        "status": "blocked",
+        "mode": "repair",
+        "reason": "wrong_failing_stage",
+        "renderer": null,
+        "entry_point": null,
+        "game_dir": "game",
+        "steps": 0,
+        "smoke": {
+          "plan_and_files": "not_run",
+          "syntax_or_import": "not_run",
+          "boot": "not_run"
+        },
+        "play_manual_path": "plans/play_manual.json",
+        "trace_path": "traces/coder_attempts.jsonl",
+        "approximated_requirements": [],
+        "debug_statistics": {
+          "local_failure_events": 0,
+          "self_debug_attempts": 0,
+          "external_repair_invocations": 0
+        }
+      }
+    },
+    {
+      "case": "asset",
+      "status": "PASS",
+      "result": {
+        "status": "blocked",
+        "mode": "repair",
+        "reason": "wrong_failing_stage",
+        "renderer": null,
+        "entry_point": null,
+        "game_dir": "game",
+        "steps": 0,
+        "smoke": {
+          "plan_and_files": "not_run",
+          "syntax_or_import": "not_run",
+          "boot": "not_run"
+        },
+        "play_manual_path": "plans/play_manual.json",
+        "trace_path": "traces/coder_attempts.jsonl",
+        "approximated_requirements": [],
+        "debug_statistics": {
+          "local_failure_events": 0,
+          "self_debug_attempts": 0,
+          "external_repair_invocations": 0
+        }
+      }
+    },
+    {
+      "case": "runtime_eval_generator",
+      "status": "PASS",
+      "result": {
+        "status": "blocked",
+        "mode": "repair",
+        "reason": "wrong_failing_stage",
+        "renderer": null,
+        "entry_point": null,
+        "game_dir": "game",
+        "steps": 0,
+        "smoke": {
+          "plan_and_files": "not_run",
+          "syntax_or_import": "not_run",
+          "boot": "not_run"
+        },
+        "play_manual_path": "plans/play_manual.json",
+        "trace_path": "traces/coder_attempts.jsonl",
+        "approximated_requirements": [],
+        "debug_statistics": {
+          "local_failure_events": 0,
+          "self_debug_attempts": 0,
+          "external_repair_invocations": 0
+        }
+      }
+    },
+    {
+      "case": "unknown",
+      "status": "PASS",
+      "result": {
+        "status": "blocked",
+        "mode": "repair",
+        "reason": "wrong_failing_stage",
+        "renderer": null,
+        "entry_point": null,
+        "game_dir": "game",
+        "steps": 0,
+        "smoke": {
+          "plan_and_files": "not_run",
+          "syntax_or_import": "not_run",
+          "boot": "not_run"
+        },
+        "play_manual_path": "plans/play_manual.json",
+        "trace_path": "traces/coder_attempts.jsonl",
+        "approximated_requirements": [],
+        "debug_statistics": {
+          "local_failure_events": 0,
+          "self_debug_attempts": 0,
+          "external_repair_invocations": 0
+        }
+      }
+    },
+    {
+      "case": "pass",
+      "status": "PASS",
+      "result": {
+        "status": "blocked",
+        "mode": "repair",
+        "reason": "wrong_failing_stage",
+        "renderer": null,
+        "entry_point": null,
+        "game_dir": "game",
+        "steps": 0,
+        "smoke": {
+          "plan_and_files": "not_run",
+          "syntax_or_import": "not_run",
+          "boot": "not_run"
+        },
+        "play_manual_path": "plans/play_manual.json",
+        "trace_path": "traces/coder_attempts.jsonl",
+        "approximated_requirements": [],
+        "debug_statistics": {
+          "local_failure_events": 0,
+          "self_debug_attempts": 0,
+          "external_repair_invocations": 0
+        }
+      }
+    },
+    {
+      "case": "inconclusive",
+      "status": "PASS",
+      "result": {
+        "status": "blocked",
+        "mode": "repair",
+        "reason": "wrong_failing_stage",
+        "renderer": null,
+        "entry_point": null,
+        "game_dir": "game",
+        "steps": 0,
+        "smoke": {
+          "plan_and_files": "not_run",
+          "syntax_or_import": "not_run",
+          "boot": "not_run"
+        },
+        "play_manual_path": "plans/play_manual.json",
+        "trace_path": "traces/coder_attempts.jsonl",
+        "approximated_requirements": [],
+        "debug_statistics": {
+          "local_failure_events": 0,
+          "self_debug_attempts": 0,
+          "external_repair_invocations": 0
+        }
+      }
+    },
+    {
+      "case": "invalid_schema",
+      "status": "PASS",
+      "result": {
+        "status": "blocked",
+        "mode": "repair",
+        "reason": "invalid_feedback: feedback_top_level_fields_invalid",
+        "renderer": null,
+        "entry_point": null,
+        "game_dir": "game",
+        "steps": 0,
+        "smoke": {
+          "plan_and_files": "not_run",
+          "syntax_or_import": "not_run",
+          "boot": "not_run"
+        },
+        "play_manual_path": "plans/play_manual.json",
+        "trace_path": "traces/coder_attempts.jsonl",
+        "approximated_requirements": [],
+        "debug_statistics": {
+          "local_failure_events": 0,
+          "self_debug_attempts": 0,
+          "external_repair_invocations": 0
+        }
+      }
+    }
+  ],
+  "model_initializations": 0,
+  "status": "PASS"
+}

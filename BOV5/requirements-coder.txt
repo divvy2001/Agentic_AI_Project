@@ -1,0 +1,5 @@
+langchain-openai==0.3.35
+langchain-core==0.3.86
+python-dotenv==1.2.1
+pygame==2.6.1
+pillow==11.3.0

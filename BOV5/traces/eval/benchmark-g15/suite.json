@@ -1,0 +1,416 @@
+{
+  "schema_version": "1.0",
+  "suite_version": "benchmark-g15",
+  "generated_at_utc": "2026-10-26T04:13:37.110163+00:00",
+  "renderer": "godot",
+  "game_title": "Godot Tactical Roguelite",
+  "generator": {
+    "backend": "openrouter",
+    "model": "openai/gpt-4.1-mini"
+  },
+  "generation_notes": [
+    "Tests cover all listed requirements with 1-2 tests each including boundary and negative cases.",
+    "All actions use documented controls: unit selection, movement, attack, end turn, loot collection, and room transitions.",
+    "Observations rely on game state inspection and manual inspection where appropriate.",
+    "No undocumented hooks or state mutations are used."
+  ],
+  "generation_usage": {
+    "prompt_tokens": 756,
+    "completion_tokens": 2171,
+    "total_tokens": 2927,
+    "provider_reported_cost_usd": 0.003776,
+    "estimated_cost_usd": 0.003776,
+    "cost_source": "OpenRouter usage.cost"
+  },
+  "source_hashes": {
+    "game_eval_benchmark_15/cases/G15/coder_plan.json": "9fc432675c2696b91d298828e2abc0bd23bd6b76fd7f730a8c1e0fdc6ceb6884",
+    "game_eval_benchmark_15/cases/G15/play_manual.json": "fea78e95bb84bf796f3c4042321b30a3730192d1a7e3331cfa3a29012d9e0964"
+  },
+  "tests": [
+    {
+      "test_id": "T01",
+      "requirement_index": 0,
+      "requirement": "Movement and attacks consume action points and fail when unaffordable.",
+      "assertion": "Movement and attacks consume the correct amount of action points and fail when the unit has insufficient action points.",
+      "actions": [
+        {
+          "type": "click",
+          "value": "select_unit_with_known_AP"
+        },
+        {
+          "type": "click",
+          "value": "move_to_tile_costing_less_than_AP"
+        },
+        {
+          "type": "observe",
+          "value": "game_state"
+        },
+        {
+          "type": "click",
+          "value": "attack_enemy_within_AP"
+        },
+        {
+          "type": "observe",
+          "value": "game_state"
+        },
+        {
+          "type": "click",
+          "value": "attempt_move_to_tile_costing_more_than_remaining_AP"
+        },
+        {
+          "type": "observe",
+          "value": "game_state"
+        },
+        {
+          "type": "click",
+          "value": "attempt_attack_costing_more_than_remaining_AP"
+        },
+        {
+          "type": "observe",
+          "value": "game_state"
+        }
+      ],
+      "observation": {
+        "method": "game_state",
+        "target": "unit_action_points_and_action_success_or_failure"
+      },
+      "expected": "Action points decrease correctly after each move and attack; moves or attacks fail and do not consume AP when AP is insufficient.",
+      "status": "ready_for_validator",
+      "not_testable_reason": null,
+      "renderer": "godot",
+      "timeout_seconds": 30,
+      "script_path": null
+    },
+    {
+      "test_id": "T02",
+      "requirement_index": 1,
+      "requirement": "Cover reduces incoming damage only when it blocks the attack line.",
+      "assertion": "Cover reduces incoming damage only when it physically blocks the attack line between attacker and defender.",
+      "actions": [
+        {
+          "type": "click",
+          "value": "select_unit"
+        },
+        {
+          "type": "click",
+          "value": "attack_enemy_behind_cover_blocking_line_of_sight"
+        },
+        {
+          "type": "observe",
+          "value": "game_state"
+        },
+        {
+          "type": "click",
+          "value": "attack_enemy_behind_cover_not_blocking_line_of_sight"
+        },
+        {
+          "type": "observe",
+          "value": "game_state"
+        }
+      ],
+      "observation": {
+        "method": "game_state",
+        "target": "damage_received_by_enemy"
+      },
+      "expected": "Damage is reduced when cover blocks line of sight; no damage reduction when cover does not block line of sight.",
+      "status": "ready_for_validator",
+      "not_testable_reason": null,
+      "renderer": "godot",
+      "timeout_seconds": 30,
+      "script_path": null
+    },
+    {
+      "test_id": "T03",
+      "requirement_index": 2,
+      "requirement": "Opaque obstacles block direct line-of-sight attacks.",
+      "assertion": "Opaque obstacles block direct line-of-sight attacks, preventing attacks through them.",
+      "actions": [
+        {
+          "type": "click",
+          "value": "select_unit"
+        },
+        {
+          "type": "click",
+          "value": "attempt_attack_enemy_behind_opaque_obstacle"
+        },
+        {
+          "type": "observe",
+          "value": "game_state"
+        },
+        {
+          "type": "click",
+          "value": "attack_enemy_in_clear_line_of_sight"
+        },
+        {
+          "type": "observe",
+          "value": "game_state"
+        }
+      ],
+      "observation": {
+        "method": "game_state",
+        "target": "attack_success_or_failure"
+      },
+      "expected": "Attack fails or is blocked when enemy is behind opaque obstacle; attack succeeds when line of sight is clear.",
+      "status": "ready_for_validator",
+      "not_testable_reason": null,
+      "renderer": "godot",
+      "timeout_seconds": 30,
+      "script_path": null
+    },
+    {
+      "test_id": "T04",
+      "requirement_index": 3,
+      "requirement": "Status effects apply and expire after their configured duration.",
+      "assertion": "Status effects apply correctly and expire after their configured duration in turns.",
+      "actions": [
+        {
+          "type": "click",
+          "value": "apply_status_effect_to_unit"
+        },
+        {
+          "type": "observe",
+          "value": "game_state"
+        },
+        {
+          "type": "click",
+          "value": "end_player_turn"
+        },
+        {
+          "type": "observe",
+          "value": "game_state"
+        },
+        {
+          "type": "click",
+          "value": "end_enemy_turn"
+        },
+        {
+          "type": "observe",
+          "value": "game_state"
+        },
+        {
+          "type": "repeat",
+          "value": 3,
+          "actions": [
+            {
+              "type": "click",
+              "value": "end_player_turn"
+            },
+            {
+              "type": "click",
+              "value": "end_enemy_turn"
+            },
+            {
+              "type": "observe",
+              "value": "game_state"
+            }
+          ]
+        }
+      ],
+      "observation": {
+        "method": "game_state",
+        "target": "status_effect_presence_and_duration_on_unit"
+      },
+      "expected": "Status effect is present immediately after application and is removed after configured number of turns expire.",
+      "status": "not_testable",
+      "not_testable_reason": "Test did not meet the generator's structural validation rules.",
+      "renderer": "godot",
+      "timeout_seconds": 60,
+      "script_path": null
+    },
+    {
+      "test_id": "T05",
+      "requirement_index": 4,
+      "requirement": "Enemy phase starts after player squad ends turn and enemies act once.",
+      "assertion": "Enemy phase starts only after player squad ends turn and enemies act exactly once.",
+      "actions": [
+        {
+          "type": "click",
+          "value": "end_player_turn"
+        },
+        {
+          "type": "observe",
+          "value": "game_state"
+        },
+        {
+          "type": "wait",
+          "value": 2
+        },
+        {
+          "type": "observe",
+          "value": "game_state"
+        },
+        {
+          "type": "click",
+          "value": "attempt_player_action_during_enemy_phase"
+        },
+        {
+          "type": "observe",
+          "value": "game_state"
+        },
+        {
+          "type": "wait",
+          "value": 2
+        },
+        {
+          "type": "observe",
+          "value": "game_state"
+        }
+      ],
+      "observation": {
+        "method": "game_state",
+        "target": "enemy_actions_count_and_player_action_availability"
+      },
+      "expected": "Enemy phase begins after player turn ends; enemies perform one action each; player cannot act during enemy phase.",
+      "status": "ready_for_validator",
+      "not_testable_reason": null,
+      "renderer": "godot",
+      "timeout_seconds": 30,
+      "script_path": null
+    },
+    {
+      "test_id": "T06",
+      "requirement_index": 5,
+      "requirement": "Room-clear loot is awarded once.",
+      "assertion": "Room-clear loot is awarded only once per room after all required enemies are defeated.",
+      "actions": [
+        {
+          "type": "click",
+          "value": "defeat_all_required_enemies_in_room"
+        },
+        {
+          "type": "observe",
+          "value": "game_state"
+        },
+        {
+          "type": "click",
+          "value": "collect_loot"
+        },
+        {
+          "type": "observe",
+          "value": "game_state"
+        },
+        {
+          "type": "restart",
+          "value": null
+        },
+        {
+          "type": "click",
+          "value": "re-enter_same_room"
+        },
+        {
+          "type": "observe",
+          "value": "game_state"
+        },
+        {
+          "type": "click",
+          "value": "attempt_collect_loot_again"
+        },
+        {
+          "type": "observe",
+          "value": "game_state"
+        }
+      ],
+      "observation": {
+        "method": "game_state",
+        "target": "loot_inventory_and_room_loot_state"
+      },
+      "expected": "Loot is awarded once after room clear; no duplicate loot awarded on re-entry or repeated attempts.",
+      "status": "ready_for_validator",
+      "not_testable_reason": null,
+      "renderer": "godot",
+      "timeout_seconds": 60,
+      "script_path": null
+    },
+    {
+      "test_id": "T07",
+      "requirement_index": 6,
+      "requirement": "Dead squad members remain unavailable for the run unless revival is supported.",
+      "assertion": "Dead squad members remain unavailable for the run unless revival is explicitly supported.",
+      "actions": [
+        {
+          "type": "click",
+          "value": "cause_squad_member_death"
+        },
+        {
+          "type": "observe",
+          "value": "game_state"
+        },
+        {
+          "type": "click",
+          "value": "attempt_select_dead_squad_member"
+        },
+        {
+          "type": "observe",
+          "value": "game_state"
+        },
+        {
+          "type": "click",
+          "value": "attempt_revive_dead_member_if_possible"
+        },
+        {
+          "type": "observe",
+          "value": "game_state"
+        }
+      ],
+      "observation": {
+        "method": "game_state",
+        "target": "squad_member_availability_and_revive_status"
+      },
+      "expected": "Dead squad members cannot be selected or used unless revival is supported and performed; otherwise remain unavailable for entire run.",
+      "status": "ready_for_validator",
+      "not_testable_reason": null,
+      "renderer": "godot",
+      "timeout_seconds": 60,
+      "script_path": null
+    },
+    {
+      "test_id": "T08",
+      "requirement_index": 7,
+      "requirement": "Next room loads only after required enemies are defeated.",
+      "assertion": "Next room loads only after all required enemies in the current room are defeated.",
+      "actions": [
+        {
+          "type": "click",
+          "value": "attempt_enter_next_room_before_clearing_enemies"
+        },
+        {
+          "type": "observe",
+          "value": "game_state"
+        },
+        {
+          "type": "click",
+          "value": "defeat_all_required_enemies_in_room"
+        },
+        {
+          "type": "observe",
+          "value": "game_state"
+        },
+        {
+          "type": "click",
+          "value": "enter_next_room"
+        },
+        {
+          "type": "observe",
+          "value": "game_state"
+        }
+      ],
+      "observation": {
+        "method": "game_state",
+        "target": "current_room_and_next_room_load_state"
+      },
+      "expected": "Next room does not load until all required enemies are defeated; loads successfully after clearance.",
+      "status": "ready_for_validator",
+      "not_testable_reason": null,
+      "renderer": "godot",
+      "timeout_seconds": 60,
+      "script_path": null
+    }
+  ],
+  "summary": {
+    "total": 8,
+    "ready_for_validator": 7,
+    "not_testable": 1
+  },
+  "warnings": [],
+  "important": "Generation is not execution. This file does not claim PASS and must not be used as test_results.json."
+}\n

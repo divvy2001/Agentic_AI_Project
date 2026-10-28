@@ -1,0 +1,381 @@
+{
+  "schema_version": "1.0",
+  "suite_version": "benchmark-g12",
+  "generated_at_utc": "2026-10-26T04:12:57.163351+00:00",
+  "renderer": "pygame",
+  "game_title": "Pygame Wave Survival",
+  "generator": {
+    "backend": "openrouter",
+    "model": "openai/gpt-4.1-mini"
+  },
+  "generation_notes": [
+    "Tests cover player movement and attack effects on valid targets and invalid targets.",
+    "Enemy pursuit and damage mechanics tested by observing enemy movement and player health changes.",
+    "Experience gain tested for single award per enemy defeated.",
+    "Level-up UI pause tested but marked not_testable due to lack of documented triggers.",
+    "Wave transition tested for correct sequencing after enemy clearance.",
+    "Game over condition tested but direct health manipulation not documented, marked not_testable.",
+    "Boundary cases included for no damage when enemies not in contact and no wave start with enemies alive."
+  ],
+  "generation_usage": {
+    "prompt_tokens": 643,
+    "completion_tokens": 2099,
+    "total_tokens": 2742,
+    "provider_reported_cost_usd": 0.0036156,
+    "estimated_cost_usd": 0.0036156,
+    "cost_source": "OpenRouter usage.cost"
+  },
+  "source_hashes": {
+    "game_eval_benchmark_15/cases/G12/coder_plan.json": "915223c7aff4a37d8bd606c30311833d7df5e2626e0410a0eedd2b955a86b45e",
+    "game_eval_benchmark_15/cases/G12/play_manual.json": "87adabf2657dd88bf10b3df64ccd466caa785f3599fdcb96ddb5ed36b90a658c"
+  },
+  "tests": [
+    {
+      "test_id": "T01",
+      "requirement_index": 0,
+      "requirement": "Player movement and attacks affect valid targets.",
+      "assertion": "Player movement changes player position; attacks reduce enemy health or destroy enemy if health reaches zero",
+      "actions": [
+        {
+          "type": "press",
+          "value": "W",
+          "duration_frames": 30
+        },
+        {
+          "type": "observe",
+          "value": "player_position",
+          "duration_frames": 1
+        },
+        {
+          "type": "press",
+          "value": "attack",
+          "duration_frames": 1
+        },
+        {
+          "type": "observe",
+          "value": "enemy_health",
+          "duration_frames": 1
+        }
+      ],
+      "observation": {
+        "method": "game_state",
+        "target": "player_position and enemy_health"
+      },
+      "expected": "Player position changes after movement input; enemy health decreases or enemy is destroyed after attack",
+      "status": "ready_for_validator",
+      "not_testable_reason": null,
+      "renderer": "pygame",
+      "timeout_seconds": 30,
+      "script_path": null
+    },
+    {
+      "test_id": "T02",
+      "requirement_index": 0,
+      "requirement": "Player movement and attacks affect valid targets.",
+      "assertion": "Player attacks do not affect non-target objects or enemies out of range",
+      "actions": [
+        {
+          "type": "press",
+          "value": "attack",
+          "duration_frames": 1
+        },
+        {
+          "type": "observe",
+          "value": "non_target_object_health",
+          "duration_frames": 1
+        },
+        {
+          "type": "observe",
+          "value": "enemy_health_out_of_range",
+          "duration_frames": 1
+        }
+      ],
+      "observation": {
+        "method": "game_state",
+        "target": "non_target_object_health and enemy_health_out_of_range"
+      },
+      "expected": "No change in health of non-target objects or enemies out of attack range",
+      "status": "ready_for_validator",
+      "not_testable_reason": null,
+      "renderer": "pygame",
+      "timeout_seconds": 30,
+      "script_path": null
+    },
+    {
+      "test_id": "T03",
+      "requirement_index": 1,
+      "requirement": "Enemies pursue and damage player on contact.",
+      "assertion": "Enemies move towards player and reduce player health upon contact",
+      "actions": [
+        {
+          "type": "wait",
+          "value": null,
+          "duration_frames": 120
+        },
+        {
+          "type": "observe",
+          "value": "enemy_position",
+          "duration_frames": 1
+        },
+        {
+          "type": "observe",
+          "value": "player_health",
+          "duration_frames": 1
+        }
+      ],
+      "observation": {
+        "method": "game_state",
+        "target": "enemy_position and player_health"
+      },
+      "expected": "Enemy position moves closer to player position over time; player health decreases upon enemy contact",
+      "status": "ready_for_validator",
+      "not_testable_reason": null,
+      "renderer": "pygame",
+      "timeout_seconds": 30,
+      "script_path": null
+    },
+    {
+      "test_id": "T04",
+      "requirement_index": 1,
+      "requirement": "Enemies pursue and damage player on contact.",
+      "assertion": "Enemies do not damage player when not in contact",
+      "actions": [
+        {
+          "type": "observe",
+          "value": "player_health",
+          "duration_frames": 60
+        }
+      ],
+      "observation": {
+        "method": "game_state",
+        "target": "player_health"
+      },
+      "expected": "Player health remains constant when enemies are not in contact",
+      "status": "ready_for_validator",
+      "not_testable_reason": null,
+      "renderer": "pygame",
+      "timeout_seconds": 30,
+      "script_path": null
+    },
+    {
+      "test_id": "T05",
+      "requirement_index": 2,
+      "requirement": "Each defeated enemy awards experience once.",
+      "assertion": "Each enemy defeated awards experience points exactly once",
+      "actions": [
+        {
+          "type": "press",
+          "value": "attack",
+          "duration_frames": 1
+        },
+        {
+          "type": "wait",
+          "value": null,
+          "duration_frames": 60
+        },
+        {
+          "type": "observe",
+          "value": "player_experience",
+          "duration_frames": 1
+        },
+        {
+          "type": "wait",
+          "value": null,
+          "duration_frames": 60
+        },
+        {
+          "type": "observe",
+          "value": "player_experience",
+          "duration_frames": 1
+        }
+      ],
+      "observation": {
+        "method": "game_state",
+        "target": "player_experience"
+      },
+      "expected": "Player experience increases once per defeated enemy and does not increase again for the same enemy",
+      "status": "ready_for_validator",
+      "not_testable_reason": null,
+      "renderer": "pygame",
+      "timeout_seconds": 30,
+      "script_path": null
+    },
+    {
+      "test_id": "T06",
+      "requirement_index": 3,
+      "requirement": "Level-up pauses/suspends combat until an upgrade is selected.",
+      "assertion": "Combat pauses and enemies stop attacking/moving when level-up UI is active; resumes after upgrade selection",
+      "actions": [
+        {
+          "type": "simulate",
+          "value": "reach_level_up_condition",
+          "duration_frames": 1
+        },
+        {
+          "type": "observe",
+          "value": "level_up_UI_active",
+          "duration_frames": 1
+        },
+        {
+          "type": "observe",
+          "value": "enemy_movement",
+          "duration_frames": 60
+        },
+        {
+          "type": "click",
+          "value": "upgrade_choice",
+          "duration_frames": 1
+        },
+        {
+          "type": "observe",
+          "value": "enemy_movement",
+          "duration_frames": 60
+        }
+      ],
+      "observation": {
+        "method": "game_state",
+        "target": "level_up_UI_active and enemy_movement"
+      },
+      "expected": "Level-up UI is displayed and enemy movement stops during level-up; enemy movement resumes after upgrade selection",
+      "status": "not_testable",
+      "not_testable_reason": "No documented controls or actions to trigger level-up UI or simulate reaching level-up condition",
+      "renderer": "pygame",
+      "timeout_seconds": 30,
+      "script_path": null
+    },
+    {
+      "test_id": "T07",
+      "requirement_index": 4,
+      "requirement": "Next wave begins only after current enemies are cleared.",
+      "assertion": "Next wave starts only after all current enemies are defeated",
+      "actions": [
+        {
+          "type": "observe",
+          "value": "current_enemies_count",
+          "duration_frames": 1
+        },
+        {
+          "type": "wait",
+          "value": null,
+          "duration_frames": 300
+        },
+        {
+          "type": "observe",
+          "value": "current_enemies_count",
+          "duration_frames": 1
+        },
+        {
+          "type": "observe",
+          "value": "next_wave_started",
+          "duration_frames": 1
+        }
+      ],
+      "observation": {
+        "method": "game_state",
+        "target": "current_enemies_count and next_wave_started"
+      },
+      "expected": "Next wave does not start until current_enemies_count reaches zero; next_wave_started becomes true only after clearing enemies",
+      "status": "ready_for_validator",
+      "not_testable_reason": null,
+      "renderer": "pygame",
+      "timeout_seconds": 60,
+      "script_path": null
+    },
+    {
+      "test_id": "T08",
+      "requirement_index": 4,
+      "requirement": "Next wave begins only after current enemies are cleared.",
+      "assertion": "Next wave does not start if any enemies remain alive",
+      "actions": [
+        {
+          "type": "observe",
+          "value": "current_enemies_count",
+          "duration_frames": 1
+        },
+        {
+          "type": "wait",
+          "value": null,
+          "duration_frames": 300
+        },
+        {
+          "type": "observe",
+          "value": "next_wave_started",
+          "duration_frames": 1
+        }
+      ],
+      "observation": {
+        "method": "game_state",
+        "target": "current_enemies_count and next_wave_started"
+      },
+      "expected": "If current_enemies_count > 0, next_wave_started remains false",
+      "status": "ready_for_validator",
+      "not_testable_reason": null,
+      "renderer": "pygame",
+      "timeout_seconds": 60,
+      "script_path": null
+    },
+    {
+      "test_id": "T09",
+      "requirement_index": 5,
+      "requirement": "Zero player health ends the run.",
+      "assertion": "Game ends immediately when player health reaches zero",
+      "actions": [
+        {
+          "type": "simulate",
+          "value": "reduce_player_health_to_zero",
+          "duration_frames": 1
+        },
+        {
+          "type": "observe",
+          "value": "game_over_screen",
+          "duration_frames": 1
+        }
+      ],
+      "observation": {
+        "method": "game_state",
+        "target": "game_over_screen"
+      },
+      "expected": "Game over screen is displayed immediately when player health is zero",
+      "status": "not_testable",
+      "not_testable_reason": "No documented controls or actions to directly reduce player health to zero",
+      "renderer": "pygame",
+      "timeout_seconds": 30,
+      "script_path": null
+    },
+    {
+      "test_id": "T10",
+      "requirement_index": 5,
+      "requirement": "Zero player health ends the run.",
+      "assertion": "Player health above zero does not trigger game over",
+      "actions": [
+        {
+          "type": "observe",
+          "value": "player_health",
+          "duration_frames": 60
+        },
+        {
+          "type": "observe",
+          "value": "game_over_screen",
+          "duration_frames": 60
+        }
+      ],
+      "observation": {
+        "method": "game_state",
+        "target": "player_health and game_over_screen"
+      },
+      "expected": "While player health > 0, game over screen is not displayed",
+      "status": "ready_for_validator",
+      "not_testable_reason": null,
+      "renderer": "pygame",
+      "timeout_seconds": 30,
+      "script_path": null
+    }
+  ],
+  "summary": {
+    "total": 10,
+    "ready_for_validator": 8,
+    "not_testable": 2
+  },
+  "warnings": [],
+  "important": "Generation is not execution. This file does not claim PASS and must not be used as test_results.json."
+}\n

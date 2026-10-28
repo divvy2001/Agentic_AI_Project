@@ -1,0 +1,7 @@
+{
+  "status": "started",
+  "pid": 35048,
+  "renderer": "pygame",
+  "sandbox": "windows_appcontainer",
+  "gameplay_acceptance": "not_run"
+}

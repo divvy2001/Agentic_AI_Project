@@ -1,0 +1,25 @@
+{
+  "game_title": "Pygame Gem Collector",
+  "description": "Top-down player collects five gems; each unique gem adds one point, fifth gem wins, R restarts.",
+  "profile": {
+    "renderer": "pygame"
+  },
+  "requirements": [
+    {
+      "text": "Arrow keys move the player left/right.",
+      "check": "Arrow keys move the player left/right."
+    },
+    {
+      "text": "Collecting a gem increases score once and removes/marks it collected.",
+      "check": "Collecting a gem increases score once and removes/marks it collected."
+    },
+    {
+      "text": "Collecting five unique gems triggers win state.",
+      "check": "Collecting five unique gems triggers win state."
+    },
+    {
+      "text": "Restart resets score, collected gems and scene state.",
+      "check": "Restart resets score, collected gems and scene state."
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "game_title": "Pygame Platformer",
+  "objective": "Side-scrolling platformer with running, jumping, gravity, platforms, coins, enemies, checkpoints and goal flag.",
+  "controls": "Left/right to run; Space/Up to jump. Collect coins, activate checkpoints, avoid enemies and reach goal. Test grounded vs airborne jump behavior.",
+  "notes": "Generate test cases using documented controls only; do not invent test hooks."
+}

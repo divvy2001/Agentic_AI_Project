@@ -1,0 +1,13 @@
+test_native_child_control_cannot_silently_swallow_button_click (test_durable_delivery.DurableDelivery.test_native_child_control_cannot_silently_swallow_button_click) ... ok
+test_native_delayed_timer_failure_is_detected_after_startup (test_durable_delivery.DurableDelivery.test_native_delayed_timer_failure_is_detected_after_startup) ... ok
+test_native_healthy_delayed_timer_completes_observation (test_durable_delivery.DurableDelivery.test_native_healthy_delayed_timer_completes_observation) ... ok
+test_native_pointer_ignored_child_and_right_button_really_work (test_durable_delivery.DurableDelivery.test_native_pointer_ignored_child_and_right_button_really_work) ... ok
+test_native_ui_callback_error_is_not_a_boot_pass (test_durable_delivery.DurableDelivery.test_native_ui_callback_error_is_not_a_boot_pass) ... ok
+test_native_ui_event_exploration_reaches_real_button_callback (test_durable_delivery.DurableDelivery.test_native_ui_event_exploration_reaches_real_button_callback) ... ok
+test_native_ui_selection_then_world_click_reaches_action_callback (test_durable_delivery.DurableDelivery.test_native_ui_selection_then_world_click_reaches_action_callback) ... ok
+test_tscn_hash_comment_rejected_before_write_or_native_execution (test_durable_delivery.DurableDelivery.test_tscn_hash_comment_rejected_before_write_or_native_execution) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 28.380s
+
+OK

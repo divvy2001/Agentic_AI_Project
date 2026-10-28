@@ -1,0 +1,191 @@
+{
+  "schema_version": "1.0",
+  "suite_version": "run20261027_152239-s1",
+  "generated_at_utc": "2026-10-27T08:28:16.881624+00:00",
+  "renderer": "pygame",
+  "game_title": "Kitty Catch",
+  "generator": {
+    "backend": "openrouter",
+    "model": "openai/gpt-4.1-mini",
+    "scope": "controls"
+  },
+  "generation_notes": [
+    "Found 4 controls with exact console output lines as per the play manual: left, right, r, esc.",
+    "All controls are testable with simple key press and wait sequences.",
+    "The 'R' key test includes a 5-second wait to allow the game to reach a state where restart is valid (e.g. after game over).",
+    "No controls were excluded due to lack of exact printed lines or untestable conditions."
+  ],
+  "controls": [
+    {
+      "key": "left",
+      "does": "moves cat left",
+      "prints": "MOVE LEFT",
+      "manual_quote": "LEFT arrow (KEYDOWN): moves cat left; prints exactly: MOVE LEFT"
+    },
+    {
+      "key": "right",
+      "does": "moves cat right",
+      "prints": "MOVE RIGHT",
+      "manual_quote": "RIGHT arrow (KEYDOWN): moves cat right; prints exactly: MOVE RIGHT"
+    },
+    {
+      "key": "r",
+      "does": "restart the game",
+      "prints": "RESTART",
+      "manual_quote": "R key (KEYDOWN): restart the game; prints exactly: RESTART"
+    },
+    {
+      "key": "esc",
+      "does": "quit the game",
+      "prints": "QUIT",
+      "manual_quote": "Escape (KEYDOWN) or window close: quits the game; prints exactly: QUIT"
+    }
+  ],
+  "source_hashes": {
+    "plans/coder_plan.json": "a33d6aaf7e44ee826812067eaec09cb195a7d4aad8915e05b2f6dab42c6bb8a5",
+    "plans/play_manual.json": "dc378c278dd7173f507171224cc0c6489495fd54d1aabfe87ad9073fef085b59",
+    "plans/asset_manifest.json": "a590136ff71df92cf6699440958b0ad1d38012de32acecd468db91fe9a782dc0"
+  },
+  "tests": [
+    {
+      "test_id": "C01",
+      "requirement_index": 1,
+      "requirement": "A cartoon cat sprite moves left and right at the bottom of the screen.",
+      "assertion": "Pressing the LEFT arrow key prints 'MOVE LEFT' to the console.",
+      "actions": [
+        {
+          "type": "wait",
+          "seconds": 1
+        },
+        {
+          "type": "press",
+          "key": "left"
+        },
+        {
+          "type": "wait",
+          "seconds": 1
+        }
+      ],
+      "observation": {
+        "method": "stdout",
+        "target": "MOVE LEFT"
+      },
+      "expected": "MOVE LEFT",
+      "status": "ready_for_validator",
+      "not_testable_reason": null,
+      "renderer": "pygame",
+      "timeout_seconds": 30,
+      "script_path": null
+    },
+    {
+      "test_id": "C02",
+      "requirement_index": 1,
+      "requirement": "A cartoon cat sprite moves left and right at the bottom of the screen.",
+      "assertion": "Pressing the RIGHT arrow key prints 'MOVE RIGHT' to the console.",
+      "actions": [
+        {
+          "type": "wait",
+          "seconds": 1
+        },
+        {
+          "type": "press",
+          "key": "right"
+        },
+        {
+          "type": "wait",
+          "seconds": 1
+        }
+      ],
+      "observation": {
+        "method": "stdout",
+        "target": "MOVE RIGHT"
+      },
+      "expected": "MOVE RIGHT",
+      "status": "ready_for_validator",
+      "not_testable_reason": null,
+      "renderer": "pygame",
+      "timeout_seconds": 30,
+      "script_path": null
+    },
+    {
+      "test_id": "C03",
+      "requirement_index": 9,
+      "requirement": "Pressing 'Escape' quits the game.",
+      "assertion": "Pressing the 'R' key prints 'RESTART' to the console.",
+      "actions": [
+        {
+          "type": "wait",
+          "seconds": 5
+        },
+        {
+          "type": "press",
+          "key": "r"
+        },
+        {
+          "type": "wait",
+          "seconds": 1
+        }
+      ],
+      "observation": {
+        "method": "stdout",
+        "target": "RESTART"
+      },
+      "expected": "RESTART",
+      "status": "ready_for_validator",
+      "not_testable_reason": null,
+      "renderer": "pygame",
+      "timeout_seconds": 30,
+      "script_path": null
+    },
+    {
+      "test_id": "C04",
+      "requirement_index": 10,
+      "requirement": "The game prints 'MOVE LEFT' to the console when the left arrow key is pressed.",
+      "assertion": "Pressing the 'Escape' key prints 'QUIT' to the console.",
+      "actions": [
+        {
+          "type": "wait",
+          "seconds": 1
+        },
+        {
+          "type": "press",
+          "key": "esc"
+        },
+        {
+          "type": "wait",
+          "seconds": 1
+        }
+      ],
+      "observation": {
+        "method": "stdout",
+        "target": "QUIT"
+      },
+      "expected": "QUIT",
+      "status": "ready_for_validator",
+      "not_testable_reason": null,
+      "renderer": "pygame",
+      "timeout_seconds": 30,
+      "script_path": null
+    }
+  ],
+  "summary": {
+    "total": 4,
+    "ready_for_validator": 4,
+    "not_testable": 0
+  },
+  "warnings": [
+    "Requirement 0 had no valid executable test and was marked not_testable",
+    "Requirement 2 had no valid executable test and was marked not_testable",
+    "Requirement 3 had no valid executable test and was marked not_testable",
+    "Requirement 4 had no valid executable test and was marked not_testable",
+    "Requirement 5 had no valid executable test and was marked not_testable",
+    "Requirement 6 had no valid executable test and was marked not_testable",
+    "Requirement 7 had no valid executable test and was marked not_testable",
+    "Requirement 8 had no valid executable test and was marked not_testable",
+    "Requirement 11 had no valid executable test and was marked not_testable",
+    "Requirement 12 had no valid executable test and was marked not_testable",
+    "Requirement 13 had no valid executable test and was marked not_testable",
+    "Requirement 14 had no valid executable test and was marked not_testable"
+  ],
+  "important": "Generation is not execution. This file does not claim PASS and must not be used as test_results.json."
+}

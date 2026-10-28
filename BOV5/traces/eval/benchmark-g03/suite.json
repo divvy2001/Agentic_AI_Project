@@ -1,0 +1,292 @@
+{
+  "schema_version": "1.0",
+  "suite_version": "benchmark-g03",
+  "generated_at_utc": "2026-10-26T04:11:25.588096+00:00",
+  "renderer": "pygame",
+  "game_title": "Pygame Dodger",
+  "generator": {
+    "backend": "openrouter",
+    "model": "openai/gpt-4.1-mini"
+  },
+  "generation_notes": [
+    "Tests cover horizontal movement including boundary conditions, falling block downward movement, score increase and non-decrease, collision detection triggering game-over, and restart functionality resetting score and state."
+  ],
+  "generation_usage": {
+    "prompt_tokens": 607,
+    "completion_tokens": 1503,
+    "total_tokens": 2110,
+    "provider_reported_cost_usd": 0.0026476,
+    "estimated_cost_usd": 0.0026476,
+    "cost_source": "OpenRouter usage.cost"
+  },
+  "source_hashes": {
+    "game_eval_benchmark_15/cases/G03/coder_plan.json": "ccb0551d49b4df61ea520cb992debe8bc4cc6f030be069ad5a816002fdd8365e",
+    "game_eval_benchmark_15/cases/G03/play_manual.json": "1fdf3faf82cb0552e70d46dc2153a9cc133ecfc2bf7bd58558dafba10e25b30e"
+  },
+  "tests": [
+    {
+      "test_id": "T01",
+      "requirement_index": 0,
+      "requirement": "Move left/right while remaining within screen bounds.",
+      "assertion": "Player can move left and right using arrow keys and does not move beyond left or right screen edges.",
+      "actions": [
+        {
+          "type": "press",
+          "value": "left",
+          "duration_frames": 30
+        },
+        {
+          "type": "observe",
+          "value": "player_position",
+          "duration_frames": 1
+        },
+        {
+          "type": "press",
+          "value": "right",
+          "duration_frames": 60
+        },
+        {
+          "type": "observe",
+          "value": "player_position",
+          "duration_frames": 1
+        },
+        {
+          "type": "press",
+          "value": "right",
+          "duration_frames": 30
+        },
+        {
+          "type": "observe",
+          "value": "player_position",
+          "duration_frames": 1
+        }
+      ],
+      "observation": {
+        "method": "manual_inspection",
+        "target": "player horizontal position relative to screen edges"
+      },
+      "expected": "Player position moves left and right but never goes beyond screen boundaries (left edge >= 0, right edge <= screen width).",
+      "status": "ready_for_validator",
+      "not_testable_reason": null,
+      "renderer": "pygame",
+      "timeout_seconds": 30,
+      "script_path": null
+    },
+    {
+      "test_id": "T02",
+      "requirement_index": 1,
+      "requirement": "Falling blocks move downward over time.",
+      "assertion": "Falling blocks visibly move downward over time during active play.",
+      "actions": [
+        {
+          "type": "wait",
+          "duration_frames": 60
+        },
+        {
+          "type": "observe",
+          "value": "falling_blocks_positions",
+          "duration_frames": 1
+        }
+      ],
+      "observation": {
+        "method": "manual_inspection",
+        "target": "falling blocks vertical positions over time"
+      },
+      "expected": "Falling blocks positions increase in vertical coordinate indicating downward movement.",
+      "status": "ready_for_validator",
+      "not_testable_reason": null,
+      "renderer": "pygame",
+      "timeout_seconds": 30,
+      "script_path": null
+    },
+    {
+      "test_id": "T03",
+      "requirement_index": 2,
+      "requirement": "Score increases during active survival and never decreases.",
+      "assertion": "Score increases continuously during active survival and never decreases.",
+      "actions": [
+        {
+          "type": "wait",
+          "duration_frames": 120
+        },
+        {
+          "type": "observe",
+          "value": "score",
+          "duration_frames": 1
+        },
+        {
+          "type": "wait",
+          "duration_frames": 60
+        },
+        {
+          "type": "observe",
+          "value": "score",
+          "duration_frames": 1
+        }
+      ],
+      "observation": {
+        "method": "manual_inspection",
+        "target": "score display or value"
+      },
+      "expected": "Score value increases or remains the same over time during active play and never decreases.",
+      "status": "ready_for_validator",
+      "not_testable_reason": null,
+      "renderer": "pygame",
+      "timeout_seconds": 30,
+      "script_path": null
+    },
+    {
+      "test_id": "T04",
+      "requirement_index": 3,
+      "requirement": "Block collision enters game-over state.",
+      "assertion": "Collision between player and falling block triggers game-over state.",
+      "actions": [
+        {
+          "type": "wait",
+          "duration_frames": 1
+        },
+        {
+          "type": "observe",
+          "value": "game_state",
+          "duration_frames": 1
+        },
+        {
+          "type": "manual_inspection",
+          "value": "position player under falling block to cause collision"
+        },
+        {
+          "type": "wait",
+          "duration_frames": 120
+        },
+        {
+          "type": "observe",
+          "value": "game_state",
+          "duration_frames": 1
+        }
+      ],
+      "observation": {
+        "method": "manual_inspection",
+        "target": "game state change to game-over after collision"
+      },
+      "expected": "Game state changes from active play to game-over immediately after collision with falling block.",
+      "status": "not_testable",
+      "not_testable_reason": "Test did not meet the generator's structural validation rules.",
+      "renderer": "pygame",
+      "timeout_seconds": 60,
+      "script_path": null
+    },
+    {
+      "test_id": "T05",
+      "requirement_index": 4,
+      "requirement": "Restart resets score and returns to active play.",
+      "assertion": "Restarting after game-over resets score to zero and returns to active play state.",
+      "actions": [
+        {
+          "type": "manual_inspection",
+          "value": "cause collision to enter game-over"
+        },
+        {
+          "type": "wait",
+          "duration_frames": 60
+        },
+        {
+          "type": "observe",
+          "value": "score",
+          "duration_frames": 1
+        },
+        {
+          "type": "press",
+          "value": "r",
+          "duration_frames": 1
+        },
+        {
+          "type": "wait",
+          "duration_frames": 30
+        },
+        {
+          "type": "observe",
+          "value": "score",
+          "duration_frames": 1
+        },
+        {
+          "type": "observe",
+          "value": "game_state",
+          "duration_frames": 1
+        }
+      ],
+      "observation": {
+        "method": "manual_inspection",
+        "target": "score reset and game state active after restart"
+      },
+      "expected": "Score resets to zero and game state returns to active play after pressing R to restart.",
+      "status": "not_testable",
+      "not_testable_reason": "Test did not meet the generator's structural validation rules.",
+      "renderer": "pygame",
+      "timeout_seconds": 60,
+      "script_path": null
+    },
+    {
+      "test_id": "T06",
+      "requirement_index": 0,
+      "requirement": "Move left/right while remaining within screen bounds.",
+      "assertion": "Player cannot move beyond left screen edge when holding left arrow continuously.",
+      "actions": [
+        {
+          "type": "press",
+          "value": "left",
+          "duration_frames": 300
+        },
+        {
+          "type": "observe",
+          "value": "player_position",
+          "duration_frames": 1
+        }
+      ],
+      "observation": {
+        "method": "manual_inspection",
+        "target": "player horizontal position at left edge"
+      },
+      "expected": "Player position remains at or above left screen boundary (0) and does not go negative.",
+      "status": "ready_for_validator",
+      "not_testable_reason": null,
+      "renderer": "pygame",
+      "timeout_seconds": 30,
+      "script_path": null
+    },
+    {
+      "test_id": "T07",
+      "requirement_index": 0,
+      "requirement": "Move left/right while remaining within screen bounds.",
+      "assertion": "Player cannot move beyond right screen edge when holding right arrow continuously.",
+      "actions": [
+        {
+          "type": "press",
+          "value": "right",
+          "duration_frames": 300
+        },
+        {
+          "type": "observe",
+          "value": "player_position",
+          "duration_frames": 1
+        }
+      ],
+      "observation": {
+        "method": "manual_inspection",
+        "target": "player horizontal position at right edge"
+      },
+      "expected": "Player position remains at or below right screen boundary (screen width) and does not exceed it.",
+      "status": "ready_for_validator",
+      "not_testable_reason": null,
+      "renderer": "pygame",
+      "timeout_seconds": 30,
+      "script_path": null
+    }
+  ],
+  "summary": {
+    "total": 7,
+    "ready_for_validator": 5,
+    "not_testable": 2
+  },
+  "warnings": [],
+  "important": "Generation is not execution. This file does not claim PASS and must not be used as test_results.json."
+}\n

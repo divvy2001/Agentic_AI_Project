@@ -1,0 +1,124 @@
+{
+  "test_id": "T04",
+  "requirement_index": 3,
+  "requirement": "Paddles must stop at the top and bottom edges of the screen.",
+  "assertion": "Holding 'W' or 'UP' will stop the respective paddle at the top edge. Holding 'S' or 'DOWN' will stop the respective paddle at the bottom edge.",
+  "expected": "Both paddles stop moving when reaching the top or bottom edges of the screen.",
+  "generator_status": "ready_for_validator",
+  "started_at_utc": "2026-10-26T17:19:01.834088+00:00",
+  "evidence_dir": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261027_011042-s1\\test_run_20261027_011854\\evidence\\T04",
+  "action_results": [
+    {
+      "type": "key_down",
+      "at_utc": "2026-10-26T17:19:03.345057+00:00",
+      "status": "executed",
+      "key": "W",
+      "index": 0
+    },
+    {
+      "type": "key_up",
+      "at_utc": "2026-10-26T17:19:03.447548+00:00",
+      "status": "executed",
+      "key": "W",
+      "index": 1
+    },
+    {
+      "type": "observe",
+      "at_utc": "2026-10-26T17:19:03.550125+00:00",
+      "status": "executed",
+      "observation_requested": true,
+      "index": 2
+    },
+    {
+      "type": "key_down",
+      "at_utc": "2026-10-26T17:19:03.550125+00:00",
+      "status": "executed",
+      "key": "S",
+      "index": 3
+    },
+    {
+      "type": "key_up",
+      "at_utc": "2026-10-26T17:19:03.651903+00:00",
+      "status": "executed",
+      "key": "S",
+      "index": 4
+    },
+    {
+      "type": "observe",
+      "at_utc": "2026-10-26T17:19:03.755751+00:00",
+      "status": "executed",
+      "observation_requested": true,
+      "index": 5
+    },
+    {
+      "type": "key_down",
+      "at_utc": "2026-10-26T17:19:03.755751+00:00",
+      "status": "executed",
+      "key": "UP",
+      "index": 6
+    },
+    {
+      "type": "key_up",
+      "at_utc": "2026-10-26T17:19:03.856596+00:00",
+      "status": "executed",
+      "key": "UP",
+      "index": 7
+    },
+    {
+      "type": "observe",
+      "at_utc": "2026-10-26T17:19:03.967524+00:00",
+      "status": "executed",
+      "observation_requested": true,
+      "index": 8
+    },
+    {
+      "type": "key_down",
+      "at_utc": "2026-10-26T17:19:03.967524+00:00",
+      "status": "executed",
+      "key": "DOWN",
+      "index": 9
+    },
+    {
+      "type": "key_up",
+      "at_utc": "2026-10-26T17:19:04.068496+00:00",
+      "status": "executed",
+      "key": "DOWN",
+      "index": 10
+    },
+    {
+      "type": "observe",
+      "at_utc": "2026-10-26T17:19:04.169551+00:00",
+      "status": "executed",
+      "observation_requested": true,
+      "index": 11
+    }
+  ],
+  "observations": [
+    {
+      "method": "game_state",
+      "captured_at_utc": "2026-10-26T17:19:04.319977+00:00",
+      "captured": false,
+      "error": "Generic game state is unavailable without game-side instrumentation. Emit structured state to stdout/log."
+    }
+  ],
+  "status": "BLOCKED",
+  "reason": "Generic game state is unavailable without game-side instrumentation. Emit structured state to stdout/log.",
+  "process": {
+    "pid": 23784,
+    "returncode": null
+  },
+  "runtime_evidence": {
+    "stdout_file": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261027_011042-s1\\test_run_20261027_011854\\evidence\\T04\\stdout.log",
+    "stderr_file": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261027_011042-s1\\test_run_20261027_011854\\evidence\\T04\\stderr.log",
+    "screenshot_file": null
+  },
+  "triage_hints": [
+    {
+      "category": "undetermined",
+      "confidence": "low",
+      "reason": "Insufficient diagnostic signals; compare brief, plan, code, assets and runtime evidence."
+    }
+  ],
+  "duration_seconds": 2.5,
+  "finished_at_utc": "2026-10-26T17:19:04.339488+00:00"
+}

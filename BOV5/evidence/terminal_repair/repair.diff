@@ -1,0 +1,11 @@
+--- before/game/main.py
++++ after/game/main.py
+@@ -11,7 +11,7 @@
+         if action == "1":
+             score += 1
+             # BUG: at score=3 this should be WIN, but is still ONGOING.
+-            status = "WIN" if score > 3 else "ONGOING"
++            status = "WIN" if score >= 3 else "ONGOING"
+             print(f"SCORE:{score} STATUS:{status}", file=stdout, flush=True)
+     return score
+ 

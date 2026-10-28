@@ -1,0 +1,29 @@
+{
+  "game_title": "Pygame Lane Racer",
+  "description": "Three-lane racing game with traffic, acceleration, collision penalties, distance progression and finish line.",
+  "profile": {
+    "renderer": "pygame"
+  },
+  "requirements": [
+    {
+      "text": "Lane changes stay within three valid lanes.",
+      "check": "Lane changes stay within three valid lanes."
+    },
+    {
+      "text": "Traffic obstacles approach during active play.",
+      "check": "Traffic obstacles approach during active play."
+    },
+    {
+      "text": "A collision applies one penalty rather than repeated penalties for persistent contact.",
+      "check": "A collision applies one penalty rather than repeated penalties for persistent contact."
+    },
+    {
+      "text": "Distance increases during active play and pauses after game over.",
+      "check": "Distance increases during active play and pauses after game over."
+    },
+    {
+      "text": "Reaching finish distance completes the race.",
+      "check": "Reaching finish distance completes the race."
+    }
+  ]
+}

@@ -1,0 +1,1556 @@
+{
+  "root": "C:\\Users\\ASUS\\Work\\BOV5",
+  "files": [
+    {
+      "path": ".coder.lock",
+      "size_bytes": 1,
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "path": ".env",
+      "size_bytes": 566,
+      "sha256": "55d18f0595518c138ecb8cab0f3bcdacc77d45ccaba65b5eeada70844b33d53a"
+    },
+    {
+      "path": ".gitignore",
+      "size_bytes": 45,
+      "sha256": "bb7cda5256aa726623ea12605baffe9f637c7dca4efbabd408a96a7a7da2c799"
+    },
+    {
+      "path": "config.py",
+      "size_bytes": 407,
+      "sha256": "fbed874824c6775b13e2500ac46cd00e62a91ba3d98bfe69d2ac312eaf0018dd"
+    },
+    {
+      "path": "environment.yml",
+      "size_bytes": 281,
+      "sha256": "43f13787c20168baa6fde93b89afcb1466c915c80314c66eb22999d366404ee0"
+    },
+    {
+      "path": "MANIFEST.sha256.json",
+      "size_bytes": 14400,
+      "sha256": "240a10811f2faeced6d4195d54997aa2cdda665fac182bfe45af0e151bde346a"
+    },
+    {
+      "path": "manual-three-tests.zip",
+      "size_bytes": 4224891,
+      "sha256": "f83da385e2f1feca712200eb0ba87a57aa7a892be5c335f426245f367c7ad5f5"
+    },
+    {
+      "path": "PACKAGING_AUDIT.json",
+      "size_bytes": 11376,
+      "sha256": "e436e8552f6a8a90b2b81168037cf1e39250f6e21649eaa40b093c4c70df4823"
+    },
+    {
+      "path": "preflight.py",
+      "size_bytes": 9501,
+      "sha256": "4e69f1f1315a7b0e06abcf87b83fb7d7231162e870eb36dae7e44d7dff7d3d0b"
+    },
+    {
+      "path": "README.md",
+      "size_bytes": 4350,
+      "sha256": "6051c2152586d5b6635a93b6f2ab5adf8f742e003c928a2083b9bc73e47af960"
+    },
+    {
+      "path": "requirements-coder.txt",
+      "size_bytes": 103,
+      "sha256": "b440352739f44ded383dc2c6d6e904db068edd7a7b1da485665f3b871fc4c99b"
+    },
+    {
+      "path": "requirements.txt",
+      "size_bytes": 93,
+      "sha256": "7e79ea96e88b2ff81a3841e7e19ae25a8a9ebe0b707126d0537d8f4383b3bf34"
+    },
+    {
+      "path": "run_pipeline.py",
+      "size_bytes": 13845,
+      "sha256": "4776e5da06aa1dea3d1467b623fc42692bb3196be7e29c5a50e5859e19f0da27"
+    },
+    {
+      "path": "test.py",
+      "size_bytes": 4494,
+      "sha256": "40c7c914563f3db555ca7b4c4fc8e5628179368f01f362e143c34c136dc6f8eb"
+    },
+    {
+      "path": "backups/game-20261026T142930Z-c5ba112daf.json",
+      "size_bytes": 446,
+      "sha256": "8159d14ddcd0f9084e519b84870f4eebd32a84c5c131863f3261498f33ae25fe"
+    },
+    {
+      "path": "backups/game-20261026T145301Z-bd9277525d.json",
+      "size_bytes": 1262,
+      "sha256": "40ff52988093533db7f9c7f196b95186dd40338315ed35f5e9e7d2351f73f62a"
+    },
+    {
+      "path": "backups/game-20261026T142930Z-c5ba112daf/assets/.gitkeep",
+      "size_bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "backups/game-20261026T145301Z-bd9277525d/alien.py",
+      "size_bytes": 3484,
+      "sha256": "844fca4c7bdce20d023e3b489c4c99c7853b797e8fc13ce1770720044cb7532c"
+    },
+    {
+      "path": "backups/game-20261026T145301Z-bd9277525d/constants.py",
+      "size_bytes": 1045,
+      "sha256": "0800146e636ccd154756badd27f9649dd1f69871d3f652176a517f715e5afd6e"
+    },
+    {
+      "path": "backups/game-20261026T145301Z-bd9277525d/main.py",
+      "size_bytes": 5353,
+      "sha256": "937f471427ba854cdfce63ec70ed5bd3d948844e8a51873405f79046076ca3f4"
+    },
+    {
+      "path": "backups/game-20261026T145301Z-bd9277525d/player.py",
+      "size_bytes": 2026,
+      "sha256": "6a93971abe89c2940c9e53c1a9545aec3287767ae7a699f8651298dbc5d8869f"
+    },
+    {
+      "path": "backups/game-20261026T145301Z-bd9277525d/__init__.py",
+      "size_bytes": 27,
+      "sha256": "4b545c2fe110e064ca964460ba7d03bbcac25d6aebd007c8a5082b55ee0a58e9"
+    },
+    {
+      "path": "backups/game-20261026T145301Z-bd9277525d/assets/emberkit_sprite.png",
+      "size_bytes": 9794,
+      "sha256": "25e4f093e5ea846a76fa75b6b0c3191c04ad9a28fdcd21eecc6211deda3fb433"
+    },
+    {
+      "path": "backups/game-20261026T145301Z-bd9277525d/assets/grassy_background.png",
+      "size_bytes": 100069,
+      "sha256": "4b0134167c7fdac4a310892f102c3e385556472781b039f7684ff9571e1e1f10"
+    },
+    {
+      "path": "backups/game-20261026T145301Z-bd9277525d/assets/shellwave_sprite.png",
+      "size_bytes": 8935,
+      "sha256": "a0e6f14dabecab4417c65b68ab343ba88883963c21ff5f9c9e18ee3382a125da"
+    },
+    {
+      "path": "bo_v4_tester_v1/demo_game.py",
+      "size_bytes": 15,
+      "sha256": "f0d5a412217e4f3aa387c98404747decd22fc3c02940237fd96c6160509c816c"
+    },
+    {
+      "path": "bo_v4_tester_v1/example_suite.json",
+      "size_bytes": 520,
+      "sha256": "7838d68f1735f2c28f0b327c62aa8f72b84316a69f56e76c8fa1dd0ea772baca"
+    },
+    {
+      "path": "bo_v4_tester_v1/README.md",
+      "size_bytes": 3078,
+      "sha256": "7031469511564927dce1a69fc721713c101160f14a4882bcef1ce257a4e74d5b"
+    },
+    {
+      "path": "bo_v4_tester_v1/bo_v4_tester/tester.py",
+      "size_bytes": 14102,
+      "sha256": "e62a2bf195e8f9b5464713ae7f09424c61b2ba6c8c49fcce14f69d9a28df68bf"
+    },
+    {
+      "path": "bo_v4_tester_v1/bo_v4_tester/__init__.py",
+      "size_bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "coder_agent_adhoc/agent_coder.py",
+      "size_bytes": 34550,
+      "sha256": "e0fbcb9e509fde4e844b5e7a96700e8309af09f2dce33d1961e03e7baee6aff6"
+    },
+    {
+      "path": "coder_agent_adhoc/build_brief.py",
+      "size_bytes": 2733,
+      "sha256": "34f42da751690ebb61447e887da0157b8821e1be6f11f187873bc5de43c48eb6"
+    },
+    {
+      "path": "coder_agent_adhoc/build_state.py",
+      "size_bytes": 8823,
+      "sha256": "43e514178d08c6a2bdc32afa3310f5f4fa4f47758281d6870558cc5f80f2d196"
+    },
+    {
+      "path": "coder_agent_adhoc/context.py",
+      "size_bytes": 11408,
+      "sha256": "9bf13a163f878d05d710bb7b41144495f22106f956182d6a269d71bd29b04b79"
+    },
+    {
+      "path": "coder_agent_adhoc/contracts.py",
+      "size_bytes": 11717,
+      "sha256": "4ab2fa23de02887e01869b8bd3c57e2d15db38798507ab32834078d26a1e223c"
+    },
+    {
+      "path": "coder_agent_adhoc/diagnostics.py",
+      "size_bytes": 3184,
+      "sha256": "117c08bdcd86ae9ac07defa06f07572dc4dd10eacb2eb11f0cdc9764b66da72e"
+    },
+    {
+      "path": "coder_agent_adhoc/execution.py",
+      "size_bytes": 2593,
+      "sha256": "7e8b28b39faef2a62cd4328322356622c87a7043d5a1d766cac79a5def32307c"
+    },
+    {
+      "path": "coder_agent_adhoc/gates.py",
+      "size_bytes": 7173,
+      "sha256": "e8fa3904a547ca5b7b308b2badfb7f5ec4a604e57a6acf3346931cfbe762b3aa"
+    },
+    {
+      "path": "coder_agent_adhoc/godot_runtime.py",
+      "size_bytes": 13717,
+      "sha256": "1ec8d3cadaaf0f0fc8b8c04c0c546f4a4f22cb2c658294df22e730771bd3c2d5"
+    },
+    {
+      "path": "coder_agent_adhoc/initial_build.py",
+      "size_bytes": 1455,
+      "sha256": "bcc7b0403df6ec2952e64bbb3ed5277e5abcd62a77bd65d758182836428b8dd7"
+    },
+    {
+      "path": "coder_agent_adhoc/launch_game.py",
+      "size_bytes": 7248,
+      "sha256": "15e4454120e8683b558d1c76e231bee022f4e016ad9a8ff63294d456246a8113"
+    },
+    {
+      "path": "coder_agent_adhoc/play_child.py",
+      "size_bytes": 395,
+      "sha256": "7f363253b9a40f7e71978942f87605b0f68fef992d7ed3b2d3fd686425778574"
+    },
+    {
+      "path": "coder_agent_adhoc/play_host.py",
+      "size_bytes": 3339,
+      "sha256": "297374039b0ca626eaec8fda419420cfb10096da529030d8159c67cb4564e524"
+    },
+    {
+      "path": "coder_agent_adhoc/presentation.py",
+      "size_bytes": 5185,
+      "sha256": "6c384083c2e9060d02ad0cd9e7066dfb5cfd2c89b4d6c65eca1d550c159da064"
+    },
+    {
+      "path": "coder_agent_adhoc/python_runtime.py",
+      "size_bytes": 2795,
+      "sha256": "feac62e81ff5ada919c9ae1b12bb984c7658c8dc63dd0ab3568c39bc03a0e2dd"
+    },
+    {
+      "path": "coder_agent_adhoc/repair.py",
+      "size_bytes": 7488,
+      "sha256": "207b3622a1acfcbba81671c5ecd0dc729fbd1264cd0c15e5a1857c92ea8e5aed"
+    },
+    {
+      "path": "coder_agent_adhoc/run_context.py",
+      "size_bytes": 2552,
+      "sha256": "d6bbedb6e9b5297b8c06da6671e1a6cc16750a8ba1ce47e2b904e004f4fcceb8"
+    },
+    {
+      "path": "coder_agent_adhoc/smoke_child.py",
+      "size_bytes": 4632,
+      "sha256": "d9cadd884ffe2e0e1b07fc1c08a494c2a01eccff7440de5f2b68b7f7553ae953"
+    },
+    {
+      "path": "coder_agent_adhoc/windows_sandbox.py",
+      "size_bytes": 11735,
+      "sha256": "7eb1254d8522ea38b0627b224dd165a0f147a9d57ff93328cec391f3300a7223"
+    },
+    {
+      "path": "coder_agent_adhoc/workspace.py",
+      "size_bytes": 5894,
+      "sha256": "70d6bd010c2fd10ddae68c11910108a5b74aba448c91772850b532b5ffe43695"
+    },
+    {
+      "path": "coder_agent_adhoc/__init__.py",
+      "size_bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "coder_agent_adhoc/adapters/godot.py",
+      "size_bytes": 15783,
+      "sha256": "998f874abd9072dcca340dcd7655d4161870c75c52eb48a36ec4b1636fa79828"
+    },
+    {
+      "path": "coder_agent_adhoc/adapters/pygame.py",
+      "size_bytes": 2083,
+      "sha256": "87b172b18d9980253e5d2a1e50f279bbd7834ca204ac02e8e4401b10a58d7894"
+    },
+    {
+      "path": "coder_agent_adhoc/adapters/terminal.py",
+      "size_bytes": 2108,
+      "sha256": "bbcfcdaad3e0e9322a220dda1ec2728cdde3b175cae6970ca410769d8ff94c0d"
+    },
+    {
+      "path": "coder_agent_adhoc/adapters/_python.py",
+      "size_bytes": 259,
+      "sha256": "d5de54a6871e2db749f8e411b932588f250451cf98ce58ef95d3e8a0a353d250"
+    },
+    {
+      "path": "coder_agent_adhoc/adapters/__init__.py",
+      "size_bytes": 815,
+      "sha256": "eb9cb2d5afee5c394e188b7642d2bc79e87180219a976d4347322cd97099c725"
+    },
+    {
+      "path": "coder_agent_adhoc/configuration/config.py",
+      "size_bytes": 2057,
+      "sha256": "20c284e612882f8618f9513edc90485e59a5855cb90d44308b75b285513fc83b"
+    },
+    {
+      "path": "coder_agent_adhoc/configuration/__init__.py",
+      "size_bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "coder_agent_adhoc/resources/prompt_coder.txt",
+      "size_bytes": 7418,
+      "sha256": "5c8843f926ced2aeffcef2661a9b85d7a1641a944505da7662ef8001181d1a46"
+    },
+    {
+      "path": "coder_agent_adhoc/tools/tools_asset.py",
+      "size_bytes": 520,
+      "sha256": "490453df160dda347c5ffce7d9e423f0aac5133fe5452960ff77b5bfd2be3c32"
+    },
+    {
+      "path": "coder_agent_adhoc/tools/tools_coder.py",
+      "size_bytes": 10761,
+      "sha256": "8e1afbdc9621492beab3a684e02af26e0a6f80e9af5b0b840e64470c31b9a4b7"
+    },
+    {
+      "path": "coder_agent_adhoc/tools/__init__.py",
+      "size_bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/CODER_INTEGRATION.md",
+      "size_bytes": 6131,
+      "sha256": "46c41388f89673b555103a8446defb3c0015c73307b2c6b927257113dedd00a3"
+    },
+    {
+      "path": "docs/EVAL_TEST_HANDOFF_CONTRACT.md",
+      "size_bytes": 6128,
+      "sha256": "1e675ee841ff19febb419198a1680bff652a5583a96c7070e9ed4214a243403b"
+    },
+    {
+      "path": "docs/MANUAL_TESTS.md",
+      "size_bytes": 3749,
+      "sha256": "cbf50831adc0212b8871a86f5c8e69ad04eceb940c2b0e04ac589db6769f4b98"
+    },
+    {
+      "path": "docs/TEST_STATUS_AND_BASELINE_01.md",
+      "size_bytes": 6515,
+      "sha256": "a82e25f410f6bfd6fb894b58ef624b02f47ae1cd48bdb1c134c2b766ac819b20"
+    },
+    {
+      "path": "eval_generator_module/README.md",
+      "size_bytes": 3691,
+      "sha256": "93377d7f90898c8acedaf215af3489df092fc45f3d045dae7b6024ad4dbbf769"
+    },
+    {
+      "path": "eval_generator_module/requirements.txt",
+      "size_bytes": 44,
+      "sha256": "717a9e6bc96bcca8032ddd7d468f6b2aae8d36ea7f3bafd5fc6506b4c35f2605"
+    },
+    {
+      "path": "eval_generator_module/eval_generator/generator.py",
+      "size_bytes": 20366,
+      "sha256": "9c3a27c3ff6029adfb020d702c426094f4dc23be2811a785cf8048e8f7083865"
+    },
+    {
+      "path": "eval_generator_module/eval_generator/README.md",
+      "size_bytes": 3057,
+      "sha256": "9c7bf97af1f8b0e86726f100301c6bb9024f1bc7db5f64e7defdc7edbecd3558"
+    },
+    {
+      "path": "eval_generator_module/eval_generator/test_generator.py",
+      "size_bytes": 1352,
+      "sha256": "14e977b31c20784e0fbbbf3e876d9b96230db0f85fc5011447d1926fe6d0e43b"
+    },
+    {
+      "path": "eval_generator_module/eval_generator/__init__.py",
+      "size_bytes": 66,
+      "sha256": "24723a3c45e143ce5acf8d27d7410eb1cc32434496d51a36e685c742a4ba2ea9"
+    },
+    {
+      "path": "eval_generator_module/tests/test_generator.py",
+      "size_bytes": 2686,
+      "sha256": "fb6453bff2dafa5c9dbed501f0aea675ddef07e5c4c40e8bb2574b84a3a97006"
+    },
+    {
+      "path": "evidence/actual_input_controls_serial.log",
+      "size_bytes": 1456,
+      "sha256": "2fb20d08efb5c86314cb02de60b1fe9ebd019bdebfbb1a8bc4a86ac2a2075193"
+    },
+    {
+      "path": "evidence/baseline_01_regression.log",
+      "size_bytes": 10083,
+      "sha256": "2d85e21fe3590fc06636c0b2e69be34d4a943f4d32f6622c036e7fe14197033f"
+    },
+    {
+      "path": "evidence/current_regression.log",
+      "size_bytes": 22498,
+      "sha256": "7477e67883c2e380f18569cb66ebca334c4a5405a1826b15db7917f046bc05ce"
+    },
+    {
+      "path": "evidence/latest_native_boot.json",
+      "size_bytes": 2017,
+      "sha256": "6f14456914b93a8940b83b6338771bfff3c6a0f1a1a36b257db3b720103b86ea"
+    },
+    {
+      "path": "evidence/terminal_repair/http.jsonl",
+      "size_bytes": 6496,
+      "sha256": "4d3a64da9782daad8e7ecfc632aa881ecc2fc05491d2f1cd1a75cebd9847046c"
+    },
+    {
+      "path": "evidence/terminal_repair/negative.json",
+      "size_bytes": 5417,
+      "sha256": "17d28ccabb6a17265e045010728799502e19d885f7beb1f25f33c59fcacb2128"
+    },
+    {
+      "path": "evidence/terminal_repair/repair.diff",
+      "size_bytes": 411,
+      "sha256": "3f6cc13c28c2425114f54c92e00408447220477b5335e77b2b41ce882552813e"
+    },
+    {
+      "path": "evidence/terminal_repair/summary.json",
+      "size_bytes": 5915,
+      "sha256": "a524ccd9f6cccc3030b4b4f5288ecd6501a928c2a859da44a1329cc77def03e0"
+    },
+    {
+      "path": "evidence/terminal_repair/T03-observation.json",
+      "size_bytes": 918,
+      "sha256": "558ca9cd8a679dfe1e99d551ae98877404100b73a47f996ae61cd6b90131e856"
+    },
+    {
+      "path": "evidence/terminal_repair/test_results.json",
+      "size_bytes": 703,
+      "sha256": "b443b02b6fccf0388945dd8a92938c70016de08d0c0e06787aa5127ecf793a75"
+    },
+    {
+      "path": "evidence/terminal_repair/trial.json",
+      "size_bytes": 26408,
+      "sha256": "992e5c105b342c05e2dfc408f7e57803b9577eac4cabae02f7d44ca4a6ecbe9d"
+    },
+    {
+      "path": "evidence/terminal_repair/after/summary.json",
+      "size_bytes": 2229,
+      "sha256": "e96d615d00fb9c871bccce16dbeea3eca9f8ca832411e532e2ab1c641bbc105b"
+    },
+    {
+      "path": "evidence/terminal_repair/after/T01.json",
+      "size_bytes": 874,
+      "sha256": "3887556dca3124e9b972d90bad64e75d51dc5be440f2eb52a18a988b9ab6a46c"
+    },
+    {
+      "path": "evidence/terminal_repair/after/T01.stdout.txt",
+      "size_bytes": 50,
+      "sha256": "a981b72b89f9eb074f48f8b8e8367b075fcd794412c124ad569642a042964c2f"
+    },
+    {
+      "path": "evidence/terminal_repair/after/T03.json",
+      "size_bytes": 895,
+      "sha256": "35501c6ffa739f905126d4283448d1ee8b06870d81e4e0f71e7893b169bc22ce"
+    },
+    {
+      "path": "evidence/terminal_repair/after/T03.stdout.txt",
+      "size_bytes": 71,
+      "sha256": "ceb0f7a677a3d27b0d203534916d706a6e2449bdfb6f191b71ec95a6987e12a8"
+    },
+    {
+      "path": "evidence/terminal_repair/after/test_behavior.py",
+      "size_bytes": 360,
+      "sha256": "cab8fc09105f2f51ce11a59c3ca74e96510c2de2c4b674b52287096f63755697"
+    },
+    {
+      "path": "evidence/terminal_repair/after/test_regression.py",
+      "size_bytes": 361,
+      "sha256": "997a6bc4eeea93076055d3654f6146a5bc0f33860655ddc3b557f5c8d6c7b781"
+    },
+    {
+      "path": "evidence/terminal_repair/before/summary.json",
+      "size_bytes": 2252,
+      "sha256": "674b820d268a108a3dd446e74fe67d2adaa045b798f2aad7c2e215618e4857ef"
+    },
+    {
+      "path": "evidence/terminal_repair/before/T01.json",
+      "size_bytes": 874,
+      "sha256": "7f0303c3085854f2d77864f1b71554a8ec0e9e2f7440474b10cccd6f77ce645e"
+    },
+    {
+      "path": "evidence/terminal_repair/before/T01.stdout.txt",
+      "size_bytes": 50,
+      "sha256": "a981b72b89f9eb074f48f8b8e8367b075fcd794412c124ad569642a042964c2f"
+    },
+    {
+      "path": "evidence/terminal_repair/before/T03.json",
+      "size_bytes": 918,
+      "sha256": "558ca9cd8a679dfe1e99d551ae98877404100b73a47f996ae61cd6b90131e856"
+    },
+    {
+      "path": "evidence/terminal_repair/before/T03.stdout.txt",
+      "size_bytes": 75,
+      "sha256": "718b87c9f5be519effab496ce055cc3b5ee946a1a2fcf032bee5e0776866af58"
+    },
+    {
+      "path": "evidence/terminal_repair/before/test_behavior.py",
+      "size_bytes": 360,
+      "sha256": "cab8fc09105f2f51ce11a59c3ca74e96510c2de2c4b674b52287096f63755697"
+    },
+    {
+      "path": "evidence/terminal_repair/before/test_regression.py",
+      "size_bytes": 361,
+      "sha256": "997a6bc4eeea93076055d3654f6146a5bc0f33860655ddc3b557f5c8d6c7b781"
+    },
+    {
+      "path": "game/pong.py",
+      "size_bytes": 7868,
+      "sha256": "836fb2017a03ee37bd5daf56443415848ae65c1a157c52326249131d98508cb5"
+    },
+    {
+      "path": "game/__init__.py",
+      "size_bytes": 36,
+      "sha256": "05daa0d36f4aea7b91253689ee0273edf839e5d079e26cd8bcb22d73b91acdc7"
+    },
+    {
+      "path": "game_eval_benchmark_15/batch_report.json",
+      "size_bytes": 9193,
+      "sha256": "ec128630ed448b7074fe9735e9736370394a3b3182302a670b21bc9216b1cb31"
+    },
+    {
+      "path": "game_eval_benchmark_15/dataset.json",
+      "size_bytes": 5207,
+      "sha256": "0911356c99224162baa2ec02f7a21d13730a36d9ed5b08e77a34ef1931d40f83"
+    },
+    {
+      "path": "game_eval_benchmark_15/descriptions.md",
+      "size_bytes": 2596,
+      "sha256": "cd41d3f3d6750c20e39c777b4d1eb49ce96d8cfed9a62cad13109e72cb94a8ab"
+    },
+    {
+      "path": "game_eval_benchmark_15/README.md",
+      "size_bytes": 1509,
+      "sha256": "b3436587d0b1827371e96bb22de03853daa4593e3cf2b81bb15e502555608aba"
+    },
+    {
+      "path": "game_eval_benchmark_15/run_eval_benchmark.py",
+      "size_bytes": 3273,
+      "sha256": "80a4a69e62ff24d0dace308facfa4cc1425affabfecd4c75f7e6112ac846044b"
+    },
+    {
+      "path": "game_eval_benchmark_15/cases/G01/coder_plan.json",
+      "size_bytes": 818,
+      "sha256": "70ff6f68ec3d13eb1abbeffd3a0bf0fceb0bc9373a9afb1b82bd41c72a81a45e"
+    },
+    {
+      "path": "game_eval_benchmark_15/cases/G01/description.json",
+      "size_bytes": 249,
+      "sha256": "9471afcf2e30177e0658d9995d13139b9fe93f20505b1f7bb7753895b94b761e"
+    },
+    {
+      "path": "game_eval_benchmark_15/cases/G01/play_manual.json",
+      "size_bytes": 412,
+      "sha256": "9f31ea42ab6655688b4af2016dfb9a5d93b7d89469ff819fc2670629b8172337"
+    },
+    {
+      "path": "game_eval_benchmark_15/cases/G02/coder_plan.json",
+      "size_bytes": 855,
+      "sha256": "bc95769833b271aed74be3ceae268d658f3032688fa18d1e4368870a98db5c30"
+    },
+    {
+      "path": "game_eval_benchmark_15/cases/G02/description.json",
+      "size_bytes": 246,
+      "sha256": "0655262e0b516b79460e9ebeaf3c7e8fa8dd5e033045840a0422ea2a696bfe32"
+    },
+    {
+      "path": "game_eval_benchmark_15/cases/G02/play_manual.json",
+      "size_bytes": 433,
+      "sha256": "be1874e5ba237bbcd62a2c4cdc2d89cb58e0b7de861e7c7c323e850dea4da139"
+    },
+    {
+      "path": "game_eval_benchmark_15/cases/G03/coder_plan.json",
+      "size_bytes": 977,
+      "sha256": "ccb0551d49b4df61ea520cb992debe8bc4cc6f030be069ad5a816002fdd8365e"
+    },
+    {
+      "path": "game_eval_benchmark_15/cases/G03/description.json",
+      "size_bytes": 257,
+      "sha256": "d828f3ac838283d567ce9ae08b871db6d871616e36160efc9902c03a9a89c4b4"
+    },
+    {
+      "path": "game_eval_benchmark_15/cases/G03/play_manual.json",
+      "size_bytes": 404,
+      "sha256": "1fdf3faf82cb0552e70d46dc2153a9cc133ecfc2bf7bd58558dafba10e25b30e"
+    },
+    {
+      "path": "game_eval_benchmark_15/cases/G04/coder_plan.json",
+      "size_bytes": 956,
+      "sha256": "9260e378e12372e3710e7377d53f8bff9cec78b5fc867802ae22d83552454f27"
+    },
+    {
+      "path": "game_eval_benchmark_15/cases/G04/description.json",
+      "size_bytes": 244,
+      "sha256": "cac97493e87910ebfd5355bce5177aa2c5041e9eda165c068480920a6037e1b9"
+    },
+    {
+      "path": "game_eval_benchmark_15/cases/G04/play_manual.json",
+      "size_bytes": 437,
+      "sha256": "8e55f49105cd0ffae0802ae401f3ac2cbaa9b0f81b9229918c0dc69d2199b14e"
+    },
+    {
+      "path": "game_eval_benchmark_15/cases/G05/coder_plan.json",
+      "size_bytes": 854,
+      "sha256": "09a28aeb48da1f25e589a290477dc1cd7ec7deeb76f693d2d56e2d38c0c8d2e0"
+    },
+    {
+      "path": "game_eval_benchmark_15/cases/G05/description.json",
+      "size_bytes": 253,
+      "sha256": "2e21fce025caadbd7c7538ff6a94563e42a583f9822ea53627c1e021e891f664"
+    },
+    {
+      "path": "game_eval_benchmark_15/cases/G05/play_manual.json",
+      "size_bytes": 408,
+      "sha256": "8b856e3c5fcd4bb6eef98662d7c3961e81965927c175eb759e46a7a1710da33c"
+    },
+    {
+      "path": "game_eval_benchmark_15/cases/G06/coder_plan.json",
+      "size_bytes": 837,
+      "sha256": "70fd0ab0bcef82d416d35500231869564b2eebc58acc0bf9482fc68af2fed7ec"
+    },
+    {
+      "path": "game_eval_benchmark_15/cases/G06/description.json",
+      "size_bytes": 228,
+      "sha256": "665c92149928e2996ce2e9ecf1a6a516c55feac81a420b466eae124a3712b768"
+    },
+    {
+      "path": "game_eval_benchmark_15/cases/G06/play_manual.json",
+      "size_bytes": 388,
+      "sha256": "59866f233b3750c7f6c7ef4600ab0a4a81ed117f756a986c43b8d8d2bb1f675a"
+    },
+    {
+      "path": "game_eval_benchmark_15/cases/G07/coder_plan.json",
+      "size_bytes": 947,
+      "sha256": "5ccf3ec884be74667df344ca79b4f879bba420e7c78a0e515285bd00e2a6b99c"
+    },
+    {
+      "path": "game_eval_benchmark_15/cases/G07/description.json",
+      "size_bytes": 241,
+      "sha256": "0aa2e1fe4f7eb8d206b5170737f9a5223277becdc8c14cd885ce0e8ba1ccaed1"
+    },
+    {
+      "path": "game_eval_benchmark_15/cases/G07/play_manual.json",
+      "size_bytes": 423,
+      "sha256": "8392dc63627f747dd45af844b406d35dc4df4027d18b3e16bb2af85269e10051"
+    },
+    {
+      "path": "game_eval_benchmark_15/cases/G08/coder_plan.json",
+      "size_bytes": 1033,
+      "sha256": "2a7742e6656aedac78a97467804f9bf2e6928e94c64d4d12fdeac2f6205c19ba"
+    },
+    {
+      "path": "game_eval_benchmark_15/cases/G08/description.json",
+      "size_bytes": 243,
+      "sha256": "57e9eb96a8951a4dd65d07976df88c893781f18cf8ad9bf67c0cd00199ab55a1"
+    },
+    {
+      "path": "game_eval_benchmark_15/cases/G08/play_manual.json",
+      "size_bytes": 391,
+      "sha256": "87b6df531597a07563ba1cf0f55b34569857a5213b5a3eb6d0c9c266db63025f"
+    },
+    {
+      "path": "game_eval_benchmark_15/cases/G09/coder_plan.json",
+      "size_bytes": 1051,
+      "sha256": "ff39caf451194e9087a7419b14d282b8ce61df6a4bbc8e6759dd45a06d8a2f97"
+    },
+    {
+      "path": "game_eval_benchmark_15/cases/G09/description.json",
+      "size_bytes": 239,
+      "sha256": "c9fb24d88c86666a32e9244dd44e1a067041b5d40e0979d3f038ad35d0622d11"
+    },
+    {
+      "path": "game_eval_benchmark_15/cases/G09/play_manual.json",
+      "size_bytes": 395,
+      "sha256": "5324e381e4fbba95b8a56f6f40b23f737d6fa25a80a68f9894e96bff277bbe3d"
+    },
+    {
+      "path": "game_eval_benchmark_15/cases/G10/coder_plan.json",
+      "size_bytes": 1180,
+      "sha256": "5b39dde0e1e319f583d9feac2a2342adae30b886cf13f8477b84de26ccc20f66"
+    },
+    {
+      "path": "game_eval_benchmark_15/cases/G10/description.json",
+      "size_bytes": 243,
+      "sha256": "5efe899adbc40cc13453d6ca1a45f70f2f3918c9cea53abf09c9c661897e791b"
+    },
+    {
+      "path": "game_eval_benchmark_15/cases/G10/play_manual.json",
+      "size_bytes": 412,
+      "sha256": "c4e13beafd13e0ac910f8562395671ca30a9fb1a74c10ffbe5e675c1a1c4513e"
+    },
+    {
+      "path": "game_eval_benchmark_15/cases/G11/coder_plan.json",
+      "size_bytes": 1009,
+      "sha256": "503a7a5af7bb05b33e64a922b920265fe408fdbae5d5aa064c9023f60a876b46"
+    },
+    {
+      "path": "game_eval_benchmark_15/cases/G11/description.json",
+      "size_bytes": 249,
+      "sha256": "825e2cb728ac24b42a188140871330562719c38a674ea1eeee26f5694213498d"
+    },
+    {
+      "path": "game_eval_benchmark_15/cases/G11/play_manual.json",
+      "size_bytes": 402,
+      "sha256": "cf4c94900a9a5256f425e7369d8474d725aa17d8b3380a6426048054c3985108"
+    },
+    {
+      "path": "game_eval_benchmark_15/cases/G12/coder_plan.json",
+      "size_bytes": 1116,
+      "sha256": "915223c7aff4a37d8bd606c30311833d7df5e2626e0410a0eedd2b955a86b45e"
+    },
+    {
+      "path": "game_eval_benchmark_15/cases/G12/description.json",
+      "size_bytes": 253,
+      "sha256": "a8437cad88f0ad2f6c85e5a1cab0c117a57092053c1d7f09ec571921c2c1f35d"
+    },
+    {
+      "path": "game_eval_benchmark_15/cases/G12/play_manual.json",
+      "size_bytes": 412,
+      "sha256": "87adabf2657dd88bf10b3df64ccd466caa785f3599fdcb96ddb5ed36b90a658c"
+    },
+    {
+      "path": "game_eval_benchmark_15/cases/G13/coder_plan.json",
+      "size_bytes": 1329,
+      "sha256": "8fd16aaa959f9c95e4b11643e16c24c746e1eaaa5d94088c59704ba9ee607937"
+    },
+    {
+      "path": "game_eval_benchmark_15/cases/G13/description.json",
+      "size_bytes": 277,
+      "sha256": "dad4bfd5b151057bcde45455a39218ccafced07cd84dd1667323a495c527e411"
+    },
+    {
+      "path": "game_eval_benchmark_15/cases/G13/play_manual.json",
+      "size_bytes": 446,
+      "sha256": "a05aa5325bfa40f222c5c99144825c3ac782c60a90eeb6fb8e955072cc0b4f3a"
+    },
+    {
+      "path": "game_eval_benchmark_15/cases/G14/coder_plan.json",
+      "size_bytes": 1401,
+      "sha256": "bd63605f9d12b180206a6c64d2363e5977919004f554a5e586a60c1535410f56"
+    },
+    {
+      "path": "game_eval_benchmark_15/cases/G14/description.json",
+      "size_bytes": 272,
+      "sha256": "c84062b8ceb93a0b0f807424967f44f422c0ae708ac07252c23bf5fa81e59326"
+    },
+    {
+      "path": "game_eval_benchmark_15/cases/G14/play_manual.json",
+      "size_bytes": 460,
+      "sha256": "fbc3453839d5151023310e53db803f14ef49b58dcbb1eafa07dfa596f8add234"
+    },
+    {
+      "path": "game_eval_benchmark_15/cases/G15/coder_plan.json",
+      "size_bytes": 1654,
+      "sha256": "9fc432675c2696b91d298828e2abc0bd23bd6b76fd7f730a8c1e0fdc6ceb6884"
+    },
+    {
+      "path": "game_eval_benchmark_15/cases/G15/description.json",
+      "size_bytes": 288,
+      "sha256": "f9af934254ec0066145252703f5f9423f269bf31249707ad4530f0b873148b94"
+    },
+    {
+      "path": "game_eval_benchmark_15/cases/G15/play_manual.json",
+      "size_bytes": 488,
+      "sha256": "fea78e95bb84bf796f3c4042321b30a3730192d1a7e3331cfa3a29012d9e0964"
+    },
+    {
+      "path": "game_eval_benchmark_15/eval_generator_module/__init__.py",
+      "size_bytes": 37,
+      "sha256": "8aa98bf0168cac79a0ef2503273a397edae5c1751686a44b04aa6aacad71558f"
+    },
+    {
+      "path": "game_eval_benchmark_15/eval_generator_module/eval_generator/generator.py",
+      "size_bytes": 9850,
+      "sha256": "0f0be01bc24a76f6f27634652329045ec0336c21ed1d4f7b9cc8421911ec957b"
+    },
+    {
+      "path": "game_eval_benchmark_15/eval_generator_module/eval_generator/__init__.py",
+      "size_bytes": 22,
+      "sha256": "bb89b2a976f097e914a2e8eb1aa563d0263591792e743a16631bb64537618cf9"
+    },
+    {
+      "path": "master_planner/run.py",
+      "size_bytes": 13565,
+      "sha256": "5ac08e2133d9bdc59e920ee02aee0f934abc2d73e02046b177d0a5ce162094be"
+    },
+    {
+      "path": "master_planner/asset/asset_config.py",
+      "size_bytes": 51,
+      "sha256": "a24a59cc4e7a07d47bcb0b29674c4157e6d038e3ef8ca80cacca4d4b14147198"
+    },
+    {
+      "path": "master_planner/asset/planner.py",
+      "size_bytes": 11104,
+      "sha256": "c8199f497dc69838a60d6e82f79c525d2d03059dc23e2a2df77da0e289436f3d"
+    },
+    {
+      "path": "master_planner/asset/validator.py",
+      "size_bytes": 12656,
+      "sha256": "3a172227e55c630369df4bf68d5ac92916be8a1a46764a5543fe6ecddd9d7035"
+    },
+    {
+      "path": "master_planner/asset/__init__.py",
+      "size_bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "master_planner/asset/generator/godot_generator.py",
+      "size_bytes": 11274,
+      "sha256": "8ca7f971f242141d897e05b2b57a1eb77adbd1a1d6feba130ddc3c584ac4c133"
+    },
+    {
+      "path": "master_planner/asset/generator/image_generation.py",
+      "size_bytes": 10724,
+      "sha256": "513afb732687d821bc8dc0307f906199e3a9f3105eaa031e1e73daff5525506f"
+    },
+    {
+      "path": "master_planner/asset/generator/pygame_generator.py",
+      "size_bytes": 10990,
+      "sha256": "ef7709ddf09f0cb7e985b623014358d4195fb69cfaecb084ac7e019a8a2603e1"
+    },
+    {
+      "path": "master_planner/asset/generator/terminal_generator.py",
+      "size_bytes": 8719,
+      "sha256": "36af2123072dd65c80e945818268fcedf279f24a538ddb4d4485a7a674228032"
+    },
+    {
+      "path": "master_planner/asset/generator/__init__.py",
+      "size_bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "master_planner/planner/call_planner.py",
+      "size_bytes": 17359,
+      "sha256": "d135ee618803c840c1f0fd3a8a1bfe3ce7502e0392d5336cf186a24d3e63fe25"
+    },
+    {
+      "path": "master_planner/planner/__init__.py",
+      "size_bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "master_planner/planner/config/planner_config.py",
+      "size_bytes": 804,
+      "sha256": "af7177a839311cd6ea3ce622f936a59b411f45a209742abf7faa12ca306aa3fb"
+    },
+    {
+      "path": "master_planner/planner/config/__init__.py",
+      "size_bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "master_planner/planner/resources/planner_prompt.txt",
+      "size_bytes": 8746,
+      "sha256": "b2f20a5b80cbc3f1588d6c277bb379e915c998786f5bddd8e53dcfc8d130519f"
+    },
+    {
+      "path": "master_planner/planner/resources/plan_schema.json",
+      "size_bytes": 16566,
+      "sha256": "a05304f39f49421f2f30f6075892092a6409b085caa4f8508435d49292ec63dc"
+    },
+    {
+      "path": "plans/.gitkeep",
+      "size_bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "plans/asset_manifest.json",
+      "size_bytes": 224,
+      "sha256": "2d01087527319db27f4ed667d76d8924adab139f4d4f854daadcce937b134075"
+    },
+    {
+      "path": "plans/coder_plan.json",
+      "size_bytes": 5201,
+      "sha256": "6483195bc0b3b39903e537c3f28e5fbc026e723359588767bb8184b00d46a58e"
+    },
+    {
+      "path": "plans/dummy_coder_plan.json",
+      "size_bytes": 983,
+      "sha256": "f1ed4e5106eda072d356e90e6c52634deca72adc7d0fc5662422a6e120e34a93"
+    },
+    {
+      "path": "plans/dummy_play_manual.json",
+      "size_bytes": 1835,
+      "sha256": "92fc8dc440767a9a62c7dda9d2fa6fa9cde32ae491c3b3608b638db96d34678c"
+    },
+    {
+      "path": "plans/plan.json",
+      "size_bytes": 8387,
+      "sha256": "2b8dfad2c5a696894d99b220df2883acca2f07db0c1015d7ac108db239177c98"
+    },
+    {
+      "path": "plans/play_manual.json",
+      "size_bytes": 1160,
+      "sha256": "a27f3d936a3f652f470dbb2c5c0fb2322bcc8d0d3ee0805d5e040d51ba673e8a"
+    },
+    {
+      "path": "tests_coder/prepare_repair_workspace.py",
+      "size_bytes": 2272,
+      "sha256": "ddc84669842b86dbef9686d5924af9fae6b702ec37aad30b914f0e21838726aa"
+    },
+    {
+      "path": "tests_coder/README.md",
+      "size_bytes": 2030,
+      "sha256": "2613c4e4415cfecffa318a63cd2733669a113c378e968d2b98d900e340cfaf21"
+    },
+    {
+      "path": "tests_coder/test_context_and_tools.py",
+      "size_bytes": 10531,
+      "sha256": "d525479c83f8e72a40f885e0850abd4ffe73137eaf2cccc4d5691b18b1f4150e"
+    },
+    {
+      "path": "tests_coder/test_durable_delivery.py",
+      "size_bytes": 21997,
+      "sha256": "b60b25fb4345928193d7eb9783352e8c292af14ea513a23f32f66ea66e8f23ef"
+    },
+    {
+      "path": "tests_coder/test_entrypoint_scaffold.py",
+      "size_bytes": 4276,
+      "sha256": "7047c3e43f1e28cf03770b461faa445663b9852b19b99f5865242ee6edce42a3"
+    },
+    {
+      "path": "tests_coder/test_fixture_preconditions.py",
+      "size_bytes": 4961,
+      "sha256": "a09c87d89141953c490d5bf2628407e7b01269b55090c7a679e68ae6308a2ddd"
+    },
+    {
+      "path": "tests_coder/test_godot_asset_cache.py",
+      "size_bytes": 8128,
+      "sha256": "496dbc60d34c6ed37d3a886bbbc4b441f2febab0f3d72a06eb9cfd916aa82069"
+    },
+    {
+      "path": "tests_coder/test_godot_sandbox.py",
+      "size_bytes": 6322,
+      "sha256": "08f35bdae380d3d3fab67a67422cda20bf7e898d1e323939b2eb9e3846bcb28d"
+    },
+    {
+      "path": "tests_coder/test_hardening.py",
+      "size_bytes": 14694,
+      "sha256": "cbd867803c6f0dc27feeeffbe32bdb402ab9bdf5a2d5e6bfd75c48de4c791271"
+    },
+    {
+      "path": "tests_coder/test_harness.py",
+      "size_bytes": 14757,
+      "sha256": "aa33f6bf398a0fd0b3e30a458e7ab9c92f9ed255a044556d38f901d2c2a7ff12"
+    },
+    {
+      "path": "tests_coder/test_initial_build_brief.py",
+      "size_bytes": 5290,
+      "sha256": "126fc4d658b408fc8399bbd8689d3c6f8b267b3bb4d8a2528169b0dc29598d58"
+    },
+    {
+      "path": "tests_coder/test_live_failure_regressions.py",
+      "size_bytes": 7784,
+      "sha256": "0f566ec10f9d50c4158c2a697df933dfd84d112e876b8b8c2fc0389423fc1efc"
+    },
+    {
+      "path": "tests_coder/test_visible_launch.py",
+      "size_bytes": 6310,
+      "sha256": "188dbc88409d20f7f50d538a4d350987ed8eb69f499d851616625ea32473aa31"
+    },
+    {
+      "path": "tests_coder/test_workspace.py",
+      "size_bytes": 9465,
+      "sha256": "41ceeef2be73b1a477e0e2cd7f27381430ba16900977d5da96a665df7e5a0514"
+    },
+    {
+      "path": "tests_coder/verify_initial_build.py",
+      "size_bytes": 2345,
+      "sha256": "207034ec357e3ce1247e1534d12453eedd6035ae4c61659360d0a1e6bdbf869d"
+    },
+    {
+      "path": "tests_coder/verify_repair_entrypoint.py",
+      "size_bytes": 6677,
+      "sha256": "08a7757f6001c9ee30df397deca3e723b4dca7f71eac61e5b9ad9d707fc6d8c5"
+    },
+    {
+      "path": "tests_coder/fixtures/godot/coder_plan.json",
+      "size_bytes": 1713,
+      "sha256": "0b5b2179115442f2646c3ff94c1d42cdc9c54e60d9f9abe3cce641c86eac029a"
+    },
+    {
+      "path": "tests_coder/fixtures/godot/feedback.json",
+      "size_bytes": 601,
+      "sha256": "cce1db42acd4db07fd18b551ff2cba5d6737ed0bd888ec30d10b0d468da5dec4"
+    },
+    {
+      "path": "tests_coder/fixtures/godot/game/main.gd",
+      "size_bytes": 198,
+      "sha256": "3e4cb65d56bf4abf3568307d0dd76eb9c8f50786df6bd427988b146cb13f0e89"
+    },
+    {
+      "path": "tests_coder/fixtures/godot/game/main.tscn",
+      "size_bytes": 163,
+      "sha256": "6cdf209ee68852673d76c2f38b77b6d48e5e74ed9b494fa437fc6e27623ab7ec"
+    },
+    {
+      "path": "tests_coder/fixtures/godot/game/project.godot",
+      "size_bytes": 217,
+      "sha256": "fe5a327b3cfbc9fe85d2da8d9e62f63d70413e7da8b3fc3ea99aa5ea72d7902a"
+    },
+    {
+      "path": "tests_coder/fixtures/godot/game/__init__.py",
+      "size_bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "tests_coder/fixtures/godot/game/tests/test_behavior.gd",
+      "size_bytes": 489,
+      "sha256": "ee62627384ef2dc14bcd15eefafd0c3f9427beb0ba18f6b53053b7e662fde266"
+    },
+    {
+      "path": "tests_coder/fixtures/godot/game/tests/test_regression.gd",
+      "size_bytes": 493,
+      "sha256": "428c8864ff47410003e38c2737bd2e62d19dc3a74231bf80a264f6becfc5a53c"
+    },
+    {
+      "path": "tests_coder/fixtures/godot/traces/eval/eval-v1/T03.log",
+      "size_bytes": 331,
+      "sha256": "fef5584d1380bb21b6b9df08c30aa934006c47858213843d3a16d6391880d88b"
+    },
+    {
+      "path": "tests_coder/fixtures/pygame/coder_plan.json",
+      "size_bytes": 1739,
+      "sha256": "79e9c1b7c1743a354fc48597c598a4e6ec42a8f6759169542ff296b1650c4bd8"
+    },
+    {
+      "path": "tests_coder/fixtures/pygame/feedback.json",
+      "size_bytes": 601,
+      "sha256": "cce1db42acd4db07fd18b551ff2cba5d6737ed0bd888ec30d10b0d468da5dec4"
+    },
+    {
+      "path": "tests_coder/fixtures/pygame/game/main.py",
+      "size_bytes": 1018,
+      "sha256": "6e5e3969a775545325788729a8c094b39d8a7c45f93bd7cf80692b116f517ae7"
+    },
+    {
+      "path": "tests_coder/fixtures/pygame/game/state.py",
+      "size_bytes": 334,
+      "sha256": "ebcc37d7d5479e8b166067543de06bda5ab5fc7420086f2f121c73e3e42c4110"
+    },
+    {
+      "path": "tests_coder/fixtures/pygame/game/__init__.py",
+      "size_bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "tests_coder/fixtures/pygame/tests/test_behavior.py",
+      "size_bytes": 301,
+      "sha256": "61af719f44000ac3f0db50eb23a9a089dc267909273a29136d21637bccf7fd15"
+    },
+    {
+      "path": "tests_coder/fixtures/pygame/tests/test_regression.py",
+      "size_bytes": 305,
+      "sha256": "e8d1db7edcc47f3456336467fad3bd63848213c135d522c188c124d495a50fa3"
+    },
+    {
+      "path": "tests_coder/fixtures/pygame/traces/eval/eval-v1/T03.log",
+      "size_bytes": 331,
+      "sha256": "fef5584d1380bb21b6b9df08c30aa934006c47858213843d3a16d6391880d88b"
+    },
+    {
+      "path": "tests_coder/fixtures/terminal/coder_plan.json",
+      "size_bytes": 1535,
+      "sha256": "ccce047a5c375999842e7f7e70871d337947bad7884940c7d293fc23a0134b63"
+    },
+    {
+      "path": "tests_coder/fixtures/terminal/feedback.json",
+      "size_bytes": 601,
+      "sha256": "cce1db42acd4db07fd18b551ff2cba5d6737ed0bd888ec30d10b0d468da5dec4"
+    },
+    {
+      "path": "tests_coder/fixtures/terminal/game/main.py",
+      "size_bytes": 572,
+      "sha256": "69d17749e523c19904e23f19814518389aee37bbafaa8ba8cc34fa1cb83de069"
+    },
+    {
+      "path": "tests_coder/fixtures/terminal/game/__init__.py",
+      "size_bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "tests_coder/fixtures/terminal/tests/test_behavior.py",
+      "size_bytes": 360,
+      "sha256": "cab8fc09105f2f51ce11a59c3ca74e96510c2de2c4b674b52287096f63755697"
+    },
+    {
+      "path": "tests_coder/fixtures/terminal/tests/test_regression.py",
+      "size_bytes": 361,
+      "sha256": "997a6bc4eeea93076055d3654f6146a5bc0f33860655ddc3b557f5c8d6c7b781"
+    },
+    {
+      "path": "tests_coder/fixtures/terminal/traces/eval/eval-v1/T03.log",
+      "size_bytes": 331,
+      "sha256": "fef5584d1380bb21b6b9df08c30aa934006c47858213843d3a16d6391880d88b"
+    },
+    {
+      "path": "traces/.gitkeep",
+      "size_bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "traces/coder_attempts.jsonl",
+      "size_bytes": 213887,
+      "sha256": "f0b9f0c672d9e0f5088f9b986b4759b5e6f0f63140214c801baf7295b5c01f75"
+    },
+    {
+      "path": "traces/coder_result.json",
+      "size_bytes": 9793,
+      "sha256": "e7d1011c660f8b99e59a87778eed4d31a205b0831cad38778280c1bedf306c01"
+    },
+    {
+      "path": "traces/eval.zip",
+      "size_bytes": 33962,
+      "sha256": "94a49ac0453edc627b13483aaeb37709c26baf5600c877c460ec7c019f775f73"
+    },
+    {
+      "path": "traces/original_game_spec.txt",
+      "size_bytes": 614,
+      "sha256": "c34f36177d53d58287ccf37831ece376d860ae5b55573ccb2d8fce7fbf53ed57"
+    },
+    {
+      "path": "traces/planner_attempts.jsonl",
+      "size_bytes": 304,
+      "sha256": "35ddab1c4149e30b40f7933266a459ac4ae890edb7827d806285ef4a9936bae2"
+    },
+    {
+      "path": "traces/workspace_swap.json",
+      "size_bytes": 1262,
+      "sha256": "40ff52988093533db7f9c7f196b95186dd40338315ed35f5e9e7d2351f73f62a"
+    },
+    {
+      "path": "traces/build_state/18ddabe1ebce449dbbdf67f41f81cc12.json",
+      "size_bytes": 125080,
+      "sha256": "7cd29454f03c8d3c39a3d9bf8eb2a2e3621c5a371e8de7910e826b7d160171cb"
+    },
+    {
+      "path": "traces/build_state/32795067ee114ed89b90e784752a4fd9.json",
+      "size_bytes": 106070,
+      "sha256": "5575c82dbaf47810301bf1a241083d59ff2b85aef2c61eaa6a0e3e361c6ade9b"
+    },
+    {
+      "path": "traces/build_state/75d447b4f635433fb36753467669de15.json",
+      "size_bytes": 188907,
+      "sha256": "4a6162dc96e0ea1bf8728108501ee98b78b96d33863e31e74a13acaf779f2e9b"
+    },
+    {
+      "path": "traces/eval/benchmark-g01/suite.json",
+      "size_bytes": 8051,
+      "sha256": "f757a9124c2b74bdb80844e04a2d599da74c9fc8826b3efc0a700c2878ee5116"
+    },
+    {
+      "path": "traces/eval/benchmark-g02/suite.json",
+      "size_bytes": 7489,
+      "sha256": "1bc40abe09b68a03b5e5bcf951e50acac1bc4cbfcfe503c1cf4ab5b26b64740d"
+    },
+    {
+      "path": "traces/eval/benchmark-g03/suite.json",
+      "size_bytes": 9364,
+      "sha256": "1d4a028fbcbe3c4ed4f69f6b710011fb8b6113666fa643efb3c69a22f0661c7d"
+    },
+    {
+      "path": "traces/eval/benchmark-g04/suite.json",
+      "size_bytes": 7765,
+      "sha256": "f7350acef10d32259f2fc04bc4b6972b85592fec652c805dbeda11e31c58dde0"
+    },
+    {
+      "path": "traces/eval/benchmark-g05/suite.json",
+      "size_bytes": 7957,
+      "sha256": "c529b98a7aa55a2ac0cba5d5f462ea70ace0ab9544761902059c378789ee1bd7"
+    },
+    {
+      "path": "traces/eval/benchmark-g06/suite.json",
+      "size_bytes": 8970,
+      "sha256": "9b71c0ec9c7855948e170e9d9a01f628a21005caacffd76b53e6f8dc670bda7d"
+    },
+    {
+      "path": "traces/eval/benchmark-g07/suite.json",
+      "size_bytes": 9297,
+      "sha256": "417060ddb8a0e1881532e5a736678b1b3af40c165653232457466f370e406a16"
+    },
+    {
+      "path": "traces/eval/benchmark-g08/suite.json",
+      "size_bytes": 11624,
+      "sha256": "d5170b3aa47d58cfd2b92c7904b9ab8cca4707d779102af6eb3c42f8312759d8"
+    },
+    {
+      "path": "traces/eval/benchmark-g09/suite.json",
+      "size_bytes": 8176,
+      "sha256": "159425917395f23790b15aa111d3820dfb90ec3e4e9aa1cffdfd80b760a88a59"
+    },
+    {
+      "path": "traces/eval/benchmark-g10/suite.json",
+      "size_bytes": 9008,
+      "sha256": "936b11d553a1e9fd0c1c2d37d1a3118cb9283c0f155bf7ba75c779a2c40f6848"
+    },
+    {
+      "path": "traces/eval/benchmark-g11/suite.json",
+      "size_bytes": 10362,
+      "sha256": "69582ac7c3c93703f5ef4a275b02b9359570655e5b827b07435915bb6ad8d6f8"
+    },
+    {
+      "path": "traces/eval/benchmark-g12/suite.json",
+      "size_bytes": 12365,
+      "sha256": "513136a02ae4a5cd1ca2f56c38edf939571e8365010914ceb5281b4f09096059"
+    },
+    {
+      "path": "traces/eval/benchmark-g13/suite.json",
+      "size_bytes": 13222,
+      "sha256": "edb37a8cccbffeb0444e3bad49ade1dbf14fa4eae81c776e159d397848b3718f"
+    },
+    {
+      "path": "traces/eval/benchmark-g14/suite.json",
+      "size_bytes": 11916,
+      "sha256": "b9570aca26ab231bfa7d7973f5f211e8e27a0f988d9c7a57da13a905b40662b3"
+    },
+    {
+      "path": "traces/eval/benchmark-g15/suite.json",
+      "size_bytes": 12824,
+      "sha256": "f35acf3e07786c4db634f4a578dec6492a807d33b593f0229aa7924dc7b34569"
+    },
+    {
+      "path": "traces/eval/run20261026_231835-s1/suite.json",
+      "size_bytes": 16020,
+      "sha256": "d1c11902f05da1a7c6a410974a6feca93d2cf82810f4559a2e9dbea8ceece482"
+    },
+    {
+      "path": "traces/eval/run20261026_231835-s1/test_run_20261026_232549/evidence/T01/evidence.json",
+      "size_bytes": 1060,
+      "sha256": "473bbdbd4c5d90803350be5f6aa00b630393941a640f9bf9b83525b94c5d36c8"
+    },
+    {
+      "path": "traces/eval/run20261026_231835-s1/test_run_20261026_232549/evidence/T01/stderr.log",
+      "size_bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "traces/eval/run20261026_231835-s1/test_run_20261026_232549/evidence/T01/stdout.log",
+      "size_bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "traces/eval/run20261026_231835-s1/test_run_20261026_232549/evidence/T02/evidence.json",
+      "size_bytes": 976,
+      "sha256": "327cf9b0c014ebbca12c07edbb13da1fb28fdf2f178eecf57f28a1b1befd709d"
+    },
+    {
+      "path": "traces/eval/run20261026_231835-s1/test_run_20261026_232549/evidence/T02/stderr.log",
+      "size_bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "traces/eval/run20261026_231835-s1/test_run_20261026_232549/evidence/T02/stdout.log",
+      "size_bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "traces/eval/run20261026_231835-s1/test_run_20261026_232549/evidence/T03/evidence.json",
+      "size_bytes": 1002,
+      "sha256": "d8d7c036affae2a4f0a0bbb0041323355c1df2c83da4cf08b03761f40b13cfa3"
+    },
+    {
+      "path": "traces/eval/run20261026_231835-s1/test_run_20261026_232549/evidence/T03/stderr.log",
+      "size_bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "traces/eval/run20261026_231835-s1/test_run_20261026_232549/evidence/T03/stdout.log",
+      "size_bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "traces/eval/run20261026_231835-s1/test_run_20261026_232549/evidence/T04/evidence.json",
+      "size_bytes": 1104,
+      "sha256": "25a8c883a7ee0da66b7b577950fec21bd7b659294098d7e331f4f3fbab84655e"
+    },
+    {
+      "path": "traces/eval/run20261026_231835-s1/test_run_20261026_232549/evidence/T04/stderr.log",
+      "size_bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "traces/eval/run20261026_231835-s1/test_run_20261026_232549/evidence/T04/stdout.log",
+      "size_bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "traces/eval/run20261026_231835-s1/test_run_20261026_232549/evidence/T05/evidence.json",
+      "size_bytes": 1193,
+      "sha256": "b374cd8b9e98660c99ff0d32bdc3ee03378ca7a1bbc41bf1f1f1581011b00ae8"
+    },
+    {
+      "path": "traces/eval/run20261026_231835-s1/test_run_20261026_232549/evidence/T05/stderr.log",
+      "size_bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "traces/eval/run20261026_231835-s1/test_run_20261026_232549/evidence/T05/stdout.log",
+      "size_bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "traces/eval/run20261026_231835-s1/test_run_20261026_232549/evidence/T06/evidence.json",
+      "size_bytes": 1220,
+      "sha256": "2c5d2900df7c0ffbcf5a826417f579c27f628ed1577b928ef6d284bf7850bc96"
+    },
+    {
+      "path": "traces/eval/run20261026_231835-s1/test_run_20261026_232549/evidence/T06/stderr.log",
+      "size_bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "traces/eval/run20261026_231835-s1/test_run_20261026_232549/evidence/T06/stdout.log",
+      "size_bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "traces/eval/run20261026_231835-s1/test_run_20261026_232549/evidence/T07/evidence.json",
+      "size_bytes": 1087,
+      "sha256": "fd0a06ea31c28b795e356906d6494f887a947fac56c08e9d4576461aa440f940"
+    },
+    {
+      "path": "traces/eval/run20261026_231835-s1/test_run_20261026_232549/evidence/T07/stderr.log",
+      "size_bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "traces/eval/run20261026_231835-s1/test_run_20261026_232549/evidence/T07/stdout.log",
+      "size_bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "traces/eval/run20261026_231835-s1/test_run_20261026_232549/evidence/T08/evidence.json",
+      "size_bytes": 1082,
+      "sha256": "35c8946b82065996465ec8d60fa8f5f5083789cfbc28dddfcbd5658952e1751f"
+    },
+    {
+      "path": "traces/eval/run20261026_231835-s1/test_run_20261026_232549/evidence/T08/stderr.log",
+      "size_bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "traces/eval/run20261026_231835-s1/test_run_20261026_232549/evidence/T08/stdout.log",
+      "size_bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "traces/eval/run20261026_231835-s1/test_run_20261026_232549/evidence/T09/evidence.json",
+      "size_bytes": 1031,
+      "sha256": "6b9ed7c1e0652890d87f84db327c0da1b1c369f09b79443ce074ea62fd6c63a5"
+    },
+    {
+      "path": "traces/eval/run20261026_231835-s1/test_run_20261026_232549/evidence/T09/stderr.log",
+      "size_bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "traces/eval/run20261026_231835-s1/test_run_20261026_232549/evidence/T09/stdout.log",
+      "size_bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "traces/eval/run20261026_231835-s1/test_run_20261026_232549/evidence/T10/evidence.json",
+      "size_bytes": 897,
+      "sha256": "d475e826c4ea53b1c556c6da9c86f24996f89431fa2789cd247ce500eaf234c6"
+    },
+    {
+      "path": "traces/eval/run20261026_231835-s1/test_run_20261026_232549/evidence/T10/stderr.log",
+      "size_bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "traces/eval/run20261026_231835-s1/test_run_20261026_232549/evidence/T10/stdout.log",
+      "size_bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "traces/eval/run20261026_231835-s1/test_run_20261026_232549/evidence/T11/evidence.json",
+      "size_bytes": 1000,
+      "sha256": "323df3e714a9f85207ab70c192dec36fea1f3e41315fc6a1c755a25ae0b42b7d"
+    },
+    {
+      "path": "traces/eval/run20261026_231835-s1/test_run_20261026_232549/evidence/T11/stderr.log",
+      "size_bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "traces/eval/run20261026_231835-s1/test_run_20261026_232549/evidence/T11/stdout.log",
+      "size_bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "traces/eval/run20261026_231835-s1/test_run_20261026_232549/evidence/T12/evidence.json",
+      "size_bytes": 1025,
+      "sha256": "3e6c3d48e1c7b9a58d330b8e1dd12927a2780f6afb696eebe369a6feab08f5b5"
+    },
+    {
+      "path": "traces/eval/run20261026_231835-s1/test_run_20261026_232549/evidence/T12/stderr.log",
+      "size_bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "traces/eval/run20261026_231835-s1/test_run_20261026_232549/evidence/T12/stdout.log",
+      "size_bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "traces/pipeline/20261026_231835/04_eval.log",
+      "size_bytes": 340,
+      "sha256": "cccc727fb2172263bc13f92717c0ac0a1fe8e330756199f58baa517960ac9d64"
+    },
+    {
+      "path": "traces/pipeline/20261026_231835/pipeline_trace.jsonl",
+      "size_bytes": 568,
+      "sha256": "2d4190ffb10deae3bfc068590070a4fb539eec2a4b2a8086eabf31a472c69a7e"
+    },
+    {
+      "path": "traces/play-7ee6f92dfaf547bd921168673bc20489/exit.json",
+      "size_bytes": 782,
+      "sha256": "7f6076803ed374fe99861be9bf9a8e98144926b7c813be38bc591e9856e91f29"
+    },
+    {
+      "path": "traces/play-7ee6f92dfaf547bd921168673bc20489/host_stdout.log",
+      "size_bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "traces/play-7ee6f92dfaf547bd921168673bc20489/launch.json",
+      "size_bytes": 144,
+      "sha256": "9fb80637e9907520fb1571a04bbe01591cb6bf46fe6a70b1f62c5a1aefe7476e"
+    },
+    {
+      "path": "traces/play-7ee6f92dfaf547bd921168673bc20489/request.json",
+      "size_bytes": 791,
+      "sha256": "cc292b6b34bfc5a31d1453cd3e4574c8cb265aba6606e330b6a2285790ed30ef"
+    },
+    {
+      "path": "traces/play-7ee6f92dfaf547bd921168673bc20489/runtime/play_child.py",
+      "size_bytes": 395,
+      "sha256": "7f363253b9a40f7e71978942f87605b0f68fef992d7ed3b2d3fd686425778574"
+    },
+    {
+      "path": "traces/play-7ee6f92dfaf547bd921168673bc20489/runtime/runtime_stdout.log",
+      "size_bytes": 270,
+      "sha256": "52448fda8a5d973e168a950227674d8ce528770c9d289f2652d631712cefd809"
+    },
+    {
+      "path": "traces/play-7ee6f92dfaf547bd921168673bc20489/runtime/game/alien.py",
+      "size_bytes": 3484,
+      "sha256": "844fca4c7bdce20d023e3b489c4c99c7853b797e8fc13ce1770720044cb7532c"
+    },
+    {
+      "path": "traces/play-7ee6f92dfaf547bd921168673bc20489/runtime/game/constants.py",
+      "size_bytes": 1045,
+      "sha256": "0800146e636ccd154756badd27f9649dd1f69871d3f652176a517f715e5afd6e"
+    },
+    {
+      "path": "traces/play-7ee6f92dfaf547bd921168673bc20489/runtime/game/main.py",
+      "size_bytes": 5353,
+      "sha256": "937f471427ba854cdfce63ec70ed5bd3d948844e8a51873405f79046076ca3f4"
+    },
+    {
+      "path": "traces/play-7ee6f92dfaf547bd921168673bc20489/runtime/game/player.py",
+      "size_bytes": 2026,
+      "sha256": "6a93971abe89c2940c9e53c1a9545aec3287767ae7a699f8651298dbc5d8869f"
+    },
+    {
+      "path": "traces/play-7ee6f92dfaf547bd921168673bc20489/runtime/game/__init__.py",
+      "size_bytes": 27,
+      "sha256": "4b545c2fe110e064ca964460ba7d03bbcac25d6aebd007c8a5082b55ee0a58e9"
+    },
+    {
+      "path": "traces/play-8b8605ec7bc64b5eb0850753be519884/exit.json",
+      "size_bytes": 781,
+      "sha256": "ecbaf45de467fc35ee15428290432e41bd75154626ff52788c64f73f1400c107"
+    },
+    {
+      "path": "traces/play-8b8605ec7bc64b5eb0850753be519884/host_stdout.log",
+      "size_bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "traces/play-8b8605ec7bc64b5eb0850753be519884/launch.json",
+      "size_bytes": 144,
+      "sha256": "1b3d128548a30b41cce130bb0d7a0e8607f717dabe54faaac3c8ad2ccf0b5cec"
+    },
+    {
+      "path": "traces/play-8b8605ec7bc64b5eb0850753be519884/request.json",
+      "size_bytes": 791,
+      "sha256": "fcc5bd329b777009147dce8d6dc62bf789f57f6a470685c7809f5b7e3d40a227"
+    },
+    {
+      "path": "traces/play-8b8605ec7bc64b5eb0850753be519884/runtime/play_child.py",
+      "size_bytes": 395,
+      "sha256": "7f363253b9a40f7e71978942f87605b0f68fef992d7ed3b2d3fd686425778574"
+    },
+    {
+      "path": "traces/play-8b8605ec7bc64b5eb0850753be519884/runtime/runtime_stdout.log",
+      "size_bytes": 273,
+      "sha256": "7f22a7ba5affc97f6967eb2f9b42f6a93a16b77b3adbf44417bb3310d40b86e1"
+    },
+    {
+      "path": "traces/play-8b8605ec7bc64b5eb0850753be519884/runtime/game/assets.py",
+      "size_bytes": 1114,
+      "sha256": "031ba8a446239ef4b6f119fbb5649612dd0b09c19def9f767db2e3e745016597"
+    },
+    {
+      "path": "traces/play-8b8605ec7bc64b5eb0850753be519884/runtime/game/battle_manager.py",
+      "size_bytes": 5313,
+      "sha256": "0950c011a8c673cf4dbe2b7f818d850460c73a80e914af4155ea839bec3a08f2"
+    },
+    {
+      "path": "traces/play-8b8605ec7bc64b5eb0850753be519884/runtime/game/creature.py",
+      "size_bytes": 1505,
+      "sha256": "424e7bf02e9f9c492f3af7ccf08d363f6911b8c054759789cab93ddf10dac456"
+    },
+    {
+      "path": "traces/play-8b8605ec7bc64b5eb0850753be519884/runtime/game/main.py",
+      "size_bytes": 2912,
+      "sha256": "75324333e927b520dba323b5ab68976724a42ad792b1d82235e6e1545d59d305"
+    },
+    {
+      "path": "traces/play-8b8605ec7bc64b5eb0850753be519884/runtime/game/ui.py",
+      "size_bytes": 3817,
+      "sha256": "af209e5d22338229ad4b5aabaff316f307a1ad39d3b1b4fd9eea430a363bba3b"
+    },
+    {
+      "path": "traces/play-8b8605ec7bc64b5eb0850753be519884/runtime/game/__init__.py",
+      "size_bytes": 15,
+      "sha256": "264aa734b04acea8ebff3e236bb0d96e18a118e86a7f0553e826836e419c008c"
+    },
+    {
+      "path": "traces/play-8b8605ec7bc64b5eb0850753be519884/runtime/game/assets/emberkit_sprite.png",
+      "size_bytes": 9794,
+      "sha256": "25e4f093e5ea846a76fa75b6b0c3191c04ad9a28fdcd21eecc6211deda3fb433"
+    },
+    {
+      "path": "traces/play-8b8605ec7bc64b5eb0850753be519884/runtime/game/assets/grassy_background.png",
+      "size_bytes": 100069,
+      "sha256": "4b0134167c7fdac4a310892f102c3e385556472781b039f7684ff9571e1e1f10"
+    },
+    {
+      "path": "traces/play-8b8605ec7bc64b5eb0850753be519884/runtime/game/assets/shellwave_sprite.png",
+      "size_bytes": 8935,
+      "sha256": "a0e6f14dabecab4417c65b68ab343ba88883963c21ff5f9c9e18ee3382a125da"
+    },
+    {
+      "path": "triage_agent/README.md",
+      "size_bytes": 3964,
+      "sha256": "dbf2ef827fa274b7f59c9132f98938ad14a1f8bc6dbe84f99912436b72bf4e79"
+    },
+    {
+      "path": "triage_agent/test_triage.py",
+      "size_bytes": 1083,
+      "sha256": "5e6b3fc0d35f7b59f64a7bb08e438836ec9335cfe12542c3287613fddf2d8533"
+    },
+    {
+      "path": "triage_agent/triage.py",
+      "size_bytes": 24211,
+      "sha256": "101738dd4176b81c2cc5c809f88431e78d7ddc91af118c627ce3a7164f2753cf"
+    },
+    {
+      "path": "triage_agent/__init__.py",
+      "size_bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "truncated": false
+}

@@ -1,0 +1,6 @@
+{
+  "game_title": "Terminal Tic-Tac-Toe",
+  "objective": "Two-player 3x3 Tic-Tac-Toe with alternating X/O turns, win detection, invalid-move handling and draw detection.",
+  "controls": "Enter row and column using the game's displayed format. Form a line of three symbols. Test using legal moves unless a documented test interface exists.",
+  "notes": "Generate test cases using documented controls only; do not invent test hooks."
+}

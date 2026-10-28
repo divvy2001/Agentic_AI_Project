@@ -1,0 +1,37 @@
+{
+  "game_title": "Godot Stealth Infiltration",
+  "description": "Stealth game with patrols, vision cones, occlusion, noise propagation, suspicion, hiding spots, keycard doors, alarms and extraction.",
+  "profile": {
+    "renderer": "godot"
+  },
+  "requirements": [
+    {
+      "text": "Guards transition from patrol to investigate/chase based on stimuli.",
+      "check": "Guards transition from patrol to investigate/chase based on stimuli."
+    },
+    {
+      "text": "Unoccluded vision increases suspicion; occlusion blocks vision.",
+      "check": "Unoccluded vision increases suspicion; occlusion blocks vision."
+    },
+    {
+      "text": "Noise attracts guards within hearing range but not outside it.",
+      "check": "Noise attracts guards within hearing range but not outside it."
+    },
+    {
+      "text": "Valid hiding breaks ordinary visual detection.",
+      "check": "Valid hiding breaks ordinary visual detection."
+    },
+    {
+      "text": "Only matching keycards open restricted doors.",
+      "check": "Only matching keycards open restricted doors."
+    },
+    {
+      "text": "Alarm changes alert state and guard behavior.",
+      "check": "Alarm changes alert state and guard behavior."
+    },
+    {
+      "text": "Extraction requires objective completion and no terminal failure.",
+      "check": "Extraction requires objective completion and no terminal failure."
+    }
+  ]
+}

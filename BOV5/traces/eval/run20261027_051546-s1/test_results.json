@@ -1,0 +1,30 @@
+{
+  "status": "fail",
+  "failing_stage": "logic_coder",
+  "suite_version": "run20261027_051546-s1",
+  "failures": [
+    {
+      "test_id": "T01",
+      "requirement_index": 3,
+      "expected": "DIRECTION UP",
+      "actual": "Expected literal text was not found. This does not by itself prove a game defect.",
+      "error_category": "behavior",
+      "evidence_path": "traces/eval/run20261027_051546-s1/test_run_20261027_052849/evidence/T01/evidence.json",
+      "attribution_evidence": "Arrow key presses do not produce expected console output indicating direction change, despite game running and printing 'GAME OVER'. Evidence: Test T01 and T04 failed because pressing arrow keys did not print 'DIRECTION <DIR>' to stdout.; Stdout logs show pygame initialization and 'GAME OVER' but no direction change messages.; No screenshots or errors indicating asset or planner issues.; Requirements and architecture indicate direction change should print to console, but this is missing."
+    },
+    {
+      "test_id": "T04",
+      "requirement_index": 3,
+      "expected": "DIRECTION RIGHT",
+      "actual": "Expected literal text was not found. This does not by itself prove a game defect.",
+      "error_category": "behavior",
+      "evidence_path": "traces/eval/run20261027_051546-s1/test_run_20261027_052849/evidence/T04/evidence.json",
+      "attribution_evidence": "Arrow key presses do not produce expected console output indicating direction change, despite game running and printing 'GAME OVER'. Evidence: Test T01 and T04 failed because pressing arrow keys did not print 'DIRECTION <DIR>' to stdout.; Stdout logs show pygame initialization and 'GAME OVER' but no direction change messages.; No screenshots or errors indicating asset or planner issues.; Requirements and architecture indicate direction change should print to console, but this is missing."
+    }
+  ],
+  "previously_passed_test_ids": [
+    "T02",
+    "T03",
+    "T07"
+  ]
+}

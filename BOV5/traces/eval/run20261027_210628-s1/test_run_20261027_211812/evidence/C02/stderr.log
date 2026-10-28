@@ -1,0 +1,12 @@
+ERROR: No loader found for resource: res://assets/red_belt_fighter.png (expected type: unknown)
+   at: _load (core/io/resource_loader.cpp:332)
+   GDScript backtrace (most recent call first):
+       [0] _ready (res://player.gd:22)
+       [1] spawn_fighters (res://ui.gd:56)
+       [2] _ready (res://ui.gd:47)
+ERROR: No loader found for resource: res://assets/blue_belt_fighter.png (expected type: unknown)
+   at: _load (core/io/resource_loader.cpp:332)
+   GDScript backtrace (most recent call first):
+       [0] _ready (res://rival.gd:19)
+       [1] spawn_fighters (res://ui.gd:63)
+       [2] _ready (res://ui.gd:47)

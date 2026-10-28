@@ -1,0 +1,468 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "plan.json",
+  "description": "Output of the Planner. Written once per run. Read by Asset Agent, Coder, Evaluator. Fixed keys are read by code; everything described as free text is read by agents only.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "game_title",
+    "profile",
+    "requirements",
+    "architecture",
+    "decisions",
+    "unmapped"
+  ],
+  "$defs": {
+    "source": {
+      "description": "How the Planner knows this value. stated = the spec says it (quote required). inferred = follows from something the spec says (quote + reasoning required). assumed = spec is silent (no quote; needs a decisions entry). OPEN: two or three tags.",
+      "enum": [
+        "stated",
+        "inferred",
+        "assumed"
+      ]
+    },
+    "profile_field": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "value",
+        "source"
+      ],
+      "properties": {
+        "value": {
+          "description": "The chosen value for this profile attribute."
+        },
+        "source": {
+          "$ref": "#/$defs/source"
+        },
+        "quote": {
+          "type": "string",
+          "description": "Exact text copied from the spec. Code checks it is a substring of the spec. Required when source is stated or inferred; omitted when assumed."
+        },
+        "reasoning": {
+          "type": "string",
+          "description": "One line: why the quote implies the value. Required when source is inferred."
+        }
+      }
+    }
+  },
+  "properties": {
+    "game_title": {
+      "type": "string",
+      "description": "Short name of the game. Taken from the spec if given, otherwise invented from the genre. Used for the window title and folder naming."
+    },
+    "profile": {
+      "type": "object",
+      "description": "WHAT KIND OF GAME it is. Picks the build playbook by lookup on renderer + dimensions + pace. Every value says where it came from.",
+      "additionalProperties": false,
+      "required": [
+        "genre",
+        "renderer",
+        "dimensions",
+        "pace",
+        "players"
+      ],
+      "properties": {
+        "genre": {
+          "allOf": [
+            {
+              "$ref": "#/$defs/profile_field"
+            }
+          ],
+          "description": "Free text, in game terms: paddle sports, platformer, roguelike, puzzle, text adventure. Not used for lookup, only read by agents."
+        },
+        "renderer": {
+          "allOf": [
+            {
+              "$ref": "#/$defs/profile_field"
+            }
+          ],
+          "description": "FIXED. How the game is shown: terminal | pygame | godot. Explicit platform words in the spec win; otherwise pygame.",
+          "properties": {
+            "value": {
+              "enum": [
+                "terminal",
+                "pygame",
+                "godot"
+              ]
+            }
+          }
+        },
+        "dimensions": {
+          "allOf": [
+            {
+              "$ref": "#/$defs/profile_field"
+            }
+          ],
+          "description": "FIXED. 2d | 3d. A 3d request in v1 is built as software-projected pseudo-3D in pygame and flagged approximated in requirements.",
+          "properties": {
+            "value": {
+              "enum": [
+                "2d",
+                "3d"
+              ]
+            }
+          }
+        },
+        "pace": {
+          "allOf": [
+            {
+              "$ref": "#/$defs/profile_field"
+            }
+          ],
+          "description": "FIXED. real-time (runs every frame without waiting for the player) | turn-based (waits for input). Decides whether the game loop is a timed frame loop or an input loop.",
+          "properties": {
+            "value": {
+              "enum": [
+                "real-time",
+                "turn-based"
+              ]
+            }
+          }
+        },
+        "players": {
+          "allOf": [
+            {
+              "$ref": "#/$defs/profile_field"
+            }
+          ],
+          "description": "FIXED. Integer number of human players at the same time (1, 2, ...). Decides how many control sets are needed.",
+          "properties": {
+            "value": {
+              "type": "integer",
+              "minimum": 1
+            }
+          }
+        }
+      }
+    },
+    "requirements": {
+      "type": "array",
+      "description": "WHAT THE GAME MUST DO, one item per thing the spec asks for: controls, rules and actions, things on screen, win and lose, scoring, screens. Everything here comes from the spec. Anything the Planner had to guess goes in decisions instead.",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "text",
+          "priority",
+          "status",
+          "check",
+          "milestone",
+          "quote"
+        ],
+        "properties": {
+          "text": {
+            "type": "string",
+            "description": "Free text. The requirement in plain words, e.g. 'Player moves the paddle up and down'."
+          },
+          "priority": {
+            "enum": [
+              "core",
+              "secondary"
+            ],
+            "description": "FIXED. core = the game is not the game without it. secondary = nice to have; dropped first if the build runs short."
+          },
+          "status": {
+            "enum": [
+              "full",
+              "approximated",
+              "dropped"
+            ],
+            "description": "FIXED. full = built as asked. approximated = built in a simpler way (say how in decisions). dropped = not built (say why in decisions)."
+          },
+          "check": {
+            "type": "string",
+            "description": "Free text. A concrete observable that shows it works, e.g. 'paddle y changes after UP key for 10 frames'. The Evaluator turns this into a test."
+          },
+          "milestone": {
+            "type": "integer",
+            "minimum": 1,
+            "description": "Build step in which it is added. Milestone 1 must already be a playable game."
+          },
+          "quote": {
+            "type": "string",
+            "description": "Exact text copied from the spec. Code checks it is a substring of the spec."
+          }
+        }
+      }
+    },
+    "architecture": {
+      "type": "object",
+      "description": "HOW IT IS BUILT. The parts the Coder and the orchestrator act on.",
+      "additionalProperties": false,
+      "required": [
+        "entry_point",
+        "files",
+        "dependencies",
+        "assets",
+        "requires_input"
+      ],
+      "properties": {
+        "entry_point": {
+          "type": "string",
+          "pattern": "^game/",
+          "description": "FIXED. Path of the file the run command launches. Must be one of the paths in files."
+        },
+        "files": {
+          "type": "array",
+          "minItems": 1,
+          "description": "FIXED shape. Every file the Coder will create. Paths must start with game/.",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "path",
+              "purpose"
+            ],
+            "properties": {
+              "path": {
+                "type": "string",
+                "pattern": "^game/"
+              },
+              "purpose": {
+                "type": "string",
+                "description": "Free text. What the file holds."
+              }
+            }
+          }
+        },
+        "dependencies": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "FIXED. Third-party libraries to import. Each must appear in the environment probe; standard library modules are not listed. Godot games leave this empty — Godot is the runtime, not a pip library."
+        },
+        "assets": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "strategy"
+          ],
+          "properties": {
+            "strategy": {
+              "enum": [
+                "none",
+                "procedural",
+                "ai_art"
+              ],
+              "description": "FIXED. none = no graphics or sound files. procedural = shapes and sounds drawn or generated in code. ai_art = images fetched from the image API; downgraded to procedural when the probe shows no token. Orchestrator reads this."
+            },
+            "strategy_rationale": {
+              "type": "string",
+              "description": "Free text, optional. For human and trace readers only; the Coder does not read it."
+            },
+            "sprites": {
+              "type": "array",
+              "description": "FIXED (read by the Asset Agent — matches its plan_assets() input shape directly, no adapter). Only used when strategy is ai_art; otherwise empty. One entry per distinct object type, not per instance. Bullets and particles are drawn as rectangles and get no sprite.",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "id",
+                  "type",
+                  "description",
+                  "width",
+                  "height"
+                ],
+                "properties": {
+                  "id": {
+                    "type": "string",
+                    "pattern": "^[a-z][a-z0-9_]*$",
+                    "description": "FIXED. snake_case file stem, no extension, e.g. player_ship. Saved as game/assets/<id>.png."
+                  },
+                  "type": {
+                    "enum": [
+                      "sprite", "spritesheet", "background", "texture", "icon", "ui",
+                      "symbol_set", "character", "tile"
+                    ],
+                    "description": "FIXED. Asset category — see ASSET TYPE rules in the prompt. Must match the chosen renderer: terminal uses symbol_set/character/tile/ui; pygame/godot use sprite/spritesheet/background/texture/icon/ui. Checked by code against profile.renderer."
+                  },
+                  "description": {
+                    "type": "string",
+                    "maxLength": 160,
+                    "description": "Pixel-art image prompt, under 20 words."
+                  },
+                  "width": {
+                    "type": "integer",
+                    "minimum": 16,
+                    "maximum": 512,
+                    "description": "FIXED. Pixel width of this one sprite, not the game window."
+                  },
+                  "height": {
+                    "type": "integer",
+                    "minimum": 16,
+                    "maximum": 512,
+                    "description": "FIXED. Pixel height of this one sprite, not the game window."
+                  }
+                }
+              }
+            }
+          },
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "strategy": {
+                    "const": "ai_art"
+                  }
+                },
+                "required": [
+                  "strategy"
+                ]
+              },
+              "then": {
+                "required": [
+                  "sprites"
+                ],
+                "properties": {
+                  "sprites": {
+                    "minItems": 1
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "extensions": {
+          "type": "object",
+          "description": "OPTIONAL named blocks for things the core does not cover: levels, board, camera, networking, anything else. No fixed inner structure.",
+          "additionalProperties": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "summary",
+              "detail"
+            ],
+            "properties": {
+              "summary": {
+                "type": "string",
+                "description": "One line saying what the block is."
+              },
+              "detail": {
+                "type": "string",
+                "description": "Free text. Everything an agent needs to build and test it."
+              }
+            }
+          }
+        },
+        "resolution": {
+          "description": "Window or canvas size in pixels for pygame or godot games, e.g. {\"width\":800,\"height\":600}. null for terminal games.",
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "width",
+                "height"
+              ],
+              "properties": {
+                "width": {
+                  "type": "integer",
+                  "minimum": 100
+                },
+                "height": {
+                  "type": "integer",
+                  "minimum": 100
+                }
+              }
+            }
+          ]
+        },
+        "fps": {
+          "description": "Frames per second for real-time pygame or godot games. null for turn-based games or terminal games.",
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 240
+            }
+          ]
+        },
+        "requires_input": {
+          "type": "boolean",
+          "description": "FIXED. true if the game cannot progress without player input. Read by the test runner to decide whether it must script key presses."
+        },
+        "test_input_example": {
+          "description": "Free text or null. A sample input sequence that reaches a win or lose screen, e.g. 'hold UP for 60 frames'. Used by the play manual and tests.",
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "complexity_warning": {
+          "description": "FIXED (read by the Coder's stuck checker). null normally. A one-line reason when the plan is unusually large or hard (3D, many scenes, networking). When set, the Coder gets more debug cycles before giving up.",
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "string",
+              "minLength": 1
+            }
+          ]
+        }
+      }
+    },
+    "decisions": {
+      "type": "array",
+      "description": "WHAT THE PLANNER CHOSE AND WHY wherever the spec was silent or the build had to be simplified. One entry per assumed profile value, per approximated or dropped requirement, and per other guess (for example which keys are bound).",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "about",
+          "choice",
+          "reason"
+        ],
+        "properties": {
+          "about": {
+            "type": "string",
+            "description": "Which field or requirement this is about, e.g. 'profile.players' or 'controls'."
+          },
+          "choice": {
+            "type": "string",
+            "description": "Free text. What was chosen."
+          },
+          "reason": {
+            "type": "string",
+            "description": "Free text. Why."
+          }
+        }
+      }
+    },
+    "unmapped": {
+      "type": "array",
+      "description": "ESCAPE HATCH. Spec content that fits nowhere above. Nothing from the spec may be silently dropped; it ends up in requirements, decisions, or here.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "quote",
+          "handling"
+        ],
+        "properties": {
+          "quote": {
+            "type": "string",
+            "description": "Exact text copied from the spec."
+          },
+          "handling": {
+            "type": "string",
+            "description": "Free text. What the Coder should do with it."
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "game_id": "G12",
+  "game_title": "Pygame Wave Survival",
+  "complexity": "medium",
+  "renderer": "pygame",
+  "description": "Top-down arena survival: movement, attacks, pursuing enemies, experience, level-up choice UI, timed waves and game over."
+}

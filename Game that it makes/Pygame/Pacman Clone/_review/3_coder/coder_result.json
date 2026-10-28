@@ -1,0 +1,374 @@
+{
+  "status": "ready_for_testing",
+  "mode": "initial_build",
+  "renderer": "pygame",
+  "entry_point": "game/crumb_chase.py",
+  "game_dir": "game",
+  "smoke": {
+    "plan_and_files": "passed",
+    "syntax_or_import": "passed",
+    "boot": "passed"
+  },
+  "steps": 6,
+  "play_manual_path": "plans/play_manual.json",
+  "trace_path": "traces/coder_attempts.jsonl",
+  "approximated_requirements": [],
+  "reason": null,
+  "debug_statistics": {
+    "local_failure_events": 1,
+    "self_debug_attempts": 0,
+    "external_repair_invocations": 0
+  },
+  "plan_compatibility_warnings": [],
+  "runtime_render_settings": {
+    "resolution": {
+      "width": 800,
+      "height": 600
+    },
+    "fps": 60
+  },
+  "asset_quality_warnings": [],
+  "asset_visual_acceptance": "not_run",
+  "planner_status": "success",
+  "unmapped": [],
+  "attempt_id": "35379d2a2ecc4d6bad4918ea6466abb8",
+  "workspace_preparation": {
+    "action": "backed_up_and_reset",
+    "backup_path": "backups/game-20261027T085348Z-119239f8a7",
+    "preserved_directories": [],
+    "preserved_files": 0,
+    "stale_files_backed_up": [
+      "assets/cartoon_cat.png",
+      "assets/fish.png"
+    ],
+    "previous_file_count": 6
+  },
+  "usage": {
+    "model": "openai/gpt-5-mini",
+    "calls": 6,
+    "input_tokens": 57542,
+    "output_tokens": 17814,
+    "max_input_tokens_per_call": 14579,
+    "reported_cost_usd": 0.045491899999999995,
+    "known_cost_usd": 0.045491899999999995,
+    "cost_missing_calls": 0,
+    "by_model": {
+      "openai/gpt-5-mini": {
+        "calls": 6,
+        "input_tokens": 57542,
+        "output_tokens": 17814,
+        "known_cost_usd": 0.045491899999999995,
+        "cost_missing_calls": 0
+      }
+    }
+  },
+  "initial_build_notes": {
+    "source": "first assistant implementation notes; unverified; immutable Planner takes precedence",
+    "text": "Implementation contract (short):\n\n- Requirement indices -> owning files:\n  - 0 (title): game/crumb_chase.py\n  - 1 (15x15 grid maze): game/maze.py (generation) + game/crumb_chase.py (render)\n  - 2 (green mouse): game/entities.py (Mouse) + game/crumb_chase.py (render)\n  - 3-4 (arrow keys & continuous tile movement): game/crumb_chase.py + game/entities.py (Mouse movement)\n  - 5-7 (crumbs, score): game/crumb_chase.py (crumb set and scoring) + game/entities.py (Crumb)\n  - 8-10 (cats move, one tile at a time, junction logic milestone 2 partially implemented in Cat): game/entities.py (Cat logic) + game/crumb_chase.py (timing)\n  - 11-16 (collisions, lives, win/lose, HUD, restart, quit): game/crumb_chase.py\n  - 17-21 (console prints and plain shapes): game/crumb_chase.py (prints + shape drawing)\n\n- State ownership and interfaces:\n  - Maze (game/maze.py: Maze): owns grid boolean matrix. Methods:\n    - Maze(width:int=15,height:int=15)\n    - reset(): -> None (regenerates grid)\n    - is_open(x:int,y:int) -> bool\n    - neighbors(x:int,y:int) -> List[(x,y)]\n    - all_open_tiles() -> List[(x,y)]\n  - Entities (game/entities.py):\n    - class Mouse:\n      - mouse.tile: (int x,int y)\n      - mouse.dir: (dx,dy) or None\n      - mouse.px,py: float pixel position\n      - Mouse(start_tile:(x,y), tile_size:int, speed_tiles_per_sec:float)\n      - update(dt:float, maze:Maze) -> None (moves toward current dir until wall)\n      - set_dir(dx,dy) -> None\n      - teleport(tile) -> None\n    - class Cat:\n      - Cat(start_tile, tile_size, speed_tiles_per_sec)\n      - update(dt, maze, mouse_tile) -> None (one tile at a time; at junction chooses neighbor reducing Manhattan distance)\n      - teleport(tile)\n    - class Crumb:\n      - Crumb(tile:(x,y)); attribute eaten:bool\n  - game/crumb_chase.py orchestrates input->action->state->render and owns score, lives, game_state. Public functions:\n    - run() -> None (entry point)\n    - reset_game() -> None (rebuilds maze, crumbs, resets entities)\n\n- Coordinates:\n  - Tile coordinates: (tx,ty) integers with (0..14,0..14); origin top-left. Pixel positions computed to tile center: px = hud + ty*tile_size + tile_size/2 (note y/h logic in code).\n  - Movement uses pixel positions; a tile is reached when entity pixel pos is within small epsilon of target center; collisions are checked on tile coordinates.\n\n- Lifecycle:\n  - init: Maze, entities, crumbs created; score=0, lives=3, state='PLAY'\n  - play: arrow keys set mouse direction (prints TURN ...). Mouse moves continuously tile-by-tile until wall; cats move one tile at a time every tile interval and choose towards mouse at junctions.\n  - collision: if cat tile == mouse tile -> lives--, teleport everyone to starts; if lives==0 -> state='GAME_OVER' freeze, print \"GAME OVER\"\n  - win: if crumbs empty -> state='WIN' freeze, print \"WIN\"\n  - reset (R): rebuilds maze and crumbs, reset score/lives/positions, print \"RESTART\"\n  - quit (Escape or window close): print \"QUIT\" and exit.\n\nNow I will write the promised files implementing the above.",
+    "truncated": false
+  },
+  "integration_check": {
+    "fingerprint": "e213b7349770ffa6ab202ea788adbfc5b20f6becec2ab5034ffd3bfd2ae0a671",
+    "step": 4,
+    "gates": {
+      "plan_and_files": "passed",
+      "syntax_or_import": "passed",
+      "boot": "passed"
+    },
+    "reason": null,
+    "diagnostics": {
+      "gates": {
+        "plan_and_files": "passed",
+        "syntax_or_import": "passed",
+        "boot": "passed"
+      },
+      "reason": null,
+      "commands": [
+        {
+          "returncode": 0,
+          "reason": null,
+          "seconds": 16.218,
+          "diagnostics": [
+            "CODER_SYNTAX_OK"
+          ],
+          "nonfatal_engine_diagnostics": 0,
+          "sandbox": {
+            "kind": "windows_appcontainer",
+            "token_is_appcontainer": true,
+            "network_capabilities": [],
+            "active_process_limit": 1
+          }
+        },
+        {
+          "returncode": 0,
+          "reason": null,
+          "seconds": 16.672,
+          "diagnostics": [
+            "pygame 2.6.1 (SDL 2.28.4, Python 3.11.9)",
+            "Hello from the pygame community. https://www.pygame.org/contribute.html",
+            "CODER_OBSERVED:{\"frames\": 38, \"inputs\": 0, \"game_lines\": 119144, \"loop_cycles\": 15111, \"waiting_for_input\": false, \"pixel_colors\": 11}"
+          ],
+          "nonfatal_engine_diagnostics": 0,
+          "sandbox": {
+            "kind": "windows_appcontainer",
+            "token_is_appcontainer": true,
+            "network_capabilities": [],
+            "active_process_limit": 1
+          }
+        }
+      ]
+    },
+    "scope": "Integration only; full requirement gameplay not established"
+  },
+  "presentation": {
+    "status": "not_run",
+    "reason": "no_separate_presentation_probe"
+  },
+  "coverage_notes": null,
+  "requirement_coverage": [
+    {
+      "index": 0,
+      "planner_status": "full",
+      "check": "The game window title displays 'Crumb Chase'.",
+      "validator_status": "not_run",
+      "implementation_files": [],
+      "model_claim": null,
+      "limitations": [],
+      "coverage_evidence": "not_provided"
+    },
+    {
+      "index": 1,
+      "planner_status": "full",
+      "check": "The game displays a grid of 15x15 tiles with walls.",
+      "validator_status": "not_run",
+      "implementation_files": [],
+      "model_claim": null,
+      "limitations": [],
+      "coverage_evidence": "not_provided"
+    },
+    {
+      "index": 2,
+      "planner_status": "full",
+      "check": "A green shape representing the mouse is visible on the screen.",
+      "validator_status": "not_run",
+      "implementation_files": [],
+      "model_claim": null,
+      "limitations": [],
+      "coverage_evidence": "not_provided"
+    },
+    {
+      "index": 3,
+      "planner_status": "full",
+      "check": "Pressing an arrow key changes the mouse's direction of movement.",
+      "validator_status": "not_run",
+      "implementation_files": [],
+      "model_claim": null,
+      "limitations": [],
+      "coverage_evidence": "not_provided"
+    },
+    {
+      "index": 4,
+      "planner_status": "full",
+      "check": "After pressing an arrow key, the mouse moves continuously in that direction until it reaches a wall tile.",
+      "validator_status": "not_run",
+      "implementation_files": [],
+      "model_claim": null,
+      "limitations": [],
+      "coverage_evidence": "not_provided"
+    },
+    {
+      "index": 5,
+      "planner_status": "full",
+      "check": "All non-wall tiles initially display a small crumb shape.",
+      "validator_status": "not_run",
+      "implementation_files": [],
+      "model_claim": null,
+      "limitations": [],
+      "coverage_evidence": "not_provided"
+    },
+    {
+      "index": 6,
+      "planner_status": "full",
+      "check": "When the mouse moves onto a tile with a crumb, the crumb disappears, and the score increases by 10.",
+      "validator_status": "not_run",
+      "implementation_files": [],
+      "model_claim": null,
+      "limitations": [],
+      "coverage_evidence": "not_provided"
+    },
+    {
+      "index": 7,
+      "planner_status": "full",
+      "check": "Two distinct shapes representing cats are visible and move within the maze.",
+      "validator_status": "not_run",
+      "implementation_files": [],
+      "model_claim": null,
+      "limitations": [],
+      "coverage_evidence": "not_provided"
+    },
+    {
+      "index": 8,
+      "planner_status": "full",
+      "check": "Cats move from one tile to an adjacent tile at regular intervals.",
+      "validator_status": "not_run",
+      "implementation_files": [],
+      "model_claim": null,
+      "limitations": [],
+      "coverage_evidence": "not_provided"
+    },
+    {
+      "index": 9,
+      "planner_status": "full",
+      "check": "When a cat reaches a junction (more than two open paths), it chooses a path that reduces its Manhattan distance to the mouse.",
+      "validator_status": "not_run",
+      "implementation_files": [],
+      "model_claim": null,
+      "limitations": [],
+      "coverage_evidence": "not_provided"
+    },
+    {
+      "index": 10,
+      "planner_status": "full",
+      "check": "When a cat occupies the same tile as the mouse, the 'Lives' counter decreases by 1.",
+      "validator_status": "not_run",
+      "implementation_files": [],
+      "model_claim": null,
+      "limitations": [],
+      "coverage_evidence": "not_provided"
+    },
+    {
+      "index": 11,
+      "planner_status": "full",
+      "check": "After a collision, the mouse and both cats instantly teleport to their initial positions.",
+      "validator_status": "not_run",
+      "implementation_files": [],
+      "model_claim": null,
+      "limitations": [],
+      "coverage_evidence": "not_provided"
+    },
+    {
+      "index": 12,
+      "planner_status": "full",
+      "check": "The 'Lives' display starts at 3.",
+      "validator_status": "not_run",
+      "implementation_files": [],
+      "model_claim": null,
+      "limitations": [],
+      "coverage_evidence": "not_provided"
+    },
+    {
+      "index": 13,
+      "planner_status": "full",
+      "check": "When the last crumb is eaten, the game state changes to 'WIN'.",
+      "validator_status": "not_run",
+      "implementation_files": [],
+      "model_claim": null,
+      "limitations": [],
+      "coverage_evidence": "not_provided"
+    },
+    {
+      "index": 14,
+      "planner_status": "full",
+      "check": "When 'Lives' reaches 0, the game state changes to 'GAME OVER'.",
+      "validator_status": "not_run",
+      "implementation_files": [],
+      "model_claim": null,
+      "limitations": [],
+      "coverage_evidence": "not_provided"
+    },
+    {
+      "index": 15,
+      "planner_status": "full",
+      "check": "Text displaying 'Score: X' and 'Lives: Y' is visible at the top of the game window and updates correctly.",
+      "validator_status": "not_run",
+      "implementation_files": [],
+      "model_claim": null,
+      "limitations": [],
+      "coverage_evidence": "not_provided"
+    },
+    {
+      "index": 16,
+      "planner_status": "full",
+      "check": "Upon winning or losing, 'WIN' or 'GAME OVER' text appears with the final score, and all game movement stops.",
+      "validator_status": "not_run",
+      "implementation_files": [],
+      "model_claim": null,
+      "limitations": [],
+      "coverage_evidence": "not_provided"
+    },
+    {
+      "index": 17,
+      "planner_status": "full",
+      "check": "Pressing 'R' resets the game to its initial state: mouse and cats at start, 3 lives, 0 score, all crumbs present.",
+      "validator_status": "not_run",
+      "implementation_files": [],
+      "model_claim": null,
+      "limitations": [],
+      "coverage_evidence": "not_provided"
+    },
+    {
+      "index": 18,
+      "planner_status": "full",
+      "check": "Pressing 'Escape' closes the game window.",
+      "validator_status": "not_run",
+      "implementation_files": [],
+      "model_claim": null,
+      "limitations": [],
+      "coverage_evidence": "not_provided"
+    },
+    {
+      "index": 19,
+      "planner_status": "full",
+      "check": "The console outputs the specified text when the corresponding control is activated.",
+      "validator_status": "not_run",
+      "implementation_files": [],
+      "model_claim": null,
+      "limitations": [],
+      "coverage_evidence": "not_provided"
+    },
+    {
+      "index": 20,
+      "planner_status": "full",
+      "check": "The console outputs 'WIN' or 'GAME OVER' when the game reaches an end state.",
+      "validator_status": "not_run",
+      "implementation_files": [],
+      "model_claim": null,
+      "limitations": [],
+      "coverage_evidence": "not_provided"
+    },
+    {
+      "index": 21,
+      "planner_status": "full",
+      "check": "All visual elements are rendered using basic geometric shapes and solid colors; no image files are loaded, and no sounds are played.",
+      "validator_status": "not_run",
+      "implementation_files": [],
+      "model_claim": null,
+      "limitations": [],
+      "coverage_evidence": "not_provided"
+    }
+  ],
+  "coverage_status": "not_provided",
+  "file_inventory": {
+    "promised_count": 4,
+    "delivered_promised": [
+      "game/__init__.py",
+      "game/crumb_chase.py",
+      "game/entities.py",
+      "game/maze.py"
+    ],
+    "missing": [],
+    "engine_supplements": [],
+    "assets": [],
+    "protected_tests": [],
+    "runtime_artifacts": [],
+    "unplanned": [],
+    "delivered_promised_count": 4
+  },
+  "plan_sha256": "c0179e1dae6edfc927d714b0280cc9f6c7f512a495c41e6eb7e3602a130f1a50",
+  "game_sha256": {
+    "game/crumb_chase.py": "cdd5e499e58648d8f786515036564496b43f2f71274b39838dcf42fe5b0e896e",
+    "game/entities.py": "db28e1eb9cdf9780eb1b810f18ce269fca14bdfab93dec1be1e7865358984c2b",
+    "game/maze.py": "bdf0de3b3500eaeb2b6888c8967ae4d51891356a20ce31d5339a7b229f8f2c20",
+    "game/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

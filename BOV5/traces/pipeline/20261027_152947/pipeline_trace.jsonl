@@ -1,0 +1,6 @@
+{"turn": 1, "t": 0.3, "stage": "start", "status": "ok", "detail": "spec=851 chars"}
+{"turn": 2, "t": 66.1, "stage": "planner+assets", "status": "success", "detail": "renderer=pygame assets=ai_art", "renderer": "pygame", "entry_point": "game/kitty_catch.py"}
+{"turn": 3, "t": 340.1, "stage": "logic_coder", "status": "ready_for_testing", "reason": null, "steps": 5, "cost": "$0.0220", "attempt_id": "4d1ec552611f4e07a533451b5bbc9004"}
+{"turn": 4, "t": 355.5, "stage": "eval_generator", "status": "ok", "detail": "suite=run20261027_152947-s1 tests=4", "exit_code": 0}
+{"turn": 5, "t": 377.3, "stage": "runtime_tester", "status": "done", "round": 1, "counts": {"PASS": 2, "FAIL": 2}, "results": "traces/eval/run20261027_152947-s1/test_run_20261027_153543/test_results.json"}
+{"turn": 6, "t": 377.3, "stage": "decision", "status": "errors found", "round": 1, "detail": "2 failing test(s)"}

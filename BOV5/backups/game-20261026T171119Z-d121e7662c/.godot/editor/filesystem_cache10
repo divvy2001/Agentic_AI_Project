@@ -1,0 +1,11 @@
+78098b89c88a74ebe8c20117b8754620
+::res://::1793034263
+ball.gd::GDScript::235908690129617531::1793034079::0::1::::Ball<>Area2D<><>0<>0<><>::
+ball.tscn::PackedScene::-1::1793033803::0::1::::<><><>0<>0<><>::res://ball.gd<>res://assets/ball.png
+main.gd::GDScript::5153467006387593320::1793033880::0::1::::<>Node2D<><>0<>0<><>::
+main.tscn::PackedScene::-1::1793033846::0::1::::<><><>0<>0<><>::res://main.gd
+paddle.gd::GDScript::4202094688366961666::1793033675::0::1::::Paddle<>Area2D<><>0<>0<><>::
+paddle.tscn::PackedScene::-1::1793033800::0::1::::<><><>0<>0<><>::res://paddle.gd<>res://assets/paddle.png
+::res://assets/::1793033568
+ball.png::CompressedTexture2D::3357014592661935192::1793033567::1793034264::1::::<><><>0<>0<>e27bd3a399ea3e375c238d03dd4d00e5<>res://.godot/imported/ball.png-ca93c4f2e7b7f8325cbd933673092ff4.ctex::
+paddle.png::CompressedTexture2D::1884117214073883491::1793033561::1793034264::1::::<><><>0<>0<>82e6c0779730ce32a9088d28517bda79<>res://.godot/imported/paddle.png-3a0aaebe6a43044daf93673e46fcb481.ctex::

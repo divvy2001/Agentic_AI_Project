@@ -1,0 +1,414 @@
+{
+  "schema_version": "1.0",
+  "suite_version": "benchmark-g13",
+  "generated_at_utc": "2026-10-26T04:13:11.298596+00:00",
+  "renderer": "godot",
+  "game_title": "Godot Boss Arena",
+  "generator": {
+    "backend": "openrouter",
+    "model": "openai/gpt-4.1-mini"
+  },
+  "generation_notes": [
+    "Tests cover stamina consumption and invulnerability frames for dodge including insufficient stamina edge case.",
+    "Boss telegraph and attack timing verified with observation of telegraph and damage windows.",
+    "Phase transitions tested for single occurrence at health thresholds.",
+    "Damage application tested during stagger windows and out-of-range attacks.",
+    "Healing charge consumption and health capping tested, including zero charge edge case.",
+    "Victory and defeat terminal states tested by boss defeat and player death respectively."
+  ],
+  "generation_usage": {
+    "prompt_tokens": 681,
+    "completion_tokens": 2206,
+    "total_tokens": 2887,
+    "provider_reported_cost_usd": 0.003802,
+    "estimated_cost_usd": 0.003802,
+    "cost_source": "OpenRouter usage.cost"
+  },
+  "source_hashes": {
+    "game_eval_benchmark_15/cases/G13/coder_plan.json": "8fd16aaa959f9c95e4b11643e16c24c746e1eaaa5d94088c59704ba9ee607937",
+    "game_eval_benchmark_15/cases/G13/play_manual.json": "a05aa5325bfa40f222c5c99144825c3ac782c60a90eeb6fb8e955072cc0b4f3a"
+  },
+  "tests": [
+    {
+      "test_id": "T01",
+      "requirement_index": 0,
+      "requirement": "Dodge consumes stamina and grants a bounded invulnerability window.",
+      "assertion": "Dodge action reduces stamina by a measurable amount and grants invulnerability frames lasting a short, bounded duration.",
+      "actions": [
+        {
+          "type": "observe",
+          "value": "stamina",
+          "duration_frames": 1
+        },
+        {
+          "type": "press",
+          "value": "Shift",
+          "duration_frames": 1
+        },
+        {
+          "type": "observe",
+          "value": "stamina",
+          "duration_frames": 1
+        },
+        {
+          "type": "observe",
+          "value": "player_invulnerability",
+          "duration_frames": 30
+        }
+      ],
+      "observation": {
+        "method": "game_state",
+        "target": "stamina and player_invulnerability"
+      },
+      "expected": "Stamina decreases immediately after dodge input; player_invulnerability is true for a short, bounded frame window (e.g., 10-30 frames) after dodge.",
+      "status": "ready_for_validator",
+      "not_testable_reason": null,
+      "renderer": "godot",
+      "timeout_seconds": 30,
+      "script_path": null
+    },
+    {
+      "test_id": "T02",
+      "requirement_index": 0,
+      "requirement": "Dodge consumes stamina and grants a bounded invulnerability window.",
+      "assertion": "Dodge cannot be performed if stamina is insufficient; no invulnerability frames granted and stamina remains unchanged.",
+      "actions": [
+        {
+          "type": "wait",
+          "value": null,
+          "duration_frames": 300
+        },
+        {
+          "type": "observe",
+          "value": "stamina",
+          "duration_frames": 1
+        },
+        {
+          "type": "press",
+          "value": "Shift",
+          "duration_frames": 1
+        },
+        {
+          "type": "observe",
+          "value": "stamina",
+          "duration_frames": 1
+        },
+        {
+          "type": "observe",
+          "value": "player_invulnerability",
+          "duration_frames": 10
+        }
+      ],
+      "observation": {
+        "method": "game_state",
+        "target": "stamina and player_invulnerability"
+      },
+      "expected": "If stamina is below dodge cost, stamina does not decrease and player_invulnerability remains false after dodge input.",
+      "status": "ready_for_validator",
+      "not_testable_reason": null,
+      "renderer": "godot",
+      "timeout_seconds": 30,
+      "script_path": null
+    },
+    {
+      "test_id": "T03",
+      "requirement_index": 1,
+      "requirement": "Boss telegraphs major attacks before damaging hit windows.",
+      "assertion": "Boss displays a clear telegraph animation or indicator before executing major damaging attacks.",
+      "actions": [
+        {
+          "type": "wait",
+          "value": null,
+          "duration_frames": 60
+        },
+        {
+          "type": "observe",
+          "value": "boss_telegraph",
+          "duration_frames": 30
+        },
+        {
+          "type": "observe",
+          "value": "boss_attack_damage_window",
+          "duration_frames": 30
+        }
+      ],
+      "observation": {
+        "method": "game_state",
+        "target": "boss_telegraph and boss_attack_damage_window"
+      },
+      "expected": "Boss telegraph is active for a noticeable duration before the damaging hit window begins; no damage occurs during telegraph.",
+      "status": "ready_for_validator",
+      "not_testable_reason": null,
+      "renderer": "godot",
+      "timeout_seconds": 30,
+      "script_path": null
+    },
+    {
+      "test_id": "T04",
+      "requirement_index": 2,
+      "requirement": "Health thresholds trigger phase two and three exactly once.",
+      "assertion": "Boss transitions to phase two and phase three exactly once when health crosses respective thresholds.",
+      "actions": [
+        {
+          "type": "observe",
+          "value": "boss_health",
+          "duration_frames": 1
+        },
+        {
+          "type": "attack",
+          "value": null,
+          "duration_frames": 10
+        },
+        {
+          "type": "observe",
+          "value": "boss_phase",
+          "duration_frames": 1
+        },
+        {
+          "type": "attack",
+          "value": null,
+          "duration_frames": 10
+        },
+        {
+          "type": "observe",
+          "value": "boss_phase",
+          "duration_frames": 1
+        },
+        {
+          "type": "attack",
+          "value": null,
+          "duration_frames": 10
+        },
+        {
+          "type": "observe",
+          "value": "boss_phase",
+          "duration_frames": 1
+        }
+      ],
+      "observation": {
+        "method": "game_state",
+        "target": "boss_health and boss_phase"
+      },
+      "expected": "Boss phase changes from 1 to 2 once when health crosses phase two threshold, and from 2 to 3 once when health crosses phase three threshold; no repeated phase changes.",
+      "status": "not_testable",
+      "not_testable_reason": "Test did not meet the generator's structural validation rules.",
+      "renderer": "godot",
+      "timeout_seconds": 60,
+      "script_path": null
+    },
+    {
+      "test_id": "T05",
+      "requirement_index": 3,
+      "requirement": "Attacks during stagger windows apply expected damage; out-of-range attacks do not.",
+      "assertion": "Attacks during boss stagger windows apply expected damage; attacks outside stagger windows or out-of-range do not apply damage.",
+      "actions": [
+        {
+          "type": "wait",
+          "value": null,
+          "duration_frames": 10
+        },
+        {
+          "type": "observe",
+          "value": "boss_stagger_window",
+          "duration_frames": 1
+        },
+        {
+          "type": "attack",
+          "value": null,
+          "duration_frames": 5
+        },
+        {
+          "type": "observe",
+          "value": "boss_health",
+          "duration_frames": 1
+        },
+        {
+          "type": "wait",
+          "value": null,
+          "duration_frames": 30
+        },
+        {
+          "type": "attack",
+          "value": null,
+          "duration_frames": 5
+        },
+        {
+          "type": "observe",
+          "value": "boss_health",
+          "duration_frames": 1
+        },
+        {
+          "type": "move",
+          "value": "away_from_boss",
+          "duration_frames": 10
+        },
+        {
+          "type": "attack",
+          "value": null,
+          "duration_frames": 5
+        },
+        {
+          "type": "observe",
+          "value": "boss_health",
+          "duration_frames": 1
+        }
+      ],
+      "observation": {
+        "method": "game_state",
+        "target": "boss_health and boss_stagger_window"
+      },
+      "expected": "Boss health decreases by expected damage amount only when attacked during stagger window and in range; no health decrease when attacked outside stagger or out of range.",
+      "status": "not_testable",
+      "not_testable_reason": "Test did not meet the generator's structural validation rules.",
+      "renderer": "godot",
+      "timeout_seconds": 60,
+      "script_path": null
+    },
+    {
+      "test_id": "T06",
+      "requirement_index": 4,
+      "requirement": "Healing consumes one charge and caps health at maximum.",
+      "assertion": "Using a healing charge consumes one charge and restores health up to maximum without exceeding it.",
+      "actions": [
+        {
+          "type": "observe",
+          "value": "player_health",
+          "duration_frames": 1
+        },
+        {
+          "type": "observe",
+          "value": "healing_charges",
+          "duration_frames": 1
+        },
+        {
+          "type": "input",
+          "value": "heal",
+          "duration_frames": 1
+        },
+        {
+          "type": "observe",
+          "value": "player_health",
+          "duration_frames": 1
+        },
+        {
+          "type": "observe",
+          "value": "healing_charges",
+          "duration_frames": 1
+        }
+      ],
+      "observation": {
+        "method": "game_state",
+        "target": "player_health and healing_charges"
+      },
+      "expected": "Player health increases but does not exceed maximum health; healing charges decrease by exactly one after healing input.",
+      "status": "ready_for_validator",
+      "not_testable_reason": null,
+      "renderer": "godot",
+      "timeout_seconds": 30,
+      "script_path": null
+    },
+    {
+      "test_id": "T07",
+      "requirement_index": 4,
+      "requirement": "Healing consumes one charge and caps health at maximum.",
+      "assertion": "Healing input with zero healing charges does not increase health or consume charges.",
+      "actions": [
+        {
+          "type": "wait",
+          "value": null,
+          "duration_frames": 300
+        },
+        {
+          "type": "observe",
+          "value": "healing_charges",
+          "duration_frames": 1
+        },
+        {
+          "type": "input",
+          "value": "heal",
+          "duration_frames": 1
+        },
+        {
+          "type": "observe",
+          "value": "player_health",
+          "duration_frames": 1
+        },
+        {
+          "type": "observe",
+          "value": "healing_charges",
+          "duration_frames": 1
+        }
+      ],
+      "observation": {
+        "method": "game_state",
+        "target": "player_health and healing_charges"
+      },
+      "expected": "If healing charges are zero, healing input does not increase health or reduce charges.",
+      "status": "ready_for_validator",
+      "not_testable_reason": null,
+      "renderer": "godot",
+      "timeout_seconds": 30,
+      "script_path": null
+    },
+    {
+      "test_id": "T08",
+      "requirement_index": 5,
+      "requirement": "Boss defeat triggers victory; player death triggers defeat.",
+      "assertion": "Boss defeat triggers victory state; player death triggers defeat state.",
+      "actions": [
+        {
+          "type": "attack",
+          "value": null,
+          "duration_frames": 100
+        },
+        {
+          "type": "observe",
+          "value": "game_state",
+          "duration_frames": 1
+        },
+        {
+          "type": "restart",
+          "value": null,
+          "duration_frames": 1
+        },
+        {
+          "type": "wait",
+          "value": null,
+          "duration_frames": 10
+        },
+        {
+          "type": "observe",
+          "value": "player_health",
+          "duration_frames": 1
+        },
+        {
+          "type": "wait",
+          "value": null,
+          "duration_frames": 1000
+        },
+        {
+          "type": "observe",
+          "value": "game_state",
+          "duration_frames": 1
+        }
+      ],
+      "observation": {
+        "method": "game_state",
+        "target": "victory_or_defeat_state"
+      },
+      "expected": "When boss health reaches zero, game state changes to victory; when player health reaches zero, game state changes to defeat.",
+      "status": "not_testable",
+      "not_testable_reason": "Test did not meet the generator's structural validation rules.",
+      "renderer": "godot",
+      "timeout_seconds": 120,
+      "script_path": null
+    }
+  ],
+  "summary": {
+    "total": 8,
+    "ready_for_validator": 5,
+    "not_testable": 3
+  },
+  "warnings": [],
+  "important": "Generation is not execution. This file does not claim PASS and must not be used as test_results.json."
+}\n

@@ -1,0 +1,49 @@
+{
+  "run_id": "20261028_091204",
+  "spec_file": "C:\\Users\\ASUS\\Work\\game_specs\\seal_bounce.md",
+  "outcome": "GAME READY",
+  "turns": 7,
+  "elapsed_s": 740.1,
+  "total_cost_usd": 0.2181,
+  "cost_by_agent": {
+    "planner": 0.01032,
+    "asset_agent": 0.04701,
+    "logic_coder": 0.16079,
+    "eval_generator": 0.0
+  },
+  "coder_cost_usd_self_reported": 0.122,
+  "routing": [],
+  "cost_by_stage": [
+    {
+      "turn": 1,
+      "round": null,
+      "agent": "planner",
+      "route": null,
+      "cost_usd": 0.01032
+    },
+    {
+      "turn": 1,
+      "round": null,
+      "agent": "asset_agent",
+      "route": null,
+      "cost_usd": 0.04701
+    },
+    {
+      "turn": 2,
+      "round": null,
+      "agent": "logic_coder",
+      "route": null,
+      "cost_usd": 0.16079
+    },
+    {
+      "turn": 3,
+      "round": null,
+      "agent": "eval_generator",
+      "route": null,
+      "cost_usd": 0.0
+    }
+  ],
+  "rounds": 1,
+  "needs_human_review": 0,
+  "results": "traces/eval/run20261028_091204-s1/test_run_20261028_092335/test_results.json"
+}

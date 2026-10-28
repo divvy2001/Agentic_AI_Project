@@ -1,0 +1,19 @@
+{
+  "status": "fail",
+  "failing_stage": "logic_coder",
+  "suite_version": "eval-v1",
+  "failures": [
+    {
+      "test_id": "T03",
+      "requirement_index": 0,
+      "expected": "WIN after exactly 3 valid scoring actions",
+      "actual": "PLAYING or ONGOING after 3 scoring actions",
+      "error_category": "behavior",
+      "evidence_path": "traces/eval/eval-v1/T03.log",
+      "attribution_evidence": "A fixed test drives three valid score actions and directly observes the real game score and state; the planned win threshold is 3."
+    }
+  ],
+  "previously_passed_test_ids": [
+    "T01"
+  ]
+}

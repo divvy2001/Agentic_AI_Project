@@ -1,0 +1,4 @@
+FROZEN FIXTURE EVIDENCE (not produced by the live team Validator)
+T03: three valid points produce score=3 but state remains PLAYING/ONGOING.
+T01: two valid points produce score=2 and state remains PLAYING/ONGOING.
+Attribution: fixture has one known off-by-one game code defect; this is synthetic evidence for offline repair tests.

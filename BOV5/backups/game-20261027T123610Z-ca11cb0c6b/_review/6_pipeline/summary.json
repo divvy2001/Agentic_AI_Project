@@ -1,0 +1,50 @@
+{
+  "run_id": "20261027_191556",
+  "outcome": "DONE: 0 passed, 4 failed (triage disabled)",
+  "turns": 6,
+  "elapsed_s": 532.6,
+  "total_cost_usd": 0.0948,
+  "cost_by_agent": {
+    "planner": 0.0,
+    "asset_agent": 0.0,
+    "logic_coder": 0.09479,
+    "eval_generator": 0.0
+  },
+  "coder_cost_usd_self_reported": 0.0948,
+  "routing": [],
+  "cost_by_stage": [
+    {
+      "turn": 1,
+      "round": null,
+      "agent": "planner",
+      "route": null,
+      "cost_usd": 0.0
+    },
+    {
+      "turn": 1,
+      "round": null,
+      "agent": "asset_agent",
+      "route": null,
+      "cost_usd": 0.0
+    },
+    {
+      "turn": 2,
+      "round": null,
+      "agent": "logic_coder",
+      "route": null,
+      "cost_usd": 0.09479
+    },
+    {
+      "turn": 3,
+      "round": null,
+      "agent": "eval_generator",
+      "route": null,
+      "cost_usd": 0.0
+    }
+  ],
+  "rounds": 1,
+  "counts": {
+    "FAIL": 4
+  },
+  "results": "traces/eval/run20261027_191556-s1/test_run_20261027_192355/test_results.json"
+}

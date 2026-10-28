@@ -1,0 +1,14 @@
+{
+  "test_id": "T15",
+  "requirement_index": 14,
+  "requirement": "When the game ends, show 'GAME OVER' with the final score.",
+  "assertion": "'GAME OVER' and the final score are displayed prominently on the screen upon game over.",
+  "expected": "'GAME OVER' and final score visible on screen",
+  "generator_status": "not_testable",
+  "started_at_utc": "2026-10-26T21:03:35.311028+00:00",
+  "evidence_dir": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261027_045305-s1\\test_run_20261027_050242\\evidence\\T15",
+  "action_results": [],
+  "observations": [],
+  "status": "NOT_RUN",
+  "reason": "No console output confirms on-screen display; requires visual inspection."
+}

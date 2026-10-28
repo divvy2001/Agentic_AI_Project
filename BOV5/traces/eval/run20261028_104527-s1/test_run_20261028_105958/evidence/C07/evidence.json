@@ -1,0 +1,14 @@
+{
+  "test_id": "C07",
+  "requirement_index": 11,
+  "requirement": "The dark tunnel cannot be crossed without the lantern.",
+  "assertion": "Typing 'take rusty key' in the underground lake prints 'TOOK rusty key' as the first line of output.",
+  "expected": "TOOK rusty key",
+  "generator_status": "not_testable",
+  "started_at_utc": "2026-10-28T04:00:08.434752+00:00",
+  "evidence_dir": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261028_104527-s1\\test_run_20261028_105958\\evidence\\C07",
+  "action_results": [],
+  "observations": [],
+  "status": "NOT_RUN",
+  "reason": "Expected line 'TOOK rusty key' is not stated in the play manual."
+}

@@ -1,0 +1,7 @@
+{
+  "game_id": "G07",
+  "game_title": "Pygame Platformer",
+  "complexity": "medium",
+  "renderer": "pygame",
+  "description": "Side-scrolling platformer with running, jumping, gravity, platforms, coins, enemies, checkpoints and goal flag."
+}

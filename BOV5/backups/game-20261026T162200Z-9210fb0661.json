@@ -1,0 +1,41 @@
+{
+  "state": "committed",
+  "backup": "backups/game-20261026T162200Z-9210fb0661",
+  "staging": ".coder-game-9210fb0661",
+  "original_files": {
+    "project.godot": "1afce580eb53169e4dcb144f93314aea5a644e4e669c6308b82ee4eeb2a8e1d1",
+    "__init__.py": "a3f37d9971a26628f0ce3d2f8f426a90aa4a1c51af8dddcbcb0297c3f0da9bec",
+    "assets/background_tile.png": "3e5b25bc1e39cd32ad746cc8b0c6151d0c725cadcbc3b1ae9e7f067e47ac7260",
+    "assets/hazard_ball.png": "a461d985a8f94ca5d73c8237b4e13d7f930532ede4b2efb84a136ab0f91a4bc6",
+    "assets/orb.png": "a7aae43e1e2d3d2704a0492efb7a8e7dd8d0a84c442d7fd8336b1b2c961c0704",
+    "assets/snake_body_segment.png": "c43432453dfbfc39d72b768bb637c8f4951afe27b776f981bff9013c4620e354",
+    "assets/snake_head.png": "254906d481a241d91bfa944c7b3995ea8801643bbfdf885c3965c104d455f3a7",
+    "assets/sparkle_particle.png": "2a26e04885ad082509940520d2006201d528d199f17e14b957eaa31245e9c6b9",
+    "assets/wall_segment.png": "979da86bfb753f677c9c40e4f97c72c2f1adbc93f9e771a21b8f8325080f4560",
+    "scripts/game_manager.gd": "7e8701bd7547bc34f2753856538855fe9c2e75d0131a0f53168010dee74bc72b",
+    "scripts/hazard_ball_controller.gd": "f0bbc343ada71d90f6ca92619003ebf62e7a989c93ebdbf408bc945fb1f96728",
+    "scripts/orb_manager.gd": "e3b4901ab7110e79dc982e67fe34654e4ad4ee7159cdc26cf1416a4049ec163b",
+    "scripts/snake_controller.gd": "431ab40c8ed57aad725eae67c46118612cc666eb002748b6c8c03f842b070f78",
+    "scripts/ui_controller.gd": "877696f5685532017936e0b89440954f30baaea840551e92da3316830507f022"
+  },
+  "preserved_files": [
+    "assets/background_tile.png",
+    "assets/hazard_ball.png",
+    "assets/orb.png",
+    "assets/snake_body_segment.png",
+    "assets/snake_head.png",
+    "assets/sparkle_particle.png",
+    "assets/wall_segment.png"
+  ],
+  "stale_files": [
+    "__init__.py",
+    "project.godot",
+    "scripts/game_manager.gd",
+    "scripts/hazard_ball_controller.gd",
+    "scripts/orb_manager.gd",
+    "scripts/snake_controller.gd",
+    "scripts/ui_controller.gd"
+  ],
+  "plan_sha256": "93bdd15d329783c29b81daabf21284718560d244a9ab25e27c55690ffeee7838",
+  "attempt_id": "abc7f708a45947398df0f75a722c1c01"
+}

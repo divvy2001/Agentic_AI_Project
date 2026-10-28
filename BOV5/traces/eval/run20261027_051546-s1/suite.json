@@ -1,0 +1,451 @@
+{
+  "schema_version": "1.0",
+  "suite_version": "run20261027_051546-s1",
+  "generated_at_utc": "2026-10-26T21:22:51.925264+00:00",
+  "renderer": "pygame",
+  "game_title": "Snake",
+  "generator": {
+    "backend": "openrouter",
+    "model": "openai/gpt-4.1-mini"
+  },
+  "generation_notes": [
+    "Tests cover all controls listed in the play manual that produce console output: arrow keys, R, Escape, and the GAME OVER event.",
+    "Each arrow key is tested separately to verify correct console output on direction change.",
+    "The GAME OVER test uses a wait action to allow the game to end naturally; no direct input can force game over immediately.",
+    "No tests are included for requirements without console output or that require visual or internal state inspection, as these are out of scope."
+  ],
+  "source_hashes": {
+    "plans/coder_plan.json": "3ee4c4e312eacf84962a59df8c37a99683609aeb3e0b8e12f7bea7b90d2eb2fa",
+    "plans/play_manual.json": "9acf5f50892d552697ea6cacc7d9d5186e74751f0d42926a09e116b13b3f5afc",
+    "plans/asset_manifest.json": "dfef16f454412ffb624f81d4ec2d39c5fca533c67c027a8c12f0b14cf50d4b05"
+  },
+  "tests": [
+    {
+      "test_id": "T01",
+      "requirement_index": 3,
+      "requirement": "The arrow keys change the snake's direction.",
+      "assertion": "Pressing an arrow key prints 'DIRECTION <DIR>' to the console if the direction changes.",
+      "actions": [
+        {
+          "type": "press",
+          "key": "up"
+        }
+      ],
+      "observation": {
+        "method": "stdout",
+        "target": "the console line the play manual says the game prints"
+      },
+      "expected": "DIRECTION UP",
+      "status": "ready_for_validator",
+      "not_testable_reason": null,
+      "renderer": "pygame",
+      "timeout_seconds": 30,
+      "script_path": null
+    },
+    {
+      "test_id": "T02",
+      "requirement_index": 3,
+      "requirement": "The arrow keys change the snake's direction.",
+      "assertion": "Pressing an arrow key prints 'DIRECTION <DIR>' to the console if the direction changes.",
+      "actions": [
+        {
+          "type": "press",
+          "key": "down"
+        }
+      ],
+      "observation": {
+        "method": "stdout",
+        "target": "the console line the play manual says the game prints"
+      },
+      "expected": "DIRECTION DOWN",
+      "status": "ready_for_validator",
+      "not_testable_reason": null,
+      "renderer": "pygame",
+      "timeout_seconds": 30,
+      "script_path": null
+    },
+    {
+      "test_id": "T03",
+      "requirement_index": 3,
+      "requirement": "The arrow keys change the snake's direction.",
+      "assertion": "Pressing an arrow key prints 'DIRECTION <DIR>' to the console if the direction changes.",
+      "actions": [
+        {
+          "type": "press",
+          "key": "left"
+        }
+      ],
+      "observation": {
+        "method": "stdout",
+        "target": "the console line the play manual says the game prints"
+      },
+      "expected": "DIRECTION LEFT",
+      "status": "ready_for_validator",
+      "not_testable_reason": null,
+      "renderer": "pygame",
+      "timeout_seconds": 30,
+      "script_path": null
+    },
+    {
+      "test_id": "T04",
+      "requirement_index": 3,
+      "requirement": "The arrow keys change the snake's direction.",
+      "assertion": "Pressing an arrow key prints 'DIRECTION <DIR>' to the console if the direction changes.",
+      "actions": [
+        {
+          "type": "press",
+          "key": "right"
+        }
+      ],
+      "observation": {
+        "method": "stdout",
+        "target": "the console line the play manual says the game prints"
+      },
+      "expected": "DIRECTION RIGHT",
+      "status": "ready_for_validator",
+      "not_testable_reason": null,
+      "renderer": "pygame",
+      "timeout_seconds": 30,
+      "script_path": null
+    },
+    {
+      "test_id": "T07",
+      "requirement_index": 19,
+      "requirement": "Use plain coloured squares only; no images or sounds.",
+      "assertion": "When the game ends due to collision or wall hit, 'GAME OVER' is printed to the console.",
+      "actions": [
+        {
+          "type": "wait",
+          "seconds": 20
+        }
+      ],
+      "observation": {
+        "method": "stdout",
+        "target": "the console line the play manual says the game prints"
+      },
+      "expected": "GAME OVER",
+      "status": "ready_for_validator",
+      "not_testable_reason": null,
+      "renderer": "pygame",
+      "timeout_seconds": 30,
+      "script_path": null
+    },
+    {
+      "test_id": "T06",
+      "requirement_index": 0,
+      "requirement": "The game must display a grid of 20 by 20 squares.",
+      "assertion": "The game window opens and displays a visible grid structure with 20 rows and 20 columns.",
+      "actions": [],
+      "observation": {
+        "method": null
+      },
+      "expected": "The game window opens and displays a visible grid structure with 20 rows and 20 columns.",
+      "status": "not_testable",
+      "not_testable_reason": "No structurally valid ready_for_validator test covered this requirement.",
+      "renderer": "pygame",
+      "timeout_seconds": 30,
+      "script_path": null
+    },
+    {
+      "test_id": "T07_2",
+      "requirement_index": 1,
+      "requirement": "The snake starts as 3 green squares in the middle of the grid.",
+      "assertion": "Upon starting the game, a 3-square long green snake is visible in the center of the grid.",
+      "actions": [],
+      "observation": {
+        "method": null
+      },
+      "expected": "Upon starting the game, a 3-square long green snake is visible in the center of the grid.",
+      "status": "not_testable",
+      "not_testable_reason": "No structurally valid ready_for_validator test covered this requirement.",
+      "renderer": "pygame",
+      "timeout_seconds": 30,
+      "script_path": null
+    },
+    {
+      "test_id": "T08",
+      "requirement_index": 2,
+      "requirement": "The snake moves right one square at a time at a steady pace.",
+      "assertion": "After game start, the snake's head moves one square to the right every fixed time interval.",
+      "actions": [],
+      "observation": {
+        "method": null
+      },
+      "expected": "After game start, the snake's head moves one square to the right every fixed time interval.",
+      "status": "not_testable",
+      "not_testable_reason": "No structurally valid ready_for_validator test covered this requirement.",
+      "renderer": "pygame",
+      "timeout_seconds": 30,
+      "script_path": null
+    },
+    {
+      "test_id": "T09",
+      "requirement_index": 4,
+      "requirement": "The snake cannot reverse straight back into itself.",
+      "assertion": "If the snake is moving right, pressing LEFT does not change its direction; it continues moving right.",
+      "actions": [],
+      "observation": {
+        "method": null
+      },
+      "expected": "If the snake is moving right, pressing LEFT does not change its direction; it continues moving right.",
+      "status": "not_testable",
+      "not_testable_reason": "No structurally valid ready_for_validator test covered this requirement.",
+      "renderer": "pygame",
+      "timeout_seconds": 30,
+      "script_path": null
+    },
+    {
+      "test_id": "T10",
+      "requirement_index": 5,
+      "requirement": "A red food square appears at a random empty spot.",
+      "assertion": "A single red square is visible on the grid, not overlapping with the snake, and its position changes after being eaten.",
+      "actions": [],
+      "observation": {
+        "method": null
+      },
+      "expected": "A single red square is visible on the grid, not overlapping with the snake, and its position changes after being eaten.",
+      "status": "not_testable",
+      "not_testable_reason": "No structurally valid ready_for_validator test covered this requirement.",
+      "renderer": "pygame",
+      "timeout_seconds": 30,
+      "script_path": null
+    },
+    {
+      "test_id": "T11",
+      "requirement_index": 6,
+      "requirement": "Eating food makes the snake one square longer.",
+      "assertion": "When the snake's head occupies the same square as the food, the snake's length increases by one square.",
+      "actions": [],
+      "observation": {
+        "method": null
+      },
+      "expected": "When the snake's head occupies the same square as the food, the snake's length increases by one square.",
+      "status": "not_testable",
+      "not_testable_reason": "No structurally valid ready_for_validator test covered this requirement.",
+      "renderer": "pygame",
+      "timeout_seconds": 30,
+      "script_path": null
+    },
+    {
+      "test_id": "T12",
+      "requirement_index": 7,
+      "requirement": "Eating food adds 1 point.",
+      "assertion": "When the snake eats food, the score displayed on screen increases by 1.",
+      "actions": [],
+      "observation": {
+        "method": null
+      },
+      "expected": "When the snake eats food, the score displayed on screen increases by 1.",
+      "status": "not_testable",
+      "not_testable_reason": "No structurally valid ready_for_validator test covered this requirement.",
+      "renderer": "pygame",
+      "timeout_seconds": 30,
+      "script_path": null
+    },
+    {
+      "test_id": "T13",
+      "requirement_index": 8,
+      "requirement": "Eating food spawns new food.",
+      "assertion": "Immediately after food is eaten, a new red food square appears at a different random empty spot.",
+      "actions": [],
+      "observation": {
+        "method": null
+      },
+      "expected": "Immediately after food is eaten, a new red food square appears at a different random empty spot.",
+      "status": "not_testable",
+      "not_testable_reason": "No structurally valid ready_for_validator test covered this requirement.",
+      "renderer": "pygame",
+      "timeout_seconds": 30,
+      "script_path": null
+    },
+    {
+      "test_id": "T14",
+      "requirement_index": 9,
+      "requirement": "Hitting a wall ends the game.",
+      "assertion": "If the snake's head moves beyond the grid boundaries, the game ends, and 'GAME OVER' is displayed.",
+      "actions": [],
+      "observation": {
+        "method": null
+      },
+      "expected": "If the snake's head moves beyond the grid boundaries, the game ends, and 'GAME OVER' is displayed.",
+      "status": "not_testable",
+      "not_testable_reason": "No structurally valid ready_for_validator test covered this requirement.",
+      "renderer": "pygame",
+      "timeout_seconds": 30,
+      "script_path": null
+    },
+    {
+      "test_id": "T15",
+      "requirement_index": 10,
+      "requirement": "Hitting the snake's own body ends the game.",
+      "assertion": "If the snake's head moves into any part of its own body, the game ends, and 'GAME OVER' is displayed.",
+      "actions": [],
+      "observation": {
+        "method": null
+      },
+      "expected": "If the snake's head moves into any part of its own body, the game ends, and 'GAME OVER' is displayed.",
+      "status": "not_testable",
+      "not_testable_reason": "No structurally valid ready_for_validator test covered this requirement.",
+      "renderer": "pygame",
+      "timeout_seconds": 30,
+      "script_path": null
+    },
+    {
+      "test_id": "T16",
+      "requirement_index": 11,
+      "requirement": "Show the score at the top of the screen.",
+      "assertion": "A numerical score is continuously displayed at the top of the game window.",
+      "actions": [],
+      "observation": {
+        "method": null
+      },
+      "expected": "A numerical score is continuously displayed at the top of the game window.",
+      "status": "not_testable",
+      "not_testable_reason": "No structurally valid ready_for_validator test covered this requirement.",
+      "renderer": "pygame",
+      "timeout_seconds": 30,
+      "script_path": null
+    },
+    {
+      "test_id": "T17",
+      "requirement_index": 12,
+      "requirement": "Show the controls below the score.",
+      "assertion": "Text indicating the controls (Arrow keys, R, Escape) is displayed below the score.",
+      "actions": [],
+      "observation": {
+        "method": null
+      },
+      "expected": "Text indicating the controls (Arrow keys, R, Escape) is displayed below the score.",
+      "status": "not_testable",
+      "not_testable_reason": "No structurally valid ready_for_validator test covered this requirement.",
+      "renderer": "pygame",
+      "timeout_seconds": 30,
+      "script_path": null
+    },
+    {
+      "test_id": "T18",
+      "requirement_index": 13,
+      "requirement": "Every time the score changes, print the new score to the console.",
+      "assertion": "When the score increases, the new score value is printed to the console.",
+      "actions": [],
+      "observation": {
+        "method": null
+      },
+      "expected": "When the score increases, the new score value is printed to the console.",
+      "status": "not_testable",
+      "not_testable_reason": "No structurally valid ready_for_validator test covered this requirement.",
+      "renderer": "pygame",
+      "timeout_seconds": 30,
+      "script_path": null
+    },
+    {
+      "test_id": "T19",
+      "requirement_index": 14,
+      "requirement": "When the game ends, show GAME OVER with the final score.",
+      "assertion": "When the game ends, the text 'GAME OVER' appears on screen, along with the final score.",
+      "actions": [],
+      "observation": {
+        "method": null
+      },
+      "expected": "When the game ends, the text 'GAME OVER' appears on screen, along with the final score.",
+      "status": "not_testable",
+      "not_testable_reason": "No structurally valid ready_for_validator test covered this requirement.",
+      "renderer": "pygame",
+      "timeout_seconds": 30,
+      "script_path": null
+    },
+    {
+      "test_id": "T20",
+      "requirement_index": 15,
+      "requirement": "When the game ends, print GAME OVER to the console.",
+      "assertion": "When the game ends, the string 'GAME OVER' is printed to the console.",
+      "actions": [],
+      "observation": {
+        "method": null
+      },
+      "expected": "When the game ends, the string 'GAME OVER' is printed to the console.",
+      "status": "not_testable",
+      "not_testable_reason": "No structurally valid ready_for_validator test covered this requirement.",
+      "renderer": "pygame",
+      "timeout_seconds": 30,
+      "script_path": null
+    },
+    {
+      "test_id": "T21",
+      "requirement_index": 16,
+      "requirement": "When the game ends, freeze the snake.",
+      "assertion": "After 'GAME OVER' is displayed, the snake stops moving.",
+      "actions": [],
+      "observation": {
+        "method": null
+      },
+      "expected": "After 'GAME OVER' is displayed, the snake stops moving.",
+      "status": "not_testable",
+      "not_testable_reason": "No structurally valid ready_for_validator test covered this requirement.",
+      "renderer": "pygame",
+      "timeout_seconds": 30,
+      "script_path": null
+    },
+    {
+      "test_id": "T22",
+      "requirement_index": 17,
+      "requirement": "Press R to restart with a fresh snake and score 0.",
+      "assertion": "After a game over, pressing 'R' resets the snake to its initial state, clears the score, and restarts the game.",
+      "actions": [],
+      "observation": {
+        "method": null
+      },
+      "expected": "After a game over, pressing 'R' resets the snake to its initial state, clears the score, and restarts the game.",
+      "status": "not_testable",
+      "not_testable_reason": "No structurally valid ready_for_validator test covered this requirement.",
+      "renderer": "pygame",
+      "timeout_seconds": 30,
+      "script_path": null
+    },
+    {
+      "test_id": "T23",
+      "requirement_index": 18,
+      "requirement": "Press Escape to quit.",
+      "assertion": "Pressing the 'Escape' key closes the game window.",
+      "actions": [],
+      "observation": {
+        "method": null
+      },
+      "expected": "Pressing the 'Escape' key closes the game window.",
+      "status": "not_testable",
+      "not_testable_reason": "No structurally valid ready_for_validator test covered this requirement.",
+      "renderer": "pygame",
+      "timeout_seconds": 30,
+      "script_path": null
+    }
+  ],
+  "summary": {
+    "total": 23,
+    "ready_for_validator": 5,
+    "not_testable": 18
+  },
+  "warnings": [
+    "LLM test at index 4 has an invalid requirement_index and was ignored",
+    "LLM test at index 5 has an invalid requirement_index and was ignored",
+    "Requirement 0 had no valid executable test and was marked not_testable",
+    "Requirement 1 had no valid executable test and was marked not_testable",
+    "Requirement 2 had no valid executable test and was marked not_testable",
+    "Requirement 4 had no valid executable test and was marked not_testable",
+    "Requirement 5 had no valid executable test and was marked not_testable",
+    "Requirement 6 had no valid executable test and was marked not_testable",
+    "Requirement 7 had no valid executable test and was marked not_testable",
+    "Requirement 8 had no valid executable test and was marked not_testable",
+    "Requirement 9 had no valid executable test and was marked not_testable",
+    "Requirement 10 had no valid executable test and was marked not_testable",
+    "Requirement 11 had no valid executable test and was marked not_testable",
+    "Requirement 12 had no valid executable test and was marked not_testable",
+    "Requirement 13 had no valid executable test and was marked not_testable",
+    "Requirement 14 had no valid executable test and was marked not_testable",
+    "Requirement 15 had no valid executable test and was marked not_testable",
+    "Requirement 16 had no valid executable test and was marked not_testable",
+    "Requirement 17 had no valid executable test and was marked not_testable",
+    "Requirement 18 had no valid executable test and was marked not_testable",
+    "Duplicate test_id 'T07' renamed to 'T07_2'"
+  ],
+  "important": "Generation is not execution. This file does not claim PASS and must not be used as test_results.json."
+}

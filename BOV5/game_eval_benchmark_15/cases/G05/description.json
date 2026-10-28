@@ -1,0 +1,7 @@
+{
+  "game_id": "G05",
+  "game_title": "Terminal Snake",
+  "complexity": "simple",
+  "renderer": "terminal",
+  "description": "Grid-based Snake; continuous movement, food collection and growth, no direct reversal, and game over on wall/self collision."
+}

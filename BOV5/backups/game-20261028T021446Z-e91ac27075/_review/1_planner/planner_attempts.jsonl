@@ -1,0 +1,2 @@
+{"attempt": 1, "seconds": 17.6, "tokens": {"input": 6286, "output": 3213}, "attempt_cost_usd": 0.009918, "errors": ["quote: profile.pace: \"Purple blobs walk along the path in waves; each blob that reaches the right edge\" is not in the spec word for word"], "hard_errors": [], "quote_errors": ["quote: profile.pace: \"Purple blobs walk along the path in waves; each blob that reaches the right edge\" is not in the spec word for word"]}
+{"outcome": "success", "attempts": 1, "seconds": 17.6, "tokens": {"input": 6286, "output": 3213, "total": 9499}, "estimated_cost_usd": 0.00992}

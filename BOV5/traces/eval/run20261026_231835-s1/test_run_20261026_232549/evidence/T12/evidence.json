@@ -1,0 +1,23 @@
+{
+  "test_id": "T12",
+  "requirement_index": 2,
+  "requirement": "The right paddle moves up and down with the UP and DOWN arrow keys.",
+  "assertion": "Holding 'UP' or 'DOWN' moves the right paddle continuously up or down without skipping frames.",
+  "expected": "Right paddle moves smoothly and continuously up while 'UP' held and down while 'DOWN' held",
+  "generator_status": "ready_for_validator",
+  "started_at_utc": "2026-10-26T15:25:49.837692+00:00",
+  "evidence_dir": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261026_231835-s1\\test_run_20261026_232549\\evidence\\T12",
+  "action_results": [],
+  "observations": [],
+  "status": "ERROR",
+  "reason": "FileNotFoundError: [WinError 2] The system cannot find the file specified",
+  "triage_hints": [
+    {
+      "category": "test_harness_or_integration",
+      "confidence": "high",
+      "reason": "Runner error; diagnose harness before game."
+    }
+  ],
+  "duration_seconds": 0.0,
+  "finished_at_utc": "2026-10-26T15:25:49.838694+00:00"
+}

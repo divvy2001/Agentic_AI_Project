@@ -1,0 +1,41 @@
+{
+  "game_title": "Godot Tactical Roguelite",
+  "description": "Turn-based tactical roguelite with squad action points, cover, line of sight, status effects, enemy turns, loot, permadeath and multi-room progression.",
+  "profile": {
+    "renderer": "godot"
+  },
+  "requirements": [
+    {
+      "text": "Movement and attacks consume action points and fail when unaffordable.",
+      "check": "Movement and attacks consume action points and fail when unaffordable."
+    },
+    {
+      "text": "Cover reduces incoming damage only when it blocks the attack line.",
+      "check": "Cover reduces incoming damage only when it blocks the attack line."
+    },
+    {
+      "text": "Opaque obstacles block direct line-of-sight attacks.",
+      "check": "Opaque obstacles block direct line-of-sight attacks."
+    },
+    {
+      "text": "Status effects apply and expire after their configured duration.",
+      "check": "Status effects apply and expire after their configured duration."
+    },
+    {
+      "text": "Enemy phase starts after player squad ends turn and enemies act once.",
+      "check": "Enemy phase starts after player squad ends turn and enemies act once."
+    },
+    {
+      "text": "Room-clear loot is awarded once.",
+      "check": "Room-clear loot is awarded once."
+    },
+    {
+      "text": "Dead squad members remain unavailable for the run unless revival is supported.",
+      "check": "Dead squad members remain unavailable for the run unless revival is supported."
+    },
+    {
+      "text": "Next room loads only after required enemies are defeated.",
+      "check": "Next room loads only after required enemies are defeated."
+    }
+  ]
+}

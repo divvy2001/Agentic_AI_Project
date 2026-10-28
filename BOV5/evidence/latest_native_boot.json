@@ -1,0 +1,39 @@
+{
+  "result": {
+    "argv": [
+      "C:\\Users\\DELL\\Documents\\Codex\\2026-10-22\\v4-zip-coder-development-spec-md\\work\\godot\\Godot_v4.7.2-stable_win64.exe",
+      "--headless",
+      "--path",
+      "C:\\Users\\DELL\\Documents\\Codex\\2026-10-22\\v4-zip-coder-development-spec-md\\outputs\\Bo's Project V4 - with coder\\traces\\gd-runtime-8slv101d\\game",
+      "--script",
+      "C:\\Users\\DELL\\Documents\\Codex\\2026-10-22\\v4-zip-coder-development-spec-md\\outputs\\Bo's Project V4 - with coder\\traces\\gd-runtime-8slv101d\\startup_observer.gd",
+      "--fixed-fps",
+      "60",
+      "--quit-after",
+      "660"
+    ],
+    "returncode": 0,
+    "output": "Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org\r\n\r\nCODER_GODOT_OBSERVED:button_events=0\r\nCODER_GODOT_OBSERVED:world_points=0\r\nCODER_GODOT_OBSERVED:button_presses=0\r\nCODER_GODOT_OBSERVED:update_frames=3\r\nCODER_GODOT_OBSERVED:simulation_frames=600;fixed_fps=60\r\n",
+    "reason": null,
+    "seconds": 0.454,
+    "sandbox": {
+      "kind": "windows_appcontainer",
+      "token_is_appcontainer": true,
+      "network_capabilities": [],
+      "active_process_limit": 1
+    },
+    "nonfatal_engine_diagnostics": [],
+    "error_check_output": "Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org\r\n\r\nCODER_GODOT_OBSERVED:button_events=0\r\nCODER_GODOT_OBSERVED:world_points=0\r\nCODER_GODOT_OBSERVED:button_presses=0\r\nCODER_GODOT_OBSERVED:update_frames=3\r\nCODER_GODOT_OBSERVED:simulation_frames=600;fixed_fps=60\r\n",
+    "observed": {
+      "update_frames": 3,
+      "simulation_frames": 600,
+      "fixed_fps": 60,
+      "button_events": 0,
+      "button_presses": 0,
+      "world_points": 0,
+      "scope": "10 simulated seconds; button_events counts attempts, button_presses confirms actual native pressed callbacks; 2 world clicks per selection; no semantic gameplay or OS input proof"
+    }
+  },
+  "boot_failed": false,
+  "source_unchanged": true
+}

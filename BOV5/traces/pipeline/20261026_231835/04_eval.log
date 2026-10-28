@@ -1,0 +1,15 @@
+{
+  "suite_version": "run20261026_231835-s1",
+  "renderer": "pygame",
+  "generator": {
+    "backend": "openrouter",
+    "model": "openai/gpt-4.1-mini"
+  },
+  "summary": {
+    "total": 12,
+    "ready_for_validator": 12,
+    "not_testable": 0
+  },
+  "output": "traces/eval/run20261026_231835-s1/suite.json",
+  "warnings": []
+}

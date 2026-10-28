@@ -1,0 +1,56 @@
+{
+  "test_id": "C01",
+  "requirement_index": 2,
+  "requirement": "The player can type 'look' to get a description of the current location.",
+  "assertion": "Typing 'look' prints 'LOOK' as the first line of output.",
+  "expected": "LOOK",
+  "generator_status": "ready_for_validator",
+  "started_at_utc": "2026-10-28T04:03:59.760611+00:00",
+  "evidence_dir": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261028_104527-s1\\test_run_20261028_110359\\evidence\\C01",
+  "action_results": [
+    {
+      "type": "input",
+      "at_utc": "2026-10-28T04:04:02.436453+00:00",
+      "status": "executed",
+      "text_length": 4,
+      "index": 0
+    },
+    {
+      "type": "wait",
+      "at_utc": "2026-10-28T04:04:02.436453+00:00",
+      "status": "executed",
+      "seconds": 1.0,
+      "index": 1
+    }
+  ],
+  "observations": [
+    {
+      "method": "stdout",
+      "captured_at_utc": "2026-10-28T04:04:03.587427+00:00",
+      "text": "Lantern Cave\nYou are in a forest clearing. Paths lead east and south.\nclearing\nLOOK\nYou are in a forest clearing. Paths lead east and south.\nclearing\n",
+      "stderr_tail": ""
+    }
+  ],
+  "checked_output": "after first input action only",
+  "input_retries": 0,
+  "status": "PASS",
+  "reason": "Expected literal text was found in process output.",
+  "process": {
+    "pid": 15224,
+    "returncode": null
+  },
+  "runtime_evidence": {
+    "stdout_file": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261028_104527-s1\\test_run_20261028_110359\\evidence\\C01\\stdout.log",
+    "stderr_file": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261028_104527-s1\\test_run_20261028_110359\\evidence\\C01\\stderr.log",
+    "screenshot_file": null
+  },
+  "triage_hints": [
+    {
+      "category": "undetermined",
+      "confidence": "low",
+      "reason": "Insufficient diagnostic signals; compare brief, plan, code, assets and runtime evidence."
+    }
+  ],
+  "duration_seconds": 3.844,
+  "finished_at_utc": "2026-10-28T04:04:03.603489+00:00"
+}

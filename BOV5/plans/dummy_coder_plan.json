@@ -1,0 +1,30 @@
+{
+  "game_title": "Gem Collector Demo",
+  "profile": {
+    "renderer": "pygame",
+    "genre": "2D collection game",
+    "target_platform": "desktop"
+  },
+  "requirements": [
+    {
+      "id": "REQ-001",
+      "text": "The player can move left and right using the arrow keys.",
+      "check": "After pressing left or right, the player's horizontal position changes in the expected direction."
+    },
+    {
+      "id": "REQ-002",
+      "text": "Collecting a gem increases the score by one.",
+      "check": "After the player collects one gem, the displayed score increases by exactly one."
+    },
+    {
+      "id": "REQ-003",
+      "text": "Collecting five gems triggers the win state.",
+      "check": "After five gems are collected, the game displays the win state."
+    },
+    {
+      "id": "REQ-004",
+      "text": "The player can restart the game after winning.",
+      "check": "Activating restart returns the game to its initial state and resets the score to zero."
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "test_id": "C03",
+  "requirement_index": 13,
+  "requirement": "Print 'QUIT' to the console when 'Escape' is pressed.",
+  "assertion": "When 'R' is pressed, 'RESTART' is printed to the console.",
+  "expected": "RESTART",
+  "generator_status": "ready_for_validator",
+  "started_at_utc": "2026-10-27T07:53:23.961024+00:00",
+  "evidence_dir": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261027_144230-s1\\test_run_20261027_145313\\evidence\\C03",
+  "action_results": [
+    {
+      "type": "wait",
+      "at_utc": "2026-10-27T07:53:26.475175+00:00",
+      "status": "executed",
+      "seconds": 1.0,
+      "index": 0
+    },
+    {
+      "type": "press",
+      "at_utc": "2026-10-27T07:53:27.475767+00:00",
+      "status": "executed",
+      "key": "r",
+      "index": 1
+    },
+    {
+      "type": "wait",
+      "at_utc": "2026-10-27T07:53:27.577917+00:00",
+      "status": "executed",
+      "seconds": 1.0,
+      "index": 2
+    }
+  ],
+  "observations": [
+    {
+      "method": "stdout",
+      "captured_at_utc": "2026-10-27T07:53:28.729141+00:00",
+      "text": "pygame 2.6.1 (SDL 2.28.4, Python 3.11.9)\nHello from the pygame community. https://www.pygame.org/contribute.html\nRESTART\nGAME OVER\n",
+      "stderr_tail": ""
+    }
+  ],
+  "status": "PASS",
+  "reason": "Expected literal text was found in process output.",
+  "process": {
+    "pid": 28964,
+    "returncode": null
+  },
+  "runtime_evidence": {
+    "stdout_file": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261027_144230-s1\\test_run_20261027_145313\\evidence\\C03\\stdout.log",
+    "stderr_file": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261027_144230-s1\\test_run_20261027_145313\\evidence\\C03\\stderr.log",
+    "screenshot_file": null
+  },
+  "triage_hints": [
+    {
+      "category": "undetermined",
+      "confidence": "low",
+      "reason": "Insufficient diagnostic signals; compare brief, plan, code, assets and runtime evidence."
+    }
+  ],
+  "duration_seconds": 4.812,
+  "finished_at_utc": "2026-10-27T07:53:28.771837+00:00"
+}

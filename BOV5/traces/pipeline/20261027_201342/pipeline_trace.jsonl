@@ -1,0 +1,3 @@
+{"turn": 1, "t": 0.3, "stage": "start", "status": "ok", "detail": "spec=1158 chars"}
+{"turn": 2, "t": 57.4, "stage": "planner+assets", "status": "success", "detail": "renderer=pygame assets=ai_art", "renderer": "pygame", "entry_point": "game/main.py"}
+{"turn": 3, "t": 64.9, "stage": "logic_coder", "status": "blocked", "reason": "coder_execution_failed: workspace_recovery_required: inspect traces/workspace_swap.json before another build", "steps": 0, "cost": "$0.0000", "attempt_id": "cdf01b5090f949aaa1797414b59eb9aa"}

@@ -1,0 +1,367 @@
+{
+  "game_title": "Dojo Duel",
+  "profile": {
+    "genre": {
+      "value": "fighting game",
+      "source": "inferred",
+      "quote": "2D fighting game",
+      "reasoning": "The spec explicitly calls it a '2D fighting game'."
+    },
+    "renderer": {
+      "value": "godot",
+      "source": "inferred",
+      "quote": "Punches knock the opponent back with realistic physics: the hit fighter keeps its momentum, slides along the floor and bounces off the screen edges. Each punch plays a short tweened lunge forward and back, and a hit fighter flashes white briefly.",
+      "reasoning": "The spec mentions 'realistic physics' for knockback and 'tweened lunge' for animations, which are features best handled by Godot's physics engine and animation system."
+    },
+    "dimensions": {
+      "value": "2d",
+      "source": "stated",
+      "quote": "2D fighting game"
+    },
+    "pace": {
+      "value": "real-time",
+      "source": "inferred",
+      "quote": "The rival walks toward the player and punches when close, with a one-second pause between punches.",
+      "reasoning": "The rival's actions (walking, punching with a pause) occur continuously without waiting for player input, indicating a real-time game."
+    },
+    "players": {
+      "value": 1,
+      "source": "inferred",
+      "quote": "The player controls a red-belt martial artist on the left; a blue-belt rival controlled by the computer stands on the right.",
+      "reasoning": "The spec describes one human player controlling a character against a computer-controlled rival."
+    }
+  },
+  "requirements": [
+    {
+      "text": "The game must be named 'Dojo Duel'.",
+      "priority": "core",
+      "status": "full",
+      "check": "The game window title displays 'Dojo Duel'.",
+      "milestone": 1,
+      "quote": "Create a tiny one-screen 2D fighting game called \"Dojo Duel\"."
+    },
+    {
+      "text": "The player controls a red-belt martial artist on the left.",
+      "priority": "core",
+      "status": "full",
+      "check": "A red-belt fighter sprite is visible on the left side of the screen at game start.",
+      "milestone": 1,
+      "quote": "The player controls a red-belt martial artist on the left"
+    },
+    {
+      "text": "A blue-belt rival controlled by the computer stands on the right.",
+      "priority": "core",
+      "status": "full",
+      "check": "A blue-belt fighter sprite is visible on the right side of the screen at game start.",
+      "milestone": 1,
+      "quote": "a blue-belt rival controlled by the computer stands on the right."
+    },
+    {
+      "text": "The game uses a plain wooden-brown floor.",
+      "priority": "core",
+      "status": "full",
+      "check": "A wooden-brown rectangular area is rendered at the bottom of the screen.",
+      "milestone": 1,
+      "quote": "Use a plain wooden-brown floor"
+    },
+    {
+      "text": "The game uses a light background colour.",
+      "priority": "core",
+      "status": "full",
+      "check": "The background of the game scene is a light, solid color.",
+      "milestone": 1,
+      "quote": "and a light background colour instead of a background image."
+    },
+    {
+      "text": "Both fighters stand on the floor with gravity.",
+      "priority": "core",
+      "status": "full",
+      "check": "Both fighter sprites are positioned on the floor and fall back to the floor if moved upwards.",
+      "milestone": 1,
+      "quote": "Both fighters stand on the floor with gravity."
+    },
+    {
+      "text": "The Left arrow key walks the player left.",
+      "priority": "core",
+      "status": "full",
+      "check": "Pressing and holding LEFT arrow key moves the player character to the left.",
+      "milestone": 1,
+      "quote": "The Left and Right arrow keys walk the player"
+    },
+    {
+      "text": "The Right arrow key walks the player right.",
+      "priority": "core",
+      "status": "full",
+      "check": "Pressing and holding RIGHT arrow key moves the player character to the right.",
+      "milestone": 1,
+      "quote": "The Left and Right arrow keys walk the player"
+    },
+    {
+      "text": "The Up arrow key makes the player jump.",
+      "priority": "core",
+      "status": "full",
+      "check": "Pressing UP arrow key makes the player character move upwards and then fall back down due to gravity.",
+      "milestone": 1,
+      "quote": "the Up arrow jumps"
+    },
+    {
+      "text": "The Space key makes the player throw a punch.",
+      "priority": "core",
+      "status": "full",
+      "check": "Pressing SPACE key triggers a punch animation for the player character.",
+      "milestone": 1,
+      "quote": "and Space throws a punch."
+    },
+    {
+      "text": "Punches knock the opponent back with realistic physics.",
+      "priority": "core",
+      "status": "full",
+      "check": "When a punch connects, the hit fighter moves away from the attacker with momentum.",
+      "milestone": 2,
+      "quote": "Punches knock the opponent back with realistic physics: the hit fighter keeps its momentum, slides along the floor and bounces off the screen edges."
+    },
+    {
+      "text": "The hit fighter keeps its momentum, slides along the floor and bounces off the screen edges.",
+      "priority": "core",
+      "status": "full",
+      "check": "After being hit, the fighter slides along the floor and changes direction if it hits the screen edge.",
+      "milestone": 2,
+      "quote": "the hit fighter keeps its momentum, slides along the floor and bounces off the screen edges."
+    },
+    {
+      "text": "Each punch plays a short tweened lunge forward and back.",
+      "priority": "core",
+      "status": "full",
+      "check": "When a fighter punches, its sprite briefly moves forward and then returns to its original position using a smooth animation.",
+      "milestone": 2,
+      "quote": "Each punch plays a short tweened lunge forward and back"
+    },
+    {
+      "text": "A hit fighter flashes white briefly.",
+      "priority": "core",
+      "status": "full",
+      "check": "When a fighter is hit, its sprite briefly changes to white and then returns to its normal color.",
+      "milestone": 2,
+      "quote": "and a hit fighter flashes white briefly."
+    },
+    {
+      "text": "A punch that lands removes 10 health.",
+      "priority": "core",
+      "status": "full",
+      "check": "When a punch connects, the opponent's health bar decreases by 10 units.",
+      "milestone": 2,
+      "quote": "A punch that lands removes 10 health."
+    },
+    {
+      "text": "The rival walks toward the player.",
+      "priority": "core",
+      "status": "full",
+      "check": "The blue-belt rival character moves horizontally towards the player character.",
+      "milestone": 2,
+      "quote": "The rival walks toward the player"
+    },
+    {
+      "text": "The rival punches when close, with a one-second pause between punches.",
+      "priority": "core",
+      "status": "full",
+      "check": "When the rival is within a certain distance of the player, it performs a punch animation, waiting approximately one second before the next punch.",
+      "milestone": 2,
+      "quote": "and punches when close, with a one-second pause between punches."
+    },
+    {
+      "text": "Each fighter has 100 health shown as a bar at the top of the screen.",
+      "priority": "core",
+      "status": "full",
+      "check": "Two health bars, each representing 100 health, are displayed at the top of the screen, one for each fighter.",
+      "milestone": 1,
+      "quote": "Each fighter has 100 health shown as a bar at the top of the screen."
+    },
+    {
+      "text": "When a fighter reaches 0 health, show WIN or GAME OVER and freeze the game.",
+      "priority": "core",
+      "status": "full",
+      "check": "When a fighter's health bar reaches zero, a 'WIN' or 'GAME OVER' message appears on screen, and all game movement stops.",
+      "milestone": 3,
+      "quote": "When a fighter reaches 0 health, show WIN or GAME OVER and freeze the game."
+    },
+    {
+      "text": "Press R to restart the fight.",
+      "priority": "core",
+      "status": "full",
+      "check": "After a game ends, pressing 'R' resets both fighters' health to 100, repositions them, and unfreezes the game.",
+      "milestone": 3,
+      "quote": "Press R to restart the fight"
+    },
+    {
+      "text": "Press Escape to quit.",
+      "priority": "core",
+      "status": "full",
+      "check": "Pressing 'Escape' key closes the game window.",
+      "milestone": 1,
+      "quote": "and Escape to quit."
+    },
+    {
+      "text": "Print a line to the console every time a control takes effect: MOVE LEFT, MOVE RIGHT, JUMP, PUNCH, RESTART and QUIT.",
+      "priority": "secondary",
+      "status": "full",
+      "check": "When the player presses LEFT, RIGHT, UP, SPACE, R, or ESCAPE, the corresponding message (MOVE LEFT, MOVE RIGHT, JUMP, PUNCH, RESTART, QUIT) is printed to the console.",
+      "milestone": 1,
+      "quote": "Print a line to the console every time a control takes effect: MOVE LEFT, MOVE RIGHT, JUMP, PUNCH, RESTART and QUIT"
+    },
+    {
+      "text": "Print WIN or GAME OVER to the console when the fight ends.",
+      "priority": "secondary",
+      "status": "full",
+      "check": "When a fighter reaches 0 health, 'WIN' or 'GAME OVER' is printed to the console.",
+      "milestone": 3,
+      "quote": "and print WIN or GAME OVER when the fight ends."
+    }
+  ],
+  "architecture": {
+    "entry_point": "game/main.tscn",
+    "files": [
+      {
+        "path": "game/__init__.py",
+        "purpose": "Empty file to mark game as a Python package."
+      },
+      {
+        "path": "game/main.tscn",
+        "purpose": "Main Godot scene file, containing the game world and UI elements."
+      },
+      {
+        "path": "game/player.gd",
+        "purpose": "GDScript for player character logic (movement, jumping, punching, health)."
+      },
+      {
+        "path": "game/rival.gd",
+        "purpose": "GDScript for AI rival character logic (movement, punching, health)."
+      },
+      {
+        "path": "game/punch_hitbox.gd",
+        "purpose": "GDScript for punch hitbox detection and damage application."
+      },
+      {
+        "path": "game/ui.gd",
+        "purpose": "GDScript for managing health bars, win/game over messages, and restart logic."
+      }
+    ],
+    "dependencies": [],
+    "assets": {
+      "strategy": "ai_art",
+      "strategy_rationale": "The spec explicitly asks for two small image assets for the fighters.",
+      "sprites": [
+        {
+          "id": "red_belt_fighter",
+          "type": "sprite",
+          "description": "Pixel art, red-belt martial artist, facing sideways, standing pose, small size.",
+          "width": 64,
+          "height": 64
+        },
+        {
+          "id": "blue_belt_fighter",
+          "type": "sprite",
+          "description": "Pixel art, blue-belt martial artist, facing sideways, standing pose, small size.",
+          "width": 64,
+          "height": 64
+        }
+      ]
+    },
+    "extensions": {
+      "scenes": {
+        "summary": "Single main game scene.",
+        "detail": "The game will consist of one main scene (main.tscn) that contains the player, rival, floor, health bars, and win/game over messages. All game logic will be handled within this single scene and its associated scripts."
+      }
+    },
+    "resolution": {
+      "width": 800,
+      "height": 600
+    },
+    "fps": 60,
+    "requires_input": true,
+    "test_input_example": "Hold RIGHT for 120 frames, then press SPACE repeatedly until WIN/GAME OVER is displayed. Press R to restart. Press ESCAPE to quit.",
+    "complexity_warning": null
+  },
+  "decisions": [
+    {
+      "about": "profile.genre",
+      "choice": "fighting game",
+      "reason": "The spec explicitly states '2D fighting game'."
+    },
+    {
+      "about": "profile.renderer",
+      "choice": "godot",
+      "reason": "The spec mentions 'realistic physics' for knockback and 'tweened lunge' for animations, which are features best handled by Godot's physics engine and animation system. This allows for easier implementation of momentum, sliding, bouncing, and smooth visual effects."
+    },
+    {
+      "about": "profile.dimensions",
+      "choice": "2d",
+      "reason": "The spec explicitly states '2D fighting game'."
+    },
+    {
+      "about": "profile.pace",
+      "choice": "real-time",
+      "reason": "The rival's actions (walking, punching with a pause) occur continuously without waiting for player input, indicating a real-time game."
+    },
+    {
+      "about": "profile.players",
+      "choice": "1",
+      "reason": "The spec describes 'The player controls a red-belt martial artist' and 'a blue-belt rival controlled by the computer', clearly indicating a single human player against an AI."
+    },
+    {
+      "about": "architecture.resolution",
+      "choice": "800x600",
+      "reason": "The spec does not specify a resolution, so a standard 800x600 resolution is chosen for a small 2D game."
+    },
+    {
+      "about": "architecture.fps",
+      "choice": "60",
+      "reason": "The spec does not specify an FPS, so a standard 60 FPS is chosen for a smooth real-time game experience."
+    },
+    {
+      "about": "game controls",
+      "choice": "Left/Right arrow keys for movement, Up arrow for jump, Space for punch, R for restart, Escape for quit.",
+      "reason": "These controls are explicitly stated in the spec."
+    },
+    {
+      "about": "rival AI punch distance",
+      "choice": "The rival will punch when within 50 pixels of the player.",
+      "reason": "The spec says 'punches when close' but does not define 'close'. 50 pixels is a reasonable distance for a small fighting game."
+    },
+    {
+      "about": "rival AI punch cooldown",
+      "choice": "1 second",
+      "reason": "The spec explicitly states 'with a one-second pause between punches'."
+    },
+    {
+      "about": "floor color",
+      "choice": "Wooden brown (RGB: 139, 69, 19)",
+      "reason": "The spec asks for a 'plain wooden-brown floor'. This RGB value represents a common wooden brown."
+    },
+    {
+      "about": "background color",
+      "choice": "Light grey (RGB: 200, 200, 200)",
+      "reason": "The spec asks for a 'light background colour'. Light grey is a neutral and light color."
+    },
+    {
+      "about": "health bar display",
+      "choice": "Two horizontal bars at the top of the screen, one for player (left) and one for rival (right).",
+      "reason": "The spec states 'shown as a bar at the top of the screen' for each fighter. A side-by-side display is intuitive."
+    },
+    {
+      "about": "win/game over display",
+      "choice": "Text 'WIN' or 'GAME OVER' displayed centrally on the screen.",
+      "reason": "The spec states 'show WIN or GAME OVER'. A central text display is a common and clear way to present this."
+    }
+  ],
+  "unmapped": [
+    {
+      "quote": "No sounds.",
+      "handling": "Ensure no sound effects or background music are implemented in the game."
+    },
+    {
+      "quote": "Keep it to one small main scene with every node created from as few scripts as possible.",
+      "handling": "The Coder should strive for a minimal number of Godot scenes and GDScript files, consolidating logic where appropriate, as outlined in the architecture.files section."
+    }
+  ],
+  "status": "success"
+}

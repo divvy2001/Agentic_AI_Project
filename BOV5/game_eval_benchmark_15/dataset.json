@@ -1,0 +1,157 @@
+{
+  "dataset_name": "Bo Project V4 Eval Generator Benchmark 15",
+  "version": "1.0",
+  "purpose": "Evaluate generated test specifications across a balanced set of game descriptions; not game execution.",
+  "cases": [
+    {
+      "game_id": "G01",
+      "game_title": "Terminal Number Guess",
+      "complexity": "simple",
+      "renderer": "terminal",
+      "description_path": "cases/G01/description.json",
+      "plan_path": "cases/G01/coder_plan.json",
+      "manual_path": "cases/G01/play_manual.json",
+      "suite_version": "benchmark-g01"
+    },
+    {
+      "game_id": "G02",
+      "game_title": "Terminal Tic-Tac-Toe",
+      "complexity": "simple",
+      "renderer": "terminal",
+      "description_path": "cases/G02/description.json",
+      "plan_path": "cases/G02/coder_plan.json",
+      "manual_path": "cases/G02/play_manual.json",
+      "suite_version": "benchmark-g02"
+    },
+    {
+      "game_id": "G03",
+      "game_title": "Pygame Dodger",
+      "complexity": "simple",
+      "renderer": "pygame",
+      "description_path": "cases/G03/description.json",
+      "plan_path": "cases/G03/coder_plan.json",
+      "manual_path": "cases/G03/play_manual.json",
+      "suite_version": "benchmark-g03"
+    },
+    {
+      "game_id": "G04",
+      "game_title": "Pygame Breakout",
+      "complexity": "simple",
+      "renderer": "pygame",
+      "description_path": "cases/G04/description.json",
+      "plan_path": "cases/G04/coder_plan.json",
+      "manual_path": "cases/G04/play_manual.json",
+      "suite_version": "benchmark-g04"
+    },
+    {
+      "game_id": "G05",
+      "game_title": "Terminal Snake",
+      "complexity": "simple",
+      "renderer": "terminal",
+      "description_path": "cases/G05/description.json",
+      "plan_path": "cases/G05/coder_plan.json",
+      "manual_path": "cases/G05/play_manual.json",
+      "suite_version": "benchmark-g05"
+    },
+    {
+      "game_id": "G06",
+      "game_title": "Pygame Gem Collector",
+      "complexity": "simple",
+      "renderer": "pygame",
+      "description_path": "cases/G06/description.json",
+      "plan_path": "cases/G06/coder_plan.json",
+      "manual_path": "cases/G06/play_manual.json",
+      "suite_version": "benchmark-g06"
+    },
+    {
+      "game_id": "G07",
+      "game_title": "Pygame Platformer",
+      "complexity": "medium",
+      "renderer": "pygame",
+      "description_path": "cases/G07/description.json",
+      "plan_path": "cases/G07/coder_plan.json",
+      "manual_path": "cases/G07/play_manual.json",
+      "suite_version": "benchmark-g07"
+    },
+    {
+      "game_id": "G08",
+      "game_title": "Pygame Top-Down Dungeon",
+      "complexity": "medium",
+      "renderer": "pygame",
+      "description_path": "cases/G08/description.json",
+      "plan_path": "cases/G08/coder_plan.json",
+      "manual_path": "cases/G08/play_manual.json",
+      "suite_version": "benchmark-g08"
+    },
+    {
+      "game_id": "G09",
+      "game_title": "Pygame Lane Racer",
+      "complexity": "medium",
+      "renderer": "pygame",
+      "description_path": "cases/G09/description.json",
+      "plan_path": "cases/G09/coder_plan.json",
+      "manual_path": "cases/G09/play_manual.json",
+      "suite_version": "benchmark-g09"
+    },
+    {
+      "game_id": "G10",
+      "game_title": "Godot Tower Defense",
+      "complexity": "medium",
+      "renderer": "godot",
+      "description_path": "cases/G10/description.json",
+      "plan_path": "cases/G10/coder_plan.json",
+      "manual_path": "cases/G10/play_manual.json",
+      "suite_version": "benchmark-g10"
+    },
+    {
+      "game_id": "G11",
+      "game_title": "Godot Inventory Puzzle",
+      "complexity": "medium",
+      "renderer": "godot",
+      "description_path": "cases/G11/description.json",
+      "plan_path": "cases/G11/coder_plan.json",
+      "manual_path": "cases/G11/play_manual.json",
+      "suite_version": "benchmark-g11"
+    },
+    {
+      "game_id": "G12",
+      "game_title": "Pygame Wave Survival",
+      "complexity": "medium",
+      "renderer": "pygame",
+      "description_path": "cases/G12/description.json",
+      "plan_path": "cases/G12/coder_plan.json",
+      "manual_path": "cases/G12/play_manual.json",
+      "suite_version": "benchmark-g12"
+    },
+    {
+      "game_id": "G13",
+      "game_title": "Godot Boss Arena",
+      "complexity": "complex",
+      "renderer": "godot",
+      "description_path": "cases/G13/description.json",
+      "plan_path": "cases/G13/coder_plan.json",
+      "manual_path": "cases/G13/play_manual.json",
+      "suite_version": "benchmark-g13"
+    },
+    {
+      "game_id": "G14",
+      "game_title": "Godot Stealth Infiltration",
+      "complexity": "complex",
+      "renderer": "godot",
+      "description_path": "cases/G14/description.json",
+      "plan_path": "cases/G14/coder_plan.json",
+      "manual_path": "cases/G14/play_manual.json",
+      "suite_version": "benchmark-g14"
+    },
+    {
+      "game_id": "G15",
+      "game_title": "Godot Tactical Roguelite",
+      "complexity": "complex",
+      "renderer": "godot",
+      "description_path": "cases/G15/description.json",
+      "plan_path": "cases/G15/coder_plan.json",
+      "manual_path": "cases/G15/play_manual.json",
+      "suite_version": "benchmark-g15"
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "game_title": "Godot Boss Arena",
+  "objective": "Boss arena with stamina, dodge invulnerability frames, three boss phases, telegraphed attacks, stagger windows, healing charges and terminal states.",
+  "controls": "Move with WASD/arrows; dodge with Shift; attack and heal using displayed controls. Test timing boundaries and health/charge limits.",
+  "notes": "Generate test cases using documented controls only; do not invent test hooks."
+}

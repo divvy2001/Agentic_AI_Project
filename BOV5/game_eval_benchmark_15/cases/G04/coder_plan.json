@@ -1,0 +1,29 @@
+{
+  "game_title": "Pygame Breakout",
+  "description": "Breakout game with paddle, ball, bricks, wall/paddle collisions, score and a win state after all bricks are cleared.",
+  "profile": {
+    "renderer": "pygame"
+  },
+  "requirements": [
+    {
+      "text": "Paddle moves horizontally and stays in screen bounds.",
+      "check": "Paddle moves horizontally and stays in screen bounds."
+    },
+    {
+      "text": "Ball bounces off side and top walls.",
+      "check": "Ball bounces off side and top walls."
+    },
+    {
+      "text": "Paddle collision changes ball vertical direction.",
+      "check": "Paddle collision changes ball vertical direction."
+    },
+    {
+      "text": "Destroying a brick removes it and increases score once.",
+      "check": "Destroying a brick removes it and increases score once."
+    },
+    {
+      "text": "Clearing all bricks triggers a win state.",
+      "check": "Clearing all bricks triggers a win state."
+    }
+  ]
+}

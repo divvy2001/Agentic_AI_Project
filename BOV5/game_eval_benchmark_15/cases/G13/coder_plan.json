@@ -1,0 +1,33 @@
+{
+  "game_title": "Godot Boss Arena",
+  "description": "Boss arena with stamina, dodge invulnerability frames, three boss phases, telegraphed attacks, stagger windows, healing charges and terminal states.",
+  "profile": {
+    "renderer": "godot"
+  },
+  "requirements": [
+    {
+      "text": "Dodge consumes stamina and grants a bounded invulnerability window.",
+      "check": "Dodge consumes stamina and grants a bounded invulnerability window."
+    },
+    {
+      "text": "Boss telegraphs major attacks before damaging hit windows.",
+      "check": "Boss telegraphs major attacks before damaging hit windows."
+    },
+    {
+      "text": "Health thresholds trigger phase two and three exactly once.",
+      "check": "Health thresholds trigger phase two and three exactly once."
+    },
+    {
+      "text": "Attacks during stagger windows apply expected damage; out-of-range attacks do not.",
+      "check": "Attacks during stagger windows apply expected damage; out-of-range attacks do not."
+    },
+    {
+      "text": "Healing consumes one charge and caps health at maximum.",
+      "check": "Healing consumes one charge and caps health at maximum."
+    },
+    {
+      "text": "Boss defeat triggers victory; player death triggers defeat.",
+      "check": "Boss defeat triggers victory; player death triggers defeat."
+    }
+  ]
+}

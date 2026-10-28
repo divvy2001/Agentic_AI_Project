@@ -1,0 +1,65 @@
+{
+  "test_id": "C01",
+  "requirement_index": 1,
+  "requirement": "A woven basket sprite moves left and right at the bottom of the window.",
+  "assertion": "When the LEFT arrow key is pressed, 'MOVE LEFT' is printed to the console.",
+  "expected": "MOVE LEFT",
+  "generator_status": "ready_for_validator",
+  "started_at_utc": "2026-10-28T03:38:15.036704+00:00",
+  "evidence_dir": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261028_102959-s1\\test_run_20261028_103815\\evidence\\C01",
+  "action_results": [
+    {
+      "type": "wait",
+      "at_utc": "2026-10-28T03:38:18.291487+00:00",
+      "status": "executed",
+      "seconds": 1.0,
+      "index": 0
+    },
+    {
+      "type": "press",
+      "at_utc": "2026-10-28T03:38:19.441961+00:00",
+      "status": "executed",
+      "window_focused": true,
+      "sent_with": "scan_code",
+      "key": "left",
+      "index": 1
+    },
+    {
+      "type": "wait",
+      "at_utc": "2026-10-28T03:38:19.730663+00:00",
+      "status": "executed",
+      "seconds": 1.0,
+      "index": 2
+    }
+  ],
+  "observations": [
+    {
+      "method": "stdout",
+      "captured_at_utc": "2026-10-28T03:38:20.881583+00:00",
+      "text": "pygame 2.6.1 (SDL 2.28.4, Python 3.11.9)\nHello from the pygame community. https://www.pygame.org/contribute.html\nRESTART\nMOVE LEFT\n",
+      "stderr_tail": ""
+    }
+  ],
+  "checked_output": "after first input action only",
+  "input_retries": 0,
+  "status": "PASS",
+  "reason": "Expected literal text was found in process output.",
+  "process": {
+    "pid": 2276,
+    "returncode": null
+  },
+  "runtime_evidence": {
+    "stdout_file": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261028_102959-s1\\test_run_20261028_103815\\evidence\\C01\\stdout.log",
+    "stderr_file": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261028_102959-s1\\test_run_20261028_103815\\evidence\\C01\\stderr.log",
+    "screenshot_file": null
+  },
+  "triage_hints": [
+    {
+      "category": "undetermined",
+      "confidence": "low",
+      "reason": "Insufficient diagnostic signals; compare brief, plan, code, assets and runtime evidence."
+    }
+  ],
+  "duration_seconds": 5.141,
+  "finished_at_utc": "2026-10-28T03:38:20.909287+00:00"
+}

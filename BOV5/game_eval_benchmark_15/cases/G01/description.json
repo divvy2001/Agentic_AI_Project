@@ -1,0 +1,7 @@
+{
+  "game_id": "G01",
+  "game_title": "Terminal Number Guess",
+  "complexity": "simple",
+  "renderer": "terminal",
+  "description": "Guess a hidden number from 1\u2013100; give higher/lower hints, count valid attempts, and end on a correct guess."
+}

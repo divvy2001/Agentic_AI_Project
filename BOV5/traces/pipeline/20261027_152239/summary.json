@@ -1,0 +1,51 @@
+{
+  "run_id": "20261027_152239",
+  "outcome": "DONE: no tests passed (2 failed), triage disabled",
+  "turns": 6,
+  "elapsed_s": 370.0,
+  "total_cost_usd": 0.0389,
+  "cost_by_agent": {
+    "planner": 0.0,
+    "asset_agent": 0.0,
+    "logic_coder": 0.03893,
+    "eval_generator": 0.0
+  },
+  "coder_cost_usd_self_reported": 0.0228,
+  "routing": [],
+  "cost_by_stage": [
+    {
+      "turn": 1,
+      "round": null,
+      "agent": "planner",
+      "route": null,
+      "cost_usd": 0.0
+    },
+    {
+      "turn": 1,
+      "round": null,
+      "agent": "asset_agent",
+      "route": null,
+      "cost_usd": 0.0
+    },
+    {
+      "turn": 2,
+      "round": null,
+      "agent": "logic_coder",
+      "route": null,
+      "cost_usd": 0.03893
+    },
+    {
+      "turn": 3,
+      "round": null,
+      "agent": "eval_generator",
+      "route": null,
+      "cost_usd": 0.0
+    }
+  ],
+  "rounds": 1,
+  "counts": {
+    "PASS": 2,
+    "FAIL": 2
+  },
+  "results": "traces/eval/run20261027_152239-s1/test_run_20261027_152823/test_results.json"
+}

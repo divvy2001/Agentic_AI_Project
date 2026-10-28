@@ -1,0 +1,14 @@
+{
+  "test_id": "T09",
+  "requirement_index": 8,
+  "requirement": "After a point is scored, the ball resets to the center.",
+  "assertion": "After a player scores, the ball reappears in the center of the screen.",
+  "expected": "Ball position resets to center immediately after a point is scored.",
+  "generator_status": "not_testable",
+  "started_at_utc": "2026-10-26T17:19:12.400139+00:00",
+  "evidence_dir": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261027_011042-s1\\test_run_20261027_011854\\evidence\\T09",
+  "action_results": [],
+  "observations": [],
+  "status": "NOT_RUN",
+  "reason": "No method to reliably cause a score event via input or forced state described in plan or manual."
+}

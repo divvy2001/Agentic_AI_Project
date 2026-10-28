@@ -1,0 +1,14 @@
+{
+  "test_id": "T05",
+  "requirement_index": 4,
+  "requirement": "The snake cannot reverse straight back into itself.",
+  "assertion": "If the snake is moving right, pressing LEFT does not change its direction; it continues moving right.",
+  "expected": "Snake continues moving right despite LEFT key press",
+  "generator_status": "not_testable",
+  "started_at_utc": "2026-10-26T17:46:38.862206+00:00",
+  "evidence_dir": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261027_014003-s1\\test_run_20261027_014638\\evidence\\T05",
+  "action_results": [],
+  "observations": [],
+  "status": "NOT_RUN",
+  "reason": "No console output for invalid direction change; requires visual confirmation."
+}

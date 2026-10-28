@@ -1,0 +1,6 @@
+{"turn": 1, "t": 0.4, "stage": "start", "status": "ok", "detail": "spec=1372 chars"}
+{"turn": 2, "t": 58.1, "stage": "planner+assets", "status": "success", "detail": "renderer=godot assets=ai_art", "renderer": "godot", "entry_point": "game/main.tscn"}
+{"turn": 3, "t": 683.0, "stage": "logic_coder", "status": "ready_for_testing", "reason": null, "steps": 48, "cost": "$0.1664", "attempt_id": "73ad4118609b4992bbe48790877a3727"}
+{"turn": 4, "t": 704.1, "stage": "eval_generator", "status": "ok", "detail": "suite=run20261027_210628-s1 tests=4", "exit_code": 0}
+{"turn": 5, "t": 741.9, "stage": "runtime_tester", "status": "done", "round": 1, "counts": {"FAIL": 3, "PASS": 1}, "results": "traces/eval/run20261027_210628-s1/test_run_20261027_211812/test_results.json"}
+{"turn": 6, "t": 741.9, "stage": "decision", "status": "errors found", "round": 1, "detail": "3 failing test(s)"}

@@ -1,0 +1,10 @@
+{"turn": 1, "t": 0.5, "stage": "start", "status": "ok", "detail": "spec=836 chars"}
+{"turn": 2, "t": 36.8, "stage": "planner+assets", "status": "success", "detail": "renderer=pygame assets=procedural", "renderer": "pygame", "entry_point": "game/snake_game.py"}
+{"turn": 3, "t": 415.7, "stage": "logic_coder", "status": "ready_for_testing", "reason": null, "steps": 6, "cost": "$0.0326", "attempt_id": "4c86d4050d5d42a2b9cc1651b3b2b8a5"}
+{"turn": 4, "t": 432.0, "stage": "eval_generator", "status": "ok", "detail": "suite=run20261027_051546-s1 tests=23", "exit_code": 0}
+{"turn": 5, "t": 463.2, "stage": "runtime_tester", "status": "done", "round": 1, "counts": {"FAIL": 3, "PASS": 2, "NOT_RUN": 18}, "results": "traces/eval/run20261027_051546-s1/test_run_20261027_052258/test_results.json"}
+{"turn": 6, "t": 463.2, "stage": "decision", "status": "errors found", "round": 1, "detail": "3 failing test(s)"}
+{"turn": 7, "t": 783.3, "stage": "triage", "status": "ready_for_testing", "round": 1, "route": "logic_coder", "confidence": 0.8, "reason": ""}
+{"turn": 8, "t": 783.3, "stage": "coder_repair", "status": "ready_for_testing", "round": 1, "reason": null, "cost": "$0.0148"}
+{"turn": 9, "t": 814.1, "stage": "runtime_tester", "status": "done", "round": 2, "counts": {"FAIL": 2, "PASS": 3, "NOT_RUN": 18}, "results": "traces/eval/run20261027_051546-s1/test_run_20261027_052849/test_results.json"}
+{"turn": 10, "t": 814.1, "stage": "decision", "status": "errors found", "round": 2, "detail": "2 failing test(s)"}

@@ -1,0 +1,33 @@
+{
+  "game_title": "Pygame Wave Survival",
+  "description": "Top-down arena survival: movement, attacks, pursuing enemies, experience, level-up choice UI, timed waves and game over.",
+  "profile": {
+    "renderer": "pygame"
+  },
+  "requirements": [
+    {
+      "text": "Player movement and attacks affect valid targets.",
+      "check": "Player movement and attacks affect valid targets."
+    },
+    {
+      "text": "Enemies pursue and damage player on contact.",
+      "check": "Enemies pursue and damage player on contact."
+    },
+    {
+      "text": "Each defeated enemy awards experience once.",
+      "check": "Each defeated enemy awards experience once."
+    },
+    {
+      "text": "Level-up pauses/suspends combat until an upgrade is selected.",
+      "check": "Level-up pauses/suspends combat until an upgrade is selected."
+    },
+    {
+      "text": "Next wave begins only after current enemies are cleared.",
+      "check": "Next wave begins only after current enemies are cleared."
+    },
+    {
+      "text": "Zero player health ends the run.",
+      "check": "Zero player health ends the run."
+    }
+  ]
+}

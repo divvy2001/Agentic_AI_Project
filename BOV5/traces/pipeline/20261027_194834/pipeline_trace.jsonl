@@ -1,0 +1,3 @@
+{"turn": 1, "t": 0.5, "stage": "start", "status": "ok", "detail": "spec=1158 chars"}
+{"turn": 2, "t": 52.9, "stage": "planner+assets", "status": "success", "detail": "renderer=pygame assets=ai_art", "renderer": "pygame", "entry_point": "game/main.py"}
+{"turn": 3, "t": 60.7, "stage": "logic_coder", "status": "blocked", "reason": "coder_execution_failed: [WinError 32] The process cannot access the file because it is being used by another process: 'C:\\\\Users\\\\ASUS\\\\Work\\\\BOV5\\\\game' -> 'C:\\\\Users\\\\ASUS\\\\Work\\\\BOV5\\\\backups\\\\game-20261027T124928Z-23ac52abda'", "steps": 0, "cost": "$0.0000", "attempt_id": "42467a58d9bd46f2ae6129fded9b1c9c"}

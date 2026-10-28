@@ -1,0 +1,37 @@
+{
+  "task_id": "Dojo Duel",
+  "framework": "pygame",
+  "game_style": "fighting game",
+  "output_dir": "game/assets",
+  "assets": [
+    {
+      "id": "red_belt_fighter",
+      "type": "sprite",
+      "path": "game/assets/red_belt_fighter.png",
+      "format": "png",
+      "width": 64,
+      "height": 64,
+      "required": true,
+      "generation_status": "generated",
+      "validation_status": "passed",
+      "errors": []
+    },
+    {
+      "id": "blue_belt_fighter",
+      "type": "sprite",
+      "path": "game/assets/blue_belt_fighter.png",
+      "format": "png",
+      "width": 64,
+      "height": 64,
+      "required": true,
+      "generation_status": "generated",
+      "validation_status": "passed",
+      "errors": []
+    }
+  ],
+  "validation": {
+    "passed": true,
+    "status": "passed",
+    "errors": []
+  }
+}

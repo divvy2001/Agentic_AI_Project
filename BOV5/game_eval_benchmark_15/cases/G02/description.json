@@ -1,0 +1,7 @@
+{
+  "game_id": "G02",
+  "game_title": "Terminal Tic-Tac-Toe",
+  "complexity": "simple",
+  "renderer": "terminal",
+  "description": "Two-player 3x3 Tic-Tac-Toe with alternating X/O turns, win detection, invalid-move handling and draw detection."
+}

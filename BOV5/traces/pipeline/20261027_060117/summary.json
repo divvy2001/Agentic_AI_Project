@@ -1,0 +1,38 @@
+{
+  "run_id": "20261027_060117",
+  "outcome": "STOPPED: coder did not finish",
+  "turns": 3,
+  "elapsed_s": 483.3,
+  "total_cost_usd": 0.0892,
+  "cost_by_agent": {
+    "planner": 0.0,
+    "asset_agent": 0.0,
+    "logic_coder": 0.08921
+  },
+  "coder_cost_usd_self_reported": 0.0769,
+  "routing": [],
+  "cost_by_stage": [
+    {
+      "turn": 1,
+      "round": null,
+      "agent": "planner",
+      "route": null,
+      "cost_usd": 0.0
+    },
+    {
+      "turn": 1,
+      "round": null,
+      "agent": "asset_agent",
+      "route": null,
+      "cost_usd": 0.0
+    },
+    {
+      "turn": 2,
+      "round": null,
+      "agent": "logic_coder",
+      "route": null,
+      "cost_usd": 0.08921
+    }
+  ],
+  "reason": "model_error: Error code: 400 - {'error': {'message': 'Provider returned error', 'code': 400, 'metadata': {'raw': '{\\n  \"error\": {\\n    \"message\": \"No tool output found for function call call_czETxSNMaw9gWTQlJkIdloF0.\",\\n    \"type\": \"invalid_request_error\",\\n    \"param\": \"input\",\\n    \"code\": null\\n  }\\n}', 'provider_name': 'Azure', 'is_byok': False, 'previous_errors': [{'code': 400, 'message': 'Provider returned error', 'provider_name': 'OpenAI', 'raw': '{\\n  \"error\": {\\n    \"message\": \"No tool output found for function call call_czETxSNMaw9gWTQlJkIdloF0.\",\\n    \"type\": \"invalid_request_error\",\\n    \"param\": \"input\",\\n    \"code\": null\\n  }\\n}'}]}}, 'user_id': 'user_3Ht3sV7jK9Tq1qMjB6BqSe76ZYF'}"
+}

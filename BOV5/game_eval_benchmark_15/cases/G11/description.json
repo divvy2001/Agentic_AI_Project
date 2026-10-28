@@ -1,0 +1,7 @@
+{
+  "game_id": "G11",
+  "game_title": "Godot Inventory Puzzle",
+  "complexity": "medium",
+  "renderer": "godot",
+  "description": "Puzzle adventure with grid inventory, stackable keys, weight capacity, switches, linked doors and escape-room exit."
+}

@@ -1,0 +1,274 @@
+{
+  "schema_version": "1.0",
+  "run_id": "test-run-20261027_152823",
+  "created_at_utc": "2026-10-27T08:28:49.682164+00:00",
+  "suite_path": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261027_152239-s1\\suite.json",
+  "suite_version": "run20261027_152239-s1",
+  "game_title": "Kitty Catch",
+  "renderer": "pygame",
+  "project_root": "C:\\Users\\ASUS\\Work\\BOV5",
+  "launch_command": "C:\\Users\\ASUS\\AppData\\Local\\Programs\\Python\\Python311\\python.exe -u -m game.kitty_catch",
+  "summary": {
+    "total": 4,
+    "counts": {
+      "PASS": 2,
+      "FAIL": 2
+    }
+  },
+  "results": [
+    {
+      "test_id": "C01",
+      "requirement_index": 1,
+      "requirement": "A cartoon cat sprite moves left and right at the bottom of the screen.",
+      "assertion": "Pressing the LEFT arrow key prints 'MOVE LEFT' to the console.",
+      "expected": "MOVE LEFT",
+      "generator_status": "ready_for_validator",
+      "started_at_utc": "2026-10-27T08:28:23.976315+00:00",
+      "evidence_dir": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261027_152239-s1\\test_run_20261027_152823\\evidence\\C01",
+      "action_results": [
+        {
+          "type": "wait",
+          "at_utc": "2026-10-27T08:28:26.825407+00:00",
+          "status": "executed",
+          "seconds": 1.0,
+          "index": 0
+        },
+        {
+          "type": "press",
+          "at_utc": "2026-10-27T08:28:27.976535+00:00",
+          "status": "executed",
+          "window_focused": true,
+          "key": "left",
+          "index": 1
+        },
+        {
+          "type": "wait",
+          "at_utc": "2026-10-27T08:28:28.281633+00:00",
+          "status": "executed",
+          "seconds": 1.0,
+          "index": 2
+        }
+      ],
+      "observations": [
+        {
+          "method": "stdout",
+          "captured_at_utc": "2026-10-27T08:28:29.431914+00:00",
+          "text": "pygame 2.6.1 (SDL 2.28.4, Python 3.11.9)\nHello from the pygame community. https://www.pygame.org/contribute.html\nMOVE LEFT\n",
+          "stderr_tail": ""
+        }
+      ],
+      "checked_output": "after first input action only",
+      "status": "PASS",
+      "reason": "Expected literal text was found in process output.",
+      "process": {
+        "pid": 37040,
+        "returncode": null
+      },
+      "runtime_evidence": {
+        "stdout_file": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261027_152239-s1\\test_run_20261027_152823\\evidence\\C01\\stdout.log",
+        "stderr_file": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261027_152239-s1\\test_run_20261027_152823\\evidence\\C01\\stderr.log",
+        "screenshot_file": null
+      },
+      "triage_hints": [
+        {
+          "category": "undetermined",
+          "confidence": "low",
+          "reason": "Insufficient diagnostic signals; compare brief, plan, code, assets and runtime evidence."
+        }
+      ],
+      "duration_seconds": 5.156,
+      "finished_at_utc": "2026-10-27T08:28:29.456684+00:00"
+    },
+    {
+      "test_id": "C02",
+      "requirement_index": 1,
+      "requirement": "A cartoon cat sprite moves left and right at the bottom of the screen.",
+      "assertion": "Pressing the RIGHT arrow key prints 'MOVE RIGHT' to the console.",
+      "expected": "MOVE RIGHT",
+      "generator_status": "ready_for_validator",
+      "started_at_utc": "2026-10-27T08:28:29.456684+00:00",
+      "evidence_dir": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261027_152239-s1\\test_run_20261027_152823\\evidence\\C02",
+      "action_results": [
+        {
+          "type": "wait",
+          "at_utc": "2026-10-27T08:28:31.967618+00:00",
+          "status": "executed",
+          "seconds": 1.0,
+          "index": 0
+        },
+        {
+          "type": "press",
+          "at_utc": "2026-10-27T08:28:33.118099+00:00",
+          "status": "executed",
+          "window_focused": true,
+          "key": "right",
+          "index": 1
+        },
+        {
+          "type": "wait",
+          "at_utc": "2026-10-27T08:28:33.423064+00:00",
+          "status": "executed",
+          "seconds": 1.0,
+          "index": 2
+        }
+      ],
+      "observations": [
+        {
+          "method": "stdout",
+          "captured_at_utc": "2026-10-27T08:28:34.573631+00:00",
+          "text": "pygame 2.6.1 (SDL 2.28.4, Python 3.11.9)\nHello from the pygame community. https://www.pygame.org/contribute.html\nMOVE RIGHT\n",
+          "stderr_tail": ""
+        }
+      ],
+      "checked_output": "after first input action only",
+      "status": "PASS",
+      "reason": "Expected literal text was found in process output.",
+      "process": {
+        "pid": 14888,
+        "returncode": null
+      },
+      "runtime_evidence": {
+        "stdout_file": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261027_152239-s1\\test_run_20261027_152823\\evidence\\C02\\stdout.log",
+        "stderr_file": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261027_152239-s1\\test_run_20261027_152823\\evidence\\C02\\stderr.log",
+        "screenshot_file": null
+      },
+      "triage_hints": [
+        {
+          "category": "undetermined",
+          "confidence": "low",
+          "reason": "Insufficient diagnostic signals; compare brief, plan, code, assets and runtime evidence."
+        }
+      ],
+      "duration_seconds": 5.125,
+      "finished_at_utc": "2026-10-27T08:28:34.591968+00:00"
+    },
+    {
+      "test_id": "C03",
+      "requirement_index": 9,
+      "requirement": "Pressing 'Escape' quits the game.",
+      "assertion": "Pressing the 'R' key prints 'RESTART' to the console.",
+      "expected": "RESTART",
+      "generator_status": "ready_for_validator",
+      "started_at_utc": "2026-10-27T08:28:34.595696+00:00",
+      "evidence_dir": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261027_152239-s1\\test_run_20261027_152823\\evidence\\C03",
+      "action_results": [
+        {
+          "type": "wait",
+          "at_utc": "2026-10-27T08:28:37.101754+00:00",
+          "status": "executed",
+          "seconds": 5.0,
+          "index": 0
+        },
+        {
+          "type": "press",
+          "at_utc": "2026-10-27T08:28:42.252686+00:00",
+          "status": "executed",
+          "window_focused": true,
+          "key": "r",
+          "index": 1
+        },
+        {
+          "type": "wait",
+          "at_utc": "2026-10-27T08:28:42.557019+00:00",
+          "status": "executed",
+          "seconds": 1.0,
+          "index": 2
+        }
+      ],
+      "observations": [
+        {
+          "method": "stdout",
+          "captured_at_utc": "2026-10-27T08:28:43.707940+00:00",
+          "text": "pygame 2.6.1 (SDL 2.28.4, Python 3.11.9)\nHello from the pygame community. https://www.pygame.org/contribute.html\nGAME OVER\n",
+          "stderr_tail": ""
+        }
+      ],
+      "checked_output": "after first input action only",
+      "status": "FAIL",
+      "reason": "Expected literal text was not found. This does not by itself prove a game defect.",
+      "process": {
+        "pid": 6112,
+        "returncode": null
+      },
+      "runtime_evidence": {
+        "stdout_file": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261027_152239-s1\\test_run_20261027_152823\\evidence\\C03\\stdout.log",
+        "stderr_file": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261027_152239-s1\\test_run_20261027_152823\\evidence\\C03\\stderr.log",
+        "screenshot_file": null
+      },
+      "triage_hints": [
+        {
+          "category": "undetermined",
+          "confidence": "low",
+          "reason": "Insufficient diagnostic signals; compare brief, plan, code, assets and runtime evidence."
+        }
+      ],
+      "duration_seconds": 9.125,
+      "finished_at_utc": "2026-10-27T08:28:43.734214+00:00"
+    },
+    {
+      "test_id": "C04",
+      "requirement_index": 10,
+      "requirement": "The game prints 'MOVE LEFT' to the console when the left arrow key is pressed.",
+      "assertion": "Pressing the 'Escape' key prints 'QUIT' to the console.",
+      "expected": "QUIT",
+      "generator_status": "ready_for_validator",
+      "started_at_utc": "2026-10-27T08:28:43.737209+00:00",
+      "evidence_dir": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261027_152239-s1\\test_run_20261027_152823\\evidence\\C04",
+      "action_results": [
+        {
+          "type": "wait",
+          "at_utc": "2026-10-27T08:28:46.246914+00:00",
+          "status": "executed",
+          "seconds": 1.0,
+          "index": 0
+        },
+        {
+          "type": "press",
+          "at_utc": "2026-10-27T08:28:47.397706+00:00",
+          "status": "executed",
+          "window_focused": true,
+          "key": "esc",
+          "index": 1
+        },
+        {
+          "type": "wait",
+          "at_utc": "2026-10-27T08:28:47.701024+00:00",
+          "status": "executed",
+          "seconds": 1.0,
+          "index": 2
+        }
+      ],
+      "observations": [
+        {
+          "method": "stdout",
+          "captured_at_utc": "2026-10-27T08:28:48.852241+00:00",
+          "text": "pygame 2.6.1 (SDL 2.28.4, Python 3.11.9)\nHello from the pygame community. https://www.pygame.org/contribute.html\n",
+          "stderr_tail": ""
+        }
+      ],
+      "checked_output": "after first input action only",
+      "status": "FAIL",
+      "reason": "Expected literal text was not found. This does not by itself prove a game defect.",
+      "process": {
+        "pid": 20076,
+        "returncode": null
+      },
+      "runtime_evidence": {
+        "stdout_file": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261027_152239-s1\\test_run_20261027_152823\\evidence\\C04\\stdout.log",
+        "stderr_file": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261027_152239-s1\\test_run_20261027_152823\\evidence\\C04\\stderr.log",
+        "screenshot_file": null
+      },
+      "triage_hints": [
+        {
+          "category": "undetermined",
+          "confidence": "low",
+          "reason": "Insufficient diagnostic signals; compare brief, plan, code, assets and runtime evidence."
+        }
+      ],
+      "duration_seconds": 5.125,
+      "finished_at_utc": "2026-10-27T08:28:48.872867+00:00"
+    }
+  ],
+  "project_inventory": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261027_152239-s1\\test_run_20261027_152823\\project_inventory.json",
+  "triage_note": "Hints are heuristics, not definitive root-cause labels. Correlate brief, plan, code, asset manifest and runtime evidence."
+}

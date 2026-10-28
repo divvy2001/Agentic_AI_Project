@@ -1,0 +1,6 @@
+{
+  "game_title": "Godot Stealth Infiltration",
+  "objective": "Stealth game with patrols, vision cones, occlusion, noise propagation, suspicion, hiding spots, keycard doors, alarms and extraction.",
+  "controls": "Use movement and displayed interaction controls. Test vision with/without occlusion, hearing-distance boundaries, hiding and extraction preconditions.",
+  "notes": "Generate test cases using documented controls only; do not invent test hooks."
+}

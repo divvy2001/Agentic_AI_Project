@@ -1,0 +1,53 @@
+{
+  "status": "fail",
+  "failing_stage": "logic_coder",
+  "suite_version": "run20261027_045305-s1",
+  "failures": [
+    {
+      "test_id": "T10",
+      "requirement_index": 9,
+      "expected": "GAME OVER",
+      "actual": "Expected literal text was not found. This does not by itself prove a game defect.",
+      "error_category": "behavior",
+      "evidence_path": "traces/eval/run20261027_045305-s1/test_run_20261027_050242/evidence/T10/evidence.json",
+      "attribution_evidence": "Game does not print expected console messages for game over and score changes, and game over condition is not detected by tests despite inputs causing collisions. Evidence: Tests T10 and T11 fail because 'GAME OVER' text is not found in console output after snake hits wall or itself.; Tests T14 and T18 fail because score change messages like '[EVENT] SCORE:1' and '[EVENT] SCORE:0' after restart are not printed to console.; Test T16 fails because 'GAME OVER' is not printed to console when game ends.; All these failures have empty stdout logs, indicating missing console print statements.; Inputs in tests cause snake to hit wall or itself, but no game over indication or console output is observed."
+    },
+    {
+      "test_id": "T11",
+      "requirement_index": 10,
+      "expected": "GAME OVER",
+      "actual": "Expected literal text was not found. This does not by itself prove a game defect.",
+      "error_category": "behavior",
+      "evidence_path": "traces/eval/run20261027_045305-s1/test_run_20261027_050242/evidence/T11/evidence.json",
+      "attribution_evidence": "Game does not print expected console messages for game over and score changes, and game over condition is not detected by tests despite inputs causing collisions. Evidence: Tests T10 and T11 fail because 'GAME OVER' text is not found in console output after snake hits wall or itself.; Tests T14 and T18 fail because score change messages like '[EVENT] SCORE:1' and '[EVENT] SCORE:0' after restart are not printed to console.; Test T16 fails because 'GAME OVER' is not printed to console when game ends.; All these failures have empty stdout logs, indicating missing console print statements.; Inputs in tests cause snake to hit wall or itself, but no game over indication or console output is observed."
+    },
+    {
+      "test_id": "T14",
+      "requirement_index": 13,
+      "expected": "[EVENT] SCORE:1",
+      "actual": "Expected literal text was not found. This does not by itself prove a game defect.",
+      "error_category": "behavior",
+      "evidence_path": "traces/eval/run20261027_045305-s1/test_run_20261027_050242/evidence/T14/evidence.json",
+      "attribution_evidence": "Game does not print expected console messages for game over and score changes, and game over condition is not detected by tests despite inputs causing collisions. Evidence: Tests T10 and T11 fail because 'GAME OVER' text is not found in console output after snake hits wall or itself.; Tests T14 and T18 fail because score change messages like '[EVENT] SCORE:1' and '[EVENT] SCORE:0' after restart are not printed to console.; Test T16 fails because 'GAME OVER' is not printed to console when game ends.; All these failures have empty stdout logs, indicating missing console print statements.; Inputs in tests cause snake to hit wall or itself, but no game over indication or console output is observed."
+    },
+    {
+      "test_id": "T16",
+      "requirement_index": 15,
+      "expected": "GAME OVER",
+      "actual": "Expected literal text was not found. This does not by itself prove a game defect.",
+      "error_category": "behavior",
+      "evidence_path": "traces/eval/run20261027_045305-s1/test_run_20261027_050242/evidence/T16/evidence.json",
+      "attribution_evidence": "Game does not print expected console messages for game over and score changes, and game over condition is not detected by tests despite inputs causing collisions. Evidence: Tests T10 and T11 fail because 'GAME OVER' text is not found in console output after snake hits wall or itself.; Tests T14 and T18 fail because score change messages like '[EVENT] SCORE:1' and '[EVENT] SCORE:0' after restart are not printed to console.; Test T16 fails because 'GAME OVER' is not printed to console when game ends.; All these failures have empty stdout logs, indicating missing console print statements.; Inputs in tests cause snake to hit wall or itself, but no game over indication or console output is observed."
+    },
+    {
+      "test_id": "T18",
+      "requirement_index": 17,
+      "expected": "[EVENT] SCORE:0",
+      "actual": "Expected literal text was not found. This does not by itself prove a game defect.",
+      "error_category": "behavior",
+      "evidence_path": "traces/eval/run20261027_045305-s1/test_run_20261027_050242/evidence/T18/evidence.json",
+      "attribution_evidence": "Game does not print expected console messages for game over and score changes, and game over condition is not detected by tests despite inputs causing collisions. Evidence: Tests T10 and T11 fail because 'GAME OVER' text is not found in console output after snake hits wall or itself.; Tests T14 and T18 fail because score change messages like '[EVENT] SCORE:1' and '[EVENT] SCORE:0' after restart are not printed to console.; Test T16 fails because 'GAME OVER' is not printed to console when game ends.; All these failures have empty stdout logs, indicating missing console print statements.; Inputs in tests cause snake to hit wall or itself, but no game over indication or console output is observed."
+    }
+  ],
+  "previously_passed_test_ids": []
+}

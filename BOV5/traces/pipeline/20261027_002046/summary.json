@@ -1,0 +1,8 @@
+{
+  "run_id": "20261027_002046",
+  "outcome": "STOPPED: coder did not finish",
+  "turns": 3,
+  "elapsed_s": 1281.5,
+  "coder_cost_usd": 0.2456,
+  "reason": "budget_exhausted"
+}

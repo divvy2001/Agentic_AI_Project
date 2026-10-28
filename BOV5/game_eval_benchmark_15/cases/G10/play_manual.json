@@ -1,0 +1,6 @@
+{
+  "game_title": "Godot Tower Defense",
+  "objective": "Tower-defense game with enemy waves, path-following enemies, currency, tower placement/upgrades and base health.",
+  "controls": "Click build tiles and tower UI; use upgrade controls. Test affordability, invalid placement, range, cooldown and wave progression.",
+  "notes": "Generate test cases using documented controls only; do not invent test hooks."
+}

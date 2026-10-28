@@ -1,0 +1,7 @@
+{
+  "game_id": "G06",
+  "game_title": "Pygame Gem Collector",
+  "complexity": "simple",
+  "renderer": "pygame",
+  "description": "Top-down player collects five gems; each unique gem adds one point, fifth gem wins, R restarts."
+}

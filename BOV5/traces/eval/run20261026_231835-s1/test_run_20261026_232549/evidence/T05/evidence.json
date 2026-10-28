@@ -1,0 +1,23 @@
+{
+  "test_id": "T05",
+  "requirement_index": 4,
+  "requirement": "A ball starts in the centre, moves diagonally, and bounces off the paddles and the top and bottom walls.",
+  "assertion": "The ball appears in the center at the start of a round, moves diagonally, changes direction upon collision with paddles, and changes direction upon collision with top/bottom walls.",
+  "expected": "Ball starts centered, moves diagonally, reverses horizontal direction on paddle hit, reverses vertical direction on top/bottom wall hit",
+  "generator_status": "ready_for_validator",
+  "started_at_utc": "2026-10-26T15:25:49.823197+00:00",
+  "evidence_dir": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261026_231835-s1\\test_run_20261026_232549\\evidence\\T05",
+  "action_results": [],
+  "observations": [],
+  "status": "ERROR",
+  "reason": "FileNotFoundError: [WinError 2] The system cannot find the file specified",
+  "triage_hints": [
+    {
+      "category": "test_harness_or_integration",
+      "confidence": "high",
+      "reason": "Runner error; diagnose harness before game."
+    }
+  ],
+  "duration_seconds": 0.0,
+  "finished_at_utc": "2026-10-26T15:25:49.824205+00:00"
+}

@@ -1,0 +1,7 @@
+{"turn": 1, "t": 0.8, "stage": "start", "status": "ok", "detail": "spec=614 chars"}
+{"turn": 2, "t": 32.1, "stage": "planner+assets", "status": "success", "detail": "renderer=pygame assets=procedural", "renderer": "pygame", "entry_point": "game/pong.py"}
+{"turn": 3, "t": 385.9, "stage": "logic_coder", "status": "ready_for_testing", "reason": null, "steps": 5, "cost": "$0.0241", "attempt_id": "32795067ee114ed89b90e784752a4fd9"}
+{"turn": 4, "t": 434.1, "stage": "eval_generator", "status": "ok", "detail": "suite=run20261026_231835-s1 tests=12", "exit_code": 0}
+{"turn": 5, "t": 435.2, "stage": "runtime_tester", "status": "done", "round": 1, "counts": {"ERROR": 12}, "results": "traces/eval/run20261026_231835-s1/test_run_20261026_232549/test_results.json"}
+{"turn": 6, "t": 435.2, "stage": "decision", "status": "errors found", "round": 1, "detail": "12 failing test(s)"}
+{"turn": 7, "t": 439.1, "stage": "triage", "status": "not_called", "round": 1, "route": "unknown", "confidence": 0.9, "reason": "Diagnosis is unknown; more evidence is required."}

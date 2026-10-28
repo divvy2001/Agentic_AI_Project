@@ -1,0 +1,29 @@
+{
+  "state": "committed",
+  "backup": "backups/game-20261026T145301Z-bd9277525d",
+  "staging": ".coder-game-bd9277525d",
+  "original_files": {
+    "alien.py": "844fca4c7bdce20d023e3b489c4c99c7853b797e8fc13ce1770720044cb7532c",
+    "constants.py": "0800146e636ccd154756badd27f9649dd1f69871d3f652176a517f715e5afd6e",
+    "main.py": "937f471427ba854cdfce63ec70ed5bd3d948844e8a51873405f79046076ca3f4",
+    "player.py": "6a93971abe89c2940c9e53c1a9545aec3287767ae7a699f8651298dbc5d8869f",
+    "__init__.py": "4b545c2fe110e064ca964460ba7d03bbcac25d6aebd007c8a5082b55ee0a58e9",
+    "assets/emberkit_sprite.png": "25e4f093e5ea846a76fa75b6b0c3191c04ad9a28fdcd21eecc6211deda3fb433",
+    "assets/grassy_background.png": "4b0134167c7fdac4a310892f102c3e385556472781b039f7684ff9571e1e1f10",
+    "assets/shellwave_sprite.png": "a0e6f14dabecab4417c65b68ab343ba88883963c21ff5f9c9e18ee3382a125da"
+  },
+  "preserved_files": [
+    "assets/emberkit_sprite.png",
+    "assets/grassy_background.png",
+    "assets/shellwave_sprite.png"
+  ],
+  "stale_files": [
+    "__init__.py",
+    "alien.py",
+    "constants.py",
+    "main.py",
+    "player.py"
+  ],
+  "plan_sha256": "e4e9f04ca3d925cdd4f9b5ab043465937b158612b85219b62e3bcc0e248336d9",
+  "attempt_id": "75d447b4f635433fb36753467669de15"
+}

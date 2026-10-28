@@ -1,0 +1,6 @@
+{
+  "game_title": "Pygame Gem Collector",
+  "objective": "Top-down player collects five gems; each unique gem adds one point, fifth gem wins, R restarts.",
+  "controls": "Use arrow keys; R restarts. Collect five gems. Do not assume set_test_state or another undocumented state-mutation action.",
+  "notes": "Generate test cases using documented controls only; do not invent test hooks."
+}

@@ -1,0 +1,264 @@
+{
+  "schema_version": "1.0",
+  "suite_version": "benchmark-g05",
+  "generated_at_utc": "2026-10-26T04:11:41.909351+00:00",
+  "renderer": "terminal",
+  "game_title": "Terminal Snake",
+  "generator": {
+    "backend": "openrouter",
+    "model": "openai/gpt-4.1-mini"
+  },
+  "generation_notes": [
+    "Tests cover all four requirements with multiple cases for collision detection (wall and self).",
+    "Movement test verifies consistent one-cell-per-tick advancement.",
+    "Growth test verifies length increase and food relocation after eating.",
+    "Opposite direction input test ensures input is ignored to prevent immediate self-collision.",
+    "Collision tests verify game over triggers correctly on wall and self collisions."
+  ],
+  "generation_usage": {
+    "prompt_tokens": 590,
+    "completion_tokens": 1275,
+    "total_tokens": 1865,
+    "provider_reported_cost_usd": 0.002276,
+    "estimated_cost_usd": 0.002276,
+    "cost_source": "OpenRouter usage.cost"
+  },
+  "source_hashes": {
+    "game_eval_benchmark_15/cases/G05/coder_plan.json": "09a28aeb48da1f25e589a290477dc1cd7ec7deeb76f693d2d56e2d38c0c8d2e0",
+    "game_eval_benchmark_15/cases/G05/play_manual.json": "8b856e3c5fcd4bb6eef98662d7c3961e81965927c175eb759e46a7a1710da33c"
+  },
+  "tests": [
+    {
+      "test_id": "T01",
+      "requirement_index": 0,
+      "requirement": "Snake advances one cell per tick.",
+      "assertion": "The snake moves forward exactly one cell per game tick without skipping or doubling movement.",
+      "actions": [
+        {
+          "type": "restart"
+        },
+        {
+          "type": "observe",
+          "value": "initial_snake_position",
+          "duration_frames": 1
+        },
+        {
+          "type": "wait",
+          "duration_frames": 5
+        },
+        {
+          "type": "observe",
+          "value": "snake_position_after_5_ticks",
+          "duration_frames": 1
+        }
+      ],
+      "observation": {
+        "method": "game_state",
+        "target": "snake_position"
+      },
+      "expected": "Snake position advances exactly 5 cells in the initial movement direction after 5 ticks, one cell per tick.",
+      "status": "ready_for_validator",
+      "not_testable_reason": null,
+      "renderer": "terminal",
+      "timeout_seconds": 30,
+      "script_path": null
+    },
+    {
+      "test_id": "T02",
+      "requirement_index": 1,
+      "requirement": "Eating food grows the snake by one and relocates food.",
+      "assertion": "Eating food increases snake length by one and relocates food to a new valid cell.",
+      "actions": [
+        {
+          "type": "restart"
+        },
+        {
+          "type": "observe",
+          "value": "initial_snake_length",
+          "duration_frames": 1
+        },
+        {
+          "type": "observe",
+          "value": "initial_food_position",
+          "duration_frames": 1
+        },
+        {
+          "type": "wait",
+          "duration_frames": 1
+        },
+        {
+          "type": "press",
+          "value": "arrow_keys_to_move_snake_to_food"
+        },
+        {
+          "type": "wait",
+          "duration_frames": 1
+        },
+        {
+          "type": "observe",
+          "value": "snake_length_after_eating",
+          "duration_frames": 1
+        },
+        {
+          "type": "observe",
+          "value": "food_position_after_eating",
+          "duration_frames": 1
+        }
+      ],
+      "observation": {
+        "method": "game_state",
+        "target": [
+          "snake_length",
+          "food_position"
+        ]
+      },
+      "expected": "Snake length increases by one after eating food; food relocates to a different cell not occupied by snake.",
+      "status": "not_testable",
+      "not_testable_reason": "Test did not meet the generator's structural validation rules.",
+      "renderer": "terminal",
+      "timeout_seconds": 30,
+      "script_path": null
+    },
+    {
+      "test_id": "T03",
+      "requirement_index": 2,
+      "requirement": "Opposite-direction input is ignored if it would cause immediate self-collision.",
+      "assertion": "Input directing snake to move in the exact opposite direction is ignored if it would cause immediate self-collision.",
+      "actions": [
+        {
+          "type": "restart"
+        },
+        {
+          "type": "press",
+          "value": "arrow_right"
+        },
+        {
+          "type": "wait",
+          "duration_frames": 3
+        },
+        {
+          "type": "press",
+          "value": "arrow_left"
+        },
+        {
+          "type": "wait",
+          "duration_frames": 1
+        },
+        {
+          "type": "observe",
+          "value": "snake_direction_after_opposite_input",
+          "duration_frames": 1
+        }
+      ],
+      "observation": {
+        "method": "game_state",
+        "target": "snake_direction"
+      },
+      "expected": "Snake continues moving right; opposite left input is ignored to prevent immediate self-collision.",
+      "status": "ready_for_validator",
+      "not_testable_reason": null,
+      "renderer": "terminal",
+      "timeout_seconds": 30,
+      "script_path": null
+    },
+    {
+      "test_id": "T04",
+      "requirement_index": 3,
+      "requirement": "Wall or self collision ends the game.",
+      "assertion": "Game ends immediately upon snake colliding with wall.",
+      "actions": [
+        {
+          "type": "restart"
+        },
+        {
+          "type": "press",
+          "value": "arrow_up"
+        },
+        {
+          "type": "wait",
+          "duration_frames": 20
+        },
+        {
+          "type": "observe",
+          "value": "game_over_state_after_wall_collision",
+          "duration_frames": 1
+        }
+      ],
+      "observation": {
+        "method": "game_state",
+        "target": "game_over"
+      },
+      "expected": "Game over state is triggered when snake head moves beyond the grid boundary (wall collision).",
+      "status": "ready_for_validator",
+      "not_testable_reason": null,
+      "renderer": "terminal",
+      "timeout_seconds": 30,
+      "script_path": null
+    },
+    {
+      "test_id": "T05",
+      "requirement_index": 3,
+      "requirement": "Wall or self collision ends the game.",
+      "assertion": "Game ends immediately upon snake colliding with its own body.",
+      "actions": [
+        {
+          "type": "restart"
+        },
+        {
+          "type": "press",
+          "value": "arrow_right"
+        },
+        {
+          "type": "wait",
+          "duration_frames": 3
+        },
+        {
+          "type": "press",
+          "value": "arrow_down"
+        },
+        {
+          "type": "wait",
+          "duration_frames": 3
+        },
+        {
+          "type": "press",
+          "value": "arrow_left"
+        },
+        {
+          "type": "wait",
+          "duration_frames": 3
+        },
+        {
+          "type": "press",
+          "value": "arrow_up"
+        },
+        {
+          "type": "wait",
+          "duration_frames": 1
+        },
+        {
+          "type": "observe",
+          "value": "game_over_state_after_self_collision",
+          "duration_frames": 1
+        }
+      ],
+      "observation": {
+        "method": "game_state",
+        "target": "game_over"
+      },
+      "expected": "Game over state is triggered when snake head moves into a cell occupied by its body.",
+      "status": "ready_for_validator",
+      "not_testable_reason": null,
+      "renderer": "terminal",
+      "timeout_seconds": 30,
+      "script_path": null
+    }
+  ],
+  "summary": {
+    "total": 5,
+    "ready_for_validator": 4,
+    "not_testable": 1
+  },
+  "warnings": [],
+  "important": "Generation is not execution. This file does not claim PASS and must not be used as test_results.json."
+}\n

@@ -1,0 +1,65 @@
+{
+  "scope": "Frozen score-counter engineering assertions only; no general game quality claim",
+  "suite_version": "eval-v1",
+  "renderer": "terminal",
+  "results": [
+    {
+      "test_id": "T03",
+      "suite_version": "eval-v1",
+      "assertion_sha256": "cab8fc09105f2f51ce11a59c3ca74e96510c2de2c4b674b52287096f63755697",
+      "native": {
+        "argv": [
+          "D:\\software\\anaconda3\\envs\\pe6203-logic-coder\\python.exe",
+          "-I",
+          "-B",
+          "C:\\Users\\DELL\\AppData\\Local\\Temp\\coder-eval-terminal-gv38trzn\\terminal_child.py",
+          "game/main.py"
+        ],
+        "returncode": 0,
+        "output": "SCORE:1 STATUS:ONGOING\r\nSCORE:2 STATUS:ONGOING\r\nSCORE:3 STATUS:WIN\r\n",
+        "reason": null,
+        "seconds": 2.25,
+        "sandbox": {
+          "kind": "windows_appcontainer",
+          "token_is_appcontainer": true,
+          "network_capabilities": [],
+          "active_process_limit": 1
+        },
+        "status": "PASS",
+        "backend_sha256": "0c0e4ec161747a1e4fa60c5a888b890b530723676e39e63df7f7b3e84dda1298"
+      },
+      "status": "PASS",
+      "error_type": null
+    },
+    {
+      "test_id": "T01",
+      "suite_version": "eval-v1",
+      "assertion_sha256": "997a6bc4eeea93076055d3654f6146a5bc0f33860655ddc3b557f5c8d6c7b781",
+      "native": {
+        "argv": [
+          "D:\\software\\anaconda3\\envs\\pe6203-logic-coder\\python.exe",
+          "-I",
+          "-B",
+          "C:\\Users\\DELL\\AppData\\Local\\Temp\\coder-eval-terminal-lzrt1omh\\terminal_child.py",
+          "game/main.py"
+        ],
+        "returncode": 0,
+        "output": "SCORE:1 STATUS:ONGOING\r\nSCORE:2 STATUS:ONGOING\r\n",
+        "reason": null,
+        "seconds": 2.328,
+        "sandbox": {
+          "kind": "windows_appcontainer",
+          "token_is_appcontainer": true,
+          "network_capabilities": [],
+          "active_process_limit": 1
+        },
+        "status": "PASS",
+        "backend_sha256": "0c0e4ec161747a1e4fa60c5a888b890b530723676e39e63df7f7b3e84dda1298"
+      },
+      "status": "PASS",
+      "error_type": null
+    }
+  ],
+  "source_unchanged": true,
+  "paid_model_calls": 0
+}

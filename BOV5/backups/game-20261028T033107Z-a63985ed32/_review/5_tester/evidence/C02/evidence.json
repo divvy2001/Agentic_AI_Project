@@ -1,0 +1,58 @@
+{
+  "test_id": "C02",
+  "requirement_index": 2,
+  "requirement": "The seal moves left and right using the arrow keys.",
+  "assertion": "Pressing 'A' key prints 'MOVE LEFT' to the console.",
+  "expected": "MOVE LEFT",
+  "generator_status": "ready_for_validator",
+  "started_at_utc": "2026-10-28T02:23:40.894984+00:00",
+  "evidence_dir": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261028_091204-s1\\test_run_20261028_092335\\evidence\\C02",
+  "action_results": [
+    {
+      "type": "press",
+      "at_utc": "2026-10-28T02:23:43.557357+00:00",
+      "status": "executed",
+      "window_focused": true,
+      "sent_with": "scan_code",
+      "key": "a",
+      "index": 0
+    },
+    {
+      "type": "wait",
+      "at_utc": "2026-10-28T02:23:43.851139+00:00",
+      "status": "executed",
+      "seconds": 1.0,
+      "index": 1
+    }
+  ],
+  "observations": [
+    {
+      "method": "stdout",
+      "captured_at_utc": "2026-10-28T02:23:45.002762+00:00",
+      "text": "Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org\nVulkan 1.4.348 - Forward+ - Using Device #0: Intel - Intel(R) Graphics\n\nMOVE LEFT\n",
+      "stderr_tail": ""
+    }
+  ],
+  "checked_output": "after first input action only",
+  "input_retries": 0,
+  "status": "PASS",
+  "reason": "Expected literal text was found in process output.",
+  "process": {
+    "pid": 34100,
+    "returncode": null
+  },
+  "runtime_evidence": {
+    "stdout_file": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261028_091204-s1\\test_run_20261028_092335\\evidence\\C02\\stdout.log",
+    "stderr_file": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261028_091204-s1\\test_run_20261028_092335\\evidence\\C02\\stderr.log",
+    "screenshot_file": null
+  },
+  "triage_hints": [
+    {
+      "category": "undetermined",
+      "confidence": "low",
+      "reason": "Insufficient diagnostic signals; compare brief, plan, code, assets and runtime evidence."
+    }
+  ],
+  "duration_seconds": 4.235,
+  "finished_at_utc": "2026-10-28T02:23:45.142944+00:00"
+}

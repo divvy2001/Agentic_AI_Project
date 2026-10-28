@@ -1,0 +1,7 @@
+{
+  "game_id": "G13",
+  "game_title": "Godot Boss Arena",
+  "complexity": "complex",
+  "renderer": "godot",
+  "description": "Boss arena with stamina, dodge invulnerability frames, three boss phases, telegraphed attacks, stagger windows, healing charges and terminal states."
+}

@@ -1,0 +1,11 @@
+# Tower Tiles
+
+## Spec
+
+Create a one-screen tower defense game called "Tower Tiles" on a 12 by 8 grid. A fixed winding path of brown tiles runs from the left edge to the right edge; all other tiles are green grass. Purple blobs walk along the path in waves; each blob that reaches the right edge removes one of 10 lives. The player moves a white selection square over the grid with the arrow keys and presses Space to build a tower on the selected grass tile, costing 50 coins. Towers automatically shoot the nearest blob within 2 tiles, one shot per second; each blob needs 3 hits. Defeating a blob gives 20 coins. The player starts with 150 coins. Press N to send the next wave early. Show coins, lives and wave number at the top. Surviving 5 waves shows WIN; losing all lives shows GAME OVER; both freeze the game. Press R to restart and Escape to quit. Print a line to the console every time a control takes effect: MOVE UP, MOVE DOWN, MOVE LEFT, MOVE RIGHT, BUILD, NEXT WAVE, RESTART and QUIT, and print WIN or GAME OVER when the game ends. Use plain coloured shapes only; no images or sounds. Keep the code simple and in as few files as possible.
+
+## Notes
+
+- Expected engine: pygame
+- Level 2 of the pygame ladder: grid placement, paths, money.
+- Only the text under "## Spec" is sent to the Planner. This Notes section is ignored.

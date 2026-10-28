@@ -1,0 +1,321 @@
+{
+  "schema_version": "1.0",
+  "suite_version": "benchmark-g11",
+  "generated_at_utc": "2026-10-26T04:12:43.648008+00:00",
+  "renderer": "godot",
+  "game_title": "Godot Inventory Puzzle",
+  "generator": {
+    "backend": "openrouter",
+    "model": "openai/gpt-4.1-mini"
+  },
+  "generation_notes": [
+    "Tests cover inventory capacity boundary conditions for pickup.",
+    "Stackable vs non-stackable item stacking behavior tested with repeated pickups.",
+    "Door-key matching tested with correct and incorrect keys.",
+    "Switch activation effects on linked doors/platforms verified.",
+    "Exit lock state tested progressively with partial and full puzzle completion.",
+    "Negative cases included for capacity overflow and premature exit opening."
+  ],
+  "generation_usage": {
+    "prompt_tokens": 605,
+    "completion_tokens": 1728,
+    "total_tokens": 2333,
+    "provider_reported_cost_usd": 0.0030068,
+    "estimated_cost_usd": 0.0030068,
+    "cost_source": "OpenRouter usage.cost"
+  },
+  "source_hashes": {
+    "game_eval_benchmark_15/cases/G11/coder_plan.json": "503a7a5af7bb05b33e64a922b920265fe408fdbae5d5aa064c9023f60a876b46",
+    "game_eval_benchmark_15/cases/G11/play_manual.json": "cf4c94900a9a5256f425e7369d8474d725aa17d8b3380a6426048054c3985108"
+  },
+  "tests": [
+    {
+      "test_id": "T01",
+      "requirement_index": 0,
+      "requirement": "Pickup updates inventory only when capacity allows.",
+      "assertion": "Inventory updates to include picked item only if total weight after pickup does not exceed capacity",
+      "actions": [
+        {
+          "type": "observe",
+          "value": "inventory_weight",
+          "duration_frames": 1
+        },
+        {
+          "type": "click",
+          "value": "pick_up_light_item",
+          "duration_frames": 1
+        },
+        {
+          "type": "observe",
+          "value": "inventory_weight",
+          "duration_frames": 1
+        },
+        {
+          "type": "click",
+          "value": "pick_up_heavy_item",
+          "duration_frames": 1
+        },
+        {
+          "type": "observe",
+          "value": "inventory_weight",
+          "duration_frames": 1
+        }
+      ],
+      "observation": {
+        "method": "game_state",
+        "target": "inventory_weight and inventory_items"
+      },
+      "expected": "Inventory weight increases only if total weight remains within capacity; heavy item pickup fails if capacity exceeded",
+      "status": "ready_for_validator",
+      "not_testable_reason": null,
+      "renderer": "godot",
+      "timeout_seconds": 30,
+      "script_path": null
+    },
+    {
+      "test_id": "T02",
+      "requirement_index": 0,
+      "requirement": "Pickup updates inventory only when capacity allows.",
+      "assertion": "Attempting to pick up an item that would exceed capacity does not add the item to inventory",
+      "actions": [
+        {
+          "type": "click",
+          "value": "pick_up_items_until_capacity_near_full",
+          "duration_frames": 1
+        },
+        {
+          "type": "observe",
+          "value": "inventory_weight",
+          "duration_frames": 1
+        },
+        {
+          "type": "click",
+          "value": "pick_up_item_exceeding_capacity",
+          "duration_frames": 1
+        },
+        {
+          "type": "observe",
+          "value": "inventory_items",
+          "duration_frames": 1
+        }
+      ],
+      "observation": {
+        "method": "game_state",
+        "target": "inventory_items"
+      },
+      "expected": "Inventory does not include the last picked item that would exceed capacity",
+      "status": "ready_for_validator",
+      "not_testable_reason": null,
+      "renderer": "godot",
+      "timeout_seconds": 30,
+      "script_path": null
+    },
+    {
+      "test_id": "T03",
+      "requirement_index": 1,
+      "requirement": "Only stackable item types stack.",
+      "assertion": "Only items marked stackable increase quantity in inventory slot; non-stackable items occupy separate slots",
+      "actions": [
+        {
+          "type": "click",
+          "value": "pick_up_stackable_key",
+          "duration_frames": 1
+        },
+        {
+          "type": "click",
+          "value": "pick_up_stackable_key",
+          "duration_frames": 1
+        },
+        {
+          "type": "observe",
+          "value": "inventory_stack_count_for_key",
+          "duration_frames": 1
+        },
+        {
+          "type": "click",
+          "value": "pick_up_non_stackable_item",
+          "duration_frames": 1
+        },
+        {
+          "type": "click",
+          "value": "pick_up_non_stackable_item",
+          "duration_frames": 1
+        },
+        {
+          "type": "observe",
+          "value": "inventory_slots_for_non_stackable_item",
+          "duration_frames": 1
+        }
+      ],
+      "observation": {
+        "method": "game_state",
+        "target": "inventory_stack_counts and inventory_slots"
+      },
+      "expected": "Stackable keys stack quantity increases; non-stackable items occupy separate inventory slots",
+      "status": "ready_for_validator",
+      "not_testable_reason": null,
+      "renderer": "godot",
+      "timeout_seconds": 30,
+      "script_path": null
+    },
+    {
+      "test_id": "T04",
+      "requirement_index": 2,
+      "requirement": "Correct key opens matching door; wrong key does not.",
+      "assertion": "Using correct key on matching door opens door; using wrong key does not open door",
+      "actions": [
+        {
+          "type": "click",
+          "value": "use_wrong_key_on_door",
+          "duration_frames": 1
+        },
+        {
+          "type": "observe",
+          "value": "door_state",
+          "duration_frames": 1
+        },
+        {
+          "type": "click",
+          "value": "use_correct_key_on_door",
+          "duration_frames": 1
+        },
+        {
+          "type": "observe",
+          "value": "door_state",
+          "duration_frames": 1
+        }
+      ],
+      "observation": {
+        "method": "game_state",
+        "target": "door_open_or_closed"
+      },
+      "expected": "Door remains closed when wrong key used; door opens when correct key used",
+      "status": "ready_for_validator",
+      "not_testable_reason": null,
+      "renderer": "godot",
+      "timeout_seconds": 30,
+      "script_path": null
+    },
+    {
+      "test_id": "T05",
+      "requirement_index": 3,
+      "requirement": "Switch activation changes linked door/platform state.",
+      "assertion": "Activating a switch changes the state of its linked door or platform accordingly",
+      "actions": [
+        {
+          "type": "observe",
+          "value": "linked_door_state_before",
+          "duration_frames": 1
+        },
+        {
+          "type": "click",
+          "value": "activate_switch",
+          "duration_frames": 1
+        },
+        {
+          "type": "observe",
+          "value": "linked_door_state_after",
+          "duration_frames": 1
+        }
+      ],
+      "observation": {
+        "method": "game_state",
+        "target": "linked_door_or_platform_state"
+      },
+      "expected": "Linked door or platform state toggles or changes as defined upon switch activation",
+      "status": "ready_for_validator",
+      "not_testable_reason": null,
+      "renderer": "godot",
+      "timeout_seconds": 30,
+      "script_path": null
+    },
+    {
+      "test_id": "T06",
+      "requirement_index": 4,
+      "requirement": "Exit remains locked until all three required mechanisms are activated.",
+      "assertion": "Exit door remains locked until all three required mechanisms are activated",
+      "actions": [
+        {
+          "type": "observe",
+          "value": "exit_lock_state_initial",
+          "duration_frames": 1
+        },
+        {
+          "type": "click",
+          "value": "activate_first_mechanism",
+          "duration_frames": 1
+        },
+        {
+          "type": "observe",
+          "value": "exit_lock_state_after_first",
+          "duration_frames": 1
+        },
+        {
+          "type": "click",
+          "value": "activate_second_mechanism",
+          "duration_frames": 1
+        },
+        {
+          "type": "observe",
+          "value": "exit_lock_state_after_second",
+          "duration_frames": 1
+        },
+        {
+          "type": "click",
+          "value": "activate_third_mechanism",
+          "duration_frames": 1
+        },
+        {
+          "type": "observe",
+          "value": "exit_lock_state_after_third",
+          "duration_frames": 1
+        }
+      ],
+      "observation": {
+        "method": "game_state",
+        "target": "exit_locked_or_unlocked"
+      },
+      "expected": "Exit remains locked after first and second mechanisms activated; unlocks only after third mechanism activation",
+      "status": "ready_for_validator",
+      "not_testable_reason": null,
+      "renderer": "godot",
+      "timeout_seconds": 30,
+      "script_path": null
+    },
+    {
+      "test_id": "T07",
+      "requirement_index": 4,
+      "requirement": "Exit remains locked until all three required mechanisms are activated.",
+      "assertion": "Exit door cannot be opened before all three mechanisms are activated",
+      "actions": [
+        {
+          "type": "click",
+          "value": "attempt_open_exit_before_mechanisms",
+          "duration_frames": 1
+        },
+        {
+          "type": "observe",
+          "value": "exit_open_state",
+          "duration_frames": 1
+        }
+      ],
+      "observation": {
+        "method": "game_state",
+        "target": "exit_open_or_closed"
+      },
+      "expected": "Exit remains closed and locked when attempting to open before all mechanisms are activated",
+      "status": "ready_for_validator",
+      "not_testable_reason": null,
+      "renderer": "godot",
+      "timeout_seconds": 30,
+      "script_path": null
+    }
+  ],
+  "summary": {
+    "total": 7,
+    "ready_for_validator": 7,
+    "not_testable": 0
+  },
+  "warnings": [],
+  "important": "Generation is not execution. This file does not claim PASS and must not be used as test_results.json."
+}\n

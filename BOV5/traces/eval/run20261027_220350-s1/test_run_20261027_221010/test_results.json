@@ -1,0 +1,750 @@
+{
+  "schema_version": "1.0",
+  "run_id": "test-run-20261027_221010",
+  "created_at_utc": "2026-10-27T15:11:10.950320+00:00",
+  "suite_path": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261027_220350-s1\\suite.json",
+  "suite_version": "run20261027_220350-s1",
+  "game_title": "Tower Tiles",
+  "renderer": "pygame",
+  "project_root": "C:\\Users\\ASUS\\Work\\BOV5",
+  "launch_command": "C:\\Users\\ASUS\\AppData\\Local\\Programs\\Python\\Python311\\python.exe -u -m game.tower_tiles",
+  "summary": {
+    "total": 8,
+    "counts": {
+      "FAIL": 3,
+      "PASS": 5
+    }
+  },
+  "results": [
+    {
+      "test_id": "C01",
+      "requirement_index": 6,
+      "requirement": "The player moves a white selection square over the grid with the arrow keys.",
+      "assertion": "Pressing the UP arrow key prints 'MOVE UP' to the console.",
+      "expected": "MOVE UP",
+      "generator_status": "ready_for_validator",
+      "started_at_utc": "2026-10-27T15:10:10.825055+00:00",
+      "evidence_dir": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261027_220350-s1\\test_run_20261027_221010\\evidence\\C01",
+      "action_results": [
+        {
+          "type": "wait",
+          "at_utc": "2026-10-27T15:10:13.655772+00:00",
+          "status": "executed",
+          "seconds": 1.0,
+          "index": 0
+        },
+        {
+          "type": "press",
+          "at_utc": "2026-10-27T15:10:14.805994+00:00",
+          "status": "executed",
+          "window_focused": true,
+          "sent_with": "scan_code",
+          "key": "up",
+          "index": 1
+        },
+        {
+          "type": "wait",
+          "at_utc": "2026-10-27T15:10:15.093794+00:00",
+          "status": "executed",
+          "seconds": 1.0,
+          "index": 2
+        },
+        {
+          "type": "wait",
+          "at_utc": "2026-10-27T15:10:16.246393+00:00",
+          "status": "executed",
+          "seconds": 1.0,
+          "retry": 1
+        },
+        {
+          "type": "press",
+          "at_utc": "2026-10-27T15:10:17.247291+00:00",
+          "status": "executed",
+          "window_focused": true,
+          "sent_with": "scan_code",
+          "key": "up",
+          "retry": 1
+        },
+        {
+          "type": "wait",
+          "at_utc": "2026-10-27T15:10:17.529934+00:00",
+          "status": "executed",
+          "seconds": 1.0,
+          "retry": 1
+        },
+        {
+          "type": "wait",
+          "at_utc": "2026-10-27T15:10:18.681269+00:00",
+          "status": "executed",
+          "seconds": 1.0,
+          "retry": 2
+        },
+        {
+          "type": "press",
+          "at_utc": "2026-10-27T15:10:19.681463+00:00",
+          "status": "executed",
+          "window_focused": true,
+          "sent_with": "scan_code",
+          "key": "up",
+          "retry": 2
+        },
+        {
+          "type": "wait",
+          "at_utc": "2026-10-27T15:10:19.964455+00:00",
+          "status": "executed",
+          "seconds": 1.0,
+          "retry": 2
+        }
+      ],
+      "observations": [
+        {
+          "method": "stdout",
+          "captured_at_utc": "2026-10-27T15:10:16.245383+00:00",
+          "text": "pygame 2.6.1 (SDL 2.28.4, Python 3.11.9)\nHello from the pygame community. https://www.pygame.org/contribute.html\n[EVENT] COINS:150\n[EVENT] LIVES:10\n[EVENT] WAVE:1\n",
+          "stderr_tail": ""
+        }
+      ],
+      "checked_output": "after first input action only",
+      "input_retries": 2,
+      "status": "FAIL",
+      "reason": "Expected literal text was not found. This does not by itself prove a game defect.",
+      "process": {
+        "pid": 24568,
+        "returncode": null
+      },
+      "runtime_evidence": {
+        "stdout_file": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261027_220350-s1\\test_run_20261027_221010\\evidence\\C01\\stdout.log",
+        "stderr_file": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261027_220350-s1\\test_run_20261027_221010\\evidence\\C01\\stderr.log",
+        "screenshot_file": null
+      },
+      "triage_hints": [
+        {
+          "category": "undetermined",
+          "confidence": "low",
+          "reason": "Insufficient diagnostic signals; compare brief, plan, code, assets and runtime evidence."
+        }
+      ],
+      "duration_seconds": 9.984,
+      "finished_at_utc": "2026-10-27T15:10:21.134777+00:00"
+    },
+    {
+      "test_id": "C02",
+      "requirement_index": 6,
+      "requirement": "The player moves a white selection square over the grid with the arrow keys.",
+      "assertion": "Pressing the DOWN arrow key prints 'MOVE DOWN' to the console.",
+      "expected": "MOVE DOWN",
+      "generator_status": "ready_for_validator",
+      "started_at_utc": "2026-10-27T15:10:21.137588+00:00",
+      "evidence_dir": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261027_220350-s1\\test_run_20261027_221010\\evidence\\C02",
+      "action_results": [
+        {
+          "type": "wait",
+          "at_utc": "2026-10-27T15:10:23.644685+00:00",
+          "status": "executed",
+          "seconds": 1.0,
+          "index": 0
+        },
+        {
+          "type": "press",
+          "at_utc": "2026-10-27T15:10:24.795919+00:00",
+          "status": "executed",
+          "window_focused": true,
+          "sent_with": "scan_code",
+          "key": "down",
+          "index": 1
+        },
+        {
+          "type": "wait",
+          "at_utc": "2026-10-27T15:10:25.079966+00:00",
+          "status": "executed",
+          "seconds": 1.0,
+          "index": 2
+        }
+      ],
+      "observations": [
+        {
+          "method": "stdout",
+          "captured_at_utc": "2026-10-27T15:10:26.230878+00:00",
+          "text": "pygame 2.6.1 (SDL 2.28.4, Python 3.11.9)\nHello from the pygame community. https://www.pygame.org/contribute.html\n[EVENT] COINS:150\n[EVENT] LIVES:10\n[EVENT] WAVE:1\nMOVE DOWN\n",
+          "stderr_tail": ""
+        }
+      ],
+      "checked_output": "after first input action only",
+      "input_retries": 0,
+      "status": "PASS",
+      "reason": "Expected literal text was found in process output.",
+      "process": {
+        "pid": 34580,
+        "returncode": null
+      },
+      "runtime_evidence": {
+        "stdout_file": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261027_220350-s1\\test_run_20261027_221010\\evidence\\C02\\stdout.log",
+        "stderr_file": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261027_220350-s1\\test_run_20261027_221010\\evidence\\C02\\stderr.log",
+        "screenshot_file": null
+      },
+      "triage_hints": [
+        {
+          "category": "undetermined",
+          "confidence": "low",
+          "reason": "Insufficient diagnostic signals; compare brief, plan, code, assets and runtime evidence."
+        }
+      ],
+      "duration_seconds": 5.11,
+      "finished_at_utc": "2026-10-27T15:10:26.246683+00:00"
+    },
+    {
+      "test_id": "C03",
+      "requirement_index": 6,
+      "requirement": "The player moves a white selection square over the grid with the arrow keys.",
+      "assertion": "Pressing the LEFT arrow key prints 'MOVE LEFT' to the console.",
+      "expected": "MOVE LEFT",
+      "generator_status": "ready_for_validator",
+      "started_at_utc": "2026-10-27T15:10:26.248690+00:00",
+      "evidence_dir": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261027_220350-s1\\test_run_20261027_221010\\evidence\\C03",
+      "action_results": [
+        {
+          "type": "wait",
+          "at_utc": "2026-10-27T15:10:28.755086+00:00",
+          "status": "executed",
+          "seconds": 1.0,
+          "index": 0
+        },
+        {
+          "type": "press",
+          "at_utc": "2026-10-27T15:10:29.905949+00:00",
+          "status": "executed",
+          "window_focused": true,
+          "sent_with": "scan_code",
+          "key": "left",
+          "index": 1
+        },
+        {
+          "type": "wait",
+          "at_utc": "2026-10-27T15:10:30.189445+00:00",
+          "status": "executed",
+          "seconds": 1.0,
+          "index": 2
+        },
+        {
+          "type": "wait",
+          "at_utc": "2026-10-27T15:10:31.342060+00:00",
+          "status": "executed",
+          "seconds": 1.0,
+          "retry": 1
+        },
+        {
+          "type": "press",
+          "at_utc": "2026-10-27T15:10:32.342669+00:00",
+          "status": "executed",
+          "window_focused": true,
+          "sent_with": "scan_code",
+          "key": "left",
+          "retry": 1
+        },
+        {
+          "type": "wait",
+          "at_utc": "2026-10-27T15:10:32.625305+00:00",
+          "status": "executed",
+          "seconds": 1.0,
+          "retry": 1
+        },
+        {
+          "type": "wait",
+          "at_utc": "2026-10-27T15:10:33.776493+00:00",
+          "status": "executed",
+          "seconds": 1.0,
+          "retry": 2
+        },
+        {
+          "type": "press",
+          "at_utc": "2026-10-27T15:10:34.776770+00:00",
+          "status": "executed",
+          "window_focused": true,
+          "sent_with": "scan_code",
+          "key": "left",
+          "retry": 2
+        },
+        {
+          "type": "wait",
+          "at_utc": "2026-10-27T15:10:35.059716+00:00",
+          "status": "executed",
+          "seconds": 1.0,
+          "retry": 2
+        }
+      ],
+      "observations": [
+        {
+          "method": "stdout",
+          "captured_at_utc": "2026-10-27T15:10:31.340215+00:00",
+          "text": "pygame 2.6.1 (SDL 2.28.4, Python 3.11.9)\nHello from the pygame community. https://www.pygame.org/contribute.html\n[EVENT] COINS:150\n[EVENT] LIVES:10\n[EVENT] WAVE:1\n",
+          "stderr_tail": ""
+        }
+      ],
+      "checked_output": "after first input action only",
+      "input_retries": 2,
+      "status": "FAIL",
+      "reason": "Expected literal text was not found. This does not by itself prove a game defect.",
+      "process": {
+        "pid": 13768,
+        "returncode": null
+      },
+      "runtime_evidence": {
+        "stdout_file": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261027_220350-s1\\test_run_20261027_221010\\evidence\\C03\\stdout.log",
+        "stderr_file": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261027_220350-s1\\test_run_20261027_221010\\evidence\\C03\\stderr.log",
+        "screenshot_file": null
+      },
+      "triage_hints": [
+        {
+          "category": "undetermined",
+          "confidence": "low",
+          "reason": "Insufficient diagnostic signals; compare brief, plan, code, assets and runtime evidence."
+        }
+      ],
+      "duration_seconds": 9.984,
+      "finished_at_utc": "2026-10-27T15:10:36.235246+00:00"
+    },
+    {
+      "test_id": "C04",
+      "requirement_index": 6,
+      "requirement": "The player moves a white selection square over the grid with the arrow keys.",
+      "assertion": "Pressing the RIGHT arrow key prints 'MOVE RIGHT' to the console.",
+      "expected": "MOVE RIGHT",
+      "generator_status": "ready_for_validator",
+      "started_at_utc": "2026-10-27T15:10:36.237139+00:00",
+      "evidence_dir": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261027_220350-s1\\test_run_20261027_221010\\evidence\\C04",
+      "action_results": [
+        {
+          "type": "wait",
+          "at_utc": "2026-10-27T15:10:38.744577+00:00",
+          "status": "executed",
+          "seconds": 1.0,
+          "index": 0
+        },
+        {
+          "type": "press",
+          "at_utc": "2026-10-27T15:10:39.895000+00:00",
+          "status": "executed",
+          "window_focused": true,
+          "sent_with": "scan_code",
+          "key": "right",
+          "index": 1
+        },
+        {
+          "type": "wait",
+          "at_utc": "2026-10-27T15:10:40.179955+00:00",
+          "status": "executed",
+          "seconds": 1.0,
+          "index": 2
+        }
+      ],
+      "observations": [
+        {
+          "method": "stdout",
+          "captured_at_utc": "2026-10-27T15:10:41.330538+00:00",
+          "text": "pygame 2.6.1 (SDL 2.28.4, Python 3.11.9)\nHello from the pygame community. https://www.pygame.org/contribute.html\n[EVENT] COINS:150\n[EVENT] LIVES:10\n[EVENT] WAVE:1\nMOVE RIGHT\n",
+          "stderr_tail": ""
+        }
+      ],
+      "checked_output": "after first input action only",
+      "input_retries": 0,
+      "status": "PASS",
+      "reason": "Expected literal text was found in process output.",
+      "process": {
+        "pid": 19300,
+        "returncode": null
+      },
+      "runtime_evidence": {
+        "stdout_file": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261027_220350-s1\\test_run_20261027_221010\\evidence\\C04\\stdout.log",
+        "stderr_file": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261027_220350-s1\\test_run_20261027_221010\\evidence\\C04\\stderr.log",
+        "screenshot_file": null
+      },
+      "triage_hints": [
+        {
+          "category": "undetermined",
+          "confidence": "low",
+          "reason": "Insufficient diagnostic signals; compare brief, plan, code, assets and runtime evidence."
+        }
+      ],
+      "duration_seconds": 5.109,
+      "finished_at_utc": "2026-10-27T15:10:41.353541+00:00"
+    },
+    {
+      "test_id": "C05",
+      "requirement_index": 8,
+      "requirement": "Towers automatically shoot the nearest blob within 2 tiles, one shot per second.",
+      "assertion": "Pressing SPACE on a grass tile prints 'BUILD' to the console.",
+      "expected": "BUILD",
+      "generator_status": "ready_for_validator",
+      "started_at_utc": "2026-10-27T15:10:41.361435+00:00",
+      "evidence_dir": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261027_220350-s1\\test_run_20261027_221010\\evidence\\C05",
+      "action_results": [
+        {
+          "type": "wait",
+          "at_utc": "2026-10-27T15:10:43.869799+00:00",
+          "status": "executed",
+          "seconds": 1.0,
+          "index": 0
+        },
+        {
+          "type": "press",
+          "at_utc": "2026-10-27T15:10:45.020608+00:00",
+          "status": "executed",
+          "window_focused": true,
+          "sent_with": "scan_code",
+          "key": "right",
+          "index": 1
+        },
+        {
+          "type": "press",
+          "at_utc": "2026-10-27T15:10:45.304654+00:00",
+          "status": "executed",
+          "window_focused": true,
+          "sent_with": "scan_code",
+          "key": "right",
+          "index": 2
+        },
+        {
+          "type": "press",
+          "at_utc": "2026-10-27T15:10:45.587604+00:00",
+          "status": "executed",
+          "window_focused": true,
+          "sent_with": "scan_code",
+          "key": "right",
+          "index": 3
+        },
+        {
+          "type": "press",
+          "at_utc": "2026-10-27T15:10:45.871377+00:00",
+          "status": "executed",
+          "window_focused": true,
+          "sent_with": "scan_code",
+          "key": "right",
+          "index": 4
+        },
+        {
+          "type": "press",
+          "at_utc": "2026-10-27T15:10:46.154357+00:00",
+          "status": "executed",
+          "window_focused": true,
+          "sent_with": "scan_code",
+          "key": "right",
+          "index": 5
+        },
+        {
+          "type": "press",
+          "at_utc": "2026-10-27T15:10:46.437219+00:00",
+          "status": "executed",
+          "window_focused": true,
+          "sent_with": "scan_code",
+          "key": "down",
+          "index": 6
+        },
+        {
+          "type": "press",
+          "at_utc": "2026-10-27T15:10:46.719958+00:00",
+          "status": "executed",
+          "window_focused": true,
+          "sent_with": "scan_code",
+          "key": "down",
+          "index": 7
+        },
+        {
+          "type": "wait",
+          "at_utc": "2026-10-27T15:10:47.003571+00:00",
+          "status": "executed",
+          "seconds": 0.5,
+          "index": 8
+        },
+        {
+          "type": "press",
+          "at_utc": "2026-10-27T15:10:47.503993+00:00",
+          "status": "executed",
+          "window_focused": true,
+          "sent_with": "scan_code",
+          "key": "space",
+          "index": 9
+        },
+        {
+          "type": "wait",
+          "at_utc": "2026-10-27T15:10:47.786833+00:00",
+          "status": "executed",
+          "seconds": 1.0,
+          "index": 10
+        }
+      ],
+      "observations": [
+        {
+          "method": "stdout",
+          "captured_at_utc": "2026-10-27T15:10:48.938124+00:00",
+          "text": "pygame 2.6.1 (SDL 2.28.4, Python 3.11.9)\nHello from the pygame community. https://www.pygame.org/contribute.html\n[EVENT] COINS:150\n[EVENT] LIVES:10\n[EVENT] WAVE:1\nMOVE RIGHT\nMOVE RIGHT\nMOVE RIGHT\nMOVE RIGHT\nMOVE RIGHT\nMOVE DOWN\nMOVE DOWN\nBUILD\n[EVENT] COINS:100\n",
+          "stderr_tail": ""
+        }
+      ],
+      "checked_output": "after first input action only",
+      "input_retries": 0,
+      "status": "PASS",
+      "reason": "Expected literal text was found in process output.",
+      "process": {
+        "pid": 35888,
+        "returncode": null
+      },
+      "runtime_evidence": {
+        "stdout_file": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261027_220350-s1\\test_run_20261027_221010\\evidence\\C05\\stdout.log",
+        "stderr_file": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261027_220350-s1\\test_run_20261027_221010\\evidence\\C05\\stderr.log",
+        "screenshot_file": null
+      },
+      "triage_hints": [
+        {
+          "category": "undetermined",
+          "confidence": "low",
+          "reason": "Insufficient diagnostic signals; compare brief, plan, code, assets and runtime evidence."
+        }
+      ],
+      "duration_seconds": 7.609,
+      "finished_at_utc": "2026-10-27T15:10:48.957593+00:00"
+    },
+    {
+      "test_id": "C06",
+      "requirement_index": 13,
+      "requirement": "Show coins, lives and wave number at the top.",
+      "assertion": "Pressing N prints 'NEXT WAVE' to the console.",
+      "expected": "NEXT WAVE",
+      "generator_status": "ready_for_validator",
+      "started_at_utc": "2026-10-27T15:10:48.957593+00:00",
+      "evidence_dir": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261027_220350-s1\\test_run_20261027_221010\\evidence\\C06",
+      "action_results": [
+        {
+          "type": "wait",
+          "at_utc": "2026-10-27T15:10:51.466728+00:00",
+          "status": "executed",
+          "seconds": 1.0,
+          "index": 0
+        },
+        {
+          "type": "press",
+          "at_utc": "2026-10-27T15:10:52.617379+00:00",
+          "status": "executed",
+          "window_focused": true,
+          "sent_with": "scan_code",
+          "key": "n",
+          "index": 1
+        },
+        {
+          "type": "wait",
+          "at_utc": "2026-10-27T15:10:52.901071+00:00",
+          "status": "executed",
+          "seconds": 1.0,
+          "index": 2
+        },
+        {
+          "type": "wait",
+          "at_utc": "2026-10-27T15:10:54.054043+00:00",
+          "status": "executed",
+          "seconds": 1.0,
+          "retry": 1
+        },
+        {
+          "type": "press",
+          "at_utc": "2026-10-27T15:10:55.055077+00:00",
+          "status": "executed",
+          "window_focused": true,
+          "sent_with": "scan_code",
+          "key": "n",
+          "retry": 1
+        },
+        {
+          "type": "wait",
+          "at_utc": "2026-10-27T15:10:55.337819+00:00",
+          "status": "executed",
+          "seconds": 1.0,
+          "retry": 1
+        },
+        {
+          "type": "wait",
+          "at_utc": "2026-10-27T15:10:56.488618+00:00",
+          "status": "executed",
+          "seconds": 1.0,
+          "retry": 2
+        },
+        {
+          "type": "press",
+          "at_utc": "2026-10-27T15:10:57.488898+00:00",
+          "status": "executed",
+          "window_focused": true,
+          "sent_with": "scan_code",
+          "key": "n",
+          "retry": 2
+        },
+        {
+          "type": "wait",
+          "at_utc": "2026-10-27T15:10:57.772112+00:00",
+          "status": "executed",
+          "seconds": 1.0,
+          "retry": 2
+        }
+      ],
+      "observations": [
+        {
+          "method": "stdout",
+          "captured_at_utc": "2026-10-27T15:10:54.052432+00:00",
+          "text": "pygame 2.6.1 (SDL 2.28.4, Python 3.11.9)\nHello from the pygame community. https://www.pygame.org/contribute.html\n[EVENT] COINS:150\n[EVENT] LIVES:10\n[EVENT] WAVE:1\n",
+          "stderr_tail": ""
+        }
+      ],
+      "checked_output": "after first input action only",
+      "input_retries": 2,
+      "status": "FAIL",
+      "reason": "Expected literal text was not found. This does not by itself prove a game defect.",
+      "process": {
+        "pid": 30732,
+        "returncode": null
+      },
+      "runtime_evidence": {
+        "stdout_file": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261027_220350-s1\\test_run_20261027_221010\\evidence\\C06\\stdout.log",
+        "stderr_file": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261027_220350-s1\\test_run_20261027_221010\\evidence\\C06\\stderr.log",
+        "screenshot_file": null
+      },
+      "triage_hints": [
+        {
+          "category": "undetermined",
+          "confidence": "low",
+          "reason": "Insufficient diagnostic signals; compare brief, plan, code, assets and runtime evidence."
+        }
+      ],
+      "duration_seconds": 9.985,
+      "finished_at_utc": "2026-10-27T15:10:58.949908+00:00"
+    },
+    {
+      "test_id": "C07",
+      "requirement_index": 18,
+      "requirement": "Print a line to the console every time a control takes effect: MOVE UP, MOVE DOWN, MOVE LEFT, MOVE RIGHT, BUILD, NEXT WAVE, RESTART and QUIT.",
+      "assertion": "Pressing R prints 'RESTART' to the console.",
+      "expected": "RESTART",
+      "generator_status": "ready_for_validator",
+      "started_at_utc": "2026-10-27T15:10:58.955059+00:00",
+      "evidence_dir": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261027_220350-s1\\test_run_20261027_221010\\evidence\\C07",
+      "action_results": [
+        {
+          "type": "wait",
+          "at_utc": "2026-10-27T15:11:01.463164+00:00",
+          "status": "executed",
+          "seconds": 1.0,
+          "index": 0
+        },
+        {
+          "type": "press",
+          "at_utc": "2026-10-27T15:11:02.613776+00:00",
+          "status": "executed",
+          "window_focused": true,
+          "sent_with": "scan_code",
+          "key": "r",
+          "index": 1
+        },
+        {
+          "type": "wait",
+          "at_utc": "2026-10-27T15:11:02.897197+00:00",
+          "status": "executed",
+          "seconds": 1.0,
+          "index": 2
+        }
+      ],
+      "observations": [
+        {
+          "method": "stdout",
+          "captured_at_utc": "2026-10-27T15:11:04.048818+00:00",
+          "text": "pygame 2.6.1 (SDL 2.28.4, Python 3.11.9)\nHello from the pygame community. https://www.pygame.org/contribute.html\n[EVENT] COINS:150\n[EVENT] LIVES:10\n[EVENT] WAVE:1\n[EVENT] COINS:150\n[EVENT] LIVES:10\n[EVENT] WAVE:1\nRESTART\n",
+          "stderr_tail": ""
+        }
+      ],
+      "checked_output": "after first input action only",
+      "input_retries": 0,
+      "status": "PASS",
+      "reason": "Expected literal text was found in process output.",
+      "process": {
+        "pid": 24932,
+        "returncode": null
+      },
+      "runtime_evidence": {
+        "stdout_file": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261027_220350-s1\\test_run_20261027_221010\\evidence\\C07\\stdout.log",
+        "stderr_file": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261027_220350-s1\\test_run_20261027_221010\\evidence\\C07\\stderr.log",
+        "screenshot_file": null
+      },
+      "triage_hints": [
+        {
+          "category": "undetermined",
+          "confidence": "low",
+          "reason": "Insufficient diagnostic signals; compare brief, plan, code, assets and runtime evidence."
+        }
+      ],
+      "duration_seconds": 5.125,
+      "finished_at_utc": "2026-10-27T15:11:04.075532+00:00"
+    },
+    {
+      "test_id": "C08",
+      "requirement_index": 19,
+      "requirement": "Print WIN or GAME OVER to the console when the game ends.",
+      "assertion": "Pressing ESCAPE prints 'QUIT' to the console.",
+      "expected": "QUIT",
+      "generator_status": "ready_for_validator",
+      "started_at_utc": "2026-10-27T15:11:04.078787+00:00",
+      "evidence_dir": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261027_220350-s1\\test_run_20261027_221010\\evidence\\C08",
+      "action_results": [
+        {
+          "type": "wait",
+          "at_utc": "2026-10-27T15:11:06.587267+00:00",
+          "status": "executed",
+          "seconds": 1.0,
+          "index": 0
+        },
+        {
+          "type": "press",
+          "at_utc": "2026-10-27T15:11:07.738039+00:00",
+          "status": "executed",
+          "window_focused": true,
+          "sent_with": "scan_code",
+          "key": "esc",
+          "index": 1
+        },
+        {
+          "type": "wait",
+          "at_utc": "2026-10-27T15:11:08.020753+00:00",
+          "status": "executed",
+          "seconds": 1.0,
+          "index": 2
+        }
+      ],
+      "observations": [
+        {
+          "method": "stdout",
+          "captured_at_utc": "2026-10-27T15:11:09.172221+00:00",
+          "text": "pygame 2.6.1 (SDL 2.28.4, Python 3.11.9)\nHello from the pygame community. https://www.pygame.org/contribute.html\n[EVENT] COINS:150\n[EVENT] LIVES:10\n[EVENT] WAVE:1\nQUIT\n",
+          "stderr_tail": ""
+        }
+      ],
+      "checked_output": "after first input action only",
+      "input_retries": 0,
+      "status": "PASS",
+      "reason": "Expected literal text was found in process output.",
+      "process": {
+        "pid": 32796,
+        "returncode": 0
+      },
+      "runtime_evidence": {
+        "stdout_file": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261027_220350-s1\\test_run_20261027_221010\\evidence\\C08\\stdout.log",
+        "stderr_file": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261027_220350-s1\\test_run_20261027_221010\\evidence\\C08\\stderr.log",
+        "screenshot_file": null
+      },
+      "triage_hints": [
+        {
+          "category": "undetermined",
+          "confidence": "low",
+          "reason": "Insufficient diagnostic signals; compare brief, plan, code, assets and runtime evidence."
+        }
+      ],
+      "duration_seconds": 5.094,
+      "finished_at_utc": "2026-10-27T15:11:09.173243+00:00"
+    }
+  ],
+  "project_inventory": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261027_220350-s1\\test_run_20261027_221010\\project_inventory.json",
+  "triage_note": "Hints are heuristics, not definitive root-cause labels. Correlate brief, plan, code, asset manifest and runtime evidence."
+}

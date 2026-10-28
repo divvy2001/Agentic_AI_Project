@@ -1,0 +1,3 @@
+{"turn": 1, "t": 0.3, "stage": "start", "status": "ok", "detail": "spec=1115 chars"}
+{"turn": 2, "t": 73.5, "stage": "planner+assets", "status": "success", "detail": "renderer=godot assets=ai_art", "renderer": "godot", "entry_point": "game/main.tscn"}
+{"turn": 3, "t": 1281.5, "stage": "logic_coder", "status": "budget_exhausted", "reason": "budget_exhausted", "steps": 40, "cost": "$0.2456", "attempt_id": "abc7f708a45947398df0f75a722c1c01"}

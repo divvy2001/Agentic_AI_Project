@@ -1,0 +1,478 @@
+{
+  "trial_id": "20261025T180106Z-521be000bc",
+  "stage": "SEALED",
+  "baseline": null,
+  "case_id": "RT01",
+  "mode": "repair",
+  "lane": "independent_repair",
+  "profile": {
+    "model": "google/gemini-2.5-flash",
+    "budget_usd": "0.10",
+    "max_output_tokens": 8192,
+    "max_http_attempts": 12,
+    "prompt_usd_per_token": "0.0000003",
+    "completion_usd_per_token": "0.0000025",
+    "policy": "text-byte reservation; not an account hard spending cap",
+    "limits_changed_from_baseline": [
+      "max_output_tokens=8192",
+      "external send guard"
+    ],
+    "comparison_rule": "same frozen profile required for every compared version",
+    "catalog_snapshot": {
+      "id": "google/gemini-2.5-flash",
+      "canonical_slug": "google/gemini-2.5-flash",
+      "hugging_face_id": "",
+      "name": "Google: Gemini 2.5 Flash",
+      "created": 1750172488,
+      "description": "Gemini 2.5 Flash is Google's state-of-the-art workhorse model, specifically designed for advanced reasoning, coding, mathematics, and scientific tasks. It includes built-in \"thinking\" capabilities, enabling it to provide responses with greater...",
+      "context_length": 1048576,
+      "architecture": {
+        "modality": "text+image+file+audio+video->text",
+        "input_modalities": [
+          "file",
+          "image",
+          "text",
+          "audio",
+          "video"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Gemini",
+        "instruct_type": null
+      },
+      "pricing": {
+        "prompt": "0.0000003",
+        "completion": "0.0000025",
+        "image": "0.0000003",
+        "audio": "0.000001",
+        "input_audio_cache": "0.0000001",
+        "web_search": "0.014",
+        "internal_reasoning": "0.0000025",
+        "input_cache_read": "0.00000003",
+        "input_cache_write": "0.0000000833333333333333"
+      },
+      "top_provider": {
+        "context_length": 1048576,
+        "max_completion_tokens": 65535,
+        "is_moderated": false
+      },
+      "per_request_limits": null,
+      "supported_parameters": [
+        "include_reasoning",
+        "max_tokens",
+        "reasoning",
+        "response_format",
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_p"
+      ],
+      "default_parameters": {
+        "temperature": null,
+        "top_p": null,
+        "top_k": null,
+        "frequency_penalty": null,
+        "presence_penalty": null,
+        "repetition_penalty": null
+      },
+      "supported_voices": null,
+      "knowledge_cutoff": "2025-01-31",
+      "expiration_date": null,
+      "links": {
+        "details": "/api/v1/models/google/gemini-2.5-flash/endpoints"
+      },
+      "benchmarks": {
+        "design_arena": [
+          {
+            "arena": "models",
+            "category": "3d",
+            "elo": 1068,
+            "win_rate": 47.4,
+            "rank": 101
+          },
+          {
+            "arena": "models",
+            "category": "codecategories",
+            "elo": 1104,
+            "win_rate": 46.9,
+            "rank": 105
+          },
+          {
+            "arena": "models",
+            "category": "dataviz",
+            "elo": 1134,
+            "win_rate": 49.1,
+            "rank": 89
+          },
+          {
+            "arena": "models",
+            "category": "gamedev",
+            "elo": 1066,
+            "win_rate": 44.3,
+            "rank": 111
+          },
+          {
+            "arena": "models",
+            "category": "uicomponent",
+            "elo": 1087,
+            "win_rate": 48.9,
+            "rank": 100
+          },
+          {
+            "arena": "models",
+            "category": "website",
+            "elo": 1113,
+            "win_rate": 47.1,
+            "rank": 107
+          },
+          {
+            "arena": "models",
+            "category": "svg",
+            "elo": 1020,
+            "win_rate": 43.1,
+            "rank": 83
+          }
+        ],
+        "artificial_analysis": {
+          "intelligence_index": 15.5,
+          "coding_index": null,
+          "agentic_index": null
+        }
+      },
+      "reasoning": {
+        "mandatory": false
+      }
+    },
+    "price_observed_at": "2026-10-25T18:01:06.360234+00:00"
+  },
+  "source_hashes": {
+    "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "adapters/__init__.py": "eb9cb2d5afee5c394e188b7642d2bc79e87180219a976d4347322cd97099c725",
+    "adapters/_python.py": "d5de54a6871e2db749f8e411b932588f250451cf98ce58ef95d3e8a0a353d250",
+    "adapters/godot.py": "998f874abd9072dcca340dcd7655d4161870c75c52eb48a36ec4b1636fa79828",
+    "adapters/pygame.py": "87b172b18d9980253e5d2a1e50f279bbd7834ca204ac02e8e4401b10a58d7894",
+    "adapters/terminal.py": "bbcfcdaad3e0e9322a220dda1ec2728cdde3b175cae6970ca410769d8ff94c0d",
+    "agent_coder.py": "7ea093b856394ad469640cccaa27298bc7b88f7dee78f62ed53cad128e4cc7a6",
+    "build_brief.py": "34f42da751690ebb61447e887da0157b8821e1be6f11f187873bc5de43c48eb6",
+    "build_state.py": "43e514178d08c6a2bdc32afa3310f5f4fa4f47758281d6870558cc5f80f2d196",
+    "configuration/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "configuration/config.py": "9db72596c4a9a610bd7bc16f34c8544f72fd8ad5823d31eb4da199c12ee27cab",
+    "context.py": "9bf13a163f878d05d710bb7b41144495f22106f956182d6a269d71bd29b04b79",
+    "contracts.py": "4ab2fa23de02887e01869b8bd3c57e2d15db38798507ab32834078d26a1e223c",
+    "diagnostics.py": "117c08bdcd86ae9ac07defa06f07572dc4dd10eacb2eb11f0cdc9764b66da72e",
+    "execution.py": "7e8b28b39faef2a62cd4328322356622c87a7043d5a1d766cac79a5def32307c",
+    "gates.py": "e8fa3904a547ca5b7b308b2badfb7f5ec4a604e57a6acf3346931cfbe762b3aa",
+    "godot_runtime.py": "1ec8d3cadaaf0f0fc8b8c04c0c546f4a4f22cb2c658294df22e730771bd3c2d5",
+    "initial_build.py": "bcc7b0403df6ec2952e64bbb3ed5277e5abcd62a77bd65d758182836428b8dd7",
+    "launch_game.py": "15e4454120e8683b558d1c76e231bee022f4e016ad9a8ff63294d456246a8113",
+    "play_child.py": "7f363253b9a40f7e71978942f87605b0f68fef992d7ed3b2d3fd686425778574",
+    "play_host.py": "297374039b0ca626eaec8fda419420cfb10096da529030d8159c67cb4564e524",
+    "presentation.py": "6c384083c2e9060d02ad0cd9e7066dfb5cfd2c89b4d6c65eca1d550c159da064",
+    "python_runtime.py": "feac62e81ff5ada919c9ae1b12bb984c7658c8dc63dd0ab3568c39bc03a0e2dd",
+    "README_DELIVERY.md": "11a6b987753c83be39634bc715be37701e5982f87e393eea69d5445b178fd038",
+    "README_PLAY.md": "b8448b25e01dba56c10dc789da3f5aa141365146d9af688a4346a131a90401fb",
+    "repair.py": "207b3622a1acfcbba81671c5ecd0dc729fbd1264cd0c15e5a1857c92ea8e5aed",
+    "resources/prompt_coder.txt": "5c8843f926ced2aeffcef2661a9b85d7a1641a944505da7662ef8001181d1a46",
+    "run_context.py": "d6bbedb6e9b5297b8c06da6671e1a6cc16750a8ba1ce47e2b904e004f4fcceb8",
+    "smoke_child.py": "d9cadd884ffe2e0e1b07fc1c08a494c2a01eccff7440de5f2b68b7f7553ae953",
+    "tools/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "tools/tools_asset.py": "490453df160dda347c5ffce7d9e423f0aac5133fe5452960ff77b5bfd2be3c32",
+    "tools/tools_coder.py": "8e1afbdc9621492beab3a684e02af26e0a6f80e9af5b0b840e64470c31b9a4b7",
+    "windows_sandbox.py": "b0329ae45c874c47ff6c9e6e9cd4beb721e70ee9c6c975936b0b5e92dc00a844",
+    "workspace.py": "70d6bd010c2fd10ddae68c11910108a5b74aba448c91772850b532b5ffe43695"
+  },
+  "input_hashes": {
+    "coder_plan.json": "a6f7c351052d1f61d849981a21544843cc7240806075bd972989f6e913fb159b",
+    "feedback.json": "cce1db42acd4db07fd18b551ff2cba5d6737ed0bd888ec30d10b0d468da5dec4",
+    "game/main.py": "69d17749e523c19904e23f19814518389aee37bbafaa8ba8cc34fa1cb83de069",
+    "tests/test_behavior.py": "cab8fc09105f2f51ce11a59c3ca74e96510c2de2c4b674b52287096f63755697",
+    "tests/test_regression.py": "997a6bc4eeea93076055d3654f6146a5bc0f33860655ddc3b557f5c8d6c7b781",
+    "traces/eval/eval-v1/T03.log": "fef5584d1380bb21b6b9df08c30aa934006c47858213843d3a16d6391880d88b"
+  },
+  "renderer": "terminal",
+  "quality_status": "NOT_RUN",
+  "paid_requests": null,
+  "created_at": "2026-10-25T18:01:06.477424+00:00",
+  "asset_staging": {
+    "strategy": "none",
+    "frozen_files": {},
+    "generation_calls": 0,
+    "old_game_reused": false
+  },
+  "protected_hashes_before": {
+    "eval_tests/test_behavior.py": "cab8fc09105f2f51ce11a59c3ca74e96510c2de2c4b674b52287096f63755697",
+    "eval_tests/test_regression.py": "997a6bc4eeea93076055d3654f6146a5bc0f33860655ddc3b557f5c8d6c7b781",
+    "plans/coder_plan.json": "a6f7c351052d1f61d849981a21544843cc7240806075bd972989f6e913fb159b",
+    "traces/eval/eval-v1/T03-observation.json": "558ca9cd8a679dfe1e99d551ae98877404100b73a47f996ae61cd6b90131e856",
+    "traces/eval/eval-v1/T03.log": "fef5584d1380bb21b6b9df08c30aa934006c47858213843d3a16d6391880d88b",
+    "traces/eval/eval-v1/test_results.json": "b443b02b6fccf0388945dd8a92938c70016de08d0c0e06787aa5127ecf793a75"
+  },
+  "initial_game_hashes": {
+    "game/main.py": "69d17749e523c19904e23f19814518389aee37bbafaa8ba8cc34fa1cb83de069"
+  },
+  "feedback_path": "traces/eval/eval-v1/test_results.json",
+  "fixture_compatibility": {
+    "scope": "legacy engineering fixture; not gameplay benchmark",
+    "original_fixture_hashes": {
+      "coder_plan.json": "a6f7c351052d1f61d849981a21544843cc7240806075bd972989f6e913fb159b",
+      "feedback.json": "cce1db42acd4db07fd18b551ff2cba5d6737ed0bd888ec30d10b0d468da5dec4",
+      "game/main.py": "69d17749e523c19904e23f19814518389aee37bbafaa8ba8cc34fa1cb83de069",
+      "tests/test_behavior.py": "cab8fc09105f2f51ce11a59c3ca74e96510c2de2c4b674b52287096f63755697",
+      "tests/test_regression.py": "997a6bc4eeea93076055d3654f6146a5bc0f33860655ddc3b557f5c8d6c7b781",
+      "traces/eval/eval-v1/T03.log": "fef5584d1380bb21b6b9df08c30aa934006c47858213843d3a16d6391880d88b"
+    },
+    "original_assertions_unchanged": true,
+    "current_planner_init_first": false,
+    "policy": "Preserve bytes. Do not silently repair old Planner outputs."
+  },
+  "eval_python_hashes": {
+    "evaluation/__init__.py": "5c63b10feaf14092a95d1c9d348bb455f5e2f34dd425f13d4ec3ab7fca82bb34",
+    "evaluation/asset_inputs.py": "f8f4fe6dd5d60f7f47babf32fff8d77d5337b390542ad2f1c609a73a62b21c2e",
+    "evaluation/compare.py": "d9c5f2f49a522f3f4c83a131c77ea55e0b047056196bc5b82a1187b56cb10839",
+    "evaluation/cost_report.py": "f9ab90892b016b563b92b309809ffa37cea55f83f6255cd130ac383c4e178648",
+    "evaluation/graphical_cases.py": "64cae82fb451e01e47018476797c18330440783a31b3d3283f03608e5293091f",
+    "evaluation/graphical_runtime.py": "7cc073b06431d93aa4984213a1c95a6939d3367350ed99c01e7b044b66f970fa",
+    "evaluation/integrate_repair.py": "03b8f0ee0b0ff35a2bcbb253df240057bab6f104e0fcb18c5fe896eff75bf5af",
+    "evaluation/integrate_s04.py": "863e46383f229e5315b9149478d0b6fea439625b480a49a1e13cfad4798fee0a",
+    "evaluation/observe.py": "936227f322158a89a20c6ae8cb3c6855bcd28be6cca1f745991cd3a124139777",
+    "evaluation/private/G01/reference_corrected/game/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "evaluation/private/G01/reference_reload/game/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "evaluation/private/G01/reference_renamed/game/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "evaluation/private/G01/subject_existing/game/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "evaluation/private/P01/reference_corrected/game/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "evaluation/private/P01/reference_corrected/game/crystal.py": "9c6bceefe4c362c219fde0972b4104aa807245532590b84e40f61f69fa51c7b1",
+    "evaluation/private/P01/reference_corrected/game/enemy.py": "2977a10b3e9614b5c495ee36e1a7b10b920e92ae6b1dda09875f2618a175e882",
+    "evaluation/private/P01/reference_corrected/game/exit_zone.py": "7fcdbd1c18fac37376146fbc0ad27c72c3dd721ec2c881fad68c1e82352961c5",
+    "evaluation/private/P01/reference_corrected/game/game_state.py": "fa9f5ca30d1ea205f7afea55a0c1c57de93eb3b9fc0104e7f1381713276d3c34",
+    "evaluation/private/P01/reference_corrected/game/hud.py": "201f4e7437618814dabaab67a65e0ca81fd4f0ecec147f858d6b302c3c6a1e2c",
+    "evaluation/private/P01/reference_corrected/game/main.py": "857109ce5ebcaf2f55aef53732df93865d7c4a1e948a857ba702cbaa7b57225c",
+    "evaluation/private/P01/reference_corrected/game/player.py": "8007e92a3a900f03e6ea07981a55e9968a8ab84680b3b8b0558f6d72ff0e011d",
+    "evaluation/private/P01/reference_event_input/game/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "evaluation/private/P01/reference_event_input/game/crystal.py": "9c6bceefe4c362c219fde0972b4104aa807245532590b84e40f61f69fa51c7b1",
+    "evaluation/private/P01/reference_event_input/game/enemy.py": "2977a10b3e9614b5c495ee36e1a7b10b920e92ae6b1dda09875f2618a175e882",
+    "evaluation/private/P01/reference_event_input/game/exit_zone.py": "7fcdbd1c18fac37376146fbc0ad27c72c3dd721ec2c881fad68c1e82352961c5",
+    "evaluation/private/P01/reference_event_input/game/game_state.py": "fa9f5ca30d1ea205f7afea55a0c1c57de93eb3b9fc0104e7f1381713276d3c34",
+    "evaluation/private/P01/reference_event_input/game/hud.py": "201f4e7437618814dabaab67a65e0ca81fd4f0ecec147f858d6b302c3c6a1e2c",
+    "evaluation/private/P01/reference_event_input/game/main.py": "a7ac841b3d96236e08774986c9d634009dd75d109e2330170eebb8cba3cf8557",
+    "evaluation/private/P01/reference_event_input/game/player.py": "8007e92a3a900f03e6ea07981a55e9968a8ab84680b3b8b0558f6d72ff0e011d",
+    "evaluation/private/P01/subject_existing/game/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "evaluation/private/P01/subject_existing/game/crystal.py": "9c6bceefe4c362c219fde0972b4104aa807245532590b84e40f61f69fa51c7b1",
+    "evaluation/private/P01/subject_existing/game/enemy.py": "2977a10b3e9614b5c495ee36e1a7b10b920e92ae6b1dda09875f2618a175e882",
+    "evaluation/private/P01/subject_existing/game/exit_zone.py": "7fcdbd1c18fac37376146fbc0ad27c72c3dd721ec2c881fad68c1e82352961c5",
+    "evaluation/private/P01/subject_existing/game/game_state.py": "fa9f5ca30d1ea205f7afea55a0c1c57de93eb3b9fc0104e7f1381713276d3c34",
+    "evaluation/private/P01/subject_existing/game/hud.py": "201f4e7437618814dabaab67a65e0ca81fd4f0ecec147f858d6b302c3c6a1e2c",
+    "evaluation/private/P01/subject_existing/game/main.py": "4a285973ee7e65db5b2ffc6cc549c7efc81f284ffc1453e4c41368974c6b2afb",
+    "evaluation/private/P01/subject_existing/game/player.py": "8007e92a3a900f03e6ea07981a55e9968a8ab84680b3b8b0558f6d72ff0e011d",
+    "evaluation/private/T01/reference_alternative/game/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "evaluation/private/T01/reference_alternative/game/robot_vault.py": "6409693689facd5b5a25fe487dc0e2bc32307490377b44c2e6b893a42b5d7618",
+    "evaluation/private/T01/reference_primary/game/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "evaluation/private/T01/reference_primary/game/robot_vault.py": "1766b0bce27e115c6e16f08ef1d433b1f7f4404ba62b1d04657b66c19b3d36ba",
+    "evaluation/pygame_child.py": "a9260380a85210aab3d591b0406fc1f0355976e130c0e332b4bfac000fe2b4a6",
+    "evaluation/records.py": "29129cddc03c660a0cca05cb619b618f286b43e63c0aab6104db9c087dc103b6",
+    "evaluation/recover.py": "7ff70a9d320bb3a875e1b71a2d27f83730cd847a4fa6cf0b6522b6ec3c2edf25",
+    "evaluation/repair_assertion_child.py": "5f7acc2c975c17b4d2a7829e66f27044b17b1bfc32a6e681e66810a792673de4",
+    "evaluation/repair_assertions.py": "64957b6d16c8b9865dcb6c54c14669ca7e0c262a3ee965fdf15466858a7d05bd",
+    "evaluation/request_logging/__init__.py": "de0c790947d32686b6649b5aa37a2509ab7487c57a76f0d3bdfee00b6377c568",
+    "evaluation/request_logging/accounting.py": "b1552cd343c29c8c141dc85a20ca5baa4c1cb28d97b256cb476d7b2a83766f37",
+    "evaluation/request_logging/http_usage.py": "de1a88a8b224d7a99686d9d195385b2c846500585fc9dfd2daf3840462395321",
+    "evaluation/request_logging/test_http_usage.py": "f037c6030f923ff071847b86eddffc24dc51d07189cf26bd894e61f8c276067b",
+    "evaluation/run.py": "1004a24f9f549596345f8c436ad964a1a8b4e3f2d54128150441fb4902de447e",
+    "evaluation/simple_validator.py": "4cbca78bd8c6fbc802e424807a9e1b56ba6da4a607b1faffca09fdc3bde9a6f2",
+    "evaluation/status.py": "d49554d8245574630de53f375f72042d23e400822950cdc9b8e94a7a43a88473",
+    "evaluation/terminal_case.py": "0f6179dec578f2c31f7c6cc9cf6cb7863fc0e8f1227e5df41c0ff65f3af15586",
+    "evaluation/terminal_child.py": "51947b456eabbd2b63e2c91598fee69473365d1743cfa0772bada02e76b6f4fd",
+    "evaluation/terminal_runtime.py": "810a03a8fec08200f26e5bbb54b59cd11eeb716406fcafe32d088d6fac1c8639",
+    "evaluation/tests/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "evaluation/tests/test_asset_inputs.py": "1f017ff388a999d12b248a54982d7877efa3487422e1a9e04efc8e4af0b10731",
+    "evaluation/tests/test_graphical_runtime.py": "d3da36f19f3a4e14a5ba1e564d1950d503d79c9c549d2e7414218d8232857222",
+    "evaluation/tests/test_records.py": "6ca7403fbf3044ef19c46ed6155bec8c00620f323aff80695547939b8c822219",
+    "evaluation/tests/test_repair_assertions.py": "afd81d8ded127f894cb3df016dc42b9d5aa5d7ee61d01715d55b39711334518e",
+    "evaluation/tests/test_repair_trials.py": "17ecf7d720d770960ac222a11399911288d745109ff9990783815df1af227163",
+    "evaluation/tests/test_simple_validator.py": "7e24726435f84359bc6344d94272debd685fa55943cb59638531c24ddb43f792",
+    "evaluation/tests/test_terminal_hud_formats.py": "c4fa08fb7e27d6e4596b79f57bea22a5ffe21cb46fb0f7d1bcc1016de3291a75",
+    "evaluation/tests/test_terminal_observation.py": "d233a6681c08d5bfafc99c6354e026e22c1c7fb01a5e12bdf9da61098d57bd8b",
+    "evaluation/tests/test_trial_accounting.py": "0889e629f33a60d78fbcef443fc656df959d4d0928503c994189dde8074937f1",
+    "evaluation/tests/test_verification_boundaries.py": "94235f1519d00eb1f09bdf0e97f50662e7cbf34e269a6c560abb29a65e2a8e5a",
+    "evaluation/tests/test_visual_match.py": "79601bf3482990ca8fa3dcb4d3cc62278b15c2b4bb5cf1b6c502c0a03f1a8f57",
+    "evaluation/tests_s04/__init__.py": "d1c2ea8335cabccb4b5cf9bdb4e0a06aba7c86d99b1c924ce09860a14d08dbba",
+    "evaluation/tests_s04/test_coder_protocol.py": "e17c37832012086e15cccda97d95503986d9111a4d052da140b1621eb7aa5342",
+    "evaluation/trials.py": "117cb6b6dd9d220c55b71178c080ca50278d99d22c763f6261244649f61060c0",
+    "evaluation/validate_graphics.py": "7c7a0becb89769745f044a05543c295c66614ddfe54fcef9bf9f809e96cea739",
+    "evaluation/validate_repair.py": "f6177f560f6af93dfea3d377187b8a2e218a2ea8ff060628f2b08b6818cda95b",
+    "evaluation/validate_suite.py": "90a6cd66a6a29b326dce2f084aa36b56b1d7026bdffc3d1a37ae3b8ef1c4ba07",
+    "evaluation/verify.py": "64e3263cb154b4fa1eb6641937d93186cb362ba2bb32e666e25de3248912f6e2",
+    "evaluation/visual_match.py": "b4f54e75e9304a1c491b1a26f1b3f51e11e848263899bd2ca7a778a496bbdba2",
+    "evaluation/worker.py": "b22262a1bab9ce1af8537baf52dbe675a3e81ba1fd20c8b58933d84e388d6e4a"
+  },
+  "source_version": "current-working-copy",
+  "source_origin": "C:\\Users\\DELL\\Documents\\Codex\\2026-10-22\\v4-zip-coder-development-spec-md\\outputs\\Bo's Project V4 - with coder\\coder_agent_adhoc",
+  "experiment_kind": "simple_external_validator_repair",
+  "pid": 35900,
+  "dry_run": false,
+  "runtime": {
+    "python": "3.11.17 | packaged by Anaconda, Inc. | (main, Oct  1 2026, 20:16:54) [MSC v.1942 64 bit (AMD64)]",
+    "executable": "D:\\software\\anaconda3\\envs\\pe6203-logic-coder\\python.exe",
+    "preferred_encoding": "cp936",
+    "utf8_mode": 0,
+    "godot_binary": "C:\\Users\\DELL\\Documents\\Codex\\2026-10-22\\v4-zip-coder-development-spec-md\\work\\godot\\Godot_v4.7.2-stable_win64.exe"
+  },
+  "entrypoint_invocations": 1,
+  "external_repair_invocations": 1,
+  "initial_build_invocations": 0,
+  "agent_result": {
+    "status": "ready_for_testing",
+    "mode": "repair",
+    "renderer": "terminal",
+    "entry_point": "game/main.py",
+    "game_dir": "game",
+    "smoke": {
+      "plan_and_files": "passed",
+      "syntax_or_import": "passed",
+      "boot": "passed"
+    },
+    "steps": 4,
+    "play_manual_path": "plans/play_manual.json",
+    "trace_path": "traces/coder_attempts.jsonl",
+    "approximated_requirements": [],
+    "reason": null,
+    "debug_statistics": {
+      "local_failure_events": 1,
+      "self_debug_attempts": 0,
+      "external_repair_invocations": 1
+    },
+    "plan_compatibility_warnings": [
+      "legacy_repair_missing_package_marker",
+      "terminal_render_settings_ignored"
+    ],
+    "runtime_render_settings": null,
+    "asset_quality_warnings": [],
+    "asset_visual_acceptance": "not_run",
+    "planner_status": "success",
+    "unmapped": [],
+    "attempt_id": "7ac43cda3f454216816557532334d129",
+    "repair_snapshot_path": "traces/repair-7ac43cda3f454216816557532334d129/original",
+    "usage": {
+      "model": "google/gemini-2.5-flash",
+      "calls": 4,
+      "input_tokens": 15472,
+      "output_tokens": 448,
+      "max_input_tokens_per_call": 4331,
+      "reported_cost_usd": 0.0032784100000000003,
+      "known_cost_usd": 0.0032784100000000003,
+      "cost_missing_calls": 0,
+      "by_model": {
+        "google/gemini-2.5-flash": {
+          "calls": 4,
+          "input_tokens": 15472,
+          "output_tokens": 448,
+          "known_cost_usd": 0.0032784100000000003,
+          "cost_missing_calls": 0
+        }
+      }
+    },
+    "presentation": {
+      "status": "not_run",
+      "reason": "no_separate_presentation_probe"
+    },
+    "coverage_notes": null,
+    "requirement_coverage": [
+      {
+        "index": 0,
+        "planner_status": "full",
+        "check": "After three valid score actions, the game is in WIN state.",
+        "validator_status": "not_run",
+        "implementation_files": [],
+        "model_claim": null,
+        "limitations": [],
+        "coverage_evidence": "not_provided"
+      },
+      {
+        "index": 1,
+        "planner_status": "full",
+        "check": "After only two valid score actions, the game has not won.",
+        "validator_status": "not_run",
+        "implementation_files": [],
+        "model_claim": null,
+        "limitations": [],
+        "coverage_evidence": "not_provided"
+      }
+    ],
+    "coverage_status": "not_provided",
+    "changes": [
+      {
+        "path": "game/main.py",
+        "tool": "apply_patch",
+        "reason": "",
+        "before_sha256": "69d17749e523c19904e23f19814518389aee37bbafaa8ba8cc34fa1cb83de069",
+        "after_sha256": "ea9877be477161de187671bb81faef40b15e748a3616296bbe5480ec85818289",
+        "diff": "--- game/main.py\n+++ game/main.py\n@@ -11,7 +11,7 @@\n         if action == \"1\":\n             score += 1\n             # BUG: at score=3 this should be WIN, but is still ONGOING.\n-            status = \"WIN\" if score > 3 else \"ONGOING\"\n+            status = \"WIN\" if score >= 3 else \"ONGOING\"\n             print(f\"SCORE:{score} STATUS:{status}\", file=stdout, flush=True)\n     return score\n \n"
+      }
+    ],
+    "attempted_net_changes": [
+      {
+        "path": "game/main.py",
+        "before_sha256": "69d17749e523c19904e23f19814518389aee37bbafaa8ba8cc34fa1cb83de069",
+        "after_sha256": "ea9877be477161de187671bb81faef40b15e748a3616296bbe5480ec85818289"
+      }
+    ],
+    "net_changes": [
+      {
+        "path": "game/main.py",
+        "before_sha256": "69d17749e523c19904e23f19814518389aee37bbafaa8ba8cc34fa1cb83de069",
+        "after_sha256": "ea9877be477161de187671bb81faef40b15e748a3616296bbe5480ec85818289"
+      }
+    ],
+    "file_inventory": {
+      "promised_count": 1,
+      "delivered_promised": [
+        "game/main.py"
+      ],
+      "missing": [],
+      "engine_supplements": [],
+      "assets": [],
+      "protected_tests": [],
+      "runtime_artifacts": [],
+      "unplanned": [],
+      "delivered_promised_count": 1
+    },
+    "play_session": {
+      "status": "not_run",
+      "reason": "disabled_by_caller"
+    }
+  },
+  "execution_status": "RETURNED",
+  "http_attempts": 4,
+  "budget_blocks": [],
+  "logging_errors": [],
+  "source_unchanged": true,
+  "plan_unchanged": true,
+  "protected_inputs_unchanged": true,
+  "protected_differences": [],
+  "repair_net_changes": [
+    {
+      "path": "game/main.py",
+      "before_sha256": "69d17749e523c19904e23f19814518389aee37bbafaa8ba8cc34fa1cb83de069",
+      "after_sha256": "ea9877be477161de187671bb81faef40b15e748a3616296bbe5480ec85818289"
+    }
+  ],
+  "initial_snapshot_unchanged": true,
+  "artifact_hashes": {
+    ".coder.lock": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+    "eval_tests/test_behavior.py": "cab8fc09105f2f51ce11a59c3ca74e96510c2de2c4b674b52287096f63755697",
+    "eval_tests/test_regression.py": "997a6bc4eeea93076055d3654f6146a5bc0f33860655ddc3b557f5c8d6c7b781",
+    "game/main.py": "ea9877be477161de187671bb81faef40b15e748a3616296bbe5480ec85818289",
+    "plans/coder_plan.json": "a6f7c351052d1f61d849981a21544843cc7240806075bd972989f6e913fb159b",
+    "plans/play_manual.json": "bee63f4e6aa79545b4a7ed73008a94719ef31f0a21966f3b6592b42c73fff380",
+    "traces/coder_attempts.jsonl": "1b5611f5bead18b066f99a34782ca2250d9a7d7d622919216cb95d718ba74d75",
+    "traces/coder_result.json": "c8bce784ac25dcc5ce97dffddc7308fb1027a805cba72ba7ec9e9ebab80fb2f4",
+    "traces/eval/eval-v1/T03-observation.json": "558ca9cd8a679dfe1e99d551ae98877404100b73a47f996ae61cd6b90131e856",
+    "traces/eval/eval-v1/T03.log": "fef5584d1380bb21b6b9df08c30aa934006c47858213843d3a16d6391880d88b",
+    "traces/eval/eval-v1/test_results.json": "b443b02b6fccf0388945dd8a92938c70016de08d0c0e06787aa5127ecf793a75",
+    "traces/repair-7ac43cda3f454216816557532334d129/original/game/main.py": "69d17749e523c19904e23f19814518389aee37bbafaa8ba8cc34fa1cb83de069"
+  },
+  "sealed_at": "2026-10-25T18:01:51.832271+00:00"
+}

@@ -1,0 +1,1 @@
+ASSET_IMAGE_MODEL = "google/gemini-2.5-flash-image"

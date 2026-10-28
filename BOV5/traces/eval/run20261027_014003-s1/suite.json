@@ -1,0 +1,540 @@
+{
+  "schema_version": "1.0",
+  "suite_version": "run20261027_014003-s1",
+  "generated_at_utc": "2026-10-26T17:46:32.236631+00:00",
+  "renderer": "pygame",
+  "game_title": "Snake",
+  "generator": {
+    "backend": "openrouter",
+    "model": "openai/gpt-4.1-mini"
+  },
+  "generation_notes": [
+    "All core and secondary requirements are covered by tests.",
+    "Visual-only requirements are marked not_testable due to validator limitations.",
+    "Console output events are used to verify score changes, game over, and restart events.",
+    "Movement and direction changes require manual inspection as no console output is specified.",
+    "Quit action cannot be automatically verified by console output; manual confirmation needed."
+  ],
+  "source_hashes": {
+    "plans/coder_plan.json": "3ee4c4e312eacf84962a59df8c37a99683609aeb3e0b8e12f7bea7b90d2eb2fa",
+    "plans/play_manual.json": "ebf5a1ecc88b78e8176224a6b39eb28170a577f1da1c92abc3a885e9f33ef60e",
+    "plans/asset_manifest.json": "dfef16f454412ffb624f81d4ec2d39c5fca533c67c027a8c12f0b14cf50d4b05"
+  },
+  "tests": [
+    {
+      "test_id": "T01",
+      "requirement_index": 0,
+      "requirement": "The game must display a grid of 20 by 20 squares.",
+      "assertion": "The game window opens and displays a visible grid structure with 20 rows and 20 columns.",
+      "actions": [],
+      "observation": {
+        "method": "manual_inspection"
+      },
+      "expected": "Visible grid of 20x20 squares on screen",
+      "status": "not_testable",
+      "not_testable_reason": "Validator cannot verify on-screen grid structure; requires human visual inspection.",
+      "renderer": "pygame",
+      "timeout_seconds": 10,
+      "script_path": null
+    },
+    {
+      "test_id": "T02",
+      "requirement_index": 1,
+      "requirement": "The snake starts as 3 green squares in the middle of the grid.",
+      "assertion": "Upon starting the game, a 3-square long green snake is visible in the center of the grid.",
+      "actions": [],
+      "observation": {
+        "method": "manual_inspection"
+      },
+      "expected": "3 green squares forming the snake in the grid center",
+      "status": "not_testable",
+      "not_testable_reason": "Validator cannot verify snake color or position visually; requires human inspection.",
+      "renderer": "pygame",
+      "timeout_seconds": 10,
+      "script_path": null
+    },
+    {
+      "test_id": "T03",
+      "requirement_index": 2,
+      "requirement": "The snake moves right one square at a time at a steady pace.",
+      "assertion": "After game start, the snake's head moves one square to the right every fixed time interval.",
+      "actions": [
+        {
+          "type": "wait",
+          "seconds": 3
+        }
+      ],
+      "observation": {
+        "method": "manual_inspection"
+      },
+      "expected": "Snake moves right steadily one square per tick",
+      "status": "not_testable",
+      "not_testable_reason": "Movement speed and direction cannot be verified by console output; requires visual check.",
+      "renderer": "pygame",
+      "timeout_seconds": 10,
+      "script_path": null
+    },
+    {
+      "test_id": "T04",
+      "requirement_index": 3,
+      "requirement": "The arrow keys change the snake's direction.",
+      "assertion": "Pressing an arrow key (UP, DOWN, LEFT, RIGHT) changes the snake's direction of movement accordingly.",
+      "actions": [
+        {
+          "type": "press",
+          "key": "up"
+        },
+        {
+          "type": "wait",
+          "seconds": 2
+        },
+        {
+          "type": "press",
+          "key": "left"
+        },
+        {
+          "type": "wait",
+          "seconds": 2
+        },
+        {
+          "type": "press",
+          "key": "down"
+        },
+        {
+          "type": "wait",
+          "seconds": 2
+        }
+      ],
+      "observation": {
+        "method": "manual_inspection"
+      },
+      "expected": "Snake changes direction according to arrow keys pressed",
+      "status": "not_testable",
+      "not_testable_reason": "Direction changes are visible only; no console output to verify direction changes.",
+      "renderer": "pygame",
+      "timeout_seconds": 15,
+      "script_path": null
+    },
+    {
+      "test_id": "T05",
+      "requirement_index": 4,
+      "requirement": "The snake cannot reverse straight back into itself.",
+      "assertion": "If the snake is moving right, pressing LEFT does not change its direction; it continues moving right.",
+      "actions": [
+        {
+          "type": "wait",
+          "seconds": 1
+        },
+        {
+          "type": "press",
+          "key": "left"
+        },
+        {
+          "type": "wait",
+          "seconds": 2
+        }
+      ],
+      "observation": {
+        "method": "manual_inspection"
+      },
+      "expected": "Snake continues moving right despite LEFT key press",
+      "status": "not_testable",
+      "not_testable_reason": "No console output for invalid direction change; requires visual confirmation.",
+      "renderer": "pygame",
+      "timeout_seconds": 10,
+      "script_path": null
+    },
+    {
+      "test_id": "T06",
+      "requirement_index": 5,
+      "requirement": "A red food square appears at a random empty spot.",
+      "assertion": "A single red square is visible on the grid, not overlapping with the snake, and its position changes after being eaten.",
+      "actions": [],
+      "observation": {
+        "method": "manual_inspection"
+      },
+      "expected": "One red square visible on grid at a free position",
+      "status": "not_testable",
+      "not_testable_reason": "Food color and position cannot be verified by console output; requires visual check.",
+      "renderer": "pygame",
+      "timeout_seconds": 10,
+      "script_path": null
+    },
+    {
+      "test_id": "T07",
+      "requirement_index": 6,
+      "requirement": "Eating food makes the snake one square longer.",
+      "assertion": "When the snake's head occupies the same square as the food, the snake's length increases by one square.",
+      "actions": [
+        {
+          "type": "wait",
+          "seconds": 1
+        },
+        {
+          "type": "press",
+          "key": "right"
+        },
+        {
+          "type": "wait",
+          "seconds": 10
+        }
+      ],
+      "observation": {
+        "method": "manual_inspection"
+      },
+      "expected": "Snake visibly grows by one square after eating food",
+      "status": "not_testable",
+      "not_testable_reason": "Snake length increase is only visually verifiable; no console output for length.",
+      "renderer": "pygame",
+      "timeout_seconds": 15,
+      "script_path": null
+    },
+    {
+      "test_id": "T08",
+      "requirement_index": 7,
+      "requirement": "Eating food adds 1 point.",
+      "assertion": "When the snake eats food, the score displayed on screen increases by 1.",
+      "actions": [
+        {
+          "type": "wait",
+          "seconds": 1
+        },
+        {
+          "type": "press",
+          "key": "right"
+        },
+        {
+          "type": "wait",
+          "seconds": 10
+        }
+      ],
+      "observation": {
+        "method": "stdout",
+        "target": "[EVENT] SCORE"
+      },
+      "expected": "[EVENT] SCORE:1",
+      "status": "ready_for_validator",
+      "not_testable_reason": null,
+      "renderer": "pygame",
+      "timeout_seconds": 15,
+      "script_path": null
+    },
+    {
+      "test_id": "T09",
+      "requirement_index": 8,
+      "requirement": "Eating food spawns new food.",
+      "assertion": "Immediately after food is eaten, a new red food square appears at a different random empty spot.",
+      "actions": [
+        {
+          "type": "wait",
+          "seconds": 1
+        },
+        {
+          "type": "press",
+          "key": "right"
+        },
+        {
+          "type": "wait",
+          "seconds": 10
+        }
+      ],
+      "observation": {
+        "method": "manual_inspection"
+      },
+      "expected": "New food appears at a different location after eating",
+      "status": "not_testable",
+      "not_testable_reason": "Food respawn position cannot be verified by console output; requires visual check.",
+      "renderer": "pygame",
+      "timeout_seconds": 15,
+      "script_path": null
+    },
+    {
+      "test_id": "T10",
+      "requirement_index": 9,
+      "requirement": "Hitting a wall ends the game.",
+      "assertion": "If the snake's head moves beyond the grid boundaries, the game ends, and 'GAME OVER' is displayed.",
+      "actions": [
+        {
+          "type": "wait",
+          "seconds": 1
+        },
+        {
+          "type": "press",
+          "key": "right"
+        },
+        {
+          "type": "wait",
+          "seconds": 25
+        }
+      ],
+      "observation": {
+        "method": "stdout",
+        "target": "[EVENT] GAME OVER"
+      },
+      "expected": "[EVENT] GAME OVER",
+      "status": "ready_for_validator",
+      "not_testable_reason": null,
+      "renderer": "pygame",
+      "timeout_seconds": 30,
+      "script_path": null
+    },
+    {
+      "test_id": "T11",
+      "requirement_index": 10,
+      "requirement": "Hitting the snake's own body ends the game.",
+      "assertion": "If the snake's head moves into any part of its own body, the game ends, and 'GAME OVER' is displayed.",
+      "actions": [
+        {
+          "type": "press",
+          "key": "down"
+        },
+        {
+          "type": "wait",
+          "seconds": 1
+        },
+        {
+          "type": "press",
+          "key": "left"
+        },
+        {
+          "type": "wait",
+          "seconds": 1
+        },
+        {
+          "type": "press",
+          "key": "up"
+        },
+        {
+          "type": "wait",
+          "seconds": 5
+        }
+      ],
+      "observation": {
+        "method": "stdout",
+        "target": "[EVENT] GAME OVER"
+      },
+      "expected": "[EVENT] GAME OVER",
+      "status": "ready_for_validator",
+      "not_testable_reason": null,
+      "renderer": "pygame",
+      "timeout_seconds": 15,
+      "script_path": null
+    },
+    {
+      "test_id": "T12",
+      "requirement_index": 11,
+      "requirement": "Show the score at the top of the screen.",
+      "assertion": "A numerical score is continuously displayed at the top of the game window.",
+      "actions": [],
+      "observation": {
+        "method": "manual_inspection"
+      },
+      "expected": "Score visible at top of screen",
+      "status": "not_testable",
+      "not_testable_reason": "Score display position cannot be verified by console output; requires visual inspection.",
+      "renderer": "pygame",
+      "timeout_seconds": 10,
+      "script_path": null
+    },
+    {
+      "test_id": "T13",
+      "requirement_index": 12,
+      "requirement": "Show the controls below the score.",
+      "assertion": "Text indicating the controls (Arrow keys, R, Escape) is displayed below the score.",
+      "actions": [],
+      "observation": {
+        "method": "manual_inspection"
+      },
+      "expected": "Controls text visible below score",
+      "status": "not_testable",
+      "not_testable_reason": "Controls text position and content cannot be verified by console output; requires visual inspection.",
+      "renderer": "pygame",
+      "timeout_seconds": 10,
+      "script_path": null
+    },
+    {
+      "test_id": "T14",
+      "requirement_index": 13,
+      "requirement": "Every time the score changes, print the new score to the console.",
+      "assertion": "When the score increases, the new score value is printed to the console.",
+      "actions": [
+        {
+          "type": "wait",
+          "seconds": 1
+        },
+        {
+          "type": "press",
+          "key": "right"
+        },
+        {
+          "type": "wait",
+          "seconds": 10
+        }
+      ],
+      "observation": {
+        "method": "stdout",
+        "target": "[EVENT] SCORE"
+      },
+      "expected": "[EVENT] SCORE:1",
+      "status": "ready_for_validator",
+      "not_testable_reason": null,
+      "renderer": "pygame",
+      "timeout_seconds": 15,
+      "script_path": null
+    },
+    {
+      "test_id": "T15",
+      "requirement_index": 14,
+      "requirement": "When the game ends, show GAME OVER with the final score.",
+      "assertion": "When the game ends, the text 'GAME OVER' appears on screen, along with the final score.",
+      "actions": [
+        {
+          "type": "press",
+          "key": "right"
+        },
+        {
+          "type": "wait",
+          "seconds": 25
+        }
+      ],
+      "observation": {
+        "method": "manual_inspection"
+      },
+      "expected": "'GAME OVER' and final score visible on screen",
+      "status": "not_testable",
+      "not_testable_reason": "On-screen text cannot be verified by console output; requires visual inspection.",
+      "renderer": "pygame",
+      "timeout_seconds": 30,
+      "script_path": null
+    },
+    {
+      "test_id": "T16",
+      "requirement_index": 15,
+      "requirement": "When the game ends, print GAME OVER to the console.",
+      "assertion": "When the game ends, the string 'GAME OVER' is printed to the console.",
+      "actions": [
+        {
+          "type": "press",
+          "key": "right"
+        },
+        {
+          "type": "wait",
+          "seconds": 25
+        }
+      ],
+      "observation": {
+        "method": "stdout",
+        "target": "[EVENT] GAME OVER"
+      },
+      "expected": "[EVENT] GAME OVER",
+      "status": "ready_for_validator",
+      "not_testable_reason": null,
+      "renderer": "pygame",
+      "timeout_seconds": 30,
+      "script_path": null
+    },
+    {
+      "test_id": "T17",
+      "requirement_index": 16,
+      "requirement": "When the game ends, freeze the snake.",
+      "assertion": "After 'GAME OVER' is displayed, the snake stops moving.",
+      "actions": [
+        {
+          "type": "press",
+          "key": "right"
+        },
+        {
+          "type": "wait",
+          "seconds": 25
+        }
+      ],
+      "observation": {
+        "method": "manual_inspection"
+      },
+      "expected": "Snake stops moving after game over",
+      "status": "not_testable",
+      "not_testable_reason": "Snake movement freeze is only visually verifiable; no console output for movement.",
+      "renderer": "pygame",
+      "timeout_seconds": 30,
+      "script_path": null
+    },
+    {
+      "test_id": "T18",
+      "requirement_index": 17,
+      "requirement": "Press R to restart with a fresh snake and score 0.",
+      "assertion": "After a game over, pressing 'R' resets the snake to its initial state, clears the score, and restarts the game.",
+      "actions": [
+        {
+          "type": "press",
+          "key": "right"
+        },
+        {
+          "type": "wait",
+          "seconds": 25
+        },
+        {
+          "type": "press",
+          "key": "r"
+        },
+        {
+          "type": "wait",
+          "seconds": 3
+        }
+      ],
+      "observation": {
+        "method": "stdout",
+        "target": "[EVENT] RESTART"
+      },
+      "expected": "[EVENT] RESTART",
+      "status": "ready_for_validator",
+      "not_testable_reason": null,
+      "renderer": "pygame",
+      "timeout_seconds": 35,
+      "script_path": null
+    },
+    {
+      "test_id": "T19",
+      "requirement_index": 18,
+      "requirement": "Press Escape to quit.",
+      "assertion": "Pressing the 'Escape' key closes the game window.",
+      "actions": [
+        {
+          "type": "press",
+          "key": "esc"
+        }
+      ],
+      "observation": {
+        "method": "manual_inspection"
+      },
+      "expected": "Game window closes",
+      "status": "not_testable",
+      "not_testable_reason": "Validator cannot detect window close event or process exit; requires manual confirmation.",
+      "renderer": "pygame",
+      "timeout_seconds": 5,
+      "script_path": null
+    },
+    {
+      "test_id": "T20",
+      "requirement_index": 19,
+      "requirement": "Use plain coloured squares only; no images or sounds.",
+      "assertion": "The game displays only solid colored squares for the snake, food, and background, with no loaded image files or audio output.",
+      "actions": [],
+      "observation": {
+        "method": "manual_inspection"
+      },
+      "expected": "Only solid colored squares visible; no images or sounds",
+      "status": "not_testable",
+      "not_testable_reason": "No console output or logs indicate use of images or sounds; requires visual and audio inspection.",
+      "renderer": "pygame",
+      "timeout_seconds": 10,
+      "script_path": null
+    }
+  ],
+  "summary": {
+    "total": 20,
+    "ready_for_validator": 6,
+    "not_testable": 14
+  },
+  "warnings": [],
+  "important": "Generation is not execution. This file does not claim PASS and must not be used as test_results.json."
+}

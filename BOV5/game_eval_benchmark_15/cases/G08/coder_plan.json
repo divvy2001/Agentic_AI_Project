@@ -1,0 +1,29 @@
+{
+  "game_title": "Pygame Top-Down Dungeon",
+  "description": "Dungeon crawler with four-way movement, walls, keys, locked doors, health, melee attacks, enemies and exit.",
+  "profile": {
+    "renderer": "pygame"
+  },
+  "requirements": [
+    {
+      "text": "Player cannot pass through solid walls.",
+      "check": "Player cannot pass through solid walls."
+    },
+    {
+      "text": "Matching key opens its locked door; missing/wrong key does not.",
+      "check": "Matching key opens its locked door; missing/wrong key does not."
+    },
+    {
+      "text": "Melee attack damages an in-range enemy and respects cooldown.",
+      "check": "Melee attack damages an in-range enemy and respects cooldown."
+    },
+    {
+      "text": "Enemy contact reduces health according to rules.",
+      "check": "Enemy contact reduces health according to rules."
+    },
+    {
+      "text": "Exit completes dungeon only after required doors are unlocked.",
+      "check": "Exit completes dungeon only after required doors are unlocked."
+    }
+  ]
+}

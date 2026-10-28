@@ -1,0 +1,584 @@
+{
+  "schema_version": "1.0",
+  "suite_version": "run20261027_011042-s1",
+  "generated_at_utc": "2026-10-26T17:18:48.201804+00:00",
+  "renderer": "pygame",
+  "game_title": "Pong",
+  "generator": {
+    "backend": "openrouter",
+    "model": "openai/gpt-4.1-mini"
+  },
+  "generation_notes": [
+    "Tests cover all core requirements with at least one test each.",
+    "Requirements involving scoring and win states are marked not_testable due to lack of direct control or forced state manipulation described in plan/manual.",
+    "Negative tests added for paddle movement keys to verify no unintended movement.",
+    "All tests use declarative input actions and measurable observations per constraints."
+  ],
+  "source_hashes": {
+    "plans/coder_plan.json": "d0d85d2699c7691828bc1642d0495c21adbececb62a9ab730d53285131f1deb1",
+    "plans/play_manual.json": "1baae22dfdbab8c3bc27276914f224e94281a74c3eea388b533cbcddaa3a86c1",
+    "plans/asset_manifest.json": "b50899dbc9b4e0c0f27e8ad17a38611e47dda7fcbae28c4cdf9236892d7f9234"
+  },
+  "tests": [
+    {
+      "test_id": "T01",
+      "requirement_index": 0,
+      "requirement": "The game must display two paddles, a ball, and scores on a single screen.",
+      "assertion": "Upon launching the game, two paddles, a ball, and score displays are visible on the screen.",
+      "actions": [
+        {
+          "type": "wait",
+          "value": "",
+          "duration_frames": 60
+        },
+        {
+          "type": "observe",
+          "value": "",
+          "duration_frames": 1
+        }
+      ],
+      "observation": {
+        "method": "screen_text",
+        "target": "two paddles, one ball, and score displays visible"
+      },
+      "expected": "Screen shows two paddles, a ball, and scores for both players clearly visible.",
+      "status": "ready_for_validator",
+      "not_testable_reason": null,
+      "renderer": "pygame",
+      "timeout_seconds": 30,
+      "script_path": null
+    },
+    {
+      "test_id": "T02",
+      "requirement_index": 1,
+      "requirement": "The left paddle moves up and down with 'W' and 'S' keys.",
+      "assertion": "Pressing 'W' moves the left paddle up; pressing 'S' moves the left paddle down.",
+      "actions": [
+        {
+          "type": "key_down",
+          "value": "W",
+          "duration_frames": 30
+        },
+        {
+          "type": "key_up",
+          "value": "W",
+          "duration_frames": 1
+        },
+        {
+          "type": "observe",
+          "value": "",
+          "duration_frames": 1
+        },
+        {
+          "type": "key_down",
+          "value": "S",
+          "duration_frames": 30
+        },
+        {
+          "type": "key_up",
+          "value": "S",
+          "duration_frames": 1
+        },
+        {
+          "type": "observe",
+          "value": "",
+          "duration_frames": 1
+        }
+      ],
+      "observation": {
+        "method": "game_state",
+        "target": "left paddle vertical position changes up and then down"
+      },
+      "expected": "Left paddle moves upward while 'W' is held and moves downward while 'S' is held.",
+      "status": "ready_for_validator",
+      "not_testable_reason": null,
+      "renderer": "pygame",
+      "timeout_seconds": 30,
+      "script_path": null
+    },
+    {
+      "test_id": "T03",
+      "requirement_index": 2,
+      "requirement": "The right paddle moves up and down with 'UP' and 'DOWN' arrow keys.",
+      "assertion": "Pressing 'UP' moves the right paddle up; pressing 'DOWN' moves the right paddle down.",
+      "actions": [
+        {
+          "type": "key_down",
+          "value": "UP",
+          "duration_frames": 30
+        },
+        {
+          "type": "key_up",
+          "value": "UP",
+          "duration_frames": 1
+        },
+        {
+          "type": "observe",
+          "value": "",
+          "duration_frames": 1
+        },
+        {
+          "type": "key_down",
+          "value": "DOWN",
+          "duration_frames": 30
+        },
+        {
+          "type": "key_up",
+          "value": "DOWN",
+          "duration_frames": 1
+        },
+        {
+          "type": "observe",
+          "value": "",
+          "duration_frames": 1
+        }
+      ],
+      "observation": {
+        "method": "game_state",
+        "target": "right paddle vertical position changes up and then down"
+      },
+      "expected": "Right paddle moves upward while 'UP' is held and moves downward while 'DOWN' is held.",
+      "status": "ready_for_validator",
+      "not_testable_reason": null,
+      "renderer": "pygame",
+      "timeout_seconds": 30,
+      "script_path": null
+    },
+    {
+      "test_id": "T04",
+      "requirement_index": 3,
+      "requirement": "Paddles must stop at the top and bottom edges of the screen.",
+      "assertion": "Holding 'W' or 'UP' will stop the respective paddle at the top edge. Holding 'S' or 'DOWN' will stop the respective paddle at the bottom edge.",
+      "actions": [
+        {
+          "type": "key_down",
+          "value": "W",
+          "duration_frames": 120
+        },
+        {
+          "type": "key_up",
+          "value": "W",
+          "duration_frames": 1
+        },
+        {
+          "type": "observe",
+          "value": "",
+          "duration_frames": 1
+        },
+        {
+          "type": "key_down",
+          "value": "S",
+          "duration_frames": 120
+        },
+        {
+          "type": "key_up",
+          "value": "S",
+          "duration_frames": 1
+        },
+        {
+          "type": "observe",
+          "value": "",
+          "duration_frames": 1
+        },
+        {
+          "type": "key_down",
+          "value": "UP",
+          "duration_frames": 120
+        },
+        {
+          "type": "key_up",
+          "value": "UP",
+          "duration_frames": 1
+        },
+        {
+          "type": "observe",
+          "value": "",
+          "duration_frames": 1
+        },
+        {
+          "type": "key_down",
+          "value": "DOWN",
+          "duration_frames": 120
+        },
+        {
+          "type": "key_up",
+          "value": "DOWN",
+          "duration_frames": 1
+        },
+        {
+          "type": "observe",
+          "value": "",
+          "duration_frames": 1
+        }
+      ],
+      "observation": {
+        "method": "game_state",
+        "target": "paddles vertical position do not move beyond screen top or bottom edges"
+      },
+      "expected": "Both paddles stop moving when reaching the top or bottom edges of the screen.",
+      "status": "ready_for_validator",
+      "not_testable_reason": null,
+      "renderer": "pygame",
+      "timeout_seconds": 60,
+      "script_path": null
+    },
+    {
+      "test_id": "T05",
+      "requirement_index": 4,
+      "requirement": "A ball starts in the center of the screen and moves diagonally.",
+      "assertion": "Upon game start or reset, the ball appears in the center and moves diagonally.",
+      "actions": [
+        {
+          "type": "wait",
+          "value": "",
+          "duration_frames": 10
+        },
+        {
+          "type": "observe",
+          "value": "",
+          "duration_frames": 1
+        }
+      ],
+      "observation": {
+        "method": "game_state",
+        "target": "ball position near screen center and ball velocity diagonal"
+      },
+      "expected": "Ball is positioned near the center of the screen and moves diagonally shortly after start.",
+      "status": "ready_for_validator",
+      "not_testable_reason": null,
+      "renderer": "pygame",
+      "timeout_seconds": 30,
+      "script_path": null
+    },
+    {
+      "test_id": "T06",
+      "requirement_index": 5,
+      "requirement": "The ball bounces off the paddles.",
+      "assertion": "When the ball collides with a paddle, its horizontal direction reverses.",
+      "actions": [
+        {
+          "type": "wait",
+          "value": "",
+          "duration_frames": 60
+        },
+        {
+          "type": "observe",
+          "value": "",
+          "duration_frames": 1
+        }
+      ],
+      "observation": {
+        "method": "game_state",
+        "target": "ball horizontal velocity reverses upon paddle collision"
+      },
+      "expected": "Ball reverses horizontal direction immediately after contacting either paddle.",
+      "status": "ready_for_validator",
+      "not_testable_reason": null,
+      "renderer": "pygame",
+      "timeout_seconds": 30,
+      "script_path": null
+    },
+    {
+      "test_id": "T07",
+      "requirement_index": 6,
+      "requirement": "The ball bounces off the top and bottom walls.",
+      "assertion": "When the ball collides with the top or bottom edge of the screen, its vertical direction reverses.",
+      "actions": [
+        {
+          "type": "wait",
+          "value": "",
+          "duration_frames": 120
+        },
+        {
+          "type": "observe",
+          "value": "",
+          "duration_frames": 1
+        }
+      ],
+      "observation": {
+        "method": "game_state",
+        "target": "ball vertical velocity reverses upon top or bottom screen collision"
+      },
+      "expected": "Ball reverses vertical direction immediately after contacting top or bottom screen edges.",
+      "status": "ready_for_validator",
+      "not_testable_reason": null,
+      "renderer": "pygame",
+      "timeout_seconds": 30,
+      "script_path": null
+    },
+    {
+      "test_id": "T08",
+      "requirement_index": 7,
+      "requirement": "If the ball passes a paddle, the other player scores a point.",
+      "assertion": "If the ball crosses the left edge, Player 2's score increases by 1. If the ball crosses the right edge, Player 1's score increases by 1.",
+      "actions": [
+        {
+          "type": "wait",
+          "value": "",
+          "duration_frames": 10
+        },
+        {
+          "type": "observe",
+          "value": "",
+          "duration_frames": 1
+        }
+      ],
+      "observation": {
+        "method": "game_state",
+        "target": "score increments for correct player after ball passes paddle"
+      },
+      "expected": "Player 2 score increments by 1 if ball passes left paddle; Player 1 score increments by 1 if ball passes right paddle.",
+      "status": "not_testable",
+      "not_testable_reason": "No direct control or forced ball position to simulate ball passing paddle described in plan or manual.",
+      "renderer": "pygame",
+      "timeout_seconds": 30,
+      "script_path": null
+    },
+    {
+      "test_id": "T09",
+      "requirement_index": 8,
+      "requirement": "After a point is scored, the ball resets to the center.",
+      "assertion": "After a player scores, the ball reappears in the center of the screen.",
+      "actions": [
+        {
+          "type": "wait",
+          "value": "",
+          "duration_frames": 10
+        },
+        {
+          "type": "observe",
+          "value": "",
+          "duration_frames": 1
+        }
+      ],
+      "observation": {
+        "method": "game_state",
+        "target": "ball position resets to center after score"
+      },
+      "expected": "Ball position resets to center immediately after a point is scored.",
+      "status": "not_testable",
+      "not_testable_reason": "No method to reliably cause a score event via input or forced state described in plan or manual.",
+      "renderer": "pygame",
+      "timeout_seconds": 30,
+      "script_path": null
+    },
+    {
+      "test_id": "T10",
+      "requirement_index": 9,
+      "requirement": "The first player to reach 5 points wins.",
+      "assertion": "When either player's score reaches 5, the game declares that player as the winner.",
+      "actions": [
+        {
+          "type": "wait",
+          "value": "",
+          "duration_frames": 10
+        },
+        {
+          "type": "observe",
+          "value": "",
+          "duration_frames": 1
+        }
+      ],
+      "observation": {
+        "method": "stdout",
+        "target": "[EVENT] WIN: Player 1 or Player 2"
+      },
+      "expected": "Game prints event indicating which player reached 5 points and won.",
+      "status": "not_testable",
+      "not_testable_reason": "No input or method to simulate scoring to 5 points described in plan or manual.",
+      "renderer": "pygame",
+      "timeout_seconds": 30,
+      "script_path": null
+    },
+    {
+      "test_id": "T11",
+      "requirement_index": 10,
+      "requirement": "When a player wins, the game freezes.",
+      "assertion": "After a player wins, the ball and paddles stop moving.",
+      "actions": [
+        {
+          "type": "wait",
+          "value": "",
+          "duration_frames": 10
+        },
+        {
+          "type": "observe",
+          "value": "",
+          "duration_frames": 1
+        }
+      ],
+      "observation": {
+        "method": "game_state",
+        "target": "ball and paddles velocities zero after win"
+      },
+      "expected": "Ball and paddles do not move after a player wins.",
+      "status": "not_testable",
+      "not_testable_reason": "No method to trigger win state via input or forced state described in plan or manual.",
+      "renderer": "pygame",
+      "timeout_seconds": 30,
+      "script_path": null
+    },
+    {
+      "test_id": "T12",
+      "requirement_index": 11,
+      "requirement": "When a player wins, the game shows which player won.",
+      "assertion": "After a player wins, a message indicating the winner is displayed on screen.",
+      "actions": [
+        {
+          "type": "wait",
+          "value": "",
+          "duration_frames": 10
+        },
+        {
+          "type": "observe",
+          "value": "",
+          "duration_frames": 1
+        }
+      ],
+      "observation": {
+        "method": "screen_text",
+        "target": "winner message displayed on screen"
+      },
+      "expected": "Screen displays message \"Player X wins! Press R to restart\" after a player wins.",
+      "status": "not_testable",
+      "not_testable_reason": "No method to trigger win state via input or forced state described in plan or manual.",
+      "renderer": "pygame",
+      "timeout_seconds": 30,
+      "script_path": null
+    },
+    {
+      "test_id": "T13",
+      "requirement_index": 12,
+      "requirement": "Press 'R' to reset the game.",
+      "assertion": "Pressing 'R' resets both scores to 0, places the ball in the center, and unfreezes the game if it was frozen.",
+      "actions": [
+        {
+          "type": "key_down",
+          "value": "R",
+          "duration_frames": 1
+        },
+        {
+          "type": "key_up",
+          "value": "R",
+          "duration_frames": 1
+        },
+        {
+          "type": "observe",
+          "value": "",
+          "duration_frames": 1
+        }
+      ],
+      "observation": {
+        "method": "game_state",
+        "target": "scores reset to 0, ball centered, game not frozen"
+      },
+      "expected": "Scores reset to zero, ball repositioned to center, and game motion resumes after pressing 'R'.",
+      "status": "ready_for_validator",
+      "not_testable_reason": null,
+      "renderer": "pygame",
+      "timeout_seconds": 30,
+      "script_path": null
+    },
+    {
+      "test_id": "T14",
+      "requirement_index": 13,
+      "requirement": "Press 'Escape' to quit the game.",
+      "assertion": "Pressing 'Escape' closes the game window.",
+      "actions": [
+        {
+          "type": "key_down",
+          "value": "Escape",
+          "duration_frames": 1
+        },
+        {
+          "type": "key_up",
+          "value": "Escape",
+          "duration_frames": 1
+        }
+      ],
+      "observation": {
+        "method": "manual_inspection",
+        "target": "game window closes"
+      },
+      "expected": "Game window closes immediately after pressing 'Escape'.",
+      "status": "ready_for_validator",
+      "not_testable_reason": null,
+      "renderer": "pygame",
+      "timeout_seconds": 10,
+      "script_path": null
+    },
+    {
+      "test_id": "T15",
+      "requirement_index": 1,
+      "requirement": "The left paddle moves up and down with 'W' and 'S' keys.",
+      "assertion": "Pressing keys other than 'W' or 'S' does not move the left paddle.",
+      "actions": [
+        {
+          "type": "key_down",
+          "value": "A",
+          "duration_frames": 30
+        },
+        {
+          "type": "key_up",
+          "value": "A",
+          "duration_frames": 1
+        },
+        {
+          "type": "observe",
+          "value": "",
+          "duration_frames": 1
+        }
+      ],
+      "observation": {
+        "method": "game_state",
+        "target": "left paddle vertical position unchanged"
+      },
+      "expected": "Left paddle does not move when pressing keys other than 'W' or 'S'.",
+      "status": "ready_for_validator",
+      "not_testable_reason": null,
+      "renderer": "pygame",
+      "timeout_seconds": 30,
+      "script_path": null
+    },
+    {
+      "test_id": "T16",
+      "requirement_index": 2,
+      "requirement": "The right paddle moves up and down with 'UP' and 'DOWN' arrow keys.",
+      "assertion": "Pressing keys other than 'UP' or 'DOWN' does not move the right paddle.",
+      "actions": [
+        {
+          "type": "key_down",
+          "value": "LEFT",
+          "duration_frames": 30
+        },
+        {
+          "type": "key_up",
+          "value": "LEFT",
+          "duration_frames": 1
+        },
+        {
+          "type": "observe",
+          "value": "",
+          "duration_frames": 1
+        }
+      ],
+      "observation": {
+        "method": "game_state",
+        "target": "right paddle vertical position unchanged"
+      },
+      "expected": "Right paddle does not move when pressing keys other than 'UP' or 'DOWN'.",
+      "status": "ready_for_validator",
+      "not_testable_reason": null,
+      "renderer": "pygame",
+      "timeout_seconds": 30,
+      "script_path": null
+    }
+  ],
+  "summary": {
+    "total": 16,
+    "ready_for_validator": 11,
+    "not_testable": 5
+  },
+  "warnings": [],
+  "important": "Generation is not execution. This file does not claim PASS and must not be used as test_results.json."
+}

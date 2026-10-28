@@ -1,0 +1,14 @@
+{
+  "test_id": "T12",
+  "requirement_index": 11,
+  "requirement": "When a player wins, the game shows which player won.",
+  "assertion": "After a player wins, a message indicating the winner is displayed on screen.",
+  "expected": "Screen displays message \"Player X wins! Press R to restart\" after a player wins.",
+  "generator_status": "not_testable",
+  "started_at_utc": "2026-10-26T17:19:12.405674+00:00",
+  "evidence_dir": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261027_011042-s1\\test_run_20261027_011854\\evidence\\T12",
+  "action_results": [],
+  "observations": [],
+  "status": "NOT_RUN",
+  "reason": "No method to trigger win state via input or forced state described in plan or manual."
+}

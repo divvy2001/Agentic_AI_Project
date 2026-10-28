@@ -1,0 +1,2 @@
+{"turn": 1, "t": 0.4, "stage": "start", "status": "ok", "detail": "spec=1352 chars"}
+{"turn": 2, "t": 59.3, "stage": "planner+assets", "status": "success", "detail": "renderer=godot assets=ai_art", "renderer": "godot", "entry_point": "game/main.tscn"}

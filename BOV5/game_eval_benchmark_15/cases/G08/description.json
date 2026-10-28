@@ -1,0 +1,7 @@
+{
+  "game_id": "G08",
+  "game_title": "Pygame Top-Down Dungeon",
+  "complexity": "medium",
+  "renderer": "pygame",
+  "description": "Dungeon crawler with four-way movement, walls, keys, locked doors, health, melee attacks, enemies and exit."
+}

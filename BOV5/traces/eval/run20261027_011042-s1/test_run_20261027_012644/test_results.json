@@ -1,0 +1,836 @@
+{
+  "schema_version": "1.0",
+  "run_id": "test-run-20261027_012644",
+  "created_at_utc": "2026-10-26T17:27:12.884952+00:00",
+  "suite_path": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261027_011042-s1\\suite.json",
+  "suite_version": "run20261027_011042-s1",
+  "game_title": "Pong",
+  "renderer": "pygame",
+  "project_root": "C:\\Users\\ASUS\\Work\\BOV5",
+  "launch_command": "C:\\Users\\ASUS\\AppData\\Local\\Programs\\Python\\Python311\\python.exe -m game.pong",
+  "summary": {
+    "total": 16,
+    "counts": {
+      "FAIL": 1,
+      "BLOCKED": 9,
+      "NOT_RUN": 5,
+      "NEEDS_REVIEW": 1
+    }
+  },
+  "results": [
+    {
+      "test_id": "T01",
+      "requirement_index": 0,
+      "requirement": "The game must display two paddles, a ball, and scores on a single screen.",
+      "assertion": "Upon launching the game, two paddles, a ball, and score displays are visible on the screen.",
+      "expected": "Screen shows two paddles, a ball, and scores for both players clearly visible.",
+      "generator_status": "ready_for_validator",
+      "started_at_utc": "2026-10-26T17:26:44.955455+00:00",
+      "evidence_dir": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261027_011042-s1\\test_run_20261027_012644\\evidence\\T01",
+      "action_results": [
+        {
+          "type": "wait",
+          "at_utc": "2026-10-26T17:26:46.968279+00:00",
+          "status": "executed",
+          "seconds": 1.0,
+          "index": 0
+        },
+        {
+          "type": "observe",
+          "at_utc": "2026-10-26T17:26:47.968770+00:00",
+          "status": "executed",
+          "observation_requested": true,
+          "index": 1
+        }
+      ],
+      "observations": [
+        {
+          "method": "screen_text",
+          "captured_at_utc": "2026-10-26T17:26:48.119015+00:00",
+          "text": "",
+          "stderr_tail": "",
+          "limitation": "No OCR; this is process output, not pixel text."
+        }
+      ],
+      "status": "FAIL",
+      "reason": "Expected literal text was not found. This does not by itself prove a game defect.",
+      "process": {
+        "pid": 28844,
+        "returncode": null
+      },
+      "runtime_evidence": {
+        "stdout_file": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261027_011042-s1\\test_run_20261027_012644\\evidence\\T01\\stdout.log",
+        "stderr_file": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261027_011042-s1\\test_run_20261027_012644\\evidence\\T01\\stderr.log",
+        "screenshot_file": null
+      },
+      "triage_hints": [
+        {
+          "category": "undetermined",
+          "confidence": "low",
+          "reason": "Insufficient diagnostic signals; compare brief, plan, code, assets and runtime evidence."
+        }
+      ],
+      "duration_seconds": 2.688,
+      "finished_at_utc": "2026-10-26T17:26:48.141312+00:00"
+    },
+    {
+      "test_id": "T02",
+      "requirement_index": 1,
+      "requirement": "The left paddle moves up and down with 'W' and 'S' keys.",
+      "assertion": "Pressing 'W' moves the left paddle up; pressing 'S' moves the left paddle down.",
+      "expected": "Left paddle moves upward while 'W' is held and moves downward while 'S' is held.",
+      "generator_status": "ready_for_validator",
+      "started_at_utc": "2026-10-26T17:26:48.147322+00:00",
+      "evidence_dir": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261027_011042-s1\\test_run_20261027_012644\\evidence\\T02",
+      "action_results": [
+        {
+          "type": "key_down",
+          "at_utc": "2026-10-26T17:26:49.678693+00:00",
+          "status": "executed",
+          "key": "W",
+          "index": 0
+        },
+        {
+          "type": "key_up",
+          "at_utc": "2026-10-26T17:26:49.781444+00:00",
+          "status": "executed",
+          "key": "W",
+          "index": 1
+        },
+        {
+          "type": "observe",
+          "at_utc": "2026-10-26T17:26:49.884115+00:00",
+          "status": "executed",
+          "observation_requested": true,
+          "index": 2
+        },
+        {
+          "type": "key_down",
+          "at_utc": "2026-10-26T17:26:49.884115+00:00",
+          "status": "executed",
+          "key": "S",
+          "index": 3
+        },
+        {
+          "type": "key_up",
+          "at_utc": "2026-10-26T17:26:49.987297+00:00",
+          "status": "executed",
+          "key": "S",
+          "index": 4
+        },
+        {
+          "type": "observe",
+          "at_utc": "2026-10-26T17:26:50.090104+00:00",
+          "status": "executed",
+          "observation_requested": true,
+          "index": 5
+        }
+      ],
+      "observations": [
+        {
+          "method": "game_state",
+          "captured_at_utc": "2026-10-26T17:26:50.240397+00:00",
+          "captured": false,
+          "error": "Generic game state is unavailable without game-side instrumentation. Emit structured state to stdout/log."
+        }
+      ],
+      "status": "BLOCKED",
+      "reason": "Generic game state is unavailable without game-side instrumentation. Emit structured state to stdout/log.",
+      "process": {
+        "pid": 30892,
+        "returncode": null
+      },
+      "runtime_evidence": {
+        "stdout_file": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261027_011042-s1\\test_run_20261027_012644\\evidence\\T02\\stdout.log",
+        "stderr_file": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261027_011042-s1\\test_run_20261027_012644\\evidence\\T02\\stderr.log",
+        "screenshot_file": null
+      },
+      "triage_hints": [
+        {
+          "category": "undetermined",
+          "confidence": "low",
+          "reason": "Insufficient diagnostic signals; compare brief, plan, code, assets and runtime evidence."
+        }
+      ],
+      "duration_seconds": 2.109,
+      "finished_at_utc": "2026-10-26T17:26:50.254201+00:00"
+    },
+    {
+      "test_id": "T03",
+      "requirement_index": 2,
+      "requirement": "The right paddle moves up and down with 'UP' and 'DOWN' arrow keys.",
+      "assertion": "Pressing 'UP' moves the right paddle up; pressing 'DOWN' moves the right paddle down.",
+      "expected": "Right paddle moves upward while 'UP' is held and moves downward while 'DOWN' is held.",
+      "generator_status": "ready_for_validator",
+      "started_at_utc": "2026-10-26T17:26:50.256195+00:00",
+      "evidence_dir": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261027_011042-s1\\test_run_20261027_012644\\evidence\\T03",
+      "action_results": [
+        {
+          "type": "key_down",
+          "at_utc": "2026-10-26T17:26:51.765529+00:00",
+          "status": "executed",
+          "key": "UP",
+          "index": 0
+        },
+        {
+          "type": "key_up",
+          "at_utc": "2026-10-26T17:26:51.866816+00:00",
+          "status": "executed",
+          "key": "UP",
+          "index": 1
+        },
+        {
+          "type": "observe",
+          "at_utc": "2026-10-26T17:26:51.968521+00:00",
+          "status": "executed",
+          "observation_requested": true,
+          "index": 2
+        },
+        {
+          "type": "key_down",
+          "at_utc": "2026-10-26T17:26:51.968521+00:00",
+          "status": "executed",
+          "key": "DOWN",
+          "index": 3
+        },
+        {
+          "type": "key_up",
+          "at_utc": "2026-10-26T17:26:52.069343+00:00",
+          "status": "executed",
+          "key": "DOWN",
+          "index": 4
+        },
+        {
+          "type": "observe",
+          "at_utc": "2026-10-26T17:26:52.171044+00:00",
+          "status": "executed",
+          "observation_requested": true,
+          "index": 5
+        }
+      ],
+      "observations": [
+        {
+          "method": "game_state",
+          "captured_at_utc": "2026-10-26T17:26:52.321357+00:00",
+          "captured": false,
+          "error": "Generic game state is unavailable without game-side instrumentation. Emit structured state to stdout/log."
+        }
+      ],
+      "status": "BLOCKED",
+      "reason": "Generic game state is unavailable without game-side instrumentation. Emit structured state to stdout/log.",
+      "process": {
+        "pid": 34712,
+        "returncode": null
+      },
+      "runtime_evidence": {
+        "stdout_file": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261027_011042-s1\\test_run_20261027_012644\\evidence\\T03\\stdout.log",
+        "stderr_file": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261027_011042-s1\\test_run_20261027_012644\\evidence\\T03\\stderr.log",
+        "screenshot_file": null
+      },
+      "triage_hints": [
+        {
+          "category": "undetermined",
+          "confidence": "low",
+          "reason": "Insufficient diagnostic signals; compare brief, plan, code, assets and runtime evidence."
+        }
+      ],
+      "duration_seconds": 2.078,
+      "finished_at_utc": "2026-10-26T17:26:52.339609+00:00"
+    },
+    {
+      "test_id": "T04",
+      "requirement_index": 3,
+      "requirement": "Paddles must stop at the top and bottom edges of the screen.",
+      "assertion": "Holding 'W' or 'UP' will stop the respective paddle at the top edge. Holding 'S' or 'DOWN' will stop the respective paddle at the bottom edge.",
+      "expected": "Both paddles stop moving when reaching the top or bottom edges of the screen.",
+      "generator_status": "ready_for_validator",
+      "started_at_utc": "2026-10-26T17:26:52.350129+00:00",
+      "evidence_dir": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261027_011042-s1\\test_run_20261027_012644\\evidence\\T04",
+      "action_results": [
+        {
+          "type": "key_down",
+          "at_utc": "2026-10-26T17:26:53.861277+00:00",
+          "status": "executed",
+          "key": "W",
+          "index": 0
+        },
+        {
+          "type": "key_up",
+          "at_utc": "2026-10-26T17:26:53.970970+00:00",
+          "status": "executed",
+          "key": "W",
+          "index": 1
+        },
+        {
+          "type": "observe",
+          "at_utc": "2026-10-26T17:26:54.072648+00:00",
+          "status": "executed",
+          "observation_requested": true,
+          "index": 2
+        },
+        {
+          "type": "key_down",
+          "at_utc": "2026-10-26T17:26:54.072648+00:00",
+          "status": "executed",
+          "key": "S",
+          "index": 3
+        },
+        {
+          "type": "key_up",
+          "at_utc": "2026-10-26T17:26:54.173866+00:00",
+          "status": "executed",
+          "key": "S",
+          "index": 4
+        },
+        {
+          "type": "observe",
+          "at_utc": "2026-10-26T17:26:54.276066+00:00",
+          "status": "executed",
+          "observation_requested": true,
+          "index": 5
+        },
+        {
+          "type": "key_down",
+          "at_utc": "2026-10-26T17:26:54.276066+00:00",
+          "status": "executed",
+          "key": "UP",
+          "index": 6
+        },
+        {
+          "type": "key_up",
+          "at_utc": "2026-10-26T17:26:54.377766+00:00",
+          "status": "executed",
+          "key": "UP",
+          "index": 7
+        },
+        {
+          "type": "observe",
+          "at_utc": "2026-10-26T17:26:54.479453+00:00",
+          "status": "executed",
+          "observation_requested": true,
+          "index": 8
+        },
+        {
+          "type": "key_down",
+          "at_utc": "2026-10-26T17:26:54.479453+00:00",
+          "status": "executed",
+          "key": "DOWN",
+          "index": 9
+        },
+        {
+          "type": "key_up",
+          "at_utc": "2026-10-26T17:26:54.580120+00:00",
+          "status": "executed",
+          "key": "DOWN",
+          "index": 10
+        },
+        {
+          "type": "observe",
+          "at_utc": "2026-10-26T17:26:54.680762+00:00",
+          "status": "executed",
+          "observation_requested": true,
+          "index": 11
+        }
+      ],
+      "observations": [
+        {
+          "method": "game_state",
+          "captured_at_utc": "2026-10-26T17:26:54.831050+00:00",
+          "captured": false,
+          "error": "Generic game state is unavailable without game-side instrumentation. Emit structured state to stdout/log."
+        }
+      ],
+      "status": "BLOCKED",
+      "reason": "Generic game state is unavailable without game-side instrumentation. Emit structured state to stdout/log.",
+      "process": {
+        "pid": 36096,
+        "returncode": null
+      },
+      "runtime_evidence": {
+        "stdout_file": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261027_011042-s1\\test_run_20261027_012644\\evidence\\T04\\stdout.log",
+        "stderr_file": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261027_011042-s1\\test_run_20261027_012644\\evidence\\T04\\stderr.log",
+        "screenshot_file": null
+      },
+      "triage_hints": [
+        {
+          "category": "undetermined",
+          "confidence": "low",
+          "reason": "Insufficient diagnostic signals; compare brief, plan, code, assets and runtime evidence."
+        }
+      ],
+      "duration_seconds": 2.5,
+      "finished_at_utc": "2026-10-26T17:26:54.846571+00:00"
+    },
+    {
+      "test_id": "T05",
+      "requirement_index": 4,
+      "requirement": "A ball starts in the center of the screen and moves diagonally.",
+      "assertion": "Upon game start or reset, the ball appears in the center and moves diagonally.",
+      "expected": "Ball is positioned near the center of the screen and moves diagonally shortly after start.",
+      "generator_status": "ready_for_validator",
+      "started_at_utc": "2026-10-26T17:26:54.851090+00:00",
+      "evidence_dir": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261027_011042-s1\\test_run_20261027_012644\\evidence\\T05",
+      "action_results": [
+        {
+          "type": "wait",
+          "at_utc": "2026-10-26T17:26:56.365866+00:00",
+          "status": "executed",
+          "seconds": 1.0,
+          "index": 0
+        },
+        {
+          "type": "observe",
+          "at_utc": "2026-10-26T17:26:57.366457+00:00",
+          "status": "executed",
+          "observation_requested": true,
+          "index": 1
+        }
+      ],
+      "observations": [
+        {
+          "method": "game_state",
+          "captured_at_utc": "2026-10-26T17:26:57.516719+00:00",
+          "captured": false,
+          "error": "Generic game state is unavailable without game-side instrumentation. Emit structured state to stdout/log."
+        }
+      ],
+      "status": "BLOCKED",
+      "reason": "Generic game state is unavailable without game-side instrumentation. Emit structured state to stdout/log.",
+      "process": {
+        "pid": 26192,
+        "returncode": null
+      },
+      "runtime_evidence": {
+        "stdout_file": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261027_011042-s1\\test_run_20261027_012644\\evidence\\T05\\stdout.log",
+        "stderr_file": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261027_011042-s1\\test_run_20261027_012644\\evidence\\T05\\stderr.log",
+        "screenshot_file": null
+      },
+      "triage_hints": [
+        {
+          "category": "undetermined",
+          "confidence": "low",
+          "reason": "Insufficient diagnostic signals; compare brief, plan, code, assets and runtime evidence."
+        }
+      ],
+      "duration_seconds": 2.672,
+      "finished_at_utc": "2026-10-26T17:26:57.530279+00:00"
+    },
+    {
+      "test_id": "T06",
+      "requirement_index": 5,
+      "requirement": "The ball bounces off the paddles.",
+      "assertion": "When the ball collides with a paddle, its horizontal direction reverses.",
+      "expected": "Ball reverses horizontal direction immediately after contacting either paddle.",
+      "generator_status": "ready_for_validator",
+      "started_at_utc": "2026-10-26T17:26:57.531275+00:00",
+      "evidence_dir": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261027_011042-s1\\test_run_20261027_012644\\evidence\\T06",
+      "action_results": [
+        {
+          "type": "wait",
+          "at_utc": "2026-10-26T17:26:59.037605+00:00",
+          "status": "executed",
+          "seconds": 1.0,
+          "index": 0
+        },
+        {
+          "type": "observe",
+          "at_utc": "2026-10-26T17:27:00.037781+00:00",
+          "status": "executed",
+          "observation_requested": true,
+          "index": 1
+        }
+      ],
+      "observations": [
+        {
+          "method": "game_state",
+          "captured_at_utc": "2026-10-26T17:27:00.188081+00:00",
+          "captured": false,
+          "error": "Generic game state is unavailable without game-side instrumentation. Emit structured state to stdout/log."
+        }
+      ],
+      "status": "BLOCKED",
+      "reason": "Generic game state is unavailable without game-side instrumentation. Emit structured state to stdout/log.",
+      "process": {
+        "pid": 23908,
+        "returncode": null
+      },
+      "runtime_evidence": {
+        "stdout_file": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261027_011042-s1\\test_run_20261027_012644\\evidence\\T06\\stdout.log",
+        "stderr_file": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261027_011042-s1\\test_run_20261027_012644\\evidence\\T06\\stderr.log",
+        "screenshot_file": null
+      },
+      "triage_hints": [
+        {
+          "category": "undetermined",
+          "confidence": "low",
+          "reason": "Insufficient diagnostic signals; compare brief, plan, code, assets and runtime evidence."
+        }
+      ],
+      "duration_seconds": 2.672,
+      "finished_at_utc": "2026-10-26T17:27:00.207360+00:00"
+    },
+    {
+      "test_id": "T07",
+      "requirement_index": 6,
+      "requirement": "The ball bounces off the top and bottom walls.",
+      "assertion": "When the ball collides with the top or bottom edge of the screen, its vertical direction reverses.",
+      "expected": "Ball reverses vertical direction immediately after contacting top or bottom screen edges.",
+      "generator_status": "ready_for_validator",
+      "started_at_utc": "2026-10-26T17:27:00.209871+00:00",
+      "evidence_dir": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261027_011042-s1\\test_run_20261027_012644\\evidence\\T07",
+      "action_results": [
+        {
+          "type": "wait",
+          "at_utc": "2026-10-26T17:27:01.717700+00:00",
+          "status": "executed",
+          "seconds": 1.0,
+          "index": 0
+        },
+        {
+          "type": "observe",
+          "at_utc": "2026-10-26T17:27:02.717807+00:00",
+          "status": "executed",
+          "observation_requested": true,
+          "index": 1
+        }
+      ],
+      "observations": [
+        {
+          "method": "game_state",
+          "captured_at_utc": "2026-10-26T17:27:02.868032+00:00",
+          "captured": false,
+          "error": "Generic game state is unavailable without game-side instrumentation. Emit structured state to stdout/log."
+        }
+      ],
+      "status": "BLOCKED",
+      "reason": "Generic game state is unavailable without game-side instrumentation. Emit structured state to stdout/log.",
+      "process": {
+        "pid": 18460,
+        "returncode": null
+      },
+      "runtime_evidence": {
+        "stdout_file": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261027_011042-s1\\test_run_20261027_012644\\evidence\\T07\\stdout.log",
+        "stderr_file": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261027_011042-s1\\test_run_20261027_012644\\evidence\\T07\\stderr.log",
+        "screenshot_file": null
+      },
+      "triage_hints": [
+        {
+          "category": "undetermined",
+          "confidence": "low",
+          "reason": "Insufficient diagnostic signals; compare brief, plan, code, assets and runtime evidence."
+        }
+      ],
+      "duration_seconds": 2.672,
+      "finished_at_utc": "2026-10-26T17:27:02.882210+00:00"
+    },
+    {
+      "test_id": "T08",
+      "requirement_index": 7,
+      "requirement": "If the ball passes a paddle, the other player scores a point.",
+      "assertion": "If the ball crosses the left edge, Player 2's score increases by 1. If the ball crosses the right edge, Player 1's score increases by 1.",
+      "expected": "Player 2 score increments by 1 if ball passes left paddle; Player 1 score increments by 1 if ball passes right paddle.",
+      "generator_status": "not_testable",
+      "started_at_utc": "2026-10-26T17:27:02.898180+00:00",
+      "evidence_dir": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261027_011042-s1\\test_run_20261027_012644\\evidence\\T08",
+      "action_results": [],
+      "observations": [],
+      "status": "NOT_RUN",
+      "reason": "No direct control or forced ball position to simulate ball passing paddle described in plan or manual."
+    },
+    {
+      "test_id": "T09",
+      "requirement_index": 8,
+      "requirement": "After a point is scored, the ball resets to the center.",
+      "assertion": "After a player scores, the ball reappears in the center of the screen.",
+      "expected": "Ball position resets to center immediately after a point is scored.",
+      "generator_status": "not_testable",
+      "started_at_utc": "2026-10-26T17:27:02.899573+00:00",
+      "evidence_dir": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261027_011042-s1\\test_run_20261027_012644\\evidence\\T09",
+      "action_results": [],
+      "observations": [],
+      "status": "NOT_RUN",
+      "reason": "No method to reliably cause a score event via input or forced state described in plan or manual."
+    },
+    {
+      "test_id": "T10",
+      "requirement_index": 9,
+      "requirement": "The first player to reach 5 points wins.",
+      "assertion": "When either player's score reaches 5, the game declares that player as the winner.",
+      "expected": "Game prints event indicating which player reached 5 points and won.",
+      "generator_status": "not_testable",
+      "started_at_utc": "2026-10-26T17:27:02.901581+00:00",
+      "evidence_dir": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261027_011042-s1\\test_run_20261027_012644\\evidence\\T10",
+      "action_results": [],
+      "observations": [],
+      "status": "NOT_RUN",
+      "reason": "No input or method to simulate scoring to 5 points described in plan or manual."
+    },
+    {
+      "test_id": "T11",
+      "requirement_index": 10,
+      "requirement": "When a player wins, the game freezes.",
+      "assertion": "After a player wins, the ball and paddles stop moving.",
+      "expected": "Ball and paddles do not move after a player wins.",
+      "generator_status": "not_testable",
+      "started_at_utc": "2026-10-26T17:27:02.902581+00:00",
+      "evidence_dir": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261027_011042-s1\\test_run_20261027_012644\\evidence\\T11",
+      "action_results": [],
+      "observations": [],
+      "status": "NOT_RUN",
+      "reason": "No method to trigger win state via input or forced state described in plan or manual."
+    },
+    {
+      "test_id": "T12",
+      "requirement_index": 11,
+      "requirement": "When a player wins, the game shows which player won.",
+      "assertion": "After a player wins, a message indicating the winner is displayed on screen.",
+      "expected": "Screen displays message \"Player X wins! Press R to restart\" after a player wins.",
+      "generator_status": "not_testable",
+      "started_at_utc": "2026-10-26T17:27:02.903581+00:00",
+      "evidence_dir": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261027_011042-s1\\test_run_20261027_012644\\evidence\\T12",
+      "action_results": [],
+      "observations": [],
+      "status": "NOT_RUN",
+      "reason": "No method to trigger win state via input or forced state described in plan or manual."
+    },
+    {
+      "test_id": "T13",
+      "requirement_index": 12,
+      "requirement": "Press 'R' to reset the game.",
+      "assertion": "Pressing 'R' resets both scores to 0, places the ball in the center, and unfreezes the game if it was frozen.",
+      "expected": "Scores reset to zero, ball repositioned to center, and game motion resumes after pressing 'R'.",
+      "generator_status": "ready_for_validator",
+      "started_at_utc": "2026-10-26T17:27:02.905744+00:00",
+      "evidence_dir": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261027_011042-s1\\test_run_20261027_012644\\evidence\\T13",
+      "action_results": [
+        {
+          "type": "key_down",
+          "at_utc": "2026-10-26T17:27:04.413313+00:00",
+          "status": "executed",
+          "key": "R",
+          "index": 0
+        },
+        {
+          "type": "key_up",
+          "at_utc": "2026-10-26T17:27:04.515030+00:00",
+          "status": "executed",
+          "key": "R",
+          "index": 1
+        },
+        {
+          "type": "observe",
+          "at_utc": "2026-10-26T17:27:04.617194+00:00",
+          "status": "executed",
+          "observation_requested": true,
+          "index": 2
+        }
+      ],
+      "observations": [
+        {
+          "method": "game_state",
+          "captured_at_utc": "2026-10-26T17:27:04.767282+00:00",
+          "captured": false,
+          "error": "Generic game state is unavailable without game-side instrumentation. Emit structured state to stdout/log."
+        }
+      ],
+      "status": "BLOCKED",
+      "reason": "Generic game state is unavailable without game-side instrumentation. Emit structured state to stdout/log.",
+      "process": {
+        "pid": 16724,
+        "returncode": null
+      },
+      "runtime_evidence": {
+        "stdout_file": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261027_011042-s1\\test_run_20261027_012644\\evidence\\T13\\stdout.log",
+        "stderr_file": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261027_011042-s1\\test_run_20261027_012644\\evidence\\T13\\stderr.log",
+        "screenshot_file": null
+      },
+      "triage_hints": [
+        {
+          "category": "undetermined",
+          "confidence": "low",
+          "reason": "Insufficient diagnostic signals; compare brief, plan, code, assets and runtime evidence."
+        }
+      ],
+      "duration_seconds": 1.875,
+      "finished_at_utc": "2026-10-26T17:27:04.785983+00:00"
+    },
+    {
+      "test_id": "T14",
+      "requirement_index": 13,
+      "requirement": "Press 'Escape' to quit the game.",
+      "assertion": "Pressing 'Escape' closes the game window.",
+      "expected": "Game window closes immediately after pressing 'Escape'.",
+      "generator_status": "ready_for_validator",
+      "started_at_utc": "2026-10-26T17:27:04.787947+00:00",
+      "evidence_dir": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261027_011042-s1\\test_run_20261027_012644\\evidence\\T14",
+      "action_results": [
+        {
+          "type": "key_down",
+          "at_utc": "2026-10-26T17:27:06.293726+00:00",
+          "status": "executed",
+          "key": "Escape",
+          "index": 0
+        },
+        {
+          "type": "key_up",
+          "at_utc": "2026-10-26T17:27:06.394515+00:00",
+          "status": "executed",
+          "key": "Escape",
+          "index": 1
+        }
+      ],
+      "observations": [
+        {
+          "method": "manual_inspection",
+          "captured_at_utc": "2026-10-26T17:27:06.645816+00:00",
+          "captured": false,
+          "needs_human_review": true
+        }
+      ],
+      "status": "NEEDS_REVIEW",
+      "reason": "This observation needs a renderer-specific assertion or human review.",
+      "process": {
+        "pid": 22156,
+        "returncode": null
+      },
+      "runtime_evidence": {
+        "stdout_file": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261027_011042-s1\\test_run_20261027_012644\\evidence\\T14\\stdout.log",
+        "stderr_file": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261027_011042-s1\\test_run_20261027_012644\\evidence\\T14\\stderr.log",
+        "screenshot_file": null
+      },
+      "triage_hints": [
+        {
+          "category": "undetermined",
+          "confidence": "low",
+          "reason": "Insufficient diagnostic signals; compare brief, plan, code, assets and runtime evidence."
+        }
+      ],
+      "duration_seconds": 1.875,
+      "finished_at_utc": "2026-10-26T17:27:06.665532+00:00"
+    },
+    {
+      "test_id": "T15",
+      "requirement_index": 1,
+      "requirement": "The left paddle moves up and down with 'W' and 'S' keys.",
+      "assertion": "Pressing keys other than 'W' or 'S' does not move the left paddle.",
+      "expected": "Left paddle does not move when pressing keys other than 'W' or 'S'.",
+      "generator_status": "ready_for_validator",
+      "started_at_utc": "2026-10-26T17:27:06.668105+00:00",
+      "evidence_dir": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261027_011042-s1\\test_run_20261027_012644\\evidence\\T15",
+      "action_results": [
+        {
+          "type": "key_down",
+          "at_utc": "2026-10-26T17:27:08.198747+00:00",
+          "status": "executed",
+          "key": "A",
+          "index": 0
+        },
+        {
+          "type": "key_up",
+          "at_utc": "2026-10-26T17:27:08.300186+00:00",
+          "status": "executed",
+          "key": "A",
+          "index": 1
+        },
+        {
+          "type": "observe",
+          "at_utc": "2026-10-26T17:27:08.401863+00:00",
+          "status": "executed",
+          "observation_requested": true,
+          "index": 2
+        }
+      ],
+      "observations": [
+        {
+          "method": "game_state",
+          "captured_at_utc": "2026-10-26T17:27:08.552250+00:00",
+          "captured": false,
+          "error": "Generic game state is unavailable without game-side instrumentation. Emit structured state to stdout/log."
+        }
+      ],
+      "status": "BLOCKED",
+      "reason": "Generic game state is unavailable without game-side instrumentation. Emit structured state to stdout/log.",
+      "process": {
+        "pid": 19884,
+        "returncode": null
+      },
+      "runtime_evidence": {
+        "stdout_file": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261027_011042-s1\\test_run_20261027_012644\\evidence\\T15\\stdout.log",
+        "stderr_file": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261027_011042-s1\\test_run_20261027_012644\\evidence\\T15\\stderr.log",
+        "screenshot_file": null
+      },
+      "triage_hints": [
+        {
+          "category": "undetermined",
+          "confidence": "low",
+          "reason": "Insufficient diagnostic signals; compare brief, plan, code, assets and runtime evidence."
+        }
+      ],
+      "duration_seconds": 1.907,
+      "finished_at_utc": "2026-10-26T17:27:08.575283+00:00"
+    },
+    {
+      "test_id": "T16",
+      "requirement_index": 2,
+      "requirement": "The right paddle moves up and down with 'UP' and 'DOWN' arrow keys.",
+      "assertion": "Pressing keys other than 'UP' or 'DOWN' does not move the right paddle.",
+      "expected": "Right paddle does not move when pressing keys other than 'UP' or 'DOWN'.",
+      "generator_status": "ready_for_validator",
+      "started_at_utc": "2026-10-26T17:27:08.577628+00:00",
+      "evidence_dir": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261027_011042-s1\\test_run_20261027_012644\\evidence\\T16",
+      "action_results": [
+        {
+          "type": "key_down",
+          "at_utc": "2026-10-26T17:27:10.083416+00:00",
+          "status": "executed",
+          "key": "LEFT",
+          "index": 0
+        },
+        {
+          "type": "key_up",
+          "at_utc": "2026-10-26T17:27:10.184193+00:00",
+          "status": "executed",
+          "key": "LEFT",
+          "index": 1
+        },
+        {
+          "type": "observe",
+          "at_utc": "2026-10-26T17:27:10.284910+00:00",
+          "status": "executed",
+          "observation_requested": true,
+          "index": 2
+        }
+      ],
+      "observations": [
+        {
+          "method": "game_state",
+          "captured_at_utc": "2026-10-26T17:27:10.435420+00:00",
+          "captured": false,
+          "error": "Generic game state is unavailable without game-side instrumentation. Emit structured state to stdout/log."
+        }
+      ],
+      "status": "BLOCKED",
+      "reason": "Generic game state is unavailable without game-side instrumentation. Emit structured state to stdout/log.",
+      "process": {
+        "pid": 16452,
+        "returncode": null
+      },
+      "runtime_evidence": {
+        "stdout_file": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261027_011042-s1\\test_run_20261027_012644\\evidence\\T16\\stdout.log",
+        "stderr_file": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261027_011042-s1\\test_run_20261027_012644\\evidence\\T16\\stderr.log",
+        "screenshot_file": null
+      },
+      "triage_hints": [
+        {
+          "category": "undetermined",
+          "confidence": "low",
+          "reason": "Insufficient diagnostic signals; compare brief, plan, code, assets and runtime evidence."
+        }
+      ],
+      "duration_seconds": 1.875,
+      "finished_at_utc": "2026-10-26T17:27:10.454375+00:00"
+    }
+  ],
+  "project_inventory": "C:\\Users\\ASUS\\Work\\BOV5\\traces\\eval\\run20261027_011042-s1\\test_run_20261027_012644\\project_inventory.json",
+  "triage_note": "Hints are heuristics, not definitive root-cause labels. Correlate brief, plan, code, asset manifest and runtime evidence."
+}

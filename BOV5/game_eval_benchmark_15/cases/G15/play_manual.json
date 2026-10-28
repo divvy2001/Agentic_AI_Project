@@ -1,0 +1,6 @@
+{
+  "game_title": "Godot Tactical Roguelite",
+  "objective": "Turn-based tactical roguelite with squad action points, cover, line of sight, status effects, enemy turns, loot, permadeath and multi-room progression.",
+  "controls": "Select units and click tiles/actions; use end-turn and inventory controls. Test AP boundaries, cover, status duration, loot duplication and persistent room state.",
+  "notes": "Generate test cases using documented controls only; do not invent test hooks."
+}

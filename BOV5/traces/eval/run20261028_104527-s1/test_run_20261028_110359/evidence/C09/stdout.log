@@ -1,0 +1,15 @@
+Lantern Cave
+You are in a forest clearing. Paths lead east and south.
+clearing
+HELP
+Available commands:
+  look
+  go north
+  go south
+  go east
+  go west
+  take <item>
+  inventory
+  help
+  quit
+clearing

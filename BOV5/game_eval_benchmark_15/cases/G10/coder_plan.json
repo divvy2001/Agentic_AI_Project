@@ -1,0 +1,33 @@
+{
+  "game_title": "Godot Tower Defense",
+  "description": "Tower-defense game with enemy waves, path-following enemies, currency, tower placement/upgrades and base health.",
+  "profile": {
+    "renderer": "godot"
+  },
+  "requirements": [
+    {
+      "text": "Enemies progress along the configured path.",
+      "check": "Enemies progress along the configured path."
+    },
+    {
+      "text": "Each defeated enemy awards currency exactly once.",
+      "check": "Each defeated enemy awards currency exactly once."
+    },
+    {
+      "text": "Towers can be placed only on valid build tiles when affordable.",
+      "check": "Towers can be placed only on valid build tiles when affordable."
+    },
+    {
+      "text": "Towers attack in-range enemies within cooldown limits.",
+      "check": "Towers attack in-range enemies within cooldown limits."
+    },
+    {
+      "text": "Each enemy reaching base reduces base health once.",
+      "check": "Each enemy reaching base reduces base health once."
+    },
+    {
+      "text": "Zero base health triggers defeat and disables normal placement.",
+      "check": "Zero base health triggers defeat and disables normal placement."
+    }
+  ]
+}

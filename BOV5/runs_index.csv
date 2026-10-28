@@ -1,0 +1,3 @@
+run_id,spec_file,game_title,engine,outcome,total_cost_usd,elapsed_s,planner_attempts,planner_cost,asset_strategy,assets,asset_cost,coder_status,coder_reason,coder_steps,coder_cost,coder_tokens_in,coder_tokens_out,failed_tool_calls,top_error,first_boot_pass_step,controls_found,tests_total,tests_pass,tests_fail,triage,human_verdict
+20261028_091204,seal_bounce.md,Seal Bounce,godot,GAME READY,0.2181,740.1,3,0.01032,ai_art,2,0.04701,ready_for_testing,,31,0.16079,354107,38043,5,godot3_api,30,6,6,6,0,off,
+20261028_104527,lantern_cave.md,Lantern Cave,terminal,GAME READY,0.0785,1133.1,2,0.0,none,2,0.0,ready_for_testing,,6,0.03477,29643,1648,0,,5,10,10,5,0,on,

@@ -1,0 +1,25 @@
+{
+  "game_title": "Terminal Tic-Tac-Toe",
+  "description": "Two-player 3x3 Tic-Tac-Toe with alternating X/O turns, win detection, invalid-move handling and draw detection.",
+  "profile": {
+    "renderer": "terminal"
+  },
+  "requirements": [
+    {
+      "text": "Display a 3x3 board and alternate X/O turns.",
+      "check": "Display a 3x3 board and alternate X/O turns."
+    },
+    {
+      "text": "Detect a win for any row, column or diagonal.",
+      "check": "Detect a win for any row, column or diagonal."
+    },
+    {
+      "text": "Declare a draw when all cells are filled and nobody won.",
+      "check": "Declare a draw when all cells are filled and nobody won."
+    },
+    {
+      "text": "Reject occupied-cell moves without changing the active player.",
+      "check": "Reject occupied-cell moves without changing the active player."
+    }
+  ]
+}

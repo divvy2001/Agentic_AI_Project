@@ -1,0 +1,25 @@
+{
+  "game_title": "Terminal Number Guess",
+  "description": "Guess a hidden number from 1\u2013100; give higher/lower hints, count valid attempts, and end on a correct guess.",
+  "profile": {
+    "renderer": "terminal"
+  },
+  "requirements": [
+    {
+      "text": "Accept integer guesses from 1 to 100.",
+      "check": "Accept integer guesses from 1 to 100."
+    },
+    {
+      "text": "Give a higher/lower hint after incorrect guesses.",
+      "check": "Give a higher/lower hint after incorrect guesses."
+    },
+    {
+      "text": "Increment attempts once per valid guess.",
+      "check": "Increment attempts once per valid guess."
+    },
+    {
+      "text": "End the round with a success message after the correct guess.",
+      "check": "End the round with a success message after the correct guess."
+    }
+  ]
+}

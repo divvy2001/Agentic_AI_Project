@@ -1,0 +1,191 @@
+{
+  "schema_version": "1.0",
+  "suite_version": "run20261027_144230-s1",
+  "generated_at_utc": "2026-10-27T07:53:07.063425+00:00",
+  "renderer": "pygame",
+  "game_title": "Block Dodge",
+  "generator": {
+    "backend": "openrouter",
+    "model": "openai/gpt-4.1-mini",
+    "scope": "controls"
+  },
+  "generation_notes": [
+    "Found four controls with exact console output lines as per the play manual: left arrow, right arrow, R, and Escape keys.",
+    "All controls are testable by pressing the key once after a short wait from game start.",
+    "No controls were excluded because all named keys have exact console lines.",
+    "No controls require special game states to test their console output.",
+    "Tests do not cover game mechanics or visual effects, only console output on key press."
+  ],
+  "controls": [
+    {
+      "key": "left",
+      "does": "move player left",
+      "prints": "MOVE LEFT",
+      "manual_quote": "LEFT arrow (KEYDOWN): prints 'MOVE LEFT' (once per keydown). Moves player left while held; clamped at left edge."
+    },
+    {
+      "key": "right",
+      "does": "move player right",
+      "prints": "MOVE RIGHT",
+      "manual_quote": "RIGHT arrow (KEYDOWN): prints 'MOVE RIGHT' (once per keydown). Moves player right while held; clamped at right edge."
+    },
+    {
+      "key": "r",
+      "does": "restart game",
+      "prints": "RESTART",
+      "manual_quote": "R (KEYDOWN): prints 'RESTART' and fully resets game state (player position, enemies cleared, score=0)."
+    },
+    {
+      "key": "esc",
+      "does": "quit game",
+      "prints": "QUIT",
+      "manual_quote": "Escape (KEYDOWN) or window close: prints 'QUIT' and exits."
+    }
+  ],
+  "source_hashes": {
+    "plans/coder_plan.json": "8a406fc3189cf226e0b0dee0e83f4bdbd45f40e90eb84b307b0fe5c9ecbccc9d",
+    "plans/play_manual.json": "b91e0e44a2f0f081d3f5e9b2fece5967734373d5c775428bfa6192253cddec0c",
+    "plans/asset_manifest.json": "c0d83517a51d081f3d99e0e99d791058576c8b46f2850b55dfbe67eff529db00"
+  },
+  "tests": [
+    {
+      "test_id": "C01",
+      "requirement_index": 11,
+      "requirement": "Print 'MOVE RIGHT' to the console when the right arrow key is pressed.",
+      "assertion": "When the LEFT arrow key is pressed, 'MOVE LEFT' is printed to the console.",
+      "actions": [
+        {
+          "type": "wait",
+          "seconds": 1
+        },
+        {
+          "type": "press",
+          "key": "left"
+        },
+        {
+          "type": "wait",
+          "seconds": 1
+        }
+      ],
+      "observation": {
+        "method": "stdout",
+        "target": "MOVE LEFT"
+      },
+      "expected": "MOVE LEFT",
+      "status": "ready_for_validator",
+      "not_testable_reason": null,
+      "renderer": "pygame",
+      "timeout_seconds": 30,
+      "script_path": null
+    },
+    {
+      "test_id": "C02",
+      "requirement_index": 12,
+      "requirement": "Print 'RESTART' to the console when 'R' is pressed.",
+      "assertion": "When the RIGHT arrow key is pressed, 'MOVE RIGHT' is printed to the console.",
+      "actions": [
+        {
+          "type": "wait",
+          "seconds": 1
+        },
+        {
+          "type": "press",
+          "key": "right"
+        },
+        {
+          "type": "wait",
+          "seconds": 1
+        }
+      ],
+      "observation": {
+        "method": "stdout",
+        "target": "MOVE RIGHT"
+      },
+      "expected": "MOVE RIGHT",
+      "status": "ready_for_validator",
+      "not_testable_reason": null,
+      "renderer": "pygame",
+      "timeout_seconds": 30,
+      "script_path": null
+    },
+    {
+      "test_id": "C03",
+      "requirement_index": 13,
+      "requirement": "Print 'QUIT' to the console when 'Escape' is pressed.",
+      "assertion": "When 'R' is pressed, 'RESTART' is printed to the console.",
+      "actions": [
+        {
+          "type": "wait",
+          "seconds": 1
+        },
+        {
+          "type": "press",
+          "key": "r"
+        },
+        {
+          "type": "wait",
+          "seconds": 1
+        }
+      ],
+      "observation": {
+        "method": "stdout",
+        "target": "RESTART"
+      },
+      "expected": "RESTART",
+      "status": "ready_for_validator",
+      "not_testable_reason": null,
+      "renderer": "pygame",
+      "timeout_seconds": 30,
+      "script_path": null
+    },
+    {
+      "test_id": "C04",
+      "requirement_index": 14,
+      "requirement": "Print 'GAME OVER' to the console when the game ends.",
+      "assertion": "Pressing 'Escape' prints 'QUIT' to the console.",
+      "actions": [
+        {
+          "type": "wait",
+          "seconds": 1
+        },
+        {
+          "type": "press",
+          "key": "esc"
+        },
+        {
+          "type": "wait",
+          "seconds": 1
+        }
+      ],
+      "observation": {
+        "method": "stdout",
+        "target": "QUIT"
+      },
+      "expected": "QUIT",
+      "status": "ready_for_validator",
+      "not_testable_reason": null,
+      "renderer": "pygame",
+      "timeout_seconds": 30,
+      "script_path": null
+    }
+  ],
+  "summary": {
+    "total": 4,
+    "ready_for_validator": 4,
+    "not_testable": 0
+  },
+  "warnings": [
+    "Requirement 0 had no valid executable test and was marked not_testable",
+    "Requirement 1 had no valid executable test and was marked not_testable",
+    "Requirement 2 had no valid executable test and was marked not_testable",
+    "Requirement 3 had no valid executable test and was marked not_testable",
+    "Requirement 4 had no valid executable test and was marked not_testable",
+    "Requirement 5 had no valid executable test and was marked not_testable",
+    "Requirement 6 had no valid executable test and was marked not_testable",
+    "Requirement 7 had no valid executable test and was marked not_testable",
+    "Requirement 8 had no valid executable test and was marked not_testable",
+    "Requirement 9 had no valid executable test and was marked not_testable",
+    "Requirement 10 had no valid executable test and was marked not_testable"
+  ],
+  "important": "Generation is not execution. This file does not claim PASS and must not be used as test_results.json."
+}

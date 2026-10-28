@@ -1,0 +1,390 @@
+{
+  "schema_version": "1.0",
+  "suite_version": "benchmark-g08",
+  "generated_at_utc": "2026-10-26T04:12:11.625736+00:00",
+  "renderer": "pygame",
+  "game_title": "Pygame Top-Down Dungeon",
+  "generator": {
+    "backend": "openrouter",
+    "model": "openai/gpt-4.1-mini"
+  },
+  "generation_notes": [
+    "Tests cover player movement blocking by walls including positive and negative cases.",
+    "Key-door interaction tested for matching and non-matching keys with inventory and door state observations.",
+    "Melee attack tests include range and cooldown behavior with enemy health observations.",
+    "Enemy contact tests verify health reduction and no damage without contact.",
+    "Exit completion test is marked not_testable due to lack of documented controls to unlock all doors or confirm dungeon completion state."
+  ],
+  "generation_usage": {
+    "prompt_tokens": 629,
+    "completion_tokens": 1902,
+    "total_tokens": 2531,
+    "provider_reported_cost_usd": 0.0032948,
+    "estimated_cost_usd": 0.0032948,
+    "cost_source": "OpenRouter usage.cost"
+  },
+  "source_hashes": {
+    "game_eval_benchmark_15/cases/G08/coder_plan.json": "2a7742e6656aedac78a97467804f9bf2e6928e94c64d4d12fdeac2f6205c19ba",
+    "game_eval_benchmark_15/cases/G08/play_manual.json": "87b6df531597a07563ba1cf0f55b34569857a5213b5a3eb6d0c9c266db63025f"
+  },
+  "tests": [
+    {
+      "test_id": "T01",
+      "requirement_index": 0,
+      "requirement": "Player cannot pass through solid walls.",
+      "assertion": "Player position does not change when moving into a solid wall",
+      "actions": [
+        {
+          "type": "restart"
+        },
+        {
+          "type": "wait",
+          "duration_frames": 10
+        },
+        {
+          "type": "press",
+          "value": "up",
+          "duration_frames": 10
+        },
+        {
+          "type": "observe",
+          "value": "player_position"
+        }
+      ],
+      "observation": {
+        "method": "game_state",
+        "target": "player_position"
+      },
+      "expected": "player_position remains the same as before pressing up when a wall is directly above",
+      "status": "ready_for_validator",
+      "not_testable_reason": null,
+      "renderer": "pygame",
+      "timeout_seconds": 30,
+      "script_path": null
+    },
+    {
+      "test_id": "T02",
+      "requirement_index": 0,
+      "requirement": "Player cannot pass through solid walls.",
+      "assertion": "Player can move freely in open space without walls",
+      "actions": [
+        {
+          "type": "restart"
+        },
+        {
+          "type": "wait",
+          "duration_frames": 10
+        },
+        {
+          "type": "press",
+          "value": "right",
+          "duration_frames": 10
+        },
+        {
+          "type": "observe",
+          "value": "player_position"
+        }
+      ],
+      "observation": {
+        "method": "game_state",
+        "target": "player_position"
+      },
+      "expected": "player_position changes to the right indicating movement is possible",
+      "status": "ready_for_validator",
+      "not_testable_reason": null,
+      "renderer": "pygame",
+      "timeout_seconds": 30,
+      "script_path": null
+    },
+    {
+      "test_id": "T03",
+      "requirement_index": 1,
+      "requirement": "Matching key opens its locked door; missing/wrong key does not.",
+      "assertion": "Player with matching key can open the corresponding locked door",
+      "actions": [
+        {
+          "type": "restart"
+        },
+        {
+          "type": "wait",
+          "duration_frames": 10
+        },
+        {
+          "type": "press",
+          "value": "right",
+          "duration_frames": 20
+        },
+        {
+          "type": "observe",
+          "value": "player_inventory"
+        },
+        {
+          "type": "press",
+          "value": "interact",
+          "duration_frames": 5
+        },
+        {
+          "type": "observe",
+          "value": "door_state"
+        }
+      ],
+      "observation": {
+        "method": "game_state",
+        "target": [
+          "player_inventory",
+          "door_state"
+        ]
+      },
+      "expected": "player_inventory contains matching key before interacting; door_state changes from locked to unlocked after interaction",
+      "status": "not_testable",
+      "not_testable_reason": "Test did not meet the generator's structural validation rules.",
+      "renderer": "pygame",
+      "timeout_seconds": 30,
+      "script_path": null
+    },
+    {
+      "test_id": "T04",
+      "requirement_index": 1,
+      "requirement": "Matching key opens its locked door; missing/wrong key does not.",
+      "assertion": "Player without matching key cannot open locked door",
+      "actions": [
+        {
+          "type": "restart"
+        },
+        {
+          "type": "wait",
+          "duration_frames": 10
+        },
+        {
+          "type": "press",
+          "value": "right",
+          "duration_frames": 20
+        },
+        {
+          "type": "observe",
+          "value": "player_inventory"
+        },
+        {
+          "type": "press",
+          "value": "interact",
+          "duration_frames": 5
+        },
+        {
+          "type": "observe",
+          "value": "door_state"
+        }
+      ],
+      "observation": {
+        "method": "game_state",
+        "target": [
+          "player_inventory",
+          "door_state"
+        ]
+      },
+      "expected": "player_inventory does not contain matching key; door_state remains locked after interaction",
+      "status": "not_testable",
+      "not_testable_reason": "Test did not meet the generator's structural validation rules.",
+      "renderer": "pygame",
+      "timeout_seconds": 30,
+      "script_path": null
+    },
+    {
+      "test_id": "T05",
+      "requirement_index": 2,
+      "requirement": "Melee attack damages an in-range enemy and respects cooldown.",
+      "assertion": "Melee attack damages enemy only if enemy is in attack range and respects cooldown",
+      "actions": [
+        {
+          "type": "restart"
+        },
+        {
+          "type": "wait",
+          "duration_frames": 10
+        },
+        {
+          "type": "press",
+          "value": "attack",
+          "duration_frames": 1
+        },
+        {
+          "type": "observe",
+          "value": "enemy_health"
+        },
+        {
+          "type": "wait",
+          "duration_frames": 5
+        },
+        {
+          "type": "press",
+          "value": "attack",
+          "duration_frames": 1
+        },
+        {
+          "type": "observe",
+          "value": "enemy_health"
+        }
+      ],
+      "observation": {
+        "method": "game_state",
+        "target": "enemy_health"
+      },
+      "expected": "enemy_health decreases after first attack if enemy is in range; no further decrease if attack pressed before cooldown ends",
+      "status": "ready_for_validator",
+      "not_testable_reason": null,
+      "renderer": "pygame",
+      "timeout_seconds": 30,
+      "script_path": null
+    },
+    {
+      "test_id": "T06",
+      "requirement_index": 2,
+      "requirement": "Melee attack damages an in-range enemy and respects cooldown.",
+      "assertion": "Melee attack does not damage enemy out of attack range",
+      "actions": [
+        {
+          "type": "restart"
+        },
+        {
+          "type": "wait",
+          "duration_frames": 10
+        },
+        {
+          "type": "press",
+          "value": "attack",
+          "duration_frames": 1
+        },
+        {
+          "type": "observe",
+          "value": "enemy_health"
+        }
+      ],
+      "observation": {
+        "method": "game_state",
+        "target": "enemy_health"
+      },
+      "expected": "enemy_health remains unchanged if enemy is out of melee attack range",
+      "status": "ready_for_validator",
+      "not_testable_reason": null,
+      "renderer": "pygame",
+      "timeout_seconds": 30,
+      "script_path": null
+    },
+    {
+      "test_id": "T07",
+      "requirement_index": 3,
+      "requirement": "Enemy contact reduces health according to rules.",
+      "assertion": "Player health decreases upon enemy contact according to damage rules",
+      "actions": [
+        {
+          "type": "restart"
+        },
+        {
+          "type": "wait",
+          "duration_frames": 10
+        },
+        {
+          "type": "press",
+          "value": "move_towards_enemy",
+          "duration_frames": 30
+        },
+        {
+          "type": "observe",
+          "value": "player_health"
+        }
+      ],
+      "observation": {
+        "method": "game_state",
+        "target": "player_health"
+      },
+      "expected": "player_health decreases by expected damage amount after enemy contact",
+      "status": "ready_for_validator",
+      "not_testable_reason": null,
+      "renderer": "pygame",
+      "timeout_seconds": 30,
+      "script_path": null
+    },
+    {
+      "test_id": "T08",
+      "requirement_index": 3,
+      "requirement": "Enemy contact reduces health according to rules.",
+      "assertion": "Player health does not decrease without enemy contact",
+      "actions": [
+        {
+          "type": "restart"
+        },
+        {
+          "type": "wait",
+          "duration_frames": 20
+        },
+        {
+          "type": "observe",
+          "value": "player_health"
+        }
+      ],
+      "observation": {
+        "method": "game_state",
+        "target": "player_health"
+      },
+      "expected": "player_health remains constant when no enemy contact occurs",
+      "status": "ready_for_validator",
+      "not_testable_reason": null,
+      "renderer": "pygame",
+      "timeout_seconds": 30,
+      "script_path": null
+    },
+    {
+      "test_id": "T09",
+      "requirement_index": 4,
+      "requirement": "Exit completes dungeon only after required doors are unlocked.",
+      "assertion": "Exit completes dungeon only after all required locked doors are unlocked",
+      "actions": [
+        {
+          "type": "restart"
+        },
+        {
+          "type": "wait",
+          "duration_frames": 10
+        },
+        {
+          "type": "press",
+          "value": "interact_exit",
+          "duration_frames": 5
+        },
+        {
+          "type": "observe",
+          "value": "dungeon_complete"
+        },
+        {
+          "type": "press",
+          "value": "unlock_all_doors"
+        },
+        {
+          "type": "press",
+          "value": "interact_exit",
+          "duration_frames": 5
+        },
+        {
+          "type": "observe",
+          "value": "dungeon_complete"
+        }
+      ],
+      "observation": {
+        "method": "game_state",
+        "target": "dungeon_complete"
+      },
+      "expected": "dungeon_complete is false before all doors unlocked; true after all required doors unlocked and exit interacted with",
+      "status": "not_testable",
+      "not_testable_reason": "No documented controls to unlock all doors or verify dungeon completion state programmatically",
+      "renderer": "pygame",
+      "timeout_seconds": 30,
+      "script_path": null
+    }
+  ],
+  "summary": {
+    "total": 9,
+    "ready_for_validator": 6,
+    "not_testable": 3
+  },
+  "warnings": [],
+  "important": "Generation is not execution. This file does not claim PASS and must not be used as test_results.json."
+}\n

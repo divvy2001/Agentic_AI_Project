@@ -1,0 +1,19 @@
+{
+  "status": "fail",
+  "failing_stage": "logic_coder",
+  "suite_version": "eval-v1",
+  "failures": [
+    {
+      "test_id": "T03",
+      "requirement_index": 0,
+      "expected": "WIN after exactly 3 valid scoring actions",
+      "actual": "Frozen behavior assertion failed after three scoring actions; see native observation.",
+      "error_category": "behavior",
+      "evidence_path": "traces/eval/eval-v1/T03-observation.json",
+      "attribution_evidence": "The unchanged frozen assertion drives the actual game/state. T03 fails while T01 (two actions must not win) passes. Plan requirement 0 specifies threshold 3."
+    }
+  ],
+  "previously_passed_test_ids": [
+    "T01"
+  ]
+}

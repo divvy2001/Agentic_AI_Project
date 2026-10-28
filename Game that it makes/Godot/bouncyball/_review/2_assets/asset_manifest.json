@@ -1,0 +1,12 @@
+{
+  "task_id": "Bounce Keeper",
+  "framework": "godot",
+  "game_style": "paddle sports",
+  "output_dir": "game/assets",
+  "assets": [],
+  "validation": {
+    "passed": false,
+    "status": "failed",
+    "errors": []
+  }
+}

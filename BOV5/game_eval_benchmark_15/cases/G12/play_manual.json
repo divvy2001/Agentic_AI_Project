@@ -1,0 +1,6 @@
+{
+  "game_title": "Pygame Wave Survival",
+  "objective": "Top-down arena survival: movement, attacks, pursuing enemies, experience, level-up choice UI, timed waves and game over.",
+  "controls": "WASD/arrows to move; use displayed attack controls and choose an upgrade. Test pause/resume and wave transition behavior.",
+  "notes": "Generate test cases using documented controls only; do not invent test hooks."
+}

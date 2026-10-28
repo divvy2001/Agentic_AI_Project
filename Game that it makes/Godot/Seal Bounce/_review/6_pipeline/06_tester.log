@@ -1,0 +1,22 @@
+Bo V4 Tester | Seal Bounce | godot | 6 tests
+Suite script_path values are not executed; launch command is explicit.
+[1/6] C01 ...
+  PASS: Expected literal text was found in process output.
+[2/6] C02 ...
+  PASS: Expected literal text was found in process output.
+[3/6] C03 ...
+  PASS: Expected literal text was found in process output.
+[4/6] C04 ...
+  PASS: Expected literal text was found in process output.
+[5/6] C05 ...
+  PASS: Expected literal text was found in process output.
+[6/6] C06 ...
+  PASS: Expected literal text was found in process output.
+\nSUMMARY\n{
+  "total": 6,
+  "counts": {
+    "PASS": 6
+  }
+}
+Results: C:\Users\ASUS\Work\BOV5\traces\eval\run20261028_091204-s1\test_run_20261028_092335\test_results.json
+Evidence: C:\Users\ASUS\Work\BOV5\traces\eval\run20261028_091204-s1\test_run_20261028_092335\evidence

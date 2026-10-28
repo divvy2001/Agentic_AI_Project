@@ -1,0 +1,6 @@
+{
+  "game_title": "Terminal Number Guess",
+  "objective": "Guess a hidden number from 1\u2013100; give higher/lower hints, count valid attempts, and end on a correct guess.",
+  "controls": "Type a number and press Enter. Guess the hidden number in as few attempts as possible. Do not assume an undocumented test hook.",
+  "notes": "Generate test cases using documented controls only; do not invent test hooks."
+}

@@ -1,0 +1,282 @@
+{
+  "game_title": "Bounce Keeper",
+  "profile": {
+    "genre": {
+      "value": "paddle sports",
+      "source": "inferred",
+      "quote": "A paddle near the bottom of the window slides left and right",
+      "reasoning": "The core mechanic of a paddle and ball bouncing is characteristic of paddle sports games."
+    },
+    "renderer": {
+      "value": "godot",
+      "source": "inferred",
+      "quote": "One ball bounces around the screen with realistic physics: it keeps its momentum, picks up spin when it hits the moving paddle, and rebounds naturally off the paddle and the left, right and top walls. ... the paddle flashes briefly with a quick squash animation.",
+      "reasoning": "Realistic physics with momentum, spin, and natural rebounds, along with a squash animation, strongly suggest a need for a physics engine and animation system, which Godot provides natively."
+    },
+    "dimensions": {
+      "value": "2d",
+      "source": "inferred",
+      "quote": "A paddle near the bottom of the window slides left and right",
+      "reasoning": "The description of movement and screen elements implies a flat, two-dimensional playfield."
+    },
+    "pace": {
+      "value": "real-time",
+      "source": "inferred",
+      "quote": "One ball bounces around the screen with realistic physics: it keeps its momentum",
+      "reasoning": "The ball continuously moves and reacts to physics, indicating a game that progresses without waiting for player input."
+    },
+    "players": {
+      "value": 1,
+      "source": "assumed"
+    }
+  },
+  "requirements": [
+    {
+      "text": "The game window title should be 'Bounce Keeper'.",
+      "priority": "core",
+      "status": "full",
+      "check": "The game window title displays 'Bounce Keeper'.",
+      "milestone": 1,
+      "quote": "Create a tiny one-screen game called \"Bounce Keeper\"."
+    },
+    {
+      "text": "A paddle near the bottom of the window slides left and right with the arrow keys.",
+      "priority": "core",
+      "status": "full",
+      "check": "Pressing LEFT arrow key moves the paddle left; pressing RIGHT arrow key moves the paddle right.",
+      "milestone": 1,
+      "quote": "A paddle near the bottom of the window slides left and right with the arrow keys"
+    },
+    {
+      "text": "The paddle stops at the screen edges.",
+      "priority": "core",
+      "status": "full",
+      "check": "The paddle's left edge does not go past the left screen edge, and its right edge does not go past the right screen edge.",
+      "milestone": 1,
+      "quote": "and stops at the screen edges."
+    },
+    {
+      "text": "One ball bounces around the screen with realistic physics, keeping its momentum.",
+      "priority": "core",
+      "status": "full",
+      "check": "The ball moves continuously and changes direction upon collision, maintaining a consistent speed unless acted upon by other forces.",
+      "milestone": 1,
+      "quote": "One ball bounces around the screen with realistic physics: it keeps its momentum"
+    },
+    {
+      "text": "The ball picks up spin when it hits the moving paddle.",
+      "priority": "core",
+      "status": "full",
+      "check": "When the ball hits the paddle while the paddle is moving, the ball's horizontal velocity component changes based on the paddle's movement direction.",
+      "milestone": 2,
+      "quote": "picks up spin when it hits the moving paddle"
+    },
+    {
+      "text": "The ball rebounds naturally off the paddle and the left, right and top walls.",
+      "priority": "core",
+      "status": "full",
+      "check": "The ball's trajectory changes predictably and realistically after colliding with the paddle or any of the three walls (left, right, top).",
+      "milestone": 1,
+      "quote": "and rebounds naturally off the paddle and the left, right and top walls."
+    },
+    {
+      "text": "Each time the ball bounces off the paddle the score goes up by 1.",
+      "priority": "core",
+      "status": "full",
+      "check": "When the ball collides with the paddle, the score displayed in the top-left corner increases by 1.",
+      "milestone": 1,
+      "quote": "Each time the ball bounces off the paddle the score goes up by 1"
+    },
+    {
+      "text": "The paddle flashes briefly with a quick squash animation when the ball bounces off it.",
+      "priority": "secondary",
+      "status": "full",
+      "check": "Upon ball collision, the paddle briefly deforms (squashes) and then returns to its original shape.",
+      "milestone": 2,
+      "quote": "and the paddle flashes briefly with a quick squash animation."
+    },
+    {
+      "text": "If the ball falls past the paddle, the game is over.",
+      "priority": "core",
+      "status": "full",
+      "check": "When the ball's y-coordinate goes below the paddle's bottom edge, the game state changes to 'game over'.",
+      "milestone": 1,
+      "quote": "If the ball falls past the paddle, the game is over."
+    },
+    {
+      "text": "Show the score in the top-left corner.",
+      "priority": "core",
+      "status": "full",
+      "check": "A numerical score is visible in the top-left corner of the screen.",
+      "milestone": 1,
+      "quote": "Show the score in the top-left corner."
+    },
+    {
+      "text": "When the game is over, show 'GAME OVER' and the final score.",
+      "priority": "core",
+      "status": "full",
+      "check": "Upon game over, the text 'GAME OVER' appears on screen, along with the final score.",
+      "milestone": 1,
+      "quote": "When the game is over, show GAME OVER and the final score"
+    },
+    {
+      "text": "When the game is over, stop the ball.",
+      "priority": "core",
+      "status": "full",
+      "check": "After 'GAME OVER' is displayed, the ball ceases all movement.",
+      "milestone": 1,
+      "quote": "and stop the ball."
+    },
+    {
+      "text": "Press R to restart with score 0.",
+      "priority": "core",
+      "status": "full",
+      "check": "After game over, pressing 'R' resets the game, clears the 'GAME OVER' message, sets the score to 0, and the ball resumes movement.",
+      "milestone": 1,
+      "quote": "Press R to restart with score 0"
+    },
+    {
+      "text": "Press Escape to quit.",
+      "priority": "core",
+      "status": "full",
+      "check": "Pressing 'Escape' key closes the game window.",
+      "milestone": 1,
+      "quote": "and Escape to quit."
+    },
+    {
+      "text": "Print 'MOVE LEFT' to the console when the left arrow key is pressed.",
+      "priority": "secondary",
+      "status": "full",
+      "check": "When the LEFT arrow key is pressed, 'MOVE LEFT' is printed to the console.",
+      "milestone": 1,
+      "quote": "Print a line to the console every time a control takes effect: MOVE LEFT"
+    },
+    {
+      "text": "Print 'MOVE RIGHT' to the console when the right arrow key is pressed.",
+      "priority": "secondary",
+      "status": "full",
+      "check": "When the RIGHT arrow key is pressed, 'MOVE RIGHT' is printed to the console.",
+      "milestone": 1,
+      "quote": "MOVE RIGHT"
+    },
+    {
+      "text": "Print 'RESTART' to the console when the 'R' key is pressed.",
+      "priority": "secondary",
+      "status": "full",
+      "check": "When the 'R' key is pressed, 'RESTART' is printed to the console.",
+      "milestone": 1,
+      "quote": "RESTART"
+    },
+    {
+      "text": "Print 'QUIT' to the console when the 'Escape' key is pressed.",
+      "priority": "secondary",
+      "status": "full",
+      "check": "When the 'Escape' key is pressed, 'QUIT' is printed to the console.",
+      "milestone": 1,
+      "quote": "and QUIT"
+    },
+    {
+      "text": "Print 'GAME OVER' to the console when the game ends.",
+      "priority": "secondary",
+      "status": "full",
+      "check": "When the game over condition is met, 'GAME OVER' is printed to the console.",
+      "milestone": 1,
+      "quote": "and print GAME OVER when the game ends."
+    }
+  ],
+  "architecture": {
+    "entry_point": "game/main.tscn",
+    "files": [
+      {
+        "path": "game/__init__.py",
+        "purpose": "Empty file to mark game as a Python package."
+      },
+      {
+        "path": "game/main.tscn",
+        "purpose": "Main Godot scene file, containing the game world."
+      },
+      {
+        "path": "game/main.gd",
+        "purpose": "Main script for game logic, handling game state, score, and input."
+      },
+      {
+        "path": "game/paddle.tscn",
+        "purpose": "Godot scene for the paddle."
+      },
+      {
+        "path": "game/paddle.gd",
+        "purpose": "Script for paddle movement and collision handling."
+      },
+      {
+        "path": "game/ball.tscn",
+        "purpose": "Godot scene for the ball."
+      },
+      {
+        "path": "game/ball.gd",
+        "purpose": "Script for ball physics, collision, and spin."
+      }
+    ],
+    "dependencies": [],
+    "assets": {
+      "strategy": "procedural",
+      "strategy_rationale": "The spec explicitly states 'Use plain coloured shapes only; no images or sounds.'",
+      "sprites": []
+    },
+    "extensions": {
+      "scenes": {
+        "summary": "Single game scene.",
+        "detail": "The game will consist of a single Godot scene (main.tscn) that contains the paddle, ball, score display, and game over elements. There are no transitions between different screens or levels."
+      }
+    },
+    "resolution": {
+      "width": 800,
+      "height": 600
+    },
+    "fps": 60,
+    "requires_input": true,
+    "test_input_example": "Hold RIGHT for 1 second, then LEFT for 1 second. Let the ball fall past the paddle. Press R to restart. Press ESC to quit.",
+    "complexity_warning": null
+  },
+  "decisions": [
+    {
+      "about": "profile.players",
+      "choice": "1 player",
+      "reason": "The spec does not mention multiple players or co-op, so a single-player experience is assumed as the standard for this type of game."
+    },
+    {
+      "about": "paddle speed",
+      "choice": "A reasonable speed for paddle movement.",
+      "reason": "The spec does not specify paddle speed. A moderate speed will be chosen to allow for responsive control without being too fast or too slow."
+    },
+    {
+      "about": "ball initial speed and direction",
+      "choice": "Initial ball speed and direction will be set to a moderate value, launching downwards and slightly to one side.",
+      "reason": "The spec does not specify initial ball speed or direction. A sensible default will be chosen to make the game immediately playable."
+    },
+    {
+      "about": "paddle squash animation duration",
+      "choice": "A brief duration for the squash animation, e.g., 0.1-0.2 seconds.",
+      "reason": "The spec mentions a 'brief' and 'quick' squash animation but no specific duration. A short duration will be chosen to make it noticeable but not disruptive."
+    },
+    {
+      "about": "game over text position",
+      "choice": "Centered on the screen.",
+      "reason": "The spec says 'show GAME OVER' but not where. Centering it is a common and clear choice."
+    },
+    {
+      "about": "score text position",
+      "choice": "Top-left corner, with a small margin.",
+      "reason": "The spec says 'Show the score in the top-left corner' but not exact coordinates or padding. A small margin will be added for readability."
+    },
+    {
+      "about": "console output timing",
+      "choice": "Console output for controls will occur on key press (KEYDOWN event).",
+      "reason": "The spec says 'every time a control takes effect'. For movement, this implies when the key is initially pressed, not continuously while held."
+    }
+  ],
+  "unmapped": [],
+  "status": "success",
+  "quote_warnings": [
+    "quote: profile.renderer: \"One ball bounces around the screen with realistic physics: it keeps its momentum\" is not in the spec word for word"
+  ]
+}

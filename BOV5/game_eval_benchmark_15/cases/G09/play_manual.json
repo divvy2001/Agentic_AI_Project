@@ -1,0 +1,6 @@
+{
+  "game_title": "Pygame Lane Racer",
+  "objective": "Three-lane racing game with traffic, acceleration, collision penalties, distance progression and finish line.",
+  "controls": "Left/right changes lanes; Up accelerates if supported; R restarts. Test repeated collision frames and lane boundaries.",
+  "notes": "Generate test cases using documented controls only; do not invent test hooks."
+}

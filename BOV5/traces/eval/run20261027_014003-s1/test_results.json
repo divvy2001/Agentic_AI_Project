@@ -1,0 +1,62 @@
+{
+  "status": "fail",
+  "failing_stage": "logic_coder",
+  "suite_version": "run20261027_014003-s1",
+  "failures": [
+    {
+      "test_id": "T08",
+      "requirement_index": 7,
+      "expected": "[EVENT] SCORE:1",
+      "actual": "Expected literal text was not found. This does not by itself prove a game defect.",
+      "error_category": "behavior",
+      "evidence_path": "traces/eval/run20261027_014003-s1/test_run_20261027_014638/evidence/T08/evidence.json",
+      "attribution_evidence": "Game prints 'GAME OVER' to stdout but fails to print score updates and restart events; likely missing or incorrect console print calls for score and restart events and possibly game over in some cases. Evidence: Test T10 shows 'GAME OVER' printed to stdout, so game over console print is implemented but T16 fails to detect it, indicating inconsistent or conditional printing.; Tests T08 and T14 fail to find score update prints in stdout despite snake eating food and growing, indicating missing or incorrect print statements for score changes.; Test T18 fails to find restart event print '[EVENT] RESTART' in stdout after pressing 'R', indicating missing console output on restart.; Tests T11 and T16 fail to find expected console outputs though game behavior (game over) occurs, suggesting partial or inconsistent event logging.; No evidence of asset or planner issues; core gameplay and rendering appear functional but console event prints are missing or incomplete."
+    },
+    {
+      "test_id": "T10",
+      "requirement_index": 9,
+      "expected": "[EVENT] GAME OVER",
+      "actual": "Expected literal text was not found. This does not by itself prove a game defect.",
+      "error_category": "behavior",
+      "evidence_path": "traces/eval/run20261027_014003-s1/test_run_20261027_014638/evidence/T10/evidence.json",
+      "attribution_evidence": "Game prints 'GAME OVER' to stdout but fails to print score updates and restart events; likely missing or incorrect console print calls for score and restart events and possibly game over in some cases. Evidence: Test T10 shows 'GAME OVER' printed to stdout, so game over console print is implemented but T16 fails to detect it, indicating inconsistent or conditional printing.; Tests T08 and T14 fail to find score update prints in stdout despite snake eating food and growing, indicating missing or incorrect print statements for score changes.; Test T18 fails to find restart event print '[EVENT] RESTART' in stdout after pressing 'R', indicating missing console output on restart.; Tests T11 and T16 fail to find expected console outputs though game behavior (game over) occurs, suggesting partial or inconsistent event logging.; No evidence of asset or planner issues; core gameplay and rendering appear functional but console event prints are missing or incomplete."
+    },
+    {
+      "test_id": "T11",
+      "requirement_index": 10,
+      "expected": "[EVENT] GAME OVER",
+      "actual": "Expected literal text was not found. This does not by itself prove a game defect.",
+      "error_category": "behavior",
+      "evidence_path": "traces/eval/run20261027_014003-s1/test_run_20261027_014638/evidence/T11/evidence.json",
+      "attribution_evidence": "Game prints 'GAME OVER' to stdout but fails to print score updates and restart events; likely missing or incorrect console print calls for score and restart events and possibly game over in some cases. Evidence: Test T10 shows 'GAME OVER' printed to stdout, so game over console print is implemented but T16 fails to detect it, indicating inconsistent or conditional printing.; Tests T08 and T14 fail to find score update prints in stdout despite snake eating food and growing, indicating missing or incorrect print statements for score changes.; Test T18 fails to find restart event print '[EVENT] RESTART' in stdout after pressing 'R', indicating missing console output on restart.; Tests T11 and T16 fail to find expected console outputs though game behavior (game over) occurs, suggesting partial or inconsistent event logging.; No evidence of asset or planner issues; core gameplay and rendering appear functional but console event prints are missing or incomplete."
+    },
+    {
+      "test_id": "T14",
+      "requirement_index": 13,
+      "expected": "[EVENT] SCORE:1",
+      "actual": "Expected literal text was not found. This does not by itself prove a game defect.",
+      "error_category": "behavior",
+      "evidence_path": "traces/eval/run20261027_014003-s1/test_run_20261027_014638/evidence/T14/evidence.json",
+      "attribution_evidence": "Game prints 'GAME OVER' to stdout but fails to print score updates and restart events; likely missing or incorrect console print calls for score and restart events and possibly game over in some cases. Evidence: Test T10 shows 'GAME OVER' printed to stdout, so game over console print is implemented but T16 fails to detect it, indicating inconsistent or conditional printing.; Tests T08 and T14 fail to find score update prints in stdout despite snake eating food and growing, indicating missing or incorrect print statements for score changes.; Test T18 fails to find restart event print '[EVENT] RESTART' in stdout after pressing 'R', indicating missing console output on restart.; Tests T11 and T16 fail to find expected console outputs though game behavior (game over) occurs, suggesting partial or inconsistent event logging.; No evidence of asset or planner issues; core gameplay and rendering appear functional but console event prints are missing or incomplete."
+    },
+    {
+      "test_id": "T16",
+      "requirement_index": 15,
+      "expected": "[EVENT] GAME OVER",
+      "actual": "Expected literal text was not found. This does not by itself prove a game defect.",
+      "error_category": "behavior",
+      "evidence_path": "traces/eval/run20261027_014003-s1/test_run_20261027_014638/evidence/T16/evidence.json",
+      "attribution_evidence": "Game prints 'GAME OVER' to stdout but fails to print score updates and restart events; likely missing or incorrect console print calls for score and restart events and possibly game over in some cases. Evidence: Test T10 shows 'GAME OVER' printed to stdout, so game over console print is implemented but T16 fails to detect it, indicating inconsistent or conditional printing.; Tests T08 and T14 fail to find score update prints in stdout despite snake eating food and growing, indicating missing or incorrect print statements for score changes.; Test T18 fails to find restart event print '[EVENT] RESTART' in stdout after pressing 'R', indicating missing console output on restart.; Tests T11 and T16 fail to find expected console outputs though game behavior (game over) occurs, suggesting partial or inconsistent event logging.; No evidence of asset or planner issues; core gameplay and rendering appear functional but console event prints are missing or incomplete."
+    },
+    {
+      "test_id": "T18",
+      "requirement_index": 17,
+      "expected": "[EVENT] RESTART",
+      "actual": "Expected literal text was not found. This does not by itself prove a game defect.",
+      "error_category": "behavior",
+      "evidence_path": "traces/eval/run20261027_014003-s1/test_run_20261027_014638/evidence/T18/evidence.json",
+      "attribution_evidence": "Game prints 'GAME OVER' to stdout but fails to print score updates and restart events; likely missing or incorrect console print calls for score and restart events and possibly game over in some cases. Evidence: Test T10 shows 'GAME OVER' printed to stdout, so game over console print is implemented but T16 fails to detect it, indicating inconsistent or conditional printing.; Tests T08 and T14 fail to find score update prints in stdout despite snake eating food and growing, indicating missing or incorrect print statements for score changes.; Test T18 fails to find restart event print '[EVENT] RESTART' in stdout after pressing 'R', indicating missing console output on restart.; Tests T11 and T16 fail to find expected console outputs though game behavior (game over) occurs, suggesting partial or inconsistent event logging.; No evidence of asset or planner issues; core gameplay and rendering appear functional but console event prints are missing or incomplete."
+    }
+  ],
+  "previously_passed_test_ids": []
+}
