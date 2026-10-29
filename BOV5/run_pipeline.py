@@ -40,7 +40,7 @@ sys.path.insert(0, str(ROOT))
 
 # --- 1. Game spec (input to the Planner) -----------------------------------
 SPEC_DIR = ROOT.parent / "game_specs"   # folder next to BOV5 with one .md file per game
-SPEC_FILE = "lantern_cave.md"           # which spec to build; `python run_pipeline.py snake` overrides this for one run
+SPEC_FILE = "tetris.md"           # which spec to build; `python run_pipeline.py snake` overrides this for one run
 SPEC = ""                              # leave empty: filled with the text under "## Spec" when the run starts
 
 # (Planner model and key live in .env / master_planner; nothing to set here)
@@ -82,6 +82,11 @@ TRACE_FILE = TRACE_DIR / "pipeline_trace.jsonl"         # one line per stage: tu
 STARTED = time.monotonic()                              # start time, for stage timings
 TURN = 0                                                # stage counter ("turn N" in the console)
 STATE = {}          # filled during the run; used by the review export (suite path, results path, coder attempt id)
+
+# Asset Agent's per-attempt trace (master_planner/run.py appends to this) is wiped at
+# the start of every run, same as the Planner's own traces/planner_attempts.jsonl, so
+# it only ever holds this run's asset generation attempts.
+(ROOT / "traces" / "asset_attempts.jsonl").write_text("", encoding="utf-8")
 COST = {"coder": 0.0}                                   # coder's self-reported cost (cross-check)
 COST_ROWS = []      # {"turn", "round", "agent", "route", "cost_usd"}
 ROUTES = []         # triage decisions in order
@@ -468,9 +473,9 @@ def review_markdown(m):
           "- `FINAL_BOOT.md`: complete output of the finished game run headless for a few seconds",
           "- `HUMAN_CHECK.md`: fill in after playing; the ground truth to compare with the Tester",
           "- `1_planner/`: spec, plan.json, coder_plan.json, planner_attempts.jsonl",
-          "- `2_assets/`: asset_manifest.json",
+          "- `2_assets/`: asset_manifest.json, asset_attempts.jsonl (per-asset generation + validation detail)",
           "- `3_coder/`: coder_result.json, coder_trace.jsonl (this run's steps only), play_manual.json",
-          "- `4_eval/`: suite.json (controls + tests)",
+          "- `4_eval/`: suite.json (controls + tests), llm_trace.json (exact prompt + raw model response)",
           "- `5_tester/`: test_results.json + evidence/ (stdout/stderr per test)",
           "- `6_pipeline/`: pipeline_trace.jsonl, summary.json, stage logs, triage reports"]
     return "\n".join(L) + "\n"
@@ -801,6 +806,9 @@ def export_review(summary):
             _copy(pl / f, out / "1_planner" / f)
         _copy(tr / "planner_attempts.jsonl", out / "1_planner" / "planner_attempts.jsonl")
         _copy(pl / "asset_manifest.json", out / "2_assets" / "asset_manifest.json")
+        # Full per-asset generation + validation detail (prompt-level fields the final
+        # manifest doesn't keep, e.g. generation_method, model, fallback_reason).
+        _copy(tr / "asset_attempts.jsonl", out / "2_assets" / "asset_attempts.jsonl")
         _copy(tr / "coder_result.json", out / "3_coder" / "coder_result.json")
         _copy(pl / "play_manual.json", out / "3_coder" / "play_manual.json")
         ids = set(STATE.get("coder_attempts", []))
@@ -810,6 +818,9 @@ def export_review(summary):
         (out / "3_coder" / "coder_trace.jsonl").write_text("\n".join(rows) + ("\n" if rows else ""), encoding="utf-8")
         if STATE.get("suite"):
             _copy(STATE["suite"], out / "4_eval" / "suite.json")
+            # Exact prompt sent and raw model response, before validation/normalization —
+            # suite.json only has the post-validation result.
+            _copy(Path(STATE["suite"]).parent / "llm_trace.json", out / "4_eval" / "llm_trace.json")
         if STATE.get("results"):
             _copy(STATE["results"], out / "5_tester" / "test_results.json")
             _copy(Path(STATE["results"]).parent / "evidence", out / "5_tester" / "evidence")

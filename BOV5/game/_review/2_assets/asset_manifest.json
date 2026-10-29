@@ -1,37 +1,12 @@
 {
-  "task_id": "Apple Basket",
+  "task_id": "Simple Tetris",
   "framework": "pygame",
-  "game_style": "catching game",
+  "game_style": "puzzle",
   "output_dir": "game/assets",
-  "assets": [
-    {
-      "id": "woven_basket",
-      "type": "sprite",
-      "path": "game/assets/woven_basket.png",
-      "format": "png",
-      "width": 96,
-      "height": 64,
-      "required": true,
-      "generation_status": "generated",
-      "validation_status": "passed",
-      "errors": []
-    },
-    {
-      "id": "orchard_background",
-      "type": "background",
-      "path": "game/assets/orchard_background.png",
-      "format": "png",
-      "width": 512,
-      "height": 384,
-      "required": true,
-      "generation_status": "generated",
-      "validation_status": "passed",
-      "errors": []
-    }
-  ],
+  "assets": [],
   "validation": {
-    "passed": true,
-    "status": "passed",
+    "passed": false,
+    "status": "failed",
     "errors": []
   }
 }

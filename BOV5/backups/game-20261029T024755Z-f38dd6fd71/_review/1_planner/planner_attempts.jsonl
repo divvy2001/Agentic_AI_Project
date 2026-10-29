@@ -1,0 +1,3 @@
+{"attempt": 1, "errors": ["call failed: OpenAIError: Missing credentials. Please pass an `api_key`, `workload_identity`, `admin_api_key`, or set the `OPENAI_API_KEY` or `OPENAI_ADMIN_KEY` environment variable."]}
+{"attempt": 2, "errors": ["call failed: OpenAIError: Missing credentials. Please pass an `api_key`, `workload_identity`, `admin_api_key`, or set the `OPENAI_API_KEY` or `OPENAI_ADMIN_KEY` environment variable."]}
+{"outcome": "fallback", "attempts": 2, "seconds": 0.5, "tokens": {"input": 0, "output": 0, "total": 0}, "estimated_cost_usd": 0.0}

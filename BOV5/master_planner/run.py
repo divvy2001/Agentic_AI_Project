@@ -18,13 +18,21 @@ Run from the project root with:
     python -m master_planner.run
 """
 
+import json
 import os
 import sys
+from datetime import datetime, timezone
 from pathlib import Path
 
 # Make the project root importable regardless of where this is invoked from.
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(PROJECT_ROOT))
+
+# Full per-asset generation + validation detail (prompt-level fields like
+# generation_method, model, fallback_reason) is richer than what asset_manifest.json
+# keeps after update_manifest() trims it down. Appended once per run_asset_agent()
+# call so the record survives even when update_manifest() drops a field.
+ASSET_TRACE_FILE = PROJECT_ROOT / "traces" / "asset_attempts.jsonl"
 
 from master_planner.planner.call_planner import run_planner
 from master_planner.planner.config.planner_config import GAME_ASSETS_DIR, PLAN_FILE
@@ -144,6 +152,24 @@ def run_asset_agent(plan: dict) -> dict | None:
     generation_results = generate(planned, output_dir=asset_dir)
 
     validation_results = validate_assets(planned, output_dir=asset_dir)
+
+    try:
+        ASSET_TRACE_FILE.parent.mkdir(parents=True, exist_ok=True)
+        with ASSET_TRACE_FILE.open("a", encoding="utf-8") as fh:
+            fh.write(json.dumps({
+                "at_utc": datetime.now(timezone.utc).isoformat(),
+                "task_id": request["task_id"],
+                "renderer": renderer,
+                "strategy": strategy,
+                "requested_assets": len(sprites),
+                # Full per-asset detail as the generator itself returned it — includes
+                # fields (generation_method, model, fallback_reason) that update_manifest()
+                # does not carry into asset_manifest.json.
+                "generation_results": generation_results,
+                "validation_results": validation_results,
+            }, ensure_ascii=False) + "\n")
+    except Exception as exc:
+        print(f"[ASSET AGENT] trace write failed: {type(exc).__name__}: {exc}")
 
     manifest = update_manifest(planned, generation_results, validation_results)
 

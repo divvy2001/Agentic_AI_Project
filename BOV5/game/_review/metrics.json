@@ -1,195 +1,152 @@
 {
-  "run_id": "20261028_104527",
+  "run_id": "20261029_131536",
   "outcome": "GAME READY",
-  "total_seconds": 1133.1,
-  "total_cost_usd": 0.0785,
+  "total_seconds": 689.6,
+  "total_cost_usd": 0.0384,
   "planner": {
     "status": "success",
     "attempts": 2,
-    "seconds": 45.8,
-    "tokens_in": 12528,
-    "tokens_out": 5544,
+    "seconds": 47.0,
+    "tokens_in": 12816,
+    "tokens_out": 7234,
     "cost_usd": 0.0,
-    "renderer": "terminal",
-    "game_title": "Lantern Cave",
-    "requirements": 17,
+    "renderer": "pygame",
+    "game_title": "Simple Tetris",
+    "requirements": 22,
     "requirements_by_status": {
-      "full": 17
+      "full": 22
     },
     "hard_errors_seen": 0,
     "quote_warnings_seen": 0
   },
   "asset_agent": {
-    "strategy": "none",
-    "assets": 2,
+    "strategy": "procedural",
+    "assets": 0,
     "cost_usd": 0.0,
-    "files": [
-      "game/assets/woven_basket.png",
-      "game/assets/orchard_background.png"
-    ]
+    "files": []
   },
   "logic_coder": {
     "status": "ready_for_testing",
     "reason": null,
-    "steps": 6,
-    "seconds": 436.8,
+    "steps": 5,
+    "seconds": 590.2,
     "model": "openai/gpt-5-mini",
-    "calls": 4,
-    "tokens_in": 29643,
-    "tokens_out": 1648,
-    "cost_usd_metered": 0.03477,
-    "cost_usd_self_reported": 0.00511955,
+    "calls": 5,
+    "tokens_in": 49369,
+    "tokens_out": 11139,
+    "cost_usd_metered": 0.03836,
+    "cost_usd_self_reported": 0.027391449999999998,
     "files_written": []
   },
   "eval_generator": {
     "status": "ok",
-    "seconds": 27.6,
+    "seconds": 17.6,
     "cost_usd": 0.0,
     "model": "openai/gpt-4.1-mini",
     "controls_found": [
-      "look -> LOOK",
-      "go north -> MOVED NORTH",
-      "go south -> MOVED SOUTH",
-      "go east -> MOVED EAST",
-      "go west -> MOVED WEST",
-      "take lantern -> TOOK lantern",
-      "take rusty key -> TOOK rusty key",
-      "inventory -> INVENTORY",
-      "help -> HELP",
-      "quit -> QUIT"
+      "left -> MOVE LEFT\n",
+      "right -> MOVE RIGHT\n",
+      "down -> SOFT DROP\n",
+      "up -> ROTATE\n",
+      "r -> RESTART\n",
+      "esc -> QUIT\n"
     ],
     "tests": {
-      "total": 10,
-      "ready_for_validator": 5,
-      "not_testable": 5
+      "total": 6,
+      "ready_for_validator": 6,
+      "not_testable": 0
     }
   },
   "runtime_tester": {
-    "seconds": 21.2,
+    "seconds": 33.9,
     "counts": {
-      "PASS": 5,
-      "NOT_RUN": 5
+      "PASS": 6
     },
     "tests": [
       {
         "id": "C01",
-        "expected": "LOOK",
+        "expected": "MOVE LEFT\n",
         "status": "PASS",
         "retries": 0,
-        "window_focused": [],
-        "seconds": 3.844
+        "window_focused": [
+          true
+        ],
+        "seconds": 5.14
       },
       {
         "id": "C02",
-        "expected": "MOVED NORTH",
+        "expected": "MOVE RIGHT\n",
         "status": "PASS",
         "retries": 0,
-        "window_focused": [],
-        "seconds": 3.828
+        "window_focused": [
+          true
+        ],
+        "seconds": 5.141
       },
       {
         "id": "C03",
-        "expected": "MOVED SOUTH",
-        "status": "NOT_RUN",
+        "expected": "SOFT DROP\n",
+        "status": "PASS",
         "retries": 0,
-        "window_focused": [],
-        "seconds": null
+        "window_focused": [
+          true
+        ],
+        "seconds": 5.141
       },
       {
         "id": "C04",
-        "expected": "MOVED EAST",
-        "status": "NOT_RUN",
+        "expected": "ROTATE\n",
+        "status": "PASS",
         "retries": 0,
-        "window_focused": [],
-        "seconds": null
+        "window_focused": [
+          true
+        ],
+        "seconds": 5.14
       },
       {
         "id": "C05",
-        "expected": "MOVED WEST",
-        "status": "NOT_RUN",
+        "expected": "RESTART\n",
+        "status": "PASS",
         "retries": 0,
-        "window_focused": [],
-        "seconds": null
+        "window_focused": [
+          true
+        ],
+        "seconds": 5.141
       },
       {
         "id": "C06",
-        "expected": "TOOK lantern",
-        "status": "NOT_RUN",
-        "retries": 0,
-        "window_focused": [],
-        "seconds": null
-      },
-      {
-        "id": "C07",
-        "expected": "TOOK rusty key",
-        "status": "NOT_RUN",
-        "retries": 0,
-        "window_focused": [],
-        "seconds": null
-      },
-      {
-        "id": "C08",
-        "expected": "INVENTORY",
+        "expected": "QUIT\n",
         "status": "PASS",
         "retries": 0,
-        "window_focused": [],
-        "seconds": 3.828
-      },
-      {
-        "id": "C09",
-        "expected": "HELP",
-        "status": "PASS",
-        "retries": 0,
-        "window_focused": [],
-        "seconds": 3.813
-      },
-      {
-        "id": "C10",
-        "expected": "QUIT",
-        "status": "PASS",
-        "retries": 0,
-        "window_focused": [],
-        "seconds": 3.813
+        "window_focused": [
+          true
+        ],
+        "seconds": 5.109
       }
     ]
   },
   "triage_router": {
     "enabled": true,
-    "decisions": [
-      {
-        "round": 1,
-        "route": "logic_coder",
-        "confidence": 0.8,
-        "callback": "ready_for_testing",
-        "reason": "The game prints 'BLOCKED' when trying to move north from the clearing, but does not print the expected 'MOVED NORTH' message on valid moves as required."
-      },
-      {
-        "round": 2,
-        "route": "logic_coder",
-        "confidence": 0.8,
-        "callback": "ready_for_testing",
-        "reason": "The game prints 'BLOCKED' when trying to move north from the clearing, but does not print 'MOVED NORTH' on a valid move as required."
-      }
-    ]
+    "decisions": []
   },
   "loop_analysis": {
-    "steps": 6,
+    "steps": 5,
     "tool_calls": {
       "write_file": 2,
-      "run_shell": 2,
+      "read_file": 1,
       "write_play_manual": 1
     },
     "failed_tool_calls": 0,
     "errors_by_type": {},
     "back_to_back_repeats": 0,
     "first_step_check_passed": {
-      "plan_and_files": 5,
-      "syntax_or_import": 5,
-      "boot": 5
+      "plan_and_files": 2,
+      "syntax_or_import": 2,
+      "boot": 2
     },
     "most_written_files": {
       "game/__init__.py": 1,
-      "game/lantern_cave.py": 1
+      "game/tetris_game.py": 1
     }
   }
 }

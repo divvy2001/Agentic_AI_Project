@@ -1,1 +1,1 @@
-# Package marker for Lantern Cave game
+# Package initializer for the Simple Tetris game.

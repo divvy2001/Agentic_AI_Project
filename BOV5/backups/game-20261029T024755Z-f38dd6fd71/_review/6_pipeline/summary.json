@@ -1,0 +1,39 @@
+{
+  "run_id": "20261029_094448",
+  "spec_file": "C:\\Users\\ASUS\\Game_Agent\\Agentic_AI_Project\\game_specs\\flappybird.md",
+  "outcome": "STOPPED: coder did not finish",
+  "turns": 3,
+  "elapsed_s": 48.1,
+  "total_cost_usd": 0.0,
+  "cost_by_agent": {
+    "planner": 0.0,
+    "asset_agent": 0.0,
+    "logic_coder": 0.0
+  },
+  "coder_cost_usd_self_reported": 0.0,
+  "routing": [],
+  "cost_by_stage": [
+    {
+      "turn": 1,
+      "round": null,
+      "agent": "planner",
+      "route": null,
+      "cost_usd": 0.0
+    },
+    {
+      "turn": 1,
+      "round": null,
+      "agent": "asset_agent",
+      "route": null,
+      "cost_usd": 0.0
+    },
+    {
+      "turn": 2,
+      "round": null,
+      "agent": "logic_coder",
+      "route": null,
+      "cost_usd": 0.0
+    }
+  ],
+  "reason": "coder_key_missing"
+}

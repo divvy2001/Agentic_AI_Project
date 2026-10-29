@@ -1,7 +1,7 @@
 {
-  "run_id": "20261028_104527",
+  "run_id": "20261029_131536",
   "pipeline_settings": {
-    "SPEC_FILE": "lantern_cave.md",
+    "SPEC_FILE": "tetris.md",
     "DRY_RUN_ASSETS": false,
     "STARTUP_WAIT": 2.0,
     "TESTER_LIMIT": 0,
@@ -32,15 +32,15 @@
   },
   "file_versions_sha256_12": {
     "master_planner/planner/resources/planner_prompt.txt": "b2f20a5b80cb",
-    "master_planner/planner/call_planner.py": "d135ee618803",
+    "master_planner/planner/call_planner.py": "6bd03fa2098a",
     "master_planner/asset/planner.py": "c8199f497dc6",
     "coder_agent_adhoc/resources/prompt_coder.txt": "5c8843f926ce",
-    "coder_agent_adhoc/adapters/godot.py": "15ad0dc62d32",
-    "coder_agent_adhoc/adapters/pygame.py": "9461fc2a0191",
-    "coder_agent_adhoc/tools/tools_coder.py": "18cca91c3e3a",
-    "eval_generator_module/eval_generator/generator.py": "92b6d4bfedaf",
-    "bo_v4_tester_v1/bo_v4_tester/tester.py": "d4bdd0cdf50a",
-    "triage_agent/triage.py": "101738dd4176",
-    "run_pipeline.py": "8fae3c40360b"
+    "coder_agent_adhoc/adapters/godot.py": "5c68530cf29e",
+    "coder_agent_adhoc/adapters/pygame.py": "317688bea619",
+    "coder_agent_adhoc/tools/tools_coder.py": "96e51c03ea4a",
+    "eval_generator_module/eval_generator/generator.py": "38e3f7eacaee",
+    "bo_v4_tester_v1/bo_v4_tester/tester.py": "070f6d9ea21c",
+    "triage_agent/triage.py": "fad125888b95",
+    "run_pipeline.py": "dbbbf7dc0395"
   }
 }

@@ -1,0 +1,231 @@
+{
+  "status": "success",
+  "game_title": "Flappy Bird Clone",
+  "profile": {
+    "genre": "side-scrolling arcade",
+    "renderer": "pygame",
+    "dimensions": "2d",
+    "pace": "real-time",
+    "players": 1
+  },
+  "requirements": [
+    {
+      "text": "The game is named \"Flappy Bird Clone\".",
+      "priority": "core",
+      "status": "full",
+      "check": "The game window title is 'Flappy Bird Clone'.",
+      "milestone": 1,
+      "quote": "Create a one-screen side-scrolling game called \"Flappy Bird Clone\"."
+    },
+    {
+      "text": "A small bird stays at a fixed horizontal position near the left of the window.",
+      "priority": "core",
+      "status": "full",
+      "check": "The bird's x-coordinate remains constant and near the left edge of the screen.",
+      "milestone": 1,
+      "quote": "A small bird stays at a fixed horizontal position near the left of the window"
+    },
+    {
+      "text": "The bird falls downward under constant gravity.",
+      "priority": "core",
+      "status": "full",
+      "check": "The bird's y-coordinate continuously increases unless flapped.",
+      "milestone": 1,
+      "quote": "and falls downward under constant gravity."
+    },
+    {
+      "text": "Pressing Space gives the bird an instant upward burst of velocity.",
+      "priority": "core",
+      "status": "full",
+      "check": "Pressing SPACE causes the bird's y-velocity to become negative instantly.",
+      "milestone": 1,
+      "quote": "Pressing Space gives the bird an upward flap, a single instant upward burst of velocity"
+    },
+    {
+      "text": "Pipes with a gap scroll in from the right edge of the screen toward the left at a constant speed.",
+      "priority": "core",
+      "status": "full",
+      "check": "Pipes appear on the right edge and their x-coordinate decreases over time.",
+      "milestone": 1,
+      "quote": "Pipes with a gap in the middle scroll in from the right edge of the screen toward the left at a constant speed"
+    },
+    {
+      "text": "A new pipe appears at a regular time interval.",
+      "priority": "core",
+      "status": "full",
+      "check": "A new pipe object is created on the right edge of the screen at consistent time intervals.",
+      "milestone": 1,
+      "quote": "with a new pipe appearing at a regular time interval"
+    },
+    {
+      "text": "Each new pipe has a random gap height.",
+      "priority": "core",
+      "status": "full",
+      "check": "Successive pipes have their gaps positioned at different random y-coordinates.",
+      "milestone": 1,
+      "quote": "and a new random gap height each time."
+    },
+    {
+      "text": "Passing through a pipe's gap without touching a pipe adds 1 point.",
+      "priority": "core",
+      "status": "full",
+      "check": "When the bird's x-position passes a pipe's x-position and no collision occurs, the score increases by 1.",
+      "milestone": 1,
+      "quote": "Passing through a pipe's gap without touching a pipe adds 1 point."
+    },
+    {
+      "text": "Touching any pipe ends the game.",
+      "priority": "core",
+      "status": "full",
+      "check": "If the bird's bounding box overlaps with any part of a pipe, the game state changes to 'game over'.",
+      "milestone": 1,
+      "quote": "Touching any pipe, or the bird touching the top or bottom edge of the screen, ends the game."
+    },
+    {
+      "text": "Touching the top or bottom edge of the screen ends the game.",
+      "priority": "core",
+      "status": "full",
+      "check": "If the bird's y-position goes above 0 or below the screen height, the game state changes to 'game over'.",
+      "milestone": 1,
+      "quote": "or the bird touching the top or bottom edge of the screen, ends the game."
+    },
+    {
+      "text": "The game uses a plain sky-blue background colour.",
+      "priority": "core",
+      "status": "full",
+      "check": "The background of the game window is a solid sky-blue color.",
+      "milestone": 1,
+      "quote": "Use a plain sky-blue background colour instead of a background image."
+    },
+    {
+      "text": "The current score is shown in the top-left corner at all times.",
+      "priority": "core",
+      "status": "full",
+      "check": "A numerical score display is visible in the top-left corner of the screen and updates as points are scored.",
+      "milestone": 1,
+      "quote": "Show the current score in the top-left corner at all times."
+    },
+    {
+      "text": "When the game is over, show GAME OVER and the final score.",
+      "priority": "core",
+      "status": "full",
+      "check": "Upon game over, 'GAME OVER' text and the final score are displayed prominently on the screen.",
+      "milestone": 1,
+      "quote": "When the game is over, show GAME OVER and the final score"
+    },
+    {
+      "text": "When the game is over, stop moving the pipes and the bird.",
+      "priority": "core",
+      "status": "full",
+      "check": "After game over, the bird's position and all pipe positions remain static.",
+      "milestone": 1,
+      "quote": "and stop moving the pipes and the bird."
+    },
+    {
+      "text": "Press R to restart with score 0, the bird back at its starting position, and all pipes cleared.",
+      "priority": "core",
+      "status": "full",
+      "check": "Pressing R resets the score to 0, places the bird at its initial position, and removes all pipes from the screen.",
+      "milestone": 1,
+      "quote": "Press R to restart with score 0, the bird back at its starting position, and all pipes cleared."
+    },
+    {
+      "text": "Press Escape to quit.",
+      "priority": "core",
+      "status": "full",
+      "check": "Pressing ESCAPE closes the game window.",
+      "milestone": 1,
+      "quote": "Press Escape to quit."
+    },
+    {
+      "text": "Print 'FLAP' to the console every time Space is pressed.",
+      "priority": "secondary",
+      "status": "full",
+      "check": "The console output contains 'FLAP' each time the Space key is pressed.",
+      "milestone": 1,
+      "quote": "Print a line to the console every time a control takes effect: FLAP"
+    },
+    {
+      "text": "Print 'RESTART' to the console every time R is pressed.",
+      "priority": "secondary",
+      "status": "full",
+      "check": "The console output contains 'RESTART' each time the R key is pressed.",
+      "milestone": 1,
+      "quote": "RESTART"
+    },
+    {
+      "text": "Print 'QUIT' to the console every time Escape is pressed.",
+      "priority": "secondary",
+      "status": "full",
+      "check": "The console output contains 'QUIT' each time the Escape key is pressed.",
+      "milestone": 1,
+      "quote": "and QUIT"
+    },
+    {
+      "text": "Print 'GAME OVER' to the console when the game ends.",
+      "priority": "secondary",
+      "status": "full",
+      "check": "The console output contains 'GAME OVER' when the game ends.",
+      "milestone": 1,
+      "quote": "and print GAME OVER when the game ends."
+    },
+    {
+      "text": "No sounds are played.",
+      "priority": "secondary",
+      "status": "full",
+      "check": "No audio output is produced by the game.",
+      "milestone": 1,
+      "quote": "No sounds."
+    }
+  ],
+  "architecture": {
+    "entry_point": "game/flappy_bird_clone.py",
+    "files": [
+      {
+        "path": "game/__init__.py",
+        "purpose": "Marks the game directory as a Python package."
+      },
+      {
+        "path": "game/flappy_bird_clone.py",
+        "purpose": "Main game logic, including initialization, game loop, event handling, and rendering."
+      }
+    ],
+    "dependencies": [
+      "pygame"
+    ],
+    "assets": {
+      "strategy": "ai_art",
+      "strategy_rationale": "The spec explicitly asks for two small image assets.",
+      "sprites": [
+        {
+          "id": "bird",
+          "type": "sprite",
+          "description": "A small, cute, yellow bird, pixel art style, facing right, with small wings.",
+          "width": 32,
+          "height": 32
+        },
+        {
+          "id": "pipe_segment",
+          "type": "sprite",
+          "description": "A green pipe segment, pixel art style, with a slightly darker green outline.",
+          "width": 64,
+          "height": 300
+        }
+      ]
+    },
+    "resolution": {
+      "width": 800,
+      "height": 600
+    },
+    "fps": 60,
+    "requires_input": true,
+    "test_input_example": "Press SPACE repeatedly to keep the bird aloft and navigate through pipes. If the game ends, press R to restart. Press ESCAPE to quit.",
+    "complexity_warning": null
+  },
+  "unmapped": [
+    {
+      "quote": "Keep it to as few files as possible.",
+      "handling": "The Coder should consolidate game logic into a single main file (flappy_bird_clone.py) as much as possible, besides the __init__.py."
+    }
+  ]
+}

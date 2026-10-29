@@ -1,40 +1,42 @@
-# Run review: 20261028_104527
+# Run review: 20261029_131536
 
 **Outcome:** GAME READY  
-**Total time:** 1133.1 s  
-**Total cost:** $0.0785
+**Total time:** 689.6 s  
+**Total cost:** $0.0384
 
 ## Spec
 
 ```
-Create a small text adventure game played in the terminal called "Lantern Cave". The player explores five connected locations: a forest clearing, a cave entrance, a dark tunnel, an underground lake and a treasure room. The player types one command per line: look, go north, go south, go east, go west, take <item>, inventory, help and quit. The cave entrance holds a lantern and the underground lake holds a rusty key. The dark tunnel cannot be crossed without the lantern, and the treasure room is locked until the player has the rusty key. Reaching the treasure room with the key wins the game. Every command prints one fixed confirmation line first, then a short description: look prints LOOK, a successful move prints MOVED NORTH, MOVED SOUTH, MOVED EAST or MOVED WEST, a blocked move prints BLOCKED, take prints TOOK followed by the item name, inventory prints INVENTORY, help prints HELP, and quit prints QUIT and exits. An unknown command prints UNKNOWN COMMAND and does not change anything. Winning prints WIN and ends the game. Show the player's current location after every command. Use the standard library only and keep it in as few files as possible.
+Create a simplified Tetris game called "Simple Tetris" on a grid 10 columns wide and 20 rows tall. Blocks are drawn as plain coloured squares, one colour per piece shape; do not generate any image assets, use solid colours only. Use exactly four piece shapes: the square (2x2), the line (4 in a row), the L-shape, and the T-shape. A new random piece of one of these four shapes spawns at the top-middle of the grid. The piece falls downward automatically at a constant rate. Left arrow moves the falling piece one column left, Right arrow moves it one column right, and Down arrow moves it down one row immediately (soft drop); none of these move the piece through the grid walls or through blocks already locked in place. Up arrow rotates the piece 90 degrees; if the rotation would overlap the walls or locked blocks, ignore that rotation press instead of applying it. When a piece can no longer move down because the row below is blocked or it has reached the bottom row, it locks in place at its current position and a new random piece spawns. Whenever a horizontal row is completely filled with locked blocks, clear that row, move every row above it down by one, and add 100 to the score. Show the current score in the top-right corner of the window at all times. If a new piece spawns and immediately overlaps an already-locked block, the game is over: show GAME OVER and the final score, and stop spawning new pieces. Press R to restart with an empty grid and score 0. Press Escape to quit. Print a line to the console every time a control takes effect: MOVE LEFT, MOVE RIGHT, SOFT DROP, ROTATE, RESTART and QUIT, and print GAME OVER when the game ends. No sounds. Keep it to as few files as possible.
 ```
 
 ## Agents
 
 | Agent | Status | Time (s) | Tokens in/out | Cost ($) | Notes |
 |---|---|---|---|---|---|
-| Planner | success | 45.8 (incl. assets) | 12528/5544 | 0.0 | 2 attempt(s), 17 requirements, renderer terminal |
-| Asset Agent | none | – | – | 0.0 | 2 asset(s) |
-| Logic Coder | ready_for_testing | 436.8 | 29643/1648 | 0.03477 (self-reported 0.00511955) | 6 steps, 4 calls, openai/gpt-5-mini |
-| Eval Generator | ok | 27.6 | – | 0.0 | 10 controls found |
-| Runtime Tester | done | 21.2 | – | 0 | {'PASS': 5, 'NOT_RUN': 5} |
-| Triage / Router | on | – | – | – | 2 decision(s) |
+| Planner | success | 47.0 (incl. assets) | 12816/7234 | 0.0 | 2 attempt(s), 22 requirements, renderer pygame |
+| Asset Agent | procedural | – | – | 0.0 | 0 asset(s) |
+| Logic Coder | ready_for_testing | 590.2 | 49369/11139 | 0.03836 (self-reported 0.027391449999999998) | 5 steps, 5 calls, openai/gpt-5-mini |
+| Eval Generator | ok | 17.6 | – | 0.0 | 6 controls found |
+| Runtime Tester | done | 33.9 | – | 0 | {'PASS': 6} |
+| Triage / Router | on | – | – | – | 0 decision(s) |
 
 ## Control tests
 
 | Test | Expected line | Result | Retries | Window focused |
 |---|---|---|---|---|
-| C01 | `LOOK` | PASS | 0 | [] |
-| C02 | `MOVED NORTH` | PASS | 0 | [] |
-| C03 | `MOVED SOUTH` | NOT_RUN | 0 | [] |
-| C04 | `MOVED EAST` | NOT_RUN | 0 | [] |
-| C05 | `MOVED WEST` | NOT_RUN | 0 | [] |
-| C06 | `TOOK lantern` | NOT_RUN | 0 | [] |
-| C07 | `TOOK rusty key` | NOT_RUN | 0 | [] |
-| C08 | `INVENTORY` | PASS | 0 | [] |
-| C09 | `HELP` | PASS | 0 | [] |
-| C10 | `QUIT` | PASS | 0 | [] |
+| C01 | `MOVE LEFT
+` | PASS | 0 | [True] |
+| C02 | `MOVE RIGHT
+` | PASS | 0 | [True] |
+| C03 | `SOFT DROP
+` | PASS | 0 | [True] |
+| C04 | `ROTATE
+` | PASS | 0 | [True] |
+| C05 | `RESTART
+` | PASS | 0 | [True] |
+| C06 | `QUIT
+` | PASS | 0 | [True] |
 
 ## Files in this folder
 
@@ -45,8 +47,8 @@ Create a small text adventure game played in the terminal called "Lantern Cave".
 - `FINAL_BOOT.md`: complete output of the finished game run headless for a few seconds
 - `HUMAN_CHECK.md`: fill in after playing; the ground truth to compare with the Tester
 - `1_planner/`: spec, plan.json, coder_plan.json, planner_attempts.jsonl
-- `2_assets/`: asset_manifest.json
+- `2_assets/`: asset_manifest.json, asset_attempts.jsonl (per-asset generation + validation detail)
 - `3_coder/`: coder_result.json, coder_trace.jsonl (this run's steps only), play_manual.json
-- `4_eval/`: suite.json (controls + tests)
+- `4_eval/`: suite.json (controls + tests), llm_trace.json (exact prompt + raw model response)
 - `5_tester/`: test_results.json + evidence/ (stdout/stderr per test)
 - `6_pipeline/`: pipeline_trace.jsonl, summary.json, stage logs, triage reports

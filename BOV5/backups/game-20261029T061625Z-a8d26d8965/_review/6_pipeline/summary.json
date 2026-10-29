@@ -1,0 +1,52 @@
+{
+  "run_id": "20261029_102713",
+  "spec_file": "C:\\Users\\ASUS\\Game_Agent\\Agentic_AI_Project\\game_specs\\flappybird_prim.md",
+  "outcome": "DONE: 2 passed, 1 failed (triage disabled)",
+  "turns": 6,
+  "elapsed_s": 981.2,
+  "total_cost_usd": 0.0423,
+  "cost_by_agent": {
+    "planner": 0.0,
+    "asset_agent": 0.0,
+    "logic_coder": 0.04235,
+    "eval_generator": 0.0
+  },
+  "coder_cost_usd_self_reported": 0.031,
+  "routing": [],
+  "cost_by_stage": [
+    {
+      "turn": 1,
+      "round": null,
+      "agent": "planner",
+      "route": null,
+      "cost_usd": 0.0
+    },
+    {
+      "turn": 1,
+      "round": null,
+      "agent": "asset_agent",
+      "route": null,
+      "cost_usd": 0.0
+    },
+    {
+      "turn": 2,
+      "round": null,
+      "agent": "logic_coder",
+      "route": null,
+      "cost_usd": 0.04235
+    },
+    {
+      "turn": 3,
+      "round": null,
+      "agent": "eval_generator",
+      "route": null,
+      "cost_usd": 0.0
+    }
+  ],
+  "rounds": 1,
+  "counts": {
+    "FAIL": 1,
+    "PASS": 2
+  },
+  "results": "traces/eval/run20261029_102713-s1/test_run_20261029_104311/test_results.json"
+}

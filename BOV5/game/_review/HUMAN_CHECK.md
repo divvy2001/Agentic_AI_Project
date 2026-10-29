@@ -1,4 +1,4 @@
-# Human check: Lantern Cave (20261028_104527)
+# Human check: Simple Tetris (20261029_131536)
 
 Play the game (double-click play.bat in the gallery, or `python play.py` in BOV5), then fill this in.
 It is the ground truth for comparing against the automated Tester result: **GAME READY**

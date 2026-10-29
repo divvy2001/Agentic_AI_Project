@@ -1,0 +1,49 @@
+{
+  "run_id": "20261029_131536",
+  "spec_file": "C:\\Users\\ASUS\\Game_Agent\\Agentic_AI_Project\\game_specs\\tetris.md",
+  "outcome": "GAME READY",
+  "turns": 6,
+  "elapsed_s": 689.6,
+  "total_cost_usd": 0.0384,
+  "cost_by_agent": {
+    "planner": 0.0,
+    "asset_agent": 0.0,
+    "logic_coder": 0.03836,
+    "eval_generator": 0.0
+  },
+  "coder_cost_usd_self_reported": 0.0274,
+  "routing": [],
+  "cost_by_stage": [
+    {
+      "turn": 1,
+      "round": null,
+      "agent": "planner",
+      "route": null,
+      "cost_usd": 0.0
+    },
+    {
+      "turn": 1,
+      "round": null,
+      "agent": "asset_agent",
+      "route": null,
+      "cost_usd": 0.0
+    },
+    {
+      "turn": 2,
+      "round": null,
+      "agent": "logic_coder",
+      "route": null,
+      "cost_usd": 0.03836
+    },
+    {
+      "turn": 3,
+      "round": null,
+      "agent": "eval_generator",
+      "route": null,
+      "cost_usd": 0.0
+    }
+  ],
+  "rounds": 1,
+  "needs_human_review": 0,
+  "results": "traces/eval/run20261029_131536-s1/test_run_20261029_132632/test_results.json"
+}

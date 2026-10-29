@@ -1,99 +1,78 @@
 {
   "schema_version": "1.0",
-  "suite_version": "run20261028_104527-s1",
-  "generated_at_utc": "2026-10-28T03:53:51.979001+00:00",
-  "renderer": "terminal",
-  "game_title": "Lantern Cave",
+  "suite_version": "run20261029_131536-s1",
+  "generated_at_utc": "2026-10-29T06:26:25.956873+00:00",
+  "renderer": "pygame",
+  "game_title": "Simple Tetris",
   "generator": {
     "backend": "openrouter",
     "model": "openai/gpt-4.1-mini",
     "scope": "controls"
   },
   "generation_notes": [
-    "Controls found: look, go north, go south, go east, go west, take lantern, take rusty key, inventory, help, quit.",
-    "All controls are typed commands with exact printed confirmation lines as specified in the manual.",
-    "Tests include necessary navigation to valid states before testing item pickup controls.",
-    "No controls were excluded as all are named in the manual with exact printed lines.",
-    "Movement tests assume the move is valid; blocked moves are not tested here as they are not direct controls but outcomes.",
-    "No tests for unknown commands or blocked moves as they are not direct controls but responses."
+    "Controls found and tested: left, right, down, up, r, esc.",
+    "All controls have exact console output lines specified in the manual and are tested accordingly.",
+    "No controls were excluded.",
+    "The restart control prints both 'RESTART' and 'SCORE:0' at restart; test only asserts 'RESTART' line as per instructions.",
+    "Soft drop prints 'SOFT DROP' only if the piece moves down; no test for locking case as no console output is expected then."
   ],
   "controls": [
     {
-      "key": "look",
-      "does": "prints a description of the current location",
-      "prints": "LOOK",
-      "manual_quote": "Typing 'look' prints 'LOOK' followed by a description of the current location."
+      "key": "left",
+      "does": "moves piece left when possible",
+      "prints": "MOVE LEFT\n",
+      "manual_quote": "Left arrow: moves piece left when possible. Prints exactly: MOVE LEFT\\n"
     },
     {
-      "key": "go north",
-      "does": "moves the player north if possible",
-      "prints": "MOVED NORTH",
-      "manual_quote": "Typing 'go north' (or other directions) changes the player's location if valid, printing 'MOVED NORTH' (or corresponding direction)."
+      "key": "right",
+      "does": "moves piece right when possible",
+      "prints": "MOVE RIGHT\n",
+      "manual_quote": "Right arrow: moves piece right when possible. Prints exactly: MOVE RIGHT\\n"
     },
     {
-      "key": "go south",
-      "does": "moves the player south if possible",
-      "prints": "MOVED SOUTH",
-      "manual_quote": "Typing 'go north' (or other directions) changes the player's location if valid, printing 'MOVED NORTH' (or corresponding direction)."
+      "key": "down",
+      "does": "soft drop one row when possible",
+      "prints": "SOFT DROP\n",
+      "manual_quote": "Down arrow: soft drop one row when possible. Prints exactly: SOFT DROP\\nIf the piece cannot move down, it locks instead (no additional console message from the soft-drop action in that case)."
     },
     {
-      "key": "go east",
-      "does": "moves the player east if possible",
-      "prints": "MOVED EAST",
-      "manual_quote": "Typing 'go north' (or other directions) changes the player's location if valid, printing 'MOVED NORTH' (or corresponding direction)."
+      "key": "up",
+      "does": "rotate 90 degrees clockwise when possible",
+      "prints": "ROTATE\n",
+      "manual_quote": "Up arrow: rotate 90 degrees clockwise when possible. Prints exactly: ROTATE\\n"
     },
     {
-      "key": "go west",
-      "does": "moves the player west if possible",
-      "prints": "MOVED WEST",
-      "manual_quote": "Typing 'go north' (or other directions) changes the player's location if valid, printing 'MOVED NORTH' (or corresponding direction)."
+      "key": "r",
+      "does": "restart the game (clears grid, resets score to 0)",
+      "prints": "RESTART\n",
+      "manual_quote": "R key: restart the game (clears grid, resets score to 0). Prints exactly: RESTART\\n and then SCORE:0\\n."
     },
     {
-      "key": "take lantern",
-      "does": "picks up the lantern item if present",
-      "prints": "TOOK lantern",
-      "manual_quote": "Typing 'take lantern' in the cave entrance adds the lantern to inventory and prints 'TOOK lantern'."
-    },
-    {
-      "key": "take rusty key",
-      "does": "picks up the rusty key item if present",
-      "prints": "TOOK rusty key",
-      "manual_quote": "Typing 'take rusty key' in the underground lake adds the rusty key to inventory and prints 'TOOK rusty key'."
-    },
-    {
-      "key": "inventory",
-      "does": "shows the player's current inventory",
-      "prints": "INVENTORY",
-      "manual_quote": "Typing 'inventory' prints 'INVENTORY' followed by a list of held items."
-    },
-    {
-      "key": "help",
-      "does": "shows available commands",
-      "prints": "HELP",
-      "manual_quote": "Typing 'help' prints 'HELP' followed by a list of valid commands."
-    },
-    {
-      "key": "quit",
-      "does": "exits the game",
-      "prints": "QUIT",
-      "manual_quote": "Typing 'quit' prints 'QUIT' and terminates the game."
+      "key": "esc",
+      "does": "quit the game window",
+      "prints": "QUIT\n",
+      "manual_quote": "Escape (ESC): quit the game window and prints exactly: QUIT\\n"
     }
   ],
   "source_hashes": {
-    "plans/coder_plan.json": "aa2265ea184ef87b61cdab4d678ad5e7f261a9f50c126923bd2727b6cef412b4",
-    "plans/play_manual.json": "dfe86a6f389458fff6444cc91ce58470f755890c3c150a69c8926fd4aca0e9ed",
-    "plans/asset_manifest.json": "4f465e441067310ec9db313ad8dc09857c390ddae72c6fdd0975739f64c2cfad"
+    "plans/coder_plan.json": "a3d82fee4376507cb060fa2299e06e879e2054f2aacdaf75053e74c1204f73cb",
+    "plans/play_manual.json": "cd163494ac200315b7e665dc76576d88b231ef1aff103eac6649167c32306427",
+    "plans/asset_manifest.json": "f6e8b8322e3c58e365563125df370dc7321904ab93c431b97c4e5f039256bc2e"
   },
   "tests": [
     {
       "test_id": "C01",
-      "requirement_index": 2,
-      "requirement": "The player can type 'look' to get a description of the current location.",
-      "assertion": "Typing 'look' prints 'LOOK' as the first line of output.",
+      "requirement_index": 6,
+      "requirement": "Left arrow moves the falling piece one column left.",
+      "assertion": "Pressing LEFT moves the falling piece one column to the left and prints 'MOVE LEFT' to console.",
       "actions": [
         {
-          "type": "input",
-          "text": "look"
+          "type": "wait",
+          "seconds": 1
+        },
+        {
+          "type": "press",
+          "key": "left"
         },
         {
           "type": "wait",
@@ -102,24 +81,28 @@
       ],
       "observation": {
         "method": "stdout",
-        "target": "LOOK"
+        "target": "MOVE LEFT\n"
       },
-      "expected": "LOOK",
+      "expected": "MOVE LEFT\n",
       "status": "ready_for_validator",
       "not_testable_reason": null,
-      "renderer": "terminal",
+      "renderer": "pygame",
       "timeout_seconds": 30,
       "script_path": null
     },
     {
       "test_id": "C02",
-      "requirement_index": 3,
-      "requirement": "The player can type 'go north', 'go south', 'go east', 'go west' to move between locations.",
-      "assertion": "Typing 'go north' prints 'MOVED NORTH' as the first line of output if move is valid.",
+      "requirement_index": 7,
+      "requirement": "Right arrow moves the falling piece one column right.",
+      "assertion": "Pressing RIGHT moves the falling piece one column to the right and prints 'MOVE RIGHT' to console.",
       "actions": [
         {
-          "type": "input",
-          "text": "go north"
+          "type": "wait",
+          "seconds": 1
+        },
+        {
+          "type": "press",
+          "key": "right"
         },
         {
           "type": "wait",
@@ -128,24 +111,28 @@
       ],
       "observation": {
         "method": "stdout",
-        "target": "MOVED NORTH"
+        "target": "MOVE RIGHT\n"
       },
-      "expected": "MOVED NORTH",
+      "expected": "MOVE RIGHT\n",
       "status": "ready_for_validator",
       "not_testable_reason": null,
-      "renderer": "terminal",
+      "renderer": "pygame",
       "timeout_seconds": 30,
       "script_path": null
     },
     {
       "test_id": "C03",
-      "requirement_index": 3,
-      "requirement": "The player can type 'go north', 'go south', 'go east', 'go west' to move between locations.",
-      "assertion": "Typing 'go south' prints 'MOVED SOUTH' as the first line of output if move is valid.",
+      "requirement_index": 8,
+      "requirement": "Down arrow moves the falling piece down one row immediately (soft drop).",
+      "assertion": "Pressing DOWN moves the falling piece one row down immediately and prints 'SOFT DROP' to console if move is possible.",
       "actions": [
         {
-          "type": "input",
-          "text": "go south"
+          "type": "wait",
+          "seconds": 1
+        },
+        {
+          "type": "press",
+          "key": "down"
         },
         {
           "type": "wait",
@@ -154,24 +141,28 @@
       ],
       "observation": {
         "method": "stdout",
-        "target": "MOVED SOUTH"
+        "target": "SOFT DROP\n"
       },
-      "expected": "MOVED SOUTH",
-      "status": "not_testable",
-      "not_testable_reason": "Expected line 'MOVED SOUTH' is not stated in the play manual.",
-      "renderer": "terminal",
+      "expected": "SOFT DROP\n",
+      "status": "ready_for_validator",
+      "not_testable_reason": null,
+      "renderer": "pygame",
       "timeout_seconds": 30,
       "script_path": null
     },
     {
       "test_id": "C04",
-      "requirement_index": 3,
-      "requirement": "The player can type 'go north', 'go south', 'go east', 'go west' to move between locations.",
-      "assertion": "Typing 'go east' prints 'MOVED EAST' as the first line of output if move is valid.",
+      "requirement_index": 11,
+      "requirement": "If rotation would overlap walls or locked blocks, ignore the rotation.",
+      "assertion": "Pressing UP rotates the falling piece 90 degrees clockwise and prints 'ROTATE' to console if rotation is possible.",
       "actions": [
         {
-          "type": "input",
-          "text": "go east"
+          "type": "wait",
+          "seconds": 1
+        },
+        {
+          "type": "press",
+          "key": "up"
         },
         {
           "type": "wait",
@@ -180,24 +171,28 @@
       ],
       "observation": {
         "method": "stdout",
-        "target": "MOVED EAST"
+        "target": "ROTATE\n"
       },
-      "expected": "MOVED EAST",
-      "status": "not_testable",
-      "not_testable_reason": "Expected line 'MOVED EAST' is not stated in the play manual.",
-      "renderer": "terminal",
+      "expected": "ROTATE\n",
+      "status": "ready_for_validator",
+      "not_testable_reason": null,
+      "renderer": "pygame",
       "timeout_seconds": 30,
       "script_path": null
     },
     {
       "test_id": "C05",
-      "requirement_index": 3,
-      "requirement": "The player can type 'go north', 'go south', 'go east', 'go west' to move between locations.",
-      "assertion": "Typing 'go west' prints 'MOVED WEST' as the first line of output if move is valid.",
+      "requirement_index": 20,
+      "requirement": "Print GAME OVER when the game ends.",
+      "assertion": "Pressing 'R' clears the grid, resets the score to 0, and prints 'RESTART' to console.",
       "actions": [
         {
-          "type": "input",
-          "text": "go west"
+          "type": "wait",
+          "seconds": 1
+        },
+        {
+          "type": "press",
+          "key": "r"
         },
         {
           "type": "wait",
@@ -206,32 +201,28 @@
       ],
       "observation": {
         "method": "stdout",
-        "target": "MOVED WEST"
+        "target": "RESTART\n"
       },
-      "expected": "MOVED WEST",
-      "status": "not_testable",
-      "not_testable_reason": "Expected line 'MOVED WEST' is not stated in the play manual.",
-      "renderer": "terminal",
+      "expected": "RESTART\n",
+      "status": "ready_for_validator",
+      "not_testable_reason": null,
+      "renderer": "pygame",
       "timeout_seconds": 30,
       "script_path": null
     },
     {
       "test_id": "C06",
-      "requirement_index": 6,
-      "requirement": "The player can type 'inventory' to view items they are carrying.",
-      "assertion": "Typing 'take lantern' in the cave entrance prints 'TOOK lantern' as the first line of output.",
+      "requirement_index": 21,
+      "requirement": "No sounds.",
+      "assertion": "Pressing 'Escape' closes the game window and prints 'QUIT' to console.",
       "actions": [
-        {
-          "type": "input",
-          "text": "go east"
-        },
         {
           "type": "wait",
           "seconds": 1
         },
         {
-          "type": "input",
-          "text": "take lantern"
+          "type": "press",
+          "key": "esc"
         },
         {
           "type": "wait",
@@ -240,157 +231,38 @@
       ],
       "observation": {
         "method": "stdout",
-        "target": "TOOK lantern"
+        "target": "QUIT\n"
       },
-      "expected": "TOOK lantern",
-      "status": "not_testable",
-      "not_testable_reason": "Expected line 'TOOK lantern' is not stated in the play manual.",
-      "renderer": "terminal",
-      "timeout_seconds": 30,
-      "script_path": null
-    },
-    {
-      "test_id": "C07",
-      "requirement_index": 11,
-      "requirement": "The dark tunnel cannot be crossed without the lantern.",
-      "assertion": "Typing 'take rusty key' in the underground lake prints 'TOOK rusty key' as the first line of output.",
-      "actions": [
-        {
-          "type": "input",
-          "text": "go south"
-        },
-        {
-          "type": "wait",
-          "seconds": 1
-        },
-        {
-          "type": "input",
-          "text": "go south"
-        },
-        {
-          "type": "wait",
-          "seconds": 1
-        },
-        {
-          "type": "input",
-          "text": "take rusty key"
-        },
-        {
-          "type": "wait",
-          "seconds": 1
-        }
-      ],
-      "observation": {
-        "method": "stdout",
-        "target": "TOOK rusty key"
-      },
-      "expected": "TOOK rusty key",
-      "status": "not_testable",
-      "not_testable_reason": "Expected line 'TOOK rusty key' is not stated in the play manual.",
-      "renderer": "terminal",
-      "timeout_seconds": 30,
-      "script_path": null
-    },
-    {
-      "test_id": "C08",
-      "requirement_index": 7,
-      "requirement": "The player can type 'help' to see available commands.",
-      "assertion": "Typing 'inventory' prints 'INVENTORY' as the first line of output.",
-      "actions": [
-        {
-          "type": "input",
-          "text": "inventory"
-        },
-        {
-          "type": "wait",
-          "seconds": 1
-        }
-      ],
-      "observation": {
-        "method": "stdout",
-        "target": "INVENTORY"
-      },
-      "expected": "INVENTORY",
+      "expected": "QUIT\n",
       "status": "ready_for_validator",
       "not_testable_reason": null,
-      "renderer": "terminal",
-      "timeout_seconds": 30,
-      "script_path": null
-    },
-    {
-      "test_id": "C09",
-      "requirement_index": 8,
-      "requirement": "The player can type 'quit' to exit the game.",
-      "assertion": "Typing 'help' prints 'HELP' as the first line of output.",
-      "actions": [
-        {
-          "type": "input",
-          "text": "help"
-        },
-        {
-          "type": "wait",
-          "seconds": 1
-        }
-      ],
-      "observation": {
-        "method": "stdout",
-        "target": "HELP"
-      },
-      "expected": "HELP",
-      "status": "ready_for_validator",
-      "not_testable_reason": null,
-      "renderer": "terminal",
-      "timeout_seconds": 30,
-      "script_path": null
-    },
-    {
-      "test_id": "C10",
-      "requirement_index": 9,
-      "requirement": "The cave entrance holds a lantern.",
-      "assertion": "Typing 'quit' prints 'QUIT' as the first line of output and exits the game.",
-      "actions": [
-        {
-          "type": "input",
-          "text": "quit"
-        },
-        {
-          "type": "wait",
-          "seconds": 1
-        }
-      ],
-      "observation": {
-        "method": "stdout",
-        "target": "QUIT"
-      },
-      "expected": "QUIT",
-      "status": "ready_for_validator",
-      "not_testable_reason": null,
-      "renderer": "terminal",
+      "renderer": "pygame",
       "timeout_seconds": 30,
       "script_path": null
     }
   ],
   "summary": {
-    "total": 10,
-    "ready_for_validator": 5,
-    "not_testable": 5
+    "total": 6,
+    "ready_for_validator": 6,
+    "not_testable": 0
   },
   "warnings": [
     "Requirement 0 had no valid executable test and was marked not_testable",
     "Requirement 1 had no valid executable test and was marked not_testable",
+    "Requirement 2 had no valid executable test and was marked not_testable",
+    "Requirement 3 had no valid executable test and was marked not_testable",
     "Requirement 4 had no valid executable test and was marked not_testable",
     "Requirement 5 had no valid executable test and was marked not_testable",
+    "Requirement 9 had no valid executable test and was marked not_testable",
     "Requirement 10 had no valid executable test and was marked not_testable",
     "Requirement 12 had no valid executable test and was marked not_testable",
     "Requirement 13 had no valid executable test and was marked not_testable",
     "Requirement 14 had no valid executable test and was marked not_testable",
     "Requirement 15 had no valid executable test and was marked not_testable",
     "Requirement 16 had no valid executable test and was marked not_testable",
-    "C03: expected 'MOVED SOUTH' not found in play manual",
-    "C04: expected 'MOVED EAST' not found in play manual",
-    "C05: expected 'MOVED WEST' not found in play manual",
-    "C06: expected 'TOOK lantern' not found in play manual",
-    "C07: expected 'TOOK rusty key' not found in play manual"
+    "Requirement 17 had no valid executable test and was marked not_testable",
+    "Requirement 18 had no valid executable test and was marked not_testable",
+    "Requirement 19 had no valid executable test and was marked not_testable"
   ],
   "important": "Generation is not execution. This file does not claim PASS and must not be used as test_results.json."
 }

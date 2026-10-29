@@ -1,35 +1,18 @@
 {
-  "run_id": "20261028_104527",
-  "spec_file": "C:\\Users\\ASUS\\Work\\game_specs\\lantern_cave.md",
+  "run_id": "20261029_131536",
+  "spec_file": "C:\\Users\\ASUS\\Game_Agent\\Agentic_AI_Project\\game_specs\\tetris.md",
   "outcome": "GAME READY",
-  "turns": 14,
-  "elapsed_s": 1133.1,
-  "total_cost_usd": 0.0785,
+  "turns": 6,
+  "elapsed_s": 689.6,
+  "total_cost_usd": 0.0384,
   "cost_by_agent": {
     "planner": 0.0,
     "asset_agent": 0.0,
-    "logic_coder": 0.03477,
-    "eval_generator": 0.0,
-    "triage": 0.00847,
-    "coder_repair": 0.0353
+    "logic_coder": 0.03836,
+    "eval_generator": 0.0
   },
-  "coder_cost_usd_self_reported": 0.0613,
-  "routing": [
-    {
-      "round": 1,
-      "route": "logic_coder",
-      "confidence": 0.8,
-      "callback": "ready_for_testing",
-      "reason": "The game prints 'BLOCKED' when trying to move north from the clearing, but does not print the expected 'MOVED NORTH' message on valid moves as required."
-    },
-    {
-      "round": 2,
-      "route": "logic_coder",
-      "confidence": 0.8,
-      "callback": "ready_for_testing",
-      "reason": "The game prints 'BLOCKED' when trying to move north from the clearing, but does not print 'MOVED NORTH' on a valid move as required."
-    }
-  ],
+  "coder_cost_usd_self_reported": 0.0274,
+  "routing": [],
   "cost_by_stage": [
     {
       "turn": 1,
@@ -50,7 +33,7 @@
       "round": null,
       "agent": "logic_coder",
       "route": null,
-      "cost_usd": 0.03477
+      "cost_usd": 0.03836
     },
     {
       "turn": 3,
@@ -58,37 +41,9 @@
       "agent": "eval_generator",
       "route": null,
       "cost_usd": 0.0
-    },
-    {
-      "turn": 6,
-      "round": 1,
-      "agent": "triage",
-      "route": "logic_coder",
-      "cost_usd": 0.00697
-    },
-    {
-      "turn": 6,
-      "round": 1,
-      "agent": "coder_repair",
-      "route": "logic_coder",
-      "cost_usd": 0.03018
-    },
-    {
-      "turn": 10,
-      "round": 2,
-      "agent": "triage",
-      "route": "logic_coder",
-      "cost_usd": 0.0015
-    },
-    {
-      "turn": 10,
-      "round": 2,
-      "agent": "coder_repair",
-      "route": "logic_coder",
-      "cost_usd": 0.00512
     }
   ],
-  "rounds": 3,
+  "rounds": 1,
   "needs_human_review": 0,
-  "results": "traces/eval/run20261028_104527-s1/test_run_20261028_110359/test_results.json"
+  "results": "traces/eval/run20261029_131536-s1/test_run_20261029_132632/test_results.json"
 }

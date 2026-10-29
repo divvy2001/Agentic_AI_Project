@@ -1,0 +1,6 @@
+{"turn": 1, "t": 0.9, "stage": "start", "status": "ok", "detail": "spec=tetris.md (1708 chars)"}
+{"turn": 2, "t": 47.9, "stage": "planner+assets", "status": "success", "detail": "renderer=pygame assets=procedural", "renderer": "pygame", "entry_point": "game/tetris_game.py"}
+{"turn": 3, "t": 638.1, "stage": "logic_coder", "status": "ready_for_testing", "reason": null, "steps": 5, "cost": "$0.0274", "attempt_id": "c2d1a71a4f574339a7da92ee7d11e4c6"}
+{"turn": 4, "t": 655.7, "stage": "eval_generator", "status": "ok", "detail": "suite=run20261029_131536-s1 tests=6", "exit_code": 0}
+{"turn": 5, "t": 689.6, "stage": "runtime_tester", "status": "done", "round": 1, "counts": {"PASS": 6}, "results": "traces/eval/run20261029_131536-s1/test_run_20261029_132632/test_results.json"}
+{"turn": 6, "t": 689.6, "stage": "decision", "status": "no errors", "round": 1, "detail": "needs_review=0"}

@@ -1,0 +1,12 @@
+{
+  "task_id": "Simple Tetris",
+  "framework": "pygame",
+  "game_style": "puzzle",
+  "output_dir": "game/assets",
+  "assets": [],
+  "validation": {
+    "passed": false,
+    "status": "failed",
+    "errors": []
+  }
+}

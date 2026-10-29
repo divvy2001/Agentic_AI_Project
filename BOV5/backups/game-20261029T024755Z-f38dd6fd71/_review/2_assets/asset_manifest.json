@@ -1,0 +1,12 @@
+{
+  "task_id": "Untitled Game",
+  "framework": "pygame",
+  "game_style": "unknown",
+  "output_dir": "game/assets",
+  "assets": [],
+  "validation": {
+    "passed": false,
+    "status": "failed",
+    "errors": []
+  }
+}

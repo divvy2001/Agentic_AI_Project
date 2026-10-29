@@ -1,0 +1,162 @@
+{
+  "schema_version": "1.0",
+  "suite_version": "run20261029_094652-s1",
+  "generated_at_utc": "2026-10-29T02:57:05.386376+00:00",
+  "renderer": "pygame",
+  "game_title": "Flappy Bird Clone",
+  "generator": {
+    "backend": "openrouter",
+    "model": "openai/gpt-4.1-mini",
+    "scope": "controls"
+  },
+  "generation_notes": [
+    "Controls found: space, r, esc.",
+    "All controls have exact console output lines specified in the manual and are tested.",
+    "No controls were excluded due to lack of exact printed lines.",
+    "The R key test does not require the game to be in game over state because the manual does not specify that restriction.",
+    "The Escape key quits immediately and prints QUIT; tested as is."
+  ],
+  "controls": [
+    {
+      "key": "space",
+      "does": "makes the bird flap upward",
+      "prints": "FLAP",
+      "manual_quote": "Space (KEYDOWN): makes the bird flap upward and prints 'FLAP' to the console (flush=True)."
+    },
+    {
+      "key": "r",
+      "does": "restarts the game",
+      "prints": "RESTART",
+      "manual_quote": "R (KEYDOWN): restarts the game and prints 'RESTART'. This resets score to 0, bird to starting position, and clears pipes."
+    },
+    {
+      "key": "esc",
+      "does": "quits the game",
+      "prints": "QUIT",
+      "manual_quote": "Escape (KEYDOWN) or window close: prints 'QUIT' and exits the game."
+    }
+  ],
+  "source_hashes": {
+    "plans/coder_plan.json": "a04afa21ae93c63d7c74f75641d505a98a41d1ff1a2d3ea7834dd53ff16cf6ea",
+    "plans/play_manual.json": "fb05c70caa077051454159cc3a039d524ae4c6d5b8d88115a84f37e60ce145dc",
+    "plans/asset_manifest.json": "1b9af6580de7e9e0ea83906de3bed8a545f8c15fa088b3b155c745520827c0e6"
+  },
+  "tests": [
+    {
+      "test_id": "C01",
+      "requirement_index": 3,
+      "requirement": "Pressing Space gives the bird an instant upward burst of velocity.",
+      "assertion": "Pressing the Space key prints 'FLAP' to the console.",
+      "actions": [
+        {
+          "type": "wait",
+          "seconds": 1
+        },
+        {
+          "type": "press",
+          "key": "space"
+        },
+        {
+          "type": "wait",
+          "seconds": 1
+        }
+      ],
+      "observation": {
+        "method": "stdout",
+        "target": "FLAP"
+      },
+      "expected": "FLAP",
+      "status": "ready_for_validator",
+      "not_testable_reason": null,
+      "renderer": "pygame",
+      "timeout_seconds": 30,
+      "script_path": null
+    },
+    {
+      "test_id": "C02",
+      "requirement_index": 15,
+      "requirement": "Press Escape to quit.",
+      "assertion": "Pressing the R key prints 'RESTART' to the console.",
+      "actions": [
+        {
+          "type": "wait",
+          "seconds": 1
+        },
+        {
+          "type": "press",
+          "key": "r"
+        },
+        {
+          "type": "wait",
+          "seconds": 1
+        }
+      ],
+      "observation": {
+        "method": "stdout",
+        "target": "RESTART"
+      },
+      "expected": "RESTART",
+      "status": "ready_for_validator",
+      "not_testable_reason": null,
+      "renderer": "pygame",
+      "timeout_seconds": 30,
+      "script_path": null
+    },
+    {
+      "test_id": "C03",
+      "requirement_index": 16,
+      "requirement": "Print 'FLAP' to the console every time Space is pressed.",
+      "assertion": "Pressing the Escape key prints 'QUIT' to the console.",
+      "actions": [
+        {
+          "type": "wait",
+          "seconds": 1
+        },
+        {
+          "type": "press",
+          "key": "esc"
+        },
+        {
+          "type": "wait",
+          "seconds": 1
+        }
+      ],
+      "observation": {
+        "method": "stdout",
+        "target": "QUIT"
+      },
+      "expected": "QUIT",
+      "status": "ready_for_validator",
+      "not_testable_reason": null,
+      "renderer": "pygame",
+      "timeout_seconds": 30,
+      "script_path": null
+    }
+  ],
+  "summary": {
+    "total": 3,
+    "ready_for_validator": 3,
+    "not_testable": 0
+  },
+  "warnings": [
+    "Requirement 0 had no valid executable test and was marked not_testable",
+    "Requirement 1 had no valid executable test and was marked not_testable",
+    "Requirement 2 had no valid executable test and was marked not_testable",
+    "Requirement 4 had no valid executable test and was marked not_testable",
+    "Requirement 5 had no valid executable test and was marked not_testable",
+    "Requirement 6 had no valid executable test and was marked not_testable",
+    "Requirement 7 had no valid executable test and was marked not_testable",
+    "Requirement 8 had no valid executable test and was marked not_testable",
+    "Requirement 9 had no valid executable test and was marked not_testable",
+    "Requirement 10 had no valid executable test and was marked not_testable",
+    "Requirement 11 had no valid executable test and was marked not_testable",
+    "Requirement 12 had no valid executable test and was marked not_testable",
+    "Requirement 13 had no valid executable test and was marked not_testable",
+    "Requirement 14 had no valid executable test and was marked not_testable",
+    "Requirement 17 had no valid executable test and was marked not_testable",
+    "Requirement 18 had no valid executable test and was marked not_testable",
+    "Requirement 19 had no valid executable test and was marked not_testable",
+    "Requirement 20 had no valid executable test and was marked not_testable"
+  ],
+  "important": "Generation is not execution. This file does not claim PASS and must not be used as test_results.json."
+}

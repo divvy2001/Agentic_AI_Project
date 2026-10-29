@@ -1,183 +1,220 @@
 {
   "status": "success",
-  "game_title": "Lantern Cave",
+  "game_title": "Simple Tetris",
   "profile": {
-    "genre": "text adventure",
-    "renderer": "terminal",
+    "genre": "puzzle",
+    "renderer": "pygame",
     "dimensions": "2d",
-    "pace": "turn-based",
+    "pace": "real-time",
     "players": 1
   },
   "requirements": [
     {
-      "text": "The game must be called 'Lantern Cave'.",
+      "text": "The game must be called 'Simple Tetris'.",
       "priority": "core",
       "status": "full",
-      "check": "The game window title or initial prompt displays 'Lantern Cave'.",
+      "check": "The game window title displays 'Simple Tetris'.",
       "milestone": 1,
-      "quote": "Create a small text adventure game played in the terminal called \"Lantern Cave\"."
+      "quote": "Create a simplified Tetris game called \"Simple Tetris\""
     },
     {
-      "text": "The game must have five connected locations: a forest clearing, a cave entrance, a dark tunnel, an underground lake, and a treasure room.",
+      "text": "The game grid must be 10 columns wide and 20 rows tall.",
       "priority": "core",
       "status": "full",
-      "check": "Player can navigate between all five distinct locations.",
+      "check": "The game displays a grid with 10 columns and 20 rows.",
       "milestone": 1,
-      "quote": "The player explores five connected locations: a forest clearing, a cave entrance, a dark tunnel, an underground lake and a treasure room."
+      "quote": "on a grid 10 columns wide and 20 rows tall."
     },
     {
-      "text": "The player can type 'look' to get a description of the current location.",
+      "text": "Blocks are drawn as plain coloured squares, one colour per piece shape.",
       "priority": "core",
       "status": "full",
-      "check": "Typing 'look' prints 'LOOK' followed by a description of the current location.",
+      "check": "Falling and locked blocks are rendered as solid colored squares, with each of the four piece shapes having a distinct color.",
       "milestone": 1,
-      "quote": "The player types one command per line: look"
+      "quote": "Blocks are drawn as plain coloured squares, one colour per piece shape; do not generate any image assets, use solid colours only."
     },
     {
-      "text": "The player can type 'go north', 'go south', 'go east', 'go west' to move between locations.",
+      "text": "Use exactly four piece shapes: the square (2x2), the line (4 in a row), the L-shape, and the T-shape.",
       "priority": "core",
       "status": "full",
-      "check": "Typing 'go north' (or other directions) changes the player's location if valid, printing 'MOVED NORTH' (or corresponding direction).",
+      "check": "Only the square, line, L-shape, and T-shape pieces appear in the game.",
       "milestone": 1,
-      "quote": "go north, go south, go east, go west"
+      "quote": "Use exactly four piece shapes: the square (2x2), the line (4 in a row), the L-shape, and the T-shape."
     },
     {
-      "text": "A blocked move prints 'BLOCKED'.",
+      "text": "A new random piece of one of these four shapes spawns at the top-middle of the grid.",
       "priority": "core",
       "status": "full",
-      "check": "Attempting to move in an invalid direction prints 'BLOCKED'.",
+      "check": "After a piece locks or at game start, a new random piece appears at the top-middle of the grid.",
       "milestone": 1,
-      "quote": "a blocked move prints BLOCKED"
+      "quote": "A new random piece of one of these four shapes spawns at the top-middle of the grid."
     },
     {
-      "text": "The player can type 'take <item>' to pick up an item.",
+      "text": "The piece falls downward automatically at a constant rate.",
       "priority": "core",
       "status": "full",
-      "check": "Typing 'take lantern' in the cave entrance adds the lantern to inventory and prints 'TOOK lantern'.",
+      "check": "A falling piece moves down one row automatically after a fixed time interval.",
       "milestone": 1,
-      "quote": "take <item>"
+      "quote": "The piece falls downward automatically at a constant rate."
     },
     {
-      "text": "The player can type 'inventory' to view items they are carrying.",
+      "text": "Left arrow moves the falling piece one column left.",
       "priority": "core",
       "status": "full",
-      "check": "Typing 'inventory' prints 'INVENTORY' followed by a list of held items.",
+      "check": "Pressing LEFT moves the falling piece one column to the left, if space allows. 'MOVE LEFT' is printed to console.",
       "milestone": 1,
-      "quote": "inventory"
+      "quote": "Left arrow moves the falling piece one column left"
     },
     {
-      "text": "The player can type 'help' to see available commands.",
-      "priority": "secondary",
-      "status": "full",
-      "check": "Typing 'help' prints 'HELP' followed by a list of valid commands.",
-      "milestone": 2,
-      "quote": "help"
-    },
-    {
-      "text": "The player can type 'quit' to exit the game.",
+      "text": "Right arrow moves the falling piece one column right.",
       "priority": "core",
       "status": "full",
-      "check": "Typing 'quit' prints 'QUIT' and terminates the game.",
+      "check": "Pressing RIGHT moves the falling piece one column to the right, if space allows. 'MOVE RIGHT' is printed to console.",
       "milestone": 1,
-      "quote": "quit prints QUIT and exits"
+      "quote": "Right arrow moves it one column right"
     },
     {
-      "text": "The cave entrance holds a lantern.",
+      "text": "Down arrow moves the falling piece down one row immediately (soft drop).",
       "priority": "core",
       "status": "full",
-      "check": "The 'look' command in the cave entrance describes a lantern, and 'take lantern' is successful.",
+      "check": "Pressing DOWN moves the falling piece one row down immediately, if space allows. 'SOFT DROP' is printed to console.",
       "milestone": 1,
-      "quote": "The cave entrance holds a lantern"
+      "quote": "Down arrow moves it down one row immediately (soft drop)"
     },
     {
-      "text": "The underground lake holds a rusty key.",
+      "text": "Movement controls (Left, Right, Down) do not move the piece through the grid walls or through blocks already locked in place.",
       "priority": "core",
       "status": "full",
-      "check": "The 'look' command in the underground lake describes a rusty key, and 'take rusty key' is successful.",
+      "check": "Attempting to move a piece left/right/down into a wall or locked block has no effect on the piece's position.",
       "milestone": 1,
-      "quote": "the underground lake holds a rusty key"
+      "quote": "none of these move the piece through the grid walls or through blocks already locked in place."
     },
     {
-      "text": "The dark tunnel cannot be crossed without the lantern.",
+      "text": "Up arrow rotates the piece 90 degrees.",
       "priority": "core",
       "status": "full",
-      "check": "Attempting to enter the dark tunnel without the lantern results in a 'BLOCKED' message. With the lantern, movement is successful.",
+      "check": "Pressing UP rotates the falling piece 90 degrees clockwise. 'ROTATE' is printed to console.",
       "milestone": 1,
-      "quote": "The dark tunnel cannot be crossed without the lantern"
+      "quote": "Up arrow rotates the piece 90 degrees"
     },
     {
-      "text": "The treasure room is locked until the player has the rusty key.",
+      "text": "If rotation would overlap walls or locked blocks, ignore the rotation.",
       "priority": "core",
       "status": "full",
-      "check": "Attempting to enter the treasure room without the rusty key results in a 'BLOCKED' message. With the rusty key, movement is successful.",
+      "check": "Attempting to rotate a piece into a wall or locked block has no effect on the piece's orientation.",
       "milestone": 1,
-      "quote": "the treasure room is locked until the player has the rusty key"
+      "quote": "if the rotation would overlap the walls or locked blocks, ignore that rotation press instead of applying it."
     },
     {
-      "text": "Reaching the treasure room with the key wins the game.",
+      "text": "When a piece can no longer move down, it locks in place and a new random piece spawns.",
       "priority": "core",
       "status": "full",
-      "check": "Upon entering the treasure room while possessing the rusty key, the game prints 'WIN' and ends.",
+      "check": "When a falling piece reaches the bottom or lands on locked blocks, it becomes part of the locked blocks, and a new piece appears at the top-middle.",
       "milestone": 1,
-      "quote": "Reaching the treasure room with the key wins the game."
+      "quote": "When a piece can no longer move down because the row below is blocked or it has reached the bottom row, it locks in place at its current position and a new random piece spawns."
     },
     {
-      "text": "Winning prints 'WIN' and ends the game.",
+      "text": "When a horizontal row is completely filled with locked blocks, clear that row, move every row above it down by one, and add 100 to the score.",
       "priority": "core",
       "status": "full",
-      "check": "When the win condition is met, 'WIN' is printed and the game terminates.",
+      "check": "When a row is full of locked blocks, it disappears, all rows above it shift down, and the score increases by 100.",
       "milestone": 1,
-      "quote": "Winning prints WIN and ends the game."
+      "quote": "Whenever a horizontal row is completely filled with locked blocks, clear that row, move every row above it down by one, and add 100 to the score."
     },
     {
-      "text": "An unknown command prints 'UNKNOWN COMMAND' and does not change anything.",
+      "text": "Show the current score in the top-right corner of the window at all times.",
       "priority": "core",
       "status": "full",
-      "check": "Typing an unrecognized command prints 'UNKNOWN COMMAND' and the game state (location, inventory) remains unchanged.",
+      "check": "The current score is continuously displayed in the top-right corner of the game window.",
       "milestone": 1,
-      "quote": "An unknown command prints UNKNOWN COMMAND and does not change anything."
+      "quote": "Show the current score in the top-right corner of the window at all times."
     },
     {
-      "text": "Show the player's current location after every command.",
+      "text": "If a new piece spawns and immediately overlaps an already-locked block, the game is over.",
       "priority": "core",
       "status": "full",
-      "check": "After every valid command, the current location name is printed.",
+      "check": "If a newly spawned piece cannot be placed without overlapping locked blocks, the game ends.",
       "milestone": 1,
-      "quote": "Show the player's current location after every command."
+      "quote": "If a new piece spawns and immediately overlaps an already-locked block, the game is over"
+    },
+    {
+      "text": "When the game is over, show 'GAME OVER' and the final score, and stop spawning new pieces.",
+      "priority": "core",
+      "status": "full",
+      "check": "Upon game over, 'GAME OVER' and the final score are displayed, and no new pieces appear. 'GAME OVER' is printed to console.",
+      "milestone": 1,
+      "quote": "show GAME OVER and the final score, and stop spawning new pieces."
+    },
+    {
+      "text": "Press R to restart with an empty grid and score 0.",
+      "priority": "core",
+      "status": "full",
+      "check": "Pressing 'R' clears the grid, resets the score to 0, and starts a new game. 'RESTART' is printed to console.",
+      "milestone": 1,
+      "quote": "Press R to restart with an empty grid and score 0."
+    },
+    {
+      "text": "Press Escape to quit.",
+      "priority": "core",
+      "status": "full",
+      "check": "Pressing 'Escape' closes the game window. 'QUIT' is printed to console.",
+      "milestone": 1,
+      "quote": "Press Escape to quit."
+    },
+    {
+      "text": "Print a line to the console every time a control takes effect: MOVE LEFT, MOVE RIGHT, SOFT DROP, ROTATE, RESTART and QUIT.",
+      "priority": "core",
+      "status": "full",
+      "check": "The specified messages are printed to the console when the corresponding controls are successfully activated.",
+      "milestone": 1,
+      "quote": "Print a line to the console every time a control takes effect: MOVE LEFT, MOVE RIGHT, SOFT DROP, ROTATE, RESTART and QUIT"
+    },
+    {
+      "text": "Print GAME OVER when the game ends.",
+      "priority": "core",
+      "status": "full",
+      "check": "When the game ends, 'GAME OVER' is printed to the console.",
+      "milestone": 1,
+      "quote": "and print GAME OVER when the game ends."
+    },
+    {
+      "text": "No sounds.",
+      "priority": "core",
+      "status": "full",
+      "check": "The game produces no audio output.",
+      "milestone": 1,
+      "quote": "No sounds."
     }
   ],
   "architecture": {
-    "entry_point": "game/lantern_cave.py",
+    "entry_point": "game/tetris_game.py",
     "files": [
       {
         "path": "game/__init__.py",
-        "purpose": "Marks the game directory as a Python package."
+        "purpose": "Initializes the game package."
       },
       {
-        "path": "game/lantern_cave.py",
-        "purpose": "Main game logic, including location definitions, player state, command parsing, and game loop."
+        "path": "game/tetris_game.py",
+        "purpose": "Main game logic, including game loop, event handling, rendering, and game state management."
       }
     ],
-    "dependencies": [],
+    "dependencies": [
+      "pygame"
+    ],
     "assets": {
-      "strategy": "none",
-      "strategy_rationale": "The game is a text adventure played in the terminal, so no graphical assets are needed.",
+      "strategy": "procedural",
+      "strategy_rationale": "The spec explicitly states 'do not generate any image assets, use solid colours only', which aligns with a procedural asset strategy.",
       "sprites": []
     },
-    "resolution": null,
-    "fps": null,
+    "extensions": {},
+    "resolution": {
+      "width": 400,
+      "height": 600
+    },
+    "fps": 60,
     "requires_input": true,
-    "test_input_example": "go east\\ntake lantern\\ngo west\\ngo south\\ngo south\\ntake rusty key\\ngo north\\ngo north\\ngo east\\nquit",
+    "test_input_example": "Press RIGHT, then DOWN several times until piece locks. Repeat until a row clears. Press UP to rotate. Press R to restart. Press ESC to quit.",
     "complexity_warning": null
   },
-  "unmapped": [
-    {
-      "quote": "Every command prints one fixed confirmation line first, then a short description: look prints LOOK, a successful move prints MOVED NORTH, MOVED SOUTH, MOVED EAST or MOVED WEST, a blocked move prints BLOCKED, take prints TOOK followed by the item name, inventory prints INVENTORY, help prints HELP, and quit prints QUIT and exits.",
-      "handling": "This is a detailed instruction for output formatting. The Coder should implement these exact confirmation lines before the descriptive text for each command."
-    },
-    {
-      "quote": "Use the standard library only and keep it in as few files as possible.",
-      "handling": "The Coder should ensure no external libraries are used and consolidate game logic into a minimal number of Python files, ideally one main file and an __init__.py."
-    }
-  ]
+  "unmapped": []
 }

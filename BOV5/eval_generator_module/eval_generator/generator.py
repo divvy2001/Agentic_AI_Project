@@ -183,6 +183,15 @@ def _openrouter_generate(plan: dict[str, Any], manual: dict[str, Any], renderer:
     result = _extract_json_object(content)
     if not isinstance(result.get("tests"), list):
         raise ValueError("LLM output must contain a tests array")
+    # Keep the exact prompt and raw model output alongside the parsed result, so a
+    # grader can see what was actually asked and returned, not only the post-validation
+    # suite.json. Popped off by generate_suite() before it's used as test data.
+    result["_trace"] = {
+        "model": model,
+        "system_prompt": system_prompt,
+        "user_payload": user_payload,
+        "raw_response_content": content,
+    }
     return result
 
 
@@ -349,6 +358,7 @@ def generate_suite(project_root: str | Path, suite_version: str = "eval-v1",
     structured = _manual_inputs(manual)
     generation_notes: list[str] = []
     controls_found: list[dict[str, Any]] = []
+    llm_trace: dict[str, Any] | None = None
 
     if backend == "openrouter":
         key = api_key or os.environ.get("OPENROUTER_API_KEY")
@@ -363,6 +373,7 @@ def generate_suite(project_root: str | Path, suite_version: str = "eval-v1",
             raise ValueError("No API key entered. Run again and provide your OpenRouter API key.")
         selected_model = model or "openai/gpt-4.1-mini"
         llm_result = _openrouter_generate(plan, manual, renderer, selected_model, key)
+        llm_trace = llm_result.pop("_trace", None)
         generation_notes = [str(x) for x in llm_result.get("generation_notes", []) if isinstance(x, str)]
         tests = _validate_and_normalize_tests(llm_result["tests"], requirements, renderer, warnings)
         controls_found = [c for c in llm_result.get("controls", []) if isinstance(c, dict)]
@@ -439,6 +450,14 @@ def generate_suite(project_root: str | Path, suite_version: str = "eval-v1",
             raise FileExistsError(f"Frozen suite {suite_version!r} already exists for different inputs or generator settings. Choose a new suite_version.")
         return existing
     out_file.write_text(json.dumps(suite, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    if llm_trace is not None:
+        # The exact system/user prompt sent and the raw model response, before any
+        # validation or normalization — suite.json only has the post-validation result.
+        try:
+            (out_dir / "llm_trace.json").write_text(
+                json.dumps(llm_trace, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+        except Exception as exc:
+            print(f"[EVAL GENERATOR] llm trace write failed: {type(exc).__name__}: {exc}")
     return suite
 
 

@@ -1,0 +1,10 @@
+{"turn": 1, "t": 0.6, "stage": "start", "status": "ok", "detail": "spec=flappybird.md (1270 chars)"}
+{"turn": 2, "t": 61.1, "stage": "planner+assets", "status": "success", "detail": "renderer=pygame assets=ai_art", "renderer": "pygame", "entry_point": "game/flappy_bird_clone.py"}
+{"turn": 3, "t": 606.2, "stage": "logic_coder", "status": "ready_for_testing", "reason": null, "steps": 5, "cost": "$0.0218", "attempt_id": "64b49a4128594986a605688ecb88f7de"}
+{"turn": 4, "t": 619.7, "stage": "eval_generator", "status": "ok", "detail": "suite=run20261029_094652-s1 tests=3", "exit_code": 0}
+{"turn": 5, "t": 653.9, "stage": "runtime_tester", "status": "done", "round": 1, "counts": {"FAIL": 1, "PASS": 2}, "results": "traces/eval/run20261029_094652-s1/test_run_20261029_095712/test_results.json"}
+{"turn": 6, "t": 653.9, "stage": "decision", "status": "errors found", "round": 1, "detail": "1 failing test(s)"}
+{"turn": 7, "t": 926.6, "stage": "triage", "status": "ready_for_testing", "round": 1, "route": "logic_coder", "confidence": 0.8, "reason": ""}
+{"turn": 8, "t": 926.6, "stage": "coder_repair", "status": "ready_for_testing", "round": 1, "reason": null, "cost": "$0.0064"}
+{"turn": 9, "t": 945.1, "stage": "runtime_tester", "status": "done", "round": 2, "counts": {"PASS": 3}, "results": "traces/eval/run20261029_094652-s1/test_run_20261029_100219/test_results.json"}
+{"turn": 10, "t": 945.1, "stage": "decision", "status": "no errors", "round": 2, "detail": "needs_review=0"}
