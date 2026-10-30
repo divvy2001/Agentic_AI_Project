@@ -1,0 +1,245 @@
+{
+  "status": "success",
+  "game_title": "Drift Car",
+  "profile": {
+    "genre": "Top-down racing",
+    "renderer": "pygame",
+    "dimensions": "2d",
+    "pace": "real-time",
+    "players": 1
+  },
+  "requirements": [
+    {
+      "text": "The car accelerates forward when the Up arrow key is pressed.",
+      "priority": "core",
+      "status": "full",
+      "check": "After pressing UP for 10 frames, the car's forward speed increases.",
+      "milestone": 1,
+      "quote": "a car accelerates forward with Up"
+    },
+    {
+      "text": "The car brakes/reverses when the Down arrow key is pressed.",
+      "priority": "core",
+      "status": "full",
+      "check": "After pressing DOWN for 10 frames, the car's forward speed decreases or becomes negative.",
+      "milestone": 1,
+      "quote": "brakes/reverses with Down"
+    },
+    {
+      "text": "The car steers left when the Left arrow key is pressed.",
+      "priority": "core",
+      "status": "full",
+      "check": "After pressing LEFT for 10 frames, the car's heading rotates counter-clockwise.",
+      "milestone": 1,
+      "quote": "steers left and right with the arrow keys"
+    },
+    {
+      "text": "The car steers right when the Right arrow key is pressed.",
+      "priority": "core",
+      "status": "full",
+      "check": "After pressing RIGHT for 10 frames, the car's heading rotates clockwise.",
+      "milestone": 1,
+      "quote": "steers left and right with the arrow keys"
+    },
+    {
+      "text": "The car exhibits realistic momentum and drift, sliding in its prior direction when turning at speed.",
+      "priority": "core",
+      "status": "full",
+      "check": "While turning at speed, the car's movement vector should deviate from its current heading, showing a sliding effect.",
+      "milestone": 1,
+      "quote": "carries realistic momentum and drift \u2014 the car keeps sliding in its prior direction of travel when turning at speed rather than snapping instantly to the new heading"
+    },
+    {
+      "text": "The car gradually loses speed due to friction when no keys are pressed.",
+      "priority": "core",
+      "status": "full",
+      "check": "When no input is given, the car's speed should decrease over time until it stops.",
+      "milestone": 1,
+      "quote": "gradually loses speed from friction when no key is pressed"
+    },
+    {
+      "text": "The car must stay within a race track boundary drawn as a closed loop of walls.",
+      "priority": "core",
+      "status": "full",
+      "check": "The car's position never goes outside the defined track walls.",
+      "milestone": 1,
+      "quote": "The car must stay within a race track boundary drawn as a closed loop of walls"
+    },
+    {
+      "text": "Crossing a lap-start line after going all the way around the track adds 1 lap.",
+      "priority": "core",
+      "status": "full",
+      "check": "After driving the car completely around the track and crossing the lap-start line, the lap count displayed on screen increases by 1.",
+      "milestone": 1,
+      "quote": "crossing a lap-start line after going all the way around adds 1 lap"
+    },
+    {
+      "text": "Hitting a wall briefly stops the car's forward momentum.",
+      "priority": "core",
+      "status": "full",
+      "check": "When the car collides with a track wall, its forward speed immediately drops to zero or near zero.",
+      "milestone": 1,
+      "quote": "Hitting a wall briefly stops the car's forward momentum"
+    },
+    {
+      "text": "The track winds through a sunset desert canyon, with dusty rock cliffs and scattered cacti lining the course, giving the whole scene a warm, dusty rally atmosphere.",
+      "priority": "secondary",
+      "status": "approximated",
+      "check": "The background and track environment visually represent a sunset desert canyon with dusty rock cliffs and cacti.",
+      "milestone": 2,
+      "quote": "The track winds through a sunset desert canyon, with dusty rock cliffs and scattered cacti lining the course, giving the whole scene a warm, dusty rally atmosphere."
+    },
+    {
+      "text": "Draw the track walls and lap line as plain coloured shapes.",
+      "priority": "core",
+      "status": "full",
+      "check": "Track walls and the lap line are rendered as solid colored geometric shapes, not images.",
+      "milestone": 1,
+      "quote": "Draw the track walls and lap line as plain coloured shapes, no other images."
+    },
+    {
+      "text": "Show lap count in the top-left corner at all times.",
+      "priority": "core",
+      "status": "full",
+      "check": "A numerical lap counter is visible in the top-left corner of the screen and updates correctly.",
+      "milestone": 1,
+      "quote": "Show lap count in the top-left corner at all times."
+    },
+    {
+      "text": "Press R to restart with 0 laps.",
+      "priority": "core",
+      "status": "full",
+      "check": "After pressing R, the car resets to its starting position, and the lap count resets to 0.",
+      "milestone": 1,
+      "quote": "Press R to restart with 0 laps."
+    },
+    {
+      "text": "Press Escape to quit the game.",
+      "priority": "core",
+      "status": "full",
+      "check": "Pressing Escape closes the game window.",
+      "milestone": 1,
+      "quote": "Press Escape to quit."
+    },
+    {
+      "text": "Print 'ACCELERATE' to the console when the Up key takes effect.",
+      "priority": "secondary",
+      "status": "full",
+      "check": "When the Up key is pressed and the car accelerates, 'ACCELERATE' is printed to the console.",
+      "milestone": 1,
+      "quote": "Print a line to the console every time a control takes effect: ACCELERATE"
+    },
+    {
+      "text": "Print 'BRAKE' to the console when the Down key takes effect.",
+      "priority": "secondary",
+      "status": "full",
+      "check": "When the Down key is pressed and the car brakes/reverses, 'BRAKE' is printed to the console.",
+      "milestone": 1,
+      "quote": "Print a line to the console every time a control takes effect: ... BRAKE"
+    },
+    {
+      "text": "Print 'TURN LEFT' to the console when the Left key takes effect.",
+      "priority": "secondary",
+      "status": "full",
+      "check": "When the Left key is pressed and the car turns left, 'TURN LEFT' is printed to the console.",
+      "milestone": 1,
+      "quote": "Print a line to the console every time a control takes effect: ... TURN LEFT"
+    },
+    {
+      "text": "Print 'TURN RIGHT' to the console when the Right key takes effect.",
+      "priority": "secondary",
+      "status": "full",
+      "check": "When the Right key is pressed and the car turns right, 'TURN RIGHT' is printed to the console.",
+      "milestone": 1,
+      "quote": "Print a line to the console every time a control takes effect: ... TURN RIGHT"
+    },
+    {
+      "text": "Print 'RESTART' to the console when the R key takes effect.",
+      "priority": "secondary",
+      "status": "full",
+      "check": "When the R key is pressed and the game restarts, 'RESTART' is printed to the console.",
+      "milestone": 1,
+      "quote": "Print a line to the console every time a control takes effect: ... RESTART"
+    },
+    {
+      "text": "Print 'QUIT' to the console when the Escape key takes effect.",
+      "priority": "secondary",
+      "status": "full",
+      "check": "When the Escape key is pressed and the game quits, 'QUIT' is printed to the console.",
+      "milestone": 1,
+      "quote": "Print a line to the console every time a control takes effect: ... and QUIT"
+    },
+    {
+      "text": "Print 'LAP COMPLETE' to the console each time a lap finishes.",
+      "priority": "secondary",
+      "status": "full",
+      "check": "When a lap is successfully completed, 'LAP COMPLETE' is printed to the console.",
+      "milestone": 1,
+      "quote": "and print LAP COMPLETE each time a lap finishes."
+    }
+  ],
+  "architecture": {
+    "entry_point": "game/drift_car.py",
+    "files": [
+      {
+        "path": "game/__init__.py",
+        "purpose": "Initializes the game package."
+      },
+      {
+        "path": "game/drift_car.py",
+        "purpose": "Main game logic, car, track, and game loop."
+      }
+    ],
+    "dependencies": [
+      "pygame"
+    ],
+    "assets": {
+      "strategy": "ai_art",
+      "strategy_rationale": "The spec explicitly asks for a small image asset for the car and describes a specific environment for the track background.",
+      "sprites": [
+        {
+          "id": "car_sprite",
+          "type": "sprite",
+          "description": "A top-down view of a rally car, suitable for a desert canyon setting, rotated to face its direction of travel.",
+          "width": 64,
+          "height": 32
+        },
+        {
+          "id": "desert_canyon_background",
+          "type": "background",
+          "description": "A top-down view of a sunset desert canyon with dusty rock cliffs and scattered cacti, creating a warm, dusty rally atmosphere.",
+          "width": 512,
+          "height": 384
+        }
+      ]
+    },
+    "extensions": {
+      "track_layout": {
+        "summary": "Defines the race track's geometry and lap line.",
+        "detail": "The track will be a closed loop of walls, defined by a series of points or segments. The lap-start line will be a specific segment within this loop. The track will be designed to fit within the game window and provide a challenging course for drifting."
+      },
+      "physics_engine": {
+        "summary": "Handles car movement, momentum, friction, and collision.",
+        "detail": "A custom physics system will be implemented to simulate realistic car momentum, drift, and friction. This includes calculating the car's velocity, direction, and angular rotation based on player input and environmental factors. Collision detection with track walls will be handled to stop forward momentum."
+      }
+    },
+    "resolution": {
+      "width": 800,
+      "height": 600
+    },
+    "fps": 60,
+    "requires_input": true,
+    "test_input_example": "Hold UP for 120 frames, then alternate LEFT and RIGHT while holding UP to navigate the track. Cross the lap line. Press R. Press ESC.",
+    "complexity_warning": null
+  },
+  "unmapped": [
+    {
+      "quote": "No sounds.",
+      "handling": "The Coder should ensure no sound effects or background music are implemented in the game."
+    },
+    {
+      "quote": "Keep it to as few files as possible.",
+      "handling": "The Coder should consolidate game logic into a minimal number of Python files, ideally one main file for the game logic and an __init__.py for the package."
+    }
+  ]
+}

@@ -1,0 +1,96 @@
+{
+  "run_id": "20261030_152443",
+  "spec_file": "C:\\Users\\ASUS\\Game_Agent\\Agentic_AI_Project\\game_specs\\lantern_cave.md",
+  "outcome": "STOPPED: max rounds reached",
+  "turns": 14,
+  "elapsed_s": 1483.9,
+  "total_cost_usd": 0.0735,
+  "cost_by_agent": {
+    "planner": 0.0,
+    "asset_agent": 0.0,
+    "logic_coder": 0.0395,
+    "eval_generator": 0.0,
+    "triage": 0.00955,
+    "coder_repair": 0.02446
+  },
+  "coder_cost_usd_self_reported": 0.0539,
+  "routing": [
+    {
+      "round": 1,
+      "route": "logic_coder",
+      "confidence": 0.9,
+      "callback": "ready_for_testing",
+      "reason": "All command inputs are executed but expected output texts are not found in stdout, indicating command handling or output logic is missing or incorrect."
+    },
+    {
+      "round": 2,
+      "route": "logic_coder",
+      "confidence": 0.9,
+      "callback": "ready_for_testing",
+      "reason": "All command tests fail to produce expected output text, indicating likely missing or incorrect command handling logic."
+    }
+  ],
+  "cost_by_stage": [
+    {
+      "turn": 1,
+      "round": null,
+      "agent": "planner",
+      "route": null,
+      "cost_usd": 0.0
+    },
+    {
+      "turn": 1,
+      "round": null,
+      "agent": "asset_agent",
+      "route": null,
+      "cost_usd": 0.0
+    },
+    {
+      "turn": 2,
+      "round": null,
+      "agent": "logic_coder",
+      "route": null,
+      "cost_usd": 0.0395
+    },
+    {
+      "turn": 3,
+      "round": null,
+      "agent": "eval_generator",
+      "route": null,
+      "cost_usd": 0.0
+    },
+    {
+      "turn": 6,
+      "round": 1,
+      "agent": "triage",
+      "route": "logic_coder",
+      "cost_usd": 0.00477
+    },
+    {
+      "turn": 6,
+      "round": 1,
+      "agent": "coder_repair",
+      "route": "logic_coder",
+      "cost_usd": 0.01178
+    },
+    {
+      "turn": 10,
+      "round": 2,
+      "agent": "triage",
+      "route": "logic_coder",
+      "cost_usd": 0.00478
+    },
+    {
+      "turn": 10,
+      "round": 2,
+      "agent": "coder_repair",
+      "route": "logic_coder",
+      "cost_usd": 0.01268
+    }
+  ],
+  "rounds": 3,
+  "last_counts": {
+    "FAIL": 10,
+    "PASS": 2
+  }
+}

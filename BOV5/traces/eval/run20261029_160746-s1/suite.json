@@ -1,0 +1,269 @@
+{
+  "schema_version": "1.0",
+  "suite_version": "run20261029_160746-s1",
+  "generated_at_utc": "2026-10-29T09:12:58.225454+00:00",
+  "renderer": "godot",
+  "game_title": "Simple Tetris",
+  "generator": {
+    "backend": "openrouter",
+    "model": "openai/gpt-4.1-mini",
+    "scope": "controls"
+  },
+  "generation_notes": [
+    "Controls found and tested: LEFT, RIGHT, DOWN, UP, R, ESCAPE.",
+    "All controls have exact console output lines specified in the manual and are testable with simple input sequences.",
+    "No controls were excluded.",
+    "Rotation test assumes rotation succeeds; if rotation is blocked, ROTATE is not printed, so test may fail if piece is blocked at start."
+  ],
+  "controls": [
+    {
+      "key": "left",
+      "does": "moves piece left if possible",
+      "prints": "MOVE LEFT",
+      "manual_quote": "LEFT arrow: moves piece left if possible. Console prints exactly: MOVE LEFT"
+    },
+    {
+      "key": "right",
+      "does": "moves piece right if possible",
+      "prints": "MOVE RIGHT",
+      "manual_quote": "RIGHT arrow: moves piece right if possible. Console prints exactly: MOVE RIGHT"
+    },
+    {
+      "key": "down",
+      "does": "soft drop (moves piece down one row immediately)",
+      "prints": "SOFT DROP",
+      "manual_quote": "DOWN arrow: soft drop (moves piece down one row immediately). Console prints exactly: SOFT DROP"
+    },
+    {
+      "key": "up",
+      "does": "rotate 90 degrees clockwise if rotation does not collide",
+      "prints": "ROTATE",
+      "manual_quote": "UP arrow: rotate 90 degrees clockwise if rotation does not collide. Console prints exactly: ROTATE (only when rotation succeeds)"
+    },
+    {
+      "key": "r",
+      "does": "restart the game (clears grid, resets score to 0)",
+      "prints": "RESTART",
+      "manual_quote": "R: restart the game (clears grid, resets score to 0). Console prints exactly: RESTART"
+    },
+    {
+      "key": "escape",
+      "does": "quit the game",
+      "prints": "QUIT",
+      "manual_quote": "ESCAPE: quit the game. Console prints exactly: QUIT"
+    }
+  ],
+  "source_hashes": {
+    "plans/coder_plan.json": "d0bec8b10cc7581d30b93ee65909249dc87985d1245aab7b0225bdcf1f55f07c",
+    "plans/play_manual.json": "5a92506d4d4996ff6217b924ea6726b5ffa73ee785f2dce6c1650c9ff3a4fb6a",
+    "plans/asset_manifest.json": "cea34f059d95d60248d34422e5e11a44333f9c851917f3435c01d669d9a43a19"
+  },
+  "tests": [
+    {
+      "test_id": "C01",
+      "requirement_index": 7,
+      "requirement": "Right arrow moves the falling piece one column right.",
+      "assertion": "Pressing LEFT moves the falling piece one column left and prints 'MOVE LEFT' to the console.",
+      "actions": [
+        {
+          "type": "wait",
+          "seconds": 1
+        },
+        {
+          "type": "press",
+          "key": "left"
+        },
+        {
+          "type": "wait",
+          "seconds": 1
+        }
+      ],
+      "observation": {
+        "method": "stdout",
+        "target": "MOVE LEFT"
+      },
+      "expected": "MOVE LEFT",
+      "status": "ready_for_validator",
+      "not_testable_reason": null,
+      "renderer": "godot",
+      "timeout_seconds": 30,
+      "script_path": null
+    },
+    {
+      "test_id": "C02",
+      "requirement_index": 8,
+      "requirement": "Down arrow moves the falling piece down one row immediately (soft drop).",
+      "assertion": "Pressing RIGHT moves the falling piece one column right and prints 'MOVE RIGHT' to the console.",
+      "actions": [
+        {
+          "type": "wait",
+          "seconds": 1
+        },
+        {
+          "type": "press",
+          "key": "right"
+        },
+        {
+          "type": "wait",
+          "seconds": 1
+        }
+      ],
+      "observation": {
+        "method": "stdout",
+        "target": "MOVE RIGHT"
+      },
+      "expected": "MOVE RIGHT",
+      "status": "ready_for_validator",
+      "not_testable_reason": null,
+      "renderer": "godot",
+      "timeout_seconds": 30,
+      "script_path": null
+    },
+    {
+      "test_id": "C03",
+      "requirement_index": 9,
+      "requirement": "Movement controls (Left, Right, Down) do not move the piece through the grid walls or through blocks already locked in place.",
+      "assertion": "Pressing DOWN moves the falling piece down one row immediately and prints 'SOFT DROP' to the console.",
+      "actions": [
+        {
+          "type": "wait",
+          "seconds": 1
+        },
+        {
+          "type": "press",
+          "key": "down"
+        },
+        {
+          "type": "wait",
+          "seconds": 1
+        }
+      ],
+      "observation": {
+        "method": "stdout",
+        "target": "SOFT DROP"
+      },
+      "expected": "SOFT DROP",
+      "status": "ready_for_validator",
+      "not_testable_reason": null,
+      "renderer": "godot",
+      "timeout_seconds": 30,
+      "script_path": null
+    },
+    {
+      "test_id": "C04",
+      "requirement_index": 11,
+      "requirement": "If a rotation would overlap the walls or locked blocks, ignore that rotation press.",
+      "assertion": "Pressing UP rotates the falling piece 90 degrees clockwise and prints 'ROTATE' to the console when rotation succeeds.",
+      "actions": [
+        {
+          "type": "wait",
+          "seconds": 1
+        },
+        {
+          "type": "press",
+          "key": "up"
+        },
+        {
+          "type": "wait",
+          "seconds": 1
+        }
+      ],
+      "observation": {
+        "method": "stdout",
+        "target": "ROTATE"
+      },
+      "expected": "ROTATE",
+      "status": "ready_for_validator",
+      "not_testable_reason": null,
+      "renderer": "godot",
+      "timeout_seconds": 30,
+      "script_path": null
+    },
+    {
+      "test_id": "C05",
+      "requirement_index": 20,
+      "requirement": "Print GAME OVER when the game ends.",
+      "assertion": "Pressing R restarts the game and prints 'RESTART' to the console.",
+      "actions": [
+        {
+          "type": "wait",
+          "seconds": 1
+        },
+        {
+          "type": "press",
+          "key": "r"
+        },
+        {
+          "type": "wait",
+          "seconds": 1
+        }
+      ],
+      "observation": {
+        "method": "stdout",
+        "target": "RESTART"
+      },
+      "expected": "RESTART",
+      "status": "ready_for_validator",
+      "not_testable_reason": null,
+      "renderer": "godot",
+      "timeout_seconds": 30,
+      "script_path": null
+    },
+    {
+      "test_id": "C22",
+      "requirement_index": 0,
+      "requirement": "Pressing escape works",
+      "assertion": "After pressing escape the game prints QUIT",
+      "actions": [
+        {
+          "type": "wait",
+          "seconds": 1
+        },
+        {
+          "type": "press",
+          "key": "escape"
+        },
+        {
+          "type": "wait",
+          "seconds": 1
+        }
+      ],
+      "observation": {
+        "method": "stdout",
+        "target": "QUIT"
+      },
+      "expected": "QUIT",
+      "status": "ready_for_validator",
+      "not_testable_reason": null,
+      "renderer": "godot",
+      "timeout_seconds": 30,
+      "script_path": null
+    }
+  ],
+  "summary": {
+    "total": 6,
+    "ready_for_validator": 6,
+    "not_testable": 0
+  },
+  "warnings": [
+    "LLM test at index 5 has an invalid requirement_index and was ignored",
+    "Requirement 0 had no valid executable test and was marked not_testable",
+    "Requirement 1 had no valid executable test and was marked not_testable",
+    "Requirement 2 had no valid executable test and was marked not_testable",
+    "Requirement 3 had no valid executable test and was marked not_testable",
+    "Requirement 4 had no valid executable test and was marked not_testable",
+    "Requirement 5 had no valid executable test and was marked not_testable",
+    "Requirement 6 had no valid executable test and was marked not_testable",
+    "Requirement 10 had no valid executable test and was marked not_testable",
+    "Requirement 12 had no valid executable test and was marked not_testable",
+    "Requirement 13 had no valid executable test and was marked not_testable",
+    "Requirement 14 had no valid executable test and was marked not_testable",
+    "Requirement 15 had no valid executable test and was marked not_testable",
+    "Requirement 16 had no valid executable test and was marked not_testable",
+    "Requirement 17 had no valid executable test and was marked not_testable",
+    "Requirement 18 had no valid executable test and was marked not_testable",
+    "Requirement 19 had no valid executable test and was marked not_testable",
+    "Added missing control test for escape -> QUIT"
+  ],
+  "important": "Generation is not execution. This file does not claim PASS and must not be used as test_results.json."
+}

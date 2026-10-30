@@ -1,0 +1,196 @@
+{
+  "status": "success",
+  "game_title": "Gravity Flip",
+  "profile": {
+    "genre": "platformer",
+    "renderer": "godot",
+    "dimensions": "2d",
+    "pace": "real-time",
+    "players": 1
+  },
+  "requirements": [
+    {
+      "text": "The game must be a one-screen platformer.",
+      "priority": "core",
+      "status": "full",
+      "check": "The game window displays a single continuous level without scrolling or scene transitions.",
+      "milestone": 1,
+      "quote": "Create a one-screen platformer"
+    },
+    {
+      "text": "A small character runs automatically to the right at a constant speed.",
+      "priority": "core",
+      "status": "full",
+      "check": "The character sprite moves horizontally to the right without player input, at a consistent pixel speed.",
+      "milestone": 1,
+      "quote": "a small character runs automatically to the right at a constant speed"
+    },
+    {
+      "text": "The character runs across a series of platforms fixed to both the floor and the ceiling.",
+      "priority": "core",
+      "status": "full",
+      "check": "Platforms are visible at the bottom and top of the screen, and the character can move along them.",
+      "milestone": 1,
+      "quote": "across a series of platforms fixed to both the floor and the ceiling"
+    },
+    {
+      "text": "Pressing Space instantly flips gravity, so the character falls toward the ceiling instead of the floor (or back to the floor if already flipped).",
+      "priority": "core",
+      "status": "full",
+      "check": "Pressing SPACE causes the character's vertical movement direction to reverse, and its orientation to flip.",
+      "milestone": 1,
+      "quote": "Pressing Space instantly flips gravity, so the character falls toward the ceiling instead of the floor (or back to the floor if already flipped)"
+    },
+    {
+      "text": "The character smoothly reorients when gravity flips.",
+      "priority": "core",
+      "status": "full",
+      "check": "When gravity flips, the character sprite rotates smoothly to align with the new 'down' direction.",
+      "milestone": 1,
+      "quote": "smoothly reorienting which platforms it can land on"
+    },
+    {
+      "text": "The character must stay on a platform; falling into empty space between platforms ends the run.",
+      "priority": "core",
+      "status": "full",
+      "check": "If the character is not colliding with a platform after a gravity flip or movement, the game state transitions to 'GAME OVER'.",
+      "milestone": 1,
+      "quote": "The character must stay on a platform; falling into empty space between platforms (after a flip or a missed landing) ends the run."
+    },
+    {
+      "text": "Passing each platform without falling adds 1 point.",
+      "priority": "core",
+      "status": "full",
+      "check": "The score increases by 1 each time the character successfully traverses a platform segment.",
+      "milestone": 1,
+      "quote": "Passing each platform without falling adds 1 point."
+    },
+    {
+      "text": "Show the score in the top-left corner at all times.",
+      "priority": "core",
+      "status": "full",
+      "check": "A numerical score display is continuously visible in the top-left corner of the screen.",
+      "milestone": 1,
+      "quote": "Show the score in the top-left corner at all times."
+    },
+    {
+      "text": "When the character falls off, show GAME OVER and the final score, and stop the run.",
+      "priority": "core",
+      "status": "full",
+      "check": "Upon falling, 'GAME OVER' text appears, the final score is displayed, and character movement ceases.",
+      "milestone": 1,
+      "quote": "When the character falls off, show GAME OVER and the final score, and stop the run."
+    },
+    {
+      "text": "Press R to restart with score 0 and the character back at the start.",
+      "priority": "core",
+      "status": "full",
+      "check": "Pressing R resets the score to 0, places the character at the initial starting position, and resumes automatic movement.",
+      "milestone": 1,
+      "quote": "Press R to restart with score 0 and the character back at the start."
+    },
+    {
+      "text": "Press Escape to quit.",
+      "priority": "core",
+      "status": "full",
+      "check": "Pressing ESCAPE closes the game window.",
+      "milestone": 1,
+      "quote": "Press Escape to quit."
+    },
+    {
+      "text": "Print 'FLIP GRAVITY' to the console every time a gravity flip control takes effect.",
+      "priority": "secondary",
+      "status": "full",
+      "check": "The console outputs 'FLIP GRAVITY' each time the SPACE key is pressed and gravity changes.",
+      "milestone": 1,
+      "quote": "Print a line to the console every time a control takes effect: FLIP GRAVITY"
+    },
+    {
+      "text": "Print 'RESTART' to the console every time a restart control takes effect.",
+      "priority": "secondary",
+      "status": "full",
+      "check": "The console outputs 'RESTART' each time the R key is pressed.",
+      "milestone": 1,
+      "quote": "Print a line to the console every time a control takes effect: RESTART"
+    },
+    {
+      "text": "Print 'QUIT' to the console every time a quit control takes effect.",
+      "priority": "secondary",
+      "status": "full",
+      "check": "The console outputs 'QUIT' each time the ESCAPE key is pressed.",
+      "milestone": 1,
+      "quote": "Print a line to the console every time a control takes effect: QUIT"
+    },
+    {
+      "text": "Print 'GAME OVER' to the console when the run ends.",
+      "priority": "secondary",
+      "status": "full",
+      "check": "The console outputs 'GAME OVER' when the character falls off a platform.",
+      "milestone": 1,
+      "quote": "and print GAME OVER when the run ends."
+    }
+  ],
+  "architecture": {
+    "entry_point": "game/main.tscn",
+    "files": [
+      {
+        "path": "game/__init__.py",
+        "purpose": "Empty file to mark game as a Python package."
+      },
+      {
+        "path": "game/main.tscn",
+        "purpose": "Main Godot scene file, containing the game world, character, platforms, and UI."
+      },
+      {
+        "path": "game/player.gd",
+        "purpose": "GDScript for the player character's movement, gravity flip logic, and collision detection."
+      },
+      {
+        "path": "game/platform.gd",
+        "purpose": "GDScript for platform behavior, if any specific logic is needed beyond static collision."
+      },
+      {
+        "path": "game/game_manager.gd",
+        "purpose": "GDScript for managing game state, score, restarts, and UI updates."
+      }
+    ],
+    "dependencies": [],
+    "assets": {
+      "strategy": "ai_art",
+      "strategy_rationale": "The spec explicitly asks for 'exactly one small image asset: the character' and 'Draw platforms as plain coloured rectangles, no other images'.",
+      "sprites": [
+        {
+          "id": "character_sprite",
+          "type": "sprite",
+          "description": "A small, simple character for a platformer game, suitable for flipping gravity.",
+          "width": 32,
+          "height": 32
+        }
+      ]
+    },
+    "extensions": {
+      "level_design": {
+        "summary": "Procedurally generated or simple fixed platforms.",
+        "detail": "The level will consist of a series of platforms. Some will be on the 'floor' (bottom of the screen) and some on the 'ceiling' (top of the screen). The character moves right automatically. The platforms should be spaced to require gravity flips to navigate successfully. Platforms will be simple colored rectangles as per the spec."
+      }
+    },
+    "resolution": {
+      "width": 800,
+      "height": 600
+    },
+    "fps": 60,
+    "requires_input": true,
+    "test_input_example": "Hold SPACE for 10 frames, then release. Repeat as needed to navigate platforms. Press R to restart. Press ESCAPE to quit.",
+    "complexity_warning": null
+  },
+  "unmapped": [
+    {
+      "quote": "No sounds.",
+      "handling": "The Coder should ensure no sound effects or background music are implemented."
+    },
+    {
+      "quote": "Keep it to as few files as possible.",
+      "handling": "The Coder should consolidate scripts and scenes where logical, adhering to Godot's best practices for project structure while minimizing file count."
+    }
+  ]
+}

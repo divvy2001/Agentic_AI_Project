@@ -1,0 +1,11 @@
+[application]
+config/name="Gravity Flip"
+run/main_scene="res://main.tscn"
+
+[display]
+window/size/viewport_width=800
+window/size/viewport_height=600
+window/stretch/mode="canvas_items"
+
+[rendering]
+quality/driver/driver_name="GLES3"

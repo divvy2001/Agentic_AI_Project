@@ -1,0 +1,357 @@
+{
+  "status": "ready_for_testing",
+  "mode": "initial_build",
+  "renderer": "pygame",
+  "entry_point": "game/snake_game.py",
+  "game_dir": "game",
+  "smoke": {
+    "plan_and_files": "passed",
+    "syntax_or_import": "passed",
+    "boot": "passed"
+  },
+  "steps": 8,
+  "play_manual_path": "plans/play_manual.json",
+  "trace_path": "traces/coder_attempts.jsonl",
+  "approximated_requirements": [],
+  "reason": null,
+  "debug_statistics": {
+    "local_failure_events": 0,
+    "self_debug_attempts": 0,
+    "external_repair_invocations": 0
+  },
+  "plan_compatibility_warnings": [],
+  "runtime_render_settings": {
+    "resolution": {
+      "width": 600,
+      "height": 680
+    },
+    "fps": 10
+  },
+  "asset_quality_warnings": [],
+  "asset_visual_acceptance": "not_run",
+  "planner_status": "success",
+  "unmapped": [],
+  "attempt_id": "3130a1ed77d14b8ea7a9e042c591a567",
+  "workspace_preparation": {
+    "action": "backed_up_and_reset",
+    "backup_path": "backups/game-20261029T140243Z-b45c3c5fed",
+    "preserved_directories": [],
+    "preserved_files": 0,
+    "stale_files_backed_up": [
+      "assets/character_sprite.png",
+      "assets/character_sprite.png.import"
+    ],
+    "previous_file_count": 52
+  },
+  "usage": {
+    "model": "openai/gpt-5-mini",
+    "calls": 8,
+    "input_tokens": 67411,
+    "output_tokens": 14708,
+    "max_input_tokens_per_call": 10528,
+    "reported_cost_usd": 0.039212750000000005,
+    "known_cost_usd": 0.039212750000000005,
+    "cost_missing_calls": 0,
+    "by_model": {
+      "openai/gpt-5-mini": {
+        "calls": 8,
+        "input_tokens": 67411,
+        "output_tokens": 14708,
+        "known_cost_usd": 0.039212750000000005,
+        "cost_missing_calls": 0
+      }
+    }
+  },
+  "initial_build_notes": {
+    "source": "first assistant implementation notes; unverified; immutable Planner takes precedence",
+    "text": "Implementation contract (short):\n\n- Requirement ownership:\n  - 0 (20x20 grid) -> game/snake_game.py (rendering) and game/constants.py (GRID_SIZE)\n  - 1 (starting snake 3 squares centre) -> game/snake.py (Snake initial state) and snake_game.py (initialization)\n  - 2 (move right steady) -> game/snake.py (move) and snake_game.py (timing loop, FPS)\n  - 3 (arrow keys change dir) -> snake_game.py -> calls Snake.change_direction(dir)\n  - 4 (cannot reverse) -> snake.py (change_direction guards)\n  - 5 (food random empty) -> game/food.py (spawn) and snake_game.py (exclude positions)\n  - 6 (eating grows) -> snake.py (grow flag) and snake_game.py (detect eat)\n  - 7 (adds 1 point) -> snake_game.py (score update + console print)\n  - 8 (spawn new food) -> food.py (spawn), snake_game.py (call spawn)\n  - 9,10 (hitting wall/body ends) -> snake.py (collision helpers) and snake_game.py (game_over handling/display/print)\n  - 11 (show score top) -> snake_game.py (HUD)\n  - 12 (controls below score) -> snake_game.py (HUD, milestone 2)\n  - 13 (print score on change) -> snake_game.py (print \"SCORE:<n>\")\n  - 14,15 (GAME OVER display & print) -> snake_game.py (draw and print)\n  - 16 (freeze snake on end) -> snake_game.py (stop calling move when game_over)\n  - 17 (R restart) -> snake_game.py (reinitialize)\n  - 18 (Escape quit) -> snake_game.py (handle QUIT)\n  - 19 (plain coloured squares only) -> all drawing uses solid fills (snake, food)\n\n- State ownership & interfaces:\n  - Snake (game/snake.py)\n    - Attributes: body (List[tuple[int,int]]), dir (tuple[int,int]), grow (bool)\n    - Methods:\n      - __init__(start_positions: list[tuple], start_dir: tuple) -> None\n      - move() -> None\n      - change_direction(new_dir: tuple[int,int]) -> None\n      - head() -> tuple[int,int]\n      - collides_with_self() -> bool\n      - collides_with_wall(grid_w:int, grid_h:int) -> bool\n      - grow_by_one() -> None\n  - Food (game/food.py)\n    - Attributes: pos (tuple[int,int]), grid_w, grid_h\n    - Methods:\n      - spawn(exclude: Set[tuple[int,int]]) -> None\n      - get_pos() -> tuple[int,int]\n  - Constants (game/constants.py): GRID_SIZE, CELL_SIZE, HUD_HEIGHT, WIDTH, HEIGHT, FPS, COLORS, DIRECTIONS\n\n- Input -> action -> state -> feedback\n  - KEYDOWN arrow -> snake_game.py maps to new_dir tuple -> snake.change_direction() -> modifies snake.dir if allowed -> prints \"DIRECTION <name>\" -> next frames snake.move() moves head by dir -> drawing shows snake moved.\n  - Snake head == food pos -> snake.grow_by_one() -> increase score by 1, print \"SCORE:<n>\", food.spawn(exclude), continue.\n  - Collision (wall or self) -> set game_over True, print \"GAME OVER\", stop moving snake, display \"GAME OVER\" and final score on screen until R pressed.\n  - R -> reinitialize game state to fresh snake and score 0, print \"RESTART\".\n  - Escape/QUIT event -> exit, print \"QUIT\".\n\n- Coordinate convention:\n  - Discrete grid coords (x: 0..GRID_SIZE-1, y: 0..GRID_SIZE-1).\n  - Pixel position = (x * CELL_SIZE, HUD_HEIGHT + y * CELL_SIZE). Origin (0,0) top-left of window.\n  - Head is snake.body[-1].\n\n- Lifecycle:\n  - init: pygame init, new_game() creates Snake and Food.\n  - play: loop runs at FPS (10); on each frame if not game_over, snake.move(); check collisions and eating; render HUD, grid, snake, food.\n  - terminal: game_over True freezes movement and waits for R or ESC.\n  - reset: R calls new_game() restoring all state.\n\nNow I'll write the promised game files.",
+    "truncated": false
+  },
+  "integration_check": {
+    "fingerprint": "f70d8c688bc2ff58ef8f5977da6f9b428b34214df9f09c69bff5880ac096d3c0",
+    "step": 5,
+    "gates": {
+      "plan_and_files": "passed",
+      "syntax_or_import": "passed",
+      "boot": "passed"
+    },
+    "reason": null,
+    "diagnostics": {
+      "gates": {
+        "plan_and_files": "passed",
+        "syntax_or_import": "passed",
+        "boot": "passed"
+      },
+      "reason": null,
+      "commands": [
+        {
+          "returncode": 0,
+          "reason": null,
+          "seconds": 22.375,
+          "diagnostics": [
+            "CODER_SYNTAX_OK"
+          ],
+          "nonfatal_engine_diagnostics": 0,
+          "sandbox": {
+            "kind": "windows_appcontainer",
+            "token_is_appcontainer": true,
+            "network_capabilities": [],
+            "active_process_limit": 1
+          }
+        },
+        {
+          "returncode": 0,
+          "reason": null,
+          "seconds": 18.453,
+          "diagnostics": [
+            "pygame 2.6.1 (SDL 2.28.4, Python 3.11.9)",
+            "Hello from the pygame community. https://www.pygame.org/contribute.html",
+            "RESTART",
+            "CODER_OBSERVED:{\"frames\": 8, \"inputs\": 0, \"game_lines\": 2487, \"loop_cycles\": 812, \"waiting_for_input\": false, \"pixel_colors\": 26}"
+          ],
+          "nonfatal_engine_diagnostics": 0,
+          "sandbox": {
+            "kind": "windows_appcontainer",
+            "token_is_appcontainer": true,
+            "network_capabilities": [],
+            "active_process_limit": 1
+          }
+        }
+      ]
+    },
+    "scope": "Integration only; full requirement gameplay not established"
+  },
+  "presentation": {
+    "status": "not_run",
+    "reason": "no_separate_presentation_probe"
+  },
+  "coverage_notes": null,
+  "requirement_coverage": [
+    {
+      "index": 0,
+      "planner_status": "full",
+      "check": "The game window opens and displays a visible grid structure with 20 rows and 20 columns.",
+      "validator_status": "not_run",
+      "implementation_files": [],
+      "model_claim": null,
+      "limitations": [],
+      "coverage_evidence": "not_provided"
+    },
+    {
+      "index": 1,
+      "planner_status": "full",
+      "check": "Upon starting the game, a 3-square long green snake is visible in the center of the grid.",
+      "validator_status": "not_run",
+      "implementation_files": [],
+      "model_claim": null,
+      "limitations": [],
+      "coverage_evidence": "not_provided"
+    },
+    {
+      "index": 2,
+      "planner_status": "full",
+      "check": "After game start, the snake's head moves one square to the right every fixed time interval.",
+      "validator_status": "not_run",
+      "implementation_files": [],
+      "model_claim": null,
+      "limitations": [],
+      "coverage_evidence": "not_provided"
+    },
+    {
+      "index": 3,
+      "planner_status": "full",
+      "check": "Pressing an arrow key (UP, DOWN, LEFT, RIGHT) changes the snake's direction of movement accordingly.",
+      "validator_status": "not_run",
+      "implementation_files": [],
+      "model_claim": null,
+      "limitations": [],
+      "coverage_evidence": "not_provided"
+    },
+    {
+      "index": 4,
+      "planner_status": "full",
+      "check": "If the snake is moving right, pressing LEFT does not change its direction; it continues moving right.",
+      "validator_status": "not_run",
+      "implementation_files": [],
+      "model_claim": null,
+      "limitations": [],
+      "coverage_evidence": "not_provided"
+    },
+    {
+      "index": 5,
+      "planner_status": "full",
+      "check": "A single red square is visible on the grid, not overlapping with the snake, and its position changes after being eaten.",
+      "validator_status": "not_run",
+      "implementation_files": [],
+      "model_claim": null,
+      "limitations": [],
+      "coverage_evidence": "not_provided"
+    },
+    {
+      "index": 6,
+      "planner_status": "full",
+      "check": "When the snake's head occupies the same square as the food, the snake's length increases by one square.",
+      "validator_status": "not_run",
+      "implementation_files": [],
+      "model_claim": null,
+      "limitations": [],
+      "coverage_evidence": "not_provided"
+    },
+    {
+      "index": 7,
+      "planner_status": "full",
+      "check": "When the snake eats food, the score displayed on screen increases by 1.",
+      "validator_status": "not_run",
+      "implementation_files": [],
+      "model_claim": null,
+      "limitations": [],
+      "coverage_evidence": "not_provided"
+    },
+    {
+      "index": 8,
+      "planner_status": "full",
+      "check": "Immediately after food is eaten, a new red food square appears at a different random empty spot.",
+      "validator_status": "not_run",
+      "implementation_files": [],
+      "model_claim": null,
+      "limitations": [],
+      "coverage_evidence": "not_provided"
+    },
+    {
+      "index": 9,
+      "planner_status": "full",
+      "check": "If the snake's head moves beyond the grid boundaries, the game ends, and 'GAME OVER' is displayed.",
+      "validator_status": "not_run",
+      "implementation_files": [],
+      "model_claim": null,
+      "limitations": [],
+      "coverage_evidence": "not_provided"
+    },
+    {
+      "index": 10,
+      "planner_status": "full",
+      "check": "If the snake's head moves into any part of its own body, the game ends, and 'GAME OVER' is displayed.",
+      "validator_status": "not_run",
+      "implementation_files": [],
+      "model_claim": null,
+      "limitations": [],
+      "coverage_evidence": "not_provided"
+    },
+    {
+      "index": 11,
+      "planner_status": "full",
+      "check": "A numerical score is continuously displayed at the top of the game window.",
+      "validator_status": "not_run",
+      "implementation_files": [],
+      "model_claim": null,
+      "limitations": [],
+      "coverage_evidence": "not_provided"
+    },
+    {
+      "index": 12,
+      "planner_status": "full",
+      "check": "Text indicating the controls (Arrow keys, R, Escape) is displayed below the score.",
+      "validator_status": "not_run",
+      "implementation_files": [],
+      "model_claim": null,
+      "limitations": [],
+      "coverage_evidence": "not_provided"
+    },
+    {
+      "index": 13,
+      "planner_status": "full",
+      "check": "When the score increases, the new score value is printed to the console.",
+      "validator_status": "not_run",
+      "implementation_files": [],
+      "model_claim": null,
+      "limitations": [],
+      "coverage_evidence": "not_provided"
+    },
+    {
+      "index": 14,
+      "planner_status": "full",
+      "check": "When the game ends, the text 'GAME OVER' appears on screen, along with the final score.",
+      "validator_status": "not_run",
+      "implementation_files": [],
+      "model_claim": null,
+      "limitations": [],
+      "coverage_evidence": "not_provided"
+    },
+    {
+      "index": 15,
+      "planner_status": "full",
+      "check": "When the game ends, the string 'GAME OVER' is printed to the console.",
+      "validator_status": "not_run",
+      "implementation_files": [],
+      "model_claim": null,
+      "limitations": [],
+      "coverage_evidence": "not_provided"
+    },
+    {
+      "index": 16,
+      "planner_status": "full",
+      "check": "After 'GAME OVER' is displayed, the snake stops moving.",
+      "validator_status": "not_run",
+      "implementation_files": [],
+      "model_claim": null,
+      "limitations": [],
+      "coverage_evidence": "not_provided"
+    },
+    {
+      "index": 17,
+      "planner_status": "full",
+      "check": "After a game over, pressing 'R' resets the snake to its initial state, clears the score, and restarts the game.",
+      "validator_status": "not_run",
+      "implementation_files": [],
+      "model_claim": null,
+      "limitations": [],
+      "coverage_evidence": "not_provided"
+    },
+    {
+      "index": 18,
+      "planner_status": "full",
+      "check": "Pressing the 'Escape' key closes the game window.",
+      "validator_status": "not_run",
+      "implementation_files": [],
+      "model_claim": null,
+      "limitations": [],
+      "coverage_evidence": "not_provided"
+    },
+    {
+      "index": 19,
+      "planner_status": "full",
+      "check": "The game displays only solid colored squares for the snake, food, and background, with no loaded image files or audio output.",
+      "validator_status": "not_run",
+      "implementation_files": [],
+      "model_claim": null,
+      "limitations": [],
+      "coverage_evidence": "not_provided"
+    }
+  ],
+  "coverage_status": "not_provided",
+  "file_inventory": {
+    "promised_count": 5,
+    "delivered_promised": [
+      "game/__init__.py",
+      "game/constants.py",
+      "game/food.py",
+      "game/snake.py",
+      "game/snake_game.py"
+    ],
+    "missing": [],
+    "engine_supplements": [],
+    "assets": [],
+    "protected_tests": [],
+    "runtime_artifacts": [],
+    "unplanned": [],
+    "delivered_promised_count": 5
+  },
+  "plan_sha256": "3ee4c4e312eacf84962a59df8c37a99683609aeb3e0b8e12f7bea7b90d2eb2fa",
+  "game_sha256": {
+    "game/constants.py": "07c928cc7172fd708728c689815c02a947d3d916cc9a97c32ad1b3d890a424a3",
+    "game/food.py": "5a9b88d30b0697fe3243a2c8234e51575e68bf1b616556eedb518cea8dcd5712",
+    "game/snake.py": "7e2f9dacdd6cf33db33665491d85c5a17487ecd83c3412e1f9f9765c17b7c651",
+    "game/snake_game.py": "f4301ca8d14b846ab07e41180fefdb8e23d3d972789f99b6186f9f204a078fda",
+    "game/__init__.py": "68792bfd1e389b3230ab9ce2751c1613cbdbe36034591e3674af917accb4d632"
+  }
+}

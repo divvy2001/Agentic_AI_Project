@@ -1,78 +1,78 @@
 {
   "schema_version": "1.0",
-  "suite_version": "run20261029_131536-s1",
-  "generated_at_utc": "2026-10-29T06:26:25.956873+00:00",
-  "renderer": "pygame",
-  "game_title": "Simple Tetris",
+  "suite_version": "run20261030_155716-s1",
+  "generated_at_utc": "2026-10-30T09:06:55.012622+00:00",
+  "renderer": "terminal",
+  "game_title": "Tic Tac Toe",
   "generator": {
     "backend": "openrouter",
     "model": "openai/gpt-4.1-mini",
     "scope": "controls"
   },
   "generation_notes": [
-    "Controls found and tested: left, right, down, up, r, esc.",
-    "All controls have exact console output lines specified in the manual and are tested accordingly.",
-    "No controls were excluded.",
-    "The restart control prints both 'RESTART' and 'SCORE:0' at restart; test only asserts 'RESTART' line as per instructions.",
-    "Soft drop prints 'SOFT DROP' only if the piece moves down; no test for locking case as no console output is expected then."
+    "Controls found and tested: digits 1,2,3,4,5 for placing marks with expected MOVE X/O output lines; R for reset printing 'Tic Tac Toe'; Q for quit with no output.",
+    "Q control test expects no output as per manual; test is minimal input and immediate quit.",
+    "No controls for invalid input or occupied cell moves were tested here as they do not have a single fixed console line but variable messages; only controls with exact printed lines per manual were included."
   ],
   "controls": [
     {
-      "key": "left",
-      "does": "moves piece left when possible",
-      "prints": "MOVE LEFT\n",
-      "manual_quote": "Left arrow: moves piece left when possible. Prints exactly: MOVE LEFT\\n"
+      "key": "1",
+      "does": "place Player 1's mark X in cell 1",
+      "prints": "MOVE X 1",
+      "manual_quote": "After each valid move, the program prints a line like \"MOVE X 1\" or \"MOVE O 4\" followed by the updated board."
     },
     {
-      "key": "right",
-      "does": "moves piece right when possible",
-      "prints": "MOVE RIGHT\n",
-      "manual_quote": "Right arrow: moves piece right when possible. Prints exactly: MOVE RIGHT\\n"
+      "key": "4",
+      "does": "place Player 2's mark O in cell 4",
+      "prints": "MOVE O 4",
+      "manual_quote": "After each valid move, the program prints a line like \"MOVE X 1\" or \"MOVE O 4\" followed by the updated board."
     },
     {
-      "key": "down",
-      "does": "soft drop one row when possible",
-      "prints": "SOFT DROP\n",
-      "manual_quote": "Down arrow: soft drop one row when possible. Prints exactly: SOFT DROP\\nIf the piece cannot move down, it locks instead (no additional console message from the soft-drop action in that case)."
+      "key": "2",
+      "does": "place Player 1's mark X in cell 2",
+      "prints": "MOVE X 2",
+      "manual_quote": "After each valid move, the program prints a line like \"MOVE X 1\" or \"MOVE O 4\" followed by the updated board."
     },
     {
-      "key": "up",
-      "does": "rotate 90 degrees clockwise when possible",
-      "prints": "ROTATE\n",
-      "manual_quote": "Up arrow: rotate 90 degrees clockwise when possible. Prints exactly: ROTATE\\n"
+      "key": "5",
+      "does": "place Player 2's mark O in cell 5",
+      "prints": "MOVE O 5",
+      "manual_quote": "After each valid move, the program prints a line like \"MOVE X 1\" or \"MOVE O 4\" followed by the updated board."
     },
     {
-      "key": "r",
-      "does": "restart the game (clears grid, resets score to 0)",
-      "prints": "RESTART\n",
-      "manual_quote": "R key: restart the game (clears grid, resets score to 0). Prints exactly: RESTART\\n and then SCORE:0\\n."
+      "key": "3",
+      "does": "place Player 1's mark X in cell 3",
+      "prints": "MOVE X 3",
+      "manual_quote": "After each valid move, the program prints a line like \"MOVE X 1\" or \"MOVE O 4\" followed by the updated board."
     },
     {
-      "key": "esc",
-      "does": "quit the game window",
-      "prints": "QUIT\n",
-      "manual_quote": "Escape (ESC): quit the game window and prints exactly: QUIT\\n"
+      "key": "R",
+      "does": "reset the board and start a new game",
+      "prints": "Tic Tac Toe",
+      "manual_quote": "The program prints the title line \"Tic Tac Toe\" on start and after resets."
+    },
+    {
+      "key": "Q",
+      "does": "quit the game",
+      "prints": "",
+      "manual_quote": "Enter 'Q' (upper or lower case) or send EOF to quit the program."
     }
   ],
   "source_hashes": {
-    "plans/coder_plan.json": "a3d82fee4376507cb060fa2299e06e879e2054f2aacdaf75053e74c1204f73cb",
-    "plans/play_manual.json": "cd163494ac200315b7e665dc76576d88b231ef1aff103eac6649167c32306427",
-    "plans/asset_manifest.json": "f6e8b8322e3c58e365563125df370dc7321904ab93c431b97c4e5f039256bc2e"
+    "plans/coder_plan.json": "929f2d9cddadecf05dca2c5319511330df50263711b69ff65d25a43fad23c101",
+    "plans/play_manual.json": "17d309e6199979624c882ead0e92e0481572bf9e05612c7051ccc33f77980ea5",
+    "plans/asset_manifest.json": "6a726f2c69086b2bf3c6a34f82f2f3aa7643cbc929cfed6335ec2b82116ff584"
   },
   "tests": [
     {
       "test_id": "C01",
-      "requirement_index": 6,
-      "requirement": "Left arrow moves the falling piece one column left.",
-      "assertion": "Pressing LEFT moves the falling piece one column to the left and prints 'MOVE LEFT' to console.",
+      "requirement_index": 9,
+      "requirement": "After each valid move, print 'MOVE X' or 'MOVE O' followed by the cell number.",
+      "assertion": "After pressing '1', the console prints 'MOVE X 1'.",
       "actions": [
         {
-          "type": "wait",
-          "seconds": 1
-        },
-        {
-          "type": "press",
-          "key": "left"
+          "type": "input",
+          "text": "1"
         },
         {
           "type": "wait",
@@ -81,28 +81,32 @@
       ],
       "observation": {
         "method": "stdout",
-        "target": "MOVE LEFT\n"
+        "target": "MOVE X 1"
       },
-      "expected": "MOVE LEFT\n",
+      "expected": "MOVE X 1",
       "status": "ready_for_validator",
       "not_testable_reason": null,
-      "renderer": "pygame",
+      "renderer": "terminal",
       "timeout_seconds": 30,
       "script_path": null
     },
     {
       "test_id": "C02",
-      "requirement_index": 7,
-      "requirement": "Right arrow moves the falling piece one column right.",
-      "assertion": "Pressing RIGHT moves the falling piece one column to the right and prints 'MOVE RIGHT' to console.",
+      "requirement_index": 9,
+      "requirement": "After each valid move, print 'MOVE X' or 'MOVE O' followed by the cell number.",
+      "assertion": "After pressing '4', the console prints 'MOVE O 4'.",
       "actions": [
+        {
+          "type": "input",
+          "text": "1"
+        },
         {
           "type": "wait",
           "seconds": 1
         },
         {
-          "type": "press",
-          "key": "right"
+          "type": "input",
+          "text": "4"
         },
         {
           "type": "wait",
@@ -111,28 +115,40 @@
       ],
       "observation": {
         "method": "stdout",
-        "target": "MOVE RIGHT\n"
+        "target": "MOVE O 4"
       },
-      "expected": "MOVE RIGHT\n",
+      "expected": "MOVE O 4",
       "status": "ready_for_validator",
       "not_testable_reason": null,
-      "renderer": "pygame",
+      "renderer": "terminal",
       "timeout_seconds": 30,
       "script_path": null
     },
     {
       "test_id": "C03",
-      "requirement_index": 8,
-      "requirement": "Down arrow moves the falling piece down one row immediately (soft drop).",
-      "assertion": "Pressing DOWN moves the falling piece one row down immediately and prints 'SOFT DROP' to console if move is possible.",
+      "requirement_index": 9,
+      "requirement": "After each valid move, print 'MOVE X' or 'MOVE O' followed by the cell number.",
+      "assertion": "After pressing '2', the console prints 'MOVE X 2'.",
       "actions": [
+        {
+          "type": "input",
+          "text": "1"
+        },
         {
           "type": "wait",
           "seconds": 1
         },
         {
-          "type": "press",
-          "key": "down"
+          "type": "input",
+          "text": "4"
+        },
+        {
+          "type": "wait",
+          "seconds": 1
+        },
+        {
+          "type": "input",
+          "text": "2"
         },
         {
           "type": "wait",
@@ -141,28 +157,48 @@
       ],
       "observation": {
         "method": "stdout",
-        "target": "SOFT DROP\n"
+        "target": "MOVE X 2"
       },
-      "expected": "SOFT DROP\n",
+      "expected": "MOVE X 2",
       "status": "ready_for_validator",
       "not_testable_reason": null,
-      "renderer": "pygame",
+      "renderer": "terminal",
       "timeout_seconds": 30,
       "script_path": null
     },
     {
       "test_id": "C04",
-      "requirement_index": 11,
-      "requirement": "If rotation would overlap walls or locked blocks, ignore the rotation.",
-      "assertion": "Pressing UP rotates the falling piece 90 degrees clockwise and prints 'ROTATE' to console if rotation is possible.",
+      "requirement_index": 9,
+      "requirement": "After each valid move, print 'MOVE X' or 'MOVE O' followed by the cell number.",
+      "assertion": "After pressing '5', the console prints 'MOVE O 5'.",
       "actions": [
+        {
+          "type": "input",
+          "text": "1"
+        },
         {
           "type": "wait",
           "seconds": 1
         },
         {
-          "type": "press",
-          "key": "up"
+          "type": "input",
+          "text": "4"
+        },
+        {
+          "type": "wait",
+          "seconds": 1
+        },
+        {
+          "type": "input",
+          "text": "2"
+        },
+        {
+          "type": "wait",
+          "seconds": 1
+        },
+        {
+          "type": "input",
+          "text": "5"
         },
         {
           "type": "wait",
@@ -171,28 +207,56 @@
       ],
       "observation": {
         "method": "stdout",
-        "target": "ROTATE\n"
+        "target": "MOVE O 5"
       },
-      "expected": "ROTATE\n",
+      "expected": "MOVE O 5",
       "status": "ready_for_validator",
       "not_testable_reason": null,
-      "renderer": "pygame",
+      "renderer": "terminal",
       "timeout_seconds": 30,
       "script_path": null
     },
     {
       "test_id": "C05",
-      "requirement_index": 20,
-      "requirement": "Print GAME OVER when the game ends.",
-      "assertion": "Pressing 'R' clears the grid, resets the score to 0, and prints 'RESTART' to console.",
+      "requirement_index": 9,
+      "requirement": "After each valid move, print 'MOVE X' or 'MOVE O' followed by the cell number.",
+      "assertion": "After pressing '3', the console prints 'MOVE X 3'.",
       "actions": [
+        {
+          "type": "input",
+          "text": "1"
+        },
         {
           "type": "wait",
           "seconds": 1
         },
         {
-          "type": "press",
-          "key": "r"
+          "type": "input",
+          "text": "4"
+        },
+        {
+          "type": "wait",
+          "seconds": 1
+        },
+        {
+          "type": "input",
+          "text": "2"
+        },
+        {
+          "type": "wait",
+          "seconds": 1
+        },
+        {
+          "type": "input",
+          "text": "5"
+        },
+        {
+          "type": "wait",
+          "seconds": 1
+        },
+        {
+          "type": "input",
+          "text": "3"
         },
         {
           "type": "wait",
@@ -201,28 +265,64 @@
       ],
       "observation": {
         "method": "stdout",
-        "target": "RESTART\n"
+        "target": "MOVE X 3"
       },
-      "expected": "RESTART\n",
+      "expected": "MOVE X 3",
       "status": "ready_for_validator",
       "not_testable_reason": null,
-      "renderer": "pygame",
+      "renderer": "terminal",
       "timeout_seconds": 30,
       "script_path": null
     },
     {
       "test_id": "C06",
-      "requirement_index": 21,
-      "requirement": "No sounds.",
-      "assertion": "Pressing 'Escape' closes the game window and prints 'QUIT' to console.",
+      "requirement_index": 13,
+      "requirement": "Press 'R' to play again with a fresh board.",
+      "assertion": "After pressing 'R' following a game, the console prints 'Tic Tac Toe'.",
       "actions": [
+        {
+          "type": "input",
+          "text": "1"
+        },
         {
           "type": "wait",
           "seconds": 1
         },
         {
-          "type": "press",
-          "key": "esc"
+          "type": "input",
+          "text": "4"
+        },
+        {
+          "type": "wait",
+          "seconds": 1
+        },
+        {
+          "type": "input",
+          "text": "2"
+        },
+        {
+          "type": "wait",
+          "seconds": 1
+        },
+        {
+          "type": "input",
+          "text": "5"
+        },
+        {
+          "type": "wait",
+          "seconds": 1
+        },
+        {
+          "type": "input",
+          "text": "3"
+        },
+        {
+          "type": "wait",
+          "seconds": 1
+        },
+        {
+          "type": "input",
+          "text": "R"
         },
         {
           "type": "wait",
@@ -231,20 +331,42 @@
       ],
       "observation": {
         "method": "stdout",
-        "target": "QUIT\n"
+        "target": "Tic Tac Toe"
       },
-      "expected": "QUIT\n",
+      "expected": "Tic Tac Toe",
       "status": "ready_for_validator",
       "not_testable_reason": null,
-      "renderer": "pygame",
+      "renderer": "terminal",
+      "timeout_seconds": 30,
+      "script_path": null
+    },
+    {
+      "test_id": "C07",
+      "requirement_index": 14,
+      "requirement": "Press 'Q' to quit the game.",
+      "assertion": "After pressing 'Q', the game exits (no further output).",
+      "actions": [
+        {
+          "type": "input",
+          "text": "Q"
+        }
+      ],
+      "observation": {
+        "method": "stdout",
+        "target": ""
+      },
+      "expected": "After pressing 'Q', the game exits (no further output).",
+      "status": "not_testable",
+      "not_testable_reason": "Model-generated test failed structural validation: actions, observation.method, and expected are required.",
+      "renderer": "terminal",
       "timeout_seconds": 30,
       "script_path": null
     }
   ],
   "summary": {
-    "total": 6,
+    "total": 7,
     "ready_for_validator": 6,
-    "not_testable": 0
+    "not_testable": 1
   },
   "warnings": [
     "Requirement 0 had no valid executable test and was marked not_testable",
@@ -253,16 +375,12 @@
     "Requirement 3 had no valid executable test and was marked not_testable",
     "Requirement 4 had no valid executable test and was marked not_testable",
     "Requirement 5 had no valid executable test and was marked not_testable",
-    "Requirement 9 had no valid executable test and was marked not_testable",
+    "Requirement 6 had no valid executable test and was marked not_testable",
+    "Requirement 7 had no valid executable test and was marked not_testable",
+    "Requirement 8 had no valid executable test and was marked not_testable",
     "Requirement 10 had no valid executable test and was marked not_testable",
-    "Requirement 12 had no valid executable test and was marked not_testable",
-    "Requirement 13 had no valid executable test and was marked not_testable",
-    "Requirement 14 had no valid executable test and was marked not_testable",
-    "Requirement 15 had no valid executable test and was marked not_testable",
-    "Requirement 16 had no valid executable test and was marked not_testable",
-    "Requirement 17 had no valid executable test and was marked not_testable",
-    "Requirement 18 had no valid executable test and was marked not_testable",
-    "Requirement 19 had no valid executable test and was marked not_testable"
+    "Requirement 11 had no valid executable test and was marked not_testable",
+    "Requirement 12 had no valid executable test and was marked not_testable"
   ],
   "important": "Generation is not execution. This file does not claim PASS and must not be used as test_results.json."
 }

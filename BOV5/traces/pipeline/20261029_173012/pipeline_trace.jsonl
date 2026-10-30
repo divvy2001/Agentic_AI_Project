@@ -1,0 +1,2 @@
+{"turn": 1, "t": 0.7, "stage": "start", "status": "ok", "detail": "spec=gravity_flip.md (1106 chars)"}
+{"turn": 2, "t": 46.3, "stage": "planner+assets", "status": "success", "detail": "renderer=pygame assets=ai_art", "renderer": "pygame", "entry_point": "game/gravity_flip.py"}

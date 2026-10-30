@@ -1,0 +1,65 @@
+{
+  "test_id": "C01",
+  "requirement_index": 7,
+  "requirement": "Right arrow moves the falling piece one column right.",
+  "assertion": "Pressing LEFT moves the falling piece one column left and prints 'MOVE LEFT' to the console.",
+  "expected": "MOVE LEFT",
+  "generator_status": "ready_for_validator",
+  "started_at_utc": "2026-10-29T09:13:10.845753+00:00",
+  "evidence_dir": "C:\\Users\\ASUS\\Game_Agent\\Agentic_AI_Project\\BOV5\\traces\\eval\\run20261029_160746-s1\\test_run_20261029_161310\\evidence\\C01",
+  "action_results": [
+    {
+      "type": "wait",
+      "at_utc": "2026-10-29T09:13:14.091661+00:00",
+      "status": "executed",
+      "seconds": 1.0,
+      "index": 0
+    },
+    {
+      "type": "press",
+      "at_utc": "2026-10-29T09:13:15.242274+00:00",
+      "status": "executed",
+      "window_focused": true,
+      "sent_with": "scan_code",
+      "key": "left",
+      "index": 1
+    },
+    {
+      "type": "wait",
+      "at_utc": "2026-10-29T09:13:15.529074+00:00",
+      "status": "executed",
+      "seconds": 1.0,
+      "index": 2
+    }
+  ],
+  "observations": [
+    {
+      "method": "stdout",
+      "captured_at_utc": "2026-10-29T09:13:16.680840+00:00",
+      "text": "Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org\nVulkan 1.4.348 - Forward+ - Using Device #0: Intel - Intel(R) Graphics\n\nRESTART\nMOVE LEFT\n",
+      "stderr_tail": ""
+    }
+  ],
+  "checked_output": "after first input action only",
+  "input_retries": 0,
+  "status": "PASS",
+  "reason": "Expected literal text was found in process output.",
+  "process": {
+    "pid": 30508,
+    "returncode": null
+  },
+  "runtime_evidence": {
+    "stdout_file": "C:\\Users\\ASUS\\Game_Agent\\Agentic_AI_Project\\BOV5\\traces\\eval\\run20261029_160746-s1\\test_run_20261029_161310\\evidence\\C01\\stdout.log",
+    "stderr_file": "C:\\Users\\ASUS\\Game_Agent\\Agentic_AI_Project\\BOV5\\traces\\eval\\run20261029_160746-s1\\test_run_20261029_161310\\evidence\\C01\\stderr.log",
+    "screenshot_file": null
+  },
+  "triage_hints": [
+    {
+      "category": "undetermined",
+      "confidence": "low",
+      "reason": "Insufficient diagnostic signals; compare brief, plan, code, assets and runtime evidence."
+    }
+  ],
+  "duration_seconds": 5.281,
+  "finished_at_utc": "2026-10-29T09:13:16.859018+00:00"
+}

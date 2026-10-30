@@ -1,0 +1,39 @@
+{
+  "run_id": "20261029_165440",
+  "spec_file": "C:\\Users\\ASUS\\Game_Agent\\Agentic_AI_Project\\game_specs\\grappleswing.md",
+  "outcome": "STOPPED: coder did not finish",
+  "turns": 3,
+  "elapsed_s": 524.0,
+  "total_cost_usd": 0.142,
+  "cost_by_agent": {
+    "planner": 0.0,
+    "asset_agent": 0.0,
+    "logic_coder": 0.14202
+  },
+  "coder_cost_usd_self_reported": 0.0999,
+  "routing": [],
+  "cost_by_stage": [
+    {
+      "turn": 1,
+      "round": null,
+      "agent": "planner",
+      "route": null,
+      "cost_usd": 0.0
+    },
+    {
+      "turn": 1,
+      "round": null,
+      "agent": "asset_agent",
+      "route": null,
+      "cost_usd": 0.0
+    },
+    {
+      "turn": 2,
+      "round": null,
+      "agent": "logic_coder",
+      "route": null,
+      "cost_usd": 0.14202
+    }
+  ],
+  "reason": "runtime_unavailable: sandbox: sandbox_acl_failed: C:\\Users\\ASUS\\Game_Agent\\Agentic_AI_Project\\BOV5\\traces\\gd-runtime-y2r1tfa1\\home\\AppData\\Roaming\\Godot\\app_userdata\\Grapple Swing\\shader_cache\\CanvasShaderGLES3\\6128933e38dc624087942616d49caabe38e5e882a2528552d87b81818c6c413b\\6bb7c9a2fd1c4a8fa77cb96555b9b4a720209981.cache: The system cannot find the path specified.\n"
+}

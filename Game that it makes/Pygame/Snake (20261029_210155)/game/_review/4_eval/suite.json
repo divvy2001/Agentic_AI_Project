@@ -1,0 +1,279 @@
+{
+  "schema_version": "1.0",
+  "suite_version": "run20261029_210155-s1",
+  "generated_at_utc": "2026-10-29T14:08:31.597718+00:00",
+  "renderer": "pygame",
+  "game_title": "Snake",
+  "generator": {
+    "backend": "openrouter",
+    "model": "openai/gpt-4.1-mini",
+    "scope": "controls"
+  },
+  "generation_notes": [
+    "Controls found and tested: arrow keys (up, down, left, right), R (restart), Escape (quit).",
+    "All controls have exact console output lines documented in the manual and are tested accordingly.",
+    "No controls were excluded due to missing console output or state restrictions.",
+    "The R key test assumes the game is in a state where restart is valid; since game over state is required, the test is marked ready but in practice may need manual setup.",
+    "Arrow keys tests do not test reversing direction prevention, only that accepted direction changes print the expected line."
+  ],
+  "controls": [
+    {
+      "key": "up",
+      "does": "change snake direction to UP",
+      "prints": "DIRECTION UP",
+      "manual_quote": "Arrow keys: when a new direction is accepted prints 'DIRECTION <UP|DOWN|LEFT|RIGHT>' (only printed when direction actually changes and not when reversing)."
+    },
+    {
+      "key": "down",
+      "does": "change snake direction to DOWN",
+      "prints": "DIRECTION DOWN",
+      "manual_quote": "Arrow keys: when a new direction is accepted prints 'DIRECTION <UP|DOWN|LEFT|RIGHT>' (only printed when direction actually changes and not when reversing)."
+    },
+    {
+      "key": "left",
+      "does": "change snake direction to LEFT",
+      "prints": "DIRECTION LEFT",
+      "manual_quote": "Arrow keys: when a new direction is accepted prints 'DIRECTION <UP|DOWN|LEFT|RIGHT>' (only printed when direction actually changes and not when reversing)."
+    },
+    {
+      "key": "right",
+      "does": "change snake direction to RIGHT",
+      "prints": "DIRECTION RIGHT",
+      "manual_quote": "Arrow keys: when a new direction is accepted prints 'DIRECTION <UP|DOWN|LEFT|RIGHT>' (only printed when direction actually changes and not when reversing)."
+    },
+    {
+      "key": "r",
+      "does": "restart game with fresh snake and score 0",
+      "prints": "RESTART",
+      "manual_quote": "Restart: pressing 'R' prints 'RESTART' and resets snake and score to 0."
+    },
+    {
+      "key": "esc",
+      "does": "quit the game",
+      "prints": "QUIT",
+      "manual_quote": "Quit: pressing Escape or closing the window prints 'QUIT' and exits."
+    }
+  ],
+  "source_hashes": {
+    "plans/coder_plan.json": "3ee4c4e312eacf84962a59df8c37a99683609aeb3e0b8e12f7bea7b90d2eb2fa",
+    "plans/play_manual.json": "d2ece3762b6a8447c5098e1ed23e875ce7b41e2a7f3abdb4e33d7c4cf87bda67",
+    "plans/asset_manifest.json": "dfef16f454412ffb624f81d4ec2d39c5fca533c67c027a8c12f0b14cf50d4b05"
+  },
+  "tests": [
+    {
+      "test_id": "C01",
+      "requirement_index": 3,
+      "requirement": "The arrow keys change the snake's direction.",
+      "assertion": "Press UP key and expect console to print 'DIRECTION UP'",
+      "actions": [
+        {
+          "type": "wait",
+          "seconds": 1
+        },
+        {
+          "type": "press",
+          "key": "up"
+        },
+        {
+          "type": "wait",
+          "seconds": 1
+        }
+      ],
+      "observation": {
+        "method": "stdout",
+        "target": "DIRECTION UP"
+      },
+      "expected": "DIRECTION UP",
+      "status": "not_testable",
+      "not_testable_reason": "Expected line 'DIRECTION UP' is not stated in the play manual.",
+      "renderer": "pygame",
+      "timeout_seconds": 30,
+      "script_path": null
+    },
+    {
+      "test_id": "C02",
+      "requirement_index": 3,
+      "requirement": "The arrow keys change the snake's direction.",
+      "assertion": "Press DOWN key and expect console to print 'DIRECTION DOWN'",
+      "actions": [
+        {
+          "type": "wait",
+          "seconds": 1
+        },
+        {
+          "type": "press",
+          "key": "down"
+        },
+        {
+          "type": "wait",
+          "seconds": 1
+        }
+      ],
+      "observation": {
+        "method": "stdout",
+        "target": "DIRECTION DOWN"
+      },
+      "expected": "DIRECTION DOWN",
+      "status": "not_testable",
+      "not_testable_reason": "Expected line 'DIRECTION DOWN' is not stated in the play manual.",
+      "renderer": "pygame",
+      "timeout_seconds": 30,
+      "script_path": null
+    },
+    {
+      "test_id": "C03",
+      "requirement_index": 3,
+      "requirement": "The arrow keys change the snake's direction.",
+      "assertion": "Press LEFT key and expect console to print 'DIRECTION LEFT'",
+      "actions": [
+        {
+          "type": "wait",
+          "seconds": 1
+        },
+        {
+          "type": "press",
+          "key": "left"
+        },
+        {
+          "type": "wait",
+          "seconds": 1
+        }
+      ],
+      "observation": {
+        "method": "stdout",
+        "target": "DIRECTION LEFT"
+      },
+      "expected": "DIRECTION LEFT",
+      "status": "not_testable",
+      "not_testable_reason": "Expected line 'DIRECTION LEFT' is not stated in the play manual.",
+      "renderer": "pygame",
+      "timeout_seconds": 30,
+      "script_path": null
+    },
+    {
+      "test_id": "C04",
+      "requirement_index": 3,
+      "requirement": "The arrow keys change the snake's direction.",
+      "assertion": "Press RIGHT key and expect console to print 'DIRECTION RIGHT'",
+      "actions": [
+        {
+          "type": "wait",
+          "seconds": 1
+        },
+        {
+          "type": "press",
+          "key": "right"
+        },
+        {
+          "type": "wait",
+          "seconds": 1
+        }
+      ],
+      "observation": {
+        "method": "stdout",
+        "target": "DIRECTION RIGHT"
+      },
+      "expected": "DIRECTION RIGHT",
+      "status": "not_testable",
+      "not_testable_reason": "Expected line 'DIRECTION RIGHT' is not stated in the play manual.",
+      "renderer": "pygame",
+      "timeout_seconds": 30,
+      "script_path": null
+    },
+    {
+      "test_id": "C24",
+      "requirement_index": 0,
+      "requirement": "Pressing r works",
+      "assertion": "After pressing r the game prints RESTART",
+      "actions": [
+        {
+          "type": "wait",
+          "seconds": 1
+        },
+        {
+          "type": "press",
+          "key": "r"
+        },
+        {
+          "type": "wait",
+          "seconds": 1
+        }
+      ],
+      "observation": {
+        "method": "stdout",
+        "target": "RESTART"
+      },
+      "expected": "RESTART",
+      "status": "ready_for_validator",
+      "not_testable_reason": null,
+      "renderer": "pygame",
+      "timeout_seconds": 30,
+      "script_path": null
+    },
+    {
+      "test_id": "C25",
+      "requirement_index": 0,
+      "requirement": "Pressing esc works",
+      "assertion": "After pressing esc the game prints QUIT",
+      "actions": [
+        {
+          "type": "wait",
+          "seconds": 1
+        },
+        {
+          "type": "press",
+          "key": "esc"
+        },
+        {
+          "type": "wait",
+          "seconds": 1
+        }
+      ],
+      "observation": {
+        "method": "stdout",
+        "target": "QUIT"
+      },
+      "expected": "QUIT",
+      "status": "ready_for_validator",
+      "not_testable_reason": null,
+      "renderer": "pygame",
+      "timeout_seconds": 30,
+      "script_path": null
+    }
+  ],
+  "summary": {
+    "total": 6,
+    "ready_for_validator": 2,
+    "not_testable": 4
+  },
+  "warnings": [
+    "LLM test at index 4 has an invalid requirement_index and was ignored",
+    "LLM test at index 5 has an invalid requirement_index and was ignored",
+    "Requirement 0 had no valid executable test and was marked not_testable",
+    "Requirement 1 had no valid executable test and was marked not_testable",
+    "Requirement 2 had no valid executable test and was marked not_testable",
+    "Requirement 4 had no valid executable test and was marked not_testable",
+    "Requirement 5 had no valid executable test and was marked not_testable",
+    "Requirement 6 had no valid executable test and was marked not_testable",
+    "Requirement 7 had no valid executable test and was marked not_testable",
+    "Requirement 8 had no valid executable test and was marked not_testable",
+    "Requirement 9 had no valid executable test and was marked not_testable",
+    "Requirement 10 had no valid executable test and was marked not_testable",
+    "Requirement 11 had no valid executable test and was marked not_testable",
+    "Requirement 12 had no valid executable test and was marked not_testable",
+    "Requirement 13 had no valid executable test and was marked not_testable",
+    "Requirement 14 had no valid executable test and was marked not_testable",
+    "Requirement 15 had no valid executable test and was marked not_testable",
+    "Requirement 16 had no valid executable test and was marked not_testable",
+    "Requirement 17 had no valid executable test and was marked not_testable",
+    "Requirement 18 had no valid executable test and was marked not_testable",
+    "Requirement 19 had no valid executable test and was marked not_testable",
+    "Added missing control test for r -> RESTART",
+    "Added missing control test for esc -> QUIT",
+    "C01: expected 'DIRECTION UP' not found in play manual",
+    "C02: expected 'DIRECTION DOWN' not found in play manual",
+    "C03: expected 'DIRECTION LEFT' not found in play manual",
+    "C04: expected 'DIRECTION RIGHT' not found in play manual"
+  ],
+  "important": "Generation is not execution. This file does not claim PASS and must not be used as test_results.json."
+}

@@ -1,0 +1,8 @@
+[application]
+config/name="Simple Tetris"
+run/main_scene="res://main.tscn"
+
+[display]
+window/size/viewport_width=400
+window/size/viewport_height=600
+window/stretch/mode="canvas_items"

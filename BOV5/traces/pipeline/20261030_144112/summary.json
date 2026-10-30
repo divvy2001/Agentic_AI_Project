@@ -1,0 +1,39 @@
+{
+  "run_id": "20261030_144112",
+  "spec_file": "C:\\Users\\ASUS\\Game_Agent\\Agentic_AI_Project\\game_specs\\drift_car.md",
+  "outcome": "STOPPED: coder did not finish",
+  "turns": 3,
+  "elapsed_s": 562.2,
+  "total_cost_usd": 0.1419,
+  "cost_by_agent": {
+    "planner": 0.0,
+    "asset_agent": 0.0,
+    "logic_coder": 0.14194
+  },
+  "coder_cost_usd_self_reported": 0.0932,
+  "routing": [],
+  "cost_by_stage": [
+    {
+      "turn": 1,
+      "round": null,
+      "agent": "planner",
+      "route": null,
+      "cost_usd": 0.0
+    },
+    {
+      "turn": 1,
+      "round": null,
+      "agent": "asset_agent",
+      "route": null,
+      "cost_usd": 0.0
+    },
+    {
+      "turn": 2,
+      "round": null,
+      "agent": "logic_coder",
+      "route": null,
+      "cost_usd": 0.14194
+    }
+  ],
+  "reason": "runtime_unavailable: sandbox: sandbox_acl_failed: C:\\Users\\ASUS\\Game_Agent\\Agentic_AI_Project\\BOV5\\traces\\gd-runtime-91vjzcg6\\home\\AppData\\Roaming\\Godot\\app_userdata\\Drift Car\\shader_cache\\CopyShaderGLES3\\a2452524cb8117dd7bfb4eedb8189e05319f5563b0bdef35fc9a8e17439a70cc\\6bb7c9a2fd1c4a8fa77cb96555b9b4a720209981.cache: The system cannot find the path specified.\n"
+}

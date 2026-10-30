@@ -1,0 +1,25 @@
+{
+  "task_id": "Gravity Flip",
+  "framework": "godot",
+  "game_style": "platformer",
+  "output_dir": "game/assets",
+  "assets": [
+    {
+      "id": "character_sprite",
+      "type": "sprite",
+      "path": "game/assets/character_sprite.png",
+      "format": "png",
+      "width": 32,
+      "height": 32,
+      "required": true,
+      "generation_status": "generated",
+      "validation_status": "passed",
+      "errors": []
+    }
+  ],
+  "validation": {
+    "passed": true,
+    "status": "passed",
+    "errors": []
+  }
+}

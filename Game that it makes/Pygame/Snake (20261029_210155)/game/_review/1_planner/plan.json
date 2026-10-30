@@ -1,0 +1,276 @@
+{
+  "game_title": "Snake",
+  "profile": {
+    "genre": {
+      "value": "classic arcade",
+      "source": "inferred",
+      "quote": "simple classic Snake game",
+      "reasoning": "The spec explicitly calls it a 'classic Snake game', which is a well-known arcade genre."
+    },
+    "renderer": {
+      "value": "pygame",
+      "source": "inferred",
+      "quote": "plain coloured squares only; no images or sounds",
+      "reasoning": "The game requires a visual grid and moving colored squares, which is easily handled by Pygame's drawing primitives, and explicitly forbids images, making a more complex engine like Godot unnecessary."
+    },
+    "dimensions": {
+      "value": "2d",
+      "source": "inferred",
+      "quote": "grid of 20 by 20 squares",
+      "reasoning": "A grid of squares implies a 2D representation."
+    },
+    "pace": {
+      "value": "real-time",
+      "source": "inferred",
+      "quote": "moving right one square at a time at a steady pace",
+      "reasoning": "The snake moves continuously without waiting for player input, indicating a real-time game."
+    },
+    "players": {
+      "value": 1,
+      "source": "assumed"
+    }
+  },
+  "requirements": [
+    {
+      "text": "The game must display a grid of 20 by 20 squares.",
+      "priority": "core",
+      "status": "full",
+      "check": "The game window opens and displays a visible grid structure with 20 rows and 20 columns.",
+      "milestone": 1,
+      "quote": "grid of 20 by 20 squares"
+    },
+    {
+      "text": "The snake starts as 3 green squares in the middle of the grid.",
+      "priority": "core",
+      "status": "full",
+      "check": "Upon starting the game, a 3-square long green snake is visible in the center of the grid.",
+      "milestone": 1,
+      "quote": "The snake starts as 3 green squares in the middle of the grid"
+    },
+    {
+      "text": "The snake moves right one square at a time at a steady pace.",
+      "priority": "core",
+      "status": "full",
+      "check": "After game start, the snake's head moves one square to the right every fixed time interval.",
+      "milestone": 1,
+      "quote": "moving right one square at a time at a steady pace"
+    },
+    {
+      "text": "The arrow keys change the snake's direction.",
+      "priority": "core",
+      "status": "full",
+      "check": "Pressing an arrow key (UP, DOWN, LEFT, RIGHT) changes the snake's direction of movement accordingly.",
+      "milestone": 1,
+      "quote": "The arrow keys change its direction"
+    },
+    {
+      "text": "The snake cannot reverse straight back into itself.",
+      "priority": "core",
+      "status": "full",
+      "check": "If the snake is moving right, pressing LEFT does not change its direction; it continues moving right.",
+      "milestone": 1,
+      "quote": "it cannot reverse straight back into itself"
+    },
+    {
+      "text": "A red food square appears at a random empty spot.",
+      "priority": "core",
+      "status": "full",
+      "check": "A single red square is visible on the grid, not overlapping with the snake, and its position changes after being eaten.",
+      "milestone": 1,
+      "quote": "A red food square appears at a random empty spot"
+    },
+    {
+      "text": "Eating food makes the snake one square longer.",
+      "priority": "core",
+      "status": "full",
+      "check": "When the snake's head occupies the same square as the food, the snake's length increases by one square.",
+      "milestone": 1,
+      "quote": "Eating it makes the snake one square longer"
+    },
+    {
+      "text": "Eating food adds 1 point.",
+      "priority": "core",
+      "status": "full",
+      "check": "When the snake eats food, the score displayed on screen increases by 1.",
+      "milestone": 1,
+      "quote": "adds 1 point"
+    },
+    {
+      "text": "Eating food spawns new food.",
+      "priority": "core",
+      "status": "full",
+      "check": "Immediately after food is eaten, a new red food square appears at a different random empty spot.",
+      "milestone": 1,
+      "quote": "spawns new food"
+    },
+    {
+      "text": "Hitting a wall ends the game.",
+      "priority": "core",
+      "status": "full",
+      "check": "If the snake's head moves beyond the grid boundaries, the game ends, and 'GAME OVER' is displayed.",
+      "milestone": 1,
+      "quote": "Hitting a wall or the snake's own body ends the game"
+    },
+    {
+      "text": "Hitting the snake's own body ends the game.",
+      "priority": "core",
+      "status": "full",
+      "check": "If the snake's head moves into any part of its own body, the game ends, and 'GAME OVER' is displayed.",
+      "milestone": 1,
+      "quote": "Hitting a wall or the snake's own body ends the game"
+    },
+    {
+      "text": "Show the score at the top of the screen.",
+      "priority": "core",
+      "status": "full",
+      "check": "A numerical score is continuously displayed at the top of the game window.",
+      "milestone": 1,
+      "quote": "Show the score at the top of the screen"
+    },
+    {
+      "text": "Show the controls below the score.",
+      "priority": "secondary",
+      "status": "full",
+      "check": "Text indicating the controls (Arrow keys, R, Escape) is displayed below the score.",
+      "milestone": 2,
+      "quote": "and the controls below it"
+    },
+    {
+      "text": "Every time the score changes, print the new score to the console.",
+      "priority": "core",
+      "status": "full",
+      "check": "When the score increases, the new score value is printed to the console.",
+      "milestone": 1,
+      "quote": "Every time the score changes, print the new score to the console."
+    },
+    {
+      "text": "When the game ends, show GAME OVER with the final score.",
+      "priority": "core",
+      "status": "full",
+      "check": "When the game ends, the text 'GAME OVER' appears on screen, along with the final score.",
+      "milestone": 1,
+      "quote": "When the game ends, show GAME OVER with the final score"
+    },
+    {
+      "text": "When the game ends, print GAME OVER to the console.",
+      "priority": "core",
+      "status": "full",
+      "check": "When the game ends, the string 'GAME OVER' is printed to the console.",
+      "milestone": 1,
+      "quote": "print GAME OVER to the console"
+    },
+    {
+      "text": "When the game ends, freeze the snake.",
+      "priority": "core",
+      "status": "full",
+      "check": "After 'GAME OVER' is displayed, the snake stops moving.",
+      "milestone": 1,
+      "quote": "and freeze the snake"
+    },
+    {
+      "text": "Press R to restart with a fresh snake and score 0.",
+      "priority": "core",
+      "status": "full",
+      "check": "After a game over, pressing 'R' resets the snake to its initial state, clears the score, and restarts the game.",
+      "milestone": 1,
+      "quote": "Press R to restart with a fresh snake and score 0"
+    },
+    {
+      "text": "Press Escape to quit.",
+      "priority": "core",
+      "status": "full",
+      "check": "Pressing the 'Escape' key closes the game window.",
+      "milestone": 1,
+      "quote": "and Escape to quit"
+    },
+    {
+      "text": "Use plain coloured squares only; no images or sounds.",
+      "priority": "core",
+      "status": "full",
+      "check": "The game displays only solid colored squares for the snake, food, and background, with no loaded image files or audio output.",
+      "milestone": 1,
+      "quote": "Use plain coloured squares only; no images or sounds."
+    }
+  ],
+  "architecture": {
+    "entry_point": "game/snake_game.py",
+    "files": [
+      {
+        "path": "game/__init__.py",
+        "purpose": "Marks the game directory as a Python package."
+      },
+      {
+        "path": "game/snake_game.py",
+        "purpose": "Main game logic, Pygame setup, game loop, event handling, and rendering."
+      },
+      {
+        "path": "game/snake.py",
+        "purpose": "Defines the Snake class, handling its movement, growth, and collision detection."
+      },
+      {
+        "path": "game/food.py",
+        "purpose": "Defines the Food class, handling its position and spawning."
+      },
+      {
+        "path": "game/constants.py",
+        "purpose": "Stores game constants like grid size, colors, and speeds."
+      }
+    ],
+    "dependencies": [
+      "pygame"
+    ],
+    "assets": {
+      "strategy": "procedural",
+      "strategy_rationale": "The spec explicitly states 'Use plain coloured squares only; no images or sounds.', so all graphics will be drawn procedurally.",
+      "sprites": []
+    },
+    "extensions": {
+      "grid_system": {
+        "summary": "Manages the 20x20 game grid.",
+        "detail": "The game operates on a discrete 20x20 grid. All positions for the snake and food are integer coordinates within this grid. Rendering will scale these grid coordinates to pixel positions on the screen."
+      }
+    },
+    "resolution": {
+      "width": 600,
+      "height": 680
+    },
+    "fps": 10,
+    "requires_input": true,
+    "test_input_example": "Press RIGHT for 5 seconds, then UP for 2 seconds, then LEFT for 3 seconds, then DOWN for 2 seconds. Repeat until game over. Press R to restart. Press ESC to quit.",
+    "complexity_warning": null
+  },
+  "decisions": [
+    {
+      "about": "profile.players",
+      "choice": "1",
+      "reason": "The spec describes a single snake and controls, with no mention of multiple players, so it's assumed to be a single-player game."
+    },
+    {
+      "about": "architecture.resolution",
+      "choice": "width: 600, height: 680",
+      "reason": "A 20x20 grid with 30x30 pixel squares gives 600x600 for the game area. An additional 80 pixels height is added for the score and controls display at the top and bottom."
+    },
+    {
+      "about": "architecture.fps",
+      "choice": "10",
+      "reason": "A frame rate of 10 FPS provides a steady, classic Snake game pace where the snake moves one square per frame, which feels appropriate for a 'steady pace' without being too fast or too slow for a 20x20 grid."
+    },
+    {
+      "about": "snake_initial_position",
+      "choice": "Grid coordinates (9, 9), (10, 9), (11, 9) with head at (11, 9) moving right.",
+      "reason": "For a 20x20 grid (0-19), the 'middle' is around index 9 or 10. Starting with the head at (11,9) and body segments at (10,9) and (9,9) ensures it's centered and immediately moves right as specified."
+    },
+    {
+      "about": "colors",
+      "choice": "Green for snake, Red for food, Black for background, White for text.",
+      "reason": "Standard color choices for classic Snake games and good contrast for readability."
+    },
+    {
+      "about": "controls_display_position",
+      "choice": "Bottom of the screen.",
+      "reason": "The spec says 'controls below it' (referring to the score). Placing the score at the top and controls at the bottom is a common and clear layout."
+    }
+  ],
+  "unmapped": [],
+  "status": "success"
+}

@@ -1,0 +1,2 @@
+{"turn": 1, "t": 0.4, "stage": "start", "status": "ok", "detail": "spec=lantern_cave.md (1267 chars)"}
+{"turn": 2, "t": 40.7, "stage": "planner+assets", "status": "success", "detail": "renderer=pygame assets=procedural", "renderer": "pygame", "entry_point": "game/lantern_cave.py"}

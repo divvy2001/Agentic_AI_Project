@@ -1,0 +1,296 @@
+{
+  "game_title": "Simple Tetris",
+  "profile": {
+    "genre": {
+      "value": "puzzle",
+      "source": "inferred",
+      "quote": "Tetris game",
+      "reasoning": "Tetris is a well-known puzzle game genre."
+    },
+    "renderer": {
+      "value": "godot",
+      "source": "stated",
+      "quote": "Use Godot for this"
+    },
+    "dimensions": {
+      "value": "2d",
+      "source": "inferred",
+      "quote": "grid 10 columns wide and 20 rows tall",
+      "reasoning": "A grid-based game with columns and rows implies a 2D representation."
+    },
+    "pace": {
+      "value": "real-time",
+      "source": "inferred",
+      "quote": "The piece falls downward automatically at a constant rate.",
+      "reasoning": "Automatic, constant movement without waiting for player input indicates a real-time game."
+    },
+    "players": {
+      "value": 1,
+      "source": "assumed"
+    }
+  },
+  "requirements": [
+    {
+      "text": "The game must be called \"Simple Tetris\".",
+      "priority": "core",
+      "status": "full",
+      "check": "The game window title displays 'Simple Tetris'.",
+      "milestone": 1,
+      "quote": "Create a simplified Tetris game called \"Simple Tetris\""
+    },
+    {
+      "text": "The game grid must be 10 columns wide and 20 rows tall.",
+      "priority": "core",
+      "status": "full",
+      "check": "The game displays a grid with 10 columns and 20 rows.",
+      "milestone": 1,
+      "quote": "on a grid 10 columns wide and 20 rows tall"
+    },
+    {
+      "text": "Blocks are drawn as plain coloured squares, one colour per piece shape.",
+      "priority": "core",
+      "status": "full",
+      "check": "Falling and locked blocks are rendered as solid colored squares, with each piece shape having a distinct color.",
+      "milestone": 1,
+      "quote": "Blocks are drawn as plain coloured squares, one colour per piece shape; do not generate any image assets, use solid colours only."
+    },
+    {
+      "text": "Use exactly four piece shapes: the square (2x2), the line (4 in a row), the L-shape, and the T-shape.",
+      "priority": "core",
+      "status": "full",
+      "check": "Only the square (2x2), line (4 in a row), L-shape, and T-shape pieces appear in the game.",
+      "milestone": 1,
+      "quote": "Use exactly four piece shapes: the square (2x2), the line (4 in a row), the L-shape, and the T-shape."
+    },
+    {
+      "text": "A new random piece of one of these four shapes spawns at the top-middle of the grid.",
+      "priority": "core",
+      "status": "full",
+      "check": "After a piece locks or at game start, a new random piece appears at the top-middle of the grid.",
+      "milestone": 1,
+      "quote": "A new random piece of one of these four shapes spawns at the top-middle of the grid."
+    },
+    {
+      "text": "The piece falls downward automatically at a constant rate.",
+      "priority": "core",
+      "status": "full",
+      "check": "A falling piece moves down one row automatically after a fixed time interval.",
+      "milestone": 1,
+      "quote": "The piece falls downward automatically at a constant rate."
+    },
+    {
+      "text": "Left arrow moves the falling piece one column left.",
+      "priority": "core",
+      "status": "full",
+      "check": "Pressing LEFT moves the falling piece one column to the left, if space allows.",
+      "milestone": 1,
+      "quote": "Left arrow moves the falling piece one column left"
+    },
+    {
+      "text": "Right arrow moves the falling piece one column right.",
+      "priority": "core",
+      "status": "full",
+      "check": "Pressing RIGHT moves the falling piece one column to the right, if space allows.",
+      "milestone": 1,
+      "quote": "Right arrow moves it one column right"
+    },
+    {
+      "text": "Down arrow moves the falling piece down one row immediately (soft drop).",
+      "priority": "core",
+      "status": "full",
+      "check": "Pressing DOWN moves the falling piece down one row immediately, if space allows.",
+      "milestone": 1,
+      "quote": "Down arrow moves it down one row immediately (soft drop)"
+    },
+    {
+      "text": "Movement controls (Left, Right, Down) do not move the piece through the grid walls or through blocks already locked in place.",
+      "priority": "core",
+      "status": "full",
+      "check": "Attempting to move a piece left, right, or down into a wall or locked block has no effect on the piece's position.",
+      "milestone": 1,
+      "quote": "none of these move the piece through the grid walls or through blocks already locked in place."
+    },
+    {
+      "text": "Up arrow rotates the piece 90 degrees.",
+      "priority": "core",
+      "status": "full",
+      "check": "Pressing UP rotates the falling piece 90 degrees clockwise.",
+      "milestone": 1,
+      "quote": "Up arrow rotates the piece 90 degrees"
+    },
+    {
+      "text": "If a rotation would overlap the walls or locked blocks, ignore that rotation press.",
+      "priority": "core",
+      "status": "full",
+      "check": "If a rotation would cause the piece to overlap a wall or locked block, the piece's orientation remains unchanged.",
+      "milestone": 1,
+      "quote": "if the rotation would overlap the walls or locked blocks, ignore that rotation press instead of applying it."
+    },
+    {
+      "text": "When a piece can no longer move down, it locks in place and a new random piece spawns.",
+      "priority": "core",
+      "status": "full",
+      "check": "When a falling piece reaches the bottom or lands on a locked block, it becomes locked, and a new piece appears at the top-middle.",
+      "milestone": 1,
+      "quote": "When a piece can no longer move down because the row below is blocked or it has reached the bottom row, it locks in place at its current position and a new random piece spawns."
+    },
+    {
+      "text": "Whenever a horizontal row is completely filled with locked blocks, clear that row, move every row above it down by one, and add 100 to the score.",
+      "priority": "core",
+      "status": "full",
+      "check": "When a row is full of locked blocks, it disappears, all rows above it shift down, and the score increases by 100.",
+      "milestone": 1,
+      "quote": "Whenever a horizontal row is completely filled with locked blocks, clear that row, move every row above it down by one, and add 100 to the score."
+    },
+    {
+      "text": "Show the current score in the top-right corner of the window at all times.",
+      "priority": "core",
+      "status": "full",
+      "check": "The current score is continuously displayed in the top-right corner of the game window.",
+      "milestone": 1,
+      "quote": "Show the current score in the top-right corner of the window at all times."
+    },
+    {
+      "text": "If a new piece spawns and immediately overlaps an already-locked block, the game is over.",
+      "priority": "core",
+      "status": "full",
+      "check": "If a newly spawned piece collides with locked blocks, the game state changes to 'GAME OVER'.",
+      "milestone": 1,
+      "quote": "If a new piece spawns and immediately overlaps an already-locked block, the game is over"
+    },
+    {
+      "text": "When the game is over, show GAME OVER and the final score, and stop spawning new pieces.",
+      "priority": "core",
+      "status": "full",
+      "check": "Upon game over, 'GAME OVER' and the final score are displayed, and no new pieces appear.",
+      "milestone": 1,
+      "quote": "show GAME OVER and the final score, and stop spawning new pieces."
+    },
+    {
+      "text": "Press R to restart with an empty grid and score 0.",
+      "priority": "core",
+      "status": "full",
+      "check": "Pressing 'R' resets the game: grid is empty, score is 0, and a new game begins.",
+      "milestone": 1,
+      "quote": "Press R to restart with an empty grid and score 0."
+    },
+    {
+      "text": "Press Escape to quit.",
+      "priority": "core",
+      "status": "full",
+      "check": "Pressing 'Escape' closes the game window.",
+      "milestone": 1,
+      "quote": "Press Escape to quit."
+    },
+    {
+      "text": "Print a line to the console every time a control takes effect: MOVE LEFT, MOVE RIGHT, SOFT DROP, ROTATE, RESTART and QUIT.",
+      "priority": "secondary",
+      "status": "full",
+      "check": "The console outputs 'MOVE LEFT', 'MOVE RIGHT', 'SOFT DROP', 'ROTATE', 'RESTART', or 'QUIT' when the corresponding action occurs.",
+      "milestone": 1,
+      "quote": "Print a line to the console every time a control takes effect: MOVE LEFT, MOVE RIGHT, SOFT DROP, ROTATE, RESTART and QUIT"
+    },
+    {
+      "text": "Print GAME OVER when the game ends.",
+      "priority": "secondary",
+      "status": "full",
+      "check": "The console outputs 'GAME OVER' when the game ends.",
+      "milestone": 1,
+      "quote": "and print GAME OVER when the game ends."
+    }
+  ],
+  "architecture": {
+    "entry_point": "game/main.tscn",
+    "files": [
+      {
+        "path": "game/__init__.py",
+        "purpose": "Empty file to mark game as a Python package."
+      },
+      {
+        "path": "game/main.tscn",
+        "purpose": "Main Godot scene file, containing the game's root node and initial setup."
+      },
+      {
+        "path": "game/main.gd",
+        "purpose": "Main script for game logic, handling game state, piece movement, collision, scoring, and rendering."
+      }
+    ],
+    "dependencies": [],
+    "assets": {
+      "strategy": "procedural",
+      "strategy_rationale": "The spec explicitly states 'do not generate any image assets, use solid colours only'.",
+      "sprites": []
+    },
+    "resolution": {
+      "width": 400,
+      "height": 600
+    },
+    "fps": 60,
+    "requires_input": true,
+    "test_input_example": "Press RIGHT, then LEFT, then DOWN repeatedly until a piece locks. Press UP to rotate. Press R to restart. Press ESCAPE to quit.",
+    "complexity_warning": null
+  },
+  "decisions": [
+    {
+      "about": "profile.players",
+      "choice": "1",
+      "reason": "Tetris is conventionally a single-player game unless multiplayer is explicitly mentioned. The spec does not mention multiple players."
+    },
+    {
+      "about": "architecture.resolution",
+      "choice": "{'width': 400, 'height': 600}",
+      "reason": "A 10x20 grid with 20x20 pixel blocks would be 200x400. Doubling this for better visibility and adding space for UI (score) makes 400x600 a reasonable default resolution for a Godot game."
+    },
+    {
+      "about": "architecture.fps",
+      "choice": "60",
+      "reason": "60 FPS is a standard frame rate for smooth real-time games."
+    },
+    {
+      "about": "piece_colors",
+      "choice": "Each of the four piece shapes (square, line, L-shape, T-shape) will be assigned a distinct, solid color (e.g., yellow, cyan, orange, purple).",
+      "reason": "The spec requires 'one colour per piece shape' and 'use solid colours only'. Specific colors are chosen for visual distinction."
+    },
+    {
+      "about": "piece_spawn_position",
+      "choice": "Pieces will spawn at column 4, row 0 (top-middle of a 10-column grid).",
+      "reason": "The spec states 'spawns at the top-middle of the grid'. Column 4 is the center for a 10-column grid (0-indexed)."
+    },
+    {
+      "about": "piece_fall_rate",
+      "choice": "The piece will fall one row every 0.5 seconds.",
+      "reason": "The spec states 'falls downward automatically at a constant rate' but does not specify the rate. 0.5 seconds provides a reasonable starting difficulty."
+    },
+    {
+      "about": "soft_drop_speed",
+      "choice": "Soft drop (Down arrow) moves the piece down one row instantly.",
+      "reason": "The spec states 'Down arrow moves it down one row immediately (soft drop)'."
+    },
+    {
+      "about": "rotation_direction",
+      "choice": "Up arrow rotates the piece 90 degrees clockwise.",
+      "reason": "The spec states 'Up arrow rotates the piece 90 degrees' but does not specify direction. Clockwise is a common convention."
+    },
+    {
+      "about": "game_over_display",
+      "choice": "GAME OVER and the final score will be displayed as text overlaying the game grid.",
+      "reason": "The spec states 'show GAME OVER and the final score' but does not specify how. An overlay is a standard way to present this."
+    },
+    {
+      "about": "console_output_format",
+      "choice": "Console output for controls and game over will be simple strings as specified (e.g., 'MOVE LEFT', 'GAME OVER').",
+      "reason": "The spec provides exact strings for console output."
+    }
+  ],
+  "unmapped": [
+    {
+      "quote": "No sounds.",
+      "handling": "The Coder should ensure no sound effects or background music are implemented."
+    },
+    {
+      "quote": "Keep it to as few files as possible.",
+      "handling": "The Coder should consolidate game logic into a minimal number of Godot scripts and scenes, as outlined in the architecture.files section."
+    }
+  ],
+  "status": "success"
+}

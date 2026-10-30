@@ -1,0 +1,23 @@
+Bo V4 Tester | Snake | pygame | 6 tests
+Suite script_path values are not executed; launch command is explicit.
+[1/6] C01 ...
+  NOT_RUN: Expected line 'DIRECTION UP' is not stated in the play manual.
+[2/6] C02 ...
+  NOT_RUN: Expected line 'DIRECTION DOWN' is not stated in the play manual.
+[3/6] C03 ...
+  NOT_RUN: Expected line 'DIRECTION LEFT' is not stated in the play manual.
+[4/6] C04 ...
+  NOT_RUN: Expected line 'DIRECTION RIGHT' is not stated in the play manual.
+[5/6] C24 ...
+  PASS: Expected literal text was found in process output.
+[6/6] C25 ...
+  PASS: Expected literal text was found in process output.
+\nSUMMARY\n{
+  "total": 6,
+  "counts": {
+    "NOT_RUN": 4,
+    "PASS": 2
+  }
+}
+Results: C:\Users\ASUS\Game_Agent\Agentic_AI_Project\BOV5\traces\eval\run20261029_210155-s1\test_run_20261029_210838\test_results.json
+Evidence: C:\Users\ASUS\Game_Agent\Agentic_AI_Project\BOV5\traces\eval\run20261029_210155-s1\test_run_20261029_210838\evidence

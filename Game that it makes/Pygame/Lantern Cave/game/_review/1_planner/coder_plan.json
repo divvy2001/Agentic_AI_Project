@@ -1,0 +1,210 @@
+{
+  "status": "success",
+  "game_title": "Lantern Cave",
+  "profile": {
+    "genre": "text adventure",
+    "renderer": "pygame",
+    "dimensions": "2d",
+    "pace": "turn-based",
+    "players": 1
+  },
+  "requirements": [
+    {
+      "text": "The game must be named 'Lantern Cave'.",
+      "priority": "core",
+      "status": "full",
+      "check": "The game window title displays 'Lantern Cave'.",
+      "milestone": 1,
+      "quote": "called \"Lantern Cave\""
+    },
+    {
+      "text": "The player can explore five connected locations: a forest clearing, a cave entrance, a dark tunnel, an underground lake and a treasure room.",
+      "priority": "core",
+      "status": "full",
+      "check": "Player can navigate between all five locations using 'go' commands, subject to conditions.",
+      "milestone": 1,
+      "quote": "The player explores five connected locations: a forest clearing, a cave entrance, a dark tunnel, an underground lake and a treasure room."
+    },
+    {
+      "text": "The player can type one command per line: look, go north, go south, go east, go west, take <item>, inventory, help and quit.",
+      "priority": "core",
+      "status": "full",
+      "check": "All listed commands are recognized and trigger appropriate actions or messages.",
+      "milestone": 1,
+      "quote": "The player types one command per line: look, go north, go south, go east, go west, take <item>, inventory, help and quit."
+    },
+    {
+      "text": "The cave entrance holds a lantern.",
+      "priority": "core",
+      "status": "full",
+      "check": "When in the cave entrance, 'take lantern' adds the lantern to inventory.",
+      "milestone": 1,
+      "quote": "The cave entrance holds a lantern"
+    },
+    {
+      "text": "The underground lake holds a rusty key.",
+      "priority": "core",
+      "status": "full",
+      "check": "When in the underground lake, 'take rusty key' adds the rusty key to inventory.",
+      "milestone": 1,
+      "quote": "the underground lake holds a rusty key."
+    },
+    {
+      "text": "The dark tunnel cannot be crossed without the lantern.",
+      "priority": "core",
+      "status": "full",
+      "check": "Attempting to enter the dark tunnel without the lantern results in a 'BLOCKED' message and no location change.",
+      "milestone": 1,
+      "quote": "The dark tunnel cannot be crossed without the lantern"
+    },
+    {
+      "text": "The treasure room is locked until the player has the rusty key.",
+      "priority": "core",
+      "status": "full",
+      "check": "Attempting to enter the treasure room without the rusty key results in a 'BLOCKED' message and no location change.",
+      "milestone": 1,
+      "quote": "the treasure room is locked until the player has the rusty key."
+    },
+    {
+      "text": "Reaching the treasure room with the key wins the game.",
+      "priority": "core",
+      "status": "full",
+      "check": "Upon entering the treasure room with the rusty key in inventory, the game prints 'WIN' and exits.",
+      "milestone": 1,
+      "quote": "Reaching the treasure room with the key wins the game."
+    },
+    {
+      "text": "Every command prints one fixed confirmation line first, then a short description.",
+      "priority": "core",
+      "status": "full",
+      "check": "After any valid command, the specified confirmation line appears, followed by the location description.",
+      "milestone": 1,
+      "quote": "Every command prints one fixed confirmation line first, then a short description"
+    },
+    {
+      "text": "The 'look' command prints 'LOOK'.",
+      "priority": "core",
+      "status": "full",
+      "check": "Typing 'look' prints 'LOOK' followed by the current location description.",
+      "milestone": 1,
+      "quote": "look prints LOOK"
+    },
+    {
+      "text": "A successful move prints 'MOVED NORTH', 'MOVED SOUTH', 'MOVED EAST' or 'MOVED WEST'.",
+      "priority": "core",
+      "status": "full",
+      "check": "After a successful 'go' command, the corresponding 'MOVED' message is printed.",
+      "milestone": 1,
+      "quote": "a successful move prints MOVED NORTH, MOVED SOUTH, MOVED EAST or MOVED WEST"
+    },
+    {
+      "text": "A blocked move prints 'BLOCKED'.",
+      "priority": "core",
+      "status": "full",
+      "check": "After an unsuccessful 'go' command (e.g., no path, missing item), 'BLOCKED' is printed.",
+      "milestone": 1,
+      "quote": "a blocked move prints BLOCKED"
+    },
+    {
+      "text": "The 'take' command prints 'TOOK' followed by the item name.",
+      "priority": "core",
+      "status": "full",
+      "check": "After a successful 'take <item>', 'TOOK <item name>' is printed.",
+      "milestone": 1,
+      "quote": "take prints TOOK followed by the item name"
+    },
+    {
+      "text": "The 'inventory' command prints 'INVENTORY'.",
+      "priority": "core",
+      "status": "full",
+      "check": "Typing 'inventory' prints 'INVENTORY' followed by a list of items.",
+      "milestone": 1,
+      "quote": "inventory prints INVENTORY"
+    },
+    {
+      "text": "The 'help' command prints 'HELP'.",
+      "priority": "core",
+      "status": "full",
+      "check": "Typing 'help' prints 'HELP' followed by a list of commands.",
+      "milestone": 1,
+      "quote": "help prints HELP"
+    },
+    {
+      "text": "The 'quit' command prints 'QUIT' and exits.",
+      "priority": "core",
+      "status": "full",
+      "check": "Typing 'quit' prints 'QUIT' and the game window closes.",
+      "milestone": 1,
+      "quote": "quit prints QUIT and exits."
+    },
+    {
+      "text": "An unknown command prints 'UNKNOWN COMMAND' and does not change anything.",
+      "priority": "core",
+      "status": "full",
+      "check": "Typing an unrecognized command prints 'UNKNOWN COMMAND' and the game state (location, inventory) remains unchanged.",
+      "milestone": 1,
+      "quote": "An unknown command prints UNKNOWN COMMAND and does not change anything."
+    },
+    {
+      "text": "Winning prints 'WIN' and ends the game.",
+      "priority": "core",
+      "status": "full",
+      "check": "Upon winning, 'WIN' is printed and the game window closes.",
+      "milestone": 1,
+      "quote": "Winning prints WIN and ends the game."
+    },
+    {
+      "text": "Show the player's current location after every command.",
+      "priority": "core",
+      "status": "full",
+      "check": "After every command, the description of the current location is displayed.",
+      "milestone": 1,
+      "quote": "Show the player's current location after every command."
+    }
+  ],
+  "architecture": {
+    "entry_point": "game/lantern_cave.py",
+    "files": [
+      {
+        "path": "game/__init__.py",
+        "purpose": "Initializes the game package."
+      },
+      {
+        "path": "game/lantern_cave.py",
+        "purpose": "Main game logic, including game loop, command parsing, and state management."
+      }
+    ],
+    "dependencies": [
+      "pygame"
+    ],
+    "assets": {
+      "strategy": "procedural",
+      "strategy_rationale": "The game is a text adventure, so all visual elements will be rendered as text directly in Pygame, not as images.",
+      "sprites": []
+    },
+    "extensions": {
+      "locations": {
+        "summary": "Defines the game's interconnected locations and their properties.",
+        "detail": "Each location will have a name, description, available items, and exits to other locations. The connections will be a dictionary mapping location names to another dictionary of directions and target locations. Special conditions for movement (e.g., lantern for dark tunnel, key for treasure room) will be handled during movement validation."
+      },
+      "inventory_system": {
+        "summary": "Manages items the player collects.",
+        "detail": "A simple list or set to store items the player has picked up. The 'take' command adds items, and the 'inventory' command displays them. Items will be removed from the location once taken."
+      }
+    },
+    "resolution": {
+      "width": 800,
+      "height": 600
+    },
+    "fps": 30,
+    "requires_input": true,
+    "test_input_example": "go east (to cave entrance)\ntake lantern\ngo west (to forest clearing)\ngo south (to underground lake)\ntake rusty key\ngo north (to forest clearing)\ngo east (to cave entrance)\ngo east (to dark tunnel)\ngo east (to treasure room)",
+    "complexity_warning": null
+  },
+  "unmapped": [
+    {
+      "quote": "Use the standard library only and keep it in as few files as possible.",
+      "handling": "The 'standard library only' constraint is overridden by the explicit 'Build this specifically using the Pygame renderer/engine'. The 'as few files as possible' will be respected by keeping the game logic in a single main file, `lantern_cave.py`, besides the `__init__.py`."
+    }
+  ]
+}

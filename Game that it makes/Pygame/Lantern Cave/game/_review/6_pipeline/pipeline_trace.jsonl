@@ -1,0 +1,14 @@
+{"turn": 1, "t": 0.6, "stage": "start", "status": "ok", "detail": "spec=lantern_cave.md (1267 chars)"}
+{"turn": 2, "t": 44.0, "stage": "planner+assets", "status": "success", "detail": "renderer=pygame assets=procedural", "renderer": "pygame", "entry_point": "game/lantern_cave.py"}
+{"turn": 3, "t": 639.7, "stage": "logic_coder", "status": "ready_for_testing", "reason": null, "steps": 5, "cost": "$0.0294", "attempt_id": "42235c7e37ca4089b72b92ddc42ab534"}
+{"turn": 4, "t": 665.4, "stage": "eval_generator", "status": "ok", "detail": "suite=run20261030_152443-s1 tests=12", "exit_code": 0}
+{"turn": 5, "t": 781.4, "stage": "runtime_tester", "status": "done", "round": 1, "counts": {"FAIL": 10, "PASS": 2}, "results": "traces/eval/run20261030_152443-s1/test_run_20261030_153548/test_results.json"}
+{"turn": 6, "t": 781.4, "stage": "decision", "status": "errors found", "round": 1, "detail": "10 failing test(s)"}
+{"turn": 7, "t": 1047.7, "stage": "triage", "status": "ready_for_testing", "round": 1, "route": "logic_coder", "confidence": 0.9, "reason": ""}
+{"turn": 8, "t": 1047.7, "stage": "coder_repair", "status": "ready_for_testing", "round": 1, "reason": null, "cost": "$0.0118"}
+{"turn": 9, "t": 1163.2, "stage": "runtime_tester", "status": "done", "round": 2, "counts": {"FAIL": 10, "PASS": 2}, "results": "traces/eval/run20261030_152443-s1/test_run_20261030_154211/test_results.json"}
+{"turn": 10, "t": 1163.2, "stage": "decision", "status": "errors found", "round": 2, "detail": "10 failing test(s)"}
+{"turn": 11, "t": 1369.2, "stage": "triage", "status": "ready_for_testing", "round": 2, "route": "logic_coder", "confidence": 0.9, "reason": ""}
+{"turn": 12, "t": 1369.2, "stage": "coder_repair", "status": "ready_for_testing", "round": 2, "reason": null, "cost": "$0.0127"}
+{"turn": 13, "t": 1483.9, "stage": "runtime_tester", "status": "done", "round": 3, "counts": {"FAIL": 10, "PASS": 2}, "results": "traces/eval/run20261030_152443-s1/test_run_20261030_154732/test_results.json"}
+{"turn": 14, "t": 1483.9, "stage": "decision", "status": "errors found", "round": 3, "detail": "10 failing test(s)"}

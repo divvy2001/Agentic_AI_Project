@@ -1,7 +1,7 @@
 {
-  "task_id": "Simple Tetris",
-  "framework": "pygame",
-  "game_style": "puzzle",
+  "task_id": "Tic Tac Toe",
+  "framework": "terminal",
+  "game_style": "Tic Tac Toe",
   "output_dir": "game/assets",
   "assets": [],
   "validation": {

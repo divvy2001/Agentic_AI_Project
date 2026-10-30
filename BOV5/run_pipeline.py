@@ -40,8 +40,16 @@ sys.path.insert(0, str(ROOT))
 
 # --- 1. Game spec (input to the Planner) -----------------------------------
 SPEC_DIR = ROOT.parent / "game_specs"   # folder next to BOV5 with one .md file per game
-SPEC_FILE = "tetris.md"           # which spec to build; `python run_pipeline.py snake` overrides this for one run
+SPEC_FILE = "tictactoe.md"           # which spec to build; `python run_pipeline.py snake` overrides this for one run
 SPEC = ""                              # leave empty: filled with the text under "## Spec" when the run starts
+
+# Force the Planner to plan for one renderer, regardless of what the spec implies or
+# names. "" = let the Planner infer/read the engine as normal (default behaviour).
+# Valid values: "pygame", "godot", "terminal". The instruction is appended to the spec
+# text itself (not written into plan.json after the fact), so the whole plan --
+# architecture, entry point, file list, assets -- is built consistently for the forced
+# engine, instead of a plan built for one engine with just its renderer field swapped.
+FORCE_ENGINE = ""
 
 # (Planner model and key live in .env / master_planner; nothing to set here)
 
@@ -939,6 +947,10 @@ def load_spec():
     spec = " ".join(body.split())
     if not spec:
         sys.exit(f"Spec file is empty: {path}")
+    if FORCE_ENGINE:
+        spec += (f" Build this specifically using the {FORCE_ENGINE} renderer/engine, "
+                 f"overriding any engine named or implied above.")
+        print(f"[PIPELINE] FORCE_ENGINE active: Planner instructed to use '{FORCE_ENGINE}'", flush=True)
     STATE["spec_file"] = path
     return spec
 

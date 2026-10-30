@@ -1,0 +1,12 @@
+{
+  "task_id": "Snake",
+  "framework": "pygame",
+  "game_style": "classic arcade",
+  "output_dir": "game/assets",
+  "assets": [],
+  "validation": {
+    "passed": false,
+    "status": "failed",
+    "errors": []
+  }
+}

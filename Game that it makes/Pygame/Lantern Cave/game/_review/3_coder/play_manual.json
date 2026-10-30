@@ -1,0 +1,6 @@
+{
+  "test_input": "look\ninventory\nhelp\ngo east\ntake lantern\ngo east\ngo east\nquit\n",
+  "expected_win_output": "WIN\n",
+  "expected_lose_output": "QUIT\n",
+  "notes": "Controls:\n- Type commands by typing text and pressing Enter. Supported commands: look, go north, go south, go east, go west, take <item>, inventory, help, quit.\n- Each command prints a confirmation line to stdout (e.g., LOOK, MOVED NORTH, TOOK lantern, INVENTORY, HELP, QUIT) and also shows game text in the window.\n- Inputs can also be provided via stdin (one command per line) for automated tests; the game reads lines from stdin in a background thread.\n- The game window title is 'Lantern Cave'.\n- Restart: close and re-run the program.\n- Events printed to stdout: LOOK, MOVED <DIRECTION>, BLOCKED, TOOK <item>, INVENTORY, HELP, QUIT, WIN.\n"
+}

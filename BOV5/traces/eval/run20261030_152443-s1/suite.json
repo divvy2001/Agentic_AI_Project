@@ -1,0 +1,482 @@
+{
+  "schema_version": "1.0",
+  "suite_version": "run20261030_152443-s1",
+  "generated_at_utc": "2026-10-30T08:35:42.099387+00:00",
+  "renderer": "pygame",
+  "game_title": "Lantern Cave",
+  "generator": {
+    "backend": "openrouter",
+    "model": "openai/gpt-4.1-mini",
+    "scope": "controls"
+  },
+  "generation_notes": [
+    "Controls found and tested: look, go north, go south, go east, go west, take lantern, take rusty key, inventory, help, quit, escape.",
+    "All controls are typed commands except escape which is a key press.",
+    "Tests include necessary navigation to reach locations for 'take' commands.",
+    "No controls were excluded as all are named in the manual with exact printed lines.",
+    "Blocked moves and unknown commands are not tested here as they are not direct controls but outcomes of commands."
+  ],
+  "controls": [
+    {
+      "key": "look",
+      "does": "prints LOOK and current location description",
+      "prints": "LOOK",
+      "manual_quote": "look -> 'LOOK'"
+    },
+    {
+      "key": "go north",
+      "does": "move player north if possible, prints MOVED NORTH or BLOCKED",
+      "prints": "MOVED NORTH",
+      "manual_quote": "go <direction> (successful) -> 'MOVED <DIRECTION>' where <DIRECTION> is NORTH/SOUTH/EAST/WEST"
+    },
+    {
+      "key": "go south",
+      "does": "move player south if possible, prints MOVED SOUTH or BLOCKED",
+      "prints": "MOVED SOUTH",
+      "manual_quote": "go <direction> (successful) -> 'MOVED <DIRECTION>' where <DIRECTION> is NORTH/SOUTH/EAST/WEST"
+    },
+    {
+      "key": "go east",
+      "does": "move player east if possible, prints MOVED EAST or BLOCKED",
+      "prints": "MOVED EAST",
+      "manual_quote": "go <direction> (successful) -> 'MOVED <DIRECTION>' where <DIRECTION> is NORTH/SOUTH/EAST/WEST"
+    },
+    {
+      "key": "go west",
+      "does": "move player west if possible, prints MOVED WEST or BLOCKED",
+      "prints": "MOVED WEST",
+      "manual_quote": "go <direction> (successful) -> 'MOVED <DIRECTION>' where <DIRECTION> is NORTH/SOUTH/EAST/WEST"
+    },
+    {
+      "key": "take lantern",
+      "does": "take the lantern item if present, prints TOOK lantern or BLOCKED",
+      "prints": "TOOK lantern",
+      "manual_quote": "take <item> (successful) -> 'TOOK <item>' (item name preserved as in world data, e.g., 'lantern', 'rusty key')"
+    },
+    {
+      "key": "take rusty key",
+      "does": "take the rusty key item if present, prints TOOK rusty key or BLOCKED",
+      "prints": "TOOK rusty key",
+      "manual_quote": "take <item> (successful) -> 'TOOK <item>' (item name preserved as in world data, e.g., 'lantern', 'rusty key')"
+    },
+    {
+      "key": "inventory",
+      "does": "print inventory list, prints INVENTORY",
+      "prints": "INVENTORY",
+      "manual_quote": "inventory -> 'INVENTORY'"
+    },
+    {
+      "key": "help",
+      "does": "print help list, prints HELP",
+      "prints": "HELP",
+      "manual_quote": "help -> 'HELP'"
+    },
+    {
+      "key": "quit",
+      "does": "quit the game, prints QUIT and exits",
+      "prints": "QUIT",
+      "manual_quote": "quit or Escape -> 'QUIT' and the game exits"
+    },
+    {
+      "key": "escape",
+      "does": "quit the game, prints QUIT and exits",
+      "prints": "QUIT",
+      "manual_quote": "quit or Escape -> 'QUIT' and the game exits"
+    }
+  ],
+  "source_hashes": {
+    "plans/coder_plan.json": "4bb45054d386972f8519099177df9fa911b3864c4fe12f2b809132a57f696238",
+    "plans/play_manual.json": "08c15c44ee4915d679300647f6b086f3b5c863697d42549f2504d2525d990145",
+    "plans/asset_manifest.json": "1638f541a3c92b45df0111e19991be4f01bbed6071e7e2d928b19f38f5b097a9"
+  },
+  "tests": [
+    {
+      "test_id": "C01",
+      "requirement_index": 2,
+      "requirement": "The player can type one command per line: look, go north, go south, go east, go west, take <item>, inventory, help and quit.",
+      "assertion": "Typing 'look' prints 'LOOK' followed by the current location description.",
+      "actions": [
+        {
+          "type": "input",
+          "text": "look"
+        },
+        {
+          "type": "wait",
+          "seconds": 1
+        }
+      ],
+      "observation": {
+        "method": "stdout",
+        "target": "LOOK"
+      },
+      "expected": "LOOK",
+      "status": "ready_for_validator",
+      "not_testable_reason": null,
+      "renderer": "pygame",
+      "timeout_seconds": 30,
+      "script_path": null
+    },
+    {
+      "test_id": "C02",
+      "requirement_index": 2,
+      "requirement": "The player can type one command per line: look, go north, go south, go east, go west, take <item>, inventory, help and quit.",
+      "assertion": "Typing 'go north' prints 'MOVED NORTH' if move is successful.",
+      "actions": [
+        {
+          "type": "input",
+          "text": "go east"
+        },
+        {
+          "type": "wait",
+          "seconds": 1
+        },
+        {
+          "type": "input",
+          "text": "go north"
+        },
+        {
+          "type": "wait",
+          "seconds": 1
+        }
+      ],
+      "observation": {
+        "method": "stdout",
+        "target": "MOVED NORTH"
+      },
+      "expected": "MOVED NORTH",
+      "status": "ready_for_validator",
+      "not_testable_reason": null,
+      "renderer": "pygame",
+      "timeout_seconds": 30,
+      "script_path": null
+    },
+    {
+      "test_id": "C03",
+      "requirement_index": 2,
+      "requirement": "The player can type one command per line: look, go north, go south, go east, go west, take <item>, inventory, help and quit.",
+      "assertion": "Typing 'go south' prints 'MOVED SOUTH' if move is successful.",
+      "actions": [
+        {
+          "type": "input",
+          "text": "go south"
+        },
+        {
+          "type": "wait",
+          "seconds": 1
+        }
+      ],
+      "observation": {
+        "method": "stdout",
+        "target": "MOVED SOUTH"
+      },
+      "expected": "MOVED SOUTH",
+      "status": "ready_for_validator",
+      "not_testable_reason": null,
+      "renderer": "pygame",
+      "timeout_seconds": 30,
+      "script_path": null
+    },
+    {
+      "test_id": "C04",
+      "requirement_index": 2,
+      "requirement": "The player can type one command per line: look, go north, go south, go east, go west, take <item>, inventory, help and quit.",
+      "assertion": "Typing 'go east' prints 'MOVED EAST' if move is successful.",
+      "actions": [
+        {
+          "type": "input",
+          "text": "go east"
+        },
+        {
+          "type": "wait",
+          "seconds": 1
+        }
+      ],
+      "observation": {
+        "method": "stdout",
+        "target": "MOVED EAST"
+      },
+      "expected": "MOVED EAST",
+      "status": "ready_for_validator",
+      "not_testable_reason": null,
+      "renderer": "pygame",
+      "timeout_seconds": 30,
+      "script_path": null
+    },
+    {
+      "test_id": "C05",
+      "requirement_index": 2,
+      "requirement": "The player can type one command per line: look, go north, go south, go east, go west, take <item>, inventory, help and quit.",
+      "assertion": "Typing 'go west' prints 'MOVED WEST' if move is successful.",
+      "actions": [
+        {
+          "type": "input",
+          "text": "go east"
+        },
+        {
+          "type": "wait",
+          "seconds": 1
+        },
+        {
+          "type": "input",
+          "text": "go west"
+        },
+        {
+          "type": "wait",
+          "seconds": 1
+        }
+      ],
+      "observation": {
+        "method": "stdout",
+        "target": "MOVED WEST"
+      },
+      "expected": "MOVED WEST",
+      "status": "ready_for_validator",
+      "not_testable_reason": null,
+      "renderer": "pygame",
+      "timeout_seconds": 30,
+      "script_path": null
+    },
+    {
+      "test_id": "C06",
+      "requirement_index": 3,
+      "requirement": "The cave entrance holds a lantern.",
+      "assertion": "Typing 'take lantern' at cave entrance prints 'TOOK lantern'.",
+      "actions": [
+        {
+          "type": "input",
+          "text": "go east"
+        },
+        {
+          "type": "wait",
+          "seconds": 1
+        },
+        {
+          "type": "input",
+          "text": "take lantern"
+        },
+        {
+          "type": "wait",
+          "seconds": 1
+        }
+      ],
+      "observation": {
+        "method": "stdout",
+        "target": "TOOK lantern"
+      },
+      "expected": "TOOK lantern",
+      "status": "ready_for_validator",
+      "not_testable_reason": null,
+      "renderer": "pygame",
+      "timeout_seconds": 30,
+      "script_path": null
+    },
+    {
+      "test_id": "C07",
+      "requirement_index": 4,
+      "requirement": "The underground lake holds a rusty key.",
+      "assertion": "Typing 'take rusty key' at underground lake prints 'TOOK rusty key'.",
+      "actions": [
+        {
+          "type": "input",
+          "text": "go east"
+        },
+        {
+          "type": "wait",
+          "seconds": 1
+        },
+        {
+          "type": "input",
+          "text": "go west"
+        },
+        {
+          "type": "wait",
+          "seconds": 1
+        },
+        {
+          "type": "input",
+          "text": "go south"
+        },
+        {
+          "type": "wait",
+          "seconds": 1
+        },
+        {
+          "type": "input",
+          "text": "take rusty key"
+        },
+        {
+          "type": "wait",
+          "seconds": 1
+        }
+      ],
+      "observation": {
+        "method": "stdout",
+        "target": "TOOK rusty key"
+      },
+      "expected": "TOOK rusty key",
+      "status": "ready_for_validator",
+      "not_testable_reason": null,
+      "renderer": "pygame",
+      "timeout_seconds": 30,
+      "script_path": null
+    },
+    {
+      "test_id": "C08",
+      "requirement_index": 2,
+      "requirement": "The player can type one command per line: look, go north, go south, go east, go west, take <item>, inventory, help and quit.",
+      "assertion": "Typing 'inventory' prints 'INVENTORY'.",
+      "actions": [
+        {
+          "type": "input",
+          "text": "inventory"
+        },
+        {
+          "type": "wait",
+          "seconds": 1
+        }
+      ],
+      "observation": {
+        "method": "stdout",
+        "target": "INVENTORY"
+      },
+      "expected": "INVENTORY",
+      "status": "ready_for_validator",
+      "not_testable_reason": null,
+      "renderer": "pygame",
+      "timeout_seconds": 30,
+      "script_path": null
+    },
+    {
+      "test_id": "C09",
+      "requirement_index": 2,
+      "requirement": "The player can type one command per line: look, go north, go south, go east, go west, take <item>, inventory, help and quit.",
+      "assertion": "Typing 'help' prints 'HELP'.",
+      "actions": [
+        {
+          "type": "input",
+          "text": "help"
+        },
+        {
+          "type": "wait",
+          "seconds": 1
+        }
+      ],
+      "observation": {
+        "method": "stdout",
+        "target": "HELP"
+      },
+      "expected": "HELP",
+      "status": "ready_for_validator",
+      "not_testable_reason": null,
+      "renderer": "pygame",
+      "timeout_seconds": 30,
+      "script_path": null
+    },
+    {
+      "test_id": "C10",
+      "requirement_index": 15,
+      "requirement": "The 'quit' command prints 'QUIT' and exits.",
+      "assertion": "Typing 'quit' prints 'QUIT' and exits.",
+      "actions": [
+        {
+          "type": "input",
+          "text": "quit"
+        },
+        {
+          "type": "wait",
+          "seconds": 1
+        }
+      ],
+      "observation": {
+        "method": "stdout",
+        "target": "QUIT"
+      },
+      "expected": "QUIT",
+      "status": "ready_for_validator",
+      "not_testable_reason": null,
+      "renderer": "pygame",
+      "timeout_seconds": 30,
+      "script_path": null
+    },
+    {
+      "test_id": "C11",
+      "requirement_index": 15,
+      "requirement": "The 'quit' command prints 'QUIT' and exits.",
+      "assertion": "Pressing Escape prints 'QUIT' and exits.",
+      "actions": [
+        {
+          "type": "press",
+          "key": "esc"
+        },
+        {
+          "type": "wait",
+          "seconds": 1
+        }
+      ],
+      "observation": {
+        "method": "stdout",
+        "target": "QUIT"
+      },
+      "expected": "QUIT",
+      "status": "ready_for_validator",
+      "not_testable_reason": null,
+      "renderer": "pygame",
+      "timeout_seconds": 30,
+      "script_path": null
+    },
+    {
+      "test_id": "C27",
+      "requirement_index": 0,
+      "requirement": "Pressing escape works",
+      "assertion": "After pressing escape the game prints QUIT",
+      "actions": [
+        {
+          "type": "wait",
+          "seconds": 1
+        },
+        {
+          "type": "press",
+          "key": "escape"
+        },
+        {
+          "type": "wait",
+          "seconds": 1
+        }
+      ],
+      "observation": {
+        "method": "stdout",
+        "target": "QUIT"
+      },
+      "expected": "QUIT",
+      "status": "ready_for_validator",
+      "not_testable_reason": null,
+      "renderer": "pygame",
+      "timeout_seconds": 30,
+      "script_path": null
+    }
+  ],
+  "summary": {
+    "total": 12,
+    "ready_for_validator": 12,
+    "not_testable": 0
+  },
+  "warnings": [
+    "Requirement 0 had no valid executable test and was marked not_testable",
+    "Requirement 1 had no valid executable test and was marked not_testable",
+    "Requirement 5 had no valid executable test and was marked not_testable",
+    "Requirement 6 had no valid executable test and was marked not_testable",
+    "Requirement 7 had no valid executable test and was marked not_testable",
+    "Requirement 8 had no valid executable test and was marked not_testable",
+    "Requirement 9 had no valid executable test and was marked not_testable",
+    "Requirement 10 had no valid executable test and was marked not_testable",
+    "Requirement 11 had no valid executable test and was marked not_testable",
+    "Requirement 12 had no valid executable test and was marked not_testable",
+    "Requirement 13 had no valid executable test and was marked not_testable",
+    "Requirement 14 had no valid executable test and was marked not_testable",
+    "Requirement 16 had no valid executable test and was marked not_testable",
+    "Requirement 17 had no valid executable test and was marked not_testable",
+    "Requirement 18 had no valid executable test and was marked not_testable",
+    "Added missing control test for escape -> QUIT"
+  ],
+  "important": "Generation is not execution. This file does not claim PASS and must not be used as test_results.json."
+}

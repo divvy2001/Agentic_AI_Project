@@ -1,0 +1,6 @@
+{"turn": 1, "t": 1.0, "stage": "start", "status": "ok", "detail": "spec=snake2.md (836 chars)"}
+{"turn": 2, "t": 47.4, "stage": "planner+assets", "status": "success", "detail": "renderer=pygame assets=procedural", "renderer": "pygame", "entry_point": "game/snake_game.py"}
+{"turn": 3, "t": 384.3, "stage": "logic_coder", "status": "ready_for_testing", "reason": null, "steps": 8, "cost": "$0.0392", "attempt_id": "3130a1ed77d14b8ea7a9e042c591a567"}
+{"turn": 4, "t": 403.0, "stage": "eval_generator", "status": "ok", "detail": "suite=run20261029_210155-s1 tests=6", "exit_code": 0}
+{"turn": 5, "t": 415.6, "stage": "runtime_tester", "status": "done", "round": 1, "counts": {"NOT_RUN": 4, "PASS": 2}, "results": "traces/eval/run20261029_210155-s1/test_run_20261029_210838/test_results.json"}
+{"turn": 6, "t": 415.6, "stage": "decision", "status": "no errors", "round": 1, "detail": "needs_review=0"}

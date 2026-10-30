@@ -1,0 +1,7 @@
+{"turn": 1, "t": 0.5, "stage": "start", "status": "ok", "detail": "spec=tetris.md (1727 chars)"}
+{"turn": 2, "t": 46.5, "stage": "planner+assets", "status": "success", "detail": "renderer=godot assets=procedural", "renderer": "godot", "entry_point": "game/main.tscn"}
+{"turn": 3, "t": 301.1, "stage": "logic_coder", "status": "ready_for_testing", "reason": null, "steps": 15, "cost": "$0.0648", "attempt_id": "cd3f7c23279246409764aa8ec2a20a3e"}
+{"turn": 4, "t": 318.0, "stage": "eval_generator", "status": "ok", "detail": "suite=run20261029_160746-s1 tests=6", "exit_code": 0}
+{"turn": 5, "t": 324.0, "stage": "godot_import", "status": "ok", "detail": "imported game/ assets for the Tester"}
+{"turn": 6, "t": 359.9, "stage": "runtime_tester", "status": "done", "round": 1, "counts": {"PASS": 6}, "results": "traces/eval/run20261029_160746-s1/test_run_20261029_161310/test_results.json"}
+{"turn": 7, "t": 359.9, "stage": "decision", "status": "no errors", "round": 1, "detail": "needs_review=0"}

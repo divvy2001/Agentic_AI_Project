@@ -1,0 +1,132 @@
+{
+  "test_id": "C02",
+  "requirement_index": 2,
+  "requirement": "The player can type one command per line: look, go north, go south, go east, go west, take <item>, inventory, help and quit.",
+  "assertion": "Typing 'go north' prints 'MOVED NORTH' if move is successful.",
+  "expected": "MOVED NORTH",
+  "generator_status": "ready_for_validator",
+  "started_at_utc": "2026-10-30T08:47:40.499627+00:00",
+  "evidence_dir": "C:\\Users\\ASUS\\Game_Agent\\Agentic_AI_Project\\BOV5\\traces\\eval\\run20261030_152443-s1\\test_run_20261030_154732\\evidence\\C02",
+  "action_results": [
+    {
+      "type": "input",
+      "at_utc": "2026-10-30T08:47:43.169446+00:00",
+      "status": "executed",
+      "window_focused": true,
+      "text_length": 7,
+      "index": 0
+    },
+    {
+      "type": "wait",
+      "at_utc": "2026-10-30T08:47:43.634513+00:00",
+      "status": "executed",
+      "seconds": 1.0,
+      "index": 1
+    },
+    {
+      "type": "input",
+      "at_utc": "2026-10-30T08:47:44.635234+00:00",
+      "status": "executed",
+      "window_focused": true,
+      "text_length": 8,
+      "index": 2
+    },
+    {
+      "type": "wait",
+      "at_utc": "2026-10-30T08:47:45.120189+00:00",
+      "status": "executed",
+      "seconds": 1.0,
+      "index": 3
+    },
+    {
+      "type": "input",
+      "at_utc": "2026-10-30T08:47:46.274495+00:00",
+      "status": "executed",
+      "window_focused": true,
+      "text_length": 7,
+      "retry": 1
+    },
+    {
+      "type": "wait",
+      "at_utc": "2026-10-30T08:47:46.747055+00:00",
+      "status": "executed",
+      "seconds": 1.0,
+      "retry": 1
+    },
+    {
+      "type": "input",
+      "at_utc": "2026-10-30T08:47:47.747430+00:00",
+      "status": "executed",
+      "window_focused": true,
+      "text_length": 8,
+      "retry": 1
+    },
+    {
+      "type": "wait",
+      "at_utc": "2026-10-30T08:47:48.235183+00:00",
+      "status": "executed",
+      "seconds": 1.0,
+      "retry": 1
+    },
+    {
+      "type": "input",
+      "at_utc": "2026-10-30T08:47:49.386316+00:00",
+      "status": "executed",
+      "window_focused": true,
+      "text_length": 7,
+      "retry": 2
+    },
+    {
+      "type": "wait",
+      "at_utc": "2026-10-30T08:47:49.851162+00:00",
+      "status": "executed",
+      "seconds": 1.0,
+      "retry": 2
+    },
+    {
+      "type": "input",
+      "at_utc": "2026-10-30T08:47:50.851841+00:00",
+      "status": "executed",
+      "window_focused": true,
+      "text_length": 8,
+      "retry": 2
+    },
+    {
+      "type": "wait",
+      "at_utc": "2026-10-30T08:47:51.340354+00:00",
+      "status": "executed",
+      "seconds": 1.0,
+      "retry": 2
+    }
+  ],
+  "observations": [
+    {
+      "method": "stdout",
+      "captured_at_utc": "2026-10-30T08:47:46.270947+00:00",
+      "text": "pygame 2.6.1 (SDL 2.28.4, Python 3.11.9)\nHello from the pygame community. https://www.pygame.org/contribute.html\n",
+      "stderr_tail": ""
+    }
+  ],
+  "checked_output": "after first input action only",
+  "input_retries": 2,
+  "status": "FAIL",
+  "reason": "Expected literal text was not found. This does not by itself prove a game defect.",
+  "process": {
+    "pid": 45228,
+    "returncode": null
+  },
+  "runtime_evidence": {
+    "stdout_file": "C:\\Users\\ASUS\\Game_Agent\\Agentic_AI_Project\\BOV5\\traces\\eval\\run20261030_152443-s1\\test_run_20261030_154732\\evidence\\C02\\stdout.log",
+    "stderr_file": "C:\\Users\\ASUS\\Game_Agent\\Agentic_AI_Project\\BOV5\\traces\\eval\\run20261030_152443-s1\\test_run_20261030_154732\\evidence\\C02\\stderr.log",
+    "screenshot_file": null
+  },
+  "triage_hints": [
+    {
+      "category": "undetermined",
+      "confidence": "low",
+      "reason": "Insufficient diagnostic signals; compare brief, plan, code, assets and runtime evidence."
+    }
+  ],
+  "duration_seconds": 12.031,
+  "finished_at_utc": "2026-10-30T08:47:52.525623+00:00"
+}

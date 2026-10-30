@@ -1,0 +1,411 @@
+{
+  "schema_version": "1.0",
+  "run_id": "test-run-20261029_161310",
+  "created_at_utc": "2026-10-29T09:13:46.561789+00:00",
+  "suite_path": "C:\\Users\\ASUS\\Game_Agent\\Agentic_AI_Project\\BOV5\\traces\\eval\\run20261029_160746-s1\\suite.json",
+  "suite_version": "run20261029_160746-s1",
+  "game_title": "Simple Tetris",
+  "renderer": "godot",
+  "project_root": "C:\\Users\\ASUS\\Game_Agent\\Agentic_AI_Project\\BOV5",
+  "launch_command": "C:\\Users\\ASUS\\OneDrive\\Desktop\\Godot_v4.7.2-stable_win64.exe --path game",
+  "summary": {
+    "total": 6,
+    "counts": {
+      "PASS": 6
+    }
+  },
+  "results": [
+    {
+      "test_id": "C01",
+      "requirement_index": 7,
+      "requirement": "Right arrow moves the falling piece one column right.",
+      "assertion": "Pressing LEFT moves the falling piece one column left and prints 'MOVE LEFT' to the console.",
+      "expected": "MOVE LEFT",
+      "generator_status": "ready_for_validator",
+      "started_at_utc": "2026-10-29T09:13:10.845753+00:00",
+      "evidence_dir": "C:\\Users\\ASUS\\Game_Agent\\Agentic_AI_Project\\BOV5\\traces\\eval\\run20261029_160746-s1\\test_run_20261029_161310\\evidence\\C01",
+      "action_results": [
+        {
+          "type": "wait",
+          "at_utc": "2026-10-29T09:13:14.091661+00:00",
+          "status": "executed",
+          "seconds": 1.0,
+          "index": 0
+        },
+        {
+          "type": "press",
+          "at_utc": "2026-10-29T09:13:15.242274+00:00",
+          "status": "executed",
+          "window_focused": true,
+          "sent_with": "scan_code",
+          "key": "left",
+          "index": 1
+        },
+        {
+          "type": "wait",
+          "at_utc": "2026-10-29T09:13:15.529074+00:00",
+          "status": "executed",
+          "seconds": 1.0,
+          "index": 2
+        }
+      ],
+      "observations": [
+        {
+          "method": "stdout",
+          "captured_at_utc": "2026-10-29T09:13:16.680840+00:00",
+          "text": "Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org\nVulkan 1.4.348 - Forward+ - Using Device #0: Intel - Intel(R) Graphics\n\nRESTART\nMOVE LEFT\n",
+          "stderr_tail": ""
+        }
+      ],
+      "checked_output": "after first input action only",
+      "input_retries": 0,
+      "status": "PASS",
+      "reason": "Expected literal text was found in process output.",
+      "process": {
+        "pid": 30508,
+        "returncode": null
+      },
+      "runtime_evidence": {
+        "stdout_file": "C:\\Users\\ASUS\\Game_Agent\\Agentic_AI_Project\\BOV5\\traces\\eval\\run20261029_160746-s1\\test_run_20261029_161310\\evidence\\C01\\stdout.log",
+        "stderr_file": "C:\\Users\\ASUS\\Game_Agent\\Agentic_AI_Project\\BOV5\\traces\\eval\\run20261029_160746-s1\\test_run_20261029_161310\\evidence\\C01\\stderr.log",
+        "screenshot_file": null
+      },
+      "triage_hints": [
+        {
+          "category": "undetermined",
+          "confidence": "low",
+          "reason": "Insufficient diagnostic signals; compare brief, plan, code, assets and runtime evidence."
+        }
+      ],
+      "duration_seconds": 5.281,
+      "finished_at_utc": "2026-10-29T09:13:16.859018+00:00"
+    },
+    {
+      "test_id": "C02",
+      "requirement_index": 8,
+      "requirement": "Down arrow moves the falling piece down one row immediately (soft drop).",
+      "assertion": "Pressing RIGHT moves the falling piece one column right and prints 'MOVE RIGHT' to the console.",
+      "expected": "MOVE RIGHT",
+      "generator_status": "ready_for_validator",
+      "started_at_utc": "2026-10-29T09:13:16.860857+00:00",
+      "evidence_dir": "C:\\Users\\ASUS\\Game_Agent\\Agentic_AI_Project\\BOV5\\traces\\eval\\run20261029_160746-s1\\test_run_20261029_161310\\evidence\\C02",
+      "action_results": [
+        {
+          "type": "wait",
+          "at_utc": "2026-10-29T09:13:19.369392+00:00",
+          "status": "executed",
+          "seconds": 1.0,
+          "index": 0
+        },
+        {
+          "type": "press",
+          "at_utc": "2026-10-29T09:13:20.520243+00:00",
+          "status": "executed",
+          "window_focused": true,
+          "sent_with": "scan_code",
+          "key": "right",
+          "index": 1
+        },
+        {
+          "type": "wait",
+          "at_utc": "2026-10-29T09:13:20.805232+00:00",
+          "status": "executed",
+          "seconds": 1.0,
+          "index": 2
+        }
+      ],
+      "observations": [
+        {
+          "method": "stdout",
+          "captured_at_utc": "2026-10-29T09:13:21.956829+00:00",
+          "text": "Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org\nVulkan 1.4.348 - Forward+ - Using Device #0: Intel - Intel(R) Graphics\n\nRESTART\nMOVE RIGHT\n",
+          "stderr_tail": ""
+        }
+      ],
+      "checked_output": "after first input action only",
+      "input_retries": 0,
+      "status": "PASS",
+      "reason": "Expected literal text was found in process output.",
+      "process": {
+        "pid": 28964,
+        "returncode": null
+      },
+      "runtime_evidence": {
+        "stdout_file": "C:\\Users\\ASUS\\Game_Agent\\Agentic_AI_Project\\BOV5\\traces\\eval\\run20261029_160746-s1\\test_run_20261029_161310\\evidence\\C02\\stdout.log",
+        "stderr_file": "C:\\Users\\ASUS\\Game_Agent\\Agentic_AI_Project\\BOV5\\traces\\eval\\run20261029_160746-s1\\test_run_20261029_161310\\evidence\\C02\\stderr.log",
+        "screenshot_file": null
+      },
+      "triage_hints": [
+        {
+          "category": "undetermined",
+          "confidence": "low",
+          "reason": "Insufficient diagnostic signals; compare brief, plan, code, assets and runtime evidence."
+        }
+      ],
+      "duration_seconds": 5.234,
+      "finished_at_utc": "2026-10-29T09:13:22.092203+00:00"
+    },
+    {
+      "test_id": "C03",
+      "requirement_index": 9,
+      "requirement": "Movement controls (Left, Right, Down) do not move the piece through the grid walls or through blocks already locked in place.",
+      "assertion": "Pressing DOWN moves the falling piece down one row immediately and prints 'SOFT DROP' to the console.",
+      "expected": "SOFT DROP",
+      "generator_status": "ready_for_validator",
+      "started_at_utc": "2026-10-29T09:13:22.092203+00:00",
+      "evidence_dir": "C:\\Users\\ASUS\\Game_Agent\\Agentic_AI_Project\\BOV5\\traces\\eval\\run20261029_160746-s1\\test_run_20261029_161310\\evidence\\C03",
+      "action_results": [
+        {
+          "type": "wait",
+          "at_utc": "2026-10-29T09:13:24.614028+00:00",
+          "status": "executed",
+          "seconds": 1.0,
+          "index": 0
+        },
+        {
+          "type": "press",
+          "at_utc": "2026-10-29T09:13:25.764890+00:00",
+          "status": "executed",
+          "window_focused": true,
+          "sent_with": "scan_code",
+          "key": "down",
+          "index": 1
+        },
+        {
+          "type": "wait",
+          "at_utc": "2026-10-29T09:13:26.049871+00:00",
+          "status": "executed",
+          "seconds": 1.0,
+          "index": 2
+        }
+      ],
+      "observations": [
+        {
+          "method": "stdout",
+          "captured_at_utc": "2026-10-29T09:13:27.200646+00:00",
+          "text": "Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org\nVulkan 1.4.348 - Forward+ - Using Device #0: Intel - Intel(R) Graphics\n\nRESTART\nSOFT DROP\n",
+          "stderr_tail": ""
+        }
+      ],
+      "checked_output": "after first input action only",
+      "input_retries": 0,
+      "status": "PASS",
+      "reason": "Expected literal text was found in process output.",
+      "process": {
+        "pid": 27176,
+        "returncode": null
+      },
+      "runtime_evidence": {
+        "stdout_file": "C:\\Users\\ASUS\\Game_Agent\\Agentic_AI_Project\\BOV5\\traces\\eval\\run20261029_160746-s1\\test_run_20261029_161310\\evidence\\C03\\stdout.log",
+        "stderr_file": "C:\\Users\\ASUS\\Game_Agent\\Agentic_AI_Project\\BOV5\\traces\\eval\\run20261029_160746-s1\\test_run_20261029_161310\\evidence\\C03\\stderr.log",
+        "screenshot_file": null
+      },
+      "triage_hints": [
+        {
+          "category": "undetermined",
+          "confidence": "low",
+          "reason": "Insufficient diagnostic signals; compare brief, plan, code, assets and runtime evidence."
+        }
+      ],
+      "duration_seconds": 5.235,
+      "finished_at_utc": "2026-10-29T09:13:27.337715+00:00"
+    },
+    {
+      "test_id": "C04",
+      "requirement_index": 11,
+      "requirement": "If a rotation would overlap the walls or locked blocks, ignore that rotation press.",
+      "assertion": "Pressing UP rotates the falling piece 90 degrees clockwise and prints 'ROTATE' to the console when rotation succeeds.",
+      "expected": "ROTATE",
+      "generator_status": "ready_for_validator",
+      "started_at_utc": "2026-10-29T09:13:27.352662+00:00",
+      "evidence_dir": "C:\\Users\\ASUS\\Game_Agent\\Agentic_AI_Project\\BOV5\\traces\\eval\\run20261029_160746-s1\\test_run_20261029_161310\\evidence\\C04",
+      "action_results": [
+        {
+          "type": "wait",
+          "at_utc": "2026-10-29T09:13:29.863147+00:00",
+          "status": "executed",
+          "seconds": 1.0,
+          "index": 0
+        },
+        {
+          "type": "press",
+          "at_utc": "2026-10-29T09:13:31.013913+00:00",
+          "status": "executed",
+          "window_focused": true,
+          "sent_with": "scan_code",
+          "key": "up",
+          "index": 1
+        },
+        {
+          "type": "wait",
+          "at_utc": "2026-10-29T09:13:31.299024+00:00",
+          "status": "executed",
+          "seconds": 1.0,
+          "index": 2
+        }
+      ],
+      "observations": [
+        {
+          "method": "stdout",
+          "captured_at_utc": "2026-10-29T09:13:32.449902+00:00",
+          "text": "Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org\nVulkan 1.4.348 - Forward+ - Using Device #0: Intel - Intel(R) Graphics\n\nRESTART\nROTATE\n",
+          "stderr_tail": ""
+        }
+      ],
+      "checked_output": "after first input action only",
+      "input_retries": 0,
+      "status": "PASS",
+      "reason": "Expected literal text was found in process output.",
+      "process": {
+        "pid": 21432,
+        "returncode": null
+      },
+      "runtime_evidence": {
+        "stdout_file": "C:\\Users\\ASUS\\Game_Agent\\Agentic_AI_Project\\BOV5\\traces\\eval\\run20261029_160746-s1\\test_run_20261029_161310\\evidence\\C04\\stdout.log",
+        "stderr_file": "C:\\Users\\ASUS\\Game_Agent\\Agentic_AI_Project\\BOV5\\traces\\eval\\run20261029_160746-s1\\test_run_20261029_161310\\evidence\\C04\\stderr.log",
+        "screenshot_file": null
+      },
+      "triage_hints": [
+        {
+          "category": "undetermined",
+          "confidence": "low",
+          "reason": "Insufficient diagnostic signals; compare brief, plan, code, assets and runtime evidence."
+        }
+      ],
+      "duration_seconds": 5.203,
+      "finished_at_utc": "2026-10-29T09:13:32.547854+00:00"
+    },
+    {
+      "test_id": "C05",
+      "requirement_index": 20,
+      "requirement": "Print GAME OVER when the game ends.",
+      "assertion": "Pressing R restarts the game and prints 'RESTART' to the console.",
+      "expected": "RESTART",
+      "generator_status": "ready_for_validator",
+      "started_at_utc": "2026-10-29T09:13:32.547854+00:00",
+      "evidence_dir": "C:\\Users\\ASUS\\Game_Agent\\Agentic_AI_Project\\BOV5\\traces\\eval\\run20261029_160746-s1\\test_run_20261029_161310\\evidence\\C05",
+      "action_results": [
+        {
+          "type": "wait",
+          "at_utc": "2026-10-29T09:13:35.071051+00:00",
+          "status": "executed",
+          "seconds": 1.0,
+          "index": 0
+        },
+        {
+          "type": "press",
+          "at_utc": "2026-10-29T09:13:36.221948+00:00",
+          "status": "executed",
+          "window_focused": true,
+          "sent_with": "scan_code",
+          "key": "r",
+          "index": 1
+        },
+        {
+          "type": "wait",
+          "at_utc": "2026-10-29T09:13:36.506593+00:00",
+          "status": "executed",
+          "seconds": 1.0,
+          "index": 2
+        }
+      ],
+      "observations": [
+        {
+          "method": "stdout",
+          "captured_at_utc": "2026-10-29T09:13:37.658369+00:00",
+          "text": "Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org\nVulkan 1.4.348 - Forward+ - Using Device #0: Intel - Intel(R) Graphics\n\nRESTART\nRESTART\n",
+          "stderr_tail": ""
+        }
+      ],
+      "checked_output": "after first input action only",
+      "input_retries": 0,
+      "status": "PASS",
+      "reason": "Expected literal text was found in process output.",
+      "process": {
+        "pid": 33028,
+        "returncode": null
+      },
+      "runtime_evidence": {
+        "stdout_file": "C:\\Users\\ASUS\\Game_Agent\\Agentic_AI_Project\\BOV5\\traces\\eval\\run20261029_160746-s1\\test_run_20261029_161310\\evidence\\C05\\stdout.log",
+        "stderr_file": "C:\\Users\\ASUS\\Game_Agent\\Agentic_AI_Project\\BOV5\\traces\\eval\\run20261029_160746-s1\\test_run_20261029_161310\\evidence\\C05\\stderr.log",
+        "screenshot_file": null
+      },
+      "triage_hints": [
+        {
+          "category": "undetermined",
+          "confidence": "low",
+          "reason": "Insufficient diagnostic signals; compare brief, plan, code, assets and runtime evidence."
+        }
+      ],
+      "duration_seconds": 5.282,
+      "finished_at_utc": "2026-10-29T09:13:37.828552+00:00"
+    },
+    {
+      "test_id": "C22",
+      "requirement_index": 0,
+      "requirement": "Pressing escape works",
+      "assertion": "After pressing escape the game prints QUIT",
+      "expected": "QUIT",
+      "generator_status": "ready_for_validator",
+      "started_at_utc": "2026-10-29T09:13:37.830563+00:00",
+      "evidence_dir": "C:\\Users\\ASUS\\Game_Agent\\Agentic_AI_Project\\BOV5\\traces\\eval\\run20261029_160746-s1\\test_run_20261029_161310\\evidence\\C22",
+      "action_results": [
+        {
+          "type": "wait",
+          "at_utc": "2026-10-29T09:13:40.344021+00:00",
+          "status": "executed",
+          "seconds": 1.0,
+          "index": 0
+        },
+        {
+          "type": "press",
+          "at_utc": "2026-10-29T09:13:41.494713+00:00",
+          "status": "executed",
+          "window_focused": true,
+          "sent_with": "scan_code",
+          "key": "escape",
+          "index": 1
+        },
+        {
+          "type": "wait",
+          "at_utc": "2026-10-29T09:13:41.778909+00:00",
+          "status": "executed",
+          "seconds": 1.0,
+          "index": 2
+        }
+      ],
+      "observations": [
+        {
+          "method": "stdout",
+          "captured_at_utc": "2026-10-29T09:13:42.930275+00:00",
+          "text": "Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org\nVulkan 1.4.348 - Forward+ - Using Device #0: Intel - Intel(R) Graphics\n\nRESTART\nQUIT\n",
+          "stderr_tail": ""
+        }
+      ],
+      "checked_output": "after first input action only",
+      "input_retries": 0,
+      "status": "PASS",
+      "reason": "Expected literal text was found in process output.",
+      "process": {
+        "pid": 32556,
+        "returncode": 0
+      },
+      "runtime_evidence": {
+        "stdout_file": "C:\\Users\\ASUS\\Game_Agent\\Agentic_AI_Project\\BOV5\\traces\\eval\\run20261029_160746-s1\\test_run_20261029_161310\\evidence\\C22\\stdout.log",
+        "stderr_file": "C:\\Users\\ASUS\\Game_Agent\\Agentic_AI_Project\\BOV5\\traces\\eval\\run20261029_160746-s1\\test_run_20261029_161310\\evidence\\C22\\stderr.log",
+        "screenshot_file": null
+      },
+      "triage_hints": [
+        {
+          "category": "undetermined",
+          "confidence": "low",
+          "reason": "Insufficient diagnostic signals; compare brief, plan, code, assets and runtime evidence."
+        }
+      ],
+      "duration_seconds": 5.093,
+      "finished_at_utc": "2026-10-29T09:13:42.930275+00:00"
+    }
+  ],
+  "project_inventory": "C:\\Users\\ASUS\\Game_Agent\\Agentic_AI_Project\\BOV5\\traces\\eval\\run20261029_160746-s1\\test_run_20261029_161310\\project_inventory.json",
+  "triage_note": "Hints are heuristics, not definitive root-cause labels. Correlate brief, plan, code, asset manifest and runtime evidence."
+}

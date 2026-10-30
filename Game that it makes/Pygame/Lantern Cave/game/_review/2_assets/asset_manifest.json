@@ -1,0 +1,12 @@
+{
+  "task_id": "Lantern Cave",
+  "framework": "pygame",
+  "game_style": "text adventure",
+  "output_dir": "game/assets",
+  "assets": [],
+  "validation": {
+    "passed": false,
+    "status": "failed",
+    "errors": []
+  }
+}

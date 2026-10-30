@@ -1,1 +1,1 @@
-# Package initializer for the Simple Tetris game.
+# Package marker for the Tic Tac Toe game

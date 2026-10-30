@@ -1,0 +1,11 @@
+# Tic Tac Toe
+
+- Engine: terminal
+- Built: run 20261030_155716
+- Result: GAME READY
+- Spec file: tictactoe.md
+- Play: double-click `play.bat`
+
+## Spec
+
+Create a two-player Tic Tac Toe game played in the terminal called “Tic Tac Toe”. The board is a 3 by 3 grid of 9 numbered cells, shown after every move. Players take turns typing a number from 1 to 9 to place their mark in that cell; Player 1 is X and Player 2 is O. Typing a number for a cell that’s already taken, or anything outside 1 to 9, prints a message asking for a valid move instead of counting as a turn. After each valid move, print MOVE X or MOVE O followed by the cell number. Three in a row, column, or diagonal for the same mark ends the game, printing WIN and which player won. If all 9 cells are filled with no winner, print DRAW. Press R to play again with a fresh board, and Q to quit. Use the standard library only and keep it in as few files as possible.

@@ -1,11 +1,11 @@
 {
-  "run_id": "20261029_131536",
+  "run_id": "20261030_155716",
   "pipeline_settings": {
-    "SPEC_FILE": "tetris.md",
+    "SPEC_FILE": "tictactoe.md",
     "DRY_RUN_ASSETS": false,
     "STARTUP_WAIT": 2.0,
     "TESTER_LIMIT": 0,
-    "FAIL_STATUSES": "{'FAIL', 'ERROR'}",
+    "FAIL_STATUSES": "{'ERROR', 'FAIL'}",
     "USE_TRIAGE": true,
     "MAX_ROUNDS": 3,
     "TRIAGE_MIN_CONFIDENCE": 0.65,
@@ -41,6 +41,6 @@
     "eval_generator_module/eval_generator/generator.py": "38e3f7eacaee",
     "bo_v4_tester_v1/bo_v4_tester/tester.py": "070f6d9ea21c",
     "triage_agent/triage.py": "fad125888b95",
-    "run_pipeline.py": "dbbbf7dc0395"
+    "run_pipeline.py": "cb5c8500159e"
   }
 }

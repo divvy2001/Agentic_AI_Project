@@ -1,0 +1,157 @@
+{
+  "run_id": "20261030_145932",
+  "outcome": "GAME READY",
+  "total_seconds": 800.6,
+  "total_cost_usd": 0.1277,
+  "planner": {
+    "status": "success",
+    "attempts": 3,
+    "seconds": 114.3,
+    "tokens_in": 25232,
+    "tokens_out": 13206,
+    "cost_usd": 0.0,
+    "renderer": "pygame",
+    "game_title": "Drift Car",
+    "requirements": 21,
+    "requirements_by_status": {
+      "full": 20,
+      "approximated": 1
+    },
+    "hard_errors_seen": 1,
+    "quote_warnings_seen": 6
+  },
+  "asset_agent": {
+    "strategy": "ai_art",
+    "assets": 2,
+    "cost_usd": 0.0,
+    "files": [
+      "game/assets/car_sprite.png",
+      "game/assets/desert_canyon_background.png"
+    ]
+  },
+  "logic_coder": {
+    "status": "ready_for_testing",
+    "reason": null,
+    "steps": 6,
+    "seconds": 614.1,
+    "model": "openai/gpt-5-mini",
+    "calls": 6,
+    "tokens_in": 54883,
+    "tokens_out": 12021,
+    "cost_usd_metered": 0.12769,
+    "cost_usd_self_reported": 0.03154195,
+    "files_written": []
+  },
+  "eval_generator": {
+    "status": "ok",
+    "seconds": 18.9,
+    "cost_usd": 0.0,
+    "model": "openai/gpt-4.1-mini",
+    "controls_found": [
+      "up -> ACCELERATE",
+      "down -> BRAKE",
+      "left -> TURN LEFT",
+      "right -> TURN RIGHT",
+      "r -> RESTART",
+      "esc -> QUIT"
+    ],
+    "tests": {
+      "total": 6,
+      "ready_for_validator": 6,
+      "not_testable": 0
+    }
+  },
+  "runtime_tester": {
+    "seconds": 50.5,
+    "counts": {
+      "PASS": 6
+    },
+    "tests": [
+      {
+        "id": "C01",
+        "expected": "ACCELERATE",
+        "status": "PASS",
+        "retries": 0,
+        "window_focused": [
+          true
+        ],
+        "seconds": 5.141
+      },
+      {
+        "id": "C02",
+        "expected": "BRAKE",
+        "status": "PASS",
+        "retries": 0,
+        "window_focused": [
+          true
+        ],
+        "seconds": 5.125
+      },
+      {
+        "id": "C03",
+        "expected": "TURN LEFT",
+        "status": "PASS",
+        "retries": 0,
+        "window_focused": [
+          true
+        ],
+        "seconds": 5.141
+      },
+      {
+        "id": "C04",
+        "expected": "TURN RIGHT",
+        "status": "PASS",
+        "retries": 0,
+        "window_focused": [
+          true
+        ],
+        "seconds": 5.14
+      },
+      {
+        "id": "C05",
+        "expected": "RESTART",
+        "status": "PASS",
+        "retries": 0,
+        "window_focused": [
+          true
+        ],
+        "seconds": 5.14
+      },
+      {
+        "id": "C06",
+        "expected": "QUIT",
+        "status": "PASS",
+        "retries": 0,
+        "window_focused": [
+          true
+        ],
+        "seconds": 5.125
+      }
+    ]
+  },
+  "triage_router": {
+    "enabled": true,
+    "decisions": []
+  },
+  "loop_analysis": {
+    "steps": 6,
+    "tool_calls": {
+      "write_file": 2,
+      "apply_patch": 1,
+      "run_shell": 2,
+      "write_play_manual": 1
+    },
+    "failed_tool_calls": 0,
+    "errors_by_type": {},
+    "back_to_back_repeats": 0,
+    "first_step_check_passed": {
+      "plan_and_files": 2,
+      "syntax_or_import": 2,
+      "boot": 2
+    },
+    "most_written_files": {
+      "game/drift_car.py": 2,
+      "game/__init__.py": 1
+    }
+  }
+}

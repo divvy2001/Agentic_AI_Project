@@ -1,0 +1,315 @@
+{
+  "model": "openai/gpt-4.1-mini",
+  "system_prompt": "You are a careful game QA test designer. Return ONLY valid JSON. Generate executable test specifications, not test results. Never claim a test passed. SCOPE: CONTROLS ONLY. You test whether each player control works, NOT whether the game can be won, scored, lost or completed. Work in two steps. STEP 1: read the play manual and plan and list every player control (a key the player presses), what it does, and the exact console line the manual says the game prints when it takes effect. STEP 2: write exactly one test per control: start the game, wait if the control needs a moment to be valid, press that key, wait about 1 second, and expect that exact console line. Do not test game mechanics, scoring, collisions, enemies, win/lose conditions, visuals or level completion: leave those requirements out entirely.",
+  "user_payload": {
+    "task": "Generate a versioned test suite specification for this game. Return JSON matching the requested shape.",
+    "renderer": "pygame",
+    "game_title": "Drift Car",
+    "plan": {
+      "status": "success",
+      "game_title": "Drift Car",
+      "profile": {
+        "genre": "Top-down racing",
+        "renderer": "pygame",
+        "dimensions": "2d",
+        "pace": "real-time",
+        "players": 1
+      },
+      "requirements": [
+        {
+          "text": "The car accelerates forward when the Up arrow key is pressed.",
+          "priority": "core",
+          "status": "full",
+          "check": "After pressing UP for 10 frames, the car's forward speed increases.",
+          "milestone": 1,
+          "quote": "a car accelerates forward with Up"
+        },
+        {
+          "text": "The car brakes/reverses when the Down arrow key is pressed.",
+          "priority": "core",
+          "status": "full",
+          "check": "After pressing DOWN for 10 frames, the car's forward speed decreases or becomes negative.",
+          "milestone": 1,
+          "quote": "brakes/reverses with Down"
+        },
+        {
+          "text": "The car steers left when the Left arrow key is pressed.",
+          "priority": "core",
+          "status": "full",
+          "check": "After pressing LEFT for 10 frames, the car's heading rotates counter-clockwise.",
+          "milestone": 1,
+          "quote": "steers left and right with the arrow keys"
+        },
+        {
+          "text": "The car steers right when the Right arrow key is pressed.",
+          "priority": "core",
+          "status": "full",
+          "check": "After pressing RIGHT for 10 frames, the car's heading rotates clockwise.",
+          "milestone": 1,
+          "quote": "steers left and right with the arrow keys"
+        },
+        {
+          "text": "The car exhibits realistic momentum and drift, sliding in its prior direction when turning at speed.",
+          "priority": "core",
+          "status": "full",
+          "check": "While turning at speed, the car's movement vector should deviate from its current heading, showing a sliding effect.",
+          "milestone": 1,
+          "quote": "carries realistic momentum and drift — the car keeps sliding in its prior direction of travel when turning at speed rather than snapping instantly to the new heading"
+        },
+        {
+          "text": "The car gradually loses speed due to friction when no keys are pressed.",
+          "priority": "core",
+          "status": "full",
+          "check": "When no input is given, the car's speed should decrease over time until it stops.",
+          "milestone": 1,
+          "quote": "gradually loses speed from friction when no key is pressed"
+        },
+        {
+          "text": "The car must stay within a race track boundary drawn as a closed loop of walls.",
+          "priority": "core",
+          "status": "full",
+          "check": "The car's position never goes outside the defined track walls.",
+          "milestone": 1,
+          "quote": "The car must stay within a race track boundary drawn as a closed loop of walls"
+        },
+        {
+          "text": "Crossing a lap-start line after going all the way around the track adds 1 lap.",
+          "priority": "core",
+          "status": "full",
+          "check": "After driving the car completely around the track and crossing the lap-start line, the lap count displayed on screen increases by 1.",
+          "milestone": 1,
+          "quote": "crossing a lap-start line after going all the way around adds 1 lap"
+        },
+        {
+          "text": "Hitting a wall briefly stops the car's forward momentum.",
+          "priority": "core",
+          "status": "full",
+          "check": "When the car collides with a track wall, its forward speed immediately drops to zero or near zero.",
+          "milestone": 1,
+          "quote": "Hitting a wall briefly stops the car's forward momentum"
+        },
+        {
+          "text": "The track winds through a sunset desert canyon, with dusty rock cliffs and scattered cacti lining the course, giving the whole scene a warm, dusty rally atmosphere.",
+          "priority": "secondary",
+          "status": "approximated",
+          "check": "The background and track environment visually represent a sunset desert canyon with dusty rock cliffs and cacti.",
+          "milestone": 2,
+          "quote": "The track winds through a sunset desert canyon, with dusty rock cliffs and scattered cacti lining the course, giving the whole scene a warm, dusty rally atmosphere."
+        },
+        {
+          "text": "Draw the track walls and lap line as plain coloured shapes.",
+          "priority": "core",
+          "status": "full",
+          "check": "Track walls and the lap line are rendered as solid colored geometric shapes, not images.",
+          "milestone": 1,
+          "quote": "Draw the track walls and lap line as plain coloured shapes, no other images."
+        },
+        {
+          "text": "Show lap count in the top-left corner at all times.",
+          "priority": "core",
+          "status": "full",
+          "check": "A numerical lap counter is visible in the top-left corner of the screen and updates correctly.",
+          "milestone": 1,
+          "quote": "Show lap count in the top-left corner at all times."
+        },
+        {
+          "text": "Press R to restart with 0 laps.",
+          "priority": "core",
+          "status": "full",
+          "check": "After pressing R, the car resets to its starting position, and the lap count resets to 0.",
+          "milestone": 1,
+          "quote": "Press R to restart with 0 laps."
+        },
+        {
+          "text": "Press Escape to quit the game.",
+          "priority": "core",
+          "status": "full",
+          "check": "Pressing Escape closes the game window.",
+          "milestone": 1,
+          "quote": "Press Escape to quit."
+        },
+        {
+          "text": "Print 'ACCELERATE' to the console when the Up key takes effect.",
+          "priority": "secondary",
+          "status": "full",
+          "check": "When the Up key is pressed and the car accelerates, 'ACCELERATE' is printed to the console.",
+          "milestone": 1,
+          "quote": "Print a line to the console every time a control takes effect: ACCELERATE"
+        },
+        {
+          "text": "Print 'BRAKE' to the console when the Down key takes effect.",
+          "priority": "secondary",
+          "status": "full",
+          "check": "When the Down key is pressed and the car brakes/reverses, 'BRAKE' is printed to the console.",
+          "milestone": 1,
+          "quote": "Print a line to the console every time a control takes effect: ... BRAKE"
+        },
+        {
+          "text": "Print 'TURN LEFT' to the console when the Left key takes effect.",
+          "priority": "secondary",
+          "status": "full",
+          "check": "When the Left key is pressed and the car turns left, 'TURN LEFT' is printed to the console.",
+          "milestone": 1,
+          "quote": "Print a line to the console every time a control takes effect: ... TURN LEFT"
+        },
+        {
+          "text": "Print 'TURN RIGHT' to the console when the Right key takes effect.",
+          "priority": "secondary",
+          "status": "full",
+          "check": "When the Right key is pressed and the car turns right, 'TURN RIGHT' is printed to the console.",
+          "milestone": 1,
+          "quote": "Print a line to the console every time a control takes effect: ... TURN RIGHT"
+        },
+        {
+          "text": "Print 'RESTART' to the console when the R key takes effect.",
+          "priority": "secondary",
+          "status": "full",
+          "check": "When the R key is pressed and the game restarts, 'RESTART' is printed to the console.",
+          "milestone": 1,
+          "quote": "Print a line to the console every time a control takes effect: ... RESTART"
+        },
+        {
+          "text": "Print 'QUIT' to the console when the Escape key takes effect.",
+          "priority": "secondary",
+          "status": "full",
+          "check": "When the Escape key is pressed and the game quits, 'QUIT' is printed to the console.",
+          "milestone": 1,
+          "quote": "Print a line to the console every time a control takes effect: ... and QUIT"
+        },
+        {
+          "text": "Print 'LAP COMPLETE' to the console each time a lap finishes.",
+          "priority": "secondary",
+          "status": "full",
+          "check": "When a lap is successfully completed, 'LAP COMPLETE' is printed to the console.",
+          "milestone": 1,
+          "quote": "and print LAP COMPLETE each time a lap finishes."
+        }
+      ],
+      "architecture": {
+        "entry_point": "game/drift_car.py",
+        "files": [
+          {
+            "path": "game/__init__.py",
+            "purpose": "Initializes the game package."
+          },
+          {
+            "path": "game/drift_car.py",
+            "purpose": "Main game logic, car, track, and game loop."
+          }
+        ],
+        "dependencies": [
+          "pygame"
+        ],
+        "assets": {
+          "strategy": "ai_art",
+          "strategy_rationale": "The spec explicitly asks for a small image asset for the car and describes a specific environment for the track background.",
+          "sprites": [
+            {
+              "id": "car_sprite",
+              "type": "sprite",
+              "description": "A top-down view of a rally car, suitable for a desert canyon setting, rotated to face its direction of travel.",
+              "width": 64,
+              "height": 32
+            },
+            {
+              "id": "desert_canyon_background",
+              "type": "background",
+              "description": "A top-down view of a sunset desert canyon with dusty rock cliffs and scattered cacti, creating a warm, dusty rally atmosphere.",
+              "width": 512,
+              "height": 384
+            }
+          ]
+        },
+        "extensions": {
+          "track_layout": {
+            "summary": "Defines the race track's geometry and lap line.",
+            "detail": "The track will be a closed loop of walls, defined by a series of points or segments. The lap-start line will be a specific segment within this loop. The track will be designed to fit within the game window and provide a challenging course for drifting."
+          },
+          "physics_engine": {
+            "summary": "Handles car movement, momentum, friction, and collision.",
+            "detail": "A custom physics system will be implemented to simulate realistic car momentum, drift, and friction. This includes calculating the car's velocity, direction, and angular rotation based on player input and environmental factors. Collision detection with track walls will be handled to stop forward momentum."
+          }
+        },
+        "resolution": {
+          "width": 800,
+          "height": 600
+        },
+        "fps": 60,
+        "requires_input": true,
+        "test_input_example": "Hold UP for 120 frames, then alternate LEFT and RIGHT while holding UP to navigate the track. Cross the lap line. Press R. Press ESC.",
+        "complexity_warning": null
+      },
+      "unmapped": [
+        {
+          "quote": "No sounds.",
+          "handling": "The Coder should ensure no sound effects or background music are implemented in the game."
+        },
+        {
+          "quote": "Keep it to as few files as possible.",
+          "handling": "The Coder should consolidate game logic into a minimal number of Python files, ideally one main file for the game logic and an __init__.py for the package."
+        }
+      ]
+    },
+    "play_manual": {
+      "test_input": "Hold UP for 120 frames, then alternate LEFT and RIGHT while holding UP to navigate the track. Cross the lap line. Press R. Press ESC.",
+      "expected_win_output": "LAP COMPLETE",
+      "expected_lose_output": "",
+      "notes": "Controls and exact console lines printed when they take effect:\n- Up arrow (KEYDOWN): prints 'ACCELERATE' and applies forward acceleration while held.\n- Down arrow (KEYDOWN): prints 'BRAKE' and applies braking/reverse while held.\n- Left arrow (KEYDOWN): prints 'TURN LEFT' and rotates heading CCW while held.\n- Right arrow (KEYDOWN): prints 'TURN RIGHT' and rotates heading CW while held.\n- R (KEYDOWN): prints 'RESTART' and resets car position, velocity, heading, lap count to 0.\n- Escape (KEYDOWN) or window close: prints 'QUIT' and exits.\n- When a lap is completed by crossing the checkpoint then the start line: prints 'LAP COMPLETE'.\n\nHigh level notes:\n- Files: game/drift_car.py contains all gameplay, rendering, input, physics; game/__init__.py is an empty package initializer.\n- Track: a donut-shaped track is rendered using filled rectangles (outer/inner) and two vertical lines for checkpoint and start line; walls are simple rect outlines per Plan.\n- Physics: custom simple momentum/drift model: the car keeps a velocity vector separate from its heading; steering rotates heading but velocity retains lateral component which is damped over time to simulate drift. Friction reduces forward speed when not accelerating.\n- Collision: rect-based collision with outer and inner boundaries. On collision the forward momentum is removed and the car is pushed back to its previous position.\n- Assets: provided car_sprite.png and desert_canyon_background.png (if present) are loaded from game/assets. Background is scaled to the window size and used; if assets are missing the game draws procedural colors.\n- Limitations/approximations:\n  - The desert canyon environment is approximated by the supplied background image scaled to the window and simple colored shapes for cliffs/cacti are not procedurally drawn beyond the background image.\n  - Collisions use axis-aligned rectangles (pygame.Rect) so corner cases near curved walls are approximate.\n  - No sounds are implemented per Plan.\n\nPlay expectations (how to exercise automated checks):\n- Hold UP for ~10 frames (0.16s) and observe console 'ACCELERATE' and increasing speed.\n- Hold DOWN and observe console 'BRAKE' and decreasing/negative forward speed.\n- Press and hold LEFT for ~10 frames; observe 'TURN LEFT' and heading rotating CCW.\n- Press and hold RIGHT for ~10 frames; observe 'TURN RIGHT' and heading rotating CW.\n- While turning at high speed, observe the car sprite move on a tangent (movement vector differs from heading) to see drift.\n- Drive across the left checkpoint then around to the start line to see 'LAP COMPLETE' and lap counter increment.\n- Press R to reset; observe 'RESTART' and laps reset to 0.\n- Press ESC to quit; observe 'QUIT'.\n\nExact engine/run details:\n- Resolution: 800x600, FPS: 60.\n- Entry point: python -m game.drift_car or python game/drift_car.py\n\nKnown issues:\n- Visual fidelity of the canyon is approximated by the provided background image; no dynamic lighting or particles.\n- Collision and lap detection are based on rectangle bounds and x-crossings; very tight maneuvers may occasionally not register precisely.\n\nFiles implementing requirements:\n- game/drift_car.py implements all gameplay, rendering and state management.\n"
+    },
+    "required_output_shape": {
+      "controls": [
+        {
+          "key": "space",
+          "does": "jump",
+          "prints": "JUMP",
+          "manual_quote": "the exact manual sentence that states this key and its printed line"
+        }
+      ],
+      "tests": [
+        {
+          "test_id": "T01",
+          "requirement_index": 0,
+          "requirement": "Requirement text",
+          "assertion": "Measurable assertion",
+          "actions": [
+            {
+              "type": "wait",
+              "seconds": 1
+            },
+            {
+              "type": "press",
+              "key": "space"
+            },
+            {
+              "type": "wait",
+              "seconds": 1
+            }
+          ],
+          "observation": {
+            "method": "stdout",
+            "target": "the console line the play manual says this control prints"
+          },
+          "expected": "JUMP",
+          "status": "ready_for_validator or not_testable",
+          "not_testable_reason": null,
+          "timeout_seconds": 30,
+          "script_path": null
+        }
+      ],
+      "generation_notes": [
+        "which controls were found, and any control that could not be tested and why"
+      ]
+    },
+    "constraints": [
+      "Fill 'controls' first (STEP 1), then 'tests' (STEP 2). One test per control, test_ids C01, C02, ...",
+      "Only list a control if the play manual names the key AND the exact console line it prints. Put the supporting manual sentence in manual_quote. Never invent a printed line.",
+      "Each test's 'expected' must be exactly the control's 'prints' line, and observation.method must be stdout.",
+      "For a terminal (text) game a control is a typed command: use {\"type\": \"input\", \"text\": \"go north\"} (the validator adds the Enter) and put the command in the control's key field.",
+      "Actions: press / key_down / key_up / wait (and input for terminal games) only. Key names are pyautogui names: up, down, left, right, space, enter, esc, and single letters (r, w, a, s, d...). A wait uses 'seconds' (max 30).",
+      "If the manual says a control only works in a certain state (e.g. R only after game over, jump only when on the ground), add the inputs/waits needed to reach that state first. If that state cannot be reached reliably with simple inputs, mark the test not_testable and say why.",
+      "Set requirement_index to the plan requirement that mentions this control (zero-based); if none fits, use 0.",
+      "Do not write code, do not invent script_path values (use null), and do not add tests for anything other than controls."
+    ]
+  },
+  "raw_response_content": "{\n  \"controls\": [\n    {\n      \"key\": \"up\",\n      \"does\": \"accelerate forward\",\n      \"prints\": \"ACCELERATE\",\n      \"manual_quote\": \"Up arrow (KEYDOWN): prints 'ACCELERATE' and applies forward acceleration while held.\"\n    },\n    {\n      \"key\": \"down\",\n      \"does\": \"brake or reverse\",\n      \"prints\": \"BRAKE\",\n      \"manual_quote\": \"Down arrow (KEYDOWN): prints 'BRAKE' and applies braking/reverse while held.\"\n    },\n    {\n      \"key\": \"left\",\n      \"does\": \"steer left (rotate heading CCW)\",\n      \"prints\": \"TURN LEFT\",\n      \"manual_quote\": \"Left arrow (KEYDOWN): prints 'TURN LEFT' and rotates heading CCW while held.\"\n    },\n    {\n      \"key\": \"right\",\n      \"does\": \"steer right (rotate heading CW)\",\n      \"prints\": \"TURN RIGHT\",\n      \"manual_quote\": \"Right arrow (KEYDOWN): prints 'TURN RIGHT' and rotates heading CW while held.\"\n    },\n    {\n      \"key\": \"r\",\n      \"does\": \"restart game with 0 laps\",\n      \"prints\": \"RESTART\",\n      \"manual_quote\": \"R (KEYDOWN): prints 'RESTART' and resets car position, velocity, heading, lap count to 0.\"\n    },\n    {\n      \"key\": \"esc\",\n      \"does\": \"quit game\",\n      \"prints\": \"QUIT\",\n      \"manual_quote\": \"Escape (KEYDOWN) or window close: prints 'QUIT' and exits.\"\n    }\n  ],\n  \"tests\": [\n    {\n      \"test_id\": \"C01\",\n      \"requirement_index\": 0,\n      \"requirement\": \"The car accelerates forward when the Up arrow key is pressed.\",\n      \"assertion\": \"After pressing UP for about 10 frames (~0.16s), the console prints 'ACCELERATE'.\",\n      \"actions\": [\n        {\n          \"type\": \"wait\",\n          \"seconds\": 1\n        },\n        {\n          \"type\": \"press\",\n          \"key\": \"up\"\n        },\n        {\n          \"type\": \"wait\",\n          \"seconds\": 1\n        }\n      ],\n      \"observation\": {\n        \"method\": \"stdout\",\n        \"target\": \"ACCELERATE\"\n      },\n      \"expected\": \"ACCELERATE\",\n      \"status\": \"ready_for_validator\",\n      \"not_testable_reason\": null,\n      \"timeout_seconds\": 30,\n      \"script_path\": null\n    },\n    {\n      \"test_id\": \"C02\",\n      \"requirement_index\": 1,\n      \"requirement\": \"The car brakes/reverses when the Down arrow key is pressed.\",\n      \"assertion\": \"After pressing DOWN for about 10 frames (~0.16s), the console prints 'BRAKE'.\",\n      \"actions\": [\n        {\n          \"type\": \"wait\",\n          \"seconds\": 1\n        },\n        {\n          \"type\": \"press\",\n          \"key\": \"down\"\n        },\n        {\n          \"type\": \"wait\",\n          \"seconds\": 1\n        }\n      ],\n      \"observation\": {\n        \"method\": \"stdout\",\n        \"target\": \"BRAKE\"\n      },\n      \"expected\": \"BRAKE\",\n      \"status\": \"ready_for_validator\",\n      \"not_testable_reason\": null,\n      \"timeout_seconds\": 30,\n      \"script_path\": null\n    },\n    {\n      \"test_id\": \"C03\",\n      \"requirement_index\": 2,\n      \"requirement\": \"The car steers left when the Left arrow key is pressed.\",\n      \"assertion\": \"After pressing LEFT for about 10 frames (~0.16s), the console prints 'TURN LEFT'.\",\n      \"actions\": [\n        {\n          \"type\": \"wait\",\n          \"seconds\": 1\n        },\n        {\n          \"type\": \"press\",\n          \"key\": \"left\"\n        },\n        {\n          \"type\": \"wait\",\n          \"seconds\": 1\n        }\n      ],\n      \"observation\": {\n        \"method\": \"stdout\",\n        \"target\": \"TURN LEFT\"\n      },\n      \"expected\": \"TURN LEFT\",\n      \"status\": \"ready_for_validator\",\n      \"not_testable_reason\": null,\n      \"timeout_seconds\": 30,\n      \"script_path\": null\n    },\n    {\n      \"test_id\": \"C04\",\n      \"requirement_index\": 3,\n      \"requirement\": \"The car steers right when the Right arrow key is pressed.\",\n      \"assertion\": \"After pressing RIGHT for about 10 frames (~0.16s), the console prints 'TURN RIGHT'.\",\n      \"actions\": [\n        {\n          \"type\": \"wait\",\n          \"seconds\": 1\n        },\n        {\n          \"type\": \"press\",\n          \"key\": \"right\"\n        },\n        {\n          \"type\": \"wait\",\n          \"seconds\": 1\n        }\n      ],\n      \"observation\": {\n        \"method\": \"stdout\",\n        \"target\": \"TURN RIGHT\"\n      },\n      \"expected\": \"TURN RIGHT\",\n      \"status\": \"ready_for_validator\",\n      \"not_testable_reason\": null,\n      \"timeout_seconds\": 30,\n      \"script_path\": null\n    },\n    {\n      \"test_id\": \"C05\",\n      \"requirement_index\": 14,\n      \"requirement\": \"Press R to restart with 0 laps.\",\n      \"assertion\": \"After pressing R, the console prints 'RESTART'.\",\n      \"actions\": [\n        {\n          \"type\": \"wait\",\n          \"seconds\": 1\n        },\n        {\n          \"type\": \"press\",\n          \"key\": \"r\"\n        },\n        {\n          \"type\": \"wait\",\n          \"seconds\": 1\n        }\n      ],\n      \"observation\": {\n        \"method\": \"stdout\",\n        \"target\": \"RESTART\"\n      },\n      \"expected\": \"RESTART\",\n      \"status\": \"ready_for_validator\",\n      \"not_testable_reason\": null,\n      \"timeout_seconds\": 30,\n      \"script_path\": null\n    },\n    {\n      \"test_id\": \"C06\",\n      \"requirement_index\": 15,\n      \"requirement\": \"Press Escape to quit the game.\",\n      \"assertion\": \"After pressing ESC, the console prints 'QUIT'.\",\n      \"actions\": [\n        {\n          \"type\": \"wait\",\n          \"seconds\": 1\n        },\n        {\n          \"type\": \"press\",\n          \"key\": \"esc\"\n        },\n        {\n          \"type\": \"wait\",\n          \"seconds\": 1\n        }\n      ],\n      \"observation\": {\n        \"method\": \"stdout\",\n        \"target\": \"QUIT\"\n      },\n      \"expected\": \"QUIT\",\n      \"status\": \"ready_for_validator\",\n      \"not_testable_reason\": null,\n      \"timeout_seconds\": 30,\n      \"script_path\": null\n    }\n  ],\n  \"generation_notes\": [\n    \"Controls found and tested: up, down, left, right, r, esc.\",\n    \"All controls have exact console lines as per the play manual and are tested accordingly.\",\n    \"No controls were excluded because all named keys have exact console output lines.\",\n    \"Tests do not cover lap completion or other game mechanics, only controls and their console output.\"\n  ]\n}"
+}

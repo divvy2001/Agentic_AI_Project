@@ -1,0 +1,37 @@
+{
+  "task_id": "Drift Car",
+  "framework": "pygame",
+  "game_style": "Top-down racing",
+  "output_dir": "game/assets",
+  "assets": [
+    {
+      "id": "car_sprite",
+      "type": "sprite",
+      "path": "game/assets/car_sprite.png",
+      "format": "png",
+      "width": 64,
+      "height": 32,
+      "required": true,
+      "generation_status": "generated",
+      "validation_status": "passed",
+      "errors": []
+    },
+    {
+      "id": "desert_canyon_background",
+      "type": "background",
+      "path": "game/assets/desert_canyon_background.png",
+      "format": "png",
+      "width": 512,
+      "height": 384,
+      "required": true,
+      "generation_status": "generated",
+      "validation_status": "passed",
+      "errors": []
+    }
+  ],
+  "validation": {
+    "passed": true,
+    "status": "passed",
+    "errors": []
+  }
+}

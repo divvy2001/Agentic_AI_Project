@@ -1,0 +1,11 @@
+# Snake
+
+- Engine: pygame
+- Built: run 20261029_210155
+- Result: GAME READY
+- Spec file: snake2.md
+- Play: double-click `play.bat`
+
+## Spec
+
+Create a simple classic Snake game on a single screen with a grid of 20 by 20 squares. The snake starts as 3 green squares in the middle of the grid, moving right one square at a time at a steady pace. The arrow keys change its direction; it cannot reverse straight back into itself. A red food square appears at a random empty spot. Eating it makes the snake one square longer, adds 1 point, and spawns new food. Hitting a wall or the snake's own body ends the game. Show the score at the top of the screen and the controls below it. Every time the score changes, print the new score to the console. When the game ends, show GAME OVER with the final score, print GAME OVER to the console, and freeze the snake. Press R to restart with a fresh snake and score 0, and Escape to quit. Use plain coloured squares only; no images or sounds.

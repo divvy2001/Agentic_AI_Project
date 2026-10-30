@@ -1,2 +1,2 @@
-{"attempt": 1, "seconds": 19.6, "tokens": {"input": 6408, "output": 3617}, "attempt_cost_usd": 0.010965, "errors": [], "hard_errors": [], "quote_errors": []}
-{"outcome": "success", "attempts": 1, "seconds": 19.6, "tokens": {"input": 6408, "output": 3617, "total": 10025}, "estimated_cost_usd": 0.01096}
+{"attempt": 1, "seconds": 14.3, "tokens": {"input": 6214, "output": 2703}, "attempt_cost_usd": 0.008622, "errors": [], "hard_errors": [], "quote_errors": []}
+{"outcome": "success", "attempts": 1, "seconds": 14.3, "tokens": {"input": 6214, "output": 2703, "total": 8917}, "estimated_cost_usd": 0.00862}

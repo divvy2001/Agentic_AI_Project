@@ -1,0 +1,266 @@
+{
+  "schema_version": "1.0",
+  "suite_version": "run20261030_145932-s1",
+  "generated_at_utc": "2026-10-30T08:11:55.909144+00:00",
+  "renderer": "pygame",
+  "game_title": "Drift Car",
+  "generator": {
+    "backend": "openrouter",
+    "model": "openai/gpt-4.1-mini",
+    "scope": "controls"
+  },
+  "generation_notes": [
+    "Controls found and tested: up, down, left, right, r, esc.",
+    "All controls have exact console lines as per the play manual and are tested accordingly.",
+    "No controls were excluded because all named keys have exact console output lines.",
+    "Tests do not cover lap completion or other game mechanics, only controls and their console output."
+  ],
+  "controls": [
+    {
+      "key": "up",
+      "does": "accelerate forward",
+      "prints": "ACCELERATE",
+      "manual_quote": "Up arrow (KEYDOWN): prints 'ACCELERATE' and applies forward acceleration while held."
+    },
+    {
+      "key": "down",
+      "does": "brake or reverse",
+      "prints": "BRAKE",
+      "manual_quote": "Down arrow (KEYDOWN): prints 'BRAKE' and applies braking/reverse while held."
+    },
+    {
+      "key": "left",
+      "does": "steer left (rotate heading CCW)",
+      "prints": "TURN LEFT",
+      "manual_quote": "Left arrow (KEYDOWN): prints 'TURN LEFT' and rotates heading CCW while held."
+    },
+    {
+      "key": "right",
+      "does": "steer right (rotate heading CW)",
+      "prints": "TURN RIGHT",
+      "manual_quote": "Right arrow (KEYDOWN): prints 'TURN RIGHT' and rotates heading CW while held."
+    },
+    {
+      "key": "r",
+      "does": "restart game with 0 laps",
+      "prints": "RESTART",
+      "manual_quote": "R (KEYDOWN): prints 'RESTART' and resets car position, velocity, heading, lap count to 0."
+    },
+    {
+      "key": "esc",
+      "does": "quit game",
+      "prints": "QUIT",
+      "manual_quote": "Escape (KEYDOWN) or window close: prints 'QUIT' and exits."
+    }
+  ],
+  "source_hashes": {
+    "plans/coder_plan.json": "e61251e8eb757974e61c6a2f04e9b3ceecc8030a254be3bfe7f50351cabb7cfa",
+    "plans/play_manual.json": "ae423ee73f40984f53c2a3fdf041947a1e0706c2d2db2b0bffab0dc867a1e7af",
+    "plans/asset_manifest.json": "5e14d8da3de4a2af3509e8df8f182e74efdb0dac38db09276e5396e354c3cf24"
+  },
+  "tests": [
+    {
+      "test_id": "C01",
+      "requirement_index": 0,
+      "requirement": "The car accelerates forward when the Up arrow key is pressed.",
+      "assertion": "After pressing UP for about 10 frames (~0.16s), the console prints 'ACCELERATE'.",
+      "actions": [
+        {
+          "type": "wait",
+          "seconds": 1
+        },
+        {
+          "type": "press",
+          "key": "up"
+        },
+        {
+          "type": "wait",
+          "seconds": 1
+        }
+      ],
+      "observation": {
+        "method": "stdout",
+        "target": "ACCELERATE"
+      },
+      "expected": "ACCELERATE",
+      "status": "ready_for_validator",
+      "not_testable_reason": null,
+      "renderer": "pygame",
+      "timeout_seconds": 30,
+      "script_path": null
+    },
+    {
+      "test_id": "C02",
+      "requirement_index": 1,
+      "requirement": "The car brakes/reverses when the Down arrow key is pressed.",
+      "assertion": "After pressing DOWN for about 10 frames (~0.16s), the console prints 'BRAKE'.",
+      "actions": [
+        {
+          "type": "wait",
+          "seconds": 1
+        },
+        {
+          "type": "press",
+          "key": "down"
+        },
+        {
+          "type": "wait",
+          "seconds": 1
+        }
+      ],
+      "observation": {
+        "method": "stdout",
+        "target": "BRAKE"
+      },
+      "expected": "BRAKE",
+      "status": "ready_for_validator",
+      "not_testable_reason": null,
+      "renderer": "pygame",
+      "timeout_seconds": 30,
+      "script_path": null
+    },
+    {
+      "test_id": "C03",
+      "requirement_index": 2,
+      "requirement": "The car steers left when the Left arrow key is pressed.",
+      "assertion": "After pressing LEFT for about 10 frames (~0.16s), the console prints 'TURN LEFT'.",
+      "actions": [
+        {
+          "type": "wait",
+          "seconds": 1
+        },
+        {
+          "type": "press",
+          "key": "left"
+        },
+        {
+          "type": "wait",
+          "seconds": 1
+        }
+      ],
+      "observation": {
+        "method": "stdout",
+        "target": "TURN LEFT"
+      },
+      "expected": "TURN LEFT",
+      "status": "ready_for_validator",
+      "not_testable_reason": null,
+      "renderer": "pygame",
+      "timeout_seconds": 30,
+      "script_path": null
+    },
+    {
+      "test_id": "C04",
+      "requirement_index": 3,
+      "requirement": "The car steers right when the Right arrow key is pressed.",
+      "assertion": "After pressing RIGHT for about 10 frames (~0.16s), the console prints 'TURN RIGHT'.",
+      "actions": [
+        {
+          "type": "wait",
+          "seconds": 1
+        },
+        {
+          "type": "press",
+          "key": "right"
+        },
+        {
+          "type": "wait",
+          "seconds": 1
+        }
+      ],
+      "observation": {
+        "method": "stdout",
+        "target": "TURN RIGHT"
+      },
+      "expected": "TURN RIGHT",
+      "status": "ready_for_validator",
+      "not_testable_reason": null,
+      "renderer": "pygame",
+      "timeout_seconds": 30,
+      "script_path": null
+    },
+    {
+      "test_id": "C05",
+      "requirement_index": 14,
+      "requirement": "Print 'ACCELERATE' to the console when the Up key takes effect.",
+      "assertion": "After pressing R, the console prints 'RESTART'.",
+      "actions": [
+        {
+          "type": "wait",
+          "seconds": 1
+        },
+        {
+          "type": "press",
+          "key": "r"
+        },
+        {
+          "type": "wait",
+          "seconds": 1
+        }
+      ],
+      "observation": {
+        "method": "stdout",
+        "target": "RESTART"
+      },
+      "expected": "RESTART",
+      "status": "ready_for_validator",
+      "not_testable_reason": null,
+      "renderer": "pygame",
+      "timeout_seconds": 30,
+      "script_path": null
+    },
+    {
+      "test_id": "C06",
+      "requirement_index": 15,
+      "requirement": "Print 'BRAKE' to the console when the Down key takes effect.",
+      "assertion": "After pressing ESC, the console prints 'QUIT'.",
+      "actions": [
+        {
+          "type": "wait",
+          "seconds": 1
+        },
+        {
+          "type": "press",
+          "key": "esc"
+        },
+        {
+          "type": "wait",
+          "seconds": 1
+        }
+      ],
+      "observation": {
+        "method": "stdout",
+        "target": "QUIT"
+      },
+      "expected": "QUIT",
+      "status": "ready_for_validator",
+      "not_testable_reason": null,
+      "renderer": "pygame",
+      "timeout_seconds": 30,
+      "script_path": null
+    }
+  ],
+  "summary": {
+    "total": 6,
+    "ready_for_validator": 6,
+    "not_testable": 0
+  },
+  "warnings": [
+    "Requirement 4 had no valid executable test and was marked not_testable",
+    "Requirement 5 had no valid executable test and was marked not_testable",
+    "Requirement 6 had no valid executable test and was marked not_testable",
+    "Requirement 7 had no valid executable test and was marked not_testable",
+    "Requirement 8 had no valid executable test and was marked not_testable",
+    "Requirement 9 had no valid executable test and was marked not_testable",
+    "Requirement 10 had no valid executable test and was marked not_testable",
+    "Requirement 11 had no valid executable test and was marked not_testable",
+    "Requirement 12 had no valid executable test and was marked not_testable",
+    "Requirement 13 had no valid executable test and was marked not_testable",
+    "Requirement 16 had no valid executable test and was marked not_testable",
+    "Requirement 17 had no valid executable test and was marked not_testable",
+    "Requirement 18 had no valid executable test and was marked not_testable",
+    "Requirement 19 had no valid executable test and was marked not_testable",
+    "Requirement 20 had no valid executable test and was marked not_testable"
+  ],
+  "important": "Generation is not execution. This file does not claim PASS and must not be used as test_results.json."
+}

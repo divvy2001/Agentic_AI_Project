@@ -1,4 +1,4 @@
-# Human check: Simple Tetris (20261029_131536)
+# Human check: Tic Tac Toe (20261030_155716)
 
 Play the game (double-click play.bat in the gallery, or `python play.py` in BOV5), then fill this in.
 It is the ground truth for comparing against the automated Tester result: **GAME READY**

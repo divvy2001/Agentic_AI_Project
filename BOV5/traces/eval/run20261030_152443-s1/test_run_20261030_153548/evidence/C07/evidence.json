@@ -1,0 +1,222 @@
+{
+  "test_id": "C07",
+  "requirement_index": 4,
+  "requirement": "The underground lake holds a rusty key.",
+  "assertion": "Typing 'take rusty key' at underground lake prints 'TOOK rusty key'.",
+  "expected": "TOOK rusty key",
+  "generator_status": "ready_for_validator",
+  "started_at_utc": "2026-10-30T08:36:48.387903+00:00",
+  "evidence_dir": "C:\\Users\\ASUS\\Game_Agent\\Agentic_AI_Project\\BOV5\\traces\\eval\\run20261030_152443-s1\\test_run_20261030_153548\\evidence\\C07",
+  "action_results": [
+    {
+      "type": "input",
+      "at_utc": "2026-10-30T08:36:51.056541+00:00",
+      "status": "executed",
+      "window_focused": true,
+      "text_length": 7,
+      "index": 0
+    },
+    {
+      "type": "wait",
+      "at_utc": "2026-10-30T08:36:51.521703+00:00",
+      "status": "executed",
+      "seconds": 1.0,
+      "index": 1
+    },
+    {
+      "type": "input",
+      "at_utc": "2026-10-30T08:36:52.522741+00:00",
+      "status": "executed",
+      "window_focused": true,
+      "text_length": 7,
+      "index": 2
+    },
+    {
+      "type": "wait",
+      "at_utc": "2026-10-30T08:36:52.988516+00:00",
+      "status": "executed",
+      "seconds": 1.0,
+      "index": 3
+    },
+    {
+      "type": "input",
+      "at_utc": "2026-10-30T08:36:53.990386+00:00",
+      "status": "executed",
+      "window_focused": true,
+      "text_length": 8,
+      "index": 4
+    },
+    {
+      "type": "wait",
+      "at_utc": "2026-10-30T08:36:54.478833+00:00",
+      "status": "executed",
+      "seconds": 1.0,
+      "index": 5
+    },
+    {
+      "type": "input",
+      "at_utc": "2026-10-30T08:36:55.479491+00:00",
+      "status": "executed",
+      "window_focused": true,
+      "text_length": 14,
+      "index": 6
+    },
+    {
+      "type": "wait",
+      "at_utc": "2026-10-30T08:36:56.112511+00:00",
+      "status": "executed",
+      "seconds": 1.0,
+      "index": 7
+    },
+    {
+      "type": "input",
+      "at_utc": "2026-10-30T08:36:57.272793+00:00",
+      "status": "executed",
+      "window_focused": true,
+      "text_length": 7,
+      "retry": 1
+    },
+    {
+      "type": "wait",
+      "at_utc": "2026-10-30T08:36:57.739568+00:00",
+      "status": "executed",
+      "seconds": 1.0,
+      "retry": 1
+    },
+    {
+      "type": "input",
+      "at_utc": "2026-10-30T08:36:58.740381+00:00",
+      "status": "executed",
+      "window_focused": true,
+      "text_length": 7,
+      "retry": 1
+    },
+    {
+      "type": "wait",
+      "at_utc": "2026-10-30T08:36:59.206298+00:00",
+      "status": "executed",
+      "seconds": 1.0,
+      "retry": 1
+    },
+    {
+      "type": "input",
+      "at_utc": "2026-10-30T08:37:00.206651+00:00",
+      "status": "executed",
+      "window_focused": true,
+      "text_length": 8,
+      "retry": 1
+    },
+    {
+      "type": "wait",
+      "at_utc": "2026-10-30T08:37:00.692442+00:00",
+      "status": "executed",
+      "seconds": 1.0,
+      "retry": 1
+    },
+    {
+      "type": "input",
+      "at_utc": "2026-10-30T08:37:01.693140+00:00",
+      "status": "executed",
+      "window_focused": true,
+      "text_length": 14,
+      "retry": 1
+    },
+    {
+      "type": "wait",
+      "at_utc": "2026-10-30T08:37:02.329377+00:00",
+      "status": "executed",
+      "seconds": 1.0,
+      "retry": 1
+    },
+    {
+      "type": "input",
+      "at_utc": "2026-10-30T08:37:03.480594+00:00",
+      "status": "executed",
+      "window_focused": true,
+      "text_length": 7,
+      "retry": 2
+    },
+    {
+      "type": "wait",
+      "at_utc": "2026-10-30T08:37:03.948419+00:00",
+      "status": "executed",
+      "seconds": 1.0,
+      "retry": 2
+    },
+    {
+      "type": "input",
+      "at_utc": "2026-10-30T08:37:04.949071+00:00",
+      "status": "executed",
+      "window_focused": true,
+      "text_length": 7,
+      "retry": 2
+    },
+    {
+      "type": "wait",
+      "at_utc": "2026-10-30T08:37:05.411478+00:00",
+      "status": "executed",
+      "seconds": 1.0,
+      "retry": 2
+    },
+    {
+      "type": "input",
+      "at_utc": "2026-10-30T08:37:06.412095+00:00",
+      "status": "executed",
+      "window_focused": true,
+      "text_length": 8,
+      "retry": 2
+    },
+    {
+      "type": "wait",
+      "at_utc": "2026-10-30T08:37:06.904329+00:00",
+      "status": "executed",
+      "seconds": 1.0,
+      "retry": 2
+    },
+    {
+      "type": "input",
+      "at_utc": "2026-10-30T08:37:07.904916+00:00",
+      "status": "executed",
+      "window_focused": true,
+      "text_length": 14,
+      "retry": 2
+    },
+    {
+      "type": "wait",
+      "at_utc": "2026-10-30T08:37:08.536354+00:00",
+      "status": "executed",
+      "seconds": 1.0,
+      "retry": 2
+    }
+  ],
+  "observations": [
+    {
+      "method": "stdout",
+      "captured_at_utc": "2026-10-30T08:36:57.265152+00:00",
+      "text": "pygame 2.6.1 (SDL 2.28.4, Python 3.11.9)\nHello from the pygame community. https://www.pygame.org/contribute.html\n",
+      "stderr_tail": ""
+    }
+  ],
+  "checked_output": "after first input action only",
+  "input_retries": 2,
+  "status": "FAIL",
+  "reason": "Expected literal text was not found. This does not by itself prove a game defect.",
+  "process": {
+    "pid": 40472,
+    "returncode": null
+  },
+  "runtime_evidence": {
+    "stdout_file": "C:\\Users\\ASUS\\Game_Agent\\Agentic_AI_Project\\BOV5\\traces\\eval\\run20261030_152443-s1\\test_run_20261030_153548\\evidence\\C07\\stdout.log",
+    "stderr_file": "C:\\Users\\ASUS\\Game_Agent\\Agentic_AI_Project\\BOV5\\traces\\eval\\run20261030_152443-s1\\test_run_20261030_153548\\evidence\\C07\\stderr.log",
+    "screenshot_file": null
+  },
+  "triage_hints": [
+    {
+      "category": "undetermined",
+      "confidence": "low",
+      "reason": "Insufficient diagnostic signals; compare brief, plan, code, assets and runtime evidence."
+    }
+  ],
+  "duration_seconds": 21.328,
+  "finished_at_utc": "2026-10-30T08:37:09.713451+00:00"
+}

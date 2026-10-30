@@ -1,0 +1,292 @@
+{
+  "model": "openai/gpt-4.1-mini",
+  "system_prompt": "You are a careful game QA test designer. Return ONLY valid JSON. Generate executable test specifications, not test results. Never claim a test passed. SCOPE: CONTROLS ONLY. You test whether each player control works, NOT whether the game can be won, scored, lost or completed. Work in two steps. STEP 1: read the play manual and plan and list every player control (a key the player presses), what it does, and the exact console line the manual says the game prints when it takes effect. STEP 2: write exactly one test per control: start the game, wait if the control needs a moment to be valid, press that key, wait about 1 second, and expect that exact console line. Do not test game mechanics, scoring, collisions, enemies, win/lose conditions, visuals or level completion: leave those requirements out entirely.",
+  "user_payload": {
+    "task": "Generate a versioned test suite specification for this game. Return JSON matching the requested shape.",
+    "renderer": "godot",
+    "game_title": "Simple Tetris",
+    "plan": {
+      "status": "success",
+      "game_title": "Simple Tetris",
+      "profile": {
+        "genre": "puzzle",
+        "renderer": "godot",
+        "dimensions": "2d",
+        "pace": "real-time",
+        "players": 1
+      },
+      "requirements": [
+        {
+          "text": "The game must be called \"Simple Tetris\".",
+          "priority": "core",
+          "status": "full",
+          "check": "The game window title displays 'Simple Tetris'.",
+          "milestone": 1,
+          "quote": "Create a simplified Tetris game called \"Simple Tetris\""
+        },
+        {
+          "text": "The game grid must be 10 columns wide and 20 rows tall.",
+          "priority": "core",
+          "status": "full",
+          "check": "The game displays a grid with 10 columns and 20 rows.",
+          "milestone": 1,
+          "quote": "on a grid 10 columns wide and 20 rows tall"
+        },
+        {
+          "text": "Blocks are drawn as plain coloured squares, one colour per piece shape.",
+          "priority": "core",
+          "status": "full",
+          "check": "Falling and locked blocks are rendered as solid colored squares, with each piece shape having a distinct color.",
+          "milestone": 1,
+          "quote": "Blocks are drawn as plain coloured squares, one colour per piece shape; do not generate any image assets, use solid colours only."
+        },
+        {
+          "text": "Use exactly four piece shapes: the square (2x2), the line (4 in a row), the L-shape, and the T-shape.",
+          "priority": "core",
+          "status": "full",
+          "check": "Only the square (2x2), line (4 in a row), L-shape, and T-shape pieces appear in the game.",
+          "milestone": 1,
+          "quote": "Use exactly four piece shapes: the square (2x2), the line (4 in a row), the L-shape, and the T-shape."
+        },
+        {
+          "text": "A new random piece of one of these four shapes spawns at the top-middle of the grid.",
+          "priority": "core",
+          "status": "full",
+          "check": "After a piece locks or at game start, a new random piece appears at the top-middle of the grid.",
+          "milestone": 1,
+          "quote": "A new random piece of one of these four shapes spawns at the top-middle of the grid."
+        },
+        {
+          "text": "The piece falls downward automatically at a constant rate.",
+          "priority": "core",
+          "status": "full",
+          "check": "A falling piece moves down one row automatically after a fixed time interval.",
+          "milestone": 1,
+          "quote": "The piece falls downward automatically at a constant rate."
+        },
+        {
+          "text": "Left arrow moves the falling piece one column left.",
+          "priority": "core",
+          "status": "full",
+          "check": "Pressing LEFT moves the falling piece one column to the left, if space allows.",
+          "milestone": 1,
+          "quote": "Left arrow moves the falling piece one column left"
+        },
+        {
+          "text": "Right arrow moves the falling piece one column right.",
+          "priority": "core",
+          "status": "full",
+          "check": "Pressing RIGHT moves the falling piece one column to the right, if space allows.",
+          "milestone": 1,
+          "quote": "Right arrow moves it one column right"
+        },
+        {
+          "text": "Down arrow moves the falling piece down one row immediately (soft drop).",
+          "priority": "core",
+          "status": "full",
+          "check": "Pressing DOWN moves the falling piece down one row immediately, if space allows.",
+          "milestone": 1,
+          "quote": "Down arrow moves it down one row immediately (soft drop)"
+        },
+        {
+          "text": "Movement controls (Left, Right, Down) do not move the piece through the grid walls or through blocks already locked in place.",
+          "priority": "core",
+          "status": "full",
+          "check": "Attempting to move a piece left, right, or down into a wall or locked block has no effect on the piece's position.",
+          "milestone": 1,
+          "quote": "none of these move the piece through the grid walls or through blocks already locked in place."
+        },
+        {
+          "text": "Up arrow rotates the piece 90 degrees.",
+          "priority": "core",
+          "status": "full",
+          "check": "Pressing UP rotates the falling piece 90 degrees clockwise.",
+          "milestone": 1,
+          "quote": "Up arrow rotates the piece 90 degrees"
+        },
+        {
+          "text": "If a rotation would overlap the walls or locked blocks, ignore that rotation press.",
+          "priority": "core",
+          "status": "full",
+          "check": "If a rotation would cause the piece to overlap a wall or locked block, the piece's orientation remains unchanged.",
+          "milestone": 1,
+          "quote": "if the rotation would overlap the walls or locked blocks, ignore that rotation press instead of applying it."
+        },
+        {
+          "text": "When a piece can no longer move down, it locks in place and a new random piece spawns.",
+          "priority": "core",
+          "status": "full",
+          "check": "When a falling piece reaches the bottom or lands on a locked block, it becomes locked, and a new piece appears at the top-middle.",
+          "milestone": 1,
+          "quote": "When a piece can no longer move down because the row below is blocked or it has reached the bottom row, it locks in place at its current position and a new random piece spawns."
+        },
+        {
+          "text": "Whenever a horizontal row is completely filled with locked blocks, clear that row, move every row above it down by one, and add 100 to the score.",
+          "priority": "core",
+          "status": "full",
+          "check": "When a row is full of locked blocks, it disappears, all rows above it shift down, and the score increases by 100.",
+          "milestone": 1,
+          "quote": "Whenever a horizontal row is completely filled with locked blocks, clear that row, move every row above it down by one, and add 100 to the score."
+        },
+        {
+          "text": "Show the current score in the top-right corner of the window at all times.",
+          "priority": "core",
+          "status": "full",
+          "check": "The current score is continuously displayed in the top-right corner of the game window.",
+          "milestone": 1,
+          "quote": "Show the current score in the top-right corner of the window at all times."
+        },
+        {
+          "text": "If a new piece spawns and immediately overlaps an already-locked block, the game is over.",
+          "priority": "core",
+          "status": "full",
+          "check": "If a newly spawned piece collides with locked blocks, the game state changes to 'GAME OVER'.",
+          "milestone": 1,
+          "quote": "If a new piece spawns and immediately overlaps an already-locked block, the game is over"
+        },
+        {
+          "text": "When the game is over, show GAME OVER and the final score, and stop spawning new pieces.",
+          "priority": "core",
+          "status": "full",
+          "check": "Upon game over, 'GAME OVER' and the final score are displayed, and no new pieces appear.",
+          "milestone": 1,
+          "quote": "show GAME OVER and the final score, and stop spawning new pieces."
+        },
+        {
+          "text": "Press R to restart with an empty grid and score 0.",
+          "priority": "core",
+          "status": "full",
+          "check": "Pressing 'R' resets the game: grid is empty, score is 0, and a new game begins.",
+          "milestone": 1,
+          "quote": "Press R to restart with an empty grid and score 0."
+        },
+        {
+          "text": "Press Escape to quit.",
+          "priority": "core",
+          "status": "full",
+          "check": "Pressing 'Escape' closes the game window.",
+          "milestone": 1,
+          "quote": "Press Escape to quit."
+        },
+        {
+          "text": "Print a line to the console every time a control takes effect: MOVE LEFT, MOVE RIGHT, SOFT DROP, ROTATE, RESTART and QUIT.",
+          "priority": "secondary",
+          "status": "full",
+          "check": "The console outputs 'MOVE LEFT', 'MOVE RIGHT', 'SOFT DROP', 'ROTATE', 'RESTART', or 'QUIT' when the corresponding action occurs.",
+          "milestone": 1,
+          "quote": "Print a line to the console every time a control takes effect: MOVE LEFT, MOVE RIGHT, SOFT DROP, ROTATE, RESTART and QUIT"
+        },
+        {
+          "text": "Print GAME OVER when the game ends.",
+          "priority": "secondary",
+          "status": "full",
+          "check": "The console outputs 'GAME OVER' when the game ends.",
+          "milestone": 1,
+          "quote": "and print GAME OVER when the game ends."
+        }
+      ],
+      "architecture": {
+        "entry_point": "game/main.tscn",
+        "files": [
+          {
+            "path": "game/__init__.py",
+            "purpose": "Empty file to mark game as a Python package."
+          },
+          {
+            "path": "game/main.tscn",
+            "purpose": "Main Godot scene file, containing the game's root node and initial setup."
+          },
+          {
+            "path": "game/main.gd",
+            "purpose": "Main script for game logic, handling game state, piece movement, collision, scoring, and rendering."
+          }
+        ],
+        "dependencies": [],
+        "assets": {
+          "strategy": "procedural",
+          "strategy_rationale": "The spec explicitly states 'do not generate any image assets, use solid colours only'.",
+          "sprites": []
+        },
+        "resolution": {
+          "width": 400,
+          "height": 600
+        },
+        "fps": 60,
+        "requires_input": true,
+        "test_input_example": "Press RIGHT, then LEFT, then DOWN repeatedly until a piece locks. Press UP to rotate. Press R to restart. Press ESCAPE to quit.",
+        "complexity_warning": null
+      },
+      "unmapped": [
+        {
+          "quote": "No sounds.",
+          "handling": "The Coder should ensure no sound effects or background music are implemented."
+        },
+        {
+          "quote": "Keep it to as few files as possible.",
+          "handling": "The Coder should consolidate game logic into a minimal number of Godot scripts and scenes, as outlined in the architecture.files section."
+        }
+      ]
+    },
+    "play_manual": {
+      "test_input": "Press RIGHT, then LEFT, then DOWN repeatedly until a piece locks. Press UP to rotate. Press R to restart. Press ESCAPE to quit.",
+      "expected_win_output": "No win condition in Simple Tetris (game continues until game over).",
+      "expected_lose_output": "GAME OVER (printed once to the console) and final score remains visible in the top-right Score label.",
+      "notes": "Controls and console prints:\n- LEFT arrow: moves piece left if possible. Console prints exactly: MOVE LEFT\n- RIGHT arrow: moves piece right if possible. Console prints exactly: MOVE RIGHT\n- DOWN arrow: soft drop (moves piece down one row immediately). Console prints exactly: SOFT DROP. If the piece cannot move down, it locks and a new piece spawns.\n- UP arrow: rotate 90 degrees clockwise if rotation does not collide. Console prints exactly: ROTATE (only when rotation succeeds).\n- R: restart the game (clears grid, resets score to 0). Console prints exactly: RESTART\n- ESCAPE: quit the game. Console prints exactly: QUIT\n- When the game ends due to spawn collision, the console prints: GAME OVER\nHUD and visuals:\n- The score is shown at the top-right at all times using the Score label (text: \"Score: X\").\n- On game over the Game Over label (center) becomes visible showing \"GAME OVER\" and the score remains visible.\nGameplay notes / implementation details:\n- Grid is 10 columns by 20 rows. Tile size chosen to fit 400x600 viewport (30 px tiles). Grid drawn centered horizontally.\n- Only four piece shapes appear: O (square 2x2), I (line), L (L-shape), and T (T-shape). Each shape has a distinct solid color (no sprite images used).\n- Pieces fall automatically at a fixed interval (drop interval 0.5s). Clearing a full horizontal row removes it, shifts above rows down, and adds 100 points per cleared line.\n- Rotation that would overlap walls or locked cells is ignored.\n- Restart (R) fully clears the grid and resets score to 0. Quit (Escape) closes the window immediately.\nLimitations / known issues:\n- No sounds or music implemented (Planner specified none).\n- No hold/next preview, no score multipliers; single-line clear gives +100 per line.\n- Tile size is computed to fit the viewport; if the window is resized externally the layout does not dynamically adapt (the project runs at the fixed 400x600 viewport specified in project.godot).\nFiles implementing behavior:\n- game/main.gd: all gameplay, input, rendering, scoring and state logic.\n- game/main.tscn: root scene and HUD Labels (ScoreLabel, GameOverLabel).\n- game/__init__.py: empty package marker as required."
+    },
+    "required_output_shape": {
+      "controls": [
+        {
+          "key": "space",
+          "does": "jump",
+          "prints": "JUMP",
+          "manual_quote": "the exact manual sentence that states this key and its printed line"
+        }
+      ],
+      "tests": [
+        {
+          "test_id": "T01",
+          "requirement_index": 0,
+          "requirement": "Requirement text",
+          "assertion": "Measurable assertion",
+          "actions": [
+            {
+              "type": "wait",
+              "seconds": 1
+            },
+            {
+              "type": "press",
+              "key": "space"
+            },
+            {
+              "type": "wait",
+              "seconds": 1
+            }
+          ],
+          "observation": {
+            "method": "stdout",
+            "target": "the console line the play manual says this control prints"
+          },
+          "expected": "JUMP",
+          "status": "ready_for_validator or not_testable",
+          "not_testable_reason": null,
+          "timeout_seconds": 30,
+          "script_path": null
+        }
+      ],
+      "generation_notes": [
+        "which controls were found, and any control that could not be tested and why"
+      ]
+    },
+    "constraints": [
+      "Fill 'controls' first (STEP 1), then 'tests' (STEP 2). One test per control, test_ids C01, C02, ...",
+      "Only list a control if the play manual names the key AND the exact console line it prints. Put the supporting manual sentence in manual_quote. Never invent a printed line.",
+      "Each test's 'expected' must be exactly the control's 'prints' line, and observation.method must be stdout.",
+      "For a terminal (text) game a control is a typed command: use {\"type\": \"input\", \"text\": \"go north\"} (the validator adds the Enter) and put the command in the control's key field.",
+      "Actions: press / key_down / key_up / wait (and input for terminal games) only. Key names are pyautogui names: up, down, left, right, space, enter, esc, and single letters (r, w, a, s, d...). A wait uses 'seconds' (max 30).",
+      "If the manual says a control only works in a certain state (e.g. R only after game over, jump only when on the ground), add the inputs/waits needed to reach that state first. If that state cannot be reached reliably with simple inputs, mark the test not_testable and say why.",
+      "Set requirement_index to the plan requirement that mentions this control (zero-based); if none fits, use 0.",
+      "Do not write code, do not invent script_path values (use null), and do not add tests for anything other than controls."
+    ]
+  },
+  "raw_response_content": "{\n  \"controls\": [\n    {\n      \"key\": \"left\",\n      \"does\": \"moves piece left if possible\",\n      \"prints\": \"MOVE LEFT\",\n      \"manual_quote\": \"LEFT arrow: moves piece left if possible. Console prints exactly: MOVE LEFT\"\n    },\n    {\n      \"key\": \"right\",\n      \"does\": \"moves piece right if possible\",\n      \"prints\": \"MOVE RIGHT\",\n      \"manual_quote\": \"RIGHT arrow: moves piece right if possible. Console prints exactly: MOVE RIGHT\"\n    },\n    {\n      \"key\": \"down\",\n      \"does\": \"soft drop (moves piece down one row immediately)\",\n      \"prints\": \"SOFT DROP\",\n      \"manual_quote\": \"DOWN arrow: soft drop (moves piece down one row immediately). Console prints exactly: SOFT DROP\"\n    },\n    {\n      \"key\": \"up\",\n      \"does\": \"rotate 90 degrees clockwise if rotation does not collide\",\n      \"prints\": \"ROTATE\",\n      \"manual_quote\": \"UP arrow: rotate 90 degrees clockwise if rotation does not collide. Console prints exactly: ROTATE (only when rotation succeeds)\"\n    },\n    {\n      \"key\": \"r\",\n      \"does\": \"restart the game (clears grid, resets score to 0)\",\n      \"prints\": \"RESTART\",\n      \"manual_quote\": \"R: restart the game (clears grid, resets score to 0). Console prints exactly: RESTART\"\n    },\n    {\n      \"key\": \"escape\",\n      \"does\": \"quit the game\",\n      \"prints\": \"QUIT\",\n      \"manual_quote\": \"ESCAPE: quit the game. Console prints exactly: QUIT\"\n    }\n  ],\n  \"tests\": [\n    {\n      \"test_id\": \"C01\",\n      \"requirement_index\": 7,\n      \"requirement\": \"Left arrow moves the falling piece one column left.\",\n      \"assertion\": \"Pressing LEFT moves the falling piece one column left and prints 'MOVE LEFT' to the console.\",\n      \"actions\": [\n        {\n          \"type\": \"wait\",\n          \"seconds\": 1\n        },\n        {\n          \"type\": \"press\",\n          \"key\": \"left\"\n        },\n        {\n          \"type\": \"wait\",\n          \"seconds\": 1\n        }\n      ],\n      \"observation\": {\n        \"method\": \"stdout\",\n        \"target\": \"MOVE LEFT\"\n      },\n      \"expected\": \"MOVE LEFT\",\n      \"status\": \"ready_for_validator\",\n      \"not_testable_reason\": null,\n      \"timeout_seconds\": 30,\n      \"script_path\": null\n    },\n    {\n      \"test_id\": \"C02\",\n      \"requirement_index\": 8,\n      \"requirement\": \"Right arrow moves the falling piece one column right.\",\n      \"assertion\": \"Pressing RIGHT moves the falling piece one column right and prints 'MOVE RIGHT' to the console.\",\n      \"actions\": [\n        {\n          \"type\": \"wait\",\n          \"seconds\": 1\n        },\n        {\n          \"type\": \"press\",\n          \"key\": \"right\"\n        },\n        {\n          \"type\": \"wait\",\n          \"seconds\": 1\n        }\n      ],\n      \"observation\": {\n        \"method\": \"stdout\",\n        \"target\": \"MOVE RIGHT\"\n      },\n      \"expected\": \"MOVE RIGHT\",\n      \"status\": \"ready_for_validator\",\n      \"not_testable_reason\": null,\n      \"timeout_seconds\": 30,\n      \"script_path\": null\n    },\n    {\n      \"test_id\": \"C03\",\n      \"requirement_index\": 9,\n      \"requirement\": \"Down arrow moves the falling piece down one row immediately (soft drop).\",\n      \"assertion\": \"Pressing DOWN moves the falling piece down one row immediately and prints 'SOFT DROP' to the console.\",\n      \"actions\": [\n        {\n          \"type\": \"wait\",\n          \"seconds\": 1\n        },\n        {\n          \"type\": \"press\",\n          \"key\": \"down\"\n        },\n        {\n          \"type\": \"wait\",\n          \"seconds\": 1\n        }\n      ],\n      \"observation\": {\n        \"method\": \"stdout\",\n        \"target\": \"SOFT DROP\"\n      },\n      \"expected\": \"SOFT DROP\",\n      \"status\": \"ready_for_validator\",\n      \"not_testable_reason\": null,\n      \"timeout_seconds\": 30,\n      \"script_path\": null\n    },\n    {\n      \"test_id\": \"C04\",\n      \"requirement_index\": 11,\n      \"requirement\": \"Up arrow rotates the piece 90 degrees.\",\n      \"assertion\": \"Pressing UP rotates the falling piece 90 degrees clockwise and prints 'ROTATE' to the console when rotation succeeds.\",\n      \"actions\": [\n        {\n          \"type\": \"wait\",\n          \"seconds\": 1\n        },\n        {\n          \"type\": \"press\",\n          \"key\": \"up\"\n        },\n        {\n          \"type\": \"wait\",\n          \"seconds\": 1\n        }\n      ],\n      \"observation\": {\n        \"method\": \"stdout\",\n        \"target\": \"ROTATE\"\n      },\n      \"expected\": \"ROTATE\",\n      \"status\": \"ready_for_validator\",\n      \"not_testable_reason\": null,\n      \"timeout_seconds\": 30,\n      \"script_path\": null\n    },\n    {\n      \"test_id\": \"C05\",\n      \"requirement_index\": 20,\n      \"requirement\": \"Press R to restart with an empty grid and score 0.\",\n      \"assertion\": \"Pressing R restarts the game and prints 'RESTART' to the console.\",\n      \"actions\": [\n        {\n          \"type\": \"wait\",\n          \"seconds\": 1\n        },\n        {\n          \"type\": \"press\",\n          \"key\": \"r\"\n        },\n        {\n          \"type\": \"wait\",\n          \"seconds\": 1\n        }\n      ],\n      \"observation\": {\n        \"method\": \"stdout\",\n        \"target\": \"RESTART\"\n      },\n      \"expected\": \"RESTART\",\n      \"status\": \"ready_for_validator\",\n      \"not_testable_reason\": null,\n      \"timeout_seconds\": 30,\n      \"script_path\": null\n    },\n    {\n      \"test_id\": \"C06\",\n      \"requirement_index\": 21,\n      \"requirement\": \"Press Escape to quit.\",\n      \"assertion\": \"Pressing ESCAPE quits the game and prints 'QUIT' to the console.\",\n      \"actions\": [\n        {\n          \"type\": \"wait\",\n          \"seconds\": 1\n        },\n        {\n          \"type\": \"press\",\n          \"key\": \"escape\"\n        },\n        {\n          \"type\": \"wait\",\n          \"seconds\": 1\n        }\n      ],\n      \"observation\": {\n        \"method\": \"stdout\",\n        \"target\": \"QUIT\"\n      },\n      \"expected\": \"QUIT\",\n      \"status\": \"ready_for_validator\",\n      \"not_testable_reason\": null,\n      \"timeout_seconds\": 30,\n      \"script_path\": null\n    }\n  ],\n  \"generation_notes\": [\n    \"Controls found and tested: LEFT, RIGHT, DOWN, UP, R, ESCAPE.\",\n    \"All controls have exact console output lines specified in the manual and are testable with simple input sequences.\",\n    \"No controls were excluded.\",\n    \"Rotation test assumes rotation succeeds; if rotation is blocked, ROTATE is not printed, so test may fail if piece is blocked at start.\"\n  ]\n}"
+}
