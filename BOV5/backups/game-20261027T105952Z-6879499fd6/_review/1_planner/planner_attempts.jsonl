@@ -1,2 +1,0 @@
-{"attempt": 1, "seconds": 16.6, "tokens": {"input": 6287, "output": 3298}, "attempt_cost_usd": 0.010131, "errors": [], "hard_errors": [], "quote_errors": []}
-{"outcome": "success", "attempts": 1, "seconds": 16.7, "tokens": {"input": 6287, "output": 3298, "total": 9585}, "estimated_cost_usd": 0.01013}

@@ -1,3 +1,0 @@
-{"attempt": 1, "seconds": 18.4, "tokens": {"input": 6246, "output": 3379}, "attempt_cost_usd": 0.010321, "errors": ["schema: architecture.extensions: None is not of type 'object'"], "hard_errors": ["schema: architecture.extensions: None is not of type 'object'"], "quote_errors": []}
-{"attempt": 2, "seconds": 41.5, "tokens": {"input": 6274, "output": 3208}, "attempt_cost_usd": 0.009902, "errors": [], "hard_errors": [], "quote_errors": []}
-{"outcome": "success", "attempts": 2, "seconds": 59.9, "tokens": {"input": 12520, "output": 6587, "total": 19107}, "estimated_cost_usd": 0.02022}

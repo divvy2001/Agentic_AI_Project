@@ -1,3 +1,0 @@
-{"turn": 1, "t": 2.8, "stage": "start", "status": "ok", "detail": "spec=flappybird.md (1270 chars)"}
-{"turn": 2, "t": 41.8, "stage": "planner+assets", "status": "fallback", "detail": "renderer=pygame assets=procedural", "renderer": "pygame", "entry_point": "game/main.py"}
-{"turn": 3, "t": 48.1, "stage": "logic_coder", "status": "blocked", "reason": "coder_key_missing", "steps": 0, "cost": "$0.0000", "attempt_id": null}

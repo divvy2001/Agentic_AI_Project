@@ -1,7 +1,0 @@
-{"turn": 1, "t": 0.4, "stage": "start", "status": "ok", "detail": "spec=seal_bounce.md (1008 chars)"}
-{"turn": 2, "t": 159.4, "stage": "planner+assets", "status": "success", "detail": "renderer=godot assets=ai_art", "renderer": "godot", "entry_point": "game/main.tscn"}
-{"turn": 3, "t": 666.6, "stage": "logic_coder", "status": "ready_for_testing", "reason": null, "steps": 31, "cost": "$0.1220", "attempt_id": "f31357718d2241faa415c8c4f458c663"}
-{"turn": 4, "t": 687.2, "stage": "eval_generator", "status": "ok", "detail": "suite=run20261028_091204-s1 tests=6", "exit_code": 0}
-{"turn": 5, "t": 691.0, "stage": "godot_import", "status": "ok", "detail": "imported game/ assets for the Tester"}
-{"turn": 6, "t": 740.1, "stage": "runtime_tester", "status": "done", "round": 1, "counts": {"PASS": 6}, "results": "traces/eval/run20261028_091204-s1/test_run_20261028_092335/test_results.json"}
-{"turn": 7, "t": 740.1, "stage": "decision", "status": "no errors", "round": 1, "detail": "needs_review=0"}

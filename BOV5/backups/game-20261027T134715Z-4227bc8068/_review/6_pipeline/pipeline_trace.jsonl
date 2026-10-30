@@ -1,3 +1,0 @@
-{"turn": 1, "t": 0.4, "stage": "start", "status": "ok", "detail": "spec=1158 chars"}
-{"turn": 2, "t": 242.7, "stage": "planner+assets", "status": "success", "detail": "renderer=pygame assets=ai_art", "renderer": "pygame", "entry_point": "game/dojo_duel.py"}
-{"turn": 3, "t": 249.8, "stage": "logic_coder", "status": "blocked", "reason": "coder_execution_failed: workspace_recovery_required: inspect traces/workspace_swap.json before another build", "steps": 0, "cost": "$0.0000", "attempt_id": "198c47b3291f4efa9f43352b71e6b39f"}

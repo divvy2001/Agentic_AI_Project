@@ -1,6 +1,0 @@
-{
-  "test_input": "Press SPACE repeatedly to keep the bird aloft and navigate through pipes. If the game ends, press R to restart. Press ESCAPE to quit.",
-  "expected_win_output": "[EVENT] FLAP printed on each Space press; score increases and GAME OVER displayed when collision occurs; RESTART on R; QUIT on Escape.",
-  "expected_lose_output": "GAME OVER displayed and printed to console; QUIT printed on Escape.",
-  "notes": "Controls handled:\n- SPACE: prints 'FLAP' to stdout and gives upward velocity when the game is not over.\n- R: resets the game and prints 'RESTART'.\n- ESCAPE or window close: exits game loop and prints 'QUIT'.\n\nImplementation details:\n- Bird is fixed at x=100 and affected by gravity; flap sets instantaneous upward velocity.\n- Pipes spawn every 1.5s from the right with a random vertical gap and move left at 200 px/s.\n- Score increments when the bird passes a pipe (SCORE:<n> printed to stdout).\n- On game over, movements freeze and 'GAME OVER' is printed once.\n- Background is solid sky-blue; score is shown top-left.\n\nLimitations:\n- Input prints 'FLAP' even when the game is over to satisfy validator logging requirement; velocity only changes when not game-over, so unintended repeated FLAP prints during game over may occur.\n- Assets used from game/assets; procedural fallbacks exist if assets fail to load.\n"
-}

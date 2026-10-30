@@ -1,6 +1,0 @@
-{"turn": 1, "t": 0.5, "stage": "start", "status": "ok", "detail": "spec=flappybird_prim.md (1270 chars)"}
-{"turn": 2, "t": 43.9, "stage": "planner+assets", "status": "success", "detail": "renderer=pygame assets=ai_art", "renderer": "pygame", "entry_point": "game/flappy_bird_clone.py"}
-{"turn": 3, "t": 944.5, "stage": "logic_coder", "status": "ready_for_testing", "reason": null, "steps": 9, "cost": "$0.0310", "attempt_id": "23c46df465fc42d3ad0de8dd039d53e9"}
-{"turn": 4, "t": 957.5, "stage": "eval_generator", "status": "ok", "detail": "suite=run20261029_102713-s1 tests=3", "exit_code": 0}
-{"turn": 5, "t": 981.2, "stage": "runtime_tester", "status": "done", "round": 1, "counts": {"FAIL": 1, "PASS": 2}, "results": "traces/eval/run20261029_102713-s1/test_run_20261029_104311/test_results.json"}
-{"turn": 6, "t": 981.2, "stage": "decision", "status": "errors found", "round": 1, "detail": "1 failing test(s)"}

@@ -1,7 +1,0 @@
-[application]
-run/main_scene="res://main.tscn"
-
-[rendering]
-width=1280
-height=720
-
